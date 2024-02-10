@@ -5,7 +5,7 @@ import { createReadStream } from 'fs'
 import { stat } from 'fs/promises'
 import got, { Response as GotResponse } from 'got'
 import validator from 'validator'
-import { getAllPrivacies, omit, pick, wait } from '@peertube/peertube-core-utils'
+import { getAllPrivacies, omit, pick, wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   HttpStatusCodeType,
@@ -22,8 +22,8 @@ import {
   VideosCommonQuery,
   VideoSource,
   VideoTranscodingCreate
-} from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath, buildUUID } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath, buildUUID } from '@retroai/retro3-node-utils'
 import { unwrapBody } from '../requests/index.js'
 import { waitJobs } from '../server/jobs.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
@@ -166,7 +166,7 @@ export class VideosCommand extends AbstractCommand {
     return this.getRequestBody<VideoDetails>({
       ...options,
       headers:{
-        'x-peertube-video-password': options.password
+        'x-retro3-video-password': options.password
       },
       path,
       implicitToken: false,

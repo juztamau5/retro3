@@ -5,14 +5,14 @@ import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
-import { HttpStatusCode } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 describe('Test plugins module unloading', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
   const requestPath = '/plugins/test-unloading/router/get'
   let value: string = null
 
@@ -47,7 +47,7 @@ describe('Test plugins module unloading', function () {
   })
 
   it('Should uninstall the plugin and free the route', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-test-unloading' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-test-unloading' })
 
     await makeGetRequest({
       url: server.url,

@@ -1,7 +1,7 @@
-import { ContextType } from '@peertube/peertube-models'
+import { ContextType } from '@retroai/retro3-models'
 import { ACTIVITY_PUB } from '@server/initializers/constants.js'
-import { buildDigest } from './peertube-crypto.js'
-import type { signJsonLDObject } from './peertube-jsonld.js'
+import { buildDigest } from './retro3-crypto.js'
+import type { signJsonLDObject } from './retro3-jsonld.js'
 
 export type ContextFilter = <T> (arg: T) => Promise<T>
 
@@ -237,7 +237,7 @@ function buildContext (contextValue?: ContextValue) {
     ...baseContext,
 
     {
-      pt: 'https://joinpeertube.org/ns#',
+      pt: 'https://joinretro3.org/ns#',
       sc: 'http://schema.org/',
 
       ...contextValue

@@ -1,7 +1,7 @@
 import { Job } from 'bullmq'
 import { Notifier } from '@server/lib/notifier/index.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { NotifyPayload } from '@peertube/peertube-models'
+import { NotifyPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 
 async function processNotify (job: Job) {

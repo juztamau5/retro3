@@ -3,7 +3,7 @@ import { catchError } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { RestExtractor } from '@app/core'
-import { Debug } from '@peertube/peertube-models'
+import { Debug } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { readdir, stat } from 'fs/promises'
 import { join } from 'path'
-import { root } from '@peertube/peertube-node-utils'
+import { root } from '@retroai/retro3-node-utils'
 
 async function run () {
   const result = {

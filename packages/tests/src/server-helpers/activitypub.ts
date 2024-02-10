@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { signAndContextify } from '@peertube/peertube-server/core/helpers/activity-pub-utils.js'
-import { isHTTPSignatureVerified, parseHTTPSignature } from '@peertube/peertube-server/core/helpers/peertube-crypto.js'
-import { isJsonLDSignatureVerified, signJsonLDObject } from '@peertube/peertube-server/core/helpers/peertube-jsonld.js'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { signAndContextify } from '@retroai/retro3-server/core/helpers/activity-pub-utils.js'
+import { isHTTPSignatureVerified, parseHTTPSignature } from '@retroai/retro3-server/core/helpers/retro3-crypto.js'
+import { isJsonLDSignatureVerified, signJsonLDObject } from '@retroai/retro3-server/core/helpers/retro3-jsonld.js'
 import { buildRequestStub } from '@tests/shared/tests.js'
 import { expect } from 'chai'
 import { readJsonSync } from 'fs-extra/esm'
@@ -28,7 +28,7 @@ describe('Test activity pub helpers', function () {
     it('Should fail with an invalid Mastodon signature', async function () {
       const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/create-bad-signature.json'))
       const publicKey = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/public-key.json')).publicKey
-      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/peertube' }
+      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/retro3' }
 
       const result = await isJsonLDSignatureVerified(fromActor as any, body)
 
@@ -38,7 +38,7 @@ describe('Test activity pub helpers', function () {
     it('Should fail with an invalid public key', async function () {
       const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/create.json'))
       const publicKey = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/bad-public-key.json')).publicKey
-      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/peertube' }
+      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/retro3' }
 
       const result = await isJsonLDSignatureVerified(fromActor as any, body)
 
@@ -48,18 +48,18 @@ describe('Test activity pub helpers', function () {
     it('Should succeed with a valid Mastodon signature', async function () {
       const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/create.json'))
       const publicKey = readJsonSync(buildAbsoluteFixturePath('./ap-json/mastodon/public-key.json')).publicKey
-      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/peertube' }
+      const fromActor = { publicKey, url: 'http://localhost:9002/accounts/retro3' }
 
       const result = await isJsonLDSignatureVerified(fromActor as any, body)
 
       expect(result).to.be.true
     })
 
-    it('Should fail with an invalid PeerTube signature', async function () {
-      const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/invalid-keys.json'))
-      const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/announce-without-context.json'))
+    it('Should fail with an invalid retro3 signature', async function () {
+      const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/invalid-keys.json'))
+      const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/announce-without-context.json'))
 
-      const actorSignature = { url: 'http://localhost:9002/accounts/peertube', privateKey: keys.privateKey }
+      const actorSignature = { url: 'http://localhost:9002/accounts/retro3', privateKey: keys.privateKey }
       const signedBody = await signAndContextify({
         byActor: actorSignature as any,
         data: body,
@@ -68,17 +68,17 @@ describe('Test activity pub helpers', function () {
         signerFunction: signJsonLDObjectWithoutAssertion
       })
 
-      const fromActor = { publicKey: keys.publicKey, url: 'http://localhost:9002/accounts/peertube' }
+      const fromActor = { publicKey: keys.publicKey, url: 'http://localhost:9002/accounts/retro3' }
       const result = await isJsonLDSignatureVerified(fromActor as any, signedBody)
 
       expect(result).to.be.false
     })
 
-    it('Should succeed with a valid PeerTube signature', async function () {
-      const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/keys.json'))
-      const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/announce-without-context.json'))
+    it('Should succeed with a valid retro3 signature', async function () {
+      const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/keys.json'))
+      const body = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/announce-without-context.json'))
 
-      const actorSignature = { url: 'http://localhost:9002/accounts/peertube', privateKey: keys.privateKey }
+      const actorSignature = { url: 'http://localhost:9002/accounts/retro3', privateKey: keys.privateKey }
       const signedBody = await signAndContextify({
         byActor: actorSignature as any,
         data: body,
@@ -87,7 +87,7 @@ describe('Test activity pub helpers', function () {
         signerFunction: signJsonLDObjectWithoutAssertion
       })
 
-      const fromActor = { publicKey: keys.publicKey, url: 'http://localhost:9002/accounts/peertube' }
+      const fromActor = { publicKey: keys.publicKey, url: 'http://localhost:9002/accounts/retro3' }
       const result = await isJsonLDSignatureVerified(fromActor as any, signedBody)
 
       expect(result).to.be.true

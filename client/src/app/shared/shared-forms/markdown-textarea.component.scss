@@ -11,7 +11,7 @@ $input-border-radius: 3px;
   flex-direction: column;
 
   textarea {
-    @include peertube-textarea(100%, 150px);
+    @include retro3-textarea(100%, 150px);
 
     background-color: pvar(--markdownTextareaBackgroundColor);
 

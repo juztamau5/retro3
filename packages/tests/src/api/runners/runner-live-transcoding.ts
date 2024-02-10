@@ -3,7 +3,7 @@
 import { expect } from 'chai'
 import { FfmpegCommand } from 'fluent-ffmpeg'
 import { readFile } from 'fs/promises'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   LiveRTMPHLSTranscodingUpdatePayload,
@@ -15,23 +15,23 @@ import {
   Video,
   VideoPrivacy,
   VideoState
-} from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   testFfmpegStreamError,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test runner live transcoding', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let runnerToken: string
   let baseUrl: string
 

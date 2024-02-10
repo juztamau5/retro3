@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { LiveVideoEventPayload, VideoPrivacy, VideoState, VideoStateType } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { LiveVideoEventPayload, VideoPrivacy, VideoState, VideoStateType } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs,
   waitUntilLivePublishedOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test live socket messages', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   before(async function () {
     this.timeout(120000)

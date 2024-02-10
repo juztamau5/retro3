@@ -1,4 +1,4 @@
-import { VideoDetails, VideoPrivacy, VideoStreamingPlaylistType } from '@peertube/peertube-models'
+import { VideoDetails, VideoPrivacy, VideoStreamingPlaylistType } from '@retroai/retro3-models'
 
 function getAllPrivacies () {
   return [ VideoPrivacy.PUBLIC, VideoPrivacy.INTERNAL, VideoPrivacy.PRIVATE, VideoPrivacy.UNLISTED, VideoPrivacy.PASSWORD_PROTECTED ]

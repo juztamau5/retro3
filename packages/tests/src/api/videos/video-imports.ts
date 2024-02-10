@@ -4,25 +4,25 @@ import { expect } from 'chai'
 import { pathExists, remove } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
-import { CustomConfig, HttpStatusCode, Video, VideoImportState, VideoPrivacy, VideoResolution, VideoState } from '@peertube/peertube-models'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
+import { CustomConfig, HttpStatusCode, Video, VideoImportState, VideoPrivacy, VideoResolution, VideoState } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   createSingleServer,
   doubleFollow,
   getServerImportConfig,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
-import { DeepPartial } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-server-commands'
+import { DeepPartial } from '@retroai/retro3-typescript-utils'
 import { testCaptionFile } from '@tests/shared/captions.js'
 import { testImageGeneratedByFFmpeg } from '@tests/shared/checks.js'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 
-async function checkVideosServer1 (server: PeerTubeServer, idHttp: string, idMagnet: string, idTorrent: string) {
+async function checkVideosServer1 (server: Retro3Server, idHttp: string, idMagnet: string, idTorrent: string) {
   const videoHttp = await server.videos.get({ id: idHttp })
 
   expect(videoHttp.name).to.equal('small video - youtube')
@@ -53,13 +53,13 @@ async function checkVideosServer1 (server: PeerTubeServer, idHttp: string, idMag
   }
 
   expect(videoTorrent.name).to.contain('你好 世界 720p.mp4')
-  expect(videoMagnet.name).to.contain('super peertube2 video')
+  expect(videoMagnet.name).to.contain('super retro3 video')
 
   const bodyCaptions = await server.captions.list({ videoId: idHttp })
   expect(bodyCaptions.total).to.equal(2)
 }
 
-async function checkVideoServer2 (server: PeerTubeServer, id: number | string) {
+async function checkVideoServer2 (server: Retro3Server, id: number | string) {
   const video = await server.videos.get({ id })
 
   expect(video.name).to.equal('my super name')
@@ -85,7 +85,7 @@ describe('Test video imports', function () {
   function runSuite (mode: 'youtube-dl' | 'yt-dlp') {
 
     describe('Import ' + mode, function () {
-      let servers: PeerTubeServer[] = []
+      let servers: Retro3Server[] = []
 
       before(async function () {
         this.timeout(60_000)
@@ -175,7 +175,7 @@ describe('Test video imports', function () {
             tags: [ 'tag_torrent1', 'tag_torrent2' ]
           }
           const { video } = await servers[0].imports.importVideo({ attributes })
-          expect(video.name).to.equal('super peertube2 video')
+          expect(video.name).to.equal('super retro3 video')
         }
 
         {
@@ -197,7 +197,7 @@ describe('Test video imports', function () {
 
         expect(data).to.have.lengthOf(3)
         expect(data[0].name).to.equal('small video - youtube')
-        expect(data[1].name).to.equal('super peertube2 video')
+        expect(data[1].name).to.equal('super retro3 video')
         expect(data[2].name).to.equal('你好 世界 720p.mp4')
       })
 
@@ -215,7 +215,7 @@ describe('Test video imports', function () {
         expect(videoImports[1].targetUrl).to.be.null
         expect(videoImports[1].magnetUri).to.equal(FIXTURE_URLS.magnet)
         expect(videoImports[1].torrentName).to.be.null
-        expect(videoImports[1].video.name).to.equal('super peertube2 video')
+        expect(videoImports[1].video.name).to.equal('super retro3 video')
 
         expect(videoImports[0].targetUrl).to.be.null
         expect(videoImports[0].magnetUri).to.be.null
@@ -232,12 +232,12 @@ describe('Test video imports', function () {
       })
 
       it('Should search in my imports', async function () {
-        const { total, data: videoImports } = await servers[0].imports.getMyVideoImports({ search: 'peertube2' })
+        const { total, data: videoImports } = await servers[0].imports.getMyVideoImports({ search: 'retro3' })
         expect(total).to.equal(1)
         expect(videoImports).to.have.lengthOf(1)
 
         expect(videoImports[0].magnetUri).to.equal(FIXTURE_URLS.magnet)
-        expect(videoImports[0].video.name).to.equal('super peertube2 video')
+        expect(videoImports[0].video.name).to.equal('super retro3 video')
       })
 
       it('Should have the video listed on the two instances', async function () {
@@ -425,14 +425,14 @@ describe('Test video imports', function () {
         expect(video.files.find(f => f.resolution.id === 144)).to.exist
       })
 
-      it('Should import a peertube video', async function () {
+      it('Should import a retro3 video', async function () {
         this.timeout(120_000)
 
-        const toTest = [ FIXTURE_URLS.peertube_long ]
+        const toTest = [ FIXTURE_URLS.retro3_long ]
 
-        // TODO: include peertube_short when https://github.com/ytdl-org/youtube-dl/pull/29475 is merged
+        // TODO: include retro3_short when https://github.com/ytdl-org/youtube-dl/pull/29475 is merged
         if (mode === 'yt-dlp') {
-          toTest.push(FIXTURE_URLS.peertube_short)
+          toTest.push(FIXTURE_URLS.retro3_short)
         }
 
         for (const targetUrl of toTest) {
@@ -478,7 +478,7 @@ describe('Test video imports', function () {
   runSuite('yt-dlp')
 
   describe('Delete/cancel an import', function () {
-    let server: PeerTubeServer
+    let server: Retro3Server
 
     let finishedImportId: number
     let finishedVideo: Video
@@ -561,11 +561,11 @@ describe('Test video imports', function () {
   })
 
   describe('Auto update', function () {
-    let server: PeerTubeServer
+    let server: Retro3Server
 
-    function quickPeerTubeImport () {
+    function quickRetro3Import () {
       const attributes = {
-        targetUrl: FIXTURE_URLS.peertube_long,
+        targetUrl: FIXTURE_URLS.retro3_long,
         channelId: server.store.channel.id,
         privacy: VideoPrivacy.PUBLIC
       }
@@ -590,7 +590,7 @@ describe('Test video imports', function () {
         }
       })
 
-      await quickPeerTubeImport()
+      await quickRetro3Import()
 
       const base = server.servers.buildDirectory('bin')
       const content = await readdir(base)

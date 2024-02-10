@@ -4,26 +4,26 @@ import { expect } from 'chai'
 import { remove } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { SQLCommand } from '../shared/sql-command.js'
 
-function listStoryboardFiles (server: PeerTubeServer) {
+function listStoryboardFiles (server: Retro3Server) {
   const storage = server.getDirectoryPath('storyboards')
 
   return readdir(storage)
 }
 
 describe('Test create generate storyboard job', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   const uuids: string[] = []
   let sql: SQLCommand
   let existingStoryboardName: string

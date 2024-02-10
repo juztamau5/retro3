@@ -1,4 +1,4 @@
-import { VideoFile } from '@peertube/peertube-models'
+import { VideoFile } from '@retroai/retro3-models'
 
 function toTitleCase (str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)

@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, JobState, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, JobState, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   CommentsCommand,
   createMultipleServers,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { completeVideoCheck } from '@tests/shared/videos.js'
 
 describe('Test handle downs', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let sqlCommands: SQLCommand[] = []
 
   let threadIdServer1: number

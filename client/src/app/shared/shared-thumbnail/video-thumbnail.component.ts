@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { ScreenService } from '@app/core'
-import { VideoState } from '@peertube/peertube-models'
+import { VideoState } from '@retroai/retro3-models'
 import { Video } from '../shared-main'
 
 @Component({

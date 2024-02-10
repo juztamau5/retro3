@@ -1,5 +1,5 @@
-import { VideoChannelSync, VideoChannelSyncState, type VideoChannelSyncStateType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoChannelSync, VideoChannelSyncState, type VideoChannelSyncStateType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { isVideoChannelSyncStateValid } from '@server/helpers/custom-validators/video-channel-syncs.js'
 import { CONSTRAINTS_FIELDS, VIDEO_CHANNEL_SYNC_STATE } from '@server/initializers/constants.js'

@@ -1,11 +1,11 @@
 import Bluebird from 'bluebird'
 import { logger } from '@server/helpers/logger.js'
-import { doRequest, PeerTubeRequestOptions } from '@server/helpers/requests.js'
+import { doRequest, Retro3RequestOptions } from '@server/helpers/requests.js'
 import { BROADCAST_CONCURRENCY } from '@server/initializers/constants.js'
 
 async function httpBroadcast (payload: {
   uris: string[]
-  requestOptions: PeerTubeRequestOptions
+  requestOptions: Retro3RequestOptions
 }) {
   const { uris, requestOptions } = payload
 

@@ -1,4 +1,4 @@
-import { ContextType } from '@peertube/peertube-models'
+import { ContextType } from '@retroai/retro3-models'
 import { ACTIVITY_PUB, HTTP_SIGNATURE } from '@server/initializers/constants.js'
 import { ActorModel } from '@server/models/actor/actor.js'
 import { getServerActor } from '@server/models/application/application.js'

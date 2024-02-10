@@ -1,6 +1,6 @@
 import { Job } from 'bullmq'
 import { join } from 'path'
-import { MoveStoragePayload, VideoStateType, VideoStorage } from '@peertube/peertube-models'
+import { MoveStoragePayload, VideoStateType, VideoStorage } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { updateTorrentMetadata } from '@server/helpers/webtorrent.js'
 import { P2P_MEDIA_LOADER_PEER_VERSION } from '@server/initializers/constants.js'

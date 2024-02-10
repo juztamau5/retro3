@@ -1,7 +1,7 @@
 import { Observable, of } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { User } from '@app/core/users/user.model'
-import { hasUserRight } from '@peertube/peertube-core-utils'
+import { hasUserRight } from '@retroai/retro3-core-utils'
 import {
   MyUser as ServerMyUserModel,
   MyUserSpecialPlaylist,
@@ -9,7 +9,7 @@ import {
   UserRightType,
   UserRole,
   UserVideoQuota
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { OAuthUserTokens } from '@root-helpers/users'
 
 export class AuthUser extends User implements ServerMyUserModel {

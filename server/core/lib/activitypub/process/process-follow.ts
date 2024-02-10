@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { ActivityFollow } from '@peertube/peertube-models'
+import { ActivityFollow } from '@retroai/retro3-models'
 import { isBlockedByServerOrAccount } from '@server/lib/blocklist.js'
 import { AccountModel } from '@server/models/account/account.js'
 import { getServerActor } from '@server/models/application/application.js'
@@ -142,7 +142,7 @@ async function acceptIfNeeded (actorFollow: MActorFollow, targetActor: MActorFul
 }
 
 async function fixFollowURLIfNeeded (actorFollow: MActorFollow, activityId: string, transaction: Transaction) {
-  // Before PeerTube V3 we did not save the follow ID. Try to fix these old follows
+  // Before retro3 V3 we did not save the follow ID. Try to fix these old follows
   if (!actorFollow.url) {
     actorFollow.url = activityId
     await actorFollow.save({ transaction })

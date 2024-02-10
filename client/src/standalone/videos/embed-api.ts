@@ -1,17 +1,28 @@
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
 import './embed.scss'
 import * as Channel from 'jschannel'
 import { logger } from '../../root-helpers'
-import { PeerTubeResolution, PeerTubeTextTrack } from '../embed-player-api/definitions'
-import { PeerTubeEmbed } from './embed'
+import { Retro3Resolution, Retro3TextTrack } from '../embed-player-api/definitions'
+import { Retro3Embed } from './embed'
 
 /**
  * Embed API exposes control of the embed player to the outside world via
  * JSChannels and window.postMessage
  */
-export class PeerTubeEmbedApi {
+export class Retro3EmbedApi {
   private channel: Channel.MessagingChannel
   private isReady = false
-  private resolutions: PeerTubeResolution[] = []
+  private resolutions: Retro3Resolution[] = []
 
   private oldVideoElement: HTMLVideoElement
   private videoElPlayListener: () => void
@@ -19,7 +30,7 @@ export class PeerTubeEmbedApi {
   private videoElEndedListener: () => void
   private videoElInterval: any
 
-  constructor (private readonly embed: PeerTubeEmbed) {
+  constructor (private readonly embed: Retro3Embed) {
 
   }
 
@@ -79,10 +90,10 @@ export class PeerTubeEmbedApi {
       return
     }
 
-    this.embed.player.peertubeResolutions().select({ id: resolutionId, fireCallback: true })
+    this.embed.player.retro3Resolutions().select({ id: resolutionId, fireCallback: true })
   }
 
-  private getCaptions (): PeerTubeTextTrack[] {
+  private getCaptions (): Retro3TextTrack[] {
     return this.embed.player.textTracks().tracks_.map(t => ({
       id: t.id,
       src: t.src,
@@ -151,8 +162,8 @@ export class PeerTubeEmbedApi {
     // ---------------------------------------------------------------------------
 
     // PeerTube specific capabilities
-    this.embed.player.peertubeResolutions().on('resolutions-added', () => this.loadResolutions())
-    this.embed.player.peertubeResolutions().on('resolutions-changed', () => this.loadResolutions())
+    this.embed.player.retro3Resolutions().on('resolutions-added', () => this.loadResolutions())
+    this.embed.player.retro3Resolutions().on('resolutions-changed', () => this.loadResolutions())
 
     this.loadResolutions()
 
@@ -177,7 +188,7 @@ export class PeerTubeEmbedApi {
   }
 
   private loadResolutions () {
-    this.resolutions = this.embed.player.peertubeResolutions().getResolutions()
+    this.resolutions = this.embed.player.retro3Resolutions().getResolutions()
       .map(r => ({
         id: r.id,
         label: r.label,

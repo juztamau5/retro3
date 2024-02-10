@@ -1,5 +1,5 @@
 import { AllowNull, Column, CreatedAt, DataType, HasMany, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { OAuthTokenModel } from './oauth-token.js'
 
 @Table({

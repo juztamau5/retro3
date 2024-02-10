@@ -1,6 +1,6 @@
 import express from 'express'
 import { blacklistVideo, unblacklistVideo } from '@server/lib/video-blacklist.js'
-import { HttpStatusCode, UserRight, VideoBlacklistCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight, VideoBlacklistCreate } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

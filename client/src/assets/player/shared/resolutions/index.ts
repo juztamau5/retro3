@@ -1,1 +1,1 @@
-export * from './peertube-resolutions-plugin'
+export * from './retro3-resolutions-plugin'

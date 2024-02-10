@@ -1,5 +1,5 @@
 import { getAbsoluteAPIUrl, getAPIHost } from '@app/helpers'
-import { Actor as ServerActor, ActorImage } from '@peertube/peertube-models'
+import { Actor as ServerActor, ActorImage } from '@retroai/retro3-models'
 
 export abstract class Actor implements ServerActor {
   id: number

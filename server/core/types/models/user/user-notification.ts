@@ -4,7 +4,7 @@ import { ApplicationModel } from '@server/models/application/application.js'
 import { PluginModel } from '@server/models/server/plugin.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { UserRegistrationModel } from '@server/models/user/user-registration.js'
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { AbuseModel } from '../../../models/abuse/abuse.js'
 import { AccountModel } from '../../../models/account/account.js'
 import { ActorModel } from '../../../models/actor/actor.js'
@@ -94,7 +94,7 @@ export module UserNotificationIncludes {
     Pick<PluginModel, 'id' | 'name' | 'type' | 'latestVersion'>
 
   export type ApplicationInclude =
-    Pick<ApplicationModel, 'latestPeerTubeVersion'>
+    Pick<ApplicationModel, 'latestRetro3Version'>
 
   export type UserRegistrationInclude =
     Pick<UserRegistrationModel, 'id' | 'username'>

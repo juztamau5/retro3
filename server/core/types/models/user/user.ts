@@ -1,7 +1,7 @@
 import { AccountModel } from '@server/models/account/account.js'
 import { UserModel } from '@server/models/user/user.js'
 import { MVideoPlaylist } from '@server/types/models/index.js'
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import {
   MAccount,
   MAccountDefault,

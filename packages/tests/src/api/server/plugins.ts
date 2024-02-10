@@ -3,22 +3,22 @@
 import { expect } from 'chai'
 import { pathExists, remove } from 'fs-extra/esm'
 import { join } from 'path'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, PluginType } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, PluginType } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   killallServers,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { testHelloWorldRegisteredSettings } from '@tests/shared/plugins.js'
 
 describe('Test plugins', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let sqlCommand: SQLCommand
   let command: PluginsCommand
 
@@ -83,10 +83,10 @@ describe('Test plugins', function () {
         start: 0,
         pluginType: PluginType.THEME,
         search: 'background-red',
-        currentPeerTubeEngine: '1.0.0'
+        currentRetro3Engine: '1.0.0'
       })
 
-      const p = body.data.find(p => p.npmName === 'peertube-theme-background-red')
+      const p = body.data.find(p => p.npmName === 'retro3-theme-background-red')
       expect(p).to.be.undefined
     }
   })
@@ -94,19 +94,19 @@ describe('Test plugins', function () {
   it('Should install a plugin and a theme', async function () {
     this.timeout(30000)
 
-    await command.install({ npmName: 'peertube-plugin-hello-world' })
-    await command.install({ npmName: 'peertube-theme-background-red' })
+    await command.install({ npmName: 'retro3-plugin-hello-world' })
+    await command.install({ npmName: 'retro3-theme-background-red' })
   })
 
   it('Should have the plugin loaded in the configuration', async function () {
     for (const config of [ await server.config.getConfig(), await server.config.getIndexHTMLConfig() ]) {
       const theme = config.theme.registered.find(r => r.name === 'background-red')
       expect(theme).to.not.be.undefined
-      expect(theme.npmName).to.equal('peertube-theme-background-red')
+      expect(theme.npmName).to.equal('retro3-theme-background-red')
 
       const plugin = config.plugin.registered.find(r => r.name === 'hello-world')
       expect(plugin).to.not.be.undefined
-      expect(plugin.npmName).to.equal('peertube-plugin-hello-world')
+      expect(plugin.npmName).to.equal('retro3-plugin-hello-world')
     }
   })
 
@@ -170,7 +170,7 @@ describe('Test plugins', function () {
   })
 
   it('Should get public settings', async function () {
-    const body = await command.getPublicSettings({ npmName: 'peertube-plugin-hello-world' })
+    const body = await command.getPublicSettings({ npmName: 'retro3-plugin-hello-world' })
     const publicSettings = body.publicSettings
 
     expect(Object.keys(publicSettings)).to.have.lengthOf(1)
@@ -184,7 +184,7 @@ describe('Test plugins', function () {
     }
 
     await command.updateSettings({
-      npmName: 'peertube-plugin-hello-world',
+      npmName: 'retro3-plugin-hello-world',
       settings
     })
   })
@@ -195,7 +195,7 @@ describe('Test plugins', function () {
 
   it('Should get a plugin and a theme', async function () {
     {
-      const plugin = await command.get({ npmName: 'peertube-plugin-hello-world' })
+      const plugin = await command.get({ npmName: 'retro3-plugin-hello-world' })
 
       expect(plugin.type).to.equal(PluginType.PLUGIN)
       expect(plugin.name).to.equal('hello-world')
@@ -205,7 +205,7 @@ describe('Test plugins', function () {
       expect(plugin.enabled).to.be.true
       expect(plugin.description).to.exist
       expect(plugin.version).to.exist
-      expect(plugin.peertubeEngine).to.exist
+      expect(plugin.retro3Engine).to.exist
       expect(plugin.createdAt).to.exist
 
       expect(plugin.settings).to.not.be.undefined
@@ -213,7 +213,7 @@ describe('Test plugins', function () {
     }
 
     {
-      const plugin = await command.get({ npmName: 'peertube-theme-background-red' })
+      const plugin = await command.get({ npmName: 'retro3-theme-background-red' })
 
       expect(plugin.type).to.equal(PluginType.THEME)
       expect(plugin.name).to.equal('background-red')
@@ -223,7 +223,7 @@ describe('Test plugins', function () {
       expect(plugin.enabled).to.be.true
       expect(plugin.description).to.exist
       expect(plugin.version).to.exist
-      expect(plugin.peertubeEngine).to.exist
+      expect(plugin.retro3Engine).to.exist
       expect(plugin.createdAt).to.exist
 
       expect(plugin.settings).to.be.null
@@ -241,11 +241,11 @@ describe('Test plugins', function () {
       await sqlCommand.setPluginVersion(name, '0.0.1')
 
       // Fake update package.json
-      const packageJSON = await command.getPackageJSON(`peertube-${type}-${name}`)
+      const packageJSON = await command.getPackageJSON(`retro3-${type}-${name}`)
       const oldVersion = packageJSON.version
 
       packageJSON.version = '0.0.1'
-      await command.updatePackageJSON(`peertube-${type}-${name}`, packageJSON)
+      await command.updatePackageJSON(`retro3-${type}-${name}`, packageJSON)
 
       // Restart the server to take into account this change
       await killallServers([ server ])
@@ -273,12 +273,12 @@ describe('Test plugins', function () {
       }
 
       {
-        await command.update({ npmName: `peertube-${type}-${name}` })
+        await command.update({ npmName: `retro3-${type}-${name}` })
 
         const plugin = await getPluginFromAPI()
         expect(plugin.version).to.equal(oldVersion)
 
-        const updatedPackageJSON = await command.getPackageJSON(`peertube-${type}-${name}`)
+        const updatedPackageJSON = await command.getPackageJSON(`retro3-${type}-${name}`)
         expect(updatedPackageJSON.version).to.equal(oldVersion)
 
         await checkConfig(oldVersion)
@@ -290,7 +290,7 @@ describe('Test plugins', function () {
   })
 
   it('Should uninstall the plugin', async function () {
-    await command.uninstall({ npmName: 'peertube-plugin-hello-world' })
+    await command.uninstall({ npmName: 'retro3-plugin-hello-world' })
 
     const body = await command.list({ pluginType: PluginType.PLUGIN })
     expect(body.total).to.equal(0)
@@ -309,7 +309,7 @@ describe('Test plugins', function () {
   })
 
   it('Should uninstall the theme', async function () {
-    await command.uninstall({ npmName: 'peertube-theme-background-red' })
+    await command.uninstall({ npmName: 'retro3-theme-background-red' })
   })
 
   it('Should have updated the configuration', async function () {

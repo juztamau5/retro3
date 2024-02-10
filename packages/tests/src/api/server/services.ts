@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { Video, VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { Video, VideoPlaylistPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test services', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
   let playlistUUID: string
   let playlistDisplayName: string
   let video: Video

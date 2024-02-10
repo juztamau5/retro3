@@ -7,7 +7,7 @@ webserver:
   https: false
 
 secrets:
-  peertube: 'my super secret'
+  retro3: 'my super secret'
 
 rates_limit:
   signup:
@@ -44,7 +44,7 @@ log:
 contact_form:
   enabled: true
 
-peertube:
+retro3:
   check_latest_version:
     enabled: false
 

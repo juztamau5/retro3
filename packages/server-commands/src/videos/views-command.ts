@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/no-floating-promises */
-import { HttpStatusCode, VideoViewEvent } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoViewEvent } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class ViewsCommand extends AbstractCommand {

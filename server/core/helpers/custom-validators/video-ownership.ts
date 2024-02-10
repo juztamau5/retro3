@@ -1,5 +1,5 @@
 import { Response } from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { MUserId } from '@server/types/models/index.js'
 import { MVideoChangeOwnershipFull } from '@server/types/models/video/video-change-ownership.js'
 

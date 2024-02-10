@@ -1,4 +1,4 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   RegisterRunnerBody,
@@ -6,8 +6,8 @@ import {
   ResultList,
   Runner,
   UnregisterRunnerBody
-} from '@peertube/peertube-models'
-import { buildUUID } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

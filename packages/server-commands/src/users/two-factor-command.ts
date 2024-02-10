@@ -1,5 +1,5 @@
 import { TOTP } from 'otpauth'
-import { HttpStatusCode, TwoFactorEnableResult } from '@peertube/peertube-models'
+import { HttpStatusCode, TwoFactorEnableResult } from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
@@ -11,7 +11,7 @@ export class TwoFactorCommand extends AbstractCommand {
     const { secret } = options
 
     return new TOTP({
-      issuer: 'PeerTube',
+      issuer: 'retro3',
       algorithm: 'SHA1',
       digits: 6,
       period: 30,

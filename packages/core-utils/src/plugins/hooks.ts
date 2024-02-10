@@ -1,4 +1,4 @@
-import { HookType, HookType_Type, RegisteredExternalAuthConfig } from '@peertube/peertube-models'
+import { HookType, HookType_Type, RegisteredExternalAuthConfig } from '@retroai/retro3-models'
 import { isCatchable, isPromise } from '../common/promises.js'
 
 function getHookType (hookName: string) {

@@ -1,4 +1,4 @@
-import { HttpStatusCode, Storyboard } from '@peertube/peertube-models'
+import { HttpStatusCode, Storyboard } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class StoryboardCommand extends AbstractCommand {

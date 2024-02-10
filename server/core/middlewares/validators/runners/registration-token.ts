@@ -2,8 +2,8 @@ import express from 'express'
 import { param } from 'express-validator'
 import { isIdValid } from '@server/helpers/custom-validators/misc.js'
 import { RunnerRegistrationTokenModel } from '@server/models/runner/runner-registration-token.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { areValidationErrors } from '../shared/utils.js'
 
 const tags = [ 'runner' ]

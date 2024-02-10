@@ -1,6 +1,6 @@
-import { PeerTubeServer } from '../server/server.js'
+import { Retro3Server } from '../server/server.js'
 
-function setDefaultVideoChannel (servers: PeerTubeServer[]) {
+function setDefaultVideoChannel (servers: Retro3Server[]) {
   const tasks: Promise<any>[] = []
 
   for (const server of servers) {
@@ -13,7 +13,7 @@ function setDefaultVideoChannel (servers: PeerTubeServer[]) {
   return Promise.all(tasks)
 }
 
-async function setDefaultChannelAvatar (serversArg: PeerTubeServer | PeerTubeServer[], channelName: string = 'root_channel') {
+async function setDefaultChannelAvatar (serversArg: Retro3Server | Retro3Server[], channelName: string = 'root_channel') {
   const servers = Array.isArray(serversArg)
     ? serversArg
     : [ serversArg ]

@@ -1,10 +1,10 @@
 import config from 'config'
 import { readFileSync, writeFileSync } from 'fs'
 import { URL } from 'url'
-import { uniqify } from '@peertube/peertube-core-utils'
-import { getFFmpegVersion } from '@peertube/peertube-ffmpeg'
-import { RecentlyAddedStrategy, VideoRedundancyConfigFilter } from '@peertube/peertube-models'
-import { isProdInstance } from '@peertube/peertube-node-utils'
+import { uniqify } from '@retroai/retro3-core-utils'
+import { getFFmpegVersion } from '@retroai/retro3-ffmpeg'
+import { RecentlyAddedStrategy, VideoRedundancyConfigFilter } from '@retroai/retro3-models'
+import { isProdInstance } from '@retroai/retro3-node-utils'
 import { parseBytes, parseSemVersion } from '../helpers/core-utils.js'
 import { isArray } from '../helpers/custom-validators/misc.js'
 import { logger } from '../helpers/logger.js'
@@ -24,7 +24,7 @@ async function checkActivityPubUrls () {
     const NODE_CONFIG_DIR = config.util.getEnv('NODE_CONFIG_DIR')
 
     logger.warn(
-      'It seems PeerTube was started (and created some data) with another domain name. ' +
+      'It seems retro3 was started (and created some data) with another domain name. ' +
       'This means you will not be able to federate! ' +
       'Please use %s %s npm run update-host to fix this.',
       NODE_CONFIG_DIR ? `NODE_CONFIG_DIR=${NODE_CONFIG_DIR}` : '',
@@ -90,7 +90,7 @@ async function checkFFmpegVersion () {
   const { major, minor, patch } = semvar
 
   if (major < 4 || (major === 4 && minor < 1)) {
-    logger.warn('Your ffmpeg version (%s) is outdated. PeerTube supports ffmpeg >= 4.1. Please upgrade ffmpeg.', version)
+    logger.warn('Your ffmpeg version (%s) is outdated. retro3 supports ffmpeg >= 4.1. Please upgrade ffmpeg.', version)
   }
 
   if (major === 4 && minor === 4 && patch === 0) {
@@ -141,8 +141,8 @@ function checkRemovedConfigKeys () {
 }
 
 function checkSecretsConfig () {
-  if (!CONFIG.SECRETS.PEERTUBE) {
-    throw new Error('secrets.peertube is missing in config. Generate one using `openssl rand -hex 32`')
+  if (!CONFIG.SECRETS.RETRO3) {
+    throw new Error('secrets.retro3 is missing in config. Generate one using `openssl rand -hex 32`')
   }
 }
 
@@ -154,7 +154,7 @@ function checkEmailConfig () {
 
     if (CONFIG.SIGNUP.ENABLED && CONFIG.SIGNUP.REQUIRES_APPROVAL) {
       // eslint-disable-next-line max-len
-      logger.warn('SMTP is not configured but signup approval is enabled: PeerTube will not be able to send an email to the user upon acceptance/rejection of the registration request')
+      logger.warn('SMTP is not configured but signup approval is enabled: retro3 will not be able to send an email to the user upon acceptance/rejection of the registration request')
     }
 
     if (CONFIG.CONTACT_FORM.ENABLED) {
@@ -220,7 +220,7 @@ function checkStorageConfig () {
     for (const key of Object.keys(configStorage)) {
       if (configStorage[key].startsWith('storage/')) {
         logger.warn(
-          'Directory of %s should not be in the production directory of PeerTube. Please check your production configuration file.',
+          'Directory of %s should not be in the production directory of retro3. Please check your production configuration file.',
           key
         )
       }

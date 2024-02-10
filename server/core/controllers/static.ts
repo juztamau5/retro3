@@ -10,7 +10,7 @@ import {
   handleStaticError,
   optionalAuthenticate
 } from '@server/middlewares/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { CONFIG } from '../initializers/config.js'
 import { DIRECTORIES, STATIC_MAX_AGE, STATIC_PATHS } from '../initializers/constants.js'
 import { buildReinjectVideoFileTokenQuery, doReinjectVideoFileToken } from './shared/m3u8-playlist.js'

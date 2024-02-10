@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { AbuseCreate, AbuseState, HttpStatusCode } from '@peertube/peertube-models'
+import { AbuseCreate, AbuseState, HttpStatusCode } from '@retroai/retro3-models'
 import {
   AbusesCommand,
   cleanupTests,
@@ -9,15 +9,15 @@ import {
   doubleFollow,
   makeGetRequest,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test abuses API validators', function () {
   const basePath = '/api/v1/abuses/'
 
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   let userToken = ''
   let userToken2 = ''
@@ -400,7 +400,7 @@ describe('Test abuses API validators', function () {
 
   describe('When trying to manage messages of a remote abuse', function () {
     let remoteAbuseId: number
-    let anotherServer: PeerTubeServer
+    let anotherServer: Retro3Server
 
     before(async function () {
       this.timeout(50000)

@@ -1,2 +1,2 @@
-export * from './peertube-mobile-buttons'
-export * from './peertube-mobile-plugin'
+export * from './retro3-mobile-buttons'
+export * from './retro3-mobile-plugin'

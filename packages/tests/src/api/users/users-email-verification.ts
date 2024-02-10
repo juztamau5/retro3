@@ -2,18 +2,18 @@
 
 import { expect } from 'chai'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test users email verification', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userId: number
   let userAccessToken: string
   let verificationString: string

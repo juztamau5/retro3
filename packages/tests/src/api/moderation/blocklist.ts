@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationType } from '@retroai/retro3-models'
 import {
   BlocklistCommand,
   cleanupTests,
   CommentsCommand,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function checkAllVideos (server: PeerTubeServer, token: string) {
+async function checkAllVideos (server: Retro3Server, token: string) {
   {
     const { data } = await server.videos.listWithToken({ token })
     expect(data).to.have.lengthOf(5)
@@ -26,7 +26,7 @@ async function checkAllVideos (server: PeerTubeServer, token: string) {
   }
 }
 
-async function checkAllComments (server: PeerTubeServer, token: string, videoUUID: string) {
+async function checkAllComments (server: Retro3Server, token: string, videoUUID: string) {
   const { data } = await server.comments.listThreads({ videoId: videoUUID, start: 0, count: 25, sort: '-createdAt', token })
 
   const threads = data.filter(t => t.isDeleted === false)
@@ -39,8 +39,8 @@ async function checkAllComments (server: PeerTubeServer, token: string, videoUUI
 }
 
 async function checkCommentNotification (
-  mainServer: PeerTubeServer,
-  comment: { server: PeerTubeServer, token: string, videoUUID: string, text: string },
+  mainServer: Retro3Server,
+  comment: { server: Retro3Server, token: string, videoUUID: string, text: string },
   check: 'presence' | 'absence'
 ) {
   const command = comment.server.comments
@@ -61,7 +61,7 @@ async function checkCommentNotification (
 }
 
 describe('Test blocklist', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID1: string
   let videoUUID2: string
   let videoUUID3: string
@@ -634,8 +634,8 @@ describe('Test blocklist', function () {
           expect(body.total).to.equal(2)
 
           const block = body.data[0]
-          expect(block.byAccount.displayName).to.equal('peertube')
-          expect(block.byAccount.name).to.equal('peertube')
+          expect(block.byAccount.displayName).to.equal('retro3')
+          expect(block.byAccount.name).to.equal('retro3')
           expect(block.blockedAccount.displayName).to.equal('user2')
           expect(block.blockedAccount.name).to.equal('user2')
           expect(block.blockedAccount.host).to.equal('' + servers[1].host)
@@ -646,8 +646,8 @@ describe('Test blocklist', function () {
           expect(body.total).to.equal(2)
 
           const block = body.data[0]
-          expect(block.byAccount.displayName).to.equal('peertube')
-          expect(block.byAccount.name).to.equal('peertube')
+          expect(block.byAccount.displayName).to.equal('retro3')
+          expect(block.byAccount.name).to.equal('retro3')
           expect(block.blockedAccount.displayName).to.equal('user1')
           expect(block.blockedAccount.name).to.equal('user1')
           expect(block.blockedAccount.host).to.equal('' + servers[0].host)
@@ -814,8 +814,8 @@ describe('Test blocklist', function () {
         expect(body.total).to.equal(1)
 
         const block = body.data[0]
-        expect(block.byAccount.displayName).to.equal('peertube')
-        expect(block.byAccount.name).to.equal('peertube')
+        expect(block.byAccount.displayName).to.equal('retro3')
+        expect(block.byAccount.name).to.equal('retro3')
         expect(block.blockedServer.host).to.equal('' + servers[1].host)
       })
 

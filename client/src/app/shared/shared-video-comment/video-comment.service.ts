@@ -14,7 +14,7 @@ import {
   VideoCommentAdmin,
   VideoCommentCreate,
   VideoCommentThreadTree as VideoCommentThreadTreeServerModel
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 import { VideoCommentThreadTree } from './video-comment-thread-tree.model'
 import { VideoComment } from './video-comment.model'

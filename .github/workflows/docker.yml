@@ -24,9 +24,9 @@ jobs:
           # FIXME: https://github.com/actions/checkout/issues/290
           git fetch --force --tags
 
-          one="{ \"file\": \"./support/docker/production/Dockerfile.bookworm\", \"ref\": \"develop\", \"tags\": \"chocobozzz/peertube:develop-bookworm\" }"
-          two="{ \"file\": \"./support/docker/production/Dockerfile.bookworm\", \"ref\": \"master\", \"tags\": \"chocobozzz/peertube:production-bookworm,chocobozzz/peertube:$(git describe --abbrev=0)-bookworm\" }"
-          three="{ \"file\": \"./support/docker/production/Dockerfile.nginx\", \"ref\": \"master\", \"tags\": \"chocobozzz/peertube-webserver:latest\" }"
+          one="{ \"file\": \"./support/docker/production/Dockerfile.bookworm\", \"ref\": \"develop\", \"tags\": \"RetroAI/retro3:develop-bookworm\" }"
+          two="{ \"file\": \"./support/docker/production/Dockerfile.bookworm\", \"ref\": \"master\", \"tags\": \"RetroAI/retro3:production-bookworm,RetroAI/retro3:$(git describe --abbrev=0)-bookworm\" }"
+          three="{ \"file\": \"./support/docker/production/Dockerfile.nginx\", \"ref\": \"master\", \"tags\": \"RetroAI/retro3-webserver:latest\" }"
 
           matrix="[$one,$two,$three]"
           echo "matrix={\"include\":$matrix}" >> $GITHUB_OUTPUT

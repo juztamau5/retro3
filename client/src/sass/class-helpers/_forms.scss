@@ -63,7 +63,7 @@ label + .form-group-description,
 }
 
 .reset-button {
-  @include peertube-button;
+  @include retro3-button;
   @include grey-button;
 
   height: auto;

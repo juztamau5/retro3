@@ -1,5 +1,5 @@
-import { escapeHTML } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { escapeHTML } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import express from 'express'
 import { CONFIG } from '../../../initializers/config.js'
 import { AccountModel } from '@server/models/account/account.js'

@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoPlaylistPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
-  PeerTubeServer,
+  Retro3Server,
   SearchCommand,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test ActivityPub playlists search', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let playlistServer1UUID: string
   let playlistServer2UUID: string
   let video2Server2: string

@@ -1,4 +1,4 @@
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { logger } from '../../helpers/logger.js'
 import { ACTOR_FOLLOW_SCORE, SCHEDULER_INTERVALS_MS } from '../../initializers/constants.js'
 import { ActorFollowModel } from '../../models/actor/actor-follow.js'

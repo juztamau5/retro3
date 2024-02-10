@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { CONFIG } from '../../../initializers/config.js'
 import { sendVerifyRegistrationEmail, sendVerifyUserEmail } from '../../../lib/user.js'
 import { asyncMiddleware, buildRateLimiter } from '../../../middlewares/index.js'

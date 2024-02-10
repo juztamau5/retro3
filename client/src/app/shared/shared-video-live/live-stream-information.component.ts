@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core'
 import { Video } from '@app/shared/shared-main'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
-import { LiveVideo, LiveVideoError, LiveVideoErrorType, LiveVideoSession } from '@peertube/peertube-models'
+import { LiveVideo, LiveVideoError, LiveVideoErrorType, LiveVideoSession } from '@retroai/retro3-models'
 import { LiveVideoService } from './live-video.service'
 
 @Component({

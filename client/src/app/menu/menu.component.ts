@@ -20,11 +20,11 @@ import {
 import { scrollToTop } from '@app/helpers'
 import { LanguageChooserComponent } from '@app/menu/language-chooser.component'
 import { QuickSettingsModalComponent } from '@app/modal/quick-settings-modal.component'
-import { PeertubeModalService } from '@app/shared/shared-main/peertube-modal/peertube-modal.service'
+import { Retro3ModalService } from '@app/shared/shared-main/retro3-modal/retro3-modal.service'
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap'
-import { HTMLServerConfig, ServerConfig, UserRight, UserRightType, VideoConstant } from '@peertube/peertube-models'
+import { HTMLServerConfig, ServerConfig, UserRight, UserRightType, VideoConstant } from '@retroai/retro3-models'
 
-const debugLogger = debug('peertube:menu:MenuComponent')
+const debugLogger = debug('retro3:menu:MenuComponent')
 
 @Component({
   selector: 'my-menu',
@@ -77,7 +77,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     private hotkeysService: HotkeysService,
     private screenService: ScreenService,
     private menuService: MenuService,
-    private modalService: PeertubeModalService,
+    private modalService: Retro3ModalService,
     private router: Router,
     private hooks: HooksService
   ) { }

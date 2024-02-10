@@ -1,8 +1,8 @@
 import { Op, Transaction } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, DataType, Default, ForeignKey, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { VideoPrivacy } from '@retroai/retro3-models'
 import { MScheduleVideoUpdate, MScheduleVideoUpdateFormattable } from '@server/types/models/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from './video.js'
 
 @Table({

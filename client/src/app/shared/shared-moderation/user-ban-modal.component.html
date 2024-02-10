@@ -24,20 +24,20 @@
       </div>
 
       <div class="form-group">
-        <my-peertube-checkbox
+        <my-retro3-checkbox
           inputName="banMute" formControlName="mute"
           i18n-labelText labelText="Mute to also hide videos/comments"
         >
-        </my-peertube-checkbox>
+        </my-retro3-checkbox>
       </div>
 
       <div class="form-group inputs">
         <input
-          type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+          type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
           (click)="hide()" (key.enter)="hide()"
         >
 
-        <input type="submit" i18n-value [value]="getModalTitle()" class="peertube-button orange-button" [disabled]="!form.valid" />
+        <input type="submit" i18n-value [value]="getModalTitle()" class="retro3-button orange-button" [disabled]="!form.valid" />
       </div>
     </form>
   </div>

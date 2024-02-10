@@ -41,12 +41,12 @@
         <div class="form-group" role="radiogroup">
           <label for="existingVideoStrategy" i18n>Options for existing videos on remote channel:</label>
 
-          <div class="peertube-radio-container">
+          <div class="retro3-radio-container">
             <input type="radio" name="existingVideoStrategy" id="import" value="import" formControlName="existingVideoStrategy" required />
             <label for="import" i18n>Import all and watch for new publications</label>
           </div>
 
-          <div class="peertube-radio-container">
+          <div class="retro3-radio-container">
             <input type="radio" name="existingVideoStrategy" id="doNothing" value="nothing" formControlName="existingVideoStrategy" required />
             <label for="doNothing" i18n>Only watch for new publications</label>
           </div>
@@ -57,7 +57,7 @@
     <div class="row"> <!-- submit placement block -->
       <div class="col-md-7 col-xl-5"></div>
       <div class="col-md-5 col-xl-5 d-inline-flex">
-        <input type="submit" class="peertube-button orange-button ms-auto" value="{{ getFormButtonTitle() }}" [disabled]="!form.valid">
+        <input type="submit" class="retro3-button orange-button ms-auto" value="{{ getFormButtonTitle() }}" [disabled]="!form.valid">
       </div>
     </div>
   </form>

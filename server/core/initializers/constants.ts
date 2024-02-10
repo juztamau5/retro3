@@ -1,4 +1,4 @@
-import { randomInt } from '@peertube/peertube-core-utils'
+import { randomInt } from '@retroai/retro3-core-utils'
 import {
   AbuseState,
   AbuseStateType,
@@ -27,8 +27,8 @@ import {
   VideoState,
   VideoStateType,
   VideoTranscodingFPS
-} from '@peertube/peertube-models'
-import { isTestInstance, isTestOrDevInstance, root } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { isTestInstance, isTestOrDevInstance, root } from '@retroai/retro3-node-utils'
 import { RepeatOptions } from 'bullmq'
 import { Encoding, randomBytes } from 'crypto'
 import { readJsonSync } from 'fs-extra/esm'
@@ -46,7 +46,7 @@ const LAST_MIGRATION_VERSION = 800
 // ---------------------------------------------------------------------------
 
 const API_VERSION = 'v1'
-const PEERTUBE_VERSION: string = readJsonSync(join(root(), 'package.json')).version
+const RETRO3_VERSION: string = readJsonSync(join(root(), 'package.json')).version
 
 const PAGINATION = {
   GLOBAL: {
@@ -108,7 +108,7 @@ const SORTABLE_COLUMNS = {
 
   VIDEOS: [ 'name', 'duration', 'createdAt', 'publishedAt', 'originallyPublishedAt', 'views', 'likes', 'trending', 'hot', 'best' ],
 
-  // Don't forget to update peertube-search-index with the same values
+  // Don't forget to update retro3-search-index with the same values
   VIDEOS_SEARCH: [ 'name', 'duration', 'createdAt', 'publishedAt', 'originallyPublishedAt', 'views', 'likes', 'match' ],
   VIDEO_CHANNELS_SEARCH: [ 'match', 'displayName', 'createdAt' ],
   VIDEO_PLAYLISTS_SEARCH: [ 'match', 'displayName', 'createdAt' ],
@@ -309,7 +309,7 @@ const SCHEDULER_INTERVALS_MS = {
   GEO_IP_UPDATE: 60000 * 60 * 24, // 1 day
   VIDEO_VIEWS_BUFFER_UPDATE: CONFIG.VIEWS.VIDEOS.LOCAL_BUFFER_UPDATE_INTERVAL,
   CHECK_PLUGINS: CONFIG.PLUGINS.INDEX.CHECK_LATEST_VERSIONS_INTERVAL,
-  CHECK_PEERTUBE_VERSION: 60000 * 60 * 24, // 1 day
+  CHECK_RETRO3_VERSION: 60000 * 60 * 24, // 1 day
   AUTO_FOLLOW_INDEX_INSTANCES: 60000 * 60 * 24, // 1 day
   REMOVE_OLD_VIEWS: 60000 * 60 * 24, // 1 day
   REMOVE_OLD_HISTORY: 60000 * 60 * 24, // 1 day
@@ -720,7 +720,7 @@ const OVERVIEWS = {
 
 // ---------------------------------------------------------------------------
 
-const SERVER_ACTOR_NAME = 'peertube'
+const SERVER_ACTOR_NAME = 'retro3'
 
 const ACTIVITY_PUB = {
   POTENTIAL_ACCEPT_HEADERS: [
@@ -764,7 +764,7 @@ const BCRYPT_SALT_SIZE = 10
 const ENCRYPTION = {
   ALGORITHM: 'aes-256-cbc',
   IV: 16,
-  SALT: 'peertube',
+  SALT: 'retro3',
   ENCODING: 'hex' as Encoding
 }
 
@@ -1000,7 +1000,7 @@ const REDUNDANCY = {
 
 const ACCEPT_HEADERS = [ 'html', 'application/json' ].concat(ACTIVITY_PUB.POTENTIAL_ACCEPT_HEADERS)
 const OTP = {
-  HEADER_NAME: 'x-peertube-otp',
+  HEADER_NAME: 'x-retro3-otp',
   HEADER_REQUIRED_VALUE: 'required; app'
 }
 
@@ -1020,8 +1020,8 @@ const CUSTOM_HTML_TAG_COMMENTS = {
 }
 
 const MAX_LOGS_OUTPUT_CHARACTERS = 10 * 1000 * 1000
-const LOG_FILENAME = 'peertube.log'
-const AUDIT_LOG_FILENAME = 'peertube-audit.log'
+const LOG_FILENAME = 'retro3.log'
+const AUDIT_LOG_FILENAME = 'retro3-audit.log'
 
 // ---------------------------------------------------------------------------
 
@@ -1080,7 +1080,7 @@ if (process.env.PRODUCTION_CONSTANTS !== 'true') {
     SCHEDULER_INTERVALS_MS.UPDATE_VIDEOS = 5000
     SCHEDULER_INTERVALS_MS.AUTO_FOLLOW_INDEX_INSTANCES = 5000
     SCHEDULER_INTERVALS_MS.UPDATE_INBOX_STATS = 5000
-    SCHEDULER_INTERVALS_MS.CHECK_PEERTUBE_VERSION = 2000
+    SCHEDULER_INTERVALS_MS.CHECK_RETRO3_VERSION = 2000
 
     REPEAT_JOBS['videos-views-stats'] = { every: 5000 }
 
@@ -1116,7 +1116,7 @@ if (process.env.PRODUCTION_CONSTANTS !== 'true') {
     VIEW_LIFETIME.VIEWER_COUNTER = 1000 * 5 // 5 second
     VIEW_LIFETIME.VIEWER_STATS = 1000 * 5 // 5 second
 
-    VIDEO_LIVE.CLEANUP_DELAY = getIntEnv('PEERTUBE_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY') ?? 5000
+    VIDEO_LIVE.CLEANUP_DELAY = getIntEnv('RETRO3_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY') ?? 5000
     VIDEO_LIVE.SEGMENT_TIME_SECONDS.DEFAULT_LATENCY = 2
     VIDEO_LIVE.SEGMENT_TIME_SECONDS.SMALL_LATENCY = 1
     VIDEO_LIVE.EDGE_LIVE_DELAY_SEGMENTS_NOTIFICATION = 1
@@ -1158,7 +1158,7 @@ export {
   API_VERSION,
   ENCRYPTION,
   VIDEO_LIVE,
-  PEERTUBE_VERSION,
+  RETRO3_VERSION,
   LAZY_STATIC_PATHS,
   OBJECT_STORAGE_PROXY_PATHS,
   SEARCH_INDEX,
@@ -1262,7 +1262,7 @@ function buildVideoMimetypeExt () {
     'video/webm': '.webm',
     // We'll add .ogg if additional extensions are enabled
     // We could add .ogg here but since it could be an audio file,
-    // it would be confusing for users because PeerTube will refuse their file (based on the mimetype)
+    // it would be confusing for users because retro3 will refuse their file (based on the mimetype)
     'video/ogg': [ '.ogv' ],
     'video/mp4': '.mp4'
   }

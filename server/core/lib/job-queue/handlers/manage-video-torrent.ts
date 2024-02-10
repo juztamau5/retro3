@@ -5,7 +5,7 @@ import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { VideoStreamingPlaylistModel } from '@server/models/video/video-streaming-playlist.js'
-import { ManageVideoTorrentPayload } from '@peertube/peertube-models'
+import { ManageVideoTorrentPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 
 async function processManageVideoTorrent (job: Job) {

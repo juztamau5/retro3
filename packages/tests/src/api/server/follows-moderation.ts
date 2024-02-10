@@ -2,17 +2,17 @@
 
 import { expect } from 'chai'
 import { expectStartWith } from '@tests/shared/checks.js'
-import { ActorFollow, FollowState } from '@peertube/peertube-models'
+import { ActorFollow, FollowState } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   FollowsCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function checkServer1And2HasFollowers (servers: PeerTubeServer[], state = 'accepted') {
+async function checkServer1And2HasFollowers (servers: Retro3Server[], state = 'accepted') {
   const fns = [
     servers[0].follows.getFollowings.bind(servers[0].follows),
     servers[1].follows.getFollowers.bind(servers[1].follows)
@@ -24,22 +24,22 @@ async function checkServer1And2HasFollowers (servers: PeerTubeServer[], state = 
 
     const follow = body.data[0]
     expect(follow.state).to.equal(state)
-    expect(follow.follower.url).to.equal(servers[0].url + '/accounts/peertube')
-    expect(follow.following.url).to.equal(servers[1].url + '/accounts/peertube')
+    expect(follow.follower.url).to.equal(servers[0].url + '/accounts/retro3')
+    expect(follow.following.url).to.equal(servers[1].url + '/accounts/retro3')
   }
 }
 
 async function checkFollows (options: {
-  follower: PeerTubeServer
+  follower: Retro3Server
   followerState: FollowState | 'deleted'
 
-  following: PeerTubeServer
+  following: Retro3Server
   followingState: FollowState | 'deleted'
 }) {
   const { follower, followerState, followingState, following } = options
 
-  const followerUrl = follower.url + '/accounts/peertube'
-  const followingUrl = following.url + '/accounts/peertube'
+  const followerUrl = follower.url + '/accounts/retro3'
+  const followingUrl = following.url + '/accounts/retro3'
   const finder = (d: ActorFollow) => d.follower.url === followerUrl && d.following.url === followingUrl
 
   {
@@ -69,7 +69,7 @@ async function checkFollows (options: {
   }
 }
 
-async function checkNoFollowers (servers: PeerTubeServer[]) {
+async function checkNoFollowers (servers: Retro3Server[]) {
   const fns = [
     servers[0].follows.getFollowings.bind(servers[0].follows),
     servers[1].follows.getFollowers.bind(servers[1].follows)
@@ -82,7 +82,7 @@ async function checkNoFollowers (servers: PeerTubeServer[]) {
 }
 
 describe('Test follows moderation', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let commands: FollowsCommand[]
 
   before(async function () {
@@ -187,7 +187,7 @@ describe('Test follows moderation', function () {
     })
 
     it('Should accept a follower', async function () {
-      await commands[1].acceptFollower({ follower: 'peertube@' + servers[0].host })
+      await commands[1].acceptFollower({ follower: 'retro3@' + servers[0].host })
       await waitJobs(servers)
 
       await checkServer1And2HasFollowers(servers)
@@ -214,7 +214,7 @@ describe('Test follows moderation', function () {
         expect(body.total).to.equal(1)
       }
 
-      await commands[2].rejectFollower({ follower: 'peertube@' + servers[0].host })
+      await commands[2].rejectFollower({ follower: 'retro3@' + servers[0].host })
       await waitJobs(servers)
 
       { // server 1
@@ -306,7 +306,7 @@ describe('Test follows moderation', function () {
     })
 
     it('Should be able to reject a previously accepted follower', async function () {
-      await commands[1].rejectFollower({ follower: 'peertube@' + servers[0].host })
+      await commands[1].rejectFollower({ follower: 'retro3@' + servers[0].host })
       await waitJobs(servers)
 
       await checkFollows({
@@ -318,7 +318,7 @@ describe('Test follows moderation', function () {
     })
 
     it('Should be able to re accept a previously rejected follower', async function () {
-      await commands[1].acceptFollower({ follower: 'peertube@' + servers[0].host })
+      await commands[1].acceptFollower({ follower: 'retro3@' + servers[0].host })
       await waitJobs(servers)
 
       await checkFollows({

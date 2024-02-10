@@ -1,6 +1,6 @@
 import ffmpeg, { FfprobeData } from 'fluent-ffmpeg'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { VideoResolution } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { VideoResolution } from '@retroai/retro3-models'
 
 /**
  *

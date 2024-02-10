@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import validator from 'validator'
 import { MUserAccountId } from '@server/types/models/index.js'
-import { ActorImageType } from '@peertube/peertube-models'
+import { ActorImageType } from '@retroai/retro3-models'
 import { AbstractRunQuery } from '../../../../shared/abstract-run-query.js'
 import { createSafeIn } from '../../../../shared/index.js'
 import { VideoTableAttributes } from './video-table-attributes.js'

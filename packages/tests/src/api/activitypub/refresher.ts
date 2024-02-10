@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { SQLCommand } from '@tests/shared/sql-command.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoPlaylistPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test AP refresher', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let sqlCommandServer2: SQLCommand
   let videoUUID1: string
   let videoUUID2: string

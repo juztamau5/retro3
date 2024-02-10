@@ -8,7 +8,7 @@ import { VideoPlaylist } from '../shared-video-playlist'
 import { AdvancedSearch } from './advanced-search.model'
 import { SearchService } from './search.service'
 
-const debugLogger = debug('peertube:search:FindInBulkService')
+const debugLogger = debug('retro3:search:FindInBulkService')
 
 type BulkObservables <P extends number | string, R> = {
   notifier: Subject<P>

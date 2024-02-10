@@ -1,0 +1,43 @@
+name: "Reusable prepare retro3 build"
+
+description: "Reusable prepare retro3 build"
+
+inputs:
+  node-version:
+    required: true
+    description: 'NodeJS version'
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: |
+          **/node_modules
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install --frozen-lockfile
+
+    - name: Install retro3 runner dependencies
+      shell: bash
+      run: cd apps/retro3-runner && yarn install --frozen-lockfile
+
+    - name: Install retro3 CLI dependencies
+      shell: bash
+      run: cd apps/retro3-cli && yarn install --frozen-lockfile
+
+    - name: Display retro3 dependencies
+      shell: bash
+      run: ls -l node_modules/@retroai

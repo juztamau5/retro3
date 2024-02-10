@@ -5,8 +5,8 @@ import nodeMediaServerLogger from 'node-media-server/src/node_core_logger.js'
 import NodeRtmpSession from 'node-media-server/src/node_rtmp_session.js'
 import { join } from 'path'
 import { createServer as createServerTLS, Server as ServerTLS } from 'tls'
-import { pick, wait } from '@peertube/peertube-core-utils'
-import { LiveVideoError, LiveVideoErrorType, VideoState } from '@peertube/peertube-models'
+import { pick, wait } from '@retroai/retro3-core-utils'
+import { LiveVideoError, LiveVideoErrorType, VideoState } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { CONFIG, registerConfigChangedHandler } from '@server/initializers/config.js'
 import { VIDEO_LIVE, WEBSERVER } from '@server/initializers/constants.js'
@@ -25,11 +25,11 @@ import {
   getVideoStreamDimensionsInfo,
   getVideoStreamFPS,
   hasAudioStream
-} from '@peertube/peertube-ffmpeg'
+} from '@retroai/retro3-ffmpeg'
 import { federateVideoIfNeeded } from '../activitypub/videos/index.js'
 import { JobQueue } from '../job-queue/index.js'
 import { getLiveReplayBaseDirectory } from '../paths.js'
-import { PeerTubeSocket } from '../peertube-socket.js'
+import { Retro3Socket } from '../retro3-socket.js'
 import { Hooks } from '../plugins/hooks.js'
 import { computeResolutionsToTranscode } from '../transcoding/transcoding-resolutions.js'
 import { LiveQuotaStore } from './live-quota-store.js'
@@ -417,7 +417,7 @@ class LiveManager {
         logger.error('Cannot federate live video %s.', video.url, { err, ...localLTags })
       }
 
-      PeerTubeSocket.Instance.sendVideoLiveNewState(video)
+      Retro3Socket.Instance.sendVideoLiveNewState(video)
 
       Hooks.runAction('action:live.video.state.updated', { video })
     } catch (err) {
@@ -484,7 +484,7 @@ class LiveManager {
 
       await fullVideo.save()
 
-      PeerTubeSocket.Instance.sendVideoLiveNewState(fullVideo)
+      Retro3Socket.Instance.sendVideoLiveNewState(fullVideo)
 
       await federateVideoIfNeeded(fullVideo, false)
 

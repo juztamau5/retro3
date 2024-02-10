@@ -1,18 +1,18 @@
 import { HybridLoaderSettings } from '@peertube/p2p-media-loader-core'
 import { HlsJsEngineSettings } from '@peertube/p2p-media-loader-hlsjs'
 import { logger } from '@root-helpers/logger'
-import { LiveVideoLatencyMode } from '@peertube/peertube-models'
-import { getAverageBandwidthInStore } from '../../peertube-player-local-storage'
-import { P2PMediaLoader, P2PMediaLoaderPluginOptions, PeerTubePlayerContructorOptions, PeerTubePlayerLoadOptions } from '../../types'
+import { LiveVideoLatencyMode } from '@retroai/retro3-models'
+import { getAverageBandwidthInStore } from '../../retro3-player-local-storage'
+import { P2PMediaLoader, P2PMediaLoaderPluginOptions, Retro3PlayerContructorOptions, Retro3PlayerLoadOptions } from '../../types'
 import { getRtcConfig, isSameOrigin } from '../common'
 import { RedundancyUrlManager } from '../p2p-media-loader/redundancy-url-manager'
 import { segmentUrlBuilderFactory } from '../p2p-media-loader/segment-url-builder'
 import { SegmentValidator } from '../p2p-media-loader/segment-validator'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 
 type ConstructorOptions =
-  Pick<PeerTubePlayerContructorOptions, 'pluginsManager' | 'serverUrl' | 'authorizationHeader'> &
-  Pick<PeerTubePlayerLoadOptions, 'videoPassword' | 'requiresUserAuth' | 'videoFileToken' | 'requiresPassword' |
+  Pick<Retro3PlayerContructorOptions, 'pluginsManager' | 'serverUrl' | 'authorizationHeader'> &
+  Pick<Retro3PlayerLoadOptions, 'videoPassword' | 'requiresUserAuth' | 'videoFileToken' | 'requiresPassword' |
   'isLive' | 'liveOptions' | 'p2pEnabled' | 'hls'>
 
 export class HLSOptionsBuilder {
@@ -85,7 +85,7 @@ export class HLSOptionsBuilder {
     let consumeOnly = false
     if (
       (navigator as any)?.connection?.type === 'cellular' ||
-      peertubeLocalStorage.getItem('peertube-videojs-p2p-consume-only') === 'true' // Use for E2E testing
+      retro3LocalStorage.getItem('retro3-videojs-p2p-consume-only') === 'true' // Use for E2E testing
     ) {
       logger.info('We are on a cellular connection: disabling seeding.')
       consumeOnly = true
@@ -113,7 +113,7 @@ export class HLSOptionsBuilder {
 
           if (!isSameOrigin(this.options.serverUrl, url)) return
 
-          if (requiresPassword) xhr.setRequestHeader('x-peertube-video-password', this.options.videoPassword())
+          if (requiresPassword) xhr.setRequestHeader('x-retro3-video-password', this.options.videoPassword())
           else xhr.setRequestHeader('Authorization', this.options.authorizationHeader())
         },
 

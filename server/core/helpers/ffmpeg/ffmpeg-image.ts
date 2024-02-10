@@ -1,4 +1,4 @@
-import { FFmpegImage } from '@peertube/peertube-ffmpeg'
+import { FFmpegImage } from '@retroai/retro3-ffmpeg'
 import { getFFmpegCommandWrapperOptions } from './ffmpeg-options.js'
 
 export function processGIF (options: Parameters<FFmpegImage['processGIF']>[0]) {

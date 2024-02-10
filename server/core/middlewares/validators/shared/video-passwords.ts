@@ -1,12 +1,12 @@
 import express from 'express'
-import { HttpStatusCode, UserRight, VideoPrivacy } from '@peertube/peertube-models'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { HttpStatusCode, UserRight, VideoPrivacy } from '@retroai/retro3-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
 import { VideoPasswordModel } from '@server/models/video/video-password.js'
 import { header } from 'express-validator'
 import { getVideoWithAttributes } from '@server/helpers/video.js'
 
 function isValidVideoPasswordHeader () {
-  return header('x-peertube-video-password')
+  return header('x-retro3-video-password')
     .optional()
     .isString()
 }

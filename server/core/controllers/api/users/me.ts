@@ -1,16 +1,16 @@
 import 'multer'
 import express from 'express'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   ActorImageType,
   HttpStatusCode,
   UserUpdateMe,
   UserVideoQuota,
   UserVideoRate as FormattedUserVideoRate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { auditLoggerFactory, getAuditIdFromRes, UserAuditView } from '@server/helpers/audit-logger.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { createReqFiles } from '../../../helpers/express-utils.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'
 import { CONFIG } from '../../../initializers/config.js'

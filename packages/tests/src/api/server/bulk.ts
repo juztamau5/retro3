@@ -6,15 +6,15 @@ import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test bulk actions', function () {
   const commentsUser3: { videoId: number, commentId: number }[] = []
 
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let user1Token: string
   let user2Token: string
   let user3Token: string

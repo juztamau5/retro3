@@ -1,6 +1,6 @@
 import express from 'express'
 import { body } from 'express-validator'
-import { CustomConfig, HttpStatusCode } from '@peertube/peertube-models'
+import { CustomConfig, HttpStatusCode } from '@retroai/retro3-models'
 import { isIntOrNull } from '@server/helpers/custom-validators/misc.js'
 import { CONFIG, isEmailEnabled } from '@server/initializers/config.js'
 import { isThemeNameValid } from '../../helpers/custom-validators/plugins.js'

@@ -2,19 +2,19 @@
 
 import { expect } from 'chai'
 import { testImageGeneratedByFFmpeg } from '@tests/shared/checks.js'
-import { VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { VideoPlaylistPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Playlist thumbnail', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   let playlistWithoutThumbnailId: number
   let playlistWithThumbnailId: number
@@ -27,13 +27,13 @@ describe('Playlist thumbnail', function () {
   let video1: number
   let video2: number
 
-  async function getPlaylistWithoutThumbnail (server: PeerTubeServer) {
+  async function getPlaylistWithoutThumbnail (server: Retro3Server) {
     const body = await server.playlists.list({ start: 0, count: 10 })
 
     return body.data.find(p => p.displayName === 'playlist without thumbnail')
   }
 
-  async function getPlaylistWithThumbnail (server: PeerTubeServer) {
+  async function getPlaylistWithThumbnail (server: Retro3Server) {
     const body = await server.playlists.list({ start: 0, count: 10 })
 
     return body.data.find(p => p.displayName === 'playlist with thumbnail')

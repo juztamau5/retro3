@@ -1,6 +1,17 @@
-import { HttpStatusCode, LiveVideo, VideoDetails, VideoToken } from '@peertube/peertube-models'
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
+import { HttpStatusCode, LiveVideo, VideoDetails, VideoToken } from '@retroai/retro3-models'
 import { logger } from '../../../root-helpers'
-import { PeerTubeServerError } from '../../../types'
+import { Retro3ServerError } from '../../../types'
 import { AuthHTTP } from './auth-http'
 
 export class VideoFetcher {
@@ -30,7 +41,7 @@ export class VideoFetcher {
       }
       if (videoResponse?.status === HttpStatusCode.FORBIDDEN_403) {
         const res = await videoResponse.json()
-        throw new PeerTubeServerError(res.message || res.detail, res.code)
+        throw new Retro3ServerError(res.message || res.detail, res.code)
       }
       throw new Error('We cannot fetch the video. Please try again later.')
     }

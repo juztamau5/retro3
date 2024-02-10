@@ -6,8 +6,8 @@ body:
     attributes:
       value: |
         Please search among past open/closed issues for a similar one beforehand:
-          - https://github.com/Chocobozzz/PeerTube/issues?q=
-          - https://framacolibri.org/c/peertube
+          - https://github.com/juztamau5/retro3/issues?q=
+          - https://framacolibri.org/c/retro3
 
   - type: textarea
     attributes:

@@ -6,14 +6,14 @@ import {
   cleanupTests,
   CommentsCommand,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video comments', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let videoId: number
   let videoUUID: string
   let threadId: number

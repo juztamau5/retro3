@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { ServerConfig, VideoPlaylistCreateResult } from '@peertube/peertube-models'
-import { cleanupTests, makeHTMLRequest, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { ServerConfig, VideoPlaylistCreateResult } from '@retroai/retro3-models'
+import { cleanupTests, makeHTMLRequest, Retro3Server } from '@retroai/retro3-server-commands'
 import { checkIndexTags, prepareClientTests } from '@tests/shared/client.js'
 
 describe('Test embed HTML generation', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let videoIds: (string | number)[] = []
   let videoName: string
@@ -58,7 +58,7 @@ describe('Test embed HTML generation', function () {
     it('Should have the correct embed html instance tags', async function () {
       const res = await makeHTMLRequest(servers[0].url, '/videos/embed/toto')
 
-      checkIndexTags(res.text, `PeerTube`, instanceDescription, '', config)
+      checkIndexTags(res.text, `retro3`, instanceDescription, '', config)
 
       expect(res.text).to.not.contain(`"name":`)
     })
@@ -67,7 +67,7 @@ describe('Test embed HTML generation', function () {
       const config = await servers[0].config.getConfig()
       const res = await makeHTMLRequest(servers[0].url, servers[0].store.video.embedPath)
 
-      checkIndexTags(res.text, `${videoName} - PeerTube`, videoDescriptionPlainText, '', config)
+      checkIndexTags(res.text, `${videoName} - retro3`, videoDescriptionPlainText, '', config)
 
       expect(res.text).to.contain(`"name":"${videoName}",`)
     })
@@ -76,7 +76,7 @@ describe('Test embed HTML generation', function () {
       const config = await servers[0].config.getConfig()
       const res = await makeHTMLRequest(servers[0].url, '/video-playlists/embed/' + playlistIds[0])
 
-      checkIndexTags(res.text, `${playlistName} - PeerTube`, playlistDescription, '', config)
+      checkIndexTags(res.text, `${playlistName} - retro3`, playlistDescription, '', config)
       expect(res.text).to.contain(`"name":"${playlistName}",`)
     })
   })

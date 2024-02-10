@@ -8,23 +8,23 @@ import {
   UserNotificationSetting,
   UserNotificationSettingValue,
   UserNotificationType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   ConfigCommand,
-  PeerTubeServer,
+  Retro3Server,
   createMultipleServers,
   doubleFollow,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expect } from 'chai'
 import { inspect } from 'util'
 import { MockSmtpServer } from './mock-servers/index.js'
 
 type CheckerBaseParams = {
-  server: PeerTubeServer
+  server: Retro3Server
   emails: any[]
   socketNotifications: UserNotification[]
   token: string
@@ -49,7 +49,7 @@ function getAllNotificationsSettings (): UserNotificationSetting {
     abuseNewMessage: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     abuseStateChange: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     autoInstanceFollowing: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
-    newPeerTubeVersion: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
+    newRetro3Version: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     myVideoStudioEditionFinished: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     newPluginVersion: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL
   }
@@ -288,10 +288,10 @@ async function checkNewInstanceFollower (options: CheckerBaseParams & {
       expect(notification.type).to.equal(notificationType)
 
       checkActor(notification.actorFollow.follower, { withAvatar: false })
-      expect(notification.actorFollow.follower.name).to.equal('peertube')
+      expect(notification.actorFollow.follower.name).to.equal('retro3')
       expect(notification.actorFollow.follower.host).to.equal(followerHost)
 
-      expect(notification.actorFollow.following.name).to.equal('peertube')
+      expect(notification.actorFollow.following.name).to.equal('retro3')
     } else {
       expect(notification).to.satisfy(n => {
         return n.type !== notificationType || n.actorFollow.follower.host !== followerHost
@@ -324,10 +324,10 @@ async function checkAutoInstanceFollowing (options: CheckerBaseParams & {
       const following = notification.actorFollow.following
 
       checkActor(following, { withAvatar: false })
-      expect(following.name).to.equal('peertube')
+      expect(following.name).to.equal('retro3')
       expect(following.host).to.equal(followingHost)
 
-      expect(notification.actorFollow.follower.name).to.equal('peertube')
+      expect(notification.actorFollow.follower.name).to.equal('retro3')
       expect(notification.actorFollow.follower.host).to.equal(followerHost)
     } else {
       expect(notification).to.satisfy(n => {
@@ -637,23 +637,23 @@ async function checkNewBlacklistOnMyVideo (options: CheckerBaseParams & {
   await checkNotification({ ...options, notificationChecker, emailNotificationFinder, checkType: 'presence' })
 }
 
-async function checkNewPeerTubeVersion (options: CheckerBaseParams & {
+async function checkNewRetro3Version (options: CheckerBaseParams & {
   latestVersion: string
   checkType: CheckerType
 }) {
   const { latestVersion } = options
-  const notificationType = UserNotificationType.NEW_PEERTUBE_VERSION
+  const notificationType = UserNotificationType.NEW_RETRO3_VERSION
 
   function notificationChecker (notification: UserNotification, checkType: CheckerType) {
     if (checkType === 'presence') {
       expect(notification).to.not.be.undefined
       expect(notification.type).to.equal(notificationType)
 
-      expect(notification.peertube).to.exist
-      expect(notification.peertube.latestVersion).to.equal(latestVersion)
+      expect(notification.retro3).to.exist
+      expect(notification.retro3.latestVersion).to.equal(latestVersion)
     } else {
       expect(notification).to.satisfy((n: UserNotification) => {
-        return n?.peertube === undefined || n.peertube.latestVersion !== latestVersion
+        return n?.retro3 === undefined || n.retro3.latestVersion !== latestVersion
       })
     }
   }
@@ -797,7 +797,7 @@ export {
   prepareNotificationsTest,
   checkNewCommentAbuseForModerators,
   checkNewAccountAbuseForModerators,
-  checkNewPeerTubeVersion,
+  checkNewRetro3Version,
   checkNewPluginVersion,
   checkVideoStudioEditionIsFinished,
   checkRegistrationRequest

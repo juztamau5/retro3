@@ -1,5 +1,5 @@
 import { Video } from '@app/shared/shared-main'
-import { VideoPlaylistElement as ServerVideoPlaylistElement, VideoPlaylistElementType_Type } from '@peertube/peertube-models'
+import { VideoPlaylistElement as ServerVideoPlaylistElement, VideoPlaylistElementType_Type } from '@retroai/retro3-models'
 
 export class VideoPlaylistElement implements ServerVideoPlaylistElement {
   id: number

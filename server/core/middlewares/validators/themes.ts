@@ -1,6 +1,6 @@
 import express from 'express'
 import { param } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isSafePath } from '../../helpers/custom-validators/misc.js'
 import { isPluginNameValid, isPluginStableOrUnstableVersionValid } from '../../helpers/custom-validators/plugins.js'
 import { PluginManager } from '../../lib/plugins/plugin-manager.js'

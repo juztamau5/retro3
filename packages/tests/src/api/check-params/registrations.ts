@@ -1,18 +1,18 @@
-import { omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, HttpStatusCodeType, UserRole } from '@peertube/peertube-models'
+import { omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, HttpStatusCodeType, UserRole } from '@retroai/retro3-models'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import {
   cleanupTests,
   createSingleServer,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test registrations API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userToken: string
   let moderatorToken: string
 
@@ -103,8 +103,8 @@ describe('Test registrations API validators', function () {
         await check(fields, HttpStatusCode.CONFLICT_409)
       })
 
-      it('Should fail with a "peertube" username', async function () {
-        const fields = { ...baseCorrectParams, username: 'peertube' }
+      it('Should fail with a "retro3" username', async function () {
+        const fields = { ...baseCorrectParams, username: 'retro3' }
 
         await check(fields, HttpStatusCode.CONFLICT_409)
       })

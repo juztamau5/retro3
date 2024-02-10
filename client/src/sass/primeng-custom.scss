@@ -460,7 +460,7 @@ body p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
 }
 
 // ---------------------------------------------------------------------------
-// PeerTube customizations
+// retro3 customizations
 // ---------------------------------------------------------------------------
 
 p-table {
@@ -841,7 +841,7 @@ p-toast {
         }
 
         p {
-          @include peertube-word-wrap;
+          @include retro3-word-wrap;
 
           margin-bottom: 0;
         }

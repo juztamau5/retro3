@@ -3,11 +3,11 @@ import { ensureDir, pathExists } from 'fs-extra/esm'
 import { writeFile } from 'fs/promises'
 import { OptionsOfBufferResponseBody } from 'got'
 import { dirname, join } from 'path'
-import { VideoResolution, VideoResolutionType } from '@peertube/peertube-models'
+import { VideoResolution, VideoResolutionType } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { logger, loggerTagsFactory } from '../logger.js'
 import { getProxy, isProxyEnabled } from '../proxy.js'
-import { isBinaryResponse, peertubeGot } from '../requests.js'
+import { isBinaryResponse, retro3Got } from '../requests.js'
 
 const lTags = loggerTagsFactory('youtube-dl')
 
@@ -42,7 +42,7 @@ export class YoutubeDLCLI {
     }
 
     try {
-      let gotResult = await peertubeGot(url, gotOptions)
+      let gotResult = await retro3Got(url, gotOptions)
 
       if (!isBinaryResponse(gotResult)) {
         const json = JSON.parse(gotResult.body.toString())
@@ -53,7 +53,7 @@ export class YoutubeDLCLI {
         const releaseAsset = latest.assets.find(a => a.name === releaseName)
         if (!releaseAsset) throw new Error(`Cannot find appropriate release with name ${releaseName} in release assets`)
 
-        gotResult = await peertubeGot(releaseAsset.browser_download_url, gotOptions)
+        gotResult = await retro3Got(releaseAsset.browser_download_url, gotOptions)
       }
 
       if (!isBinaryResponse(gotResult)) {

@@ -1,3 +1,14 @@
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
 import {
   RegisterClientFormFieldOptions,
   RegisterClientHookOptions,
@@ -5,7 +16,7 @@ import {
   RegisterClientSettingsScriptOptions,
   RegisterClientVideoFieldOptions,
   ServerConfig, SettingEntries
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export type RegisterClientOptions = {
   registerHook: (options: RegisterClientHookOptions) => void
@@ -16,7 +27,7 @@ export type RegisterClientOptions = {
 
   registerClientRoute: (options: RegisterClientRouteOptions) => void
 
-  peertubeHelpers: RegisterClientHelpers
+  Retro3Helpers: RegisterClientHelpers
 }
 
 export type RegisterClientHelpers = {
@@ -24,7 +35,7 @@ export type RegisterClientHelpers = {
 
   getBaseRouterRoute: () => string
 
-  // PeerTube >= 5.0
+  // retro3 >= 5.0
   getBaseWebSocketRoute: () => string
 
   getBasePluginClientPath: () => string

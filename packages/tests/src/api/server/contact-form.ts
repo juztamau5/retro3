@@ -2,20 +2,20 @@
 
 import { expect } from 'chai'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
   ContactFormCommand,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test contact form', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const emails: object[] = []
   let command: ContactFormCommand
 

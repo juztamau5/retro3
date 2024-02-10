@@ -1,6 +1,6 @@
 import express from 'express'
 import { generateOTPSecret, isOTPValid } from '@server/helpers/otp.js'
-import { encrypt } from '@server/helpers/peertube-crypto.js'
+import { encrypt } from '@server/helpers/retro3-crypto.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { Redis } from '@server/lib/redis.js'
 import { asyncMiddleware, authenticate, usersCheckCurrentPasswordFactory } from '@server/middlewares/index.js'
@@ -9,7 +9,7 @@ import {
   disableTwoFactorValidator,
   requestOrConfirmTwoFactorValidator
 } from '@server/middlewares/validators/two-factor.js'
-import { HttpStatusCode, TwoFactorEnableResult } from '@peertube/peertube-models'
+import { HttpStatusCode, TwoFactorEnableResult } from '@retroai/retro3-models'
 
 const twoFactorRouter = express.Router()
 
@@ -47,7 +47,7 @@ async function requestTwoFactor (req: express.Request, res: express.Response) {
 
   const { secret, uri } = generateOTPSecret(user.email)
 
-  const encryptedSecret = await encrypt(secret, CONFIG.SECRETS.PEERTUBE)
+  const encryptedSecret = await encrypt(secret, CONFIG.SECRETS.RETRO3)
   const requestToken = await Redis.Instance.setTwoFactorRequest(user.id, encryptedSecret)
 
   return res.json({

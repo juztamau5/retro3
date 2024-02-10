@@ -4,7 +4,7 @@ import maxmind, { CountryResponse, Reader } from 'maxmind'
 import { join } from 'path'
 import { CONFIG } from '@server/initializers/config.js'
 import { logger, loggerTagsFactory } from './logger.js'
-import { isBinaryResponse, peertubeGot } from './requests.js'
+import { isBinaryResponse, retro3Got } from './requests.js'
 
 const lTags = loggerTagsFactory('geo-ip')
 
@@ -46,7 +46,7 @@ export class GeoIP {
     const gotOptions = { context: { bodyKBLimit: 200_000 }, responseType: 'buffer' as 'buffer' }
 
     try {
-      const gotResult = await peertubeGot(url, gotOptions)
+      const gotResult = await retro3Got(url, gotOptions)
 
       if (!isBinaryResponse(gotResult)) {
         throw new Error('Not a binary response')

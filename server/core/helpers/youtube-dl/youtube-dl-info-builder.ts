@@ -1,5 +1,5 @@
 import { CONSTRAINTS_FIELDS, VIDEO_CATEGORIES, VIDEO_LANGUAGES, VIDEO_LICENCES } from '../../initializers/constants.js'
-import { peertubeTruncate } from '../core-utils.js'
+import { retro3Truncate } from '../core-utils.js'
 import { isUrlValid } from '../custom-validators/activitypub/misc.js'
 import { isArray } from '../custom-validators/misc.js'
 
@@ -142,7 +142,7 @@ export class YoutubeDLInfoBuilder {
   }
 
   private titleTruncation (title: string) {
-    return peertubeTruncate(title, {
+    return retro3Truncate(title, {
       length: CONSTRAINTS_FIELDS.VIDEOS.NAME.max,
       separator: /,? +/,
       omission: ' […]'
@@ -152,7 +152,7 @@ export class YoutubeDLInfoBuilder {
   private descriptionTruncation (description: string) {
     if (!description || description.length < CONSTRAINTS_FIELDS.VIDEOS.DESCRIPTION.min) return undefined
 
-    return peertubeTruncate(description, {
+    return retro3Truncate(description, {
       length: CONSTRAINTS_FIELDS.VIDEOS.DESCRIPTION.max,
       separator: /,? +/,
       omission: ' […]'
@@ -178,8 +178,8 @@ export class YoutubeDLInfoBuilder {
     if (licence.includes('Creative Commons Attribution')) return 1
 
     for (const key of Object.keys(VIDEO_LICENCES)) {
-      const peertubeLicence = VIDEO_LICENCES[key]
-      if (peertubeLicence.toLowerCase() === licence.toLowerCase()) return parseInt(key, 10)
+      const retro3Licence = VIDEO_LICENCES[key]
+      if (retro3Licence.toLowerCase() === licence.toLowerCase()) return parseInt(key, 10)
     }
 
     return undefined

@@ -8,7 +8,7 @@ const icons = {
   'language': require('!!raw-loader?!../../../assets/images/misc/language.svg').default,
   'video-lang': require('!!raw-loader?!../../../assets/images/misc/video-lang.svg').default,
   'support': require('!!raw-loader?!../../../assets/images/misc/support.svg').default,
-  'peertube-x': require('!!raw-loader?!../../../assets/images/misc/peertube-x.svg').default,
+  'retro3-x': require('!!raw-loader?!../../../assets/images/misc/retro3-x.svg').default,
   'robot': require('!!raw-loader?!../../../assets/images/misc/miscellaneous-services.svg').default, // material ui
   'videos': require('!!raw-loader?!../../../assets/images/misc/video-library.svg').default, // material ui
   'history': require('!!raw-loader?!../../../assets/images/misc/history.svg').default, // material ui

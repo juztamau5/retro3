@@ -1,2 +1,2 @@
-export * from './peertube-player-options'
-export * from './peertube-videojs-typings'
+export * from './retro3-player-options'
+export * from './retro3-videojs-typings'

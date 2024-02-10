@@ -13,7 +13,7 @@ import {
   ViewContainerRef
 } from '@angular/core'
 
-const debugLogger = debug('peertube:main:DeferLoadingDirective')
+const debugLogger = debug('retro3:main:DeferLoadingDirective')
 
 @Directive({
   selector: '[myDeferLoading]'

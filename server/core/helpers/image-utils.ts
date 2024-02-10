@@ -1,7 +1,7 @@
 import { copy, remove } from 'fs-extra/esm'
 import { readFile, rename } from 'fs/promises'
 import { ColorActionName } from '@jimp/plugin-color'
-import { buildUUID, getLowercaseExtension } from '@peertube/peertube-node-utils'
+import { buildUUID, getLowercaseExtension } from '@retroai/retro3-node-utils'
 import { convertWebPToJPG, processGIF } from './ffmpeg/index.js'
 import { logger } from './logger.js'
 

@@ -1,5 +1,5 @@
-import { buildVideoEmbedPath, buildVideoWatchPath, pick, wait } from '@peertube/peertube-core-utils'
-import { ffprobePromise, getAudioStream, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream } from '@peertube/peertube-ffmpeg'
+import { buildVideoEmbedPath, buildVideoWatchPath, pick, wait } from '@retroai/retro3-core-utils'
+import { ffprobePromise, getAudioStream, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream } from '@retroai/retro3-ffmpeg'
 import {
   ResultList,
   ThumbnailType,
@@ -17,9 +17,9 @@ import {
   VideoStreamingPlaylistType,
   type VideoPrivacyType,
   type VideoStateType
-} from '@peertube/peertube-models'
-import { uuidToShort } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { uuidToShort } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { getPrivaciesForFederation, isPrivacyForFederation, isStateForFederation } from '@server/helpers/video.js'
 import { InternalEventEmitter } from '@server/lib/internal-event-emitter.js'
 import { LiveManager } from '@server/lib/live/live-manager.js'
@@ -64,7 +64,7 @@ import {
   Table,
   UpdatedAt
 } from 'sequelize-typescript'
-import { peertubeTruncate } from '../../helpers/core-utils.js'
+import { retro3Truncate } from '../../helpers/core-utils.js'
 import { isActivityPubUrlValid } from '../../helpers/custom-validators/activitypub/misc.js'
 import { exists, isArray, isBooleanValid, isUUIDValid } from '../../helpers/custom-validators/misc.js'
 import {
@@ -1624,7 +1624,7 @@ export class VideoModel extends Model<Partial<AttributesOnly<VideoModel>>> {
     options: BuildVideosListQueryOptions,
     countVideos = true
   ): Promise<ResultList<VideoModel>> {
-    const span = tracer.startSpan('peertube.VideoModel.getAvailableForApi')
+    const span = tracer.startSpan('retro3.VideoModel.getAvailableForApi')
 
     function getCount () {
       if (countVideos !== true) return Promise.resolve(undefined)
@@ -1845,7 +1845,7 @@ export class VideoModel extends Model<Partial<AttributesOnly<VideoModel>>> {
     if (!this.description) return null
 
     const maxLength = CONSTRAINTS_FIELDS.VIDEOS.TRUNCATED_DESCRIPTION.max
-    return peertubeTruncate(this.description, { length: maxLength })
+    return retro3Truncate(this.description, { length: maxLength })
   }
 
   getAllFiles () {

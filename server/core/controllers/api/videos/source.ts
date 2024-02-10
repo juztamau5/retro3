@@ -14,7 +14,7 @@ import { openapiOperationDoc } from '@server/middlewares/doc.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { VideoSourceModel } from '@server/models/video/video-source.js'
 import { MStreamingPlaylistFiles, MVideo, MVideoFile, MVideoFullLight } from '@server/types/models/index.js'
-import { VideoState } from '@peertube/peertube-models'
+import { VideoState } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 import {
   asyncMiddleware,

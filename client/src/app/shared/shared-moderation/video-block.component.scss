@@ -2,7 +2,7 @@
 @use '_mixins' as *;
 
 textarea {
-  @include peertube-textarea(100%, 100px);
+  @include retro3-textarea(100%, 100px);
 }
 
 .live-info {

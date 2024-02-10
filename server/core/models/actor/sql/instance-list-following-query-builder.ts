@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import { ModelBuilder } from '@server/models/shared/index.js'
 import { MActorFollowActorsDefault } from '@server/types/models/index.js'
-import { ActivityPubActorType, FollowState } from '@peertube/peertube-models'
+import { ActivityPubActorType, FollowState } from '@retroai/retro3-models'
 import { parseRowCountResult } from '../../shared/index.js'
 import { InstanceListFollowsQueryBuilder } from './shared/instance-list-follows-query-builder.js'
 

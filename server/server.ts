@@ -1,7 +1,7 @@
 import { registerOpentelemetryTracing } from '@server/lib/opentelemetry/tracing.js'
 await registerOpentelemetryTracing()
 
-process.title = 'peertube'
+process.title = 'retro3'
 
 // ----------- Core checker -----------
 import { checkMissedConfig, checkFFmpeg, checkNodeVersion } from './core/initializers/checker-before-init.js'
@@ -78,7 +78,7 @@ app.use((_req, res, next) => {
   res.locals.requestStart = Date.now()
 
   if (CONFIG.SECURITY.POWERED_BY_HEADER.ENABLED === true) {
-    res.setHeader('x-powered-by', 'PeerTube')
+    res.setHeader('x-powered-by', 'retro3')
   }
 
   return next()
@@ -97,7 +97,7 @@ if (CONFIG.SECURITY.FRAMEGUARD.ENABLED) {
   }))
 }
 
-// ----------- PeerTube modules -----------
+// ----------- retro3 modules -----------
 import { installApplication } from './core/initializers/installer.js'
 import { Emailer } from './core/lib/emailer.js'
 import { JobQueue } from './core/lib/job-queue/index.js'
@@ -132,18 +132,18 @@ import { RemoveDanglingResumableUploadsScheduler } from './core/lib/schedulers/r
 import { VideoViewsBufferScheduler } from './core/lib/schedulers/video-views-buffer-scheduler.js'
 import { GeoIPUpdateScheduler } from './core/lib/schedulers/geo-ip-update-scheduler.js'
 import { RunnerJobWatchDogScheduler } from './core/lib/schedulers/runner-job-watch-dog-scheduler.js'
-import { isHTTPSignatureDigestValid } from './core/helpers/peertube-crypto.js'
-import { PeerTubeSocket } from './core/lib/peertube-socket.js'
+import { isHTTPSignatureDigestValid } from './core/helpers/retro3-crypto.js'
+import { Retro3Socket } from './core/lib/retro3-socket.js'
 import { updateStreamingPlaylistsInfohashesIfNeeded } from './core/lib/hls.js'
 import { PluginsCheckScheduler } from './core/lib/schedulers/plugins-check-scheduler.js'
-import { PeerTubeVersionCheckScheduler } from './core/lib/schedulers/peertube-version-check-scheduler.js'
+import { Retro3VersionCheckScheduler } from './core/lib/schedulers/retro3-version-check-scheduler.js'
 import { Hooks } from './core/lib/plugins/hooks.js'
 import { PluginManager } from './core/lib/plugins/plugin-manager.js'
 import { LiveManager } from './core/lib/live/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { ServerConfigManager } from '@server/lib/server-config-manager.js'
 import { VideoViewsManager } from '@server/lib/views/video-views-manager.js'
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { OpenTelemetryMetrics } from '@server/lib/opentelemetry/metrics.js'
 import { ApplicationModel } from '@server/models/application/application.js'
 import { VideoChannelSyncLatestScheduler } from '@server/lib/schedulers/video-channel-sync-latest-scheduler.js'
@@ -151,8 +151,8 @@ import { VideoChannelSyncLatestScheduler } from '@server/lib/schedulers/video-ch
 // ----------- Command line -----------
 
 cli
-  .option('--no-client', 'Start PeerTube without client interface')
-  .option('--no-plugins', 'Start PeerTube without plugins/themes enabled')
+  .option('--no-client', 'Start retro3 without client interface')
+  .option('--no-plugins', 'Start retro3 without plugins/themes enabled')
   .option('--benchmark-startup', 'Automatically stop server when initialized')
   .parse(process.argv)
 
@@ -319,7 +319,7 @@ async function startApplication () {
   RemoveOldHistoryScheduler.Instance.enable()
   RemoveOldViewsScheduler.Instance.enable()
   PluginsCheckScheduler.Instance.enable()
-  PeerTubeVersionCheckScheduler.Instance.enable()
+  Retro3VersionCheckScheduler.Instance.enable()
   AutoFollowIndexInstances.Instance.enable()
   RemoveDanglingResumableUploadsScheduler.Instance.enable()
   VideoChannelSyncLatestScheduler.Instance.enable()
@@ -330,10 +330,10 @@ async function startApplication () {
   OpenTelemetryMetrics.Instance.registerMetrics({ trackerServer })
 
   PluginManager.Instance.init(server)
-  // Before PeerTubeSocket init
+  // Before Retro3Socket init
   PluginManager.Instance.registerWebSocketRouter()
 
-  PeerTubeSocket.Instance.init(server)
+  Retro3Socket.Instance.init(server)
   VideoViewsManager.Instance.init()
 
   updateStreamingPlaylistsInfohashesIfNeeded()

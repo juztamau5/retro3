@@ -2,7 +2,7 @@ import express from 'express'
 import { param } from 'express-validator'
 import { isIdValid } from '@server/helpers/custom-validators/misc.js'
 import { MVideo } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { areValidationErrors, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'
 
 const videoFilesDeleteWebVideoValidator = [

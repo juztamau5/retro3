@@ -5,7 +5,7 @@ import { VideoShareComponent } from '@app/shared/shared-share-modal'
 import { SupportModalComponent } from '@app/shared/shared-support-modal'
 import { VideoActionsDisplayType, VideoDownloadComponent } from '@app/shared/shared-video-miniature'
 import { VideoPlaylist } from '@app/shared/shared-video-playlist'
-import { UserVideoRateType, VideoCaption, VideoPrivacy } from '@peertube/peertube-models'
+import { UserVideoRateType, VideoCaption, VideoPrivacy } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-action-buttons',

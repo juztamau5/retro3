@@ -1,6 +1,6 @@
-create database peertube_dev;
-create user peertube password 'peertube';
-grant all privileges on database peertube_dev to peertube;
-\c peertube_dev
+create database retro3_dev;
+create user retro3 password 'retro3';
+grant all privileges on database retro3_dev to retro3;
+\c retro3_dev
 CREATE EXTENSION pg_trgm;
 CREATE EXTENSION unaccent;

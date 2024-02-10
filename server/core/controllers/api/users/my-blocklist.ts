@@ -1,6 +1,6 @@
 import 'multer'
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'

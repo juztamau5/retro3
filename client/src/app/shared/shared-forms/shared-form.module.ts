@@ -11,7 +11,7 @@ import { FormValidatorService } from './form-validator.service'
 import { InputSwitchComponent } from './input-switch.component'
 import { InputTextComponent } from './input-text.component'
 import { MarkdownTextareaComponent } from './markdown-textarea.component'
-import { PeertubeCheckboxComponent } from './peertube-checkbox.component'
+import { Retro3CheckboxComponent } from './retro3-checkbox.component'
 import { PreviewUploadComponent } from './preview-upload.component'
 import { ReactiveFileComponent } from './reactive-file.component'
 import {
@@ -42,7 +42,7 @@ import { TimestampInputComponent } from './timestamp-input.component'
   declarations: [
     InputTextComponent,
     MarkdownTextareaComponent,
-    PeertubeCheckboxComponent,
+    Retro3CheckboxComponent,
     PreviewUploadComponent,
     ReactiveFileComponent,
     TextareaAutoResizeDirective,
@@ -73,7 +73,7 @@ import { TimestampInputComponent } from './timestamp-input.component'
 
     InputTextComponent,
     MarkdownTextareaComponent,
-    PeertubeCheckboxComponent,
+    Retro3CheckboxComponent,
     PreviewUploadComponent,
     ReactiveFileComponent,
     TextareaAutoResizeDirective,

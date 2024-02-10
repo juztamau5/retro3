@@ -1,7 +1,7 @@
 import express from 'express'
 import { VideoChannelModel } from '@server/models/video/video-channel.js'
 import { MChannelBannerAccountDefault } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 async function doesVideoChannelIdExist (id: number, res: express.Response) {
   const videoChannel = await VideoChannelModel.loadAndPopulateAccount(+id)

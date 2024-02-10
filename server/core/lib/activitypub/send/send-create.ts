@@ -8,7 +8,7 @@ import {
   VideoCommentObject,
   VideoPlaylistPrivacy,
   VideoPrivacy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 import { VideoCommentModel } from '../../../models/video/video-comment.js'
 import {

@@ -5,7 +5,7 @@ import {
   VideoChannelCreate,
   VideoChannelUpdate,
   VideosImportInChannelCreate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { pickCommonVideoQuery } from '@server/helpers/query.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { ActorFollowModel } from '@server/models/actor/actor-follow.js'

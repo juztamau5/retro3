@@ -20,7 +20,7 @@ export function root (metaUrl?: string) {
   rootPath = currentDir(metaUrl)
 
   if (basename(rootPath) === 'src' || basename(rootPath) === 'dist') rootPath = resolve(rootPath, '..')
-  if ([ 'node-utils', 'peertube-cli', 'peertube-runner' ].includes(basename(rootPath))) rootPath = resolve(rootPath, '..')
+  if ([ 'node-utils', 'retro3-cli', 'retro3-runner' ].includes(basename(rootPath))) rootPath = resolve(rootPath, '..')
   if ([ 'packages', 'apps' ].includes(basename(rootPath))) rootPath = resolve(rootPath, '..')
   if (basename(rootPath) === 'dist') rootPath = resolve(rootPath, '..')
 

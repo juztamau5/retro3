@@ -28,7 +28,7 @@ import {
   LinkComponent,
   LoginLinkComponent,
   NumberFormatterPipe,
-  PeerTubeTemplateDirective
+  Retro3TemplateDirective
 } from './angular'
 import { AUTH_INTERCEPTOR_PROVIDER } from './auth'
 import { ActionDropdownComponent, ButtonComponent, CopyButtonComponent, DeleteButtonComponent, EditButtonComponent } from './buttons'
@@ -95,7 +95,7 @@ import { VideoChannelService } from './video-channel'
     AutoColspanDirective,
 
     InfiniteScrollerDirective,
-    PeerTubeTemplateDirective,
+    Retro3TemplateDirective,
     LinkComponent,
     LoginLinkComponent,
 
@@ -158,7 +158,7 @@ import { VideoChannelService } from './video-channel'
     AutoColspanDirective,
 
     InfiniteScrollerDirective,
-    PeerTubeTemplateDirective,
+    Retro3TemplateDirective,
     LinkComponent,
     LoginLinkComponent,
 

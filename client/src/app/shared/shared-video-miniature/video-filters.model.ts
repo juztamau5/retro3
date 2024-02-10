@@ -1,5 +1,5 @@
 import { splitIntoArray, toBoolean } from '@app/helpers'
-import { escapeHTML, getAllPrivacies } from '@peertube/peertube-core-utils'
+import { escapeHTML, getAllPrivacies } from '@retroai/retro3-core-utils'
 import {
   BooleanBothQuery,
   NSFWPolicyType,
@@ -7,8 +7,8 @@ import {
   VideoIncludeType,
   VideoPrivacyType,
   VideoSortField
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 
 type VideoFiltersKeys = {
   [ id in keyof AttributesOnly<VideoFilters> ]: any

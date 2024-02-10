@@ -18,8 +18,8 @@
   }
 }
 
-.peertube-select-container.title-select {
-  @include peertube-select-container(auto);
+.retro3-select-container.title-select {
+  @include retro3-select-container(auto);
 
   display: inline-block;
   margin-left: 10px;
@@ -33,7 +33,7 @@
 .download-type {
   margin-top: 20px;
 
-  .peertube-radio-container {
+  .retro3-radio-container {
     @include margin-right(30px);
 
     display: inline-block;

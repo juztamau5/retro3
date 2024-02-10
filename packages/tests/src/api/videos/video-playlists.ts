@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   VideoPlaylist,
@@ -11,24 +11,24 @@ import {
   VideoPlaylistPrivacy,
   VideoPlaylistType,
   VideoPrivacy
-} from '@peertube/peertube-models'
-import { uuidToShort } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { uuidToShort } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   PlaylistsCommand,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { testImageGeneratedByFFmpeg } from '@tests/shared/checks.js'
 import { checkPlaylistFilesWereRemoved } from '@tests/shared/video-playlists.js'
 
 async function checkPlaylistElementType (
-  servers: PeerTubeServer[],
+  servers: Retro3Server[],
   playlistId: string,
   type: VideoPlaylistElementType_Type,
   position: number,
@@ -52,7 +52,7 @@ async function checkPlaylistElementType (
 }
 
 describe('Test video playlists', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   let playlistServer2Id1: number
   let playlistServer2Id2: number
@@ -642,10 +642,10 @@ describe('Test video playlists', function () {
   })
 
   describe('Element type', function () {
-    let groupUser1: PeerTubeServer[]
-    let groupWithoutToken1: PeerTubeServer[]
-    let group1: PeerTubeServer[]
-    let group2: PeerTubeServer[]
+    let groupUser1: Retro3Server[]
+    let groupWithoutToken1: Retro3Server[]
+    let group1: Retro3Server[]
+    let group2: Retro3Server[]
 
     let video1: string
     let video2: string

@@ -1,5 +1,5 @@
 import { Op, Transaction } from 'sequelize'
-import { ActivityPubActor, ActorImageType, ActorImageType_Type } from '@peertube/peertube-models'
+import { ActivityPubActor, ActorImageType, ActorImageType_Type } from '@retroai/retro3-models'
 import { sequelizeTypescript } from '@server/initializers/database.js'
 import { AccountModel } from '@server/models/account/account.js'
 import { ActorModel } from '@server/models/actor/actor.js'
@@ -43,7 +43,7 @@ export class APActorCreator {
 
       await this.tryToFixActorUrlIfNeeded(actorCreated, actorInstance, created, t)
 
-      if (actorCreated.type === 'Person' || actorCreated.type === 'Application') { // Account or PeerTube instance
+      if (actorCreated.type === 'Person' || actorCreated.type === 'Application') { // Account or retro3 instance
         actorCreated.Account = await this.saveAccount(actorCreated, t) as MAccountDefault
         actorCreated.Account.Actor = actorCreated
       }

@@ -1,11 +1,11 @@
 /* eslint-disable no-useless-call */
 
 /*
-  Different from 'utils' because we don't import other PeerTube modules.
+  Different from 'utils' because we don't import other retro3 modules.
   Useful to avoid circular dependencies.
 */
 
-import { promisify1, promisify2, promisify3 } from '@peertube/peertube-core-utils'
+import { promisify1, promisify2, promisify3 } from '@retroai/retro3-core-utils'
 import { exec, ExecOptions } from 'child_process'
 import { ED25519KeyPairOptions, generateKeyPair, randomBytes, RSAKeyPairOptions, scrypt } from 'crypto'
 import truncate from 'lodash-es/truncate.js'
@@ -162,7 +162,7 @@ function sanitizeHost (host: string, remoteScheme: string) {
 // ---------------------------------------------------------------------------
 
 // Consistent with .length, lodash truncate function is not
-function peertubeTruncate (str: string, options: { length: number, separator?: RegExp, omission?: string }) {
+function retro3Truncate (str: string, options: { length: number, separator?: RegExp, omission?: string }) {
   const truncatedStr = truncate(str, options)
 
   // The truncated string is okay, we can return it
@@ -281,7 +281,7 @@ export {
   execShell,
 
   pageToStartAndCount,
-  peertubeTruncate,
+  retro3Truncate,
 
   scryptPromise,
 

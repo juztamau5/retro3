@@ -8,8 +8,8 @@ import { USER_OTP_TOKEN_VALIDATOR } from '@app/shared/form-validators/user-valid
 import { FormReactive, FormReactiveService, InputTextComponent } from '@app/shared/shared-forms'
 import { InstanceAboutAccordionComponent } from '@app/shared/shared-instance'
 import { NgbAccordionDirective, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap'
-import { getExternalAuthHref } from '@peertube/peertube-core-utils'
-import { RegisteredExternalAuthConfig, ServerConfig, ServerErrorCode } from '@peertube/peertube-models'
+import { getExternalAuthHref } from '@retroai/retro3-core-utils'
+import { RegisteredExternalAuthConfig, ServerConfig, ServerErrorCode } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-login',

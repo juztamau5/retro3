@@ -1,6 +1,6 @@
 import ffmpeg, { FfmpegCommand } from 'fluent-ffmpeg'
-import { pick, promisify0 } from '@peertube/peertube-core-utils'
-import { AvailableEncoders, EncoderOptionsBuilder, EncoderOptionsBuilderParams, EncoderProfile } from '@peertube/peertube-models'
+import { pick, promisify0 } from '@retroai/retro3-core-utils'
+import { AvailableEncoders, EncoderOptionsBuilder, EncoderOptionsBuilderParams, EncoderProfile } from '@retroai/retro3-models'
 
 type FFmpegLogger = {
   info: (msg: string, obj?: any) => void
@@ -174,7 +174,7 @@ export class FFmpegCommandWrapper {
       }
 
       if (!encoders[encoder]) {
-        this.logger.debug(`Encoder ${encoder} not available in peertube encoders, skipping.`, this.lTags)
+        this.logger.debug(`Encoder ${encoder} not available in retro3 encoders, skipping.`, this.lTags)
         continue
       }
 
@@ -219,7 +219,7 @@ export class FFmpegCommandWrapper {
   }
 
   // Detect supported encoders by ffmpeg
-  private async checkFFmpegEncoders (peertubeAvailableEncoders: AvailableEncoders): Promise<Map<string, boolean>> {
+  private async checkFFmpegEncoders (retro3AvailableEncoders: AvailableEncoders): Promise<Map<string, boolean>> {
     if (FFmpegCommandWrapper.supportedEncoders !== undefined) {
       return FFmpegCommandWrapper.supportedEncoders
     }
@@ -230,7 +230,7 @@ export class FFmpegCommandWrapper {
     const searchEncoders = new Set<string>()
     for (const type of [ 'live', 'vod' ]) {
       for (const streamType of [ 'audio', 'video' ]) {
-        for (const encoder of peertubeAvailableEncoders.encodersToTry[type][streamType]) {
+        for (const encoder of retro3AvailableEncoders.encodersToTry[type][streamType]) {
           searchEncoders.add(encoder)
         }
       }

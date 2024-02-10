@@ -1,4 +1,4 @@
-import { FeedFormatType } from '@peertube/peertube-models'
+import { FeedFormatType } from '@retroai/retro3-models'
 
 export interface Syndication {
   format: FeedFormatType

@@ -1,6 +1,6 @@
 import { getAbsoluteAPIUrl, getAbsoluteEmbedUrl } from '@app/helpers'
 import { Actor } from '@app/shared/shared-main'
-import { buildPlaylistWatchPath, peertubeTranslate } from '@peertube/peertube-core-utils'
+import { buildPlaylistWatchPath, retro3Translate } from '@retroai/retro3-core-utils'
 import {
   AccountSummary,
   VideoChannelSummary,
@@ -9,7 +9,7 @@ import {
   VideoPlaylistPrivacyType,
   VideoPlaylistType,
   VideoPlaylistType_Type
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export class VideoPlaylist implements ServerVideoPlaylist {
   id: number
@@ -87,10 +87,10 @@ export class VideoPlaylist implements ServerVideoPlaylist {
       this.videoChannelBy = Actor.CREATE_BY_STRING(hash.videoChannel.name, hash.videoChannel.host)
     }
 
-    this.privacy.label = peertubeTranslate(this.privacy.label, translations)
+    this.privacy.label = retro3Translate(this.privacy.label, translations)
 
     if (this.type.id === VideoPlaylistType.WATCH_LATER) {
-      this.displayName = peertubeTranslate(this.displayName, translations)
+      this.displayName = retro3Translate(this.displayName, translations)
     }
   }
 }

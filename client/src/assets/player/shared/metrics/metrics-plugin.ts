@@ -1,10 +1,10 @@
 import debug from 'debug'
 import videojs from 'video.js'
-import { PlaybackMetricCreate, VideoResolutionType } from '@peertube/peertube-models'
+import { PlaybackMetricCreate, VideoResolutionType } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { MetricsPluginOptions, PlayerNetworkInfo } from '../../types'
 
-const debugLogger = debug('peertube:player:metrics')
+const debugLogger = debug('retro3:player:metrics')
 
 const Plugin = videojs.getPlugin('plugin')
 

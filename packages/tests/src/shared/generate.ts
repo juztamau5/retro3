@@ -1,9 +1,9 @@
 import { expect } from 'chai'
 import { ensureDir, pathExists } from 'fs-extra/esm'
 import { dirname } from 'path'
-import { getMaxTheoreticalBitrate } from '@peertube/peertube-core-utils'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { getVideoStreamBitrate, getVideoStreamDimensionsInfo, getVideoStreamFPS } from '@peertube/peertube-ffmpeg'
+import { getMaxTheoreticalBitrate } from '@retroai/retro3-core-utils'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { getVideoStreamBitrate, getVideoStreamDimensionsInfo, getVideoStreamFPS } from '@retroai/retro3-ffmpeg'
 
 async function ensureHasTooBigBitrate (fixturePath: string) {
   const bitrate = await getVideoStreamBitrate(fixturePath)

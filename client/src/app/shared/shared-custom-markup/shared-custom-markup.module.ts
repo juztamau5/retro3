@@ -17,7 +17,7 @@ import {
   PlaylistMiniatureMarkupComponent,
   VideoMiniatureMarkupComponent,
   VideosListMarkupComponent
-} from './peertube-custom-tags'
+} from './retro3-custom-tags'
 
 @NgModule({
   imports: [

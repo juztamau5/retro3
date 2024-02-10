@@ -1,4 +1,4 @@
-import { ResultList, VideoPassword } from '@peertube/peertube-models'
+import { ResultList, VideoPassword } from '@retroai/retro3-models'
 import { Injectable } from '@angular/core'
 import { catchError, switchMap } from 'rxjs'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
@@ -15,7 +15,7 @@ export class VideoPasswordService {
 
   static buildVideoPasswordHeader (videoPassword: string) {
     return videoPassword
-      ? new HttpHeaders().set('x-peertube-video-password', videoPassword)
+      ? new HttpHeaders().set('x-retro3-video-password', videoPassword)
       : undefined
   }
 

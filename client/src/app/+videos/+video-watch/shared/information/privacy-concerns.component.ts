@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { ServerService, User, UserService } from '@app/core'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 import { isP2PEnabled } from '@root-helpers/video'
-import { HTMLServerConfig, Video } from '@peertube/peertube-models'
+import { HTMLServerConfig, Video } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-privacy-concerns',
@@ -31,7 +31,7 @@ export class PrivacyConcernsComponent implements OnInit {
   }
 
   acceptedPrivacyConcern () {
-    peertubeLocalStorage.setItem(PrivacyConcernsComponent.LOCAL_STORAGE_PRIVACY_CONCERN_KEY, 'true')
+    retro3LocalStorage.setItem(PrivacyConcernsComponent.LOCAL_STORAGE_PRIVACY_CONCERN_KEY, 'true')
 
     this.display = false
   }
@@ -43,6 +43,6 @@ export class PrivacyConcernsComponent implements OnInit {
   }
 
   private alreadyAccepted () {
-    return peertubeLocalStorage.getItem(PrivacyConcernsComponent.LOCAL_STORAGE_PRIVACY_CONCERN_KEY) === 'true'
+    return retro3LocalStorage.getItem(PrivacyConcernsComponent.LOCAL_STORAGE_PRIVACY_CONCERN_KEY) === 'true'
   }
 }

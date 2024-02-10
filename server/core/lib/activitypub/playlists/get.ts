@@ -1,6 +1,6 @@
 import { VideoPlaylistModel } from '@server/models/video/video-playlist.js'
 import { MVideoPlaylistFullSummary } from '@server/types/models/index.js'
-import { APObjectId } from '@peertube/peertube-models'
+import { APObjectId } from '@retroai/retro3-models'
 import { getAPId } from '../activity.js'
 import { createOrUpdateVideoPlaylist } from './create-update.js'
 import { scheduleRefreshIfNeeded } from './refresh.js'

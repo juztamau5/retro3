@@ -1,6 +1,17 @@
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
 import './test-embed.scss'
-import { PeerTubeResolution, PlayerEventType } from '../embed-player-api/definitions'
-import { PeerTubePlayer } from '../embed-player-api/player'
+import { Retro3Resolution, PlayerEventType } from '../embed-player-api/definitions'
+import { Retro3Player } from '../embed-player-api/player'
 import { logger } from '../../root-helpers'
 
 window.addEventListener('load', async () => {
@@ -22,7 +33,7 @@ window.addEventListener('load', async () => {
   mainElement.appendChild(iframe)
 
   logger.info('Document finished loading.')
-  const player = new PeerTubePlayer(document.querySelector('iframe'));
+  const player = new Retro3Player(document.querySelector('iframe'));
 
   (window as any)['player'] = player
 
@@ -112,7 +123,7 @@ window.addEventListener('load', async () => {
 
   updateCaptions()
 
-  const updateResolutions = (resolutions: PeerTubeResolution[]) => {
+  const updateResolutions = (resolutions: Retro3Resolution[]) => {
     const resolutionListEl = document.querySelector('#resolution-list')
     resolutionListEl.innerHTML = ''
 

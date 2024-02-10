@@ -1,7 +1,7 @@
 import pg from 'pg'
 import { QueryTypes, Transaction } from 'sequelize'
 import { Sequelize as SequelizeTypescript } from 'sequelize-typescript'
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { ActorCustomPageModel } from '@server/models/account/actor-custom-page.js'
 import { RunnerJobModel } from '@server/models/runner/runner-job.js'
 import { RunnerRegistrationTokenModel } from '@server/models/runner/runner-registration-token.js'

@@ -129,7 +129,7 @@
 
         <div class="form-group">
           <label i18n for="role">Role</label>
-          <div class="peertube-select-container">
+          <div class="retro3-select-container">
               <select id="role" formControlName="role" class="form-control">
                 <option *ngFor="let role of roles" [value]="role.value">
                 {{ role.label }}
@@ -179,7 +179,7 @@
         <div class="form-group" *ngIf="!isCreation() && getAuthPlugins().length !== 0">
           <label i18n for="pluginAuth">Auth plugin</label>
 
-          <div class="peertube-select-container">
+          <div class="retro3-select-container">
             <select id="pluginAuth" formControlName="pluginAuth" class="form-control">
               <option [value]="null" i18n>None (local authentication)</option>
               <option *ngFor="let authPlugin of getAuthPlugins()" [value]="authPlugin">{{ authPlugin }}</option>
@@ -188,14 +188,14 @@
         </div>
 
         <div class="form-group">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             inputName="byPassAutoBlock" formControlName="byPassAutoBlock"
             i18n-labelText labelText="User bypasses video validation by moderators"
           >
             <ng-container ngProjectAs="description" i18n>
               Enable this checkbox if this user doesn't need to have its videos reviewed by moderators.
             </ng-container>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
 
         <input type="submit" value="{{ getFormButtonTitle() }}" [disabled]="!form.valid">

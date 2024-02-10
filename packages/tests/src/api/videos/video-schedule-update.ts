@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 function in15Seconds () {
   const now = new Date()
@@ -20,7 +20,7 @@ function in15Seconds () {
 }
 
 describe('Test video update scheduler', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let video2UUID: string
 
   before(async function () {

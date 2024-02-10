@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, UserRole } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRole } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test transcoding API validators', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let userToken: string
   let moderatorToken: string

@@ -2,26 +2,26 @@ import { expect } from 'chai'
 import {
   HttpStatusCode,
   HttpStatusCodeType,
-  PeerTubeProblemDocument,
+  Retro3ProblemDocument,
   ServerErrorCode,
   VideoCreateResult,
   VideoPrivacy
-} from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 import { checkUploadVideoParam } from '@tests/shared/videos.js'
 
 describe('Test video passwords validator', function () {
   let path: string
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = ''
   let video: VideoCreateResult
   let channelId: number
@@ -73,7 +73,7 @@ describe('Test video passwords validator', function () {
   })
 
   async function checkVideoPasswordOptions (options: {
-    server: PeerTubeServer
+    server: Retro3Server
     token: string
     videoPasswords: string[]
     expectedStatus: HttpStatusCodeType
@@ -263,7 +263,7 @@ describe('Test video passwords validator', function () {
   })
 
   async function checkVideoAccessOptions (options: {
-    server: PeerTubeServer
+    server: Retro3Server
     token?: string
     videoPassword?: string
     expectedStatus: HttpStatusCodeType
@@ -305,7 +305,7 @@ describe('Test video passwords validator', function () {
     if (mode === 'createThread') {
       const fields = { text: 'super comment' }
       const headers = videoPassword !== undefined && videoPassword !== null
-        ? { 'x-peertube-video-password': videoPassword }
+        ? { 'x-retro3-video-password': videoPassword }
         : undefined
       const body = await makePostBodyRequest({
         url: server.url,
@@ -321,7 +321,7 @@ describe('Test video passwords validator', function () {
     if (mode === 'replyThread') {
       const fields = { text: 'super reply' }
       const headers = videoPassword !== undefined && videoPassword !== null
-        ? { 'x-peertube-video-password': videoPassword }
+        ? { 'x-retro3-video-password': videoPassword }
         : undefined
       return makePostBodyRequest({
         url: server.url,
@@ -386,7 +386,7 @@ describe('Test video passwords validator', function () {
     if (!requiresUserAuth) {
       it('Should fail without providing a password for an unlogged user', async function () {
         const body = await checkVideoAccessOptions({ server, expectedStatus: HttpStatusCode.FORBIDDEN_403, mode })
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
         checkVideoError(error, 'providePassword')
       })
@@ -402,7 +402,7 @@ describe('Test video passwords validator', function () {
         mode: tmp
       })
 
-      const error = body as unknown as PeerTubeProblemDocument
+      const error = body as unknown as Retro3ProblemDocument
 
       checkVideoError(error, 'providePassword')
     })
@@ -421,7 +421,7 @@ describe('Test video passwords validator', function () {
           expectedStatus: HttpStatusCode.FORBIDDEN_403,
           mode: tmp
         })
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
         checkVideoError(error, 'incorrectPassword')
       }
@@ -438,7 +438,7 @@ describe('Test video passwords validator', function () {
           expectedStatus: HttpStatusCode.FORBIDDEN_403,
           mode: tmp
         })
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
         checkVideoError(error, 'incorrectPassword')
       }
@@ -455,7 +455,7 @@ describe('Test video passwords validator', function () {
           expectedStatus: HttpStatusCode.FORBIDDEN_403,
           mode: tmp
         })
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
         checkVideoError(error, 'incorrectPassword')
       }

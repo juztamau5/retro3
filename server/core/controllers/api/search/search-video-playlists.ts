@@ -14,7 +14,7 @@ import { buildMutedForSearchIndex, isSearchIndexSearch, isURISearch } from '@ser
 import { getServerActor } from '@server/models/application/application.js'
 import { VideoPlaylistModel } from '@server/models/video/video-playlist.js'
 import { MVideoPlaylistFullSummary } from '@server/types/models/index.js'
-import { HttpStatusCode, ResultList, VideoPlaylist, VideoPlaylistsSearchQueryAfterSanitize } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoPlaylist, VideoPlaylistsSearchQueryAfterSanitize } from '@retroai/retro3-models'
 import {
   asyncMiddleware,
   openapiOperationDoc,

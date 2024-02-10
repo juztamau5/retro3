@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, UserVideoRateUpdate } from '@peertube/peertube-models'
+import { HttpStatusCode, UserVideoRateUpdate } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { VIDEO_RATE_TYPES } from '../../../initializers/constants.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

@@ -7,7 +7,7 @@ import { buildNewFile } from '@server/lib/video-file.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideoFullLight } from '@server/types/models/index.js'
 import { MRunnerJob } from '@server/types/models/runners/index.js'
-import { RunnerJobVODAudioMergeTranscodingPrivatePayload, RunnerJobVODWebVideoTranscodingPrivatePayload } from '@peertube/peertube-models'
+import { RunnerJobVODAudioMergeTranscodingPrivatePayload, RunnerJobVODWebVideoTranscodingPrivatePayload } from '@retroai/retro3-models'
 import { lTags } from '@server/lib/object-storage/shared/logger.js'
 
 export async function onVODWebVideoOrAudioMergeTranscodingJob (options: {

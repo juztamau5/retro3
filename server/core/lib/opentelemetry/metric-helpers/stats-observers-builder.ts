@@ -26,7 +26,7 @@ export class StatsObserversBuilder {
   }
 
   private buildUserStatsObserver () {
-    this.meter.createObservableGauge('peertube_users_total', {
+    this.meter.createObservableGauge('retro3_users_total', {
       description: 'Total users on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -34,7 +34,7 @@ export class StatsObserversBuilder {
       observableResult.observe(stats.totalUsers)
     })
 
-    this.meter.createObservableGauge('peertube_active_users_total', {
+    this.meter.createObservableGauge('retro3_active_users_total', {
       description: 'Total active users on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -46,7 +46,7 @@ export class StatsObserversBuilder {
   }
 
   private buildChannelStatsObserver () {
-    this.meter.createObservableGauge('peertube_channels_total', {
+    this.meter.createObservableGauge('retro3_channels_total', {
       description: 'Total channels on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -54,7 +54,7 @@ export class StatsObserversBuilder {
       observableResult.observe(stats.totalLocalVideoChannels, { channelOrigin: 'local' })
     })
 
-    this.meter.createObservableGauge('peertube_active_channels_total', {
+    this.meter.createObservableGauge('retro3_active_channels_total', {
       description: 'Total active channels on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -66,7 +66,7 @@ export class StatsObserversBuilder {
   }
 
   private buildVideoStatsObserver () {
-    this.meter.createObservableGauge('peertube_videos_total', {
+    this.meter.createObservableGauge('retro3_videos_total', {
       description: 'Total videos on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -75,7 +75,7 @@ export class StatsObserversBuilder {
       observableResult.observe(stats.totalVideos - stats.totalLocalVideos, { videoOrigin: 'remote' })
     })
 
-    this.meter.createObservableGauge('peertube_video_views_total', {
+    this.meter.createObservableGauge('retro3_video_views_total', {
       description: 'Total video views made on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -83,7 +83,7 @@ export class StatsObserversBuilder {
       observableResult.observe(stats.totalLocalVideoViews, { viewOrigin: 'local' })
     })
 
-    this.meter.createObservableGauge('peertube_video_bytes_total', {
+    this.meter.createObservableGauge('retro3_video_bytes_total', {
       description: 'Total bytes of videos'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -93,7 +93,7 @@ export class StatsObserversBuilder {
   }
 
   private buildCommentStatsObserver () {
-    this.meter.createObservableGauge('peertube_comments_total', {
+    this.meter.createObservableGauge('retro3_comments_total', {
       description: 'Total comments on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -103,7 +103,7 @@ export class StatsObserversBuilder {
   }
 
   private buildPlaylistStatsObserver () {
-    this.meter.createObservableGauge('peertube_playlists_total', {
+    this.meter.createObservableGauge('retro3_playlists_total', {
       description: 'Total playlists on the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -113,7 +113,7 @@ export class StatsObserversBuilder {
   }
 
   private buildInstanceFollowsStatsObserver () {
-    this.meter.createObservableGauge('peertube_instance_followers_total', {
+    this.meter.createObservableGauge('retro3_instance_followers_total', {
       description: 'Total followers of the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -121,7 +121,7 @@ export class StatsObserversBuilder {
       observableResult.observe(stats.totalInstanceFollowers)
     })
 
-    this.meter.createObservableGauge('peertube_instance_following_total', {
+    this.meter.createObservableGauge('retro3_instance_following_total', {
       description: 'Total following of the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -131,7 +131,7 @@ export class StatsObserversBuilder {
   }
 
   private buildRedundancyStatsObserver () {
-    this.meter.createObservableGauge('peertube_redundancy_used_bytes_total', {
+    this.meter.createObservableGauge('retro3_redundancy_used_bytes_total', {
       description: 'Total redundancy used of the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -141,7 +141,7 @@ export class StatsObserversBuilder {
       }
     })
 
-    this.meter.createObservableGauge('peertube_redundancy_available_bytes_total', {
+    this.meter.createObservableGauge('retro3_redundancy_available_bytes_total', {
       description: 'Total redundancy available of the instance'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -155,7 +155,7 @@ export class StatsObserversBuilder {
   private buildActivityPubStatsObserver () {
     const availableActivities = buildAvailableActivities()
 
-    this.meter.createObservableGauge('peertube_ap_inbox_success_total', {
+    this.meter.createObservableGauge('retro3_ap_inbox_success_total', {
       description: 'Total inbox messages processed with success'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -165,7 +165,7 @@ export class StatsObserversBuilder {
       }
     })
 
-    this.meter.createObservableGauge('peertube_ap_inbox_error_total', {
+    this.meter.createObservableGauge('retro3_ap_inbox_error_total', {
       description: 'Total inbox messages processed with error'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()
@@ -175,7 +175,7 @@ export class StatsObserversBuilder {
       }
     })
 
-    this.meter.createObservableGauge('peertube_ap_inbox_waiting_total', {
+    this.meter.createObservableGauge('retro3_ap_inbox_waiting_total', {
       description: 'Total inbox messages waiting for being processed'
     }).addCallback(async observableResult => {
       const stats = await this.getInstanceStats()

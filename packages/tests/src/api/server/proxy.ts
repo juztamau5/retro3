@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode, HttpStatusCodeType, VideoPrivacy } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, HttpStatusCodeType, VideoPrivacy } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 import { expectStartWith, expectNotStartWith } from '@tests/shared/checks.js'
 import { MockProxy } from '@tests/shared/mock-servers/mock-proxy.js'
 
 describe('Test proxy', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let proxy: MockProxy
 
   const goodEnv = { HTTP_PROXY: '' }
@@ -90,7 +90,7 @@ describe('Test proxy', function () {
           name: 'video import',
           channelId: servers[0].store.channel.id,
           privacy: VideoPrivacy.PUBLIC,
-          targetUrl: FIXTURE_URLS.peertube_long
+          targetUrl: FIXTURE_URLS.retro3_long
         },
         expectedStatus
       })

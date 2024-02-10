@@ -1,5 +1,5 @@
 import { AllowNull, BelongsTo, Column, CreatedAt, DataType, ForeignKey, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { CustomPage } from '@peertube/peertube-models'
+import { CustomPage } from '@retroai/retro3-models'
 import { ActorModel } from '../actor/actor.js'
 import { getServerActor } from '../application/application.js'
 

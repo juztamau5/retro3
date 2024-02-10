@@ -1,4 +1,4 @@
-import { VideoPrivacy, VideoPrivacyType, VideoState } from '@peertube/peertube-models'
+import { VideoPrivacy, VideoPrivacyType, VideoState } from '@retroai/retro3-models'
 import { VideoModel } from '@server/models/video/video.js'
 import { MScheduleVideoUpdate } from '@server/types/models/index.js'
 import { logger } from '../../helpers/logger.js'

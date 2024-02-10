@@ -1,3 +1,3 @@
-# @peertube/embed-api
+# @retroai/embed-api
 
-See https://docs.joinpeertube.org/api/embed-player
+See https://docs.joinretro3.org/api/embed-player

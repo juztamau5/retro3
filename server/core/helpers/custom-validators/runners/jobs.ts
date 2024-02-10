@@ -10,7 +10,7 @@ import {
   VODAudioMergeTranscodingSuccess,
   VODHLSTranscodingSuccess,
   VODWebVideoTranscodingSuccess
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { exists, isArray, isFileValid, isSafeFilename } from '../misc.js'
 
 const RUNNER_JOBS_CONSTRAINTS_FIELDS = CONSTRAINTS_FIELDS.RUNNER_JOBS

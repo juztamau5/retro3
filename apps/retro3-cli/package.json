@@ -1,0 +1,19 @@
+{
+  "name": "@retroai/retro3-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/retro3.js",
+  "bin": "dist/retro3.js",
+  "engines": {
+    "node": ">=16.x"
+  },
+  "scripts": {},
+  "license": "AGPL-3.0",
+  "private": false,
+  "devDependencies": {
+    "application-config": "^2.0.0",
+    "cli-table3": "^0.6.0",
+    "netrc-parser": "^3.1.6"
+  },
+  "dependencies": {}
+}

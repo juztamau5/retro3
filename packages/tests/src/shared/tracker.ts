@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import { sha1 } from '@peertube/peertube-node-utils'
-import { makeGetRequest } from '@peertube/peertube-server-commands'
+import { sha1 } from '@retroai/retro3-node-utils'
+import { makeGetRequest } from '@retroai/retro3-server-commands'
 
 async function hlsInfohashExist (serverUrl: string, masterPlaylistUrl: string, fileNumber: number) {
   const path = '/tracker/announce'

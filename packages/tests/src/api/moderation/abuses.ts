@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { AbuseMessage, AbusePredefinedReasonsString, AbuseState, AdminAbuse, UserAbuse } from '@peertube/peertube-models'
+import { AbuseMessage, AbusePredefinedReasonsString, AbuseState, AdminAbuse, UserAbuse } from '@retroai/retro3-models'
 import {
   AbusesCommand,
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test abuses', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let abuseServer1: AdminAbuse
   let abuseServer2: AdminAbuse
   let commands: AbusesCommand[]
@@ -375,7 +375,7 @@ describe('Test abuses', function () {
 
   describe('Comment abuses', function () {
 
-    async function getComment (server: PeerTubeServer, videoIdArg: number | string) {
+    async function getComment (server: Retro3Server, videoIdArg: number | string) {
       const videoId = typeof videoIdArg === 'string'
         ? await server.videos.getId({ uuid: videoIdArg })
         : videoIdArg
@@ -571,7 +571,7 @@ describe('Test abuses', function () {
 
   describe('Account abuses', function () {
 
-    function getAccountFromServer (server: PeerTubeServer, targetName: string, targetServer: PeerTubeServer) {
+    function getAccountFromServer (server: Retro3Server, targetName: string, targetServer: Retro3Server) {
       return server.accounts.get({ accountName: targetName + '@' + targetServer.host })
     }
 

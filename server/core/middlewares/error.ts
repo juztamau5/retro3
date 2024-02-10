@@ -1,7 +1,7 @@
 import express from 'express'
 import { ProblemDocument, ProblemDocumentExtension } from 'http-problem-details'
 import { logger } from '@server/helpers/logger.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 function apiFailMiddleware (req: express.Request, res: express.Response, next: express.NextFunction) {
   res.fail = options => {
@@ -25,7 +25,7 @@ function apiFailMiddleware (req: express.Request, res: express.Response, next: e
       detail: message,
 
       type: type
-        ? `https://docs.joinpeertube.org/api-rest-reference.html#section/Errors/${type}`
+        ? `https://docs.joinretro3.org/api-rest-reference.html#section/Errors/${type}`
         : undefined
     }, extension)
 

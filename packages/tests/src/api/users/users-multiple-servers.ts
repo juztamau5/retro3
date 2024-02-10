@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { MyUser } from '@peertube/peertube-models'
+import { MyUser } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultChannelAvatar,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkActorFilesWereRemoved } from '@tests/shared/actors.js'
 import { testImage } from '@tests/shared/checks.js'
 import { checkTmpIsEmpty } from '@tests/shared/directories.js'
 import { saveVideoInServers, checkVideoFilesWereRemoved } from '@tests/shared/videos.js'
 
 describe('Test users with multiple servers', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   let user: MyUser
   let userId: number

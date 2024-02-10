@@ -6,13 +6,13 @@ import { PluginService } from '@app/core/plugins/plugin.service'
 import {
   InstallOrUpdatePlugin,
   ManagePlugin,
-  PeerTubePlugin,
-  PeerTubePluginIndex,
+  Retro3Plugin,
+  Retro3PluginIndex,
   PluginType,
   PluginType_Type,
   RegisteredServerSettings,
   ResultList
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 
 @Injectable()
@@ -45,7 +45,7 @@ export class PluginApiService {
     params = this.restService.addRestGetParams(params, pagination, sort)
     params = params.append('pluginType', pluginType.toString())
 
-    return this.authHttp.get<ResultList<PeerTubePlugin>>(PluginApiService.BASE_PLUGIN_URL, { params })
+    return this.authHttp.get<ResultList<Retro3Plugin>>(PluginApiService.BASE_PLUGIN_URL, { params })
                .pipe(catchError(res => this.restExtractor.handleError(res)))
   }
 
@@ -63,14 +63,14 @@ export class PluginApiService {
 
     if (search) params = params.append('search', search)
 
-    return this.authHttp.get<ResultList<PeerTubePluginIndex>>(PluginApiService.BASE_PLUGIN_URL + '/available', { params })
+    return this.authHttp.get<ResultList<Retro3PluginIndex>>(PluginApiService.BASE_PLUGIN_URL + '/available', { params })
                .pipe(catchError(res => this.restExtractor.handleError(res)))
   }
 
   getPlugin (npmName: string) {
     const path = PluginApiService.BASE_PLUGIN_URL + '/' + npmName
 
-    return this.authHttp.get<PeerTubePlugin>(path)
+    return this.authHttp.get<Retro3Plugin>(path)
                .pipe(catchError(res => this.restExtractor.handleError(res)))
   }
 
@@ -124,6 +124,6 @@ export class PluginApiService {
       ? 'plugin'
       : 'theme'
 
-    return `https://www.npmjs.com/package/peertube-${typeString}-${name}`
+    return `https://www.npmjs.com/package/retro3-${typeString}-${name}`
   }
 }

@@ -6,7 +6,7 @@ import { Subject } from 'rxjs'
 import { tinykeys } from 'tinykeys'
 import debug from 'debug'
 
-const debugLogger = debug('peertube:hotkeys')
+const debugLogger = debug('retro3:hotkeys')
 
 @Injectable()
 export class HotkeysService {

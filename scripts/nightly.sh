@@ -15,8 +15,8 @@ shutdown() {
 trap "shutdown" SIGINT SIGTERM
 
 today=$(date '+%F')
-directory_name="peertube-nightly-$today"
-tar_name="peertube-nightly-$today.tar.xz"
+directory_name="retro3-nightly-$today"
+tar_name="retro3-nightly-$today.tar.xz"
 
 npm run build -- --source-map
 
@@ -47,9 +47,9 @@ sed -i 's/"version": "\([^"]\+\)"/"version": "\1-'"$nightly_version"'"/' ./packa
 
   # temporary setup
   cd ..
-  ln -s "PeerTube" "$directory_name"
+  ln -s "retro3" "$directory_name"
 
-  XZ_OPT=-e9 tar cfJ "PeerTube/$tar_name" "${directories_to_archive[@]}"
+  XZ_OPT=-e9 tar cfJ "retro3/$tar_name" "${directories_to_archive[@]}"
 
   # temporary setup destruction
   rm "$directory_name"

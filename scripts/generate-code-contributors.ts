@@ -1,4 +1,4 @@
-import { CLICommand } from '@peertube/peertube-server-commands'
+import { CLICommand } from '@retroai/retro3-server-commands'
 
 run()
   .then(() => process.exit(0))
@@ -32,7 +32,7 @@ async function run () {
     console.log(' * `support` by Chocobozzz (CC-BY)')
     console.log(' * `language` by Aaron Jin (CC-BY)')
     console.log(' * `video-language` by Rigel Kent (CC-BY)')
-    console.log(' * `peertube-x` by Solen DP (CC-BY)')
+    console.log(' * `retro3-x` by Solen DP (CC-BY)')
     console.log(' * `flame` by Freepik (Flaticon License)')
     console.log(' * `local` by Larea (CC-BY)')
   }
@@ -40,16 +40,16 @@ async function run () {
   {
     console.log('\n\n# Contributors to our 2020 crowdfunding :heart:\n')
     console.log(
-      `*We ran [a crowdfunding campaign](https://joinpeertube.org/roadmap) in 2020 to implement live streaming to the version ` +
-      `3.0.0 of PeerTube. Thanks to everyone who pitched in and shared the news!*\n\n`
+      `*We ran [a crowdfunding campaign](https://joinretro3.org/roadmap) in 2020 to implement live streaming to the version ` +
+      `3.0.0 of retro3. Thanks to everyone who pitched in and shared the news!*\n\n`
     )
   }
 
   {
     console.log('\n\n# Contributors to our 2018 crowdfunding :heart:')
     console.log(
-      `\n*We ran [a crowdfunding campaign](https://www.kisskissbankbank.com/en/projects/peertube-a-free-and-federated-video-platform) ` +
-      `in 2018 to pave the road to the version 1.0.0 of PeerTube, with 1,379 backers. ` +
+      `\n*We ran [a crowdfunding campaign](https://www.kisskissbankbank.com/en/projects/retro3-a-free-and-federated-video-platform) ` +
+      `in 2018 to pave the road to the version 1.0.0 of retro3, with 1,379 backers. ` +
       `Thanks to everyone who pitched in and shared the news!*\n\n`
     )
   }

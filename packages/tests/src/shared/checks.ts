@@ -4,9 +4,9 @@ import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { makeGetRequest, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { makeGetRequest, Retro3Server } from '@retroai/retro3-server-commands'
 
 // Default interval -> 5 minutes
 function dateIsValid (dateString: string | Date, interval = 300000) {
@@ -30,13 +30,13 @@ function expectEndWith (str: string, end: string) {
 
 // ---------------------------------------------------------------------------
 
-async function expectLogDoesNotContain (server: PeerTubeServer, str: string) {
+async function expectLogDoesNotContain (server: Retro3Server, str: string) {
   const content = await server.servers.getLogContent()
 
   expect(content.toString()).to.not.contain(str)
 }
 
-async function expectLogContain (server: PeerTubeServer, str: string) {
+async function expectLogContain (server: Retro3Server, str: string) {
   const content = await server.servers.getLogContent()
 
   expect(content.toString()).to.contain(str)
@@ -97,7 +97,7 @@ async function testImage (url: string, imageName: string, imageHTTPPath: string,
   expect(result).to.equal(0, `${imageHTTPPath} image is not the same as ${imageName}${extension}`)
 }
 
-async function testFileExistsOrNot (server: PeerTubeServer, directory: string, filePath: string, exist: boolean) {
+async function testFileExistsOrNot (server: Retro3Server, directory: string, filePath: string, exist: boolean) {
   const base = server.servers.buildDirectory(directory)
 
   expect(await pathExists(join(base, filePath))).to.equal(exist)
@@ -145,7 +145,7 @@ function checkBadSortPagination (url: string, path: string, token?: string, quer
 
 // ---------------------------------------------------------------------------
 
-async function checkVideoDuration (server: PeerTubeServer, videoUUID: string, duration: number) {
+async function checkVideoDuration (server: Retro3Server, videoUUID: string, duration: number) {
   const video = await server.videos.get({ id: videoUUID })
 
   expect(video.duration).to.be.approximately(duration, 1)

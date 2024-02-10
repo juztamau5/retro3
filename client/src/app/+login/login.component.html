@@ -16,12 +16,12 @@
 
       <p *ngIf="signupAllowed" i18n>
         This instance allows registration. However, be careful to check the <a class="link-orange terms-anchor d-inline" (click)="onTermsClick($event, instanceInformation)" href='#'>Terms</a><a class="terms-link" target="_blank" routerLink="/about/instance" fragment="terms">Terms</a> before creating an account.
-        You may also search for another instance to match your exact needs at: <a class="link-orange" href="https://joinpeertube.org/instances" target="_blank" rel="noopener noreferrer">https://joinpeertube.org/instances</a>.
+        You may also search for another instance to match your exact needs at: <a class="link-orange" href="https://joinretro3.org/instances" target="_blank" rel="noopener noreferrer">https://joinretro3.org/instances</a>.
       </p>
 
       <p *ngIf="!signupAllowed" i18n>
         Currently this instance doesn't allow for user registration, you may check the <a class="link-orange" (click)="onTermsClick($event, instanceInformation)" href='#'>Terms</a> for more details or find an instance that gives you the possibility to sign up for an account and upload your videos there.
-        Find yours among multiple instances at: <a class="link-orange" href="https://joinpeertube.org/instances" target="_blank" rel="noopener noreferrer">https://joinpeertube.org/instances</a>.
+        Find yours among multiple instances at: <a class="link-orange" href="https://joinretro3.org/instances" target="_blank" rel="noopener noreferrer">https://joinretro3.org/instances</a>.
       </p>
     </div>
 
@@ -81,7 +81,7 @@
             ></my-input-text>
           </div>
 
-          <input type="submit" class="peertube-button orange-button w-100" i18n-value value="Login" [disabled]="!form.valid">
+          <input type="submit" class="retro3-button orange-button w-100" i18n-value value="Login" [disabled]="!form.valid">
 
           <div *ngIf="!otpStep" class="additional-links d-flex justify-content-center mt-4 mb-5">
             <button i18n class="button-unstyle link-orange mx-3" (click)="openForgotPasswordModal()" i18n-title title="Click here to reset your password">
@@ -130,7 +130,7 @@
   <div class="modal-body text-start">
 
     <div *ngIf="isEmailDisabled()" class="alert alert-danger" i18n>
-      We are sorry, you cannot recover your password because your instance administrator did not configure the PeerTube email system.
+      We are sorry, you cannot recover your password because your instance administrator did not configure the retro3 email system.
     </div>
 
     <div *ngIf="!isEmailDisabled()" class="mb-4" i18n>
@@ -148,12 +148,12 @@
 
   <div class="modal-footer inputs">
     <input
-      type="button" role="button" i18n-value value="Cancel" class="peertube-button d-none d-sm-block"
+      type="button" role="button" i18n-value value="Cancel" class="retro3-button d-none d-sm-block"
       (click)="hideForgotPasswordModal()" (key.enter)="hideForgotPasswordModal()"
     >
 
     <input
-      type="submit" i18n-value="Password reset button" value="Reset" class="peertube-button orange-button"
+      type="submit" i18n-value="Password reset button" value="Reset" class="retro3-button orange-button"
       (click)="askResetPassword()" [disabled]="!forgotPasswordEmailInput.validity.valid"
     >
   </div>

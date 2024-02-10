@@ -3,9 +3,9 @@
 import { expect } from 'chai'
 import snakeCase from 'lodash-es/snakeCase.js'
 import validator from 'validator'
-import { getAverageTheoreticalBitrate, getMaxTheoreticalBitrate, parseChapters, timeToInt } from '@peertube/peertube-core-utils'
-import { VideoResolution } from '@peertube/peertube-models'
-import { objectConverter, parseBytes, parseDurationToMs, parseSemVersion } from '@peertube/peertube-server/core/helpers/core-utils.js'
+import { getAverageTheoreticalBitrate, getMaxTheoreticalBitrate, parseChapters, timeToInt } from '@retroai/retro3-core-utils'
+import { VideoResolution } from '@retroai/retro3-models'
+import { objectConverter, parseBytes, parseDurationToMs, parseSemVersion } from '@retroai/retro3-server/core/helpers/core-utils.js'
 
 describe('Parse Bytes', function () {
 

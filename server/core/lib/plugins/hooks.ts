@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird'
-import { ServerActionHookName, ServerFilterHookName } from '@peertube/peertube-models'
+import { ServerActionHookName, ServerFilterHookName } from '@retroai/retro3-models'
 import { logger } from '../../helpers/logger.js'
 import { PluginManager } from './plugin-manager.js'
 

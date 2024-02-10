@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { MVideoCaption } from '@server/types/models/index.js'
 import { moveAndProcessCaptionFile } from '../../../helpers/captions-utils.js'

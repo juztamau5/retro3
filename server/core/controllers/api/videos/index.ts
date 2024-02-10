@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { pickCommonVideoQuery } from '@server/helpers/query.js'
 import { doJSONRequest } from '@server/helpers/requests.js'
 import { openapiOperationDoc } from '@server/middlewares/doc.js'

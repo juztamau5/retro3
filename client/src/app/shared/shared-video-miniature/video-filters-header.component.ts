@@ -4,11 +4,11 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { AuthService } from '@app/core'
 import { ServerService } from '@app/core/server/server.service'
-import { UserRight } from '@peertube/peertube-models'
-import { PeertubeModalService } from '../shared-main'
+import { UserRight } from '@retroai/retro3-models'
+import { Retro3ModalService } from '../shared-main'
 import { VideoFilters } from './video-filters.model'
 
-const debugLogger = debug('peertube:videos:VideoFiltersHeaderComponent')
+const debugLogger = debug('retro3:videos:VideoFiltersHeaderComponent')
 
 @Component({
   selector: 'my-video-filters-header',
@@ -32,7 +32,7 @@ export class VideoFiltersHeaderComponent implements OnInit, OnDestroy {
     private auth: AuthService,
     private serverService: ServerService,
     private fb: FormBuilder,
-    private modalService: PeertubeModalService
+    private modalService: Retro3ModalService
   ) {
   }
 

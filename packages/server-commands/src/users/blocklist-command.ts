@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { AccountBlock, BlockStatus, HttpStatusCode, ResultList, ServerBlock } from '@peertube/peertube-models'
+import { AccountBlock, BlockStatus, HttpStatusCode, ResultList, ServerBlock } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 type ListBlocklistOptions = OverrideCommandOptions & {

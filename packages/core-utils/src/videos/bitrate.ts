@@ -1,4 +1,4 @@
-import { VideoResolution, VideoResolutionType } from '@peertube/peertube-models'
+import { VideoResolution, VideoResolutionType } from '@retroai/retro3-models'
 
 type BitPerPixel = { [ id in VideoResolutionType ]: number }
 

@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
   ContactFormCommand,
   createSingleServer,
   killallServers,
-  PeerTubeServer
-} from '@peertube/peertube-server-commands'
+  Retro3Server
+} from '@retroai/retro3-server-commands'
 
 describe('Test contact form API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const emails: object[] = []
   const defaultBody = {
     fromName: 'super name',

@@ -1,6 +1,6 @@
-import { PeerTubeServer } from '../server/server.js'
+import { Retro3Server } from '../server/server.js'
 
-async function setDefaultAccountAvatar (serversArg: PeerTubeServer | PeerTubeServer[], token?: string) {
+async function setDefaultAccountAvatar (serversArg: Retro3Server | Retro3Server[], token?: string) {
   const servers = Array.isArray(serversArg)
     ? serversArg
     : [ serversArg ]

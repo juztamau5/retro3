@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { FileRedundancyInformation, StreamingPlaylistRedundancyInformation } from '@peertube/peertube-models'
+import { FileRedundancyInformation, StreamingPlaylistRedundancyInformation } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-video-redundancy-information',

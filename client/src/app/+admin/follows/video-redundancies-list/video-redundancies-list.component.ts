@@ -3,8 +3,8 @@ import { SortMeta } from 'primeng/api'
 import { Component, OnInit } from '@angular/core'
 import { ConfirmService, Notifier, RestPagination, RestTable, ServerService } from '@app/core'
 import { BytesPipe, RedundancyService } from '@app/shared/shared-main'
-import { VideoRedundanciesTarget, VideoRedundancy, VideosRedundancyStats } from '@peertube/peertube-models'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { VideoRedundanciesTarget, VideoRedundancy, VideosRedundancyStats } from '@retroai/retro3-models'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 
 @Component({
   selector: 'my-video-redundancies-list',
@@ -181,12 +181,12 @@ export class VideoRedundanciesListComponent extends RestTable implements OnInit 
   }
 
   private loadSelectLocalStorage () {
-    const displayType = peertubeLocalStorage.getItem(VideoRedundanciesListComponent.LOCAL_STORAGE_DISPLAY_TYPE)
+    const displayType = retro3LocalStorage.getItem(VideoRedundanciesListComponent.LOCAL_STORAGE_DISPLAY_TYPE)
     if (displayType) this.displayType = displayType as VideoRedundanciesTarget
   }
 
   private saveSelectLocalStorage () {
-    peertubeLocalStorage.setItem(VideoRedundanciesListComponent.LOCAL_STORAGE_DISPLAY_TYPE, this.displayType)
+    retro3LocalStorage.setItem(VideoRedundanciesListComponent.LOCAL_STORAGE_DISPLAY_TYPE, this.displayType)
   }
 
   private bytesToHuman (bytes: number) {

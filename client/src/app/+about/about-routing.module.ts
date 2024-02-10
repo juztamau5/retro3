@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { AboutFollowsComponent } from '@app/+about/about-follows/about-follows.component'
 import { AboutInstanceComponent } from '@app/+about/about-instance/about-instance.component'
 import { AboutInstanceResolver } from '@app/+about/about-instance/about-instance.resolver'
-import { AboutPeertubeComponent } from '@app/+about/about-peertube/about-peertube.component'
+import { AboutRetro3Component } from '@app/+about/about-retro3/about-retro3.component'
 import { AboutComponent } from './about.component'
 
 const aboutRoutes: Routes = [
@@ -42,11 +42,11 @@ const aboutRoutes: Routes = [
         }
       },
       {
-        path: 'peertube',
-        component: AboutPeertubeComponent,
+        path: 'retro3',
+        component: AboutRetro3Component,
         data: {
           meta: {
-            title: $localize`About PeerTube`
+            title: $localize`About retro3`
           }
         }
       },

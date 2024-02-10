@@ -34,7 +34,7 @@ yarn-error.log
 /*.vscode
 /**/.idea
 /dist
-/PeerTube.iml
+/retro3.iml
 *.swp
 
 # Zanata

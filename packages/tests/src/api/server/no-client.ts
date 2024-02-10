@@ -1,14 +1,14 @@
 import request from 'supertest'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { cleanupTests, createSingleServer, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { cleanupTests, createSingleServer, Retro3Server } from '@retroai/retro3-server-commands'
 
 describe('Start and stop server without web client routes', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(30000)
 
-    server = await createSingleServer(1, {}, { peertubeArgs: [ '--no-client' ] })
+    server = await createSingleServer(1, {}, { retro3Args: [ '--no-client' ] })
   })
 
   it('Should fail getting the client', function () {

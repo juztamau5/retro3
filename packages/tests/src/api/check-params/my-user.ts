@@ -2,18 +2,18 @@
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, UserRole, VideoCreateResult } from '@peertube/peertube-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, UserRole, VideoCreateResult } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
   makePutBodyRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   UsersCommand
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test my user API validators', function () {
   const path = '/api/v1/users/'
@@ -21,7 +21,7 @@ describe('Test my user API validators', function () {
   let rootId: number
   let moderatorId: number
   let video: VideoCreateResult
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userToken = ''
   let moderatorToken = ''
 
@@ -192,7 +192,7 @@ describe('Test my user API validators', function () {
     })
 
     it('Should fail with an unknown theme', async function () {
-      const fields = { theme: 'peertube-theme-unknown' }
+      const fields = { theme: 'retro3-theme-unknown' }
       await makePutBodyRequest({ url: server.url, path: path + 'me', token: userToken, fields })
     })
 

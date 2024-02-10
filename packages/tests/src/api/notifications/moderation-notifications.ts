@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { wait } from '@peertube/peertube-core-utils'
-import { AbuseState, CustomConfig, UserNotification, UserRole, VideoPrivacy } from '@peertube/peertube-models'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { cleanupTests, PeerTubeServer, waitJobs } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { AbuseState, CustomConfig, UserNotification, UserRole, VideoPrivacy } from '@retroai/retro3-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { cleanupTests, Retro3Server, waitJobs } from '@retroai/retro3-server-commands'
 import { MockSmtpServer } from '@tests/shared/mock-servers/mock-email.js'
 import { MockInstancesIndex } from '@tests/shared/mock-servers/mock-instances-index.js'
 import {
@@ -23,7 +23,7 @@ import {
 } from '@tests/shared/notifications.js'
 
 describe('Test moderation notifications', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let userToken1: string
   let userToken2: string
 

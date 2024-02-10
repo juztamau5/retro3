@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, HttpStatusCodeType, VideoStudioTask } from '@peertube/peertube-models'
+import { HttpStatusCode, HttpStatusCodeType, VideoStudioTask } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   VideoStudioCommand,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video studio API validator', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let command: VideoStudioCommand
   let userAccessToken: string
   let videoUUID: string

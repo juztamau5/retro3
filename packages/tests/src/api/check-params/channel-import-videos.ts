@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   ChannelsCommand,
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos import in a channel API validator', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const userInfo = {
     accessToken: '',
     channelName: 'fake_channel',

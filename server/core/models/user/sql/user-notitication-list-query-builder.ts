@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 import { AbstractRunQuery, ModelBuilder } from '@server/models/shared/index.js'
 import { UserNotificationModelForApi } from '@server/types/models/index.js'
-import { ActorImageType } from '@peertube/peertube-models'
+import { ActorImageType } from '@retroai/retro3-models'
 import { getSort } from '../../shared/index.js'
 
 export interface ListNotificationsOptions {
@@ -149,7 +149,7 @@ export class UserNotificationListQueryBuilder extends AbstractRunQuery {
       "Plugin"."type" AS "Plugin.type",
       "Plugin"."latestVersion" AS "Plugin.latestVersion",
       "Application"."id" AS "Application.id",
-      "Application"."latestPeerTubeVersion" AS "Application.latestPeerTubeVersion",
+      "Application"."latestRetro3Version" AS "Application.latestRetro3Version",
       "ActorFollow"."id" AS "ActorFollow.id",
       "ActorFollow"."state" AS "ActorFollow.state",
       "ActorFollow->ActorFollower"."id" AS "ActorFollow.ActorFollower.id",

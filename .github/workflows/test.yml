@@ -23,7 +23,7 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: peertube
+          POSTGRES_USER: retro3
           POSTGRES_HOST_AUTH_METHOD: trust
 
       ldap:
@@ -42,7 +42,7 @@ jobs:
         test_suite: [ types-package, client, api-1, api-2, api-3, api-4, api-5, cli-plugin, lint, external-plugins ]
 
     env:
-      PGUSER: peertube
+      PGUSER: retro3
       PGHOST: localhost
       NODE_PENDING_JOB_WAIT: 250
       ENABLE_OBJECT_STORAGE_TESTS: true
@@ -54,11 +54,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: './.github/actions/reusable-prepare-peertube-build'
+      - uses: './.github/actions/reusable-prepare-retro3-build'
         with:
           node-version: '18.x'
 
-      - uses: './.github/actions/reusable-prepare-peertube-run'
+      - uses: './.github/actions/reusable-prepare-retro3-run'
 
       - name: Cache fixtures
         uses: actions/cache@v3

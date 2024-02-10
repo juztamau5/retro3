@@ -1,5 +1,5 @@
 import { Job } from 'bullmq'
-import { ActivitypubHttpBroadcastPayload } from '@peertube/peertube-models'
+import { ActivitypubHttpBroadcastPayload } from '@retroai/retro3-models'
 import { buildGlobalHTTPHeaders, buildSignedRequestOptions, computeBody } from '@server/lib/activitypub/send/http.js'
 import { ActorFollowHealthCache } from '@server/lib/actor-follow-health-cache.js'
 import { parallelHTTPBroadcastFromWorker, sequentialHTTPBroadcastFromWorker } from '@server/lib/worker/parent-process.js'

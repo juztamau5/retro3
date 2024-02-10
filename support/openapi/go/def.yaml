@@ -1,4 +1,4 @@
 # https://openapi-generator.tech/docs/generators/go
 
-packageName: peertube
+packageName: retro3
 enumClassPrefix: "true"

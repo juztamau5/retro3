@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { checkBadCountPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
@@ -9,15 +9,15 @@ import {
   makeGetRequest,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos history API validator', function () {
   const myHistoryPath = '/api/v1/users/me/history/videos'
   const myHistoryRemove = myHistoryPath + '/remove'
   let viewPath: string
-  let server: PeerTubeServer
+  let server: Retro3Server
   let videoId: number
 
   // ---------------------------------------------------------------

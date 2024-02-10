@@ -1,5 +1,5 @@
 import { VideoPlaylistElementModel } from '@server/models/video/video-playlist-element.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MVideoFormattable, MVideoThumbnail, MVideoUrl } from './video.js'
 import { MVideoPlaylistPrivacy } from './video-playlist.js'
 

@@ -13,7 +13,7 @@
   text-decoration: underline;
 }
 
-.peertube-container {
+.retro3-container {
   padding-bottom: 20px;
 
   &.hotkeys-modal-opened {
@@ -74,7 +74,7 @@
   flex: 1;
 }
 
-.peertube-title {
+.retro3-title {
   @include disable-default-a-behaviour;
 
   font-size: 20px;

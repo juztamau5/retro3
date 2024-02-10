@@ -1,8 +1,8 @@
 import { DestroyOptions, Op, Transaction } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, ForeignKey, IsInt, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { ResultList } from '@peertube/peertube-models'
+import { ResultList } from '@retroai/retro3-models'
 import { MUserAccountId, MUserId } from '@server/types/models/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from '../video/video.js'
 import { UserModel } from './user.js'
 
@@ -57,7 +57,7 @@ export class UserVideoHistoryModel extends Model<Partial<AttributesOnly<UserVide
   })
   User: Awaited<UserModel>
 
-  // FIXME: have to specify the result type to not break peertube typings generation
+  // FIXME: have to specify the result type to not break retro3 typings generation
   static listForApi (user: MUserAccountId, start: number, count: number, search?: string): Promise<ResultList<VideoModel>> {
     return VideoModel.listForApi({
       start,

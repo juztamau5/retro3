@@ -2,7 +2,7 @@ import express from 'express'
 import { Emailer } from '@server/lib/emailer.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { UserRegistrationModel } from '@server/models/user/user-registration.js'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   UserRegister,
@@ -10,7 +10,7 @@ import {
   UserRegistrationState,
   UserRegistrationUpdateState,
   UserRight
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { auditLoggerFactory, UserAuditView } from '../../../helpers/audit-logger.js'
 import { logger } from '../../../helpers/logger.js'
 import { CONFIG } from '../../../initializers/config.js'

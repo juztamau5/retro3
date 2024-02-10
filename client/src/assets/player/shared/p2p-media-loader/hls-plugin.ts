@@ -4,7 +4,7 @@
 import Hlsjs, { ErrorData, HlsConfig, Level, LevelSwitchingData, ManifestParsedData } from 'hls.js'
 import videojs from 'video.js'
 import { logger } from '@root-helpers/logger'
-import { HlsjsConfigHandlerOptions, PeerTubeResolution, VideoJSTechHLS } from '../../types'
+import { HlsjsConfigHandlerOptions, Retro3Resolution, VideoJSTechHLS } from '../../types'
 
 type ErrorCounts = {
   [ type: string ]: number
@@ -349,14 +349,14 @@ export class Html5Hlsjs {
 
   private _removeQuality (index: number) {
     this.hls.removeLevel(index)
-    this.player.peertubeResolutions().remove(index)
+    this.player.retro3Resolutions().remove(index)
     this.hls.currentLevel = -1
   }
 
   private _notifyVideoQualities () {
     if (!this.metadata) return
 
-    const resolutions: PeerTubeResolution[] = []
+    const resolutions: Retro3Resolution[] = []
 
     this.metadata.levels.forEach((level, index) => {
       resolutions.push({
@@ -380,7 +380,7 @@ export class Html5Hlsjs {
       selectCallback: () => this.hls.currentLevel = -1
     })
 
-    this.player.peertubeResolutions().add(resolutions)
+    this.player.retro3Resolutions().add(resolutions)
   }
 
   private _startLoad () {
@@ -461,7 +461,7 @@ export class Html5Hlsjs {
         ? data.level
         : -1
 
-      this.player.peertubeResolutions().select({ id: resolutionId, autoResolutionChosenId, fireCallback: false })
+      this.player.retro3Resolutions().select({ id: resolutionId, autoResolutionChosenId, fireCallback: false })
     })
 
     this.hls.attachMedia(this.videoElement)

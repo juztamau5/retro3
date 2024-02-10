@@ -13,7 +13,7 @@ export type PluginPackageJSON = {
   name: string
   version: string
   description: string
-  engine: { peertube: string }
+  engine: { retro3: string }
 
   homepage: string
   author: string

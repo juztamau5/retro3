@@ -1,1 +1,1 @@
-export * from './peertube-hotkeys-plugin'
+export * from './retro3-hotkeys-plugin'

@@ -1,6 +1,6 @@
 import 'multer'
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { handlesToNameAndHost } from '@server/helpers/actors.js'
 import { pickCommonVideoQuery } from '@server/helpers/query.js'
 import { sendUndoFollow } from '@server/lib/activitypub/send/index.js'

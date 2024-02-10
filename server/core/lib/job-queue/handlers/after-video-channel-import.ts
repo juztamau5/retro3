@@ -1,7 +1,7 @@
 import { Job } from 'bullmq'
 import { logger } from '@server/helpers/logger.js'
 import { VideoChannelSyncModel } from '@server/models/video/video-channel-sync.js'
-import { AfterVideoChannelImportPayload, VideoChannelSyncState, VideoImportPreventExceptionResult } from '@peertube/peertube-models'
+import { AfterVideoChannelImportPayload, VideoChannelSyncState, VideoImportPreventExceptionResult } from '@retroai/retro3-models'
 
 export async function processAfterVideoChannelImport (job: Job) {
   const payload = job.data as AfterVideoChannelImportPayload

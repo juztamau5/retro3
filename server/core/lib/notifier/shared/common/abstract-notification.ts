@@ -1,4 +1,4 @@
-import { EmailPayload, UserNotificationSettingValueType } from '@peertube/peertube-models'
+import { EmailPayload, UserNotificationSettingValueType } from '@retroai/retro3-models'
 import { MUserWithNotificationSetting, UserNotificationModelForApi } from '@server/types/models/index.js'
 
 export abstract class AbstractNotification <T, U = MUserWithNotificationSetting> {

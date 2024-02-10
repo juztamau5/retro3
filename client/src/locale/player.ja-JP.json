@@ -87,7 +87,7 @@
     "Volume Level": "音量",
     "You aborted the media playback": "メディアの再生を中止しました",
     "A network error caused the media download to fail part-way.": "ネットワークエラーが発生したため、メディアのダウンロードは途中で失敗しました。",
-    "The media could not be loaded, either because the server or network failed or because the format is not supported.": "PeerTubeサーバーまたはネットワークに障害が発生したか、メディアのフォーマットがサポートされていないため、メディアを読み込むことができませんでした。",
+    "The media could not be loaded, either because the server or network failed or because the format is not supported.": "retro3サーバーまたはネットワークに障害が発生したか、メディアのフォーマットがサポートされていないため、メディアを読み込むことができませんでした。",
     "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "ファイルが壊れているか、ブラウザーがサポートしていない機能を使用しているメディアのため、メディアの再生を中止しました。",
     "No compatible source was found for this media.": "このメディアに関する情報は見つかりませんでした。",
     "The media is encrypted and we do not have the keys to decrypt it.": "このメディアは暗号化されていますが、復号するための鍵がありません。",

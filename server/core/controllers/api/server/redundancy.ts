@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import { JobQueue } from '@server/lib/job-queue/index.js'
 import { VideoRedundancyModel } from '@server/models/redundancy/video-redundancy.js'
 import { logger } from '../../../helpers/logger.js'

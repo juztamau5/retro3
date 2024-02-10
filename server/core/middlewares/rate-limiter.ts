@@ -1,6 +1,6 @@
 import express from 'express'
 import RateLimit, { Options as RateLimitHandlerOptions } from 'express-rate-limit'
-import { UserRole, UserRoleType } from '@peertube/peertube-models'
+import { UserRole, UserRoleType } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { RunnerModel } from '@server/models/runner/runner.js'
 import { optionalAuthenticate } from './auth.js'

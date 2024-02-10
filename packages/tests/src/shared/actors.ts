@@ -3,11 +3,11 @@
 import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
-import { Account, VideoChannel } from '@peertube/peertube-models'
-import { PeerTubeServer } from '@peertube/peertube-server-commands'
+import { Account, VideoChannel } from '@retroai/retro3-models'
+import { Retro3Server } from '@retroai/retro3-server-commands'
 
 async function expectChannelsFollows (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   handle: string
   followers: number
   following: number
@@ -19,7 +19,7 @@ async function expectChannelsFollows (options: {
 }
 
 async function expectAccountFollows (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   handle: string
   followers: number
   following: number
@@ -30,7 +30,7 @@ async function expectAccountFollows (options: {
   return expectActorFollow({ ...options, data })
 }
 
-async function checkActorFilesWereRemoved (filename: string, server: PeerTubeServer) {
+async function checkActorFilesWereRemoved (filename: string, server: Retro3Server) {
   for (const directory of [ 'avatars' ]) {
     const directoryPath = server.getDirectoryPath(directory)
 
@@ -53,7 +53,7 @@ export {
 // ---------------------------------------------------------------------------
 
 function expectActorFollow (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   data: (Account | VideoChannel)[]
   handle: string
   followers: number

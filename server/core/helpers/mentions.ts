@@ -1,4 +1,4 @@
-import { uniqify } from '@peertube/peertube-core-utils'
+import { uniqify } from '@retroai/retro3-core-utils'
 import { WEBSERVER } from '@server/initializers/constants.js'
 import { actorNameAlphabet } from './custom-validators/activitypub/actor.js'
 import { regexpCapture } from './regexp.js'

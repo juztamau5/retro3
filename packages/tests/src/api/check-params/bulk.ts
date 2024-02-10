@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test bulk API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken: string
 
   // ---------------------------------------------------------------

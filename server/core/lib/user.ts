@@ -7,7 +7,7 @@ import {
   UserNotificationSettingValue,
   UserRole,
   UserRoleType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { UserModel } from '@server/models/user/user.js'
@@ -281,7 +281,7 @@ function createDefaultUserNotificationSettings (user: MUserId, t: Transaction | 
     abuseNewMessage: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     abuseStateChange: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     autoInstanceFollowing: UserNotificationSettingValue.WEB,
-    newPeerTubeVersion: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
+    newRetro3Version: UserNotificationSettingValue.WEB | UserNotificationSettingValue.EMAIL,
     newPluginVersion: UserNotificationSettingValue.WEB,
     myVideoStudioEditionFinished: UserNotificationSettingValue.WEB
   }

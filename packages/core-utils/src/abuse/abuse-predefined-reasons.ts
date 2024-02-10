@@ -1,4 +1,4 @@
-import { AbusePredefinedReasons, AbusePredefinedReasonsString, AbusePredefinedReasonsType } from '@peertube/peertube-models'
+import { AbusePredefinedReasons, AbusePredefinedReasonsString, AbusePredefinedReasonsType } from '@retroai/retro3-models'
 
 export const abusePredefinedReasonsMap: {
   [key in AbusePredefinedReasonsString]: AbusePredefinedReasonsType

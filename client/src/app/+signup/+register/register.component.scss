@@ -45,7 +45,7 @@ my-instance-about-accordion {
   }
 
   > button {
-    @include peertube-button-big;
+    @include retro3-button-big;
 
     &[cdkStepperNext] {
       @include orange-button;

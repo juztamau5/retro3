@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 import { AbstractRunQuery } from '@server/models/shared/index.js'
-import { ActorImageType } from '@peertube/peertube-models'
+import { ActorImageType } from '@retroai/retro3-models'
 import { getInstanceFollowsSort } from '../../../shared/index.js'
 import { ActorFollowTableAttributes } from './actor-follow-table-attributes.js'
 

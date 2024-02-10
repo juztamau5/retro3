@@ -3,10 +3,10 @@ import { SortMeta } from 'primeng/api'
 import { TableLazyLoadEvent } from 'primeng/table'
 import { ActivatedRoute, Router } from '@angular/router'
 import { logger } from '@root-helpers/logger'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 import { RestPagination } from './rest-pagination'
 
-const debugLogger = debug('peertube:tables:RestTable')
+const debugLogger = debug('retro3:tables:RestTable')
 
 export abstract class RestTable <T = unknown> {
 
@@ -34,7 +34,7 @@ export abstract class RestTable <T = unknown> {
   }
 
   loadSort () {
-    const result = peertubeLocalStorage.getItem(this.getSortLocalStorageKey())
+    const result = retro3LocalStorage.getItem(this.getSortLocalStorageKey())
 
     if (result) {
       try {
@@ -46,7 +46,7 @@ export abstract class RestTable <T = unknown> {
   }
 
   saveSort () {
-    peertubeLocalStorage.setItem(this.getSortLocalStorageKey(), JSON.stringify(this.sort))
+    retro3LocalStorage.setItem(this.getSortLocalStorageKey(), JSON.stringify(this.sort))
   }
 
   loadLazy (event: TableLazyLoadEvent) {

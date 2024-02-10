@@ -5,7 +5,7 @@ import { AuthService, ComponentPagination, ConfirmService, hasMoreItems, Notifie
 import { HooksService } from '@app/core/plugins/hooks.service'
 import { Syndication, VideoDetails } from '@app/shared/shared-main'
 import { VideoComment, VideoCommentService, VideoCommentThreadTree } from '@app/shared/shared-video-comment'
-import { PeerTubeProblemDocument, ServerErrorCode } from '@peertube/peertube-models'
+import { Retro3ProblemDocument, ServerErrorCode } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-video-comments',
@@ -110,7 +110,7 @@ export class VideoCommentsComponent implements OnInit, OnChanges, OnDestroy {
       error: err => {
         // We may try to fetch highlighted thread of another video, skip the error if it is the case
         // We'll retry the request on video Input() change
-        const errorBody = err.body as PeerTubeProblemDocument
+        const errorBody = err.body as Retro3ProblemDocument
         if (highlightThread && errorBody?.code === ServerErrorCode.COMMENT_NOT_ASSOCIATED_TO_VIDEO) return
 
         this.notifier.error(err.message)

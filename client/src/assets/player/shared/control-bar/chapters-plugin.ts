@@ -1,6 +1,6 @@
 import videojs from 'video.js'
 import { ChaptersOptions } from '../../types'
-import { VideoChapter } from '@peertube/peertube-models'
+import { VideoChapter } from '@retroai/retro3-models'
 import { ProgressBarMarkerComponent } from './progress-bar-marker-component'
 
 const Plugin = videojs.getPlugin('plugin')

@@ -2,15 +2,15 @@ import { logger } from '@server/helpers/logger.js'
 import { VideoJobInfoModel } from '@server/models/video/video-job-info.js'
 import { MVideo } from '@server/types/models/index.js'
 import { MRunnerJob } from '@server/types/models/runners/index.js'
-import { pick } from '@peertube/peertube-core-utils'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { getVideoStreamDuration } from '@peertube/peertube-ffmpeg'
+import { pick } from '@retroai/retro3-core-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { getVideoStreamDuration } from '@retroai/retro3-ffmpeg'
 import {
   RunnerJobUpdatePayload,
   RunnerJobVODAudioMergeTranscodingPayload,
   RunnerJobVODWebVideoTranscodingPrivatePayload,
   VODAudioMergeTranscodingSuccess
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { generateRunnerTranscodingVideoInputFileUrl, generateRunnerTranscodingVideoPreviewFileUrl } from '../runner-urls.js'
 import { AbstractVODTranscodingJobHandler } from './abstract-vod-transcoding-job-handler.js'
 import { loadTranscodingRunnerVideo, onVODWebVideoOrAudioMergeTranscodingJob } from './shared/index.js'

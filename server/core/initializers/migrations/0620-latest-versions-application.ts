@@ -13,7 +13,7 @@ async function up (utils: {
       defaultValue: null,
       allowNull: true
     }
-    await utils.queryInterface.addColumn('application', 'latestPeerTubeVersion', data)
+    await utils.queryInterface.addColumn('application', 'latestRetro3Version', data)
   }
 }
 

@@ -4,7 +4,7 @@ import { isIdValid } from '@server/helpers/custom-validators/misc.js'
 import { checkUserCanTerminateOwnershipChange } from '@server/helpers/custom-validators/video-ownership.js'
 import { AccountModel } from '@server/models/account/account.js'
 import { MVideoWithAllFiles } from '@server/types/models/index.js'
-import { HttpStatusCode, UserRight, VideoChangeOwnershipAccept, VideoChangeOwnershipStatus, VideoState } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight, VideoChangeOwnershipAccept, VideoChangeOwnershipStatus, VideoState } from '@retroai/retro3-models'
 import {
   areValidationErrors,
   checkUserCanManageVideo,

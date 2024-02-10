@@ -1,6 +1,6 @@
 import express from 'express'
 import { param } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isIdValid } from '../../../helpers/custom-validators/misc.js'
 import { VideoShareModel } from '../../../models/video/video-share.js'
 import { areValidationErrors, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'

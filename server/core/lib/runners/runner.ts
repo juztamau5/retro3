@@ -1,4 +1,4 @@
-import { RunnerJobState, RunnerJobStateType } from '@peertube/peertube-models'
+import { RunnerJobState, RunnerJobStateType } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { RUNNER_JOBS } from '@server/initializers/constants.js'

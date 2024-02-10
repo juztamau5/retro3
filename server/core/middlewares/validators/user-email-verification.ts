@@ -1,7 +1,7 @@
 import express from 'express'
 import { body, param } from 'express-validator'
 import { toBooleanOrNull } from '@server/helpers/custom-validators/misc.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { logger } from '../../helpers/logger.js'
 import { Redis } from '../../lib/redis.js'
 import { areValidationErrors, checkUserEmailExist, checkUserIdExist } from './shared/index.js'

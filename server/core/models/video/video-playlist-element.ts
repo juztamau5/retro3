@@ -15,14 +15,14 @@ import {
   UpdatedAt
 } from 'sequelize-typescript'
 import validator from 'validator'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 import {
   PlaylistElementObject,
   VideoPlaylistElement,
   VideoPlaylistElementType,
   VideoPrivacy,
   VideoPrivacyType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { MUserAccountId } from '@server/types/models/index.js'
 import {
   MVideoPlaylistElement,
@@ -31,7 +31,7 @@ import {
   MVideoPlaylistElementVideoUrlPlaylistPrivacy,
   MVideoPlaylistVideoThumbnail
 } from '@server/types/models/video/video-playlist-element.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isActivityPubUrlValid } from '../../helpers/custom-validators/activitypub/misc.js'
 import { CONSTRAINTS_FIELDS } from '../../initializers/constants.js'
 import { AccountModel } from '../account/account.js'

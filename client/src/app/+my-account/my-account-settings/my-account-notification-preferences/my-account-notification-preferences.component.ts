@@ -3,8 +3,8 @@ import { Subject } from 'rxjs'
 import { Component, Input, OnInit } from '@angular/core'
 import { Notifier, ServerService, User } from '@app/core'
 import { UserNotificationService } from '@app/shared/shared-main'
-import { objectKeysTyped } from '@peertube/peertube-core-utils'
-import { UserNotificationSetting, UserNotificationSettingValue, UserRight, UserRightType } from '@peertube/peertube-models'
+import { objectKeysTyped } from '@retroai/retro3-core-utils'
+import { UserNotificationSetting, UserNotificationSettingValue, UserRight, UserRightType } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-account-notification-preferences',
@@ -44,7 +44,7 @@ export class MyAccountNotificationPreferencesComponent implements OnInit {
       autoInstanceFollowing: $localize`Your instance automatically followed another instance`,
       abuseNewMessage: $localize`An abuse report received a new message`,
       abuseStateChange: $localize`One of your abuse reports has been accepted or rejected by moderators`,
-      newPeerTubeVersion: $localize`A new PeerTube version is available`,
+      newRetro3Version: $localize`A new retro3 version is available`,
       newPluginVersion: $localize`One of your plugin/theme has a new available version`,
       myVideoStudioEditionFinished: $localize`Video studio edition has finished`
     }
@@ -85,7 +85,7 @@ export class MyAccountNotificationPreferencesComponent implements OnInit {
           'newUserRegistration',
           'newInstanceFollower',
           'autoInstanceFollowing',
-          'newPeerTubeVersion',
+          'newRetro3Version',
           'newPluginVersion'
         ]
       }
@@ -97,7 +97,7 @@ export class MyAccountNotificationPreferencesComponent implements OnInit {
       newUserRegistration: UserRight.MANAGE_USERS,
       newInstanceFollower: UserRight.MANAGE_SERVER_FOLLOW,
       autoInstanceFollowing: UserRight.MANAGE_CONFIGURATION,
-      newPeerTubeVersion: UserRight.MANAGE_DEBUG,
+      newRetro3Version: UserRight.MANAGE_DEBUG,
       newPluginVersion: UserRight.MANAGE_DEBUG
     }
   }

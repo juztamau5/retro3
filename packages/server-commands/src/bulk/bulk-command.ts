@@ -1,4 +1,4 @@
-import { BulkRemoveCommentsOfBody, HttpStatusCode } from '@peertube/peertube-models'
+import { BulkRemoveCommentsOfBody, HttpStatusCode } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class BulkCommand extends AbstractCommand {

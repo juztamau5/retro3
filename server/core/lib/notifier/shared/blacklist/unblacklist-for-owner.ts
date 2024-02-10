@@ -4,7 +4,7 @@ import { WEBSERVER } from '@server/initializers/constants.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MUserDefault, MUserWithNotificationSetting, MVideoFullLight, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationType } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export class UnblacklistForOwner extends AbstractNotification <MVideoFullLight> {

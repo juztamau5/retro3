@@ -1,6 +1,6 @@
 <ng-template #modal let-hide="close">
   <div class="modal-header">
-    <h4 i18n class="modal-title">Welcome to PeerTube, dear administrator!</h4>
+    <h4 i18n class="modal-title">Welcome to retro3, dear administrator!</h4>
     <button class="border-0 p-0" title="Close this modal" i18n-title (click)="hide()">
       <my-global-icon iconName="cross"></my-global-icon>
     </button>
@@ -10,22 +10,22 @@
 
     <div class="block-documentation">
       <div class="columns">
-        <a class="link-block" href="https://docs.joinpeertube.org/maintain/tools" target="_blank" rel="noopener noreferrer">
-          <a i18n class="link-title" href="https://docs.joinpeertube.org/maintain/tools" target="_blank" rel="noopener noreferrer">CLI
+        <a class="link-block" href="https://docs.joinretro3.org/maintain/tools" target="_blank" rel="noopener noreferrer">
+          <a i18n class="link-title" href="https://docs.joinretro3.org/maintain/tools" target="_blank" rel="noopener noreferrer">CLI
             documentation</a>
 
           <div i18n>Upload or import videos, parse logs, prune storage directories, reset user password...</div>
         </a>
 
-        <a class="link-block" href="https://docs.joinpeertube.org/admin/following-instances" target="_blank" rel="noopener noreferrer">
-          <a i18n class="link-title" href="https://docs.joinpeertube.org/admin/following-instances" target="_blank" rel="noopener noreferrer">Administer
+        <a class="link-block" href="https://docs.joinretro3.org/admin/following-instances" target="_blank" rel="noopener noreferrer">
+          <a i18n class="link-title" href="https://docs.joinretro3.org/admin/following-instances" target="_blank" rel="noopener noreferrer">Administer
             documentation</a>
 
           <div i18n>Managing users, following other instances, dealing with spammers...</div>
         </a>
 
-        <a class="link-block" href="https://docs.joinpeertube.org/use/setup-account" target="_blank" rel="noopener noreferrer">
-          <a i18n class="link-title" href="https://docs.joinpeertube.org/use/setup-account" target="_blank" rel="noopener noreferrer">Use
+        <a class="link-block" href="https://docs.joinretro3.org/use/setup-account" target="_blank" rel="noopener noreferrer">
+          <a i18n class="link-title" href="https://docs.joinretro3.org/use/setup-account" target="_blank" rel="noopener noreferrer">Use
             documentation</a>
 
           <div i18n>Setup your account, managing video playlists, discover third-party applications...</div>
@@ -41,10 +41,10 @@
         <div i18n class="subtitle">Useful links</div>
 
         <ul>
-          <li i18n>Official PeerTube website (news, support, contribute...): <a href="https://joinpeertube.org" target="_blank"
-                                                                           rel="noopener noreferrer">https://joinpeertube.org</a></li>
+          <li i18n>Official retro3 website (news, support, contribute...): <a href="https://joinretro3.org" target="_blank"
+                                                                           rel="noopener noreferrer">https://joinretro3.org</a></li>
 
-          <li i18n>Put your instance on the public PeerTube index: <a href="https://instances.joinpeertube.org/instances">https://instances.joinpeertube.org/instances</a>
+          <li i18n>Put your instance on the public retro3 index: <a href="https://instances.joinretro3.org/instances">https://instances.joinretro3.org/instances</a>
           </li>
         </ul>
       </div>
@@ -65,7 +65,7 @@
         <p i18n>
           If you want to open registrations, please decide what <strong>your moderation rules</strong> and <strong>instance
           terms of service</strong> are, as well as specify the categories and languages and your moderators speak.
-          This way, you will help users to register on <strong>the appropriate</strong> PeerTube instance.
+          This way, you will help users to register on <strong>the appropriate</strong> retro3 instance.
         </p>
       </div>
     </div>
@@ -73,12 +73,12 @@
 
   <div class="modal-footer inputs">
     <input
-      type="button" role="button" i18n-value value="Remind me later" class="peertube-button grey-button"
+      type="button" role="button" i18n-value value="Remind me later" class="retro3-button grey-button"
       (click)="hide()" (key.enter)="hide()"
     >
 
     <a i18n (click)="doNotOpenAgain(); hide()" (key.enter)="doNotOpenAgain(); hide()"
-       class="peertube-button-link orange-button" href="/admin/config/edit-custom" target="_blank"
+       class="retro3-button-link orange-button" href="/admin/config/edit-custom" target="_blank"
        rel="noopener noreferrer" ngbAutofocus>
       Configure my instance
     </a>

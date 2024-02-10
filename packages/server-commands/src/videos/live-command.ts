@@ -2,7 +2,7 @@
 
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { omit, wait } from '@peertube/peertube-core-utils'
+import { omit, wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   LiveVideo,
@@ -16,9 +16,9 @@ import {
   VideoPrivacyType,
   VideoState,
   VideoStateType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
-import { ObjectStorageCommand, PeerTubeServer } from '../server/index.js'
+import { ObjectStorageCommand, Retro3Server } from '../server/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 import { sendRTMPStream, testFfmpegStreamError } from './live.js'
 
@@ -196,7 +196,7 @@ export class LiveCommand extends AbstractCommand {
   }
 
   async waitUntilSegmentGeneration (options: OverrideCommandOptions & {
-    server: PeerTubeServer
+    server: Retro3Server
     videoUUID: string
     playlistNumber: number
     segment: number

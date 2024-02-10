@@ -1,6 +1,6 @@
 import validator from 'validator'
 import { CONSTRAINTS_FIELDS } from '@server/initializers/constants.js'
-import { ClientLogLevel, ServerLogLevel } from '@peertube/peertube-models'
+import { ClientLogLevel, ServerLogLevel } from '@retroai/retro3-models'
 import { exists } from './misc.js'
 
 const serverLogLevels = new Set<ServerLogLevel>([ 'debug', 'info', 'warn', 'error' ])

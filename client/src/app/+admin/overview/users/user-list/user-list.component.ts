@@ -7,7 +7,7 @@ import { AdvancedInputFilter } from '@app/shared/shared-forms'
 import { Actor, DropdownAction } from '@app/shared/shared-main'
 import { AccountMutedStatus, BlocklistService, UserBanModalComponent, UserModerationDisplayType } from '@app/shared/shared-moderation'
 import { UserAdminService } from '@app/shared/shared-users'
-import { User, UserRole, UserRoleType } from '@peertube/peertube-models'
+import { User, UserRole, UserRoleType } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 
 type UserForList = User & {
@@ -69,7 +69,7 @@ export class UserListComponent extends RestTable <User> implements OnInit {
     private auth: AuthService,
     private blocklist: BlocklistService,
     private userAdminService: UserAdminService,
-    private peertubeLocalStorage: LocalStorageService
+    private retro3LocalStorage: LocalStorageService
   ) {
     super()
   }
@@ -142,7 +142,7 @@ export class UserListComponent extends RestTable <User> implements OnInit {
   }
 
   loadSelectedColumns () {
-    const result = this.peertubeLocalStorage.getItem(UserListComponent.LOCAL_STORAGE_SELECTED_COLUMNS_KEY)
+    const result = this.retro3LocalStorage.getItem(UserListComponent.LOCAL_STORAGE_SELECTED_COLUMNS_KEY)
 
     if (result) {
       try {
@@ -159,7 +159,7 @@ export class UserListComponent extends RestTable <User> implements OnInit {
   }
 
   saveSelectedColumns () {
-    this.peertubeLocalStorage.setItem(UserListComponent.LOCAL_STORAGE_SELECTED_COLUMNS_KEY, JSON.stringify(this.selectedColumns))
+    this.retro3LocalStorage.setItem(UserListComponent.LOCAL_STORAGE_SELECTED_COLUMNS_KEY, JSON.stringify(this.selectedColumns))
   }
 
   getIdentifier () {

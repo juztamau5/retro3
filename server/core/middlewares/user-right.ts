@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, UserRightType } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRightType } from '@retroai/retro3-models'
 import { logger } from '../helpers/logger.js'
 
 function ensureUserHasRight (userRight: UserRightType) {

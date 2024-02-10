@@ -37,7 +37,7 @@ import {
   VideoPrivacy,
   VideoPrivacyType,
   VideoSource
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { PluginInfo } from '@root-helpers/plugins-manager'
 import { I18nPrimengCalendarService } from './i18n-primeng-calendar.service'

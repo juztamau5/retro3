@@ -1,4 +1,4 @@
-import { UserRight, UserRightType, UserRole, UserRoleType } from '@peertube/peertube-models'
+import { UserRight, UserRightType, UserRole, UserRoleType } from '@retroai/retro3-models'
 
 export const USER_ROLE_LABELS: { [ id in UserRoleType ]: string } = {
   [UserRole.USER]: 'User',

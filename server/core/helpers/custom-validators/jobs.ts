@@ -1,4 +1,4 @@
-import { JobState } from '@peertube/peertube-models'
+import { JobState } from '@retroai/retro3-models'
 import { jobTypes } from '@server/lib/job-queue/job-queue.js'
 import { exists } from './misc.js'
 

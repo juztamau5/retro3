@@ -1,6 +1,6 @@
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { MVideo, MVideoImmutable } from '@server/types/models/index.js'
-import { VideoViewEvent } from '@peertube/peertube-models'
+import { VideoViewEvent } from '@retroai/retro3-models'
 import { VideoScope, VideoViewerCounters, VideoViewerStats, VideoViews, ViewerScope } from './shared/index.js'
 
 /**

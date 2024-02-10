@@ -1,6 +1,6 @@
 import { FfprobeData } from 'fluent-ffmpeg'
 import { CONFIG } from '@server/initializers/config.js'
-import { canDoQuickAudioTranscode, canDoQuickVideoTranscode, ffprobePromise } from '@peertube/peertube-ffmpeg'
+import { canDoQuickAudioTranscode, canDoQuickVideoTranscode, ffprobePromise } from '@retroai/retro3-ffmpeg'
 
 export async function canDoQuickTranscode (path: string, existingProbe?: FfprobeData): Promise<boolean> {
   if (CONFIG.TRANSCODING.PROFILE !== 'default') return false

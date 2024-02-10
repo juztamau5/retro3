@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { UserNotificationSettingValue } from '@peertube/peertube-models'
+import { UserNotificationSettingValue } from '@retroai/retro3-models'
 import { exists } from './misc.js'
 
 function isUserNotificationTypeValid (value: any) {

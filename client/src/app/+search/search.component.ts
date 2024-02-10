@@ -9,7 +9,7 @@ import { Video, VideoChannel } from '@app/shared/shared-main'
 import { AdvancedSearch, SearchService } from '@app/shared/shared-search'
 import { MiniatureDisplayOptions } from '@app/shared/shared-video-miniature'
 import { VideoPlaylist } from '@app/shared/shared-video-playlist'
-import { HTMLServerConfig, SearchTargetType } from '@peertube/peertube-models'
+import { HTMLServerConfig, SearchTargetType } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-search',
@@ -329,7 +329,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   private checkFieldsAndGetError () {
     if (this.advancedSearch.host && !validateHost(this.advancedSearch.host)) {
-      return $localize`PeerTube instance host filter is invalid`
+      return $localize`retro3 instance host filter is invalid`
     }
 
     return undefined

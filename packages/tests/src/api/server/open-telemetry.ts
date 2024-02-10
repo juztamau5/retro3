@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode, PlaybackMetricCreate, VideoPrivacy, VideoResolution } from '@peertube/peertube-models'
+import { HttpStatusCode, PlaybackMetricCreate, VideoPrivacy, VideoResolution } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectLogDoesNotContain, expectLogContain } from '@tests/shared/checks.js'
 import { MockHTTP } from '@tests/shared/mock-servers/mock-http.js'
 
 describe('Open Telemetry', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   describe('Metrics', function () {
     const metricsUrl = 'http://127.0.0.1:9092/metrics'
@@ -50,7 +50,7 @@ describe('Open Telemetry', function () {
       await server.videos.list()
 
       const res = await makeRawRequest({ url: metricsUrl, expectedStatus: HttpStatusCode.OK_200 })
-      expect(res.text).to.contain('peertube_job_queue_total{')
+      expect(res.text).to.contain('retro3_job_queue_total{')
       expect(res.text).to.contain('http_request_duration_ms_bucket{')
     })
 
@@ -77,8 +77,8 @@ describe('Open Telemetry', function () {
 
       const res = await makeRawRequest({ url: metricsUrl, expectedStatus: HttpStatusCode.OK_200 })
 
-      expect(res.text).to.contain('peertube_playback_http_downloaded_bytes_total{')
-      expect(res.text).to.contain('peertube_playback_p2p_peers{')
+      expect(res.text).to.contain('retro3_playback_http_downloaded_bytes_total{')
+      expect(res.text).to.contain('retro3_playback_p2p_peers{')
       expect(res.text).to.contain('p2pEnabled="false"')
     })
 
@@ -110,8 +110,8 @@ describe('Open Telemetry', function () {
 
       // eslint-disable-next-line max-len
       const label = `{videoOrigin="local",playerMode="p2p-media-loader",resolution="1080",fps="30",p2pEnabled="false",videoUUID="${video.uuid}"}`
-      expect(res.text).to.contain(`peertube_playback_p2p_peers${label} 42`)
-      expect(res.text).to.not.contain(`peertube_playback_p2p_peers${label} 7`)
+      expect(res.text).to.contain(`retro3_playback_p2p_peers${label} 42`)
+      expect(res.text).to.not.contain(`retro3_playback_p2p_peers${label} 7`)
     })
 
     it('Should disable http request duration metrics', async function () {

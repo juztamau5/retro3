@@ -11,7 +11,7 @@ import {
 import { body, param } from 'express-validator'
 import { isIdValid } from '@server/helpers/custom-validators/misc.js'
 import { isValidPasswordProtectedPrivacy } from '@server/helpers/custom-validators/videos.js'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 
 const listVideoPasswordValidator = [
   isValidVideoIdParam('videoId'),

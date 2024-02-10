@@ -5,8 +5,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { Notifier } from '@app/core/notification/notifier.service'
-import { logger, OAuthUserTokens, objectToUrlEncoded, peertubeLocalStorage } from '@root-helpers/index'
-import { HttpStatusCode, MyUser as UserServerModel, OAuthClientLocal, User, UserLogin, UserRefreshToken } from '@peertube/peertube-models'
+import { logger, OAuthUserTokens, objectToUrlEncoded, retro3LocalStorage } from '@root-helpers/index'
+import { HttpStatusCode, MyUser as UserServerModel, OAuthClientLocal, User, UserLogin, UserRefreshToken } from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 import { RestExtractor } from '../rest/rest-extractor.service'
 import { RedirectService } from '../routing'
@@ -38,8 +38,8 @@ export class AuthService {
   tokensRefreshed = new ReplaySubject<void>(1)
   loggedInHotkeys: Hotkey[]
 
-  private clientId: string = peertubeLocalStorage.getItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_ID)
-  private clientSecret: string = peertubeLocalStorage.getItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_SECRET)
+  private clientId: string = retro3LocalStorage.getItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_ID)
+  private clientSecret: string = retro3LocalStorage.getItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_SECRET)
   private loginChanged: Subject<AuthStatus>
   private user: AuthUser = null
   private refreshingTokenObservable: Observable<any>
@@ -91,8 +91,8 @@ export class AuthService {
             this.clientId = res.client_id
             this.clientSecret = res.client_secret
 
-            peertubeLocalStorage.setItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_ID, this.clientId)
-            peertubeLocalStorage.setItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_SECRET, this.clientSecret)
+            retro3LocalStorage.setItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_ID, this.clientId)
+            retro3LocalStorage.setItem(AuthService.LOCAL_STORAGE_OAUTH_CLIENT_KEYS.CLIENT_SECRET, this.clientSecret)
 
             logger.info('Client credentials loaded.')
           },
@@ -102,7 +102,7 @@ export class AuthService {
 
             if (err.status === HttpStatusCode.FORBIDDEN_403) {
               errorMessage = $localize`Cannot retrieve OAuth Client credentials: ${err.message}.
-Ensure you have correctly configured PeerTube (config/ directory), in particular the "webserver" section.`
+Ensure you have correctly configured retro3 (config/ directory), in particular the "webserver" section.`
             }
 
             // We put a bigger timeout: this is an important message
@@ -167,7 +167,7 @@ Ensure you have correctly configured PeerTube (config/ directory), in particular
     if (token) Object.assign(body, { externalAuthToken: token })
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-    if (otpToken) headers = headers.set('x-peertube-otp', otpToken)
+    if (otpToken) headers = headers.set('x-retro3-otp', otpToken)
 
     return this.http.post<UserLogin>(AuthService.BASE_TOKEN_URL, objectToUrlEncoded(body), { headers })
                .pipe(
@@ -260,7 +260,7 @@ Ensure you have correctly configured PeerTube (config/ directory), in particular
   isOTPMissingError (err: HttpErrorResponse) {
     if (err.status !== HttpStatusCode.UNAUTHORIZED_401) return false
 
-    if (err.headers.get('x-peertube-otp') !== 'required; app') return false
+    if (err.headers.get('x-retro3-otp') !== 'required; app') return false
 
     return true
   }

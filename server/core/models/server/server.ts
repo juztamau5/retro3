@@ -1,7 +1,7 @@
 import { Transaction } from 'sequelize'
 import { AllowNull, Column, CreatedAt, Default, HasMany, Is, Model, Table, UpdatedAt } from 'sequelize-typescript'
 import { MServer, MServerFormattable } from '@server/types/models/server/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isHostValid } from '../../helpers/custom-validators/servers.js'
 import { ActorModel } from '../actor/actor.js'
 import { buildSQLAttributes, throwIfNotValid } from '../shared/index.js'

@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param } from 'express-validator'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import { exists, isIdValid } from '../../helpers/custom-validators/misc.js'
 import { areValidationErrors, checkUserIdExist } from './shared/index.js'
 

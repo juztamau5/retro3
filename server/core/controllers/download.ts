@@ -6,8 +6,8 @@ import { generateHLSFilePresignedUrl, generateWebVideoPresignedUrl } from '@serv
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { MStreamingPlaylist, MStreamingPlaylistVideo, MVideo, MVideoFile, MVideoFullLight } from '@server/types/models/index.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoStorage, VideoStreamingPlaylistType } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoStorage, VideoStreamingPlaylistType } from '@retroai/retro3-models'
 import { STATIC_DOWNLOAD_PATHS } from '../initializers/constants.js'
 import { asyncMiddleware, optionalAuthenticate, videosDownloadValidator } from '../middlewares/index.js'
 

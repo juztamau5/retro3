@@ -1,5 +1,5 @@
 import config from 'config'
-import { promisify0 } from '@peertube/peertube-core-utils'
+import { promisify0 } from '@retroai/retro3-core-utils'
 import { parseSemVersion } from '../helpers/core-utils.js'
 import { logger } from '../helpers/logger.js'
 
@@ -9,7 +9,7 @@ import { logger } from '../helpers/logger.js'
 function checkMissedConfig () {
   const required = [ 'listen.port', 'listen.hostname',
     'webserver.https', 'webserver.hostname', 'webserver.port',
-    'secrets.peertube',
+    'secrets.retro3',
     'trust_proxy',
     'oauth2.token_lifetime.access_token', 'oauth2.token_lifetime.refresh_token',
     'database.hostname', 'database.port', 'database.username', 'database.password', 'database.pool.max',
@@ -70,7 +70,7 @@ function checkMissedConfig () {
     'geo_ip.enabled', 'geo_ip.country.database_url',
     'remote_redundancy.videos.accept_from',
     'federation.videos.federate_unlisted', 'federation.videos.cleanup_remote_interactions',
-    'peertube.check_latest_version.enabled', 'peertube.check_latest_version.url',
+    'retro3.check_latest_version.enabled', 'retro3.check_latest_version.url',
     'search.remote_uri.users', 'search.remote_uri.anonymous', 'search.search_index.enabled', 'search.search_index.url',
     'search.search_index.disable_local_search', 'search.search_index.is_default_search',
     'live.enabled', 'live.allow_replay', 'live.latency_setting.enabled', 'live.max_duration',

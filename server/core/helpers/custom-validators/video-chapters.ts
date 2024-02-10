@@ -1,6 +1,6 @@
 import { isArray } from './misc.js'
-import { VideoChapter, VideoChapterUpdate } from '@peertube/peertube-models'
-import { Unpacked } from '@peertube/peertube-typescript-utils'
+import { VideoChapter, VideoChapterUpdate } from '@retroai/retro3-models'
+import { Unpacked } from '@retroai/retro3-typescript-utils'
 import { CONSTRAINTS_FIELDS } from '@server/initializers/constants.js'
 import validator from 'validator'
 

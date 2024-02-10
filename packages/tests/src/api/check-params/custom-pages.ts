@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test custom pages validators', function () {
   const path = '/api/v1/custom-pages/homepage/instance'
 
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken: string
 
   // ---------------------------------------------------------------

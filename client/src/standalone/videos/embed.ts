@@ -1,7 +1,18 @@
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
 import './embed.scss'
-import '../../assets/player/shared/dock/peertube-dock-component'
-import '../../assets/player/shared/dock/peertube-dock-plugin'
-import { PeerTubeServerError } from 'src/types'
+import '../../assets/player/shared/dock/retro3-dock-component'
+import '../../assets/player/shared/dock/retro3-dock-plugin'
+import { Retro3ServerError } from 'src/types'
 import videojs from 'video.js'
 import {
   HTMLServerConfig,
@@ -11,15 +22,15 @@ import {
   VideoPlaylist,
   VideoPlaylistElement,
   VideoState
-} from '@peertube/peertube-models'
-import { PeerTubePlayer } from '../../assets/player/peertube-player'
+} from '@retroai/retro3-models'
+import { Retro3Player } from '../../assets/player/retro3-player'
 import { TranslationsManager } from '../../assets/player/translations-manager'
 import { getParamString, logger, videoRequiresFileToken } from '../../root-helpers'
-import { PeerTubeEmbedApi } from './embed-api'
+import { Retro3EmbedApi } from './embed-api'
 import {
   AuthHTTP,
   LiveManager,
-  PeerTubePlugin,
+  Retro3Plugin,
   PlayerOptionsBuilder,
   PlaylistFetcher,
   PlaylistTracker,
@@ -28,24 +39,24 @@ import {
 } from './shared'
 import { PlayerHTML } from './shared/player-html'
 
-export class PeerTubeEmbed {
+export class Retro3Embed {
   player: videojs.Player
-  api: PeerTubeEmbedApi = null
+  api: Retro3EmbedApi = null
 
   config: HTMLServerConfig
 
   private translationsPromise: Promise<{ [id: string]: string }>
-  private PeerTubePlayerManagerModulePromise: Promise<any>
+  private Retro3PlayerManagerModulePromise: Promise<any>
 
   private readonly http: AuthHTTP
   private readonly videoFetcher: VideoFetcher
   private readonly playlistFetcher: PlaylistFetcher
-  private readonly peertubePlugin: PeerTubePlugin
+  private readonly retro3Plugin: Retro3Plugin
   private readonly playerHTML: PlayerHTML
   private readonly playerOptionsBuilder: PlayerOptionsBuilder
   private readonly liveManager: LiveManager
 
-  private peertubePlayer: PeerTubePlayer
+  private retro3Player: Retro3Player
 
   private playlistTracker: PlaylistTracker
 
@@ -64,14 +75,14 @@ export class PeerTubeEmbed {
 
     this.videoFetcher = new VideoFetcher(this.http)
     this.playlistFetcher = new PlaylistFetcher(this.http)
-    this.peertubePlugin = new PeerTubePlugin(this.http)
+    this.retro3Plugin = new Retro3Plugin(this.http)
     this.playerHTML = new PlayerHTML(videoWrapperId)
-    this.playerOptionsBuilder = new PlayerOptionsBuilder(this.playerHTML, this.videoFetcher, this.peertubePlugin)
+    this.playerOptionsBuilder = new PlayerOptionsBuilder(this.playerHTML, this.videoFetcher, this.retro3Plugin)
     this.liveManager = new LiveManager(this.playerHTML)
     this.requiresPassword = false
 
     try {
-      this.config = JSON.parse((window as any)['PeerTubeServerConfig'])
+      this.config = JSON.parse((window as any)['Retro3ServerConfig'])
     } catch (err) {
       logger.error('Cannot parse HTML config.', err)
     }
@@ -79,7 +90,7 @@ export class PeerTubeEmbed {
 
   static async main () {
     const videoContainerId = 'video-wrapper'
-    const embed = new PeerTubeEmbed(videoContainerId)
+    const embed = new Retro3Embed(videoContainerId)
     await embed.init()
   }
 
@@ -95,7 +106,7 @@ export class PeerTubeEmbed {
 
   async init () {
     this.translationsPromise = TranslationsManager.getServerTranslations(window.location.origin, navigator.language)
-    this.PeerTubePlayerManagerModulePromise = import('../../assets/player/peertube-player')
+    this.Retro3PlayerManagerModulePromise = import('../../assets/player/retro3-player')
 
     // Issue when we parsed config from HTML, fallback to API
     if (!this.config) {
@@ -147,7 +158,7 @@ export class PeerTubeEmbed {
     if (!this.playerOptionsBuilder.hasAPIEnabled()) return
     if (this.api) return
 
-    this.api = new PeerTubeEmbedApi(this)
+    this.api = new Retro3EmbedApi(this)
     this.api.initialize()
   }
 
@@ -269,7 +280,7 @@ export class PeerTubeEmbed {
 
     // If already played, we are in a playlist so we don't want to display the poster between videos
     if (!this.alreadyPlayed) {
-      this.peertubePlayer.setPoster(window.location.origin + video.previewPath)
+      this.retro3Player.setPoster(window.location.origin + video.previewPath)
     }
 
     const playlist = this.playlistTracker
@@ -300,10 +311,10 @@ export class PeerTubeEmbed {
       forceAutoplay,
       alreadyPlayed: this.alreadyPlayed
     })
-    await this.peertubePlayer.load(loadOptions)
+    await this.retro3Player.load(loadOptions)
 
     if (!this.alreadyInitialized) {
-      this.player = this.peertubePlayer.getPlayer();
+      this.player = this.retro3Player.getPlayer();
 
       (window as any)['videojsPlayer'] = this.player
 
@@ -331,13 +342,13 @@ export class PeerTubeEmbed {
 
       if (video.state.id === VideoState.WAITING_FOR_LIVE || video.state.id === VideoState.LIVE_ENDED) {
         this.liveManager.displayInfo({ state: video.state.id, translations })
-        this.peertubePlayer.disable()
+        this.retro3Player.disable()
       } else {
         this.correctlyHandleLiveEnding(translations)
       }
     }
 
-    this.peertubePlugin.getPluginsManager().runHook('action:embed.player.loaded', undefined, { player: this.player, videojs, video })
+    this.retro3Plugin.getPluginsManager().runHook('action:embed.player.loaded', undefined, { player: this.player, videojs, video })
   }
 
   private buildCSS () {
@@ -370,11 +381,11 @@ export class PeerTubeEmbed {
       // Display the live ended information
       this.liveManager.displayInfo({ state: VideoState.LIVE_ENDED, translations })
 
-      this.peertubePlayer.disable()
+      this.retro3Player.disable()
     })
   }
 
-  private async handlePasswordError (err: PeerTubeServerError) {
+  private async handlePasswordError (err: Retro3ServerError) {
     let incorrectPassword: boolean = null
     if (err.serverCode === ServerErrorCode.VIDEO_REQUIRES_PASSWORD) incorrectPassword = false
     else if (err.serverCode === ServerErrorCode.INCORRECT_VIDEO_PASSWORD) incorrectPassword = true
@@ -410,35 +421,35 @@ export class PeerTubeEmbed {
   }
 
   private async buildPlayerIfNeeded () {
-    if (this.peertubePlayer) {
-      this.peertubePlayer.enable()
+    if (this.retro3Player) {
+      this.retro3Player.enable()
 
       return
     }
 
     const playerElement = document.createElement('video')
-    playerElement.className = 'video-js vjs-peertube-skin'
+    playerElement.className = 'video-js vjs-retro3-skin'
     playerElement.setAttribute('playsinline', 'true')
 
     this.playerHTML.setPlayerElement(playerElement)
     this.playerHTML.addPlayerElementToDOM()
 
-    const [ { PeerTubePlayer } ] = await Promise.all([
-      this.PeerTubePlayerManagerModulePromise,
-      this.peertubePlugin.loadPlugins(this.config, await this.translationsPromise)
+    const [ { Retro3Player } ] = await Promise.all([
+      this.Retro3PlayerManagerModulePromise,
+      this.retro3Plugin.loadPlugins(this.config, await this.translationsPromise)
     ])
 
     const constructorOptions = this.playerOptionsBuilder.getPlayerConstructorOptions({
       serverConfig: this.config,
       authorizationHeader: () => this.http.getHeaderTokenValue()
     })
-    this.peertubePlayer = new PeerTubePlayer(constructorOptions)
+    this.retro3Player = new Retro3Player(constructorOptions)
 
-    this.player = this.peertubePlayer.getPlayer()
+    this.player = this.retro3Player.getPlayer()
   }
 }
 
-PeerTubeEmbed.main()
+Retro3Embed.main()
   .catch(err => {
     (window as any).displayIncompatibleBrowser()
 

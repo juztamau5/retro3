@@ -3,20 +3,20 @@
 import { expect } from 'chai'
 import { expectStartWith } from '@tests/shared/checks.js'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function importVideo (server: PeerTubeServer) {
+async function importVideo (server: Retro3Server) {
   const attributes = {
     name: 'import 2',
     privacy: VideoPrivacy.PUBLIC,
@@ -32,7 +32,7 @@ async function importVideo (server: PeerTubeServer) {
 describe('Object storage for video import', function () {
   if (areMockObjectStorageTestsDisabled()) return
 
-  let server: PeerTubeServer
+  let server: Retro3Server
   const objectStorage = new ObjectStorageCommand()
 
   before(async function () {

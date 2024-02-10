@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isVideoTimeValid } from '@server/helpers/custom-validators/video-view.js'
 import { getCachedVideoDuration } from '@server/lib/video.js'
 import { LocalVideoViewerModel } from '@server/models/view/local-video-viewer.js'

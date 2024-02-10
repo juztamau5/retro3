@@ -1,14 +1,14 @@
 import { FindOptions, literal } from 'sequelize'
 import { AllowNull, Column, CreatedAt, HasMany, Model, Table, UpdatedAt } from 'sequelize-typescript'
 import { MRunnerRegistrationToken } from '@server/types/models/runners/index.js'
-import { RunnerRegistrationToken } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { RunnerRegistrationToken } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { getSort } from '../shared/index.js'
 import { RunnerModel } from './runner.js'
 
 /**
  *
- * Tokens used by PeerTube runners to register themselves to the PeerTube instance
+ * Tokens used by retro3 runners to register themselves to the retro3 instance
  *
  */
 

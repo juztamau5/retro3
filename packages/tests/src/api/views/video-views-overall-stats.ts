@@ -3,9 +3,9 @@
 import { expect } from 'chai'
 import { FfmpegCommand } from 'fluent-ffmpeg'
 import { prepareViewsServers, prepareViewsVideos, processViewersStats } from '@tests/shared/views.js'
-import { cleanupTests, PeerTubeServer, stopFfmpeg, waitJobs } from '@peertube/peertube-server-commands'
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoStatsOverall } from '@peertube/peertube-models'
+import { cleanupTests, Retro3Server, stopFfmpeg, waitJobs } from '@retroai/retro3-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoStatsOverall } from '@retroai/retro3-models'
 
 /**
  *
@@ -16,7 +16,7 @@ import { VideoStatsOverall } from '@peertube/peertube-models'
  *  * user3 started and ended in the interval
  *  * user4 started and ended after end date
  */
-async function simulateComplexViewers (servers: PeerTubeServer[], videoUUID: string) {
+async function simulateComplexViewers (servers: Retro3Server[], videoUUID: string) {
   const user0 = '8.8.8.8,127.0.0.1'
   const user1 = '8.8.8.8,127.0.0.1'
   const user2 = '8.8.8.9,127.0.0.1'
@@ -56,7 +56,7 @@ async function simulateComplexViewers (servers: PeerTubeServer[], videoUUID: str
 }
 
 describe('Test views overall stats', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   before(async function () {
     this.timeout(120000)

@@ -2,7 +2,7 @@ import { Subject, Subscription } from 'rxjs'
 import { filter } from 'rxjs/operators'
 import { Component, EventEmitter, Output, OnDestroy, OnInit, ViewChild } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
-import { Notifier, PeerTubeSocket, ScreenService } from '@app/core'
+import { Notifier, Retro3Socket, ScreenService } from '@app/core'
 import { UserNotificationService } from '@app/shared/shared-main'
 import { NgbPopover } from '@ng-bootstrap/ng-bootstrap'
 
@@ -28,7 +28,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   constructor (
     private userNotificationService: UserNotificationService,
     private screenService: ScreenService,
-    private peertubeSocket: PeerTubeSocket,
+    private retro3Socket: Retro3Socket,
     private notifier: Notifier,
     private router: Router
   ) {
@@ -96,7 +96,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   }
 
   private async subscribeToNotifications () {
-    const obs = await this.peertubeSocket.getMyNotificationsSocket()
+    const obs = await this.retro3Socket.getMyNotificationsSocket()
 
     this.notificationSub = obs.subscribe(data => {
       if (data.type === 'new') return this.unreadNotifications++

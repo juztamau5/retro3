@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   Runner,
@@ -10,19 +10,19 @@ import {
   RunnerJobStateType,
   RunnerJobVODWebVideoTranscodingPayload,
   RunnerRegistrationToken
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
-  PeerTubeServer,
+  Retro3Server,
   cleanupTests,
   createSingleServer,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expect } from 'chai'
 
 describe('Test runner common actions', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let registrationToken: string
   let runnerToken: string
   let jobMaxPriority: string

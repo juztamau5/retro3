@@ -142,7 +142,7 @@
 }
 
 .view-account.short {
-  @include peertube-button-link;
+  @include retro3-button-link;
   @include orange-button-inverted;
 
   margin-top: 30px;

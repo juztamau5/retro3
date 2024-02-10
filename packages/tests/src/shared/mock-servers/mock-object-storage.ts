@@ -2,7 +2,7 @@ import express from 'express'
 import got, { RequestError } from 'got'
 import { Server } from 'http'
 import { pipeline } from 'stream'
-import { ObjectStorageCommand } from '@peertube/peertube-server-commands'
+import { ObjectStorageCommand } from '@retroai/retro3-server-commands'
 import { getPort, randomListen, terminateServer } from './shared.js'
 
 export class MockObjectStorageProxy {

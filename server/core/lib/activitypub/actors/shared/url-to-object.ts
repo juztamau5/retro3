@@ -1,6 +1,6 @@
 import { sanitizeAndCheckActorObject } from '@server/helpers/custom-validators/activitypub/actor.js'
 import { logger } from '@server/helpers/logger.js'
-import { ActivityPubActor, ActivityPubOrderedCollection } from '@peertube/peertube-models'
+import { ActivityPubActor, ActivityPubOrderedCollection } from '@retroai/retro3-models'
 import { fetchAP } from '../../activity.js'
 import { checkUrlsSameHost } from '../../url.js'
 

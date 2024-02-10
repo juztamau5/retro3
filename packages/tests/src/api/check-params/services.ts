@@ -7,18 +7,18 @@ import {
   VideoPlaylistCreateResult,
   VideoPlaylistPrivacy,
   VideoPrivacy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test services API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let playlistUUID: string
 
   let privateVideo: VideoCreateResult
@@ -191,7 +191,7 @@ describe('Test services API validators', function () {
 })
 
 function checkParamEmbed (
-  server: PeerTubeServer,
+  server: Retro3Server,
   embedUrl: string,
   expectedStatus: HttpStatusCodeType = HttpStatusCode.BAD_REQUEST_400,
   query = {}

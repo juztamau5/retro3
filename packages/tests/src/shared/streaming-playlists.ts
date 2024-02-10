@@ -2,22 +2,22 @@
 
 import { expect } from 'chai'
 import { basename, dirname, join } from 'path'
-import { removeFragmentedMP4Ext, uuidRegex } from '@peertube/peertube-core-utils'
+import { removeFragmentedMP4Ext, uuidRegex } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   VideoPrivacy,
   VideoResolution,
   VideoStreamingPlaylist,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
-import { sha256 } from '@peertube/peertube-node-utils'
-import { makeRawRequest, PeerTubeServer } from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-models'
+import { sha256 } from '@retroai/retro3-node-utils'
+import { makeRawRequest, Retro3Server } from '@retroai/retro3-server-commands'
 import { expectStartWith } from './checks.js'
 import { hlsInfohashExist } from './tracker.js'
 import { checkWebTorrentWorks } from './webtorrent.js'
 
 async function checkSegmentHash (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   baseUrlPlaylist: string
   baseUrlSegment: string
   resolution: number
@@ -52,7 +52,7 @@ async function checkSegmentHash (options: {
 // ---------------------------------------------------------------------------
 
 async function checkLiveSegmentHash (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   baseUrlSegment: string
   videoUUID: string
   segmentName: string
@@ -71,7 +71,7 @@ async function checkLiveSegmentHash (options: {
 // ---------------------------------------------------------------------------
 
 async function checkResolutionsInMasterPlaylist (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   playlistUrl: string
   resolutions: number[]
   token?: string
@@ -99,7 +99,7 @@ async function checkResolutionsInMasterPlaylist (options: {
 }
 
 async function completeCheckHlsPlaylist (options: {
-  servers: PeerTubeServer[]
+  servers: Retro3Server[]
   videoUUID: string
   hlsOnly: boolean
 
@@ -248,7 +248,7 @@ async function completeCheckHlsPlaylist (options: {
 }
 
 async function checkVideoFileTokenReinjection (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   videoUUID: string
   videoFileToken: string
   resolutions: number[]

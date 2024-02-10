@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { testCaptionFile } from '@tests/shared/captions.js'
 import { checkVideoFilesWereRemoved } from '@tests/shared/videos.js'
 
 describe('Test video captions', function () {
   const uuidRegex = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID: string
 
   before(async function () {

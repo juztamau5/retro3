@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { is18nPath } from '@peertube/peertube-core-utils'
+import { is18nPath } from '@retroai/retro3-core-utils'
 import { RedirectService } from './redirect.service'
 
 /*

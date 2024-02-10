@@ -1,4 +1,4 @@
-import { VideoState } from '@peertube/peertube-models'
+import { VideoState } from '@retroai/retro3-models'
 import { AbstractOwnedVideoPublication } from './abstract-owned-video-publication.js'
 
 export class OwnedPublicationAfterScheduleUpdate extends AbstractOwnedVideoPublication {

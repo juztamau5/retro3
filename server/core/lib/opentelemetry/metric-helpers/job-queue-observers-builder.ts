@@ -8,8 +8,8 @@ export class JobQueueObserversBuilder {
   }
 
   buildObservers () {
-    this.meter.createObservableGauge('peertube_job_queue_total', {
-      description: 'Total jobs in the PeerTube job queue'
+    this.meter.createObservableGauge('retro3_job_queue_total', {
+      description: 'Total jobs in the retro3 job queue'
     }).addCallback(async observableResult => {
       const stats = await JobQueue.Instance.getStats()
 

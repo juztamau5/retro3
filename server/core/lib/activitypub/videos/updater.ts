@@ -1,9 +1,9 @@
 import { Transaction } from 'sequelize'
-import { VideoObject, VideoPrivacy } from '@peertube/peertube-models'
+import { VideoObject, VideoPrivacy } from '@retroai/retro3-models'
 import { resetSequelizeInstance, runInReadCommittedTransaction } from '@server/helpers/database-utils.js'
 import { logger, loggerTagsFactory, LoggerTagsFn } from '@server/helpers/logger.js'
 import { Notifier } from '@server/lib/notifier/index.js'
-import { PeerTubeSocket } from '@server/lib/peertube-socket.js'
+import { Retro3Socket } from '@server/lib/retro3-socket.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { autoBlacklistVideoIfNeeded } from '@server/lib/video-blacklist.js'
 import { VideoLiveModel } from '@server/models/video/video-live.js'
@@ -97,7 +97,7 @@ export class APVideoUpdater extends APVideoAbstractBuilder {
       }
 
       if (videoUpdated.isLive && oldState !== videoUpdated.state) {
-        PeerTubeSocket.Instance.sendVideoLiveNewState(videoUpdated)
+        Retro3Socket.Instance.sendVideoLiveNewState(videoUpdated)
       }
 
       Hooks.runAction('action:activity-pub.remote-video.updated', { video: videoUpdated, videoAPObject: this.videoObject })

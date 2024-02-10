@@ -1,8 +1,8 @@
 import express from 'express'
 import { UserRegistrationModel } from '@server/models/user/user-registration.js'
 import { MRegistration } from '@server/types/models/index.js'
-import { forceNumber, pick } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { forceNumber, pick } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 function checkRegistrationIdExist (idArg: number | string, res: express.Response) {
   const id = forceNumber(idArg)

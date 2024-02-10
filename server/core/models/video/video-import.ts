@@ -1,5 +1,5 @@
-import { VideoImport, VideoImportState, type VideoImportStateType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoImport, VideoImportState, type VideoImportStateType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { afterCommitIfTransaction } from '@server/helpers/database-utils.js'
 import { MVideoImportDefault, MVideoImportFormattable } from '@server/types/models/video/video-import.js'
 import { IncludeOptions, Op, WhereOptions } from 'sequelize'

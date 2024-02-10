@@ -4,7 +4,7 @@ import { HTTP_INTERCEPTORS, HttpErrorResponse, HttpEvent, HttpHandler, HttpInter
 import { Injectable, Injector } from '@angular/core'
 import { Router } from '@angular/router'
 import { AuthService } from '@app/core/auth/auth.service'
-import { HttpStatusCode, OAuth2ErrorCode, PeerTubeProblemDocument } from '@peertube/peertube-models'
+import { HttpStatusCode, OAuth2ErrorCode, Retro3ProblemDocument } from '@retroai/retro3-models'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -25,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(authReq)
                .pipe(
                  catchError((err: HttpErrorResponse) => {
-                   const error = err.error as PeerTubeProblemDocument
+                   const error = err.error as Retro3ProblemDocument
                    const isOTPMissingError = this.authService.isOTPMissingError(err)
 
                    if (!isOTPMissingError) {

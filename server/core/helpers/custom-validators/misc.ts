@@ -2,7 +2,7 @@ import 'multer'
 import { UploadFilesForCheck } from 'express'
 import { sep } from 'path'
 import validator from 'validator'
-import { isShortUUID, shortToUUID } from '@peertube/peertube-node-utils'
+import { isShortUUID, shortToUUID } from '@retroai/retro3-node-utils'
 
 function exists (value: any) {
   return value !== undefined && value !== null
@@ -23,7 +23,7 @@ function isSafeFilename (filename: string, extension?: string) {
   return typeof filename === 'string' && !!filename.match(regex)
 }
 
-function isSafePeerTubeFilenameWithoutExtension (filename: string) {
+function isSafeRetro3FilenameWithoutExtension (filename: string) {
   return filename.match(/^[a-z0-9-]+$/)
 }
 
@@ -184,7 +184,7 @@ export {
   areUUIDsValid,
   toIntArray,
   isFileValid,
-  isSafePeerTubeFilenameWithoutExtension,
+  isSafeRetro3FilenameWithoutExtension,
   isSafeFilename,
   checkMimetypeRegex
 }

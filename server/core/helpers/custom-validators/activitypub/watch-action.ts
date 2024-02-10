@@ -1,4 +1,4 @@
-import { WatchActionObject } from '@peertube/peertube-models'
+import { WatchActionObject } from '@retroai/retro3-models'
 import { exists, isDateValid, isUUIDValid } from '../misc.js'
 import { isVideoTimeValid } from '../video-view.js'
 import { isActivityPubVideoDurationValid, isObjectValid } from './misc.js'

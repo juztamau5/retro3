@@ -17,7 +17,7 @@ import { ScreenService } from '@app/core'
 import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import * as debug from 'debug'
 
-const debugLogger = debug('peertube:main:ListOverflowItem')
+const debugLogger = debug('retro3:main:ListOverflowItem')
 
 export interface ListOverflowItem {
   label: string

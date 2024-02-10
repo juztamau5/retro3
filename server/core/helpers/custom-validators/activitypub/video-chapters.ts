@@ -1,7 +1,7 @@
 import { isArray } from '../misc.js'
 import { isVideoChapterTitleValid, isVideoChapterTimecodeValid } from '../video-chapters.js'
 import { isActivityPubUrlValid } from './misc.js'
-import { VideoChaptersObject } from '@peertube/peertube-models'
+import { VideoChaptersObject } from '@retroai/retro3-models'
 
 export function isVideoChaptersObjectValid (object: VideoChaptersObject) {
   if (!object) return false

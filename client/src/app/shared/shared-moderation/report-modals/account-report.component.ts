@@ -6,8 +6,8 @@ import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
 import { Account } from '@app/shared/shared-main'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref'
-import { abusePredefinedReasonsMap } from '@peertube/peertube-core-utils'
-import { AbusePredefinedReasonsString } from '@peertube/peertube-models'
+import { abusePredefinedReasonsMap } from '@retroai/retro3-core-utils'
+import { AbusePredefinedReasonsString } from '@retroai/retro3-models'
 import { AbuseService } from '../abuse.service'
 
 @Component({

@@ -1,6 +1,6 @@
 import { Response } from 'express'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { VideoPrivacy, VideoPrivacyType, VideoState, VideoStateType } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { VideoPrivacy, VideoPrivacyType, VideoState, VideoStateType } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { isStreamingPlaylist, MStreamingPlaylistVideo, MVideo } from '@server/types/models/index.js'
 

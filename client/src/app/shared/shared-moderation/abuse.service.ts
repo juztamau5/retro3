@@ -15,7 +15,7 @@ import {
   AdminAbuse,
   ResultList,
   UserAbuse
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 
 @Injectable()

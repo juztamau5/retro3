@@ -1,26 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   CustomPagesCommand,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function getHomepageState (server: PeerTubeServer) {
+async function getHomepageState (server: Retro3Server) {
   const config = await server.config.getConfig()
 
   return config.homepage.enabled
 }
 
 describe('Test instance homepage actions', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let command: CustomPagesCommand
 
   before(async function () {

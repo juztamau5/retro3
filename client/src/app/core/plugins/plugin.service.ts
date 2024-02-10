@@ -10,7 +10,7 @@ import { RestExtractor } from '@app/core/rest'
 import { ServerService } from '@app/core/server/server.service'
 import { getDevLocale, isOnDevLocale } from '@app/helpers'
 import { CustomModalComponent } from '@app/modal/custom-modal.component'
-import { getCompleteLocale, getKeys, isDefaultLocale, peertubeTranslate } from '@peertube/peertube-core-utils'
+import { getCompleteLocale, getKeys, isDefaultLocale, retro3Translate } from '@retroai/retro3-core-utils'
 import {
   ClientHook,
   ClientHookName,
@@ -24,7 +24,7 @@ import {
   RegisterClientSettingsScriptOptions,
   RegisterClientVideoFieldOptions,
   ServerConfigPlugin
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { PluginInfo, PluginsManager } from '@root-helpers/plugins-manager'
 import { environment } from '../../../environments/environment'
 import { RegisterClientHelpers } from '../../../types/register-client-option.model'
@@ -67,7 +67,7 @@ export class PluginService implements ClientHook {
     this.loadTranslations()
 
     this.pluginsManager = new PluginsManager({
-      peertubeHelpersFactory: this.buildPeerTubeHelpers.bind(this),
+      Retro3HelpersFactory: this.buildRetro3Helpers.bind(this),
       onFormFields: this.onFormFields.bind(this),
       onSettingsScripts: this.onSettingsScripts.bind(this),
       onClientRoute: this.onClientRoute.bind(this)
@@ -112,8 +112,8 @@ export class PluginService implements ClientHook {
 
   nameToNpmName (name: string, type: PluginType_Type) {
     const prefix = type === PluginType.PLUGIN
-      ? 'peertube-plugin-'
-      : 'peertube-theme-'
+      ? 'retro3-plugin-'
+      : 'retro3-theme-'
 
     return prefix + name
   }
@@ -157,7 +157,7 @@ export class PluginService implements ClientHook {
     const obs = this.translationsObservable
         .pipe(
           map(allTranslations => allTranslations[npmName]),
-          map(translations => peertubeTranslate(toTranslate, translations))
+          map(translations => retro3Translate(toTranslate, translations))
         )
 
     return firstValueFrom(obs)
@@ -187,7 +187,7 @@ export class PluginService implements ClientHook {
     this.clientRoutes[route] = options
   }
 
-  private buildPeerTubeHelpers (pluginInfo: PluginInfo): RegisterClientHelpers {
+  private buildRetro3Helpers (pluginInfo: PluginInfo): RegisterClientHelpers {
     const { plugin } = pluginInfo
     const npmName = pluginInfo.plugin.npmName
 

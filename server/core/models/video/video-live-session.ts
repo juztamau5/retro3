@@ -1,6 +1,6 @@
-import { LiveVideoSession, type LiveVideoErrorType } from '@peertube/peertube-models'
-import { uuidToShort } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { LiveVideoSession, type LiveVideoErrorType } from '@retroai/retro3-models'
+import { uuidToShort } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { MVideoLiveSession, MVideoLiveSessionReplay } from '@server/types/models/index.js'
 import { FindOptions } from 'sequelize'
 import {

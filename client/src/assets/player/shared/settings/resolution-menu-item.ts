@@ -23,11 +23,11 @@ class ResolutionMenuItem extends MenuItem {
     this.label = options.label
 
     this.updateSelectionHandler = () => this.updateSelection()
-    player.peertubeResolutions().on('resolutions-changed', this.updateSelectionHandler)
+    player.retro3Resolutions().on('resolutions-changed', this.updateSelectionHandler)
   }
 
   dispose () {
-    this.player().peertubeResolutions().off('resolutions-changed', this.updateSelectionHandler)
+    this.player().retro3Resolutions().off('resolutions-changed', this.updateSelectionHandler)
 
     super.dispose()
   }
@@ -35,14 +35,14 @@ class ResolutionMenuItem extends MenuItem {
   handleClick (event: any) {
     super.handleClick(event)
 
-    this.player().peertubeResolutions().select({ id: this.resolutionId, fireCallback: true })
+    this.player().retro3Resolutions().select({ id: this.resolutionId, fireCallback: true })
   }
 
   updateSelection () {
-    const selectedResolution = this.player().peertubeResolutions().getSelected()
+    const selectedResolution = this.player().retro3Resolutions().getSelected()
 
     if (this.resolutionId === -1) {
-      this.autoResolutionChosen = this.player().peertubeResolutions().getAutoResolutionChosen()?.label
+      this.autoResolutionChosen = this.player().retro3Resolutions().getAutoResolutionChosen()?.label
     }
 
     this.selected(this.resolutionId === selectedResolution.id)

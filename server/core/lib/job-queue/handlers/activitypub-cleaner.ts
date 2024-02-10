@@ -6,7 +6,7 @@ import {
   isLikeActivityValid
 } from '@server/helpers/custom-validators/activitypub/activity.js'
 import { sanitizeAndCheckVideoCommentObject } from '@server/helpers/custom-validators/activitypub/video-comments.js'
-import { PeerTubeRequestError } from '@server/helpers/requests.js'
+import { Retro3RequestError } from '@server/helpers/requests.js'
 import { AP_CLEANER } from '@server/initializers/constants.js'
 import { fetchAP } from '@server/lib/activitypub/activity.js'
 import { checkUrlsSameHost } from '@server/lib/activitypub/url.js'
@@ -14,7 +14,7 @@ import { Redis } from '@server/lib/redis.js'
 import { VideoCommentModel } from '@server/models/video/video-comment.js'
 import { VideoShareModel } from '@server/models/video/video-share.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 import { AccountVideoRateModel } from '../../../models/account/account-video-rate.js'
 
@@ -110,7 +110,7 @@ async function updateObjectIfNeeded <T> (options: {
     return null
   } catch (err) {
     // Does not exist anymore, remove entry
-    if ((err as PeerTubeRequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
+    if ((err as Retro3RequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
       return on404OrTombstone()
     }
 

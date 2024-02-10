@@ -14,7 +14,7 @@ import {
 } from '@app/shared/form-validators/user-validators'
 import { FormReactiveService } from '@app/shared/shared-forms'
 import { UserAdminService } from '@app/shared/shared-users'
-import { UserCreate, UserRole } from '@peertube/peertube-models'
+import { UserCreate, UserRole } from '@retroai/retro3-models'
 import { UserEdit } from './user-edit'
 
 @Component({

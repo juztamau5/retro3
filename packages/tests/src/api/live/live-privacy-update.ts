@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, LiveVideoCreate, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, LiveVideoCreate, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests, createSingleServer, makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs,
   waitUntilLivePublishedOnAllServers,
   waitUntilLiveReplacedByReplayOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function testVideoFiles (server: PeerTubeServer, uuid: string) {
+async function testVideoFiles (server: Retro3Server, uuid: string) {
   const video = await server.videos.getWithToken({ id: uuid })
 
   const expectedStatus = HttpStatusCode.OK_200
@@ -22,7 +22,7 @@ async function testVideoFiles (server: PeerTubeServer, uuid: string) {
 }
 
 describe('Live privacy update', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(120000)

@@ -10,7 +10,7 @@ import {
   SettingsChangeCallback,
   VideoPlaylistPrivacyType,
   VideoPrivacyType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { onExternalUserAuthenticated } from '@server/lib/auth/external-auth.js'
 import { VideoConstantManagerFactory } from '@server/lib/plugins/video-constant-manager-factory.js'
@@ -91,7 +91,7 @@ export class RegisterHelpers {
     const unregisterIdAndPassAuth = this.buildUnregisterIdAndPassAuth()
     const unregisterExternalAuth = this.buildUnregisterExternalAuth()
 
-    const peertubeHelpers = buildPluginHelpers(this.server, this.plugin, this.npmName)
+    const Retro3Helpers = buildPluginHelpers(this.server, this.plugin, this.npmName)
 
     return {
       registerHook,
@@ -143,7 +143,7 @@ export class RegisterHelpers {
       unregisterIdAndPassAuth,
       unregisterExternalAuth,
 
-      peertubeHelpers
+      Retro3Helpers
     }
   }
 

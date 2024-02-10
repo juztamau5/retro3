@@ -4,7 +4,7 @@ import { exists, isBooleanValid, isIdValid, toBooleanOrNull } from '@server/help
 import { isRegistrationModerationResponseValid, isRegistrationReasonValid } from '@server/helpers/custom-validators/user-registration.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
-import { HttpStatusCode, UserRegister, UserRegistrationRequest, UserRegistrationState } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRegister, UserRegistrationRequest, UserRegistrationState } from '@retroai/retro3-models'
 import { isUserDisplayNameValid, isUserPasswordValid, isUserUsernameValid } from '../../helpers/custom-validators/users.js'
 import { isVideoChannelDisplayNameValid, isVideoChannelUsernameValid } from '../../helpers/custom-validators/video-channels.js'
 import { isSignupAllowed, isSignupAllowedForCurrentIP, SignupMode } from '../../lib/signup.js'

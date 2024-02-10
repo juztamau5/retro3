@@ -1,6 +1,6 @@
 import { FilterSpecification } from 'fluent-ffmpeg'
 import { join } from 'path'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import { FFmpegCommandWrapper, FFmpegCommandWrapperOptions } from './ffmpeg-command-wrapper.js'
 import { buildStreamSuffix, getScaleFilter, StreamType } from './ffmpeg-utils.js'
 import { addDefaultEncoderGlobalParams, addDefaultEncoderParams, applyEncoderOptions } from './shared/index.js'

@@ -1,7 +1,7 @@
 import { Response } from 'express'
 import { VideoCaptionModel } from '@server/models/video/video-caption.js'
 import { MVideoId } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 async function doesVideoCaptionExist (video: MVideoId, language: string, res: Response) {
   const videoCaption = await VideoCaptionModel.loadByVideoIdAndLanguage(video.id, language)

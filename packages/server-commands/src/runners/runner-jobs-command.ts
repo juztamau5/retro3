@@ -1,4 +1,4 @@
-import { omit, pick, wait } from '@peertube/peertube-core-utils'
+import { omit, pick, wait } from '@retroai/retro3-core-utils'
 import {
   AbortRunnerJobBody,
   AcceptRunnerJobBody,
@@ -24,7 +24,7 @@ import {
   RunnerJobVODPayload,
   VODHLSTranscodingSuccess,
   VODWebVideoTranscodingSuccess
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { waitJobs } from '../server/jobs.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'

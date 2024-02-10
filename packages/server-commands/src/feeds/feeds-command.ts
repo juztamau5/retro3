@@ -1,5 +1,5 @@
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 type FeedType = 'videos' | 'video-comments' | 'subscriptions'

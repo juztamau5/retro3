@@ -12,7 +12,7 @@ import {
   MVideoRedundancyVideo,
   MVideoWithAllFiles
 } from '@server/types/models/index.js'
-import { VideosRedundancyStrategy } from '@peertube/peertube-models'
+import { VideosRedundancyStrategy } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../helpers/logger.js'
 import { downloadWebTorrentVideo } from '../../helpers/webtorrent.js'
 import { CONFIG } from '../../initializers/config.js'

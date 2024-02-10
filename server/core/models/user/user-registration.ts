@@ -1,12 +1,12 @@
-import { UserRegistration, type UserRegistrationStateType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { UserRegistration, type UserRegistrationStateType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import {
   isRegistrationModerationResponseValid,
   isRegistrationReasonValid,
   isRegistrationStateValid
 } from '@server/helpers/custom-validators/user-registration.js'
 import { isVideoChannelDisplayNameValid } from '@server/helpers/custom-validators/video-channels.js'
-import { cryptPassword } from '@server/helpers/peertube-crypto.js'
+import { cryptPassword } from '@server/helpers/retro3-crypto.js'
 import { USER_REGISTRATION_STATES } from '@server/initializers/constants.js'
 import { MRegistration, MRegistrationFormattable } from '@server/types/models/index.js'
 import { FindOptions, Op, WhereOptions } from 'sequelize'

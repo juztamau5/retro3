@@ -1,4 +1,4 @@
-import { ResultList, VideoCommentThreadTree } from '@peertube/peertube-models'
+import { ResultList, VideoCommentThreadTree } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { sequelizeTypescript } from '@server/initializers/database.js'
 import express from 'express'

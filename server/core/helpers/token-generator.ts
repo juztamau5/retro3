@@ -1,4 +1,4 @@
-import { buildUUID } from '@peertube/peertube-node-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
 
 function generateRunnerRegistrationToken () {
   return 'ptrrt-' + buildUUID()

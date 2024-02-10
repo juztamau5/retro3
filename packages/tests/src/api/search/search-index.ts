@@ -8,19 +8,19 @@ import {
   VideoPlaylistsSearchQuery,
   VideoPlaylistType,
   VideosSearchQuery
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   SearchCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test index search', function () {
   const localVideoName = 'local video' + new Date().toISOString()
 
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
   let command: SearchCommand
 
   before(async function () {
@@ -103,7 +103,7 @@ describe('Test index search', function () {
 
       const video = body.data[0]
 
-      expect(video.name).to.equal('What is PeerTube?')
+      expect(video.name).to.equal('What is retro3?')
       expect(video.category.label).to.equal('Science & Technology')
       expect(video.licence.label).to.equal('Attribution - Share Alike')
       expect(video.privacy.label).to.equal('Public')
@@ -116,18 +116,18 @@ describe('Test index search', function () {
       expect(video.account.avatars.length).to.equal(2, 'Account should have one avatar image')
 
       expect(video.channel.host).to.equal('framatube.org')
-      expect(video.channel.name).to.equal('joinpeertube')
-      expect(video.channel.url).to.equal('https://framatube.org/video-channels/joinpeertube')
+      expect(video.channel.name).to.equal('joinretro3')
+      expect(video.channel.url).to.equal('https://framatube.org/video-channels/joinretro3')
       expect(video.channel.avatars.length).to.equal(2, 'Channel should have one avatar image')
     }
 
     const baseSearch: VideosSearchQuery = {
-      search: 'what is peertube',
+      search: 'what is retro3',
       start: 0,
       count: 2,
       categoryOneOf: [ 15 ],
       licenceOneOf: [ 2 ],
-      tagsAllOf: [ 'framasoft', 'peertube' ],
+      tagsAllOf: [ 'framasoft', 'retro3' ],
       startDate: '2018-10-01T10:50:46.396Z',
       endDate: '2018-10-01T10:55:46.396Z'
     }
@@ -140,7 +140,7 @@ describe('Test index search', function () {
     })
 
     it('Should make a simple search and have results', async function () {
-      const body = await command.searchVideos({ search: 'What is PeerTube' })
+      const body = await command.searchVideos({ search: 'What is retro3' })
 
       expect(body.total).to.be.greaterThan(1)
     })
@@ -323,7 +323,7 @@ describe('Test index search', function () {
     it('Should make handles search and have appropriate results', async function () {
       await check({ handles: [ 'bf54d359-cfad-4935-9d45-9d6be93f63e8@framatube.org' ] }, true)
       await check({ handles: [ 'jeanine', 'bf54d359-cfad-4935-9d45-9d6be93f63e8@framatube.org' ] }, true)
-      await check({ handles: [ 'jeanine', 'chocobozzz_channel2@peertube2.cpy.re' ] }, false)
+      await check({ handles: [ 'jeanine', 'chocobozzz_channel2@retroai2.cpy.re' ] }, false)
     })
 
     it('Should have a correct pagination', async function () {

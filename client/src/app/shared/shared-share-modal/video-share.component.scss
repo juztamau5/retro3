@@ -9,8 +9,8 @@ my-input-text {
   margin-bottom: 50px;
 }
 
-.peertube-select-container {
-  @include peertube-select-container(200px);
+.retro3-select-container {
+  @include retro3-select-container(200px);
 }
 
 .qr-code-group {
@@ -49,7 +49,7 @@ my-input-text {
     display: flex;
     align-items: center;
 
-    .peertube-select-container {
+    .retro3-select-container {
       @include margin-left(10px);
     }
   }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { compareSemVer } from '@peertube/peertube-core-utils'
+import { compareSemVer } from '@retroai/retro3-core-utils'
 
 describe('Version', function () {
 

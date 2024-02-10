@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ServerService } from '@app/core'
 import { formatICU } from '@app/helpers'
-import { ServerConfig } from '@peertube/peertube-models'
+import { ServerConfig } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-instance-features-table',

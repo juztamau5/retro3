@@ -1,6 +1,6 @@
 import { Job } from 'bullmq'
 import { VideosRedundancyScheduler } from '@server/lib/schedulers/videos-redundancy-scheduler.js'
-import { VideoRedundancyPayload } from '@peertube/peertube-models'
+import { VideoRedundancyPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 
 async function processVideoRedundancy (job: Job) {

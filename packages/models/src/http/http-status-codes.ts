@@ -2,7 +2,7 @@
  * Hypertext Transfer Protocol (HTTP) response status codes.
  * @see {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
  *
- * WebDAV and other codes useless with regards to PeerTube are not listed.
+ * WebDAV and other codes useless with regards to retro3 are not listed.
  */
 export const HttpStatusCode = {
 
@@ -263,7 +263,7 @@ export const HttpStatusCode = {
    *
    * This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text Coffee Pot Control Protocol,
    * and is not expected to be implemented by actual HTTP servers. The RFC specifies this code should be returned by
-   * teapots requested to brew coffee. This HTTP status is used as an Easter egg in some websites, including PeerTube instances ;-).
+   * teapots requested to brew coffee. This HTTP status is used as an Easter egg in some websites, including retro3 instances ;-).
    */
   I_AM_A_TEAPOT_418: 418,
 

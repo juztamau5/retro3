@@ -7,7 +7,7 @@ import {
   AuthUser,
   ConfirmService,
   Notifier,
-  PeerTubeSocket,
+  Retro3Socket,
   PluginService,
   RestExtractor,
   ScreenService,
@@ -24,12 +24,12 @@ import { Video, VideoCaptionService, VideoChapterService, VideoDetails, VideoFil
 import { SubscribeButtonComponent } from '@app/shared/shared-user-subscription'
 import { LiveVideoService } from '@app/shared/shared-video-live'
 import { VideoPlaylist, VideoPlaylistService } from '@app/shared/shared-video-playlist'
-import { timeToInt } from '@peertube/peertube-core-utils'
+import { timeToInt } from '@retroai/retro3-core-utils'
 import {
   HTMLServerConfig,
   HttpStatusCode,
   LiveVideo,
-  PeerTubeProblemDocument,
+  Retro3ProblemDocument,
   ServerErrorCode,
   Storyboard,
   VideoCaption,
@@ -37,18 +37,18 @@ import {
   VideoPrivacy,
   VideoState,
   VideoStateType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { isP2PEnabled, videoRequiresFileToken, videoRequiresUserAuth } from '@root-helpers/video'
 import {
   HLSOptions,
-  PeerTubePlayer,
-  PeerTubePlayerContructorOptions,
-  PeerTubePlayerLoadOptions,
+  Retro3Player,
+  Retro3PlayerContructorOptions,
+  Retro3PlayerLoadOptions,
   PlayerMode,
   videojs
 } from '../../../assets/player'
-import { cleanupVideoWatch, getStoredTheater, getStoredVideoWatchHistory } from '../../../assets/player/peertube-player-local-storage'
+import { cleanupVideoWatch, getStoredTheater, getStoredVideoWatchHistory } from '../../../assets/player/retro3-player-local-storage'
 import { environment } from '../../../environments/environment'
 import { VideoWatchPlaylistComponent } from './shared'
 
@@ -66,7 +66,7 @@ type URLOptions = {
   subtitle?: string
   resume?: string
 
-  peertubeLink: boolean
+  retro3Link: boolean
 
   playbackRate?: number | string
 }
@@ -81,7 +81,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
   @ViewChild('subscribeButton') subscribeButton: SubscribeButtonComponent
   @ViewChild('playerElement') playerElement: ElementRef<HTMLVideoElement>
 
-  peertubePlayer: PeerTubePlayer
+  retro3Player: Retro3Player
   theaterEnabled = false
 
   video: VideoDetails = null
@@ -133,7 +133,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     private hotkeysService: HotkeysService,
     private hooks: HooksService,
     private pluginService: PluginService,
-    private peertubeSocket: PeerTubeSocket,
+    private retro3Socket: Retro3Socket,
     private screenService: ScreenService,
     private videoFileTokenService: VideoFileTokenService,
     private location: PlatformLocation,
@@ -162,18 +162,18 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     setTimeout(cleanupVideoWatch, 1500) // Run in timeout to ensure we're not blocking the UI
 
     const constructorOptions = await this.hooks.wrapFun(
-      this.buildPeerTubePlayerConstructorOptions.bind(this),
+      this.buildRetro3PlayerConstructorOptions.bind(this),
       { urlOptions: this.getUrlOptions() },
       'video-watch',
       'filter:internal.video-watch.player.build-options.params',
       'filter:internal.video-watch.player.build-options.result'
     )
 
-    this.peertubePlayer = new PeerTubePlayer(constructorOptions)
+    this.retro3Player = new Retro3Player(constructorOptions)
   }
 
   ngOnDestroy () {
-    if (this.peertubePlayer) this.peertubePlayer.destroy()
+    if (this.retro3Player) this.retro3Player.destroy()
 
     // Unsubscribe subscriptions
     if (this.paramsSub) this.paramsSub.unsubscribe()
@@ -203,9 +203,9 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
   }
 
   handleTimestampClicked (timestamp: number) {
-    if (!this.peertubePlayer || this.video.isLive) return
+    if (!this.retro3Player || this.video.isLive) return
 
-    this.peertubePlayer.getPlayer().currentTime(timestamp)
+    this.retro3Player.getPlayer().currentTime(timestamp)
     scrollToTop()
   }
 
@@ -270,7 +270,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
       this.videoWatchPlaylist.updatePlaylistIndex(this.playlistPosition)
 
       const start = queryParams['start']
-      if (this.peertubePlayer && start) this.peertubePlayer.getPlayer().currentTime(parseInt(start, 10))
+      if (this.retro3Player && start) this.retro3Player.getPlayer().currentTime(parseInt(start, 10))
     })
   }
 
@@ -369,7 +369,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
   }
 
   private async handleRequestError (err: any) {
-    const errorBody = err.body as PeerTubeProblemDocument
+    const errorBody = err.body as Retro3ProblemDocument
 
     if (errorBody?.code === ServerErrorCode.DOES_NOT_RESPECT_FOLLOW_CONSTRAINTS && errorBody.originUrl) {
       const originUrl = errorBody.originUrl + (window.location.search ?? '')
@@ -487,7 +487,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
       return
     }
 
-    this.peertubePlayer?.enable()
+    this.retro3Player?.enable()
 
     const params = {
       video: this.video,
@@ -504,7 +504,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     }
 
     const loadOptions = await this.hooks.wrapFun(
-      this.buildPeerTubePlayerLoadOptions.bind(this),
+      this.buildRetro3PlayerLoadOptions.bind(this),
       params,
       'video-watch',
       'filter:internal.video-watch.player.load-options.params',
@@ -512,9 +512,9 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     )
 
     this.zone.runOutsideAngular(async () => {
-      await this.peertubePlayer.load(loadOptions)
+      await this.retro3Player.load(loadOptions)
 
-      const player = this.peertubePlayer.getPlayer()
+      const player = this.retro3Player.getPlayer()
 
       player.on('timeupdate', () => {
         // Don't need to trigger angular change for this variable, that is sent to children components on click
@@ -602,9 +602,9 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     )
   }
 
-  private buildPeerTubePlayerConstructorOptions (options: {
+  private buildRetro3PlayerConstructorOptions (options: {
     urlOptions: URLOptions
-  }): PeerTubePlayerContructorOptions {
+  }): Retro3PlayerContructorOptions {
     const { urlOptions } = options
 
     return {
@@ -634,7 +634,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
 
       errorNotifier: (message: string) => this.notifier.error(message),
 
-      peertubeLink: () => false,
+      retro3Link: () => false,
 
       pluginsManager: this.pluginService.getPluginsManager(),
 
@@ -645,7 +645,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     }
   }
 
-  private buildPeerTubePlayerLoadOptions (options: {
+  private buildRetro3PlayerLoadOptions (options: {
     video: VideoDetails
     liveVideo: LiveVideo
     videoCaptions: VideoCaption[]
@@ -660,7 +660,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     loggedInOrAnonymousUser: User
     forceAutoplay: boolean
     user?: AuthUser // Keep for plugins
-  }): PeerTubePlayerLoadOptions {
+  }): Retro3PlayerLoadOptions {
     const {
       video,
       liveVideo,
@@ -820,16 +820,16 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
     }
 
     if (oldVideo && oldVideo.id !== newVideo.id) {
-      this.peertubeSocket.unsubscribeLiveVideos(oldVideo.id)
+      this.retro3Socket.unsubscribeLiveVideos(oldVideo.id)
     }
 
     if (!newVideo.isLive) return
 
-    await this.peertubeSocket.subscribeToLiveVideosSocket(newVideo.id)
+    await this.retro3Socket.subscribeToLiveVideosSocket(newVideo.id)
   }
 
   private buildLiveEventsSubscription () {
-    return this.peertubeSocket.getLiveVideosObservable()
+    return this.retro3Socket.getLiveVideosObservable()
       .subscribe(({ type, payload }) => {
         if (type === 'state-change') return this.handleLiveStateChange(payload.state)
         if (type === 'views-change') return this.handleLiveViewsChange(payload.viewers)
@@ -860,9 +860,9 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
   }
 
   private updatePlayerOnNoLive () {
-    this.peertubePlayer.unload()
-    this.peertubePlayer.disable()
-    this.peertubePlayer.setPoster(this.video.previewPath)
+    this.retro3Player.unload()
+    this.retro3Player.disable()
+    this.retro3Player.setPoster(this.video.previewPath)
   }
 
   private buildHotkeysHelp (video: Video) {
@@ -940,7 +940,7 @@ export class VideoWatchComponent implements OnInit, OnDestroy {
 
       controlBar: toBoolean(queryParams.controlBar),
 
-      peertubeLink: false
+      retro3Link: false
     }
   }
 }

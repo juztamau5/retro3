@@ -2,7 +2,7 @@ import { basename } from 'path'
 import { Segment } from '@peertube/p2p-media-loader-core'
 import { logger } from '@root-helpers/logger'
 import { wait } from '@root-helpers/utils'
-import { removeQueryParams } from '@peertube/peertube-core-utils'
+import { removeQueryParams } from '@retroai/retro3-core-utils'
 import { isSameOrigin } from '../common'
 
 type SegmentsJSON = { [filename: string]: string | { [byterange: string]: string } }
@@ -95,7 +95,7 @@ export class SegmentValidator {
     let headers: { [ id: string ]: string } = {}
 
     if (isSameOrigin(this.options.serverUrl, this.options.segmentsSha256Url)) {
-      if (this.options.requiresPassword) headers = { 'x-peertube-video-password': this.options.videoPassword() }
+      if (this.options.requiresPassword) headers = { 'x-retro3-video-password': this.options.videoPassword() }
       else if (this.options.requiresUserAuth) headers = { Authorization: this.options.authorizationHeader() }
     }
 

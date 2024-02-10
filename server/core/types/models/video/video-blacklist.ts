@@ -1,4 +1,4 @@
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { VideoBlacklistModel } from '../../../models/video/video-blacklist.js'
 import { MVideo, MVideoFormattable } from './video.js'
 

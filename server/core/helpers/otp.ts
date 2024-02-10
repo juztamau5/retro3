@@ -1,7 +1,7 @@
 import { Secret, TOTP } from 'otpauth'
 import { CONFIG } from '@server/initializers/config.js'
 import { WEBSERVER } from '@server/initializers/constants.js'
-import { decrypt } from './peertube-crypto.js'
+import { decrypt } from './retro3-crypto.js'
 
 async function isOTPValid (options: {
   encryptedSecret: string
@@ -9,7 +9,7 @@ async function isOTPValid (options: {
 }) {
   const { token, encryptedSecret } = options
 
-  const secret = await decrypt(encryptedSecret, CONFIG.SECRETS.PEERTUBE)
+  const secret = await decrypt(encryptedSecret, CONFIG.SECRETS.RETRO3)
 
   const totp = new TOTP({
     ...baseOTPOptions(),

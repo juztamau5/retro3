@@ -1,5 +1,5 @@
-import { HttpStatusCode, ResultList, VideoChannelSync, VideoChannelSyncCreate } from '@peertube/peertube-models'
-import { pick } from '@peertube/peertube-core-utils'
+import { HttpStatusCode, ResultList, VideoChannelSync, VideoChannelSyncCreate } from '@retroai/retro3-models'
+import { pick } from '@retroai/retro3-core-utils'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

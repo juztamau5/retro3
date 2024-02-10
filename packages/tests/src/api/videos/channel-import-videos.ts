@@ -2,15 +2,15 @@
 
 import { expect } from 'chai'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   createSingleServer,
   getServerImportConfig,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos import in a channel', function () {
   if (areHttpImportTestsDisabled()) return
@@ -18,7 +18,7 @@ describe('Test videos import in a channel', function () {
   function runSuite (mode: 'youtube-dl' | 'yt-dlp') {
 
     describe('Import using ' + mode, function () {
-      let server: PeerTubeServer
+      let server: Retro3Server
 
       before(async function () {
         this.timeout(120_000)

@@ -1,6 +1,6 @@
 # https://openapi-generator.tech/docs/generators/kotlin
 
-artifactId: peertube-api
-groupId: org.peertube
-packageName: org.peertube.client
+artifactId: retro3-api
+groupId: org.retro3
+packageName: org.retro3.client
 

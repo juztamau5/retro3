@@ -2,9 +2,9 @@ version: "3.3"
 
 services:
 
-  # You can comment this webserver section if you want to use another webserver/proxy or test PeerTube in local
+  # You can comment this webserver section if you want to use another webserver/proxy or test retro3 in local
   webserver:
-    image: chocobozzz/peertube-webserver:latest
+    image: RetroAI/retro3-webserver:latest
     # If you don't want to use the official image and build one from sources:
     # build:
     #   context: .
@@ -17,18 +17,18 @@ services:
     volumes:
       - type: bind
         # Switch sources if you downloaded the whole repository
-        #source: ../../nginx/peertube
-        source: ./docker-volume/nginx/peertube
-        target: /etc/nginx/conf.d/peertube.template
-      - assets:/var/www/peertube/peertube-latest/client/dist:ro
-      - ./docker-volume/data:/var/www/peertube/storage
+        #source: ../../nginx/retro3
+        source: ./docker-volume/nginx/retro3
+        target: /etc/nginx/conf.d/retro3.template
+      - assets:/var/www/retro3/retro3-latest/client/dist:ro
+      - ./docker-volume/data:/var/www/retro3/storage
       - certbot-www:/var/www/certbot
       - ./docker-volume/certbot/conf:/etc/letsencrypt
     depends_on:
-      - peertube
+      - retro3
     restart: "always"
 
-  # You can comment this certbot section if you want to use another webserver/proxy or test PeerTube in local
+  # You can comment this certbot section if you want to use another webserver/proxy or test retro3 in local
   certbot:
     container_name: certbot
     image: certbot/certbot
@@ -40,12 +40,12 @@ services:
     depends_on:
       - webserver
 
-  peertube:
+  retro3:
     # If you don't want to use the official image and build one from sources:
     # build:
     #   context: .
     #   dockerfile: ./support/docker/production/Dockerfile.bookworm
-    image: chocobozzz/peertube:production-bookworm
+    image: RetroAI/retro3:production-bookworm
     # Use a static IP for this container because nginx does not handle proxy host change without reload
     # This container could be restarted on crash or until the postgresql database is ready for connection
     networks:
@@ -56,9 +56,9 @@ services:
 
     ports:
      - "1935:1935" # Comment if you don't want to use the live feature
-    #  - "9000:9000" # Uncomment if you use another webserver/proxy or test PeerTube in local, otherwise not suitable for production
+    #  - "9000:9000" # Uncomment if you use another webserver/proxy or test retro3 in local, otherwise not suitable for production
     volumes:
-      # Remove the following line if you want to use another webserver/proxy or test PeerTube in local
+      # Remove the following line if you want to use another webserver/proxy or test retro3 in local
       - assets:/app/client/dist
       - ./docker-volume/data:/data
       - ./docker-volume/config:/config

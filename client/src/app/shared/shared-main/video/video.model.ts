@@ -2,7 +2,7 @@ import { AuthUser } from '@app/core'
 import { User } from '@app/core/users/user.model'
 import { durationToString, formatICU, getAbsoluteAPIUrl, getAbsoluteEmbedUrl } from '@app/helpers'
 import { Actor } from '@app/shared/shared-main/account/actor.model'
-import { buildVideoWatchPath, getAllFiles, peertubeTranslate } from '@peertube/peertube-core-utils'
+import { buildVideoWatchPath, getAllFiles, retro3Translate } from '@retroai/retro3-core-utils'
 import {
   ActorImage,
   HTMLServerConfig,
@@ -17,7 +17,7 @@ import {
   VideoStateType,
   VideoStreamingPlaylist,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export class Video implements VideoServerModel {
   byVideoChannel: string
@@ -172,15 +172,15 @@ export class Video implements VideoServerModel {
     this.byAccount = Actor.CREATE_BY_STRING(hash.account.name, hash.account.host)
     this.byVideoChannel = Actor.CREATE_BY_STRING(hash.channel.name, hash.channel.host)
 
-    this.category.label = peertubeTranslate(this.category.label, translations)
-    this.licence.label = peertubeTranslate(this.licence.label, translations)
-    this.language.label = peertubeTranslate(this.language.label, translations)
-    this.privacy.label = peertubeTranslate(this.privacy.label, translations)
+    this.category.label = retro3Translate(this.category.label, translations)
+    this.licence.label = retro3Translate(this.licence.label, translations)
+    this.language.label = retro3Translate(this.language.label, translations)
+    this.privacy.label = retro3Translate(this.privacy.label, translations)
 
     this.scheduledUpdate = hash.scheduledUpdate
     this.originallyPublishedAt = hash.originallyPublishedAt ? new Date(hash.originallyPublishedAt.toString()) : null
 
-    if (this.state) this.state.label = peertubeTranslate(this.state.label, translations)
+    if (this.state) this.state.label = retro3Translate(this.state.label, translations)
 
     this.blacklisted = hash.blacklisted
     this.blacklistedReason = hash.blacklistedReason

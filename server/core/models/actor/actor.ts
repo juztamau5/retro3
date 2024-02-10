@@ -1,7 +1,7 @@
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { ActivityIconObject, ActorImageType, ActorImageType_Type, type ActivityPubActorType } from '@peertube/peertube-models'
-import { getLowercaseExtension } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { ActivityIconObject, ActorImageType, ActorImageType_Type, type ActivityPubActorType } from '@retroai/retro3-models'
+import { getLowercaseExtension } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { activityPubContextify } from '@server/helpers/activity-pub-utils.js'
 import { getContextFilter } from '@server/lib/activitypub/context.js'
 import { getBiggestActorImage } from '@server/lib/actor-image.js'
@@ -332,7 +332,7 @@ export class ActorModel extends Model<Partial<AttributesOnly<ActorModel>>> {
 
   // ---------------------------------------------------------------------------
 
-  // FIXME: have to specify the result type to not break peertube typings generation
+  // FIXME: have to specify the result type to not break retro3 typings generation
   static wherePreferredUsername (preferredUsername: string, colName = 'preferredUsername'): Where {
     return where(fn('lower', col(colName)), preferredUsername.toLowerCase())
   }

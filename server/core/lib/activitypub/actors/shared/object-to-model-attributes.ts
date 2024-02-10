@@ -1,9 +1,9 @@
-import { ActivityIconObject, ActivityPubActor, ActorImageType, ActorImageType_Type } from '@peertube/peertube-models'
+import { ActivityIconObject, ActivityPubActor, ActorImageType, ActorImageType_Type } from '@retroai/retro3-models'
 import { isActivityPubUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { MIMETYPES } from '@server/initializers/constants.js'
 import { ActorModel } from '@server/models/actor/actor.js'
 import { FilteredModelAttributes } from '@server/types/index.js'
-import { buildUUID, getLowercaseExtension } from '@peertube/peertube-node-utils'
+import { buildUUID, getLowercaseExtension } from '@retroai/retro3-node-utils'
 
 function getActorAttributesFromObject (
   actorObject: ActivityPubActor,

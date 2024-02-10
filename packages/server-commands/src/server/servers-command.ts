@@ -2,9 +2,9 @@ import { exec } from 'child_process'
 import { copy, ensureDir, remove } from 'fs-extra/esm'
 import { readdir, readFile } from 'fs/promises'
 import { basename, join } from 'path'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { getFileSize, isGithubCI, root } from '@peertube/peertube-node-utils'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { getFileSize, isGithubCI, root } from '@retroai/retro3-node-utils'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class ServersCommand extends AbstractCommand {
@@ -39,8 +39,8 @@ export class ServersCommand extends AbstractCommand {
 
       await ensureDir('artifacts')
 
-      const origin = this.buildDirectory('logs/peertube.log')
-      const destname = `peertube-${this.server.internalServerNumber}.log`
+      const origin = this.buildDirectory('logs/retro3.log')
+      const destname = `retro3-${this.server.internalServerNumber}.log`
       console.log('Saving logs %s.', destname)
 
       await copy(origin, join('artifacts', destname))
@@ -61,7 +61,7 @@ export class ServersCommand extends AbstractCommand {
   }
 
   async waitUntilLog (str: string, count = 1, strictCount = true) {
-    const logfile = this.buildDirectory('logs/peertube.log')
+    const logfile = this.buildDirectory('logs/retro3.log')
 
     while (true) {
       const buf = await readFile(logfile)
@@ -93,7 +93,7 @@ export class ServersCommand extends AbstractCommand {
   }
 
   getLogContent () {
-    return readFile(this.buildDirectory('logs/peertube.log'))
+    return readFile(this.buildDirectory('logs/retro3.log'))
   }
 
   async getServerFileSize (subPath: string) {

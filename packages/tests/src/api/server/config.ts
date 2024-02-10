@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { parallelTests } from '@peertube/peertube-node-utils'
-import { CustomConfig, HttpStatusCode } from '@peertube/peertube-models'
+import { parallelTests } from '@retroai/retro3-node-utils'
+import { CustomConfig, HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   killallServers,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-function checkInitialConfig (server: PeerTubeServer, data: CustomConfig) {
-  expect(data.instance.name).to.equal('PeerTube')
+function checkInitialConfig (server: Retro3Server, data: CustomConfig) {
+  expect(data.instance.name).to.equal('retro3')
   expect(data.instance.shortDescription).to.equal(
-    'PeerTube, an ActivityPub-federated video streaming platform using P2P directly in your web browser.'
+    'retro3, an ActivityPub-federated video and game streaming platform using P2P directly in your web browser.'
   )
-  expect(data.instance.description).to.equal('Welcome to this PeerTube instance!')
+  expect(data.instance.description).to.equal('Welcome to this retro3 instance!')
 
   expect(data.instance.terms).to.equal('No terms for now.')
   expect(data.instance.creationReason).to.be.empty
@@ -126,7 +126,7 @@ function checkInitialConfig (server: PeerTubeServer, data: CustomConfig) {
 }
 
 function checkUpdatedConfig (data: CustomConfig) {
-  expect(data.instance.name).to.equal('PeerTube updated')
+  expect(data.instance.name).to.equal('retro3 updated')
   expect(data.instance.shortDescription).to.equal('my short description')
   expect(data.instance.description).to.equal('my super description')
 
@@ -240,7 +240,7 @@ function checkUpdatedConfig (data: CustomConfig) {
 
 const newCustomConfig: CustomConfig = {
   instance: {
-    name: 'PeerTube updated',
+    name: 'retro3 updated',
     shortDescription: 'my short description',
     description: 'my super description',
     terms: 'my super terms',
@@ -456,7 +456,7 @@ const newCustomConfig: CustomConfig = {
     },
     searchIndex: {
       enabled: true,
-      url: 'https://search.joinpeertube.org',
+      url: 'https://search.joinretro3.org',
       disableLocalSearch: true,
       isDefaultSearch: true
     }
@@ -464,7 +464,7 @@ const newCustomConfig: CustomConfig = {
 }
 
 describe('Test static config', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
 
   before(async function () {
     this.timeout(30000)
@@ -489,7 +489,7 @@ describe('Test static config', function () {
 })
 
 describe('Test config', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
 
   before(async function () {
     this.timeout(30000)
@@ -580,7 +580,7 @@ describe('Test config', function () {
   it('Should fetch the about information', async function () {
     const data = await server.config.getAbout()
 
-    expect(data.instance.name).to.equal('PeerTube updated')
+    expect(data.instance.name).to.equal('retro3 updated')
     expect(data.instance.shortDescription).to.equal('my short description')
     expect(data.instance.description).to.equal('my super description')
     expect(data.instance.terms).to.equal('my super terms')
@@ -615,7 +615,7 @@ describe('Test config', function () {
       })
 
       expect(res.headers['x-frame-options']).to.exist
-      expect(res.headers['x-powered-by']).to.equal('PeerTube')
+      expect(res.headers['x-powered-by']).to.equal('retro3')
     }
 
     await killallServers([ server ])

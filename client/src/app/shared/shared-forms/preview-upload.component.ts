@@ -2,7 +2,7 @@ import { Component, forwardRef, Input, OnInit } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { ServerService } from '@app/core'
 import { imageToDataURL } from '@root-helpers/images'
-import { HTMLServerConfig } from '@peertube/peertube-models'
+import { HTMLServerConfig } from '@retroai/retro3-models'
 import { BytesPipe } from '../shared-main'
 
 @Component({

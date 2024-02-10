@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
-import { pick } from '@peertube/peertube-core-utils'
-import { VideoInclude } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { VideoInclude } from '@retroai/retro3-models'
 import { AbstractVideoQueryBuilder } from './shared/abstract-video-query-builder.js'
 import { VideoFileQueryBuilder } from './shared/video-file-query-builder.js'
 import { VideoModelBuilder } from './shared/video-model-builder.js'

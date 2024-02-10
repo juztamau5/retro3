@@ -1,7 +1,7 @@
-import { pick } from '@peertube/peertube-core-utils'
-import { ActivityPubActorType, ActorFollow, FollowState, HttpStatusCode, ResultList, ServerFollowCreate } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { ActivityPubActorType, ActorFollow, FollowState, HttpStatusCode, ResultList, ServerFollowCreate } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
-import { PeerTubeServer } from './server.js'
+import { Retro3Server } from './server.js'
 
 export class FollowsCommand extends AbstractCommand {
 
@@ -76,7 +76,7 @@ export class FollowsCommand extends AbstractCommand {
   }
 
   async unfollow (options: OverrideCommandOptions & {
-    target: PeerTubeServer | string
+    target: Retro3Server | string
   }) {
     const { target } = options
 
@@ -124,9 +124,9 @@ export class FollowsCommand extends AbstractCommand {
   }
 
   removeFollower (options: OverrideCommandOptions & {
-    follower: PeerTubeServer
+    follower: Retro3Server
   }) {
-    const path = '/api/v1/server/followers/peertube@' + options.follower.host
+    const path = '/api/v1/server/followers/retro3@' + options.follower.host
 
     return this.deleteRequest({
       ...options,

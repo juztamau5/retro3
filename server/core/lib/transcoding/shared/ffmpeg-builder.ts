@@ -1,7 +1,7 @@
 import { Job } from 'bullmq'
 import { getFFmpegCommandWrapperOptions } from '@server/helpers/ffmpeg/index.js'
 import { logger } from '@server/helpers/logger.js'
-import { FFmpegVOD } from '@peertube/peertube-ffmpeg'
+import { FFmpegVOD } from '@retroai/retro3-ffmpeg'
 import { VideoTranscodingProfilesManager } from '../default-transcoding-profiles.js'
 
 export function buildFFmpegVOD (job?: Job) {

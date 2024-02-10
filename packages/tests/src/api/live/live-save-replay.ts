@@ -2,7 +2,7 @@
 
 import { expect } from 'chai'
 import { FfmpegCommand } from 'fluent-ffmpeg'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   HttpStatusCodeType,
@@ -12,7 +12,7 @@ import {
   VideoPrivacyType,
   VideoState,
   VideoStateType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { checkLiveCleanup } from '@tests/shared/live.js'
 import {
   cleanupTests,
@@ -20,7 +20,7 @@ import {
   createMultipleServers,
   doubleFollow,
   findExternalSavedVideo,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
@@ -29,10 +29,10 @@ import {
   waitUntilLivePublishedOnAllServers,
   waitUntilLiveReplacedByReplayOnAllServers,
   waitUntilLiveWaitingOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Save replay setting', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let liveVideoUUID: string
   let ffmpegCommand: FfmpegCommand
 

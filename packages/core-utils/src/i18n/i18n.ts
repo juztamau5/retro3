@@ -85,7 +85,7 @@ export function isDefaultLocale (locale: string) {
   return getCompleteLocale(locale) === getCompleteLocale(getDefaultLocale())
 }
 
-export function peertubeTranslate (str: string, translations?: { [ id: string ]: string }) {
+export function retro3Translate (str: string, translations?: { [ id: string ]: string }) {
   if (!translations?.[str]) return str
 
   return translations[str]

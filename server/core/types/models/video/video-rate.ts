@@ -1,5 +1,5 @@
 import { AccountVideoRateModel } from '@server/models/account/account-video-rate.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MAccountAudience, MAccountUrl } from '../account/account.js'
 import { MVideo, MVideoFormattable } from './video.js'
 

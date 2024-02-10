@@ -5,15 +5,15 @@ body:
     attributes:
       value: |
         Please check the official documentation first:
-          - Classic installation: https://docs.joinpeertube.org/install/any-os
-          - Docker installation: https://docs.joinpeertube.org/install/docker
+          - Classic installation: https://docs.joinretro3.org/install/any-os
+          - Docker installation: https://docs.joinretro3.org/install/docker
 
   - type: markdown
     attributes:
       value: |
         Please search among past open/closed issues for a similar one beforehand:
-          - https://github.com/Chocobozzz/PeerTube/issues?q=
-          - https://framacolibri.org/c/peertube
+          - https://github.com/juztamau5/retro3/issues?q=
+          - https://framacolibri.org/c/retro3
 
   - type: textarea
     attributes:
@@ -23,8 +23,8 @@ body:
     attributes:
       label: Additional information
       value: |
-          * PeerTube instance URL:
-          * PeerTube version:
+          * retro3 instance URL:
+          * retro3 version:
           * NodeJS version:
           * Ffmpeg version:
           * Redis version:

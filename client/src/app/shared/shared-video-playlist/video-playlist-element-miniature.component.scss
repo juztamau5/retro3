@@ -168,12 +168,12 @@ my-video-thumbnail,
       margin-bottom: 5px;
     }
 
-    my-peertube-checkbox {
+    my-retro3-checkbox {
       @include margin-right(5px);
     }
 
     input {
-      @include peertube-button;
+      @include retro3-button;
       @include orange-button;
 
       margin-top: 10px;

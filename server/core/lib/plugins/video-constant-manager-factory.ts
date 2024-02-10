@@ -1,4 +1,4 @@
-import { ConstantManager } from '@peertube/peertube-models'
+import { ConstantManager } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import {
   VIDEO_CATEGORIES,

@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { getAudioStream, getVideoStream, getVideoStreamFPS } from '@peertube/peertube-ffmpeg'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { getAudioStream, getVideoStream, getVideoStreamFPS } from '@retroai/retro3-ffmpeg'
+import { VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   testFfmpegStreamError,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function createLiveWrapper (server: PeerTubeServer) {
+async function createLiveWrapper (server: Retro3Server) {
   const liveAttributes = {
     name: 'live video',
     channelId: server.store.channel.id,
@@ -26,7 +26,7 @@ async function createLiveWrapper (server: PeerTubeServer) {
   return uuid
 }
 
-function updateConf (server: PeerTubeServer, vodProfile: string, liveProfile: string) {
+function updateConf (server: Retro3Server, vodProfile: string, liveProfile: string) {
   return server.config.updateCustomSubConfig({
     newConfig: {
       transcoding: {
@@ -62,7 +62,7 @@ function updateConf (server: PeerTubeServer, vodProfile: string, liveProfile: st
 }
 
 describe('Test transcoding plugins', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(60000)
@@ -215,7 +215,7 @@ describe('Test transcoding plugins', function () {
       it('Should default to the default profile if the specified profile does not exist', async function () {
         this.timeout(240000)
 
-        await server.plugins.uninstall({ npmName: 'peertube-plugin-test-transcoding-one' })
+        await server.plugins.uninstall({ npmName: 'retro3-plugin-test-transcoding-one' })
 
         const config = await server.config.getConfig()
 

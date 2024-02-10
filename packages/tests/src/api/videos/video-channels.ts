@@ -2,30 +2,30 @@
 
 import { expect } from 'chai'
 import { basename } from 'path'
-import { ACTOR_IMAGES_SIZE } from '@peertube/peertube-server/core/initializers/constants.js'
+import { ACTOR_IMAGES_SIZE } from '@retroai/retro3-server/core/initializers/constants.js'
 import { testFileExistsOrNot, testImage } from '@tests/shared/checks.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { ActorImageType, User, VideoChannel } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { ActorImageType, User, VideoChannel } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function findChannel (server: PeerTubeServer, channelId: number) {
+async function findChannel (server: Retro3Server, channelId: number) {
   const body = await server.channels.list({ sort: '-name' })
 
   return body.data.find(c => c.id === channelId)
 }
 
 describe('Test video channels', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommands: SQLCommand[] = []
 
   let userInfo: User

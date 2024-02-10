@@ -9,7 +9,7 @@ import {
   runnerJobGetVideoStudioTaskFileValidator,
   runnerJobGetVideoTranscodingFileValidator
 } from '@server/middlewares/validators/runners/job-files.js'
-import { RunnerJobState, VideoStorage } from '@peertube/peertube-models'
+import { RunnerJobState, VideoStorage } from '@retroai/retro3-models'
 
 const lTags = loggerTagsFactory('api', 'runner')
 

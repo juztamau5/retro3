@@ -1,6 +1,6 @@
 import express from 'express'
 import { PassThrough, pipeline } from 'stream'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { buildReinjectVideoFileTokenQuery } from '@server/controllers/shared/m3u8-playlist.js'
 import { logger } from '@server/helpers/logger.js'
 import { StreamReplacer } from '@server/helpers/stream-replacer.js'

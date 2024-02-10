@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import request from 'supertest'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 async function testCaptionFile (url: string, captionPath: string, toTest: RegExp | string) {
   const res = await request(url)

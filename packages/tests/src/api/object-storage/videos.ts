@@ -4,8 +4,8 @@ import bytes from 'bytes'
 import { expect } from 'chai'
 import { stat } from 'fs/promises'
 import merge from 'lodash-es/merge.js'
-import { HttpStatusCode, VideoDetails } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled, sha1 } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, VideoDetails } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled, sha1 } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
@@ -14,10 +14,10 @@ import {
   killallServers,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith, expectLogDoesNotContain } from '@tests/shared/checks.js'
 import { checkTmpIsEmpty } from '@tests/shared/directories.js'
 import { generateHighBitrateVideo } from '@tests/shared/generate.js'
@@ -26,8 +26,8 @@ import { SQLCommand } from '@tests/shared/sql-command.js'
 import { checkWebTorrentWorks } from '@tests/shared/webtorrent.js'
 
 async function checkFiles (options: {
-  server: PeerTubeServer
-  originServer: PeerTubeServer
+  server: Retro3Server
+  originServer: Retro3Server
   originSQLCommand: SQLCommand
 
   video: VideoDetails
@@ -139,7 +139,7 @@ function runTestSuite (options: {
   const { fixture } = options
   let baseMockUrl: string
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommands: SQLCommand[] = []
   const objectStorage = new ObjectStorageCommand()
 
@@ -288,7 +288,7 @@ describe('Object storage for videos', function () {
   const objectStorage = new ObjectStorageCommand()
 
   describe('Test config', function () {
-    let server: PeerTubeServer
+    let server: Retro3Server
 
     const baseConfig = objectStorage.getDefaultMockConfig()
 

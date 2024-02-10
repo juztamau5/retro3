@@ -2,9 +2,9 @@
 
 import { expect } from 'chai'
 import { join } from 'path'
-import { omit, randomInt } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, PeerTubeProblemDocument, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { omit, randomInt } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, Retro3ProblemDocument, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
@@ -12,15 +12,15 @@ import {
   makeGetRequest,
   makePutBodyRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkBadStartPagination, checkBadCountPagination, checkBadSortPagination } from '@tests/shared/checks.js'
 import { checkUploadVideoParam } from '@tests/shared/videos.js'
 
 describe('Test videos API validator', function () {
   const path = '/api/v1/videos/'
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = ''
   let accountName: string
   let channelId: number
@@ -431,12 +431,12 @@ describe('Test videos API validator', function () {
         const attributes = { ...fields, ...attaches }
         const body = await checkUploadVideoParam({ ...baseOptions(), attributes })
 
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
         if (mode === 'legacy') {
-          expect(error.docs).to.equal('https://docs.joinpeertube.org/api-rest-reference.html#operation/uploadLegacy')
+          expect(error.docs).to.equal('https://docs.joinretro3.org/api-rest-reference.html#operation/uploadLegacy')
         } else {
-          expect(error.docs).to.equal('https://docs.joinpeertube.org/api-rest-reference.html#operation/uploadResumableInit')
+          expect(error.docs).to.equal('https://docs.joinretro3.org/api-rest-reference.html#operation/uploadResumableInit')
         }
 
         expect(error.type).to.equal('about:blank')
@@ -703,9 +703,9 @@ describe('Test videos API validator', function () {
       const fields = { ...baseCorrectParams, licence: 125 }
 
       const res = await makePutBodyRequest({ url: server.url, path: path + video.shortUUID, token: server.accessToken, fields })
-      const error = res.body as PeerTubeProblemDocument
+      const error = res.body as Retro3ProblemDocument
 
-      expect(error.docs).to.equal('https://docs.joinpeertube.org/api-rest-reference.html#operation/putVideo')
+      expect(error.docs).to.equal('https://docs.joinretro3.org/api-rest-reference.html#operation/putVideo')
 
       expect(error.type).to.equal('about:blank')
       expect(error.title).to.equal('Bad Request')
@@ -752,9 +752,9 @@ describe('Test videos API validator', function () {
 
     it('Shoud report the appropriate error', async function () {
       const body = await server.videos.get({ id: 'hi', expectedStatus: HttpStatusCode.BAD_REQUEST_400 })
-      const error = body as unknown as PeerTubeProblemDocument
+      const error = body as unknown as Retro3ProblemDocument
 
-      expect(error.docs).to.equal('https://docs.joinpeertube.org/api-rest-reference.html#operation/getVideo')
+      expect(error.docs).to.equal('https://docs.joinretro3.org/api-rest-reference.html#operation/getVideo')
 
       expect(error.type).to.equal('about:blank')
       expect(error.title).to.equal('Bad Request')
@@ -858,9 +858,9 @@ describe('Test videos API validator', function () {
 
     it('Shoud report the appropriate error', async function () {
       const body = await server.videos.remove({ id: 'hello', expectedStatus: HttpStatusCode.BAD_REQUEST_400 })
-      const error = body as PeerTubeProblemDocument
+      const error = body as Retro3ProblemDocument
 
-      expect(error.docs).to.equal('https://docs.joinpeertube.org/api-rest-reference.html#operation/delVideo')
+      expect(error.docs).to.equal('https://docs.joinretro3.org/api-rest-reference.html#operation/delVideo')
 
       expect(error.type).to.equal('about:blank')
       expect(error.title).to.equal('Bad Request')

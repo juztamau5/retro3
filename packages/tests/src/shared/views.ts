@@ -1,17 +1,17 @@
 import type { FfmpegCommand } from 'fluent-ffmpeg'
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs,
   waitUntilLivePublishedOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function processViewersStats (servers: PeerTubeServer[]) {
+async function processViewersStats (servers: Retro3Server[]) {
   await wait(6000)
 
   for (const server of servers) {
@@ -22,7 +22,7 @@ async function processViewersStats (servers: PeerTubeServer[]) {
   await waitJobs(servers)
 }
 
-async function processViewsBuffer (servers: PeerTubeServer[]) {
+async function processViewsBuffer (servers: Retro3Server[]) {
   for (const server of servers) {
     await server.debug.sendCommand({ body: { command: 'process-video-views-buffer' } })
   }
@@ -44,7 +44,7 @@ async function prepareViewsServers () {
 }
 
 async function prepareViewsVideos (options: {
-  servers: PeerTubeServer[]
+  servers: Retro3Server[]
   live: boolean
   vod: boolean
 }) {

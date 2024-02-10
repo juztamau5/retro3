@@ -6,7 +6,7 @@ import {
   UserRight,
   VideoCommentCreate,
   VideoCommentThreads
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { MCommentFormattable } from '@server/types/models/index.js'
 import { auditLoggerFactory, CommentAuditView, getAuditIdFromRes } from '../../../helpers/audit-logger.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'

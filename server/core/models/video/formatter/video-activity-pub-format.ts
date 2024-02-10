@@ -11,7 +11,7 @@ import {
   ActivityUrlObject,
   ActivityVideoUrlObject,
   VideoObject
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { WEBSERVER } from '../../../initializers/constants.js'
 import {
   getLocalVideoChaptersActivityPubUrl,

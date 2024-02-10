@@ -14,16 +14,16 @@ import { UserModel } from '@server/models/user/user.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { VideoBlacklistModel } from '@server/models/video/video-blacklist.js'
 import { MPlugin, MVideo, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { PeerTubeHelpers } from '@server/types/plugins/index.js'
-import { ffprobePromise } from '@peertube/peertube-ffmpeg'
-import { VideoBlacklistCreate, VideoStorage } from '@peertube/peertube-models'
+import { Retro3Helpers } from '@server/types/plugins/index.js'
+import { ffprobePromise } from '@retroai/retro3-ffmpeg'
+import { VideoBlacklistCreate, VideoStorage } from '@retroai/retro3-models'
 import { addAccountInBlocklist, addServerInBlocklist, removeAccountFromBlocklist, removeServerFromBlocklist } from '../blocklist.js'
-import { PeerTubeSocket } from '../peertube-socket.js'
+import { Retro3Socket } from '../retro3-socket.js'
 import { ServerConfigManager } from '../server-config-manager.js'
 import { blacklistVideo, unblacklistVideo } from '../video-blacklist.js'
 import { VideoPathManager } from '../video-path-manager.js'
 
-function buildPluginHelpers (httpServer: Server, pluginModel: MPlugin, npmName: string): PeerTubeHelpers {
+function buildPluginHelpers (httpServer: Server, pluginModel: MPlugin, npmName: string): Retro3Helpers {
   const logger = buildPluginLogger(npmName)
 
   const database = buildDatabaseHelpers()
@@ -238,10 +238,10 @@ function buildPluginRelatedHelpers (plugin: MPlugin, npmName: string) {
 function buildSocketHelpers () {
   return {
     sendNotification: (userId: number, notification: UserNotificationModelForApi) => {
-      PeerTubeSocket.Instance.sendNotification(userId, notification)
+      Retro3Socket.Instance.sendNotification(userId, notification)
     },
     sendVideoLiveNewState: (video: MVideo) => {
-      PeerTubeSocket.Instance.sendVideoLiveNewState(video)
+      Retro3Socket.Instance.sendVideoLiveNewState(video)
     }
   }
 }

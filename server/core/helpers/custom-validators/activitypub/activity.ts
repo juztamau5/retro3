@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { Activity, ActivityType } from '@peertube/peertube-models'
+import { Activity, ActivityType } from '@retroai/retro3-models'
 import { isAbuseReasonValid } from '../abuses.js'
 import { exists } from '../misc.js'
 import { sanitizeAndCheckActorObject } from './actor.js'

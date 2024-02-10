@@ -15,7 +15,7 @@ import {
   Table,
   UpdatedAt
 } from 'sequelize-typescript'
-import { VideoCaption } from '@peertube/peertube-models'
+import { VideoCaption } from '@retroai/retro3-models'
 import {
   MVideo,
   MVideoCaption,
@@ -23,8 +23,8 @@ import {
   MVideoCaptionLanguageUrl,
   MVideoCaptionVideo
 } from '@server/types/models/index.js'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isVideoCaptionLanguageValid } from '../../helpers/custom-validators/video-captions.js'
 import { logger } from '../../helpers/logger.js'
 import { CONFIG } from '../../initializers/config.js'

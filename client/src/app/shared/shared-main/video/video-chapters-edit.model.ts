@@ -1,5 +1,5 @@
-import { simpleObjectsDeepEqual, sortBy } from '@peertube/peertube-core-utils'
-import { VideoChapter } from '@peertube/peertube-models'
+import { simpleObjectsDeepEqual, sortBy } from '@retroai/retro3-core-utils'
+import { VideoChapter } from '@retroai/retro3-models'
 
 export class VideoChaptersEdit {
   private chaptersFromAPI: VideoChapter[] = []

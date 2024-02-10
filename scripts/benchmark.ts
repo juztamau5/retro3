@@ -1,18 +1,18 @@
 import autocannon, { printResult } from 'autocannon'
 import { program } from 'commander'
 import { writeJson } from 'fs-extra/esm'
-import { Video, VideoPrivacy } from '@peertube/peertube-models'
+import { Video, VideoPrivacy } from '@retroai/retro3-models'
 import {
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-let servers: PeerTubeServer[]
+let servers: Retro3Server[]
 // First server
-let server: PeerTubeServer
+let server: Retro3Server
 let video: Video
 let threadId: number
 
@@ -57,8 +57,8 @@ async function run () {
 
   const tests = [
     {
-      title: 'AP - account peertube',
-      path: '/accounts/peertube',
+      title: 'AP - account retro3',
+      path: '/accounts/retro3',
       headers: buildAPHeader(),
       expecter: (body, status) => {
         return status === 200 && body.startsWith('{"@context":')
@@ -73,8 +73,8 @@ async function run () {
       }
     },
     {
-      title: 'Misc - webfinger peertube',
-      path: '/.well-known/webfinger?resource=acct:peertube@' + server.host,
+      title: 'Misc - webfinger retro3',
+      path: '/.well-known/webfinger?resource=acct:retro3@' + server.host,
       expecter: (body, status) => {
         return status === 200 && body.startsWith('{"subject":')
       }

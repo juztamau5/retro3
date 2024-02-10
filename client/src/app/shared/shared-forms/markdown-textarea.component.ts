@@ -5,7 +5,7 @@ import { Component, ElementRef, forwardRef, Input, OnInit, ViewChild } from '@an
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { SafeHtml } from '@angular/platform-browser'
 import { MarkdownService, ScreenService } from '@app/core'
-import { Video } from '@peertube/peertube-models'
+import { Video } from '@retroai/retro3-models'
 import { FormReactiveErrors } from './form-reactive.service'
 
 @Component({

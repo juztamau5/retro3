@@ -1,8 +1,8 @@
 import express from 'express'
 import { VideoCommentModel } from '@server/models/video/video-comment.js'
 import { MVideoId } from '@server/types/models/index.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, ServerErrorCode } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, ServerErrorCode } from '@retroai/retro3-models'
 
 async function doesVideoCommentThreadExist (idArg: number | string, video: MVideoId, res: express.Response) {
   const id = forceNumber(idArg)

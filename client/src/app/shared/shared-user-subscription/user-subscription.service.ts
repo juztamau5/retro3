@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core'
 import { ComponentPaginationLight, RestExtractor, RestService } from '@app/core'
 import { buildBulkObservable } from '@app/helpers'
 import { Video, VideoChannel, VideoChannelService, VideoService } from '@app/shared/shared-main'
-import { ActorFollow, ResultList, VideoChannel as VideoChannelServer, VideoSortField } from '@peertube/peertube-models'
+import { ActorFollow, ResultList, VideoChannel as VideoChannelServer, VideoSortField } from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 
-const debugLogger = debug('peertube:subscriptions:UserSubscriptionService')
+const debugLogger = debug('retro3:subscriptions:UserSubscriptionService')
 
 type SubscriptionExistResult = { [ uri: string ]: boolean }
 type SubscriptionExistResultObservable = { [ uri: string ]: Observable<boolean> }

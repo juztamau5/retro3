@@ -2,11 +2,11 @@
 @use '_mixins' as *;
 
 input[type=text] {
-  @include peertube-input-text(300px);
+  @include retro3-input-text(300px);
 }
 
-.peertube-select-container {
-  @include peertube-select-container(auto);
+.retro3-select-container {
+  @include retro3-select-container(auto);
   @include margin-left(0.5rem);
 }
 
@@ -15,7 +15,7 @@ h1 {
   justify-content: space-between;
 
   .button-link {
-    @include peertube-button-link;
+    @include retro3-button-link;
     @include grey-button;
     @include button-with-icon(18px, 3px, -1px);
 
@@ -26,7 +26,7 @@ h1 {
 }
 
 .action-button-delete-selection {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
   @include button-with-icon(21px);
 
@@ -73,7 +73,7 @@ my-edit-button {
       width: 100%;
       margin-bottom: 12px;
     }
-    .peertube-select-container {
+    .retro3-select-container {
       @include margin-left(0);
     }
   }

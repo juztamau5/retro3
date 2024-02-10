@@ -1,4 +1,4 @@
-import { LiveVideoLatencyMode } from '@peertube/peertube-models'
+import { LiveVideoLatencyMode } from '@retroai/retro3-models'
 import * as Sequelize from 'sequelize'
 
 async function up (utils: {

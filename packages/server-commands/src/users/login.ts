@@ -1,6 +1,6 @@
-import { PeerTubeServer } from '../server/server.js'
+import { Retro3Server } from '../server/server.js'
 
-function setAccessTokensToServers (servers: PeerTubeServer[]) {
+function setAccessTokensToServers (servers: Retro3Server[]) {
   const tasks: Promise<any>[] = []
 
   for (const server of servers) {

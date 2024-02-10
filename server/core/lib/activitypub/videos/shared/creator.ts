@@ -4,7 +4,7 @@ import { Hooks } from '@server/lib/plugins/hooks.js'
 import { autoBlacklistVideoIfNeeded } from '@server/lib/video-blacklist.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideoFullLight, MVideoThumbnail } from '@server/types/models/index.js'
-import { VideoObject } from '@peertube/peertube-models'
+import { VideoObject } from '@retroai/retro3-models'
 import { APVideoAbstractBuilder } from './abstract-builder.js'
 import { getVideoAttributesFromObject } from './object-to-model-attributes.js'
 

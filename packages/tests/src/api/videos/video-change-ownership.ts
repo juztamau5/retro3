@@ -7,15 +7,15 @@ import {
   createMultipleServers,
   createSingleServer,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 
 describe('Test video change ownership - nominal', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   const firstUser = 'first'
   const secondUser = 'second'
@@ -235,7 +235,7 @@ describe('Test video change ownership - nominal', function () {
 })
 
 describe('Test video change ownership - quota too small', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const firstUser = 'first'
   const secondUser = 'second'
 

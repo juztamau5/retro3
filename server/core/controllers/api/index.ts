@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import { logger } from '@server/helpers/logger.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { abuseRouter } from './abuse.js'
 import { accountsRouter } from './accounts.js'
 import { blocklistRouter } from './blocklist.js'
@@ -65,7 +65,7 @@ function pong (req: express.Request, res: express.Response) {
 }
 
 function badRequest (req: express.Request, res: express.Response) {
-  logger.debug(`API express handler not found: bad PeerTube request for ${req.method} - ${req.originalUrl}`)
+  logger.debug(`API express handler not found: bad retro3 request for ${req.method} - ${req.originalUrl}`)
 
   return res.type('json')
     .status(HttpStatusCode.BAD_REQUEST_400)

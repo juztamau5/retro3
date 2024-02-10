@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { getAllFiles, getMaxTheoreticalBitrate, getMinTheoreticalBitrate, omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoFileMetadata, VideoState } from '@peertube/peertube-models'
-import { canDoQuickTranscode } from '@peertube/peertube-server/core/lib/transcoding/transcoding-quick-transcode.js'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { getAllFiles, getMaxTheoreticalBitrate, getMinTheoreticalBitrate, omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoFileMetadata, VideoState } from '@retroai/retro3-models'
+import { canDoQuickTranscode } from '@retroai/retro3-server/core/lib/transcoding/transcoding-quick-transcode.js'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   ffprobePromise,
   getAudioStream,
@@ -12,20 +12,20 @@ import {
   getVideoStreamDimensionsInfo,
   getVideoStreamFPS,
   hasAudioStream
-} from '@peertube/peertube-ffmpeg'
+} from '@retroai/retro3-ffmpeg'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { generateVideoWithFramerate, generateHighBitrateVideo } from '@tests/shared/generate.js'
 import { checkWebTorrentWorks } from '@tests/shared/webtorrent.js'
 
-function updateConfigForTranscoding (server: PeerTubeServer) {
+function updateConfigForTranscoding (server: Retro3Server) {
   return server.config.updateCustomSubConfig({
     newConfig: {
       transcoding: {
@@ -51,7 +51,7 @@ function updateConfigForTranscoding (server: PeerTubeServer) {
 }
 
 describe('Test video transcoding', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let video4k: string
 
   before(async function () {

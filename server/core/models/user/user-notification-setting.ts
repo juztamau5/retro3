@@ -1,5 +1,5 @@
-import { type UserNotificationSetting, type UserNotificationSettingValueType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { type UserNotificationSetting, type UserNotificationSettingValueType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { TokensCache } from '@server/lib/auth/tokens-cache.js'
 import { MNotificationSettingFormattable } from '@server/types/models/index.js'
 import {
@@ -160,11 +160,11 @@ export class UserNotificationSettingModel extends Model<Partial<AttributesOnly<U
   @AllowNull(false)
   @Default(null)
   @Is(
-    'UserNotificationSettingNewPeerTubeVersion',
-    value => throwIfNotValid(value, isUserNotificationSettingValid, 'newPeerTubeVersion')
+    'UserNotificationSettingNewRetro3Version',
+    value => throwIfNotValid(value, isUserNotificationSettingValid, 'newRetro3Version')
   )
   @Column
-  newPeerTubeVersion: UserNotificationSettingValueType
+  newRetro3Version: UserNotificationSettingValueType
 
   @AllowNull(false)
   @Default(null)
@@ -224,7 +224,7 @@ export class UserNotificationSettingModel extends Model<Partial<AttributesOnly<U
       autoInstanceFollowing: this.autoInstanceFollowing,
       abuseNewMessage: this.abuseNewMessage,
       abuseStateChange: this.abuseStateChange,
-      newPeerTubeVersion: this.newPeerTubeVersion,
+      newRetro3Version: this.newRetro3Version,
       myVideoStudioEditionFinished: this.myVideoStudioEditionFinished,
       newPluginVersion: this.newPluginVersion
     }

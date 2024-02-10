@@ -1,4 +1,4 @@
-import { Video, VideoPlaylist } from '@peertube/peertube-models'
+import { Video, VideoPlaylist } from '@retroai/retro3-models'
 import { secondsToTime } from './date.js'
 
 function addQueryParams (url: string, params: { [ id: string ]: string }) {
@@ -70,7 +70,7 @@ function decorateVideoLink (options: {
   controls?: boolean
   controlBar?: boolean
 
-  peertubeLink?: boolean
+  retro3Link?: boolean
   p2p?: boolean
 }) {
   const { url } = options
@@ -98,7 +98,7 @@ function decorateVideoLink (options: {
   if (options.controls === false) params.set('controls', '0')
   if (options.controlBar === false) params.set('controlBar', '0')
 
-  if (options.peertubeLink === false) params.set('peertubeLink', '0')
+  if (options.retro3Link === false) params.set('retro3Link', '0')
   if (options.p2p !== undefined) params.set('p2p', options.p2p ? '1' : '0')
 
   return buildUrl(url, params)

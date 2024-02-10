@@ -1,4 +1,4 @@
-import { ActivityAccept } from '@peertube/peertube-models'
+import { ActivityAccept } from '@retroai/retro3-models'
 import { ActorFollowModel } from '../../../models/actor/actor-follow.js'
 import { APProcessorOptions } from '../../../types/activitypub-processor.model.js'
 import { MActorDefault, MActorSignature } from '../../../types/models/index.js'

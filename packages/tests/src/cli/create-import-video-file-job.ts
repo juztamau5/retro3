@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, VideoDetails, VideoFile, VideoInclude } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled, buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, VideoDetails, VideoFile, VideoInclude } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled, buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeRawRequest,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expect } from 'chai'
 import { expectStartWith } from '../shared/checks.js'
 
@@ -37,7 +37,7 @@ function runTests (enableObjectStorage: boolean) {
   let video1ShortId: string
   let video2UUID: string
 
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   const objectStorage = new ObjectStorageCommand()
 

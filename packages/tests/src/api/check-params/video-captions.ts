@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeDeleteRequest,
   makeGetRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video captions API validator', function () {
   const path = '/api/v1/videos/'
 
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken: string
   let video: VideoCreateResult
   let privateVideo: VideoCreateResult

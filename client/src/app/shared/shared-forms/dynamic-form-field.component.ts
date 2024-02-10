@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { FormGroup } from '@angular/forms'
-import { RegisterClientFormFieldOptions } from '@peertube/peertube-models'
+import { RegisterClientFormFieldOptions } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-dynamic-form-field',

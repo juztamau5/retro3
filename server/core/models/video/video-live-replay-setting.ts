@@ -1,4 +1,4 @@
-import { type VideoPrivacyType } from '@peertube/peertube-models'
+import { type VideoPrivacyType } from '@retroai/retro3-models'
 import { isVideoPrivacyValid } from '@server/helpers/custom-validators/videos.js'
 import { MLiveReplaySetting } from '@server/types/models/video/video-live-replay-setting.js'
 import { Transaction } from 'sequelize'

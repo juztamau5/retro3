@@ -1,7 +1,7 @@
 import { Observable, Subject } from 'rxjs'
 import { filter } from 'rxjs/operators'
 import { Injectable } from '@angular/core'
-import { peertubeLocalStorage, peertubeSessionStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage, retro3SessionStorage } from '@root-helpers/retro3-web-storage'
 
 abstract class StorageService {
   protected instance: Storage
@@ -28,10 +28,10 @@ abstract class StorageService {
 
 @Injectable()
 export class LocalStorageService extends StorageService {
-  protected instance: Storage = peertubeLocalStorage
+  protected instance: Storage = retro3LocalStorage
 }
 
 @Injectable()
 export class SessionStorageService extends StorageService {
-  protected instance: Storage = peertubeSessionStorage
+  protected instance: Storage = retro3SessionStorage
 }

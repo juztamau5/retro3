@@ -1,6 +1,6 @@
 import omit from 'lodash-es/omit'
 import { logger } from '@root-helpers/logger'
-import { ServerLogLevel } from '@peertube/peertube-models'
+import { ServerLogLevel } from '@retroai/retro3-models'
 
 export class LogRow {
   date: Date

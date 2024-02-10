@@ -13,7 +13,7 @@ import {
 } from '@server/middlewares/index.js'
 import { deleteRegistrationTokenValidator } from '@server/middlewares/validators/runners/index.js'
 import { RunnerRegistrationTokenModel } from '@server/models/runner/runner-registration-token.js'
-import { HttpStatusCode, ListRunnerRegistrationTokensQuery, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, ListRunnerRegistrationTokensQuery, UserRight } from '@retroai/retro3-models'
 
 const lTags = loggerTagsFactory('api', 'runner')
 

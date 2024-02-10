@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode, VideoPlaylistCreateResult } from '@peertube/peertube-models'
-import { cleanupTests, makeGetRequest, makeHTMLRequest, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { HttpStatusCode, VideoPlaylistCreateResult } from '@retroai/retro3-models'
+import { cleanupTests, makeGetRequest, makeHTMLRequest, Retro3Server } from '@retroai/retro3-server-commands'
 import { checkIndexTags, getWatchPlaylistBasePaths, getWatchVideoBasePaths, prepareClientTests } from '@tests/shared/client.js'
 
 describe('Test index HTML generation', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let videoIds: (string | number)[] = []
   let privateVideoId: string
@@ -46,14 +46,14 @@ describe('Test index HTML generation', function () {
       const config = await servers[0].config.getConfig()
       const res = await makeHTMLRequest(servers[0].url, '/videos/trending')
 
-      checkIndexTags(res.text, 'PeerTube', instanceDescription, '', config)
+      checkIndexTags(res.text, 'retro3', instanceDescription, '', config)
     })
 
     it('Should update the customized configuration and have the correct index html tags', async function () {
       await servers[0].config.updateCustomSubConfig({
         newConfig: {
           instance: {
-            name: 'PeerTube updated',
+            name: 'retro3 updated',
             shortDescription: 'my short description',
             description: 'my super description',
             terms: 'my super terms',
@@ -70,14 +70,14 @@ describe('Test index HTML generation', function () {
       const config = await servers[0].config.getConfig()
       const res = await makeHTMLRequest(servers[0].url, '/videos/trending')
 
-      checkIndexTags(res.text, 'PeerTube updated', 'my short description', 'body { background-color: red; }', config)
+      checkIndexTags(res.text, 'retro3 updated', 'my short description', 'body { background-color: red; }', config)
     })
 
     it('Should have valid index html updated tags (title, description...)', async function () {
       const config = await servers[0].config.getConfig()
       const res = await makeHTMLRequest(servers[0].url, '/videos/trending')
 
-      checkIndexTags(res.text, 'PeerTube updated', 'my short description', 'body { background-color: red; }', config)
+      checkIndexTags(res.text, 'retro3 updated', 'my short description', 'body { background-color: red; }', config)
     })
   })
 

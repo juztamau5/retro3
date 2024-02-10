@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { join } from 'path'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
-import { DEFAULT_AUDIO_RESOLUTION } from '@peertube/peertube-server/core/initializers/constants.js'
+} from '@retroai/retro3-server-commands'
+import { DEFAULT_AUDIO_RESOLUTION } from '@retroai/retro3-server/core/initializers/constants.js'
 import { checkDirectoryIsEmpty, checkTmpIsEmpty } from '@tests/shared/directories.js'
 import { completeCheckHlsPlaylist } from '@tests/shared/streaming-playlists.js'
 
 describe('Test HLS videos', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   function runTestSuite (hlsOnly: boolean, objectStorageBaseUrl?: string) {
     const videoUUIDs: string[] = []

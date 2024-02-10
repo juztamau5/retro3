@@ -3,7 +3,7 @@ import { HttpHeaderResponse } from '@angular/common/http'
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Router } from '@angular/router'
 import { DateFormat, dateToHuman } from '@app/helpers'
-import { HttpStatusCode, HttpStatusCodeType, ResultList } from '@peertube/peertube-models'
+import { HttpStatusCode, HttpStatusCodeType, ResultList } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 
 @Injectable()

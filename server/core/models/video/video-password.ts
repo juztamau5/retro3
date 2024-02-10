@@ -1,12 +1,12 @@
 import { AllowNull, BelongsTo, Column, CreatedAt, DefaultScope, ForeignKey, Is, Model, Table, UpdatedAt } from 'sequelize-typescript'
 import { VideoModel } from './video.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
-import { ResultList, VideoPassword } from '@peertube/peertube-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
+import { ResultList, VideoPassword } from '@retroai/retro3-models'
 import { getSort, throwIfNotValid } from '../shared/index.js'
 import { FindOptions, Transaction } from 'sequelize'
 import { MVideoPassword } from '@server/types/models/index.js'
 import { isPasswordValid } from '@server/helpers/custom-validators/videos.js'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 
 @DefaultScope(() => ({
   include: [

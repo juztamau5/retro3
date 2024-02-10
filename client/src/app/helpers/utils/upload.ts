@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http'
 import { Notifier } from '@app/core'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 function genericUploadErrorHandler (options: {
   err: Pick<HttpErrorResponse, 'message' | 'status' | 'headers'>

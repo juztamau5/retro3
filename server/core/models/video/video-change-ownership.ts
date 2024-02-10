@@ -1,5 +1,5 @@
-import { VideoChangeOwnership, type VideoChangeOwnershipStatusType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoChangeOwnership, type VideoChangeOwnershipStatusType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { MVideoChangeOwnershipFormattable, MVideoChangeOwnershipFull } from '@server/types/models/video/video-change-ownership.js'
 import { AllowNull, BelongsTo, Column, CreatedAt, ForeignKey, Model, Scopes, Table, UpdatedAt } from 'sequelize-typescript'
 import { AccountModel } from '../account/account.js'

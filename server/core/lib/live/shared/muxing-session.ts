@@ -14,7 +14,7 @@ import { removeHLSFileObjectStorageByPath, storeHLSFileFromContent, storeHLSFile
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { VideoStreamingPlaylistModel } from '@server/models/video/video-streaming-playlist.js'
 import { MStreamingPlaylistVideo, MUserId, MVideoLiveVideo } from '@server/types/models/index.js'
-import { LiveVideoError, VideoStorage, VideoStreamingPlaylistType } from '@peertube/peertube-models'
+import { LiveVideoError, VideoStorage, VideoStreamingPlaylistType } from '@retroai/retro3-models'
 import {
   generateHLSMasterPlaylistFilename,
   generateHlsSha256SegmentsFilename,
@@ -26,7 +26,7 @@ import { LiveQuotaStore } from '../live-quota-store.js'
 import { LiveSegmentShaStore } from '../live-segment-sha-store.js'
 import { buildConcatenatedName, getLiveSegmentTime } from '../live-utils.js'
 import { AbstractTranscodingWrapper, FFmpegTranscodingWrapper, RemoteTranscodingWrapper } from './transcoding-wrapper/index.js'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 
 interface MuxingSessionEvents {
   'live-ready': (options: { videoUUID: string }) => void

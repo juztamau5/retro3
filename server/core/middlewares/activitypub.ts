@@ -2,9 +2,9 @@ import { NextFunction, Request, Response } from 'express'
 import { isActorDeleteActivityValid } from '@server/helpers/custom-validators/activitypub/actor.js'
 import { getAPId } from '@server/lib/activitypub/activity.js'
 import { wrapWithSpanAndContext } from '@server/lib/opentelemetry/tracing.js'
-import { ActivityDelete, ActivityPubSignature, HttpStatusCode } from '@peertube/peertube-models'
+import { ActivityDelete, ActivityPubSignature, HttpStatusCode } from '@retroai/retro3-models'
 import { logger } from '../helpers/logger.js'
-import { isHTTPSignatureVerified, parseHTTPSignature } from '../helpers/peertube-crypto.js'
+import { isHTTPSignatureVerified, parseHTTPSignature } from '../helpers/retro3-crypto.js'
 import { ACCEPT_HEADERS, ACTIVITY_PUB, HTTP_SIGNATURE } from '../initializers/constants.js'
 import { getOrCreateAPActor, loadActorUrlOrGetFromWebfinger } from '../lib/activitypub/actors/index.js'
 
@@ -62,7 +62,7 @@ export {
 // ---------------------------------------------------------------------------
 
 async function checkHttpSignature (req: Request, res: Response) {
-  return wrapWithSpanAndContext('peertube.activitypub.checkHTTPSignature', async () => {
+  return wrapWithSpanAndContext('retro3.activitypub.checkHTTPSignature', async () => {
     // FIXME: compatibility with http-signature < v1.3
     const sig = req.headers[HTTP_SIGNATURE.HEADER_NAME] as string
     if (sig && sig.startsWith('Signature ') === true) req.headers[HTTP_SIGNATURE.HEADER_NAME] = sig.replace(/^Signature /, '')
@@ -123,9 +123,9 @@ async function checkHttpSignature (req: Request, res: Response) {
 
 async function checkJsonLDSignature (req: Request, res: Response) {
   // Lazy load the module as it's quite big with json.ld dependency
-  const { isJsonLDSignatureVerified } = await import('../helpers/peertube-jsonld.js')
+  const { isJsonLDSignatureVerified } = await import('../helpers/retro3-jsonld.js')
 
-  return wrapWithSpanAndContext('peertube.activitypub.JSONLDSignature', async () => {
+  return wrapWithSpanAndContext('retro3.activitypub.JSONLDSignature', async () => {
     const signatureObject: ActivityPubSignature = req.body.signature
 
     if (!signatureObject?.creator) {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/no-floating-promises */
 
-import { HttpStatusCode, VideoToken } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoToken } from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

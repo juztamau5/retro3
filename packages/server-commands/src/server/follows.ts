@@ -1,7 +1,7 @@
 import { waitJobs } from './jobs.js'
-import { PeerTubeServer } from './server.js'
+import { Retro3Server } from './server.js'
 
-async function doubleFollow (server1: PeerTubeServer, server2: PeerTubeServer) {
+async function doubleFollow (server1: Retro3Server, server2: Retro3Server) {
   await Promise.all([
     server1.follows.follow({ hosts: [ server2.url ] }),
     server2.follows.follow({ hosts: [ server1.url ] })

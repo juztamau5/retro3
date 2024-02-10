@@ -138,7 +138,7 @@
               </div>
             </div>
 
-            <my-peertube-checkbox inputName="nsfw" formControlName="nsfw" helpPlacement="bottom-right">
+            <my-retro3-checkbox inputName="nsfw" formControlName="nsfw" helpPlacement="bottom-right">
               <ng-template ptTemplate="label">
                 <ng-container i18n>Contains sensitive content</ng-container>
               </ng-template>
@@ -146,9 +146,9 @@
               <ng-template ptTemplate="help">
                 <ng-container i18n>Some instances hide videos containing mature or explicit content by default.</ng-container>
               </ng-template>
-            </my-peertube-checkbox>
+            </my-retro3-checkbox>
 
-            <my-peertube-checkbox *ngIf="!hideWaitTranscoding" inputName="waitTranscoding" formControlName="waitTranscoding" helpPlacement="bottom-right">
+            <my-retro3-checkbox *ngIf="!hideWaitTranscoding" inputName="waitTranscoding" formControlName="waitTranscoding" helpPlacement="bottom-right">
               <ng-template ptTemplate="label">
                 <ng-container i18n>Publish after transcoding</ng-container>
               </ng-template>
@@ -156,7 +156,7 @@
               <ng-template ptTemplate="help">
                 <ng-container i18n>The video may be unplayable during the transcoding process. It's the reason why we prefer to publish publicly the video after transcoding.</ng-container>
               </ng-template>
-            </my-peertube-checkbox>
+            </my-retro3-checkbox>
 
             <ng-container
               *ngFor="let pluginSetting of getPluginsFields('main')"
@@ -175,7 +175,7 @@
         <div class="captions">
 
           <div class="captions-header">
-            <button (click)="openAddCaptionModal()" class="peertube-create-button">
+            <button (click)="openAddCaptionModal()" class="retro3-create-button">
               <my-global-icon iconName="add" aria-hidden="true"></my-global-icon>
               <ng-container i18n>Add another caption</ng-container>
             </button>
@@ -309,7 +309,7 @@
             </div>
 
             <div class="form-group">
-              <div class="peertube-radio-container">
+              <div class="retro3-radio-container">
                 <input type="radio" formControlName="permanentLive" id="permanentLiveFalse" [value]="false">
                 <label i18n for="permanentLiveFalse" class="radio">This is a normal live</label>
 
@@ -318,7 +318,7 @@
                 </span>
               </div>
 
-              <div class="peertube-radio-container">
+              <div class="retro3-radio-container">
                 <input type="radio" formControlName="permanentLive" id="permanentLiveTrue" [value]="true">
                 <label i18n for="permanentLiveTrue" class="radio">This is a permanent/recurring live</label>
 
@@ -329,7 +329,7 @@
             </div>
 
             <div class="form-group" *ngIf="isSaveReplayAllowed()">
-              <my-peertube-checkbox inputName="liveVideoSaveReplay" formControlName="saveReplay">
+              <my-retro3-checkbox inputName="liveVideoSaveReplay" formControlName="saveReplay">
                 <ng-template ptTemplate="label">
                   <ng-container i18n>Automatically publish a replay when your live ends</ng-container>
                 </ng-template>
@@ -337,7 +337,7 @@
                 <ng-container ngProjectAs="description">
                   <span i18n>⚠️ If you enable this option, your live will be terminated if you exceed your video quota</span>
                 </ng-container>
-              </my-peertube-checkbox>
+              </my-retro3-checkbox>
             </div>
 
             <div class="form-group mx-4" *ngIf="isSaveReplayEnabled()">
@@ -438,15 +438,15 @@
               </div>
             </div>
 
-            <my-peertube-checkbox
+            <my-retro3-checkbox
               inputName="commentsEnabled" formControlName="commentsEnabled"
               i18n-labelText labelText="Enable video comments"
-            ></my-peertube-checkbox>
+            ></my-retro3-checkbox>
 
-            <my-peertube-checkbox
+            <my-retro3-checkbox
               inputName="downloadEnabled" formControlName="downloadEnabled"
               i18n-labelText labelText="Enable download"
-            ></my-peertube-checkbox>
+            ></my-retro3-checkbox>
           </div>
         </div>
       </ng-template>

@@ -10,7 +10,7 @@ import {
   Worker,
   WorkerOptions
 } from 'bullmq'
-import { pick, timeoutPromise } from '@peertube/peertube-core-utils'
+import { pick, timeoutPromise } from '@retroai/retro3-core-utils'
 import {
   ActivitypubFollowPayload,
   ActivitypubHttpBroadcastPayload,
@@ -36,7 +36,7 @@ import {
   VideoRedundancyPayload,
   VideoStudioEditionPayload,
   VideoTranscodingPayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { parseDurationToMs } from '@server/helpers/core-utils.js'
 import { jobStates } from '@server/helpers/custom-validators/jobs.js'
 import { CONFIG } from '@server/initializers/config.js'

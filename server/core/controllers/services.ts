@@ -1,5 +1,5 @@
 import express from 'express'
-import { escapeHTML, forceNumber } from '@peertube/peertube-core-utils'
+import { escapeHTML, forceNumber } from '@retroai/retro3-core-utils'
 import { MChannelSummary } from '@server/types/models/index.js'
 import { EMBED_SIZE, PREVIEWS_SIZE, THUMBNAILS_SIZE, WEBSERVER } from '../initializers/constants.js'
 import { apiRateLimiter, asyncMiddleware, oembedValidator } from '../middlewares/index.js'
@@ -74,7 +74,7 @@ function buildPlayerURLQuery (inputQueryUrl: string) {
     'title',
     'api',
     'warningTitle',
-    'peertubeLink',
+    'retro3Link',
     'p2p',
     'subtitle',
     'bigPlayBackgroundColor',
@@ -146,7 +146,7 @@ function buildOEmbed (options: {
     title,
     author_name: channel.name,
     author_url: channel.Actor.url,
-    provider_name: 'PeerTube',
+    provider_name: 'retro3',
     provider_url: webserverUrl
   }
 

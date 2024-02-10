@@ -1,5 +1,5 @@
 import videojs from 'video.js'
-import { getStoredTheater, saveTheaterInStore } from '../../peertube-player-local-storage'
+import { getStoredTheater, saveTheaterInStore } from '../../retro3-player-local-storage'
 import { TheaterButtonOptions } from '../../types'
 
 const Button = videojs.getComponent('Button')

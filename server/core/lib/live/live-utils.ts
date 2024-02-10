@@ -1,7 +1,7 @@
 import { pathExists, remove } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { basename, join } from 'path'
-import { LiveVideoLatencyMode, LiveVideoLatencyModeType, VideoStorage } from '@peertube/peertube-models'
+import { LiveVideoLatencyMode, LiveVideoLatencyModeType, VideoStorage } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { VIDEO_LIVE } from '@server/initializers/constants.js'
 import { MStreamingPlaylist, MStreamingPlaylistVideo, MVideo } from '@server/types/models/index.js'

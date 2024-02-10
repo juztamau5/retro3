@@ -19,7 +19,7 @@ export class HotkeysCheatSheetComponent implements OnInit, OnDestroy {
 
   hotkeys: Hotkey[]
 
-  private readonly localStorageHotkeysDisabledKey = 'peertube-hotkeys-disabled'
+  private readonly localStorageHotkeysDisabledKey = 'retro3-hotkeys-disabled'
 
   constructor (
     private hotkeysService: HotkeysService,

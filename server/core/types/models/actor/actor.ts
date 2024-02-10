@@ -1,4 +1,4 @@
-import { FunctionProperties, PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { FunctionProperties, PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { ActorModel } from '../../../models/actor/actor.js'
 import { MAccount, MAccountDefault, MAccountId, MAccountIdActor } from '../account/index.js'
 import { MServer, MServerHost, MServerHostBlocks, MServerRedundancyAllowed } from '../server/index.js'

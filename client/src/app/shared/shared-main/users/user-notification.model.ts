@@ -12,7 +12,7 @@ import {
   UserNotificationType_Type,
   UserRight,
   VideoInfo
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { Video } from '../video'
 
@@ -80,7 +80,7 @@ export class UserNotification implements UserNotificationServer {
     latestVersion: string
   }
 
-  peertube?: {
+  retro3?: {
     latestVersion: string
   }
 
@@ -110,7 +110,7 @@ export class UserNotification implements UserNotificationServer {
 
   instanceFollowUrl?: string
 
-  peertubeVersionLink?: string
+  retro3VersionLink?: string
 
   pluginUrl?: string
   pluginQueryParams?: { [id: string]: string } = {}
@@ -142,7 +142,7 @@ export class UserNotification implements UserNotificationServer {
       if (this.actorFollow) this.setAccountAvatarUrl(this.actorFollow.follower)
 
       this.plugin = hash.plugin
-      this.peertube = hash.peertube
+      this.retro3 = hash.retro3
       this.registration = hash.registration
 
       this.createdAt = hash.createdAt
@@ -233,8 +233,8 @@ export class UserNotification implements UserNotificationServer {
           this.instanceFollowUrl = '/admin/follows/following-list'
           break
 
-        case UserNotificationType.NEW_PEERTUBE_VERSION:
-          this.peertubeVersionLink = 'https://joinpeertube.org/news'
+        case UserNotificationType.NEW_RETRO3_VERSION:
+          this.retro3VersionLink = 'https://joinretro3.org/news'
           break
 
         case UserNotificationType.NEW_PLUGIN_VERSION:

@@ -1,4 +1,4 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   AbuseFilter,
   AbuseMessage,
@@ -10,7 +10,7 @@ import {
   HttpStatusCode,
   ResultList,
   UserAbuse
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/requests.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

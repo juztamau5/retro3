@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode, PeerTubeProblemDocument, ServerErrorCode } from '@peertube/peertube-models'
+import { HttpStatusCode, Retro3ProblemDocument, ServerErrorCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test follow constraints', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let video1UUID: string
   let video2UUID: string
   let userToken: string
@@ -144,9 +144,9 @@ describe('Test follow constraints', function () {
 
       it('Should not get the remote video', async function () {
         const body = await servers[0].videos.get({ id: video2UUID, expectedStatus: HttpStatusCode.FORBIDDEN_403 })
-        const error = body as unknown as PeerTubeProblemDocument
+        const error = body as unknown as Retro3ProblemDocument
 
-        const doc = 'https://docs.joinpeertube.org/api-rest-reference.html#section/Errors/does_not_respect_follow_constraints'
+        const doc = 'https://docs.joinretro3.org/api-rest-reference.html#section/Errors/does_not_respect_follow_constraints'
         expect(error.type).to.equal(doc)
         expect(error.code).to.equal(ServerErrorCode.DOES_NOT_RESPECT_FOLLOW_CONSTRAINTS)
 
@@ -267,7 +267,7 @@ describe('Test follow constraints', function () {
     it('Should not get the remote video with an unlogged user', async function () {
       const body = await servers[0].videos.get({ id: video2UUID, expectedStatus: HttpStatusCode.FORBIDDEN_403 })
 
-      const error = body as unknown as PeerTubeProblemDocument
+      const error = body as unknown as Retro3ProblemDocument
       expect(error.code).to.equal(ServerErrorCode.DOES_NOT_RESPECT_FOLLOW_CONSTRAINTS)
     })
 
@@ -306,7 +306,7 @@ describe('Test follow constraints', function () {
     it('Should not get the remote video with an unlogged user', async function () {
       const body = await servers[0].videos.get({ id: video2UUID, expectedStatus: HttpStatusCode.FORBIDDEN_403 })
 
-      const error = body as unknown as PeerTubeProblemDocument
+      const error = body as unknown as Retro3ProblemDocument
       expect(error.code).to.equal(ServerErrorCode.DOES_NOT_RESPECT_FOLLOW_CONSTRAINTS)
     })
 

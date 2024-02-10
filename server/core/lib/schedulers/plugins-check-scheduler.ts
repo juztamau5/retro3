@@ -1,4 +1,4 @@
-import { compareSemVer } from '@peertube/peertube-core-utils'
+import { compareSemVer } from '@retroai/retro3-core-utils'
 import chunk from 'lodash-es/chunk.js'
 import { logger } from '../../helpers/logger.js'
 import { CONFIG } from '../../initializers/config.js'

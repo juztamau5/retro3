@@ -7,9 +7,9 @@ class P2PInfoButton extends Button {
   el_: HTMLElement
 
   createEl () {
-    const div = videojs.dom.createEl('div', { className: 'vjs-peertube' })
+    const div = videojs.dom.createEl('div', { className: 'vjs-retro3' })
     const subDivP2P = videojs.dom.createEl('div', {
-      className: 'vjs-peertube-hidden' // Hide the stats before we get the info
+      className: 'vjs-retro3-hidden' // Hide the stats before we get the info
     }) as HTMLDivElement
     div.appendChild(subDivP2P)
 
@@ -38,7 +38,7 @@ class P2PInfoButton extends Button {
     subDivP2P.appendChild(peersNumber)
     subDivP2P.appendChild(peersText)
 
-    const subDivHttp = videojs.dom.createEl('div', { className: 'vjs-peertube-hidden' }) as HTMLElement
+    const subDivHttp = videojs.dom.createEl('div', { className: 'vjs-retro3-hidden' }) as HTMLElement
     const subDivHttpText = videojs.dom.createEl('span', { className: 'http-fallback' })
 
     subDivHttp.appendChild(subDivHttpText)
@@ -47,8 +47,8 @@ class P2PInfoButton extends Button {
     this.player_.on('network-info', (_event: any, data: PlayerNetworkInfo) => {
       if (!data.p2p) return
 
-      subDivP2P.className = 'vjs-peertube-displayed'
-      subDivHttp.className = 'vjs-peertube-hidden'
+      subDivP2P.className = 'vjs-retro3-displayed'
+      subDivHttp.className = 'vjs-retro3-hidden'
 
       const p2pStats = data.p2p
       const httpStats = data.http
@@ -80,8 +80,8 @@ class P2PInfoButton extends Button {
       peersNumber.textContent = numPeers.toString()
       peersText.textContent = ' ' + (numPeers > 1 ? this.player().localize('peers') : this.player_.localize('peer'))
 
-      subDivHttp.className = 'vjs-peertube-hidden'
-      subDivP2P.className = 'vjs-peertube-displayed'
+      subDivHttp.className = 'vjs-retro3-hidden'
+      subDivP2P.className = 'vjs-retro3-displayed'
     })
 
     this.player_.on('network-info', (_event, data: PlayerNetworkInfo) => {
@@ -91,15 +91,15 @@ class P2PInfoButton extends Button {
       else if (data.source === 'p2p-media-loader') subDivHttpText.textContent = 'HLS'
 
       // We are in HTTP mode
-      subDivHttp.className = 'vjs-peertube-displayed'
-      subDivP2P.className = 'vjs-peertube-hidden'
+      subDivHttp.className = 'vjs-retro3-displayed'
+      subDivP2P.className = 'vjs-retro3-hidden'
 
       subDivHttp.title = this.player().localize('Total downloaded: ') + bytes(data.http.downloaded).join(' ')
     })
 
     this.player_.on('video-change', () => {
-      subDivP2P.className = 'vjs-peertube-hidden'
-      subDivHttp.className = 'vjs-peertube-hidden'
+      subDivP2P.className = 'vjs-retro3-hidden'
+      subDivHttp.className = 'vjs-retro3-hidden'
     })
 
     return div as HTMLButtonElement

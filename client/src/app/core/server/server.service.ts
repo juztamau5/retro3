@@ -3,7 +3,7 @@ import { first, map, share, shareReplay, switchMap, tap } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http'
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { getDevLocale, isOnDevLocale } from '@app/helpers'
-import { getCompleteLocale, isDefaultLocale, peertubeTranslate } from '@peertube/peertube-core-utils'
+import { getCompleteLocale, isDefaultLocale, retro3Translate } from '@retroai/retro3-core-utils'
 import {
   HTMLServerConfig,
   ServerConfig,
@@ -11,7 +11,7 @@ import {
   VideoConstant,
   VideoPlaylistPrivacyType,
   VideoPrivacyType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { environment } from '../../../environments/environment'
 
@@ -190,7 +190,7 @@ export class ServerService {
 
                                                                       return {
                                                                         id,
-                                                                        label: peertubeTranslate(label, translations)
+                                                                        label: retro3Translate(label, translations)
                                                                       }
                                                                     })
 
@@ -205,9 +205,9 @@ export class ServerService {
   }
 
   private loadHTMLConfigLocally () {
-    const configString = (window as any)['PeerTubeServerConfig']
+    const configString = (window as any)['Retro3ServerConfig']
     if (!configString) {
-      throw new Error('Could not find PeerTubeServerConfig in HTML')
+      throw new Error('Could not find Retro3ServerConfig in HTML')
     }
 
     this.htmlConfig = JSON.parse(configString)

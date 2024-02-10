@@ -1,40 +1,40 @@
 # Continuous integration
 
-PeerTube uses Github Actions as a CI platform.
+retro3 uses Github Actions as a CI platform.
 CI tasks are described in `.github/workflows`.
 
 ## benchmark.yml
 
 *Scheduled*
 
-Run various benchmarks (build, API etc) and upload results on https://builds.joinpeertube.org/peertube-stats/ to be publicly consumed.
+Run various benchmarks (build, API etc) and upload results on https://builds.joinretro3.org/retro3-stats/ to be publicly consumed.
 
 ## codeql.yml
 
 *Scheduled, on push on develop and on pull request*
 
-Run CodeQL task to throw code security issues in Github. https://lgtm.com/projects/g/Chocobozzz/PeerTube can also be used.
+Run CodeQL task to throw code security issues in Github. https://lgtm.com/projects/g/RetroAI/retro3 can also be used.
 
 ## docker.yml
 
 *Scheduled and on push on master*
 
-Build `chocobozzz/peertube-webserver:latest`, `chocobozzz/peertube:production-...`, `chocobozzz/peertube:v-...` (only latest PeerTube tag) and `chocobozzz/peertube:develop-...` Docker images. Scheduled to automatically upgrade image software (Debian security issues etc).
+Build `RetroAI/retro3-webserver:latest`, `RetroAI/retro3:production-...`, `RetroAI/retro3:v-...` (only latest retro3 tag) and `RetroAI/retro3:develop-...` Docker images. Scheduled to automatically upgrade image software (Debian security issues etc).
 
 ## nightly.yml
 
 *Scheduled*
 
-Build PeerTube nightly build (`develop` branch) and upload the release on https://builds.joinpeertube.org/nightly.
+Build retro3 nightly build (`develop` branch) and upload the release on https://builds.joinretro3.org/nightly.
 
 ## stats.yml
 
 *On push on develop*
 
-Create various PeerTube stats (line of codes, build size, lighthouse report) and upload results on https://builds.joinpeertube.org/peertube-stats/ to be publicly consumed.
+Create various retro3 stats (line of codes, build size, lighthouse report) and upload results on https://builds.joinretro3.org/retro3-stats/ to be publicly consumed.
 
 ## test.yml
 
 *Scheduled, on push and pull request*
 
-Run PeerTube lint and tests.
+Run retro3 lint and tests.

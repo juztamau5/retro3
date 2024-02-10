@@ -11,11 +11,11 @@ class ResolutionMenuButton extends MenuButton {
 
     this.controlText('Quality')
 
-    player.peertubeResolutions().on('resolutions-added', () => this.update())
-    player.peertubeResolutions().on('resolutions-removed', () => this.update())
+    player.retro3Resolutions().on('resolutions-added', () => this.update())
+    player.retro3Resolutions().on('resolutions-removed', () => this.update())
 
     // For parent
-    player.peertubeResolutions().on('resolutions-changed', () => {
+    player.retro3Resolutions().on('resolutions-changed', () => {
       setTimeout(() => this.trigger('label-updated'))
     })
   }
@@ -38,7 +38,7 @@ class ResolutionMenuButton extends MenuButton {
 
   createMenu () {
     const menu: videojs.Menu = new Menu(this.player_, { menuButton: this })
-    const resolutions = this.player().peertubeResolutions().getResolutions()
+    const resolutions = this.player().retro3Resolutions().getResolutions()
 
     for (const r of resolutions) {
       const label = r.label === '0p'

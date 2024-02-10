@@ -1,6 +1,6 @@
 import { move } from 'fs-extra/esm'
 import { join } from 'path'
-import { VideoPrivacy, VideoPrivacyType, VideoStorage } from '@peertube/peertube-models'
+import { VideoPrivacy, VideoPrivacyType, VideoStorage } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { DIRECTORIES } from '@server/initializers/constants.js'
 import { MVideo, MVideoFile, MVideoFullLight } from '@server/types/models/index.js'

@@ -4,7 +4,7 @@ import * as chai from 'chai'
 import chaiJSONSChema from 'chai-json-schema'
 import chaiXML from 'chai-xml'
 import { XMLParser, XMLValidator } from 'fast-xml-parser'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -12,14 +12,14 @@ import {
   doubleFollow,
   makeGetRequest,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers,
   setDefaultChannelAvatar,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 chai.use(chaiXML)
 chai.use(chaiJSONSChema)
@@ -28,8 +28,8 @@ chai.config.includeStack = true
 const expect = chai.expect
 
 describe('Test syndication feeds', () => {
-  let servers: PeerTubeServer[] = []
-  let serverHLSOnly: PeerTubeServer
+  let servers: Retro3Server[] = []
+  let serverHLSOnly: Retro3Server
 
   let userAccessToken: string
   let rootAccountId: number
@@ -704,7 +704,7 @@ describe('Test syndication feeds', () => {
   })
 
   after(async function () {
-    await servers[0].plugins.uninstall({ npmName: 'peertube-plugin-test-podcast-custom-tags' })
+    await servers[0].plugins.uninstall({ npmName: 'retro3-plugin-test-podcast-custom-tags' })
 
     await cleanupTests([ ...servers, serverHLSOnly ])
   })

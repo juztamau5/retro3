@@ -1,5 +1,5 @@
 import { exists, isArray } from './misc.js'
-import { FollowState } from '@peertube/peertube-models'
+import { FollowState } from '@retroai/retro3-models'
 
 function isFollowStateValid (value: FollowState) {
   if (!exists(value)) return false

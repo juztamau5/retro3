@@ -1,7 +1,7 @@
 import express from 'express'
 import { body, param, query } from 'express-validator'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, UserRight, UserRole } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, UserRight, UserRole } from '@retroai/retro3-models'
 import { exists, isBooleanValid, isIdValid, toBooleanOrNull, toIntOrNull } from '../../helpers/custom-validators/misc.js'
 import { isThemeNameValid } from '../../helpers/custom-validators/plugins.js'
 import {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { Router } from '@angular/router'
-import { HttpStatusCode, HttpStatusCodeType } from '@peertube/peertube-models'
+import { HttpStatusCode, HttpStatusCodeType } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-error-page',
@@ -24,7 +24,7 @@ export class ErrorPageComponent implements OnInit {
   ngOnInit () {
     if (this.pathname.includes('teapot')) {
       this.status = HttpStatusCode.I_AM_A_TEAPOT_418
-      this.titleService.setTitle($localize`I'm a teapot` + ' - PeerTube')
+      this.titleService.setTitle($localize`I'm a teapot` + ' - retro3')
     }
   }
 

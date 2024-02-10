@@ -1,4 +1,4 @@
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { VideoCommentModel } from '../../../models/video/video-comment.js'
 import { MAccountDefault, MAccountFormattable, MAccountUrl } from '../account/index.js'
 import { MVideo, MVideoAccountIdUrl, MVideoAccountLight, MVideoFeed, MVideoIdUrl, MVideoUrl } from './video.js'

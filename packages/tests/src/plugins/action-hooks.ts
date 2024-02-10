@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { ServerHookName, VideoPlaylistPrivacy, VideoPrivacy } from '@peertube/peertube-models'
+import { ServerHookName, VideoPlaylistPrivacy, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test plugin action hooks', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID: string
   let threadId: number
 

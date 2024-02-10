@@ -2,8 +2,8 @@ import express from 'express'
 import { ActorModel } from '@server/models/actor/actor.js'
 import { UserModel } from '@server/models/user/user.js'
 import { MUserDefault } from '@server/types/models/index.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 function checkUserIdExist (idArg: number | string, res: express.Response, withStats = false) {
   const id = forceNumber(idArg)

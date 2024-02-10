@@ -1,4 +1,4 @@
-import { UserNotificationSettingValue, UserNotificationSettingValueType } from '@peertube/peertube-models'
+import { UserNotificationSettingValue, UserNotificationSettingValueType } from '@retroai/retro3-models'
 import { MRegistration, MUser, MUserDefault } from '@server/types/models/user/index.js'
 import { MVideoBlacklistLightVideo, MVideoBlacklistVideo } from '@server/types/models/video/video-blacklist.js'
 import { logger } from '../../helpers/logger.js'
@@ -14,7 +14,7 @@ import {
   MVideoFullLight
 } from '../../types/models/index.js'
 import { JobQueue } from '../job-queue/index.js'
-import { PeerTubeSocket } from '../peertube-socket.js'
+import { Retro3Socket } from '../retro3-socket.js'
 import { Hooks } from '../plugins/hooks.js'
 import {
   AbstractNotification,
@@ -33,7 +33,7 @@ import {
   NewAutoBlacklistForModerators,
   NewBlacklistForOwner,
   NewCommentForVideoOwner,
-  NewPeerTubeVersionForAdmins,
+  NewRetro3VersionForAdmins,
   NewPluginVersionForAdmins,
   NewVideoForSubscribers,
   OwnedPublicationAfterAutoUnblacklist,
@@ -64,7 +64,7 @@ class Notifier {
     newAutoBlacklist: [ NewAutoBlacklistForModerators ],
     abuseStateChange: [ AbuseStateChangeForReporter ],
     newAbuseMessage: [ NewAbuseMessageForReporter, NewAbuseMessageForModerators ],
-    newPeertubeVersion: [ NewPeerTubeVersionForAdmins ],
+    newRetro3Version: [ NewRetro3VersionForAdmins ],
     newPluginVersion: [ NewPluginVersionForAdmins ],
     videoStudioEditionFinished: [ StudioEditionFinishedForOwner ]
   }
@@ -204,11 +204,11 @@ class Notifier {
       .catch(err => logger.error('Cannot notify on new abuse %d message.', abuse.id, { err }))
   }
 
-  notifyOfNewPeerTubeVersion (application: MApplication, latestVersion: string) {
-    const models = this.notificationModels.newPeertubeVersion
+  notifyOfNewRetro3Version (application: MApplication, latestVersion: string) {
+    const models = this.notificationModels.newRetro3Version
 
     this.sendNotifications(models, { application, latestVersion })
-      .catch(err => logger.error('Cannot notify on new PeerTubeb version %s.', latestVersion, { err }))
+      .catch(err => logger.error('Cannot notify on new retro3b version %s.', latestVersion, { err }))
   }
 
   notifyOfNewPluginVersion (plugin: MPlugin) {
@@ -247,7 +247,7 @@ class Notifier {
       if (webNotificationEnabled) {
         await notification.save()
 
-        PeerTubeSocket.Instance.sendNotification(user.id, notification)
+        Retro3Socket.Instance.sendNotification(user.id, notification)
       }
 
       if (emailNotificationEnabled) {

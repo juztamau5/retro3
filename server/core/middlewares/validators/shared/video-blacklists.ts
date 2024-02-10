@@ -1,6 +1,6 @@
 import { Response } from 'express'
 import { VideoBlacklistModel } from '@server/models/video/video-blacklist.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 async function doesVideoBlacklistExist (videoId: number, res: Response) {
   const videoBlacklist = await VideoBlacklistModel.loadByVideoId(videoId)

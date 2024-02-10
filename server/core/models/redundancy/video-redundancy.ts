@@ -24,9 +24,9 @@ import {
   VideoRedundancy,
   VideoRedundancyStrategy,
   VideoRedundancyStrategyWithManual
-} from '@peertube/peertube-models'
-import { isTestInstance } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { isTestInstance } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { getServerActor } from '@server/models/application/application.js'
 import { MActor, MVideoForRedundancyAPI, MVideoRedundancy, MVideoRedundancyAP, MVideoRedundancyVideo } from '@server/types/models/index.js'
 import { isActivityPubUrlValid, isUrlValid } from '../../helpers/custom-validators/activitypub/misc.js'
@@ -321,7 +321,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
   }
 
   static async findMostViewToDuplicate (randomizedFactor: number) {
-    const peertubeActor = await getServerActor()
+    const retro3Actor = await getServerActor()
 
     // On VideoModel!
     const query = {
@@ -331,7 +331,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
       where: {
         privacy: VideoPrivacy.PUBLIC,
         isLive: false,
-        ...this.buildVideoIdsForDuplication(peertubeActor)
+        ...this.buildVideoIdsForDuplication(retro3Actor)
       },
       include: [
         VideoRedundancyModel.buildServerRedundancyInclude()
@@ -342,7 +342,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
   }
 
   static async findTrendingToDuplicate (randomizedFactor: number) {
-    const peertubeActor = await getServerActor()
+    const retro3Actor = await getServerActor()
 
     // On VideoModel!
     const query = {
@@ -354,7 +354,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
       where: {
         privacy: VideoPrivacy.PUBLIC,
         isLive: false,
-        ...this.buildVideoIdsForDuplication(peertubeActor)
+        ...this.buildVideoIdsForDuplication(retro3Actor)
       },
       include: [
         VideoRedundancyModel.buildServerRedundancyInclude(),
@@ -367,7 +367,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
   }
 
   static async findRecentlyAddedToDuplicate (randomizedFactor: number, minViews: number) {
-    const peertubeActor = await getServerActor()
+    const retro3Actor = await getServerActor()
 
     // On VideoModel!
     const query = {
@@ -380,7 +380,7 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
         views: {
           [Op.gte]: minViews
         },
-        ...this.buildVideoIdsForDuplication(peertubeActor)
+        ...this.buildVideoIdsForDuplication(retro3Actor)
       },
       include: [
         VideoRedundancyModel.buildServerRedundancyInclude(),
@@ -752,16 +752,16 @@ export class VideoRedundancyModel extends Model<Partial<AttributesOnly<VideoRedu
   }
 
   // Don't include video files we already duplicated
-  private static buildVideoIdsForDuplication (peertubeActor: MActor) {
+  private static buildVideoIdsForDuplication (retro3Actor: MActor) {
     const notIn = literal(
       '(' +
         `SELECT "videoFile"."videoId" AS "videoId" FROM "videoRedundancy" ` +
         `INNER JOIN "videoFile" ON "videoFile"."id" = "videoRedundancy"."videoFileId" ` +
-        `WHERE "videoRedundancy"."actorId" = ${peertubeActor.id} ` +
+        `WHERE "videoRedundancy"."actorId" = ${retro3Actor.id} ` +
         `UNION ` +
         `SELECT "videoStreamingPlaylist"."videoId" AS "videoId" FROM "videoRedundancy" ` +
         `INNER JOIN "videoStreamingPlaylist" ON "videoStreamingPlaylist"."id" = "videoRedundancy"."videoStreamingPlaylistId" ` +
-        `WHERE "videoRedundancy"."actorId" = ${peertubeActor.id} ` +
+        `WHERE "videoRedundancy"."actorId" = ${retro3Actor.id} ` +
       ')'
     )
 

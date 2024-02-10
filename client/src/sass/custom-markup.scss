@@ -1,4 +1,4 @@
-peertube-container {
+retro3-container {
   > .layout-row {
     display: flex;
     flex-direction: row;
@@ -19,8 +19,8 @@ peertube-container {
   }
 }
 
-peertube-video-miniature,
-peertube-playlist-miniature,
-peertube-channel-miniature {
+retro3-video-miniature,
+retro3-playlist-miniature,
+retro3-channel-miniature {
   margin-right: 30px;
 }

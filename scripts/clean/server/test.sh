@@ -3,17 +3,17 @@
 set -eu
 
 recreateDB () {
-  dbname="peertube_test$1"
+  dbname="retro3_test$1"
 
   dropdb --if-exists "$dbname" 2>&1
 
-  createdb -O peertube "$dbname"
+  createdb -O retro3 "$dbname"
   psql -c "CREATE EXTENSION pg_trgm;" "$dbname" &
   psql -c "CREATE EXTENSION unaccent;" "$dbname" &
 }
 
 removeFiles () {
-  rm -rf "./test$1" "./config/local-test.json" "./config/local-test-$1.json" ~/.config/PeerTube/CLI-$1
+  rm -rf "./test$1" "./config/local-test.json" "./config/local-test-$1.json" ~/.config/retro3/CLI-$1
 }
 
 dropRedis () {

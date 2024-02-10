@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs'
 import { SelectOptionsItem } from 'src/types'
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { Notifier, PeerTubeRouterService } from '@app/core'
+import { Notifier, Retro3RouterService } from '@app/core'
 import { NumberFormatterPipe, VideoDetails } from '@app/shared/shared-main'
 import { LiveVideoService } from '@app/shared/shared-video-live'
-import { secondsToTime } from '@peertube/peertube-core-utils'
+import { secondsToTime } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   LiveVideoSession,
@@ -15,7 +15,7 @@ import {
   VideoStatsRetention,
   VideoStatsTimeserie,
   VideoStatsTimeserieMetric
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { VideoStatsService } from './video-stats.service'
 
 type ActiveGraphId = VideoStatsTimeserieMetric | 'retention' | 'countries'
@@ -81,7 +81,7 @@ export class VideoStatsComponent implements OnInit {
     private route: ActivatedRoute,
     private notifier: Notifier,
     private statsService: VideoStatsService,
-    private peertubeRouter: PeerTubeRouterService,
+    private retro3Router: Retro3RouterService,
     private numberFormatter: NumberFormatterPipe,
     private liveService: LiveVideoService
   ) {}
@@ -153,7 +153,7 @@ export class VideoStatsComponent implements OnInit {
   }
 
   resetZoom () {
-    this.peertubeRouter.silentNavigate([], {})
+    this.retro3Router.silentNavigate([], {})
     this.removeAndResetCustomDateFilter()
   }
 
@@ -176,7 +176,7 @@ export class VideoStatsComponent implements OnInit {
 
     const idParts = this.currentDateFilter.split('|')
     if (idParts.length === 2) {
-      return this.peertubeRouter.silentNavigate([], { startDate: idParts[0], endDate: idParts[1] })
+      return this.retro3Router.silentNavigate([], { startDate: idParts[0], endDate: idParts[1] })
     }
   }
 
@@ -470,7 +470,7 @@ export class VideoStatsComponent implements OnInit {
                 ? (this.statsEndDate || new Date()).toISOString()
                 : rawData.data[max + 1].date
 
-              this.peertubeRouter.silentNavigate([], { startDate, endDate })
+              this.retro3Router.silentNavigate([], { startDate, endDate })
               this.addAndSelectCustomDateFilter()
             }
           },

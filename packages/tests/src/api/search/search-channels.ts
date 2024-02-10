@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { VideoChannel } from '@peertube/peertube-models'
+import { VideoChannel } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   SearchCommand,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test channels search', function () {
-  let server: PeerTubeServer
-  let remoteServer: PeerTubeServer
+  let server: Retro3Server
+  let remoteServer: Retro3Server
   let command: SearchCommand
 
   before(async function () {

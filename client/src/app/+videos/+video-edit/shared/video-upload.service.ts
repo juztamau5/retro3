@@ -3,7 +3,7 @@ import { HttpErrorResponse, HttpEventType, HttpHeaders } from '@angular/common/h
 import { Injectable } from '@angular/core'
 import { AuthService, Notifier, ServerService } from '@app/core'
 import { BytesPipe, VideoService } from '@app/shared/shared-main'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { UploaderXFormData } from './uploaderx-form-data'
 
 @Injectable()

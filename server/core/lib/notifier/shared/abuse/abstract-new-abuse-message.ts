@@ -1,4 +1,4 @@
-import { UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationType } from '@retroai/retro3-models'
 import { WEBSERVER } from '@server/initializers/constants.js'
 import { AccountModel } from '@server/models/account/account.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'

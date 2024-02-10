@@ -13,8 +13,8 @@
     @include button-with-icon(20px, 3px, -1px);
   }
 
-  .peertube-select-container {
-    @include peertube-select-container(auto);
+  .retro3-select-container {
+    @include retro3-select-container(auto);
   }
 }
 
@@ -23,11 +23,11 @@
     flex-direction: column;
 
     > :first-child,
-    .peertube-select-container {
+    .retro3-select-container {
       margin-bottom: 15px;
     }
 
-    .peertube-select-container {
+    .retro3-select-container {
       @include margin-left(0 !important);
     }
   }
@@ -40,7 +40,7 @@
       padding: 0 13px;
     }
 
-    .peertube-select-container {
+    .retro3-select-container {
       width: auto !important;
     }
   }
@@ -54,7 +54,7 @@
         padding: 0 13px;
       }
 
-      .peertube-select-container {
+      .retro3-select-container {
         width: auto !important;
       }
     }

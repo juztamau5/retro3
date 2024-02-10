@@ -1,9 +1,9 @@
 import { SortMeta } from 'primeng/api'
 import { Component, OnInit } from '@angular/core'
 import { Notifier, RestPagination, RestTable } from '@app/core'
-import { escapeHTML } from '@peertube/peertube-core-utils'
-import { Job, JobState, JobType } from '@peertube/peertube-models'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { escapeHTML } from '@retroai/retro3-core-utils'
+import { Job, JobState, JobType } from '@retroai/retro3-models'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 import { JobStateClient } from '../../../../types/job-state-client.type'
 import { JobTypeClient } from '../../../../types/job-type-client.type'
 import { JobService } from './job.service'
@@ -145,18 +145,18 @@ export class JobsComponent extends RestTable implements OnInit {
   }
 
   private loadJobStateAndType () {
-    const state = peertubeLocalStorage.getItem(JobsComponent.LOCAL_STORAGE_STATE)
+    const state = retro3LocalStorage.getItem(JobsComponent.LOCAL_STORAGE_STATE)
 
     // FIXME: We use <ng-option> that doesn't escape HTML
     // https://github.com/ng-select/ng-select/issues/1363
     if (state) this.jobState = escapeHTML(state) as JobState
 
-    const type = peertubeLocalStorage.getItem(JobsComponent.LOCAL_STORAGE_TYPE)
+    const type = retro3LocalStorage.getItem(JobsComponent.LOCAL_STORAGE_TYPE)
     if (type) this.jobType = type as JobType
   }
 
   private saveJobStateAndType () {
-    peertubeLocalStorage.setItem(JobsComponent.LOCAL_STORAGE_STATE, this.jobState)
-    peertubeLocalStorage.setItem(JobsComponent.LOCAL_STORAGE_TYPE, this.jobType)
+    retro3LocalStorage.setItem(JobsComponent.LOCAL_STORAGE_STATE, this.jobState)
+    retro3LocalStorage.setItem(JobsComponent.LOCAL_STORAGE_TYPE, this.jobType)
   }
 }

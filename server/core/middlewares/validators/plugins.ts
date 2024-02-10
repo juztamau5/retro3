@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param, query, ValidationChain } from 'express-validator'
-import { HttpStatusCode, InstallOrUpdatePlugin, PluginType_Type } from '@peertube/peertube-models'
+import { HttpStatusCode, InstallOrUpdatePlugin, PluginType_Type } from '@retroai/retro3-models'
 import { exists, isBooleanValid, isSafePath, toBooleanOrNull, toIntOrNull } from '../../helpers/custom-validators/misc.js'
 import {
   isNpmPluginNameValid,
@@ -186,7 +186,7 @@ const listAvailablePluginsValidator = [
     .optional()
     .customSanitizer(toIntOrNull)
     .custom(isPluginTypeValid),
-  query('currentPeerTubeEngine')
+  query('currentRetro3Engine')
     .optional()
     .custom(isPluginStableOrUnstableVersionValid),
 

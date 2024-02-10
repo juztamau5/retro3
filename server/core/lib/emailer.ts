@@ -1,6 +1,6 @@
-import { arrayify } from '@peertube/peertube-core-utils'
-import { EmailPayload, SendEmailDefaultOptions, UserRegistrationState } from '@peertube/peertube-models'
-import { isTestOrDevInstance, root } from '@peertube/peertube-node-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
+import { EmailPayload, SendEmailDefaultOptions, UserRegistrationState } from '@retroai/retro3-models'
+import { isTestOrDevInstance, root } from '@retroai/retro3-node-utils'
 import { readFileSync } from 'fs'
 import merge from 'lodash-es/merge.js'
 import { Transporter, createTransport } from 'nodemailer'
@@ -27,7 +27,7 @@ class Emailer {
 
     if (!isEmailEnabled()) {
       if (!isTestOrDevInstance()) {
-        logger.error('Cannot use SMTP server because of lack of configuration. PeerTube will not be able to send mails!')
+        logger.error('Cannot use SMTP server because of lack of configuration. retro3 will not be able to send mails!')
       }
 
       return

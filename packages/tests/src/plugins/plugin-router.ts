@@ -6,14 +6,14 @@ import {
   createSingleServer,
   makeGetRequest,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
-import { HttpStatusCode } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 describe('Test plugin helpers', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const basePaths = [
     '/plugins/test-five/router/',
     '/plugins/test-five/0.0.1/router/'
@@ -81,7 +81,7 @@ describe('Test plugin helpers', function () {
   })
 
   it('Should remove the plugin and remove the routes', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-test-five' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-test-five' })
 
     for (const path of basePaths) {
       await makeGetRequest({

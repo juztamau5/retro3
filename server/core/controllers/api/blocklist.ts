@@ -5,7 +5,7 @@ import { AccountBlocklistModel } from '@server/models/account/account-blocklist.
 import { getServerActor } from '@server/models/application/application.js'
 import { ServerBlocklistModel } from '@server/models/server/server-blocklist.js'
 import { MActorAccountId, MUserAccountId } from '@server/types/models/index.js'
-import { BlockStatus } from '@peertube/peertube-models'
+import { BlockStatus } from '@retroai/retro3-models'
 import { apiRateLimiter, asyncMiddleware, blocklistStatusValidator, optionalAuthenticate } from '../../middlewares/index.js'
 
 const blocklistRouter = express.Router()

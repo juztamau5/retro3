@@ -3,7 +3,7 @@ import { WEBSERVER } from '@server/initializers/constants.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MUserWithNotificationSetting, MVideoAccountLight, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserNotificationType, VideoPrivacy, VideoState } from '@peertube/peertube-models'
+import { UserNotificationType, VideoPrivacy, VideoState } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export class NewVideoForSubscribers extends AbstractNotification <MVideoAccountLight> {

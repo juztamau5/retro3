@@ -4,16 +4,16 @@ import WebSocket from 'ws'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-function buildWebSocket (server: PeerTubeServer, path: string) {
+function buildWebSocket (server: Retro3Server, path: string) {
   return new WebSocket('ws://' + server.host + path)
 }
 
-function expectErrorOrTimeout (server: PeerTubeServer, path: string, expectedTimeout: number) {
+function expectErrorOrTimeout (server: Retro3Server, path: string, expectedTimeout: number) {
   return new Promise<void>((res, rej) => {
     const ws = buildWebSocket(server, path)
     ws.on('error', () => res())
@@ -29,7 +29,7 @@ function expectErrorOrTimeout (server: PeerTubeServer, path: string, expectedTim
 }
 
 describe('Test plugin websocket', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   const basePaths = [
     '/plugins/test-websocket/ws/',
     '/plugins/test-websocket/0.0.1/ws/'

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 import { expect } from 'chai'
-import { getAllFiles } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { getAllFiles } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { expectStartWith } from '@tests/shared/checks.js'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
@@ -11,15 +11,15 @@ import {
   makeGetRequest,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test a video file replacement', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   let replaceDate: Date
   let userToken: string

@@ -1,4 +1,4 @@
-import { ActivityReject } from '@peertube/peertube-models'
+import { ActivityReject } from '@retroai/retro3-models'
 import { sequelizeTypescript } from '../../../initializers/database.js'
 import { ActorFollowModel } from '../../../models/actor/actor-follow.js'
 import { APProcessorOptions } from '../../../types/activitypub-processor.model.js'

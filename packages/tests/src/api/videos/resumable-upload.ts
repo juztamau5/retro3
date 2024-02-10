@@ -4,22 +4,22 @@ import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readdir, stat } from 'fs/promises'
 import { join } from 'path'
-import { HttpStatusCode, HttpStatusCodeType, VideoPrivacy } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath, sha1 } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, HttpStatusCodeType, VideoPrivacy } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath, sha1 } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 // Most classic resumable upload tests are done in other test suites
 
 describe('Test resumable upload', function () {
   const path = '/api/v1/videos/upload-resumable'
   const defaultFixture = 'video_short.mp4'
-  let server: PeerTubeServer
+  let server: Retro3Server
   let rootId: number
   let userAccessToken: string
   let userChannelId: number

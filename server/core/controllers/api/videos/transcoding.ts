@@ -4,7 +4,7 @@ import { Hooks } from '@server/lib/plugins/hooks.js'
 import { createTranscodingJobs } from '@server/lib/transcoding/create-transcoding-job.js'
 import { computeResolutionsToTranscode } from '@server/lib/transcoding/transcoding-resolutions.js'
 import { VideoJobInfoModel } from '@server/models/video/video-job-info.js'
-import { HttpStatusCode, UserRight, VideoState, VideoTranscodingCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight, VideoState, VideoTranscodingCreate } from '@retroai/retro3-models'
 import { asyncMiddleware, authenticate, createTranscodingValidator, ensureUserHasRight } from '../../../middlewares/index.js'
 
 const lTags = loggerTagsFactory('api', 'video')

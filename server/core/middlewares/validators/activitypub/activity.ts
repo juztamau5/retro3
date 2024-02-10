@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { getServerActor } from '@server/models/application/application.js'
 import { isRootActivityValid } from '../../../helpers/custom-validators/activitypub/activity.js'
 import { logger } from '../../../helpers/logger.js'

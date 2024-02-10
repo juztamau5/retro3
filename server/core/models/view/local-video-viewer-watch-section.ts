@@ -1,7 +1,7 @@
 import { Transaction } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, ForeignKey, Model, Table } from 'sequelize-typescript'
 import { MLocalVideoViewerWatchSection } from '@server/types/models/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { LocalVideoViewerModel } from './local-video-viewer.js'
 
 @Table({

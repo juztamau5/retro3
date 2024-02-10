@@ -3,7 +3,7 @@ import { ToastModule } from 'primeng/toast'
 import { CommonModule } from '@angular/common'
 import { NgModule, Optional, SkipSelf } from '@angular/core'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { PeerTubeSocket } from '@app/core/notification/peertube-socket.service'
+import { Retro3Socket } from '@app/core/notification/retro3-socket.service'
 import { HooksService, PluginService } from '@app/core/plugins'
 import { AuthService } from './auth'
 import { ConfirmService } from './confirm'
@@ -17,7 +17,7 @@ import {
   LoginGuard,
   MetaGuard,
   MetaService,
-  PeerTubeRouterService,
+  Retro3RouterService,
   RedirectService,
   ScrollService,
   UnloggedGuard,
@@ -81,10 +81,10 @@ import { HotkeysService } from './hotkeys'
     RedirectService,
     Notifier,
     MessageService,
-    PeerTubeSocket,
+    Retro3Socket,
     ServerConfigResolver,
     CanDeactivateGuard,
-    PeerTubeRouterService,
+    Retro3RouterService,
     ScrollService,
 
     MetaService,

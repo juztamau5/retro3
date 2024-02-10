@@ -3,7 +3,7 @@
 @use '_mixins' as *;
 @use './_player-variables' as *;
 
-.vjs-peertube-skin.has-chapter {
+.vjs-retro3-skin.has-chapter {
   .vjs-time-tooltip {
     white-space: pre;
     line-height: 1.5;
@@ -13,7 +13,7 @@
   }
 }
 
-.video-js.vjs-peertube-skin .vjs-control-bar {
+.video-js.vjs-retro3-skin .vjs-control-bar {
   z-index: 100;
 
   height: $control-bar-height;
@@ -38,7 +38,7 @@
   .vjs-volume-control,
   .vjs-resolution-control,
   .vjs-fullscreen-control,
-  .vjs-peertube-link,
+  .vjs-retro3-link,
   .vjs-theater-control,
   .vjs-settings {
     color: pvar(--embedForegroundColor) !important;
@@ -53,7 +53,7 @@
 
   .vjs-current-time,
   .vjs-duration,
-  .vjs-peertube {
+  .vjs-retro3 {
     color: pvar(--embedForegroundColor);
     opacity: $primary-foreground-opacity;
   }
@@ -187,7 +187,7 @@
     white-space: nowrap;
   }
 
-  .vjs-peertube {
+  .vjs-retro3 {
     @include margin-right(6px);
     @include margin-left(auto);
 
@@ -196,11 +196,11 @@
     overflow: hidden;
     font-size: $control-bar-font-size;
 
-    .vjs-peertube-displayed {
+    .vjs-retro3-displayed {
       display: block;
     }
 
-    .vjs-peertube-hidden {
+    .vjs-retro3-hidden {
       display: none;
     }
 
@@ -385,7 +385,7 @@
     }
   }
 
-  .vjs-peertube-link {
+  .vjs-retro3-link {
     @include disable-outline;
     @include disable-default-a-behaviour;
     @include ellipsis;
@@ -442,7 +442,7 @@
       display: none;
     }
 
-    .vjs-peertube {
+    .vjs-retro3 {
       .icon,
       .download-speed-text,
       .upload-speed-text {
@@ -456,15 +456,15 @@
       display: none;
     }
 
-    .vjs-peertube {
+    .vjs-retro3 {
       padding: 0 !important;
 
-      .vjs-peertube-displayed {
+      .vjs-retro3-displayed {
         display: none !important;
       }
     }
 
-    .vjs-peertube-link {
+    .vjs-retro3-link {
       max-width: 100px;
     }
 
@@ -473,7 +473,7 @@
         display: none !important;
       }
 
-      .vjs-peertube {
+      .vjs-retro3 {
         display: none !important;
       }
     }
@@ -485,7 +485,7 @@
       display: none !important;
     }
 
-    .vjs-peertube-link {
+    .vjs-retro3-link {
       padding: 0 !important;
     }
 

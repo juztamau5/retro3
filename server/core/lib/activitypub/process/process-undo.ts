@@ -7,7 +7,7 @@ import {
   ActivityUndo,
   ActivityUndoObject,
   CacheFileObject
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { VideoModel } from '@server/models/video/video.js'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { logger } from '../../../helpers/logger.js'

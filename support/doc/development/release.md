@@ -1,9 +1,9 @@
 # Release
 
-## PeerTube
+## retro3
 
  * Fix remaining important bugs
- * Ensure French translation is 100% (for the screens in the JoinPeerTube blog post)
+ * Ensure French translation is 100% (for the screens in the JoinRetro3 blog post)
  * Update [/CHANGELOG.md](/CHANGELOG.md)
  * Check migrations:
 ```
@@ -19,17 +19,17 @@ NODE_APP_INSTANCE=6 NODE_ENV=test node dist/server --benchmark-startup
  * Run BrowserStack **and** local E2E tests
  * Release: `GITHUB_TOKEN=my_token npm run release -- 1.x.x`
  * Update `openapi.yaml` version
- * Upload `tar.xz` on https://builds.joinpeertube.org/release
+ * Upload `tar.xz` on https://builds.joinretro3.org/release
  * Create a dedicated branch: `git checkout -b release/1.x.x && git push origin release/1.x.x`
- * Check the release is okay: https://github.com/Chocobozzz/PeerTube/releases
- * Update https://peertube3.cpy.re and check it works correctly
+ * Check the release is okay: https://github.com/juztamau5/retro3/releases
+ * Update https://peertube2.cpy.re and check it works correctly
  * Update all other instances and check it works correctly
- * After a couple of days, update https://joinpeertube.org/api/v1/versions.json
+ * After a couple of days, update https://joinretro3.org/api/v1/versions.json
 
 
-## @peertube/embed-api
+## @retroai/embed-api
 
-At the root of PeerTube:
+At the root of retro3:
 
 ```
 cd client/src/standalone/embed-player-api

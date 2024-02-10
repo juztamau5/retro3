@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
   makePostBodyRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video imports API validator', function () {
   const path = '/api/v1/videos/imports'
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = ''
   let channelId: number
 

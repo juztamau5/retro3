@@ -1,6 +1,6 @@
-name: "Reusable deploy on builds.joinpeertube.org"
+name: "Reusable deploy on builds.joinretro3.org"
 
-description: "Reusable deploy on builds.joinpeertube.org"
+description: "Reusable deploy on builds.joinretro3.org"
 
 inputs:
   source:
@@ -8,7 +8,7 @@ inputs:
     description: "Source file/files/directory/directories to deploy"
   destination:
     required: true
-    description: "Destination directory on builds.joinpeertube.org"
+    description: "Destination directory on builds.joinretro3.org"
   knownHosts:
     required: true
     description: "Known hosts"

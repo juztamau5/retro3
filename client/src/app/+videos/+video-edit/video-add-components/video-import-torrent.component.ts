@@ -7,7 +7,7 @@ import { FormReactiveService } from '@app/shared/shared-forms'
 import { VideoCaptionService, VideoChapterService, VideoEdit, VideoImportService, VideoService } from '@app/shared/shared-main'
 import { LoadingBarService } from '@ngx-loading-bar/core'
 import { logger } from '@root-helpers/logger'
-import { PeerTubeProblemDocument, ServerErrorCode, VideoUpdate } from '@peertube/peertube-models'
+import { Retro3ProblemDocument, ServerErrorCode, VideoUpdate } from '@retroai/retro3-models'
 import { hydrateFormFromVideo } from '../shared/video-edit-utils'
 import { VideoSend } from './video-send'
 
@@ -111,7 +111,7 @@ export class VideoImportTorrentComponent extends VideoSend implements OnInit, Af
 
           let message = err.message
 
-          const error = err.body as PeerTubeProblemDocument
+          const error = err.body as Retro3ProblemDocument
           if (error?.code === ServerErrorCode.INCORRECT_FILES_IN_TORRENT) {
             message = $localize`Torrents with only 1 file are supported.`
           }

@@ -1,5 +1,5 @@
 import { VideoLiveSessionModel } from '@server/models/video/video-live-session.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MVideo } from './video.js'
 import { MLiveReplaySetting } from './video-live-replay-setting.js'
 

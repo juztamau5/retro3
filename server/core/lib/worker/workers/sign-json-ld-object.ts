@@ -1,3 +1,3 @@
-import { signJsonLDObject } from '@server/helpers/peertube-jsonld.js'
+import { signJsonLDObject } from '@server/helpers/retro3-jsonld.js'
 
 export default signJsonLDObject

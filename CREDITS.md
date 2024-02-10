@@ -702,7 +702,7 @@
 
 # Contributors to our 2020 crowdfunding :heart:
 
-*We ran [a crowdfunding campaign](https://joinpeertube.org/roadmap) in 2020 to implement live streaming to the version 3.0.0 of PeerTube. Thanks to everyone who pitched in and shared the news!*
+*We ran [a crowdfunding campaign](https://joinretro3.org/roadmap) in 2020 to implement live streaming to the version 3.0.0 of PeerTube. Thanks to everyone who pitched in and shared the news!*
 
 
 

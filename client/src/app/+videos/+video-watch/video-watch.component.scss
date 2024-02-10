@@ -131,7 +131,7 @@ $video-max-height: calc(100vh - #{$header-height} - #{$theater-bottom-space});
 }
 
 .video-info-name {
-  @include peertube-word-wrap;
+  @include retro3-word-wrap;
 
   @include margin-right(30px);
 
@@ -161,7 +161,7 @@ $video-max-height: calc(100vh - #{$header-height} - #{$theater-bottom-space});
 
   a {
     @include disable-default-a-behaviour;
-    @include peertube-word-wrap;
+    @include retro3-word-wrap;
 
     color: pvar(--mainForegroundColor);
 

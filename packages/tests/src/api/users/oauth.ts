@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, OAuth2ErrorCode, PeerTubeProblemDocument } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, OAuth2ErrorCode, Retro3ProblemDocument } from '@retroai/retro3-models'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import {
   cleanupTests,
   createSingleServer,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test oauth', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let sqlCommand: SQLCommand
 
   before(async function () {
@@ -34,7 +34,7 @@ describe('Test oauth', function () {
 
   describe('OAuth client', function () {
 
-    function expectInvalidClient (body: PeerTubeProblemDocument) {
+    function expectInvalidClient (body: Retro3ProblemDocument) {
       expect(body.code).to.equal(OAuth2ErrorCode.INVALID_CLIENT)
       expect(body.error).to.contain('client is invalid')
       expect(body.type.startsWith('https://')).to.be.true
@@ -64,7 +64,7 @@ describe('Test oauth', function () {
 
   describe('Login', function () {
 
-    function expectInvalidCredentials (body: PeerTubeProblemDocument) {
+    function expectInvalidCredentials (body: Retro3ProblemDocument) {
       expect(body.code).to.equal(OAuth2ErrorCode.INVALID_GRANT)
       expect(body.error).to.contain('credentials are invalid')
       expect(body.type.startsWith('https://')).to.be.true

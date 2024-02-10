@@ -3,7 +3,7 @@ import { CONFIG } from '@server/initializers/config.js'
 import { AccountBlocklistModel } from '@server/models/account/account-blocklist.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { ServerBlocklistModel } from '@server/models/server/server-blocklist.js'
-import { SearchTargetQuery } from '@peertube/peertube-models'
+import { SearchTargetQuery } from '@retroai/retro3-models'
 
 function isSearchIndexSearch (query: SearchTargetQuery) {
   if (query.searchTarget === 'search-index') return true

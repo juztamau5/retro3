@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode, VideoPlaylistCreateResult } from '@peertube/peertube-models'
-import { PeerTubeServer, cleanupTests, makeGetRequest } from '@peertube/peertube-server-commands'
+import { HttpStatusCode, VideoPlaylistCreateResult } from '@retroai/retro3-models'
+import { Retro3Server, cleanupTests, makeGetRequest } from '@retroai/retro3-server-commands'
 import { getWatchPlaylistBasePaths, getWatchVideoBasePaths, prepareClientTests } from '@tests/shared/client.js'
 
 describe('Test oEmbed HTML tags', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let videoIds: (string | number)[] = []
 

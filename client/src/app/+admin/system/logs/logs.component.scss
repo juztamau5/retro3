@@ -48,8 +48,8 @@
   justify-content: flex-end;
   margin-bottom: 10px;
 
-  .peertube-select-container {
-    @include peertube-select-container(150px);
+  .retro3-select-container {
+    @include retro3-select-container(150px);
   }
 
   my-select-tags {
@@ -88,7 +88,7 @@
   .header {
     flex-direction: column;
 
-    .peertube-select-container,
+    .retro3-select-container,
     ng-select,
     my-button {
       @include margin-left(0 !important);

@@ -5,7 +5,7 @@ export type EncoderOptionsBuilderParams = {
 
   resolution: number
 
-  // If PeerTube applies a filter, transcoding profile must not copy input stream
+  // If retro3 applies a filter, transcoding profile must not copy input stream
   canCopyAudio: boolean
   canCopyVideo: boolean
 

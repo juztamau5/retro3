@@ -11,14 +11,14 @@ h1 {
   }
 
   .button-link {
-    @include peertube-button-link;
+    @include retro3-button-link;
     @include grey-button;
     @include button-with-icon(18px, 3px, -1px);
   }
 }
 
 input[type=text] {
-  @include peertube-input-text(300px);
+  @include retro3-input-text(300px);
 }
 
 my-edit-button {

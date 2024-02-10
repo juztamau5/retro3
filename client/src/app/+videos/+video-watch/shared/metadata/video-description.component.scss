@@ -9,7 +9,7 @@
   margin-bottom: 20px;
 
   .video-info-description-html {
-    @include peertube-word-wrap;
+    @include retro3-word-wrap;
 
     ::ng-deep {
       a {

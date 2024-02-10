@@ -1,4 +1,4 @@
-import { Activity } from '@peertube/peertube-models'
+import { Activity } from '@retroai/retro3-models'
 import { MActorDefault, MActorSignature } from './models/index.js'
 
 export type APProcessorOptions<T extends Activity> = {

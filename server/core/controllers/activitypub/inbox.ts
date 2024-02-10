@@ -1,5 +1,5 @@
 import express from 'express'
-import { Activity, ActivityPubCollection, ActivityPubOrderedCollection, HttpStatusCode, RootActivity } from '@peertube/peertube-models'
+import { Activity, ActivityPubCollection, ActivityPubOrderedCollection, HttpStatusCode, RootActivity } from '@retroai/retro3-models'
 import { InboxManager } from '@server/lib/activitypub/inbox-manager.js'
 import { isActivityValid } from '../../helpers/custom-validators/activitypub/activity.js'
 import { logger } from '../../helpers/logger.js'

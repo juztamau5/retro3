@@ -13,7 +13,7 @@ import {
 } from '@app/shared/form-validators/video-playlist-validators'
 import { FormReactiveService } from '@app/shared/shared-forms'
 import { VideoPlaylist, VideoPlaylistService } from '@app/shared/shared-video-playlist'
-import { VideoPlaylistUpdate } from '@peertube/peertube-models'
+import { VideoPlaylistUpdate } from '@retroai/retro3-models'
 import { MyVideoPlaylistEdit } from './my-video-playlist-edit'
 
 @Component({

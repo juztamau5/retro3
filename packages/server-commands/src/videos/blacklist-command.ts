@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResultList, VideoBlacklist, VideoBlacklistType_Type } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoBlacklist, VideoBlacklistType_Type } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class BlacklistCommand extends AbstractCommand {

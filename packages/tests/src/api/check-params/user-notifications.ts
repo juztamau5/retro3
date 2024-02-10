@@ -2,20 +2,20 @@
 
 import { io } from 'socket.io-client'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, UserNotificationSetting, UserNotificationSettingValue } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, UserNotificationSetting, UserNotificationSettingValue } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test user notifications API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   // ---------------------------------------------------------------
 
@@ -169,7 +169,7 @@ describe('Test user notifications API validators', function () {
       autoInstanceFollowing: UserNotificationSettingValue.WEB,
       abuseNewMessage: UserNotificationSettingValue.WEB,
       abuseStateChange: UserNotificationSettingValue.WEB,
-      newPeerTubeVersion: UserNotificationSettingValue.WEB,
+      newRetro3Version: UserNotificationSettingValue.WEB,
       myVideoStudioEditionFinished: UserNotificationSettingValue.WEB,
       newPluginVersion: UserNotificationSettingValue.WEB
     }

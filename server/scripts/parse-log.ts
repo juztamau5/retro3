@@ -82,7 +82,7 @@ async function run () {
   const files = await getFiles()
 
   for (const file of files) {
-    if (file === 'peertube-audit.log') continue
+    if (file === 'retro3-audit.log') continue
 
     await readFile(file)
   }

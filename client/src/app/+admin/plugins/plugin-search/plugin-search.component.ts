@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { PluginApiService } from '@app/+admin/plugins/shared/plugin-api.service'
 import { ComponentPagination, ConfirmService, hasMoreItems, Notifier, PluginService } from '@app/core'
-import { PeerTubePluginIndex, PluginType, PluginType_Type } from '@peertube/peertube-models'
+import { Retro3PluginIndex, PluginType, PluginType_Type } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 
 @Component({
@@ -25,7 +25,7 @@ export class PluginSearchComponent implements OnInit {
   search = ''
   isSearching = false
 
-  plugins: PeerTubePluginIndex[] = []
+  plugins: Retro3PluginIndex[] = []
   installing: { [name: string]: boolean } = {}
   pluginInstalled = false
 
@@ -111,11 +111,11 @@ export class PluginSearchComponent implements OnInit {
     this.loadMorePlugins()
   }
 
-  isInstalling (plugin: PeerTubePluginIndex) {
+  isInstalling (plugin: Retro3PluginIndex) {
     return !!this.installing[plugin.npmName]
   }
 
-  getShowRouterLink (plugin: PeerTubePluginIndex) {
+  getShowRouterLink (plugin: Retro3PluginIndex) {
     return [ '/admin', 'plugins', 'show', this.pluginService.nameToNpmName(plugin.name, this.pluginType) ]
   }
 
@@ -123,7 +123,7 @@ export class PluginSearchComponent implements OnInit {
     return this.pluginType === PluginType.THEME
   }
 
-  async install (plugin: PeerTubePluginIndex) {
+  async install (plugin: Retro3PluginIndex) {
     if (this.installing[plugin.npmName]) return
 
     const res = await this.confirmService.confirm(

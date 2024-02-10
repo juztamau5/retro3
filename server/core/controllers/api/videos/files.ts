@@ -5,7 +5,7 @@ import { federateVideoIfNeeded } from '@server/lib/activitypub/videos/index.js'
 import { updatePlaylistAfterFileChange } from '@server/lib/hls.js'
 import { removeAllWebVideoFiles, removeHLSFile, removeHLSPlaylist, removeWebVideoFile } from '@server/lib/video-file.js'
 import { VideoFileModel } from '@server/models/video/video-file.js'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import {
   asyncMiddleware,
   authenticate,

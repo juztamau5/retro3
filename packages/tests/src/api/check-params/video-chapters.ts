@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, Video, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, Video, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
-  PeerTubeServer,
+  Retro3Server,
   cleanupTests,
   createSingleServer,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos chapters API validator', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let video: VideoCreateResult
   let live: Video
   let privateVideo: VideoCreateResult

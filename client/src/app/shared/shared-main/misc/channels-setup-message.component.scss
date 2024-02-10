@@ -20,7 +20,7 @@ my-global-icon {
 }
 
 .channels-settings-link {
-  @include peertube-button-link;
+  @include retro3-button-link;
   @include grey-button;
 
   height: fit-content;

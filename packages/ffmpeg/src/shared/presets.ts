@@ -1,4 +1,4 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import { FFmpegCommandWrapper } from '../ffmpeg-command-wrapper.js'
 import { getScaleFilter, StreamType } from '../ffmpeg-utils.js'
 import { ffprobePromise, getVideoStreamBitrate, getVideoStreamDimensionsInfo, hasAudioStream } from '../ffprobe.js'

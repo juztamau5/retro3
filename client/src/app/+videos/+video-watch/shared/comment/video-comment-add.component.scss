@@ -3,7 +3,7 @@
 
 $markdown-icon-height: 18px;
 $markdown-icon-width: 30px;
-$peertube-textarea-height: 60px;
+$retro3-textarea-height: 60px;
 
 form {
   margin-bottom: 30px;
@@ -23,11 +23,11 @@ form {
   }
 
   textarea {
-    @include peertube-textarea(100%, $peertube-textarea-height);
+    @include retro3-textarea(100%, $retro3-textarea-height);
     @include button-focus(pvar(--mainColorLightest));
     @include padding-right($markdown-icon-width + 15px !important);
 
-    min-height: calc(#{$peertube-textarea-height} - 15px * 2);
+    min-height: calc(#{$retro3-textarea-height} - 15px * 2);
 
     @media screen and (max-width: 600px) {
       @include padding-right($markdown-icon-width + 19px !important);

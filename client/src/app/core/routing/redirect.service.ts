@@ -7,7 +7,7 @@ import { SessionStorageService } from '../wrappers/storage.service'
 import { PluginsManager } from '@root-helpers/plugins-manager'
 import { environment } from 'src/environments/environment'
 
-const debugLogger = debug('peertube:router:RedirectService')
+const debugLogger = debug('retro3:router:RedirectService')
 
 @Injectable()
 export class RedirectService {

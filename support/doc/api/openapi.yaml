@@ -1,39 +1,39 @@
 openapi: 3.0.0
 info:
-  title: PeerTube
+  title: retro3
   version: 5.2.0
   contact:
-    name: PeerTube Community
-    url: https://joinpeertube.org
+    name: retro3 Community
+    url: https://joinretro3.org
   license:
     name: AGPLv3.0
-    url: https://github.com/Chocobozzz/PeerTube/blob/master/LICENSE
+    url: https://github.com/juztamau5/retro3/blob/master/LICENSE
   x-logo:
-    url: https://joinpeertube.org/img/brand.png
-    altText: PeerTube Project Homepage
+    url: https://joinretro3.org/img/brand.png
+    altText: retro3 Project Homepage
   description: |
-    The PeerTube API is built on HTTP(S) and is RESTful. You can use your favorite
-    HTTP/REST library for your programming language to use PeerTube. The spec API is fully compatible with
+    The retro3 API is built on HTTP(S) and is RESTful. You can use your favorite
+    HTTP/REST library for your programming language to use retro3. The spec API is fully compatible with
     [openapi-generator](https://github.com/OpenAPITools/openapi-generator/wiki/API-client-generator-HOWTO)
     which generates a client SDK in the language of your choice - we generate some client SDKs automatically:
 
-    - [Python](https://framagit.org/framasoft/peertube/clients/python)
-    - [Go](https://framagit.org/framasoft/peertube/clients/go)
-    - [Kotlin](https://framagit.org/framasoft/peertube/clients/kotlin)
+    - [Python](https://framagit.org/framasoft/retro3/clients/python)
+    - [Go](https://framagit.org/framasoft/retro3/clients/go)
+    - [Kotlin](https://framagit.org/framasoft/retro3/clients/kotlin)
 
-    See the [REST API quick start](https://docs.joinpeertube.org/api/rest-getting-started) for a few
-    examples of using the PeerTube API.
+    See the [REST API quick start](https://docs.joinretro3.org/api/rest-getting-started) for a few
+    examples of using the retro3 API.
 
     # Authentication
 
-    When you sign up for an account on a PeerTube instance, you are given the possibility
+    When you sign up for an account on a retro3 instance, you are given the possibility
     to generate sessions on it, and authenticate there using an access token. Only __one
     access token can currently be used at a time__.
 
     ## Roles
 
     Accounts are given permissions based on their role. There are three roles on
-    PeerTube: Administrator, Moderator, and User. See the [roles guide](https://docs.joinpeertube.org/admin/managing-users#roles) for a detail of their permissions.
+    retro3: Administrator, Moderator, and User. See the [roles guide](https://docs.joinretro3.org/admin/managing-users#roles) for a detail of their permissions.
 
     # Errors
 
@@ -46,14 +46,14 @@ info:
 
     {
       "detail": "Video not found",
-      "docs": "https://docs.joinpeertube.org/api-rest-reference.html#operation/getVideo",
+      "docs": "https://docs.joinretro3.org/api-rest-reference.html#operation/getVideo",
       "status": 404,
       "title": "Not Found",
       "type": "about:blank"
     }
     ```
 
-    We provide error `type` values for [a growing number of cases](https://github.com/Chocobozzz/PeerTube/blob/develop/packages/models/src/server/core-error-code.enum.ts),
+    We provide error `type` values for [a growing number of cases](https://github.com/juztamau5/retro3/blob/main/packages/models/src/server/core-error-code.enum.ts),
     but it is still optional. Types are used to disambiguate errors that bear the same status code
     and are non-obvious:
 
@@ -63,10 +63,10 @@ info:
 
     {
       "detail": "Cannot get this video regarding follow constraints",
-      "docs": "https://docs.joinpeertube.org/api-rest-reference.html#operation/getVideo",
+      "docs": "https://docs.joinretro3.org/api-rest-reference.html#operation/getVideo",
       "status": 403,
       "title": "Forbidden",
-      "type": "https://docs.joinpeertube.org/api-rest-reference.html#section/Errors/does_not_respect_follow_constraints"
+      "type": "https://docs.joinretro3.org/api-rest-reference.html#section/Errors/does_not_respect_follow_constraints"
     }
     ```
 
@@ -84,7 +84,7 @@ info:
 
     {
       "detail": "Incorrect request parameters: id",
-      "docs": "https://docs.joinpeertube.org/api-rest-reference.html#operation/getVideo",
+      "docs": "https://docs.joinretro3.org/api-rest-reference.html#operation/getVideo",
       "instance": "/api/v1/videos/9c9de5e8-0a1e-484a-b099-e80766180",
       "invalid-params": {
         "id": {
@@ -113,7 +113,7 @@ info:
 
     # Rate limits
 
-    We are rate-limiting all endpoints of PeerTube's API. Custom values can be set by administrators:
+    We are rate-limiting all endpoints of retro3's API. Custom values can be set by administrators:
 
     | Endpoint (prefix: `/api/v1`) | Calls         | Time frame   |
     |------------------------------|---------------|--------------|
@@ -149,12 +149,12 @@ info:
 
     In addition, all routes serving ActivityPub are CORS-enabled for all origins.
 externalDocs:
-  url: https://docs.joinpeertube.org/api-rest-reference.html
+  url: https://docs.joinretro3.org/api-rest-reference.html
 tags:
   - name: Register
     description: |
       As a visitor, you can use this API to open an account (if registrations are open on
-      that PeerTube instance). As an admin, you should use the dedicated [User creation
+      that retro3 instance). As an admin, you should use the dedicated [User creation
       API](#operation/addUser) instead.
   - name: Session
     x-displayName: Login/Logout
@@ -169,7 +169,7 @@ tags:
       When a comment is posted, it is done with your Account's Actor.
   - name: Users
     description: >
-      Using some features of PeerTube require authentication, for which User
+      Using some features of retro3 require authentication, for which User
       provide different levels of permission as well as associated user
       information. Each user has a corresponding local Account for federation.
   - name: My User
@@ -199,25 +199,25 @@ tags:
   - name: Instance Follows
     description: >
       Managing servers which the instance interacts with is crucial to the
-      concept of federation in PeerTube and external video indexation. The PeerTube
+      concept of federation in retro3 and external video indexation. The retro3
       server then deals with inter-server ActivityPub operations and propagates
       information across its social graph by posting activities to actors' inbox
       endpoints.
     externalDocs:
-      url: https://docs.joinpeertube.org/admin/following-instances#instances-follows
+      url: https://docs.joinretro3.org/admin/following-instances#instances-follows
   - name: Instance Redundancy
     description: >
-      Redundancy is part of the inter-server solidarity that PeerTube fosters.
+      Redundancy is part of the inter-server solidarity that retro3 fosters.
       Manage the list of instances you wish to help by seeding their videos according
       to the policy of video selection of your choice. Note that you have a similar functionality
       to mirror individual videos, see [video mirroring](#tag/Video-Mirroring).
     externalDocs:
-      url: https://docs.joinpeertube.org/admin/following-instances#instances-redundancy
+      url: https://docs.joinretro3.org/admin/following-instances#instances-redundancy
   - name: Plugins
     description: >
       Managing plugins installed from a local path or from NPM, or search for new ones.
     externalDocs:
-      url: https://docs.joinpeertube.org/api/plugins
+      url: https://docs.joinretro3.org/api/plugins
   - name: Abuses
     description: |
       Abuses deal with reports of local or remote videos/comments/accounts alike.
@@ -226,7 +226,7 @@ tags:
       Operations dealing with listing, uploading, fetching or modifying videos.
   - name: Video Upload
     description: |
-      Operations dealing with adding video or audio. PeerTube supports two upload modes, and three import modes.
+      Operations dealing with adding video or audio. retro3 supports two upload modes, and three import modes.
 
       ### Upload
 
@@ -249,12 +249,12 @@ tags:
       - _magnet_-based: where the URI resolves to a BitTorrent resource containing a single supported video file
       - _torrent_-based: where the metainfo file resolves to a BitTorrent resource containing a single supported video file
 
-      The import function is practical when the desired video/audio is available online. It makes PeerTube
+      The import function is practical when the desired video/audio is available online. It makes retro3
       download it for you, saving you as much bandwidth and avoiding any instability or limitation your network might have.
   - name: Video Imports
     description: Operations dealing with listing, adding and removing video imports.
   - name: Channels Sync
-    description: Operations dealing with synchronizing PeerTube user's channel with channels of other platforms
+    description: Operations dealing with synchronizing retro3 user's channel with channels of other platforms
   - name: Video Captions
     description: Operations dealing with listing, adding and removing closed captions of a video.
   - name: Video Chapters
@@ -293,7 +293,7 @@ tags:
     description: Get and update the custom homepage
   - name: Video Mirroring
     description: |
-      PeerTube instances can mirror videos from one another, and help distribute some videos.
+      retro3 instances can mirror videos from one another, and help distribute some videos.
 
       For importing videos as your own, refer to [video imports](#operation/importVideo).
   - name: Stats
@@ -374,7 +374,7 @@ paths:
       tags:
         - Static Video Files
       summary: Get public Web Video file
-      description: "**PeerTube >= 6.0**"
+      description: "**retro3 >= 6.0**"
       parameters:
         - $ref: '#/components/parameters/staticFilename'
       responses:
@@ -387,7 +387,7 @@ paths:
       tags:
         - Static Video Files
       summary: Get private Web Video file
-      description: "**PeerTube >= 6.0**"
+      description: "**retro3 >= 6.0**"
       parameters:
         - $ref: '#/components/parameters/staticFilename'
         - $ref: '#/components/parameters/videoFileToken'
@@ -1163,7 +1163,7 @@ paths:
           - admin
       tags:
         - Instance Follows
-      summary: Follow a list of actors (PeerTube instance, channel or account)
+      summary: Follow a list of actors (retro3 instance, channel or account)
       responses:
         '204':
           description: successful operation
@@ -1189,7 +1189,7 @@ paths:
 
   '/api/v1/server/following/{hostOrHandle}':
     delete:
-      summary: Unfollow an actor (PeerTube instance, channel or account)
+      summary: Unfollow an actor (retro3 instance, channel or account)
       security:
         - OAuth2:
           - admin
@@ -2644,12 +2644,12 @@ paths:
                 minLength: 3
                 maxLength: 10000
                 example: |
-                  **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-peertube-video/)**\r\n\r\n**Take back the control of your videos! [#JoinPeertube](https://joinpeertube.org)**
+                  **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-retro3-video/)**\r\n\r\n**Take back the control of your videos! [#Joinretro3](https://joinretro3.org)**
 
   '/api/v1/videos/{id}/views':
     post:
       summary: Notify user is watching a video
-      description: Call this endpoint regularly (every 5-10 seconds for example) to notify the server the user is watching the video. After a while, PeerTube will increase video's viewers counter. If the user is authenticated, PeerTube will also store the current player time.
+      description: Call this endpoint regularly (every 5-10 seconds for example) to notify the server the user is watching the video. After a while, retro3 will increase video's viewers counter. If the user is authenticated, retro3 will also store the current player time.
       operationId: addView
       tags:
         - Video
@@ -3247,7 +3247,7 @@ paths:
   '/api/v1/videos/{id}/source/replace-resumable':
     post:
       summary: Initialize the resumable replacement of a video
-      description: "**PeerTube >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to initialize the replacement of a video"
+      description: "**retro3 >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to initialize the replacement of a video"
       operationId: replaceVideoSourceResumableInit
       security:
         - OAuth2: []
@@ -3286,7 +3286,7 @@ paths:
           description: video type unsupported
     put:
       summary: Send chunk for the resumable replacement of a video
-      description: "**PeerTube >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to continue, pause or resume the replacement of a video"
+      description: "**retro3 >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to continue, pause or resume the replacement of a video"
       operationId: replaceVideoSourceResumable
       security:
         - OAuth2: []
@@ -3336,7 +3336,7 @@ paths:
                 example: 300
     delete:
       summary: Cancel the resumable replacement of a video
-      description: "**PeerTube >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to cancel the replacement of a video"
+      description: "**retro3 >= 6.0** Uses [a resumable protocol](https://github.com/kukhariev/node-uploadx/blob/master/proto.md) to cancel the replacement of a video"
       operationId: replaceVideoSourceResumableCancel
       security:
         - OAuth2: []
@@ -3747,7 +3747,7 @@ paths:
   /api/v1/videos/{id}/storyboards:
     get:
       summary: List storyboards of a video
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       operationId: listVideoStoryboards
       tags:
         - Video
@@ -3841,7 +3841,7 @@ paths:
   /api/v1/videos/{id}/chapters:
     get:
       summary: Get chapters of a video
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       operationId: getVideoChapters
       tags:
         - Video Chapters
@@ -3857,7 +3857,7 @@ paths:
                 $ref: '#/components/schemas/VideoChapters'
     put:
       summary: Replace video chapters
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       operationId: replaceVideoChapters
       security:
         - OAuth2:
@@ -3890,7 +3890,7 @@ paths:
   /api/v1/videos/{id}/passwords:
     get:
       summary: List video passwords
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       security:
         - OAuth2:
           - user
@@ -3912,7 +3912,7 @@ paths:
           description: video is not password protected
     put:
       summary: Update video passwords
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       security:
         - OAuth2:
           - user
@@ -3937,7 +3937,7 @@ paths:
   /api/v1/videos/{id}/passwords/{videoPasswordId}:
     delete:
       summary: Delete a video password
-      description: "**PeerTube** >= 6.0"
+      description: "**retro3** >= 6.0"
       security:
         - OAuth2:
           - user
@@ -4936,7 +4936,7 @@ paths:
   '/api/v1/videos/{id}/web-videos':
     delete:
       summary: Delete video Web Video files
-      description: "**PeerTube >= 6.0**"
+      description: "**retro3 >= 6.0**"
       security:
         - OAuth2:
           - admin
@@ -4998,7 +4998,7 @@ paths:
           allowEmptyValue: false
           description: >
             String to search. If the user can make a remote URI search, and the string is an URI then the
-            PeerTube instance will fetch the remote object and add it to its database. Then,
+            retro3 instance will fetch the remote object and add it to its database. Then,
             you can use the REST API to fetch the complete video information and interact with it.
           schema:
             type: string
@@ -5080,7 +5080,7 @@ paths:
           required: true
           description: >
             String to search. If the user can make a remote URI search, and the string is an URI then the
-            PeerTube instance will fetch the remote object and add it to its database. Then,
+            retro3 instance will fetch the remote object and add it to its database. Then,
             you can use the REST API to fetch the complete channel information and interact with it.
           schema:
             type: string
@@ -5113,7 +5113,7 @@ paths:
           required: true
           description: >
             String to search. If the user can make a remote URI search, and the string is an URI then the
-            PeerTube instance will fetch the remote object and add it to its database. Then,
+            retro3 instance will fetch the remote object and add it to its database. Then,
             you can use the REST API to fetch the complete playlist information and interact with it.
           schema:
             type: string
@@ -5527,7 +5527,7 @@ paths:
           in: query
           schema:
             type: integer
-        - name: currentPeerTubeEngine
+        - name: currentretro3Engine
           in: query
           schema:
             type: string
@@ -5562,7 +5562,7 @@ paths:
                   properties:
                     npmName:
                       type: string
-                      example: peertube-plugin-auth-ldap
+                      example: retro3-plugin-auth-ldap
                   required:
                     - npmName
                   additionalProperties: false
@@ -5597,7 +5597,7 @@ paths:
                   properties:
                     npmName:
                       type: string
-                      example: peertube-plugin-auth-ldap
+                      example: retro3-plugin-auth-ldap
                   required:
                     - npmName
                   additionalProperties: false
@@ -5634,7 +5634,7 @@ paths:
                 npmName:
                   type: string
                   description: name of the plugin/theme in its package.json
-                  example: peertube-plugin-auth-ldap
+                  example: retro3-plugin-auth-ldap
               required:
                 - npmName
       responses:
@@ -5802,7 +5802,7 @@ paths:
   /api/v1/runners/register:
     post:
       summary: Register a new runner
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runners
       requestBody:
@@ -5837,7 +5837,7 @@ paths:
   /api/v1/runners/unregister:
     post:
       summary: Unregister a runner
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runners
       requestBody:
@@ -5910,7 +5910,7 @@ paths:
   /api/v1/runners/jobs/request:
     post:
       summary: Request a new job
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       requestBody:
@@ -5946,7 +5946,7 @@ paths:
   /api/v1/runners/jobs/{jobUUID}/accept:
     post:
       summary: Accept job
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       parameters:
@@ -5980,7 +5980,7 @@ paths:
   /api/v1/runners/jobs/{jobUUID}/abort:
     post:
       summary: Abort job
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       parameters:
@@ -6009,7 +6009,7 @@ paths:
   /api/v1/runners/jobs/{jobUUID}/update:
     post:
       summary: Update job
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       parameters:
@@ -6060,7 +6060,7 @@ paths:
   /api/v1/runners/jobs/{jobUUID}/error:
     post:
       summary: Post job error
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       parameters:
@@ -6089,7 +6089,7 @@ paths:
   /api/v1/runners/jobs/{jobUUID}/success:
     post:
       summary: Post job success
-      description: API used by PeerTube runners
+      description: API used by retro3 runners
       tags:
         - Runner Jobs
       parameters:
@@ -6252,10 +6252,10 @@ components:
         If the administrator enabled search index support, you can override the default search target.
 
 
-        **Warning**: If you choose to make an index search, PeerTube will get results from a third party service.
+        **Warning**: If you choose to make an index search, retro3 will get results from a third party service.
         It means the instance may not yet know the objects you fetched. If you want to load video/channel information:
           * If the current user has the ability to make a remote URI search (this information is available in the config endpoint),
-          then reuse the search API to make a search using the object URI so PeerTube instance fetches the remote object and fill its database.
+          then reuse the search API to make a search using the object URI so retro3 instance fetches the remote object and fill its database.
           After that, you can use the classic REST API endpoints to fetch the complete object or interact with it
           * If the current user doesn't have the ability to make a remote URI search, then redirect the user on the origin instance or fetch
           the data from the origin instance API
@@ -6619,28 +6619,28 @@ components:
       required: false
       schema:
         type: boolean
-      description: '**PeerTube >= 4.0** Display only local or remote videos'
+      description: '**retro3 >= 4.0** Display only local or remote videos'
     hasHLSFiles:
       name: hasHLSFiles
       in: query
       required: false
       schema:
         type: boolean
-      description: '**PeerTube >= 4.0** Display only videos that have HLS files'
+      description: '**retro3 >= 4.0** Display only videos that have HLS files'
     hasWebVideoFiles:
       name: hasWebVideoFiles
       in: query
       required: false
       schema:
         type: boolean
-      description: '**PeerTube >= 6.0** Display only videos that have Web Video files'
+      description: '**retro3 >= 6.0** Display only videos that have Web Video files'
     privacyOneOf:
       name: privacyOneOf
       in: query
       required: false
       schema:
         $ref: '#/components/schemas/VideoPrivacySet'
-      description: '**PeerTube >= 4.0** Display only videos in this specific privacy/privacies'
+      description: '**retro3 >= 4.0** Display only videos in this specific privacy/privacies'
     excludeAlreadyWatched:
       name: excludeAlreadyWatched
       in: query
@@ -6668,7 +6668,7 @@ components:
         - 4
         - 8
       description: >
-        **PeerTube >= 4.0** Include additional videos in results (can be combined using bitwise or operator)
+        **retro3 >= 4.0** Include additional videos in results (can be combined using bitwise or operator)
 
         - `0` NONE
 
@@ -6696,7 +6696,7 @@ components:
       description: name of the plugin/theme on npmjs.com or in its package.json
       schema:
         type: string
-        example: peertube-plugin-auth-ldap
+        example: retro3-plugin-auth-ldap
     jobType:
       name: jobType
       in: query
@@ -6748,7 +6748,7 @@ components:
       name: videoFileToken
       in: query
       required: false
-      description: Video file token [generated](#operation/requestVideoToken) by PeerTube so you don't need to provide an OAuth token in the request header.
+      description: Video file token [generated](#operation/requestVideoToken) by retro3 so you don't need to provide an OAuth token in the request header.
       schema:
         type: string
     reinjectVideoFileToken:
@@ -6790,7 +6790,7 @@ components:
       schema:
         $ref: '#/components/schemas/id'
     videoPasswordHeader:
-      name: x-peertube-video-password
+      name: x-retro3-video-password
       description: Required on password protected video
       in: header
       required: false
@@ -6835,7 +6835,7 @@ components:
       description: |
         Size of the chunk that the request is sending.
 
-        Remember that larger chunks are more efficient. PeerTube's web client uses chunks varying from
+        Remember that larger chunks are more efficient. retro3's web client uses chunks varying from
         1048576 bytes (~1MB) and increases or reduces size depending on connection health.
     resumableUploadId:
       name: upload_id
@@ -6860,7 +6860,7 @@ components:
         Note that the __access token is valid for 1 day__ and is given
         along with a __refresh token valid for 2 weeks__.
 
-        [Generate]: https://docs.joinpeertube.org/api/rest-getting-started
+        [Generate]: https://docs.joinretro3.org/api/rest-getting-started
       type: oauth2
       flows:
         password:
@@ -7315,8 +7315,8 @@ components:
         description:
           type: string
           example: |
-            **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-peertube-video/)**\r\n\r\n
-            **Take back the control of your videos! [#JoinPeertube](https://joinpeertube.org)**\r\n*A decentralized video hosting network, based on fr...
+            **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-retro3-video/)**\r\n\r\n
+            **Take back the control of your videos! [#Joinretro3](https://joinretro3.org)**\r\n*A decentralized video hosting network, based on fr...
           minLength: 3
           maxLength: 250
           description: |
@@ -7332,7 +7332,7 @@ components:
         name:
           type: string
           description: title of the video
-          example: What is PeerTube?
+          example: What is retro3?
           minLength: 3
           maxLength: 120
         thumbnailPath:
@@ -7361,7 +7361,7 @@ components:
         state:
           allOf:
             - $ref: '#/components/schemas/VideoStateConstant'
-          description: represents the internal state of the video processing within the PeerTube instance
+          description: represents the internal state of the video processing within the retro3 instance
         scheduledUpdate:
           nullable: true
           allOf:
@@ -8324,7 +8324,7 @@ components:
               description: Allow your users to upload .mkv, .mov, .avi, .wmv, .flv, .f4v, .3g2, .3gp, .mts, m2ts, .mxf, .nut videos
             allowAudioFiles:
               type: boolean
-              description: If a user uploads an audio file, PeerTube will create a video by merging the preview file and the audio file
+              description: If a user uploads an audio file, retro3 will create a video by merging the preview file and the audio file
             threads:
               type: integer
               description: Amount of threads used by ffmpeg for 1 transcoding job
@@ -8336,7 +8336,7 @@ components:
               enum:
                 - default
               description: |
-                New profiles can be added by plugins ; available in core PeerTube: 'default'.
+                New profiles can be added by plugins ; available in core retro3: 'default'.
             resolutions:
               type: object
               description: Resolutions to transcode _new videos_ to
@@ -8517,7 +8517,7 @@ components:
         name:
           description: Video name
           type: string
-          example: What is PeerTube?
+          example: What is retro3?
           minLength: 3
           maxLength: 120
         channelId:
@@ -8537,7 +8537,7 @@ components:
           description: Video description
           type: string
           example: |
-            **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-peertube-video/)**\r\n\r\n**Take back the control of your videos! [#JoinPeertube](https://joinpeertube.org)**
+            **[Want to help to translate this video?](https://weblate.framasoft.org/projects/what-is-retro3-video/)**\r\n\r\n**Take back the control of your videos! [#Joinretro3](https://joinretro3.org)**
         waitTranscoding:
           description: Whether or not we wait transcoding before publish the video
           type: boolean
@@ -8556,7 +8556,7 @@ components:
           uniqueItems: true
           example:
             - framasoft
-            - peertube
+            - retro3
           items:
             type: string
             minLength: 2
@@ -8608,7 +8608,7 @@ components:
               description: Video filename including extension
               type: string
               format: filename
-              example: what_is_peertube.mp4
+              example: what_is_retro3.mp4
             thumbnailfile:
               description: Video thumbnail file
               type: string
@@ -8634,7 +8634,7 @@ components:
           description: Video filename including extension
           type: string
           format: filename
-          example: what_is_peertube.mp4
+          example: what_is_retro3.mp4
     CommentThreadResponse:
       properties:
         total:
@@ -8812,7 +8812,7 @@ components:
           type: string
           nullable: true
           description: The auth plugin to use to authenticate the user
-          example: 'peertube-plugin-auth-saml2'
+          example: 'retro3-plugin-auth-saml2'
         role:
           $ref: '#/components/schemas/UserRole'
         adminFlags:
@@ -8947,7 +8947,7 @@ components:
           description: Moderation response to send to the user
         preventEmailDelivery:
           type: boolean
-          description: Set it to true if you don't want PeerTube to send an email to the user
+          description: Set it to true if you don't want retro3 to send an email to the user
       required:
         - moderationResponse
 
@@ -9433,7 +9433,7 @@ components:
 
             - `17` NEW_PLUGIN_VERSION
 
-            - `18` NEW_PEERTUBE_VERSION
+            - `18` NEW_RETRO3_VERSION
         read:
           type: boolean
         video:
@@ -9545,7 +9545,7 @@ components:
       properties:
         name:
           type: string
-          example: peertube-plugin-auth-ldap
+          example: retro3-plugin-auth-ldap
         type:
           type: integer
           description: >
@@ -9565,7 +9565,7 @@ components:
           type: boolean
         uninstalled:
           type: boolean
-        peertubeEngine:
+        retro3Engine:
           type: string
           example: 2.2.0
         description:
@@ -9573,7 +9573,7 @@ components:
         homepage:
           type: string
           format: url
-          example: https://framagit.org/framasoft/peertube/official-plugins/tree/master/peertube-plugin-auth-ldap
+          example: https://framagit.org/framasoft/retro3/official-plugins/tree/master/retro3-plugin-auth-ldap
         settings:
           type: object
           additionalProperties: true

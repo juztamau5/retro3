@@ -1,4 +1,4 @@
-import { VideoInclude, VideoIncludeType } from '@peertube/peertube-models'
+import { VideoInclude, VideoIncludeType } from '@retroai/retro3-models'
 import { AccountBlocklistModel } from '@server/models/account/account-blocklist.js'
 import { AccountModel } from '@server/models/account/account.js'
 import { ActorImageModel } from '@server/models/actor/actor-image.js'

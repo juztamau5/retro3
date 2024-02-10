@@ -1,4 +1,4 @@
-import { arrayify } from '@peertube/peertube-core-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   RunnerJobLiveRTMPHLSTranscodingPrivatePayload,
@@ -7,7 +7,7 @@ import {
   RunnerJobSuccessBody,
   RunnerJobUpdateBody,
   ServerErrorCode
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { exists, isUUIDValid } from '@server/helpers/custom-validators/misc.js'
 import {
   isRunnerJobAbortReasonValid,

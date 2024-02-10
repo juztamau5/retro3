@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResultList, VideoRedundanciesTarget, VideoRedundancy } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoRedundanciesTarget, VideoRedundancy } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class RedundancyCommand extends AbstractCommand {

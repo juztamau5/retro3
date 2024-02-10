@@ -7,7 +7,7 @@ import { encode as magnetUriEncode } from 'magnet-uri'
 import parseTorrent from 'parse-torrent'
 import { dirname, join } from 'path'
 import { pipeline } from 'stream'
-import { promisify2 } from '@peertube/peertube-core-utils'
+import { promisify2 } from '@retroai/retro3-core-utils'
 import { isArray } from '@server/helpers/custom-validators/misc.js'
 import { WEBSERVER } from '@server/initializers/constants.js'
 import { generateTorrentFileName } from '@server/lib/paths.js'
@@ -15,7 +15,7 @@ import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { MVideoFile, MVideoFileRedundanciesOpt } from '@server/types/models/video/video-file.js'
 import { MStreamingPlaylistVideo } from '@server/types/models/video/video-streaming-playlist.js'
 import { MVideo } from '@server/types/models/video/video.js'
-import { sha1 } from '@peertube/peertube-node-utils'
+import { sha1 } from '@retroai/retro3-node-utils'
 import { CONFIG } from '../initializers/config.js'
 import { logger } from './logger.js'
 import { generateVideoImportTmpPath } from './utils.js'
@@ -114,7 +114,7 @@ async function createTorrentAndSetInfoHashFromPath (
   const options = {
     // Keep the extname, it's used by the client to stream the file inside a web browser
     name: buildInfoName(video, videoFile),
-    createdBy: 'PeerTube',
+    createdBy: 'retro3',
     announceList: buildAnnounceList(),
     urlList: buildUrlList(video, videoFile)
   }

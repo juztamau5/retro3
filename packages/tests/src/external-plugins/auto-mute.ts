@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { MockBlocklist } from '../shared/mock-servers/index.js'
 
 describe('Official plugin auto-mute', function () {
   const autoMuteListPath = '/plugins/auto-mute/router/api/v1/mute-list'
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let blocklistServer: MockBlocklist
   let port: number
 
@@ -27,7 +27,7 @@ describe('Official plugin auto-mute', function () {
     await setAccessTokensToServers(servers)
 
     for (const server of servers) {
-      await server.plugins.install({ npmName: 'peertube-plugin-auto-mute' })
+      await server.plugins.install({ npmName: 'retro3-plugin-auto-mute' })
     }
 
     blocklistServer = new MockBlocklist()
@@ -41,7 +41,7 @@ describe('Official plugin auto-mute', function () {
 
   it('Should update plugin settings', async function () {
     await servers[0].plugins.updateSettings({
-      npmName: 'peertube-plugin-auto-mute',
+      npmName: 'retro3-plugin-auto-mute',
       settings: {
         'blocklist-urls': `http://127.0.0.1:${port}/blocklist`,
         'check-seconds-interval': 1
@@ -159,7 +159,7 @@ describe('Official plugin auto-mute', function () {
 
   it('Should enable auto mute list', async function () {
     await servers[0].plugins.updateSettings({
-      npmName: 'peertube-plugin-auto-mute',
+      npmName: 'retro3-plugin-auto-mute',
       settings: {
         'blocklist-urls': '',
         'check-seconds-interval': 1,
@@ -178,7 +178,7 @@ describe('Official plugin auto-mute', function () {
     this.timeout(20000)
 
     await servers[1].plugins.updateSettings({
-      npmName: 'peertube-plugin-auto-mute',
+      npmName: 'retro3-plugin-auto-mute',
       settings: {
         'blocklist-urls': 'http://' + servers[0].host + autoMuteListPath,
         'check-seconds-interval': 1,

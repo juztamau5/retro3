@@ -2,7 +2,7 @@ import { generateMagnetUri } from '@server/helpers/webtorrent.js'
 import { tracer } from '@server/lib/opentelemetry/tracing.js'
 import { getLocalVideoFileMetadataUrl } from '@server/lib/video-urls.js'
 import { VideoViewsManager } from '@server/lib/views/video-views-manager.js'
-import { uuidToShort } from '@peertube/peertube-node-utils'
+import { uuidToShort } from '@retroai/retro3-node-utils'
 import {
   Video,
   VideoAdditionalAttributes,
@@ -11,7 +11,7 @@ import {
   VideoInclude,
   VideosCommonQueryAfterSanitize,
   VideoStreamingPlaylist
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { isArray } from '../../../helpers/custom-validators/misc.js'
 import { VIDEO_CATEGORIES, VIDEO_LANGUAGES, VIDEO_LICENCES, VIDEO_PRIVACIES, VIDEO_STATES } from '../../../initializers/constants.js'
 import { MServer, MStreamingPlaylistRedundanciesOpt, MVideoFormattable, MVideoFormattableDetails } from '../../../types/models/index.js'
@@ -49,7 +49,7 @@ export function guessAdditionalAttributesFromQuery (query: VideosCommonQueryAfte
 // ---------------------------------------------------------------------------
 
 export function videoModelToFormattedJSON (video: MVideoFormattable, options: VideoFormattingJSONOptions = {}): Video {
-  const span = tracer.startSpan('peertube.VideoModel.toFormattedJSON')
+  const span = tracer.startSpan('retro3.VideoModel.toFormattedJSON')
 
   const userHistory = isArray(video.UserVideoHistories)
     ? video.UserVideoHistories[0]
@@ -123,7 +123,7 @@ export function videoModelToFormattedJSON (video: MVideoFormattable, options: Vi
 }
 
 export function videoModelToFormattedDetailsJSON (video: MVideoFormattableDetails): VideoDetails {
-  const span = tracer.startSpan('peertube.VideoModel.toFormattedDetailsJSON')
+  const span = tracer.startSpan('retro3.VideoModel.toFormattedDetailsJSON')
 
   const videoJSON = video.toFormattedJSON({
     completeDescription: true,

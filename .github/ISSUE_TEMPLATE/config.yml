@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: 🤷💻🤦 Question/Forum
-    url: https://framacolibri.org/c/peertube
+    url: https://framacolibri.org/c/retro3
     about: You can ask and answer other questions here
   - name: 💬 Matrix
-    url: https://matrix.to/#/#peertube:matrix.org
+    url: https://matrix.to/#/#retro3:matrix.org
     about: Chat with us via Matrix for quick Q/A here
   - name: 💬 IRC
-    url: https://web.libera.chat/#peertube
+    url: https://web.libera.chat/#retro3
     about: Chat with us via IRC for quick Q/A here

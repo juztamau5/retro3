@@ -1,9 +1,9 @@
 {
-  "name": "@peertube/peertube-types-generator",
+  "name": "@retroai/retro3-types-generator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "dependencies": {
-    "@peertube/peertube-core-utils": "*"
+    "@retroai/retro3-core-utils": "*"
   }
 }

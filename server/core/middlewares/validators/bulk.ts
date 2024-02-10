@@ -1,6 +1,6 @@
 import express from 'express'
 import { body } from 'express-validator'
-import { BulkRemoveCommentsOfBody, HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { BulkRemoveCommentsOfBody, HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import { isBulkRemoveCommentsOfScopeValid } from '@server/helpers/custom-validators/bulk.js'
 import { areValidationErrors, doesAccountNameWithHostExist } from './shared/index.js'
 

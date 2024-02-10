@@ -1,4 +1,4 @@
-import { CacheFileObject } from '@peertube/peertube-models'
+import { CacheFileObject } from '@retroai/retro3-models'
 import { exists, isDateValid } from '../misc.js'
 import { isActivityPubUrlValid } from './misc.js'
 import { isRemoteVideoUrlValid } from './videos.js'

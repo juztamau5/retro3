@@ -23,21 +23,21 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: peertube
+          POSTGRES_USER: retro3
           POSTGRES_HOST_AUTH_METHOD: trust
 
     env:
-      PGUSER: peertube
+      PGUSER: retro3
       PGHOST: localhost
 
     steps:
       - uses: actions/checkout@v3
 
-      - uses: './.github/actions/reusable-prepare-peertube-build'
+      - uses: './.github/actions/reusable-prepare-retro3-build'
         with:
           node-version: '18.x'
 
-      - uses: './.github/actions/reusable-prepare-peertube-run'
+      - uses: './.github/actions/reusable-prepare-retro3-run'
 
       - name: Build
         run: |
@@ -82,7 +82,7 @@ jobs:
         uses: './.github/actions/reusable-deploy'
         with:
           source: benchmark.json build-time.json startup-time.json
-          destination: peertube-stats
+          destination: retro3-stats
           knownHosts: ${{ secrets.STATS_DEPLOYEMENT_KNOWN_HOSTS }}
           deployKey: ${{ secrets.STATS_DEPLOYEMENT_KEY }}
           deployUser: ${{ secrets.STATS_DEPLOYEMENT_USER }}

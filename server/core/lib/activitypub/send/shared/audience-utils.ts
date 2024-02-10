@@ -4,7 +4,7 @@ import { ActorModel } from '@server/models/actor/actor.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { VideoShareModel } from '@server/models/video/video-share.js'
 import { MActorFollowersUrl, MActorUrl, MCommentOwner, MCommentOwnerVideo, MVideoId } from '@server/types/models/index.js'
-import { ActivityAudience } from '@peertube/peertube-models'
+import { ActivityAudience } from '@retroai/retro3-models'
 
 function getOriginVideoAudience (accountActor: MActorUrl, actorsInvolvedInVideo: MActorFollowersUrl[] = []): ActivityAudience {
   return {

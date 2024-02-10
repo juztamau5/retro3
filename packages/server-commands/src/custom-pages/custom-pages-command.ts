@@ -1,4 +1,4 @@
-import { CustomPage, HttpStatusCode } from '@peertube/peertube-models'
+import { CustomPage, HttpStatusCode } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class CustomPagesCommand extends AbstractCommand {

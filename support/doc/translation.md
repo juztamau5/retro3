@@ -4,7 +4,7 @@ We use [Weblate](https://weblate.org) as translation platform.
 Please do not edit translation files directly from Git, you have to use Weblate!
 
 If you don't see your locale in the platform you can add it directly in the Weblate interface.
-Then, if you think there are enough translated strings, please [create an issue](https://github.com/Chocobozzz/PeerTube/issues) so we add the new locale in PeerTube!
+Then, if you think there are enough translated strings, please [create an issue](https://github.com/juztamau5/retro3/issues) so we add the new locale in retro3!
 
 
 ## How to
@@ -12,7 +12,7 @@ Then, if you think there are enough translated strings, please [create an issue]
  * Create an account: https://weblate.framasoft.org/accounts/register/
  * Validate your email and follow the link sent
  * Create your password (keep the `Current password` field empty) and setup your account
- * Go to the PeerTube page https://weblate.framasoft.org/projects/peertube/
+ * Go to the retro3 page https://weblate.framasoft.org/projects/retro3/
  * Choose the file and the locale you want to translate
 
 
@@ -22,7 +22,7 @@ There are 4 files:
  * **angular**: contains client strings
  * **player**: contains player strings.
  Most of the strings come from VideoJS, so you can help yourself by using [video.js JSON files](https://github.com/videojs/video.js/tree/master/lang)
- * **server**: contains server strings (privacies, licences...) and iso639 (languages) strings used by PeerTube to describe the audio language of a particular video.
+ * **server**: contains server strings (privacies, licences...) and iso639 (languages) strings used by retro3 to describe the audio language of a particular video.
  It's the reason why these strings should be translated too. There are many strings so do not hesitate to translate only main audio languages.
 
 

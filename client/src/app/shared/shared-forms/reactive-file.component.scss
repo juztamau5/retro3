@@ -7,7 +7,7 @@
   align-items: center;
 
   .button-file {
-    @include peertube-button-file(auto);
+    @include retro3-button-file(auto);
 
     &.with-icon {
       @include button-with-icon;

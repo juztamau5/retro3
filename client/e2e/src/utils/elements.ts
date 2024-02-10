@@ -1,5 +1,5 @@
 async function getCheckbox (name: string) {
-  const input = $(`my-peertube-checkbox input[id=${name}]`)
+  const input = $(`my-retro3-checkbox input[id=${name}]`)
   await input.waitForExist()
 
   return input.parentElement()

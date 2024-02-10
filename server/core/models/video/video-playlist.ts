@@ -1,4 +1,4 @@
-import { buildPlaylistEmbedPath, buildPlaylistWatchPath, pick } from '@peertube/peertube-core-utils'
+import { buildPlaylistEmbedPath, buildPlaylistWatchPath, pick } from '@retroai/retro3-core-utils'
 import {
   ActivityIconObject,
   PlaylistObject,
@@ -7,9 +7,9 @@ import {
   VideoPlaylistType,
   type VideoPlaylistPrivacyType,
   type VideoPlaylistType_Type
-} from '@peertube/peertube-models'
-import { buildUUID, uuidToShort } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { buildUUID, uuidToShort } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { activityPubCollectionPagination } from '@server/lib/activitypub/collection.js'
 import { MAccountId, MChannelId } from '@server/types/models/index.js'
 import { join } from 'path'

@@ -49,7 +49,7 @@
   }
 }
 
-@mixin peertube-word-wrap ($with-hyphen: true) {
+@mixin retro3-word-wrap ($with-hyphen: true) {
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -86,7 +86,7 @@
   line-height: $font-size + math.round(math.div($font-size, 2));
 }
 
-@mixin peertube-input-text($width, $font-size: $form-input-font-size) {
+@mixin retro3-input-text($width, $font-size: $form-input-font-size) {
   @include rounded-line-height-1-5($font-size);
 
   font-size: $font-size;
@@ -113,8 +113,8 @@
   }
 }
 
-@mixin peertube-textarea ($width, $height) {
-  @include peertube-input-text($width);
+@mixin retro3-textarea ($width, $height) {
+  @include retro3-input-text($width);
 
   color: pvar(--textareaForegroundColor) !important;
   background-color: pvar(--textareaBackgroundColor) !important;
@@ -248,7 +248,7 @@
   }
 }
 
-@mixin peertube-button {
+@mixin retro3-button {
   @include rounded-line-height-1-5($button-font-size);
 
   padding: 4px 13px;
@@ -270,7 +270,7 @@
   }
 }
 
-@mixin peertube-button-big {
+@mixin retro3-button-big {
   height: auto;
   padding: 10px 25px;
   font-size: 18px;
@@ -282,23 +282,23 @@
   border-radius: 3px !important;
 }
 
-@mixin peertube-button-link {
+@mixin retro3-button-link {
   @include disable-default-a-behaviour;
-  @include peertube-button;
+  @include retro3-button;
 
   display: inline-block;
 }
 
-@mixin peertube-button-big-link {
+@mixin retro3-button-big-link {
   @include disable-default-a-behaviour;
-  @include peertube-button-big;
+  @include retro3-button-big;
 
   display: inline-block;
 }
 
-@mixin peertube-button-outline {
+@mixin retro3-button-outline {
   @include disable-default-a-behaviour;
-  @include peertube-button;
+  @include retro3-button;
 
   display: inline-block;
   border: 1px solid;
@@ -314,7 +314,7 @@
   }
 }
 
-@mixin peertube-file {
+@mixin retro3-file {
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -336,9 +336,9 @@
   }
 }
 
-@mixin peertube-button-file ($width) {
-  @include peertube-file;
-  @include peertube-button;
+@mixin retro3-button-file ($width) {
+  @include retro3-file;
+  @include retro3-button;
 
   width: $width;
 }
@@ -361,7 +361,7 @@
   }
 }
 
-@mixin peertube-select-container ($width) {
+@mixin retro3-select-container ($width) {
   padding: 0;
   margin: 0;
   width: $width;
@@ -432,7 +432,7 @@
     }
   }
 
-  &.peertube-select-button {
+  &.retro3-select-button {
     @include grey-button;
 
     select {
@@ -447,7 +447,7 @@
 }
 
 // Thanks: https://codepen.io/manabox/pen/raQmpL
-@mixin peertube-radio-container {
+@mixin retro3-radio-container {
   label {
     font-size: $form-input-font-size;
   }
@@ -513,7 +513,7 @@
   }
 }
 
-@mixin peertube-checkbox ($border-width) {
+@mixin retro3-checkbox ($border-width) {
   opacity: 0;
   position: absolute;
 

@@ -1,26 +1,26 @@
-# PeerTube Embed API
+# Retro3 Embed API
 
-PeerTube lets you embed videos and programmatically control their playback. This documentation covers how to interact with the PeerTube Embed API.
+retro3 lets you embed videos and programmatically control their playback. This documentation covers how to interact with the Retro3 Embed API.
 
 ## Playground
 
-Any PeerTube embed URL (ie `https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a`) can be viewed as an embedding playground which
-allows you to test various aspects of PeerTube embeds. Simply replace `/embed` with `/test-embed` and visit the URL in a browser.
+Any retro3 embed URL (ie `https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a`) can be viewed as an embedding playground which
+allows you to test various aspects of retro3 embeds. Simply replace `/embed` with `/test-embed` and visit the URL in a browser.
 For instance, the playground URL for the above embed URL is `https://my-instance.example.com/videos/test-embed/52a10666-3a18-4e73-93da-e8d3c12c305a`.
 
 ## Quick Start
 
-Given an existing PeerTube embed `<iframe>` **with API enabled** (`https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a?api=1`),
-one can use the PeerTube Embed API to control it by first including the library. You can include it via Yarn with:
+Given an existing retro3 embed `<iframe>` **with API enabled** (`https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a?api=1`),
+one can use the Retro3 Embed API to control it by first including the library. You can include it via Yarn with:
 
 ```
-yarn add @peertube/embed-api
+yarn add @retroai/embed-api
 ```
 
-Now just use the `PeerTubePlayer` class exported by the module:
+Now just use the `Retro3Player` class exported by the module:
 
 ```typescript
-import { PeerTubePlayer } from '@peertube/embed-api.js'
+import { Retro3Player } from '@retroai/embed-api.js'
 
 ...
 ```
@@ -28,10 +28,10 @@ import { PeerTubePlayer } from '@peertube/embed-api.js'
 Or use the minified build from NPM CDN in your HTML file:
 
 ```
-<script src="https://unpkg.com/@peertube/embed-api/build/player.min.js"></script>
+<script src="https://unpkg.com/@retroai/embed-api/build/player.min.js"></script>
 
 <script>
-  const PeerTubePlayer = window['PeerTubePlayer']
+  const Retro3Player = window['Retro3Player']
 
   ...
 </script>
@@ -40,7 +40,7 @@ Or use the minified build from NPM CDN in your HTML file:
 Then you can instantiate the player:
 
 ```typescript
-let player = new PeerTubePlayer(document.querySelector('iframe'))
+let player = new Retro3Player(document.querySelector('iframe'))
 await player.ready // wait for the player to be ready
 
 // now you can use it!
@@ -51,8 +51,8 @@ player.pause()
 
 ## Embed URL parameters
 
-You can customize PeerTube player by specifying URL query parameters.
-For example `https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a?start=1s&stop=18s&loop=1&autoplay=1&muted=1&warningTitle=0&controlBar=0&peertubeLink=0&p2p=0`
+You can customize retro3 player by specifying URL query parameters.
+For example `https://my-instance.example.com/videos/embed/52a10666-3a18-4e73-93da-e8d3c12c305a?start=1s&stop=18s&loop=1&autoplay=1&muted=1&warningTitle=0&controlBar=0&retro3Link=0&p2p=0`
 
 ### start
 
@@ -67,7 +67,7 @@ Value must be raw seconds or a duration (`54s`)
 ### controls
 
 Mimics video HTML element `controls` attribute, meaning that all controls (including big play button, control bar, etc.) will be removed.
-It can be useful if you want to have a full control of the PeerTube player.
+It can be useful if you want to have a full control of the retro3 player.
 
 Value must be `0` or `1`.
 
@@ -77,9 +77,9 @@ Hide control bar when the video is played.
 
 Value must be `0` or `1`.
 
-### peertubeLink
+### retro3Link
 
-Hide PeerTube instance link in control bar.
+Hide retro3 instance link in control bar.
 
 Value must be `0` or `1`.
 
@@ -156,9 +156,9 @@ Value must be `0` or `1`.
 
 ### waitPasswordFromEmbedAPI
 
-**PeerTube >= 6.0**
+**retro3 >= 6.0**
 
-If the video requires a password, PeerTube will wait a password provided by `setVideoPassword` method before loading the video.
+If the video requires a password, retro3 will wait a password provided by `setVideoPassword` method before loading the video.
 
 Until you provide a password, `player.ready` is not resolved.
 
@@ -192,9 +192,9 @@ Add a listener for a specific event. See below for the available events.
 
 Remove a listener.
 
-### `getResolutions() : Promise<PeerTubeResolution[]>`
+### `getResolutions() : Promise<retro3Resolution[]>`
 
-Get the available resolutions. A `PeerTubeResolution` looks like:
+Get the available resolutions. A `retro3Resolution` looks like:
 
 ```json
 {
@@ -255,7 +255,7 @@ Get current position in playlist (starts from 1).
 
 ### `setVideoPassword(): Promise<void>`
 
-**PeerTube >= 6.0**
+**retro3 >= 6.0**
 
 Set the video password so the user doesn't have to manually fill it.
 `waitPasswordFromEmbedAPI=1` is required in embed URL.
@@ -279,7 +279,7 @@ The parameter of the callback will resemble:
 }
 ```
 
-`duration` field and `ended` `playbackState` are available in PeerTube >= 2.2.
+`duration` field and `ended` `playbackState` are available in retro3 >= 2.2.
 
 The `volume` field contains the volume from `0` (silent) to `1` (full volume).
 The `playbackState` can be `unstarted`, `playing`, `paused` or `ended`. More states may be added later.

@@ -1,4 +1,4 @@
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { VideoViewModel } from '@server/models/view/video-view.js'
 import { logger } from '../../../helpers/logger.js'
 import { VideoModel } from '../../../models/video/video.js'

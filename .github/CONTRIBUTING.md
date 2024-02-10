@@ -1,4 +1,4 @@
-# Welcome to the contributing guide for PeerTube
+# Welcome to the contributing guide for retro3
 
 Interested in contributing? Awesome!
 
@@ -21,13 +21,13 @@ Interested in contributing? Awesome!
   - [RTL layout](#rtl-layout)
   - [Testing](#testing)
     - [Unit/integration tests](#unitintegration-tests)
-    - [Play with a federation of PeerTube servers](#play-with-a-federation-of-peertube-servers)
+    - [Play with a federation of retro3 servers](#play-with-a-federation-of-retro3-servers)
   - [Emails](#emails)
   - [OpenAPI documentation](#openapi-documentation)
   - [Environment variables](#environment-variables)
   - [Generate/pull translations](#generatepull-translations)
-  - [Release PeerTube](#release-peertube)
-  - [PeerTube packages](#peertube-packages)
+  - [Release retro3](#release-retro3)
+  - [retro3 packages](#retro3-packages)
   - [CI](#ci)
   - [Monitoring](#monitoring)
   - [Test live stream](#test-live-stream)
@@ -37,12 +37,12 @@ Interested in contributing? Awesome!
 
 ## Translate
 
-You can help us to translate the PeerTube interface to many languages! See [the documentation](/support/doc/translation.md) to know how.
+You can help us to translate the retro3 interface to many languages! See [the documentation](/support/doc/translation.md) to know how.
 
 
 ## Give your feedback
 
-You don't need to know how to code to start contributing to PeerTube! Other
+You don't need to know how to code to start contributing to retro3! Other
 contributions are very valuable too, among which: you can test the software and
 report bugs, you can give feedback on potential bugs, features that you are
 interested in, user interface, design, decentralized architecture...
@@ -55,13 +55,13 @@ demonstrations.
 
 ### User documentation
 
-The official user documentation is available on https://docs.joinpeertube.org/
+The official user documentation is available on https://docs.joinretro3.org/
 
 You can update it by writing markdown files in the following repository: https://framagit.org/framasoft/peertube/documentation/
 
 ### REST API documentation
 
-The [REST API documentation](https://docs.joinpeertube.org/api-rest-reference.html) is generated from `support/doc/api/openapi.yaml` file.
+The [REST API documentation](https://docs.joinretro3.org/api-rest-reference.html) is generated from `support/doc/api/openapi.yaml` file.
 To quickly get a preview of your changes, you can generate the documentation *on the fly* using the following command:
 
 ```
@@ -69,18 +69,18 @@ npx @redocly/cli preview-docs ./support/doc/api/openapi.yaml
 ```
 
 Some hints:
- * Routes are defined in [/server/core/controllers/](https://github.com/Chocobozzz/PeerTube/tree/develop/server/core/controllers) directory
- * Parameters validators are defined in [/server/core/middlewares/validators](https://github.com/Chocobozzz/PeerTube/tree/develop/server/core/middlewares/validators) directory
- * Models sent/received by the controllers are defined in [/packages/models](https://github.com/Chocobozzz/PeerTube/tree/develop/packages/models) directory
+ * Routes are defined in [/server/core/controllers/](https://github.com/juztamau5/retro3/tree/develop/server/core/controllers) directory
+ * Parameters validators are defined in [/server/core/middlewares/validators](https://github.com/juztamau5/retro3/tree/develop/server/core/middlewares/validators) directory
+ * Models sent/received by the controllers are defined in [/packages/models](https://github.com/juztamau5/retro3/tree/develop/packages/models) directory
 
 
 ## Improve the website
 
-PeerTube's website is [joinpeertube.org](https://joinpeertube.org), where people can learn about the project and how it works – note that it is not a PeerTube instance, but rather the project's homepage.
+retro3's website is [joinretro3.org](https://joinretro3.org), where people can learn about the project and how it works – note that it is not a retro3 instance, but rather the project's homepage.
 
 You can help us improve it too!
 
-It is not hosted on GitHub but on [Framasoft](https://framasoft.org/)'s own [GitLab](https://about.gitlab.com/) instance, [FramaGit](https://framagit.org): https://framagit.org/framasoft/peertube/joinpeertube
+It is not hosted on GitHub but on [Framasoft](https://framasoft.org/)'s own [GitLab](https://about.gitlab.com/) instance, [FramaGit](https://framagit.org): https://framagit.org/framasoft/peertube/joinretro3
 
 
 ## Develop
@@ -103,14 +103,14 @@ to install the dependencies.
 1) Fork the GitHub repository.
 1) Run the following commands.
 ```
-git clone https://github.com/Chocobozzz/PeerTube
-cd PeerTube
-git remote add me git@github.com:YOUR_GITHUB_USERNAME/PeerTube.git
+git clone https://github.com/juztamau5/retro3
+cd retro3
+git remote add me git@github.com:YOUR_GITHUB_USERNAME/retro3.git
 yarn install --pure-lockfile
 ```
 
 Note that development is done on the `develop` branch. If you want to hack on
-PeerTube, you should switch to that branch. Also note that you have to repeat
+retro3, you should switch to that branch. Also note that you have to repeat
 the `yarn install --pure-lockfile` command.
 
 When you create a new branch you should also tell to use your repo for upload
@@ -121,32 +121,32 @@ git push --set-upstream me <your branch name>
 
 Then, create a postgres database and user with the values set in the
 `config/default.yaml` file. For instance, if you do not change the values
-there, the following commands would create a new database called `peertube_dev`
-and a postgres user called `peertube` with password `peertube`:
+there, the following commands would create a new database called `retro3_dev`
+and a postgres user called `retro3` with password `retro3`:
 
 ```
-# sudo -u postgres createuser -P peertube
-Enter password for new role: peertube
-# sudo -u postgres createdb -O peertube peertube_dev
+# sudo -u postgres createuser -P retro3
+Enter password for new role: retro3
+# sudo -u postgres createdb -O retro3 retro3_dev
 ```
 
-Then enable extensions PeerTube needs:
+Then enable extensions retro3 needs:
 
 ```
-sudo -u postgres psql -c "CREATE EXTENSION pg_trgm;" peertube_dev
-sudo -u postgres psql -c "CREATE EXTENSION unaccent;" peertube_dev
+sudo -u postgres psql -c "CREATE EXTENSION pg_trgm;" retro3_dev
+sudo -u postgres psql -c "CREATE EXTENSION unaccent;" retro3_dev
 ```
 
-PeerTube also requires a running redis server, no special setup is needed for
+retro3 also requires a running redis server, no special setup is needed for
 this.
 
 In dev mode, administrator username is **root** and password is **test**.
 
 ### Online development
 
-You can get a complete PeerTube development setup with Gitpod, a free one-click online IDE for GitHub:
+You can get a complete retro3 development setup with Gitpod, a free one-click online IDE for GitHub:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Chocobozzz/PeerTube)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/juztamau5/retro3)
 
 ### Server side
 
@@ -161,7 +161,7 @@ change, these are automatically recompiled and the server will automatically
 restart.
 
 More detailed documentation is available:
-  * [Server code/architecture](https://docs.joinpeertube.org/contribute/architecture#server)
+  * [Server code/architecture](https://docs.joinretro3.org/contribute/architecture#server)
   * [Server development (adding a new feature...)](/support/doc/development/server.md)
 
 ### Client side
@@ -177,7 +177,7 @@ Client files are automatically compiled on change, and the web browser will
 reload them automatically thanks to hot module replacement.
 
 More detailed documentation is available:
-  * [Client code/architecture](https://docs.joinpeertube.org/contribute/architecture#client)
+  * [Client code/architecture](https://docs.joinretro3.org/contribute/architecture#client)
 
 
 ### Client and server side
@@ -193,8 +193,8 @@ npm run dev
 ### Embed
 
 The embed is a standalone application built using Webpack.
-The generated files (HTML entrypoint and multiple JS and CSS files) are served by the PeerTube server (behind `localhost:9000/videos/embed/:videoUUID` or `localhost:9000/video-playlists/embed/:playlistUUID`).
-The following command will compile embed files and run the PeerTube server:
+The generated files (HTML entrypoint and multiple JS and CSS files) are served by the retro3 server (behind `localhost:9000/videos/embed/:videoUUID` or `localhost:9000/video-playlists/embed/:playlistUUID`).
+The following command will compile embed files and run the retro3 server:
 
 ```
 npm run dev:embed
@@ -217,14 +217,14 @@ as expected and respect the syntax conventions. They will run upon PR submission
 
 See the [dedicated documentation](/support/doc/development/tests.md) to run tests locally.
 
-#### Play with a federation of PeerTube servers
+#### Play with a federation of retro3 servers
 
 Create a PostgreSQL user **with the same name as your username** in order to avoid using the *postgres* user.
 Then, we can create the databases (if they don't already exist):
 
 ```
 sudo -u postgres createuser you_username --createdb --superuser
-createdb -O peertube peertube_test{1,2,3}
+createdb -O retro3 retro3_test{1,2,3}
 ```
 
 Build the application and flush the old tests data:
@@ -249,39 +249,39 @@ Instance configurations are in `config/test-{1,2,3}.yaml`.
 
 ### Emails
 
-To test emails with PeerTube:
+To test emails with retro3:
 
  * Run [mailslurper](http://mailslurper.com/)
- * Run PeerTube using mailslurper SMTP port: `NODE_CONFIG='{ "smtp": { "hostname": "localhost", "port": 2500, "tls": false } }' NODE_ENV=dev node dist/server`
+ * Run retro3 using mailslurper SMTP port: `NODE_CONFIG='{ "smtp": { "hostname": "localhost", "port": 2500, "tls": false } }' NODE_ENV=dev node dist/server`
 
 ### Environment variables
 
-PeerTube can be configured using environment variables.
-See the list on https://docs.joinpeertube.org/maintain/configuration#environment-variables
+retro3 can be configured using environment variables.
+See the list on https://docs.joinretro3.org/maintain/configuration#environment-variables
 
 Additionally to these ones, we provide some environment for dev/test purpose:
 
- * `PRODUCTION_CONSTANTS=true`: in `NODE_ENV=dev` or `NODE_ENV=test` PeerTube customizes some constants. To prevent this behaviour, you can set `PRODUCTION_CONSTANTS` env to
+ * `PRODUCTION_CONSTANTS=true`: in `NODE_ENV=dev` or `NODE_ENV=test` retro3 customizes some constants. To prevent this behaviour, you can set `PRODUCTION_CONSTANTS` env to
  `true`
- * `PEERTUBE_LOCAL_CONFIG`: directory to find the local configuration file (used by web admin)
+ * `RETRO3_LOCAL_CONFIG`: directory to find the local configuration file (used by web admin)
  * `NODE_DB_LOG=false`: disable SQL request logging
 
 ### Generate/pull translations
 
-See the [dedicated documentation](/support/doc/development/localization.md) to update PeerTube translations from Weblate or to support a new locale.
+See the [dedicated documentation](/support/doc/development/localization.md) to update retro3 translations from Weblate or to support a new locale.
 
-### Release PeerTube
+### Release retro3
 
-See the [dedicated documentation](/support/doc/development/release.md) to release a new version of PeerTube.
+See the [dedicated documentation](/support/doc/development/release.md) to release a new version of retro3.
 
-### PeerTube packages
+### retro3 packages
 
-This repository also contains other packages/libraries than PeerTube (embed API, PeerTube types...).
+This repository also contains other packages/libraries than retro3 (embed API, retro3 types...).
 You can see the list on the [dedicated documentation](/support/doc/development/lib.md).
 
 ### CI
 
-PeerTube uses GitHub actions to run tests every time a commit is pushed or a PR is opened.
+retro3 uses GitHub actions to run tests every time a commit is pushed or a PR is opened.
 You can find more information about these tasks on the [dedicated documentation](/support/doc/development/ci.md).
 
 ### Monitoring
@@ -291,11 +291,11 @@ To do so, see the [dedicated documentation](/support/doc/development/monitoring.
 
 ### Test live stream
 
-To easily test a live stream on PeerTube:
+To easily test a live stream on retro3:
  * Enable live support in web admin configuration
- * Create a permanent live on the PeerTube instance
+ * Create a permanent live on the retro3 instance
  * Get the **RTMP URL** and the **Live stream key**
- * Send the live stream to PeerTube using `ffmpeg` using a local video:
+ * Send the live stream to retro3 using `ffmpeg` using a local video:
 
 ```
 ffmpeg -stream_loop -1 -re -i any-video.mp4 -c copy -f flv rtmp://{RTMP URL}/live/{STREAM KEY}
@@ -303,4 +303,4 @@ ffmpeg -stream_loop -1 -re -i any-video.mp4 -c copy -f flv rtmp://{RTMP URL}/liv
 
 ## Plugins & Themes
 
-See the dedicated documentation: https://docs.joinpeertube.org/contribute/plugins
+See the dedicated documentation: https://docs.joinretro3.org/contribute/plugins

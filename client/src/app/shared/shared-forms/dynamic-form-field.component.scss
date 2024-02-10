@@ -2,7 +2,7 @@
 @use '_mixins' as *;
 
 input:not([type=submit]) {
-  @include peertube-input-text(340px);
+  @include retro3-input-text(340px);
 
   max-width: 340px;
   width: 100%;
@@ -11,13 +11,13 @@ input:not([type=submit]) {
 }
 
 textarea {
-  @include peertube-textarea(340px, 200px);
+  @include retro3-textarea(340px, 200px);
 
   display: block;
 }
 
-.peertube-select-container {
-  @include peertube-select-container(340px);
+.retro3-select-container {
+  @include retro3-select-container(340px);
 }
 
 .label-small-info {
@@ -26,7 +26,7 @@ textarea {
   font-size: 13px;
 }
 
-my-peertube-checkbox + .label-small-info {
+my-retro3-checkbox + .label-small-info {
   margin-top: 5px;
 }
 

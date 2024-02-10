@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { getAllFiles } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, UserRole, VideoDetails, VideoPrivacy } from '@peertube/peertube-models'
+import { getAllFiles } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, UserRole, VideoDetails, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos files', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let userToken: string
   let moderatorToken: string

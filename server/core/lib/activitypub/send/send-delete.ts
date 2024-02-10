@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize'
 import { getServerActor } from '@server/models/application/application.js'
-import { ActivityAudience, ActivityDelete } from '@peertube/peertube-models'
+import { ActivityAudience, ActivityDelete } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { ActorModel } from '../../../models/actor/actor.js'
 import { VideoCommentModel } from '../../../models/video/video-comment.js'

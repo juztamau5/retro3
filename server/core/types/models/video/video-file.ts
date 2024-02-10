@@ -1,4 +1,4 @@
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { VideoFileModel } from '../../../models/video/video-file.js'
 import { MVideo, MVideoUUID } from './video.js'
 import { MVideoRedundancy, MVideoRedundancyFileUrl } from './video-redundancy.js'

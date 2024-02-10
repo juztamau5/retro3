@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResultList, VideoImport, VideoImportCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoImport, VideoImportCreate } from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

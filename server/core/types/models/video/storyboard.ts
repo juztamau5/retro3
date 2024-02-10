@@ -1,5 +1,5 @@
 import { StoryboardModel } from '@server/models/video/storyboard.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MVideo } from './video.js'
 
 type Use<K extends keyof StoryboardModel, M> = PickWith<StoryboardModel, K, M>

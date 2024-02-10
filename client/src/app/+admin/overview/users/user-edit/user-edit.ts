@@ -2,8 +2,8 @@ import { Directive, OnInit } from '@angular/core'
 import { ConfigService } from '@app/+admin/config/shared/config.service'
 import { AuthService, ScreenService, ServerService, User } from '@app/core'
 import { FormReactive } from '@app/shared/shared-forms'
-import { peertubeTranslate, USER_ROLE_LABELS } from '@peertube/peertube-core-utils'
-import { HTMLServerConfig, UserAdminFlag, UserRole } from '@peertube/peertube-models'
+import { retro3Translate, USER_ROLE_LABELS } from '@retroai/retro3-core-utils'
+import { HTMLServerConfig, UserAdminFlag, UserRole } from '@retroai/retro3-models'
 import { SelectOptionsItem } from '../../../../../types/select-options-item.model'
 
 @Directive()
@@ -53,12 +53,12 @@ export abstract class UserEdit extends FormReactive implements OnInit {
       .subscribe(translations => {
         if (authUser.role.id === UserRole.ADMINISTRATOR) {
           this.roles = Object.entries(USER_ROLE_LABELS)
-                .map(([ key, value ]) => ({ value: key.toString(), label: peertubeTranslate(value, translations) }))
+                .map(([ key, value ]) => ({ value: key.toString(), label: retro3Translate(value, translations) }))
           return
         }
 
         this.roles = [
-          { value: UserRole.USER.toString(), label: peertubeTranslate(USER_ROLE_LABELS[UserRole.USER], translations) }
+          { value: UserRole.USER.toString(), label: retro3Translate(USER_ROLE_LABELS[UserRole.USER], translations) }
         ]
       })
   }

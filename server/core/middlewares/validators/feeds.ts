@@ -1,6 +1,6 @@
 import express from 'express'
 import { param, query } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isValidRSSFeed } from '../../helpers/custom-validators/feeds.js'
 import { exists, isIdOrUUIDValid, isIdValid, toCompleteUUID } from '../../helpers/custom-validators/misc.js'
 import {

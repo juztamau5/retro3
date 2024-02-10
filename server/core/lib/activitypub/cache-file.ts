@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize'
 import { MActorId, MVideoRedundancy, MVideoWithAllFiles } from '@server/types/models/index.js'
-import { CacheFileObject, VideoStreamingPlaylistType } from '@peertube/peertube-models'
+import { CacheFileObject, VideoStreamingPlaylistType } from '@retroai/retro3-models'
 import { VideoRedundancyModel } from '../../models/redundancy/video-redundancy.js'
 
 async function createOrUpdateCacheFile (cacheFileObject: CacheFileObject, video: MVideoWithAllFiles, byActor: MActorId, t: Transaction) {

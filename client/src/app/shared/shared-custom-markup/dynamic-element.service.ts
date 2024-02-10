@@ -10,7 +10,7 @@ import {
   SimpleChanges,
   Type
 } from '@angular/core'
-import { objectKeysTyped } from '@peertube/peertube-core-utils'
+import { objectKeysTyped } from '@retroai/retro3-core-utils'
 
 @Injectable()
 export class DynamicElementService {

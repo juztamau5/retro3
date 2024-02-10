@@ -2,29 +2,29 @@
 
 import { expect } from 'chai'
 import { readFile } from 'fs/promises'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   RunnerJobStudioTranscodingPayload,
   VideoStudioTranscodingSuccess,
   VideoState,
   VideoStudioTask,
   VideoStudioTaskIntro
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   VideoStudioCommand,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkVideoDuration } from '@tests/shared/checks.js'
 import { checkPersistentTmpIsEmpty } from '@tests/shared/directories.js'
 
 describe('Test runner video studio transcoding', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let runnerToken: string
   let videoUUID: string
   let jobUUID: string

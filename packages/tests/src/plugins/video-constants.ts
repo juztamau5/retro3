@@ -5,14 +5,14 @@ import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
-import { HttpStatusCode, VideoPlaylistPrivacy, VideoPrivacy } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { HttpStatusCode, VideoPlaylistPrivacy, VideoPrivacy } from '@retroai/retro3-models'
 
 describe('Test plugin altering video constants', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(30000)
@@ -92,7 +92,7 @@ describe('Test plugin altering video constants', function () {
   })
 
   it('Should uninstall the plugin and reset languages, categories, licences and privacies', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-test-video-constants' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-test-video-constants' })
 
     {
       const languages = await server.videos.getLanguages()

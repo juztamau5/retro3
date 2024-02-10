@@ -3,7 +3,7 @@
 
 .delete-me {
   button {
-    @include peertube-button;
+    @include retro3-button;
     @include danger-button;
     @include disable-outline;
   }

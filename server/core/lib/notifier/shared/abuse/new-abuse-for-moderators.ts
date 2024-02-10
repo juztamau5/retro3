@@ -4,7 +4,7 @@ import { getAbuseTargetUrl } from '@server/lib/activitypub/url.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MAbuseFull, MUserDefault, MUserWithNotificationSetting, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserAbuse, UserNotificationType, UserRight } from '@peertube/peertube-models'
+import { UserAbuse, UserNotificationType, UserRight } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export type NewAbusePayload = { abuse: UserAbuse, abuseInstance: MAbuseFull, reporter: string }

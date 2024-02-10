@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { PluginPackageJSON, PluginType, PluginType_Type } from '@peertube/peertube-models'
+import { PluginPackageJSON, PluginType, PluginType_Type } from '@retroai/retro3-models'
 import { CONSTRAINTS_FIELDS } from '../../initializers/constants.js'
 import { isUrlValid } from './activitypub/misc.js'
 import { exists, isArray, isSafePath } from './misc.js'
@@ -21,7 +21,7 @@ function isNpmPluginNameValid (value: string) {
   return exists(value) &&
     validator.default.isLength(value, PLUGINS_CONSTRAINTS_FIELDS.NAME) &&
     validator.default.matches(value, /^[a-z\-._0-9]+$/) &&
-    (value.startsWith('peertube-plugin-') || value.startsWith('peertube-theme-'))
+    (value.startsWith('retro3-plugin-') || value.startsWith('retro3-theme-'))
 }
 
 function isPluginDescriptionValid (value: string) {
@@ -50,7 +50,7 @@ function isPluginStableOrUnstableVersionValid (value: string) {
 }
 
 function isPluginEngineValid (engine: any) {
-  return exists(engine) && exists(engine.peertube)
+  return exists(engine) && exists(engine.retro3)
 }
 
 function isPluginHomepage (value: string) {

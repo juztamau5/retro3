@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { ActivityAudience, ActivityDislike, ActivityLike, ActivityUndo, ActivityUndoObject, ContextType } from '@peertube/peertube-models'
+import { ActivityAudience, ActivityDislike, ActivityLike, ActivityUndo, ActivityUndoObject, ContextType } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { VideoModel } from '../../../models/video/video.js'
 import {

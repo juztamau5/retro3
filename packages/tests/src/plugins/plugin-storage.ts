@@ -4,18 +4,18 @@ import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readdir, readFile } from 'fs/promises'
 import { join } from 'path'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test plugin storage', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(30000)
@@ -50,12 +50,12 @@ describe('Test plugin storage', function () {
 
     before(function () {
       dataPath = server.servers.buildDirectory('plugins/data')
-      pluginDataPath = join(dataPath, 'peertube-plugin-test-six')
+      pluginDataPath = join(dataPath, 'retro3-plugin-test-six')
     })
 
     it('Should have created the directory on install', async function () {
       const dataPath = server.servers.buildDirectory('plugins/data')
-      const pluginDataPath = join(dataPath, 'peertube-plugin-test-six')
+      const pluginDataPath = join(dataPath, 'retro3-plugin-test-six')
 
       expect(await pathExists(dataPath)).to.be.true
       expect(await pathExists(pluginDataPath)).to.be.true
@@ -75,7 +75,7 @@ describe('Test plugin storage', function () {
     })
 
     it('Should still have the file after an uninstallation', async function () {
-      await server.plugins.uninstall({ npmName: 'peertube-plugin-test-six' })
+      await server.plugins.uninstall({ npmName: 'retro3-plugin-test-six' })
 
       const content = await getFileContent()
       expect(content).to.equal('Prince Ali')

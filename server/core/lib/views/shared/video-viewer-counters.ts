@@ -1,8 +1,8 @@
-import { buildUUID, isTestOrDevInstance, sha256 } from '@peertube/peertube-node-utils'
+import { buildUUID, isTestOrDevInstance, sha256 } from '@retroai/retro3-node-utils'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { VIEW_LIFETIME } from '@server/initializers/constants.js'
 import { sendView } from '@server/lib/activitypub/send/send-view.js'
-import { PeerTubeSocket } from '@server/lib/peertube-socket.js'
+import { Retro3Socket } from '@server/lib/retro3-socket.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideo, MVideoImmutable } from '@server/types/models/index.js'
@@ -175,7 +175,7 @@ export class VideoViewerCounters {
     const video = await VideoModel.loadImmutableAttributes(videoId)
     if (!video) return
 
-    PeerTubeSocket.Instance.sendVideoViewsUpdate(video, viewersLength)
+    Retro3Socket.Instance.sendVideoViewsUpdate(video, viewersLength)
 
     logger.debug('Video viewers update for %s is %d.', video.url, viewersLength, lTags())
   }

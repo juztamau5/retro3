@@ -1,4 +1,4 @@
-import { ContactForm, HttpStatusCode } from '@peertube/peertube-models'
+import { ContactForm, HttpStatusCode } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class ContactFormCommand extends AbstractCommand {

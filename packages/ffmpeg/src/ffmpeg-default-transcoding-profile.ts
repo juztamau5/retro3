@@ -1,5 +1,5 @@
 import { FfprobeData } from 'fluent-ffmpeg'
-import { getAverageTheoreticalBitrate, getMaxTheoreticalBitrate, getMinTheoreticalBitrate } from '@peertube/peertube-core-utils'
+import { getAverageTheoreticalBitrate, getMaxTheoreticalBitrate, getMinTheoreticalBitrate } from '@retroai/retro3-core-utils'
 import {
   buildStreamSuffix,
   ffprobePromise,
@@ -9,8 +9,8 @@ import {
   getVideoStreamBitrate,
   getVideoStreamDimensionsInfo,
   getVideoStreamFPS
-} from '@peertube/peertube-ffmpeg'
-import { EncoderOptionsBuilder, EncoderOptionsBuilderParams } from '@peertube/peertube-models'
+} from '@retroai/retro3-ffmpeg'
+import { EncoderOptionsBuilder, EncoderOptionsBuilderParams } from '@retroai/retro3-models'
 
 const defaultX264VODOptionsBuilder: EncoderOptionsBuilder = (options: EncoderOptionsBuilderParams) => {
   const { fps, inputRatio, inputBitrate, resolution } = options

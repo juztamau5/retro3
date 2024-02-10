@@ -1,7 +1,7 @@
 import express from 'express'
 import { ServerConfigManager } from '@server/lib/server-config-manager.js'
 import { ActorCustomPageModel } from '@server/models/account/actor-custom-page.js'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import { apiRateLimiter, asyncMiddleware, authenticate, ensureUserHasRight } from '../../middlewares/index.js'
 
 const customPageRouter = express.Router()

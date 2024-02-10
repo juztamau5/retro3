@@ -1,7 +1,7 @@
 import { catchError } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { ScopedToken } from '@peertube/peertube-models'
+import { ScopedToken } from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 import { RestExtractor } from '../rest'
 

@@ -15,7 +15,7 @@ import {
   ServerConfig,
   ThumbnailType_Type,
   VideoBlacklistCreate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { ActorModel } from '@server/models/actor/actor.js'
 import { MUserDefault, MVideo, MVideoThumbnail, UserNotificationModelForApi } from '../models/index.js'
 import {
@@ -25,7 +25,7 @@ import {
 } from './register-server-auth.model.js'
 import { RegisterServerWebSocketRouteOptions } from './register-server-websocket-route.model.js'
 
-export type PeerTubeHelpers = {
+export type Retro3Helpers = {
   logger: Logger
 
   database: {
@@ -81,7 +81,7 @@ export type PeerTubeHelpers = {
   config: {
     getWebserverUrl: () => string
 
-    // PeerTube >= 5.1
+    // retro3 >= 5.1
     getServerListeningConfig: () => { hostname: string, port: number }
 
     getServerConfig: () => Promise<ServerConfig>
@@ -98,7 +98,7 @@ export type PeerTubeHelpers = {
   }
 
   server: {
-    // PeerTube >= 5.0
+    // retro3 >= 5.0
     getHTTPServer: () => Server
 
     getServerActor: () => Promise<ActorModel>
@@ -110,23 +110,23 @@ export type PeerTubeHelpers = {
   }
 
   plugin: {
-    // PeerTube >= 3.2
+    // retro3 >= 3.2
     getBaseStaticRoute: () => string
 
-    // PeerTube >= 3.2
+    // retro3 >= 3.2
     getBaseRouterRoute: () => string
-    // PeerTube >= 5.0
+    // retro3 >= 5.0
     getBaseWebSocketRoute: () => string
 
-    // PeerTube >= 3.2
+    // retro3 >= 3.2
     getDataDirectoryPath: () => string
   }
 
   user: {
-    // PeerTube >= 3.2
+    // retro3 >= 3.2
     getAuthUser: (response: Response) => Promise<MUserDefault>
 
-    // PeerTube >= 4.3
+    // retro3 >= 4.3
     loadById: (id: number) => Promise<MUserDefault>
   }
 }
@@ -160,12 +160,12 @@ export type RegisterServerOptions = {
   //  * /plugins/:pluginName/router/...
   getRouter(): Router
 
-  // PeerTube >= 5.0
+  // retro3 >= 5.0
   // Register WebSocket route
   // Base routes of the WebSocket router are
   //  * /plugins/:pluginName/:pluginVersion/ws/...
   //  * /plugins/:pluginName/ws/...
   registerWebSocketRoute: (options: RegisterServerWebSocketRouteOptions) => void
 
-  peertubeHelpers: PeerTubeHelpers
+  Retro3Helpers: Retro3Helpers
 }

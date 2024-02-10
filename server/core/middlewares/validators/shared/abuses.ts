@@ -1,7 +1,7 @@
 import { Response } from 'express'
 import { AbuseModel } from '@server/models/abuse/abuse.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
 
 async function doesAbuseExist (abuseId: number | string, res: Response) {
   const abuse = await AbuseModel.loadByIdWithReporter(forceNumber(abuseId))

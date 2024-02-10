@@ -1,6 +1,6 @@
 import { OutgoingHttpHeaders } from 'http'
 import { Writable } from 'stream'
-import { HttpMethodType, PeerTubeProblemDocumentData, ServerErrorCode, VideoCreate } from '@peertube/peertube-models'
+import { HttpMethodType, Retro3ProblemDocumentData, ServerErrorCode, VideoCreate } from '@retroai/retro3-models'
 import { RegisterServerAuthExternalOptions } from '@server/types/index.js'
 import {
   MAbuseMessage,
@@ -105,7 +105,7 @@ declare module 'express' {
       type?: ServerErrorCode | string
       instance?: string
 
-      data?: PeerTubeProblemDocumentData
+      data?: Retro3ProblemDocumentData
 
       tags?: string[]
     }) => void

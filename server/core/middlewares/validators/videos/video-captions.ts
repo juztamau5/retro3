@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param } from 'express-validator'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 import { isVideoCaptionFile, isVideoCaptionLanguageValid } from '../../../helpers/custom-validators/video-captions.js'
 import { cleanUpReqFiles } from '../../../helpers/express-utils.js'
 import { CONSTRAINTS_FIELDS, MIMETYPES } from '../../../initializers/constants.js'

@@ -1,12 +1,12 @@
 import {
-  PeerTubePlugin,
+  Retro3Plugin,
   PluginType,
   RegisterServerSettingOptions,
   SettingEntries,
   SettingValue,
   type PluginType_Type
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { MPlugin, MPluginFormattable } from '@server/types/models/index.js'
 import { FindAndCountOptions, json, QueryTypes } from 'sequelize'
 import { AllowNull, Column, CreatedAt, DataType, DefaultScope, Is, Model, Table, UpdatedAt } from 'sequelize-typescript'
@@ -67,7 +67,7 @@ export class PluginModel extends Model<Partial<AttributesOnly<PluginModel>>> {
 
   @AllowNull(false)
   @Column
-  peertubeEngine: string
+  retro3Engine: string
 
   @AllowNull(true)
   @Is('PluginDescription', value => throwIfNotValid(value, isPluginDescriptionValid, 'description'))
@@ -269,19 +269,19 @@ export class PluginModel extends Model<Partial<AttributesOnly<PluginModel>>> {
   }
 
   static normalizePluginName (npmName: string) {
-    return npmName.replace(/^peertube-((theme)|(plugin))-/, '')
+    return npmName.replace(/^retro3-((theme)|(plugin))-/, '')
   }
 
   static getTypeFromNpmName (npmName: string) {
-    return npmName.startsWith('peertube-plugin-')
+    return npmName.startsWith('retro3-plugin-')
       ? PluginType.PLUGIN
       : PluginType.THEME
   }
 
   static buildNpmName (name: string, type: PluginType_Type) {
-    if (type === PluginType.THEME) return 'peertube-theme-' + name
+    if (type === PluginType.THEME) return 'retro3-theme-' + name
 
-    return 'peertube-plugin-' + name
+    return 'retro3-plugin-' + name
   }
 
   getPublicSettings (registeredSettings: RegisterServerSettingOptions[]) {
@@ -297,7 +297,7 @@ export class PluginModel extends Model<Partial<AttributesOnly<PluginModel>>> {
     return result
   }
 
-  toFormattedJSON (this: MPluginFormattable): PeerTubePlugin {
+  toFormattedJSON (this: MPluginFormattable): Retro3Plugin {
     return {
       name: this.name,
       type: this.type,
@@ -305,7 +305,7 @@ export class PluginModel extends Model<Partial<AttributesOnly<PluginModel>>> {
       latestVersion: this.latestVersion,
       enabled: this.enabled,
       uninstalled: this.uninstalled,
-      peertubeEngine: this.peertubeEngine,
+      retro3Engine: this.retro3Engine,
       description: this.description,
       homepage: this.homepage,
       settings: this.settings,

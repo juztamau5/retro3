@@ -1,5 +1,5 @@
 import { ServerBlocklistModel } from '@server/models/server/server-blocklist.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MAccountDefault, MAccountFormattable } from '../account/account.js'
 import { MServer, MServerFormattable } from './server.js'
 

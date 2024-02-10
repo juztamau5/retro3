@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, LiveVideoLatencyMode, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, LiveVideoLatencyMode, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
   LiveCommand,
   makePostBodyRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   stopFfmpeg
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video lives API validator', function () {
   const path = '/api/v1/videos/live'
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = ''
   let channelId: number
   let video: VideoCreateResult

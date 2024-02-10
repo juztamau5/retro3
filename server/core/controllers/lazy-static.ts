@@ -1,6 +1,6 @@
 import cors from 'cors'
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { FILES_CACHE, LAZY_STATIC_PATHS, STATIC_MAX_AGE } from '../initializers/constants.js'
 import {

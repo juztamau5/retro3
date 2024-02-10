@@ -21,13 +21,13 @@ import {
 } from '@app/shared/shared-main'
 import { LiveVideoService } from '@app/shared/shared-video-live'
 import { LoadingBarService } from '@ngx-loading-bar/core'
-import { simpleObjectsDeepEqual } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, LiveVideo, LiveVideoUpdate, VideoPrivacy, VideoSource, VideoState } from '@peertube/peertube-models'
+import { simpleObjectsDeepEqual } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, LiveVideo, LiveVideoUpdate, VideoPrivacy, VideoSource, VideoState } from '@retroai/retro3-models'
 import { hydrateFormFromVideo } from './shared/video-edit-utils'
 import { VideoUploadService } from './shared/video-upload.service'
 import { VideoEditComponent } from './shared/video-edit.component'
 
-const debugLogger = debug('peertube:video-update')
+const debugLogger = debug('retro3:video-update')
 
 @Component({
   selector: 'my-videos-update',

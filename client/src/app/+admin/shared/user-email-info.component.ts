@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { User, UserRegistration } from '@peertube/peertube-models'
+import { User, UserRegistration } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-user-email-info',

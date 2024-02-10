@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-function updateSearchIndex (server: PeerTubeServer, enabled: boolean, disableLocalSearch = false) {
+function updateSearchIndex (server: Retro3Server, enabled: boolean, disableLocalSearch = false) {
   return server.config.updateCustomSubConfig({
     newConfig: {
       search: {
@@ -24,7 +24,7 @@ function updateSearchIndex (server: PeerTubeServer, enabled: boolean, disableLoc
 }
 
 describe('Test videos API validator', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   // ---------------------------------------------------------------
 

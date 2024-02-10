@@ -5,7 +5,7 @@ import { MeterProvider } from '@opentelemetry/sdk-metrics'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { MVideoImmutable } from '@server/types/models/index.js'
-import { PlaybackMetricCreate } from '@peertube/peertube-models'
+import { PlaybackMetricCreate } from '@retroai/retro3-models'
 import {
   BittorrentTrackerObserversBuilder,
   JobQueueObserversBuilder,

@@ -9,8 +9,8 @@ import {
   VideoStatsTimeserie,
   VideoStatsTimeserieMetric,
   WatchActionObject
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from '../video/video.js'
 import { LocalVideoViewerWatchSectionModel } from './local-video-viewer-watch-section.js'
 

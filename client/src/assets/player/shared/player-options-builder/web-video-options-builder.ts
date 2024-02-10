@@ -1,6 +1,6 @@
-import { PeerTubePlayerLoadOptions, WebVideoPluginOptions } from '../../types'
+import { Retro3PlayerLoadOptions, WebVideoPluginOptions } from '../../types'
 
-type ConstructorOptions = Pick<PeerTubePlayerLoadOptions, 'videoFileToken' | 'webVideo' | 'hls'>
+type ConstructorOptions = Pick<Retro3PlayerLoadOptions, 'videoFileToken' | 'webVideo' | 'hls'>
 
 export class WebVideoOptionsBuilder {
 

@@ -11,7 +11,7 @@ import {
   VideoCommentObject,
   VideoObject,
   WatchActionObject
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { logger } from '../../../helpers/logger.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

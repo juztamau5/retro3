@@ -1,4 +1,4 @@
-import { LiveVideoErrorType } from '@peertube/peertube-models'
+import { LiveVideoErrorType } from '@retroai/retro3-models'
 import { LoggerTagsFn } from '@server/helpers/logger.js'
 import { MStreamingPlaylistVideo, MVideoLiveVideo } from '@server/types/models/index.js'
 import EventEmitter from 'events'

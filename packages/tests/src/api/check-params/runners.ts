@@ -11,25 +11,25 @@ import {
   RunnerJobUpdatePayload,
   VideoPrivacy,
   VideoStudioTaskIntro
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import {
   cleanupTests,
   createSingleServer,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   VideoStudioCommand,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 const badUUID = '910ec12a-d9e6-458b-a274-0abb655f9464'
 
 describe('Test managing runners', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   let userToken: string
 

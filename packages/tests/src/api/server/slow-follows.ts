@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { Job } from '@peertube/peertube-models'
+import { Job } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test slow follows', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   let afterFollows: Date
 

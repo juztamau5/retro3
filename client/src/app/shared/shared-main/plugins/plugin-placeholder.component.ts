@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { PluginElementPlaceholder } from '@peertube/peertube-models'
+import { PluginElementPlaceholder } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-plugin-placeholder',

@@ -1,19 +1,19 @@
 import {
   NextPreviousVideoButtonOptions,
-  PeerTubeLinkButtonOptions,
-  PeerTubePlayerContructorOptions,
-  PeerTubePlayerLoadOptions,
+  Retro3LinkButtonOptions,
+  Retro3PlayerContructorOptions,
+  Retro3PlayerLoadOptions,
   TheaterButtonOptions
 } from '../../types'
 
 type ControlBarOptionsBuilderConstructorOptions =
-  Pick<PeerTubePlayerContructorOptions, 'peertubeLink' | 'instanceName' | 'theaterButton'> &
+  Pick<Retro3PlayerContructorOptions, 'retro3Link' | 'instanceName' | 'theaterButton'> &
   {
     videoShortUUID: () => string
     p2pEnabled: () => boolean
 
-    previousVideo: () => PeerTubePlayerLoadOptions['previousVideo']
-    nextVideo: () => PeerTubePlayerLoadOptions['nextVideo']
+    previousVideo: () => Retro3PlayerLoadOptions['previousVideo']
+    nextVideo: () => Retro3PlayerLoadOptions['nextVideo']
   }
 
 export class ControlBarOptionsBuilder {
@@ -39,7 +39,7 @@ export class ControlBarOptionsBuilder {
 
       ...this.getSettingsButton(),
 
-      ...this.getPeerTubeLinkButton(),
+      ...this.getRetro3LinkButton(),
 
       ...this.getTheaterButton(),
 
@@ -68,7 +68,7 @@ export class ControlBarOptionsBuilder {
 
   private getTimeControls () {
     return {
-      peerTubeLiveDisplay: {},
+      retro3LiveDisplay: {},
 
       currentTimeDisplay: {},
       timeDivider: {},
@@ -114,14 +114,14 @@ export class ControlBarOptionsBuilder {
     return { nextVideoButton: buttonOptions }
   }
 
-  private getPeerTubeLinkButton () {
-    const options: PeerTubeLinkButtonOptions = {
-      isDisplayed: this.options.peertubeLink,
+  private getRetro3LinkButton () {
+    const options: Retro3LinkButtonOptions = {
+      isDisplayed: this.options.retro3Link,
       shortUUID: this.options.videoShortUUID,
       instanceName: this.options.instanceName
     }
 
-    return { peerTubeLinkButton: options }
+    return { retro3LinkButton: options }
   }
 
   private getTheaterButton () {

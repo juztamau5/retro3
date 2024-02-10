@@ -1,4 +1,4 @@
-import { createPrivateAndPublicKeys } from '@server/helpers/peertube-crypto.js'
+import { createPrivateAndPublicKeys } from '@server/helpers/retro3-crypto.js'
 import { MActor } from '@server/types/models/index.js'
 
 // Set account keys, this could be long so process after the account creation and do not block the client

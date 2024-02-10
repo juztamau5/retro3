@@ -1,12 +1,23 @@
-import { peertubeTranslate } from '@peertube/peertube-core-utils'
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
+import { retro3Translate } from '@retroai/retro3-core-utils'
 import { logger } from '../../../root-helpers'
 import { Translations } from './translations'
 
 export class PlayerHTML {
-  private readonly wrapperElement: HTMLElement
+  private readonly wrapperElement: HTMLElement | null
 
-  private playerElement: HTMLVideoElement
-  private informationElement: HTMLDivElement
+  private playerElement: HTMLVideoElement | null
+  private informationElement: HTMLDivElement | null
 
   constructor (private readonly videoWrapperId: string) {
     this.wrapperElement = document.getElementById(this.videoWrapperId)
@@ -25,7 +36,8 @@ export class PlayerHTML {
   }
 
   addPlayerElementToDOM () {
-    this.wrapperElement.appendChild(this.playerElement)
+    if (this.wrapperElement && this.playerElement)
+      this.wrapperElement.appendChild(this.playerElement)
   }
 
   displayError (text: string, translations: Translations) {
@@ -34,34 +46,39 @@ export class PlayerHTML {
     // Remove video element
     if (this.playerElement) {
       this.removeElement(this.playerElement)
-      this.playerElement = undefined
+      this.playerElement = null
     }
 
-    const translatedText = peertubeTranslate(text, translations)
-    const translatedSorry = peertubeTranslate('Sorry', translations)
+    const translatedText = retro3Translate(text, translations)
+    const translatedSorry = retro3Translate('Sorry', translations)
 
     document.title = translatedSorry + ' - ' + translatedText
 
     const errorBlock = document.getElementById('error-block')
-    errorBlock.style.display = 'flex'
+    if (errorBlock)
+      errorBlock.style.display = 'flex'
 
     const errorTitle = document.getElementById('error-title')
-    errorTitle.innerHTML = peertubeTranslate('Sorry', translations)
+    if (errorTitle)
+      errorTitle.innerHTML = retro3Translate('Sorry', translations)
 
     const errorText = document.getElementById('error-content')
-    errorText.innerHTML = translatedText
+    if (errorText)
+      errorText.innerHTML = translatedText;
 
-    this.wrapperElement.style.display = 'none'
+    if (this.wrapperElement)
+      this.wrapperElement.style.display = 'none'
   }
 
   async askVideoPassword (options: { incorrectPassword: boolean, translations: Translations }): Promise<string> {
     const { incorrectPassword, translations } = options
     return new Promise((resolve) => {
 
-      this.wrapperElement.style.display = 'none'
+      if (this.wrapperElement)
+        this.wrapperElement.style.display = 'none'
 
-      const translatedTitle = peertubeTranslate('This video is password protected', translations)
-      const translatedMessage = peertubeTranslate('You need a password to watch this video.', translations)
+      const translatedTitle = retro3Translate('This video is password protected', translations)
+      const translatedMessage = retro3Translate('You need a password to watch this video.', translations)
 
       document.title = translatedTitle
 
@@ -76,7 +93,7 @@ export class PlayerHTML {
 
       if (incorrectPassword) {
         const videoPasswordError = document.getElementById('video-password-error')
-        videoPasswordError.innerHTML = peertubeTranslate('Incorrect password, please enter a correct password', translations)
+        videoPasswordError.innerHTML = retro3Translate('Incorrect password, please enter a correct password', translations)
         videoPasswordError.style.transform = 'scale(1.2)'
 
         setTimeout(() => {
@@ -85,10 +102,10 @@ export class PlayerHTML {
       }
 
       const videoPasswordSubmitButton = document.getElementById('video-password-submit')
-      videoPasswordSubmitButton.innerHTML = peertubeTranslate('Watch Video', translations)
+      videoPasswordSubmitButton.innerHTML = retro3Translate('Watch Video', translations)
 
       const videoPasswordInput = document.getElementById('video-password-input') as HTMLInputElement
-      videoPasswordInput.placeholder = peertubeTranslate('Password', translations)
+      videoPasswordInput.placeholder = retro3Translate('Password', translations)
 
       const videoPasswordForm = document.getElementById('video-password-form')
       videoPasswordForm.addEventListener('submit', (event) => {
@@ -110,7 +127,7 @@ export class PlayerHTML {
 
     this.informationElement = document.createElement('div')
     this.informationElement.className = 'player-information'
-    this.informationElement.innerText = peertubeTranslate(text, translations)
+    this.informationElement.innerText = retro3Translate(text, translations)
 
     document.body.appendChild(this.informationElement)
   }

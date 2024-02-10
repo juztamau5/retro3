@@ -10,7 +10,7 @@ import {
   PlaylistMiniatureMarkupData,
   VideoMiniatureMarkupData,
   VideosListMarkupData
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { DynamicElementService } from './dynamic-element.service'
 import {
   ButtonMarkupComponent,
@@ -19,8 +19,8 @@ import {
   PlaylistMiniatureMarkupComponent,
   VideoMiniatureMarkupComponent,
   VideosListMarkupComponent
-} from './peertube-custom-tags'
-import { CustomMarkupComponent } from './peertube-custom-tags/shared'
+} from './retro3-custom-tags'
+import { CustomMarkupComponent } from './retro3-custom-tags/shared'
 
 type AngularBuilderFunction = (el: HTMLElement) => ComponentRef<CustomMarkupComponent>
 type HTMLBuilderFunction = (el: HTMLElement) => HTMLElement
@@ -28,17 +28,17 @@ type HTMLBuilderFunction = (el: HTMLElement) => HTMLElement
 @Injectable()
 export class CustomMarkupService {
   private angularBuilders: { [ selector: string ]: AngularBuilderFunction } = {
-    'peertube-button': el => this.buttonBuilder(el),
-    'peertube-video-embed': el => this.embedBuilder(el, 'video'),
-    'peertube-playlist-embed': el => this.embedBuilder(el, 'playlist'),
-    'peertube-video-miniature': el => this.videoMiniatureBuilder(el),
-    'peertube-playlist-miniature': el => this.playlistMiniatureBuilder(el),
-    'peertube-channel-miniature': el => this.channelMiniatureBuilder(el),
-    'peertube-videos-list': el => this.videosListBuilder(el)
+    'retro3-button': el => this.buttonBuilder(el),
+    'retro3-video-embed': el => this.embedBuilder(el, 'video'),
+    'retro3-playlist-embed': el => this.embedBuilder(el, 'playlist'),
+    'retro3-video-miniature': el => this.videoMiniatureBuilder(el),
+    'retro3-playlist-miniature': el => this.playlistMiniatureBuilder(el),
+    'retro3-channel-miniature': el => this.channelMiniatureBuilder(el),
+    'retro3-videos-list': el => this.videosListBuilder(el)
   }
 
   private htmlBuilders: { [ selector: string ]: HTMLBuilderFunction } = {
-    'peertube-container': el => this.containerBuilder(el)
+    'retro3-container': el => this.containerBuilder(el)
   }
 
   private customMarkdownRenderer: (text: string) => Promise<HTMLElement>
@@ -215,7 +215,7 @@ export class CustomMarkupService {
       ? 'layout-' + data.layout
       : 'layout-column'
 
-    root.classList.add('peertube-container', layoutClass)
+    root.classList.add('retro3-container', layoutClass)
 
     root.style.justifyContent = data.justifyContent || 'space-between'
 

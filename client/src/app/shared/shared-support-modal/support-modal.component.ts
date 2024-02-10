@@ -2,7 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core'
 import { MarkdownService } from '@app/core'
 import { VideoDetails } from '@app/shared/shared-main'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
-import { VideoChannel } from '@peertube/peertube-models'
+import { VideoChannel } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-support-modal',

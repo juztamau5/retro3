@@ -20,12 +20,12 @@ import {
   VideoPlaylistReorder,
   VideoPlaylistUpdate,
   VideosExistInPlaylists
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 import { VideoPlaylistElement } from './video-playlist-element.model'
 import { VideoPlaylist } from './video-playlist.model'
 
-const debugLogger = debug('peertube:playlists:VideoPlaylistService')
+const debugLogger = debug('retro3:playlists:VideoPlaylistService')
 
 export type CachedPlaylist = VideoPlaylist | { id: number, displayName: string }
 

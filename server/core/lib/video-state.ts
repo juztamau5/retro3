@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { VideoState, VideoStateType } from '@peertube/peertube-models'
+import { VideoState, VideoStateType } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'

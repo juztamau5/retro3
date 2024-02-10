@@ -6,7 +6,7 @@ export const UserLocalStorageKeys = {
 
   VIDEOS_HISTORY_ENABLED: 'videos-history-enabled',
   NSFW_POLICY: 'nsfw_policy',
-  P2P_ENABLED: 'peertube-videojs-' + 'webtorrent_enabled',
+  P2P_ENABLED: 'retro3-videojs-' + 'webtorrent_enabled',
 
   AUTO_PLAY_VIDEO: 'auto_play_video',
   AUTO_PLAY_NEXT_VIDEO: 'auto_play_next_video',

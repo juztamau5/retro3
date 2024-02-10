@@ -1,4 +1,4 @@
-import { FunctionProperties, PickWith } from '@peertube/peertube-typescript-utils'
+import { FunctionProperties, PickWith } from '@retroai/retro3-typescript-utils'
 import { ServerModel } from '../../../models/server/server.js'
 import { MAccountBlocklistId } from '../account/index.js'
 

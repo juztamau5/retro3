@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, ServerFollowCreate, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, ServerFollowCreate, UserRight } from '@retroai/retro3-models'
 import { getServerActor } from '@server/models/application/application.js'
 import { logger } from '../../../helpers/logger.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'

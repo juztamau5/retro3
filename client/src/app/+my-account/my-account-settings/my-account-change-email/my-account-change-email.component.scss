@@ -11,13 +11,13 @@ my-input-text {
 }
 
 input[type=email] {
-  @include peertube-input-text(100%);
+  @include retro3-input-text(100%);
 
   display: block;
 }
 
 input[type=submit] {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 }
 

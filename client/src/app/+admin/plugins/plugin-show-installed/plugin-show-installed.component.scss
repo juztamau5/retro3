@@ -7,7 +7,7 @@ h2 {
 
 input[type=submit],
 button {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 
   margin-top: 10px;

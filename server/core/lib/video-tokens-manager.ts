@@ -1,8 +1,8 @@
 import { LRUCache } from 'lru-cache'
 import { LRU_CACHE } from '@server/initializers/constants.js'
 import { MUserAccountUrl } from '@server/types/models/index.js'
-import { pick } from '@peertube/peertube-core-utils'
-import { buildUUID } from '@peertube/peertube-node-utils'
+import { pick } from '@retroai/retro3-core-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
 
 // ---------------------------------------------------------------------------
 // Create temporary tokens that can be used as URL query parameters to access video static files

@@ -4,7 +4,7 @@ import { CONFIG } from '@server/initializers/config.js'
 import { ActorFollowModel } from '@server/models/actor/actor-follow.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { MActorSignature, MVideoRedundancyVideo } from '@server/types/models/index.js'
-import { Activity } from '@peertube/peertube-models'
+import { Activity } from '@retroai/retro3-models'
 import { VideoRedundancyModel } from '../models/redundancy/video-redundancy.js'
 import { sendUndoCacheFile } from './activitypub/send/index.js'
 

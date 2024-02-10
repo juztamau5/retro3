@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { cleanupTests, createSingleServer, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { cleanupTests, createSingleServer, Retro3Server } from '@retroai/retro3-server-commands'
 
 describe('Test videos overview API validator', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   // ---------------------------------------------------------------
 

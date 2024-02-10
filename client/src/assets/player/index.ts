@@ -1,2 +1,2 @@
-export * from './peertube-player'
+export * from './retro3-player'
 export * from './types'

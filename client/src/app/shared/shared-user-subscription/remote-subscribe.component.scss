@@ -1,6 +1,6 @@
 @use '_mixins' as *;
 
 .btn-remote-follow {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 }

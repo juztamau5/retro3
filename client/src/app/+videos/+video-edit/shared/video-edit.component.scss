@@ -1,11 +1,11 @@
 @use '_variables' as *;
 @use '_mixins' as *;
 
-.peertube-select-container {
-  @include peertube-select-container(auto);
+.retro3-select-container {
+  @include retro3-select-container(auto);
 }
 
-my-peertube-checkbox {
+my-retro3-checkbox {
   display: block;
   margin-bottom: 1rem;
 }
@@ -19,7 +19,7 @@ my-peertube-checkbox {
   min-height: 300px;
 
   input {
-    @include peertube-input-text(100%);
+    @include retro3-input-text(100%);
     display: block;
   }
 }
@@ -66,11 +66,11 @@ my-peertube-checkbox {
   }
 
   .caption-entry-edit {
-    @include peertube-button;
+    @include retro3-button;
   }
 
   .caption-entry-delete {
-    @include peertube-button;
+    @include retro3-button;
     @include grey-button;
   }
 }
@@ -99,7 +99,7 @@ p-calendar {
     }
 
     .p-inputtext {
-      @include peertube-input-text(100%);
+      @include retro3-input-text(100%);
       color: #000;
     }
   }
@@ -113,7 +113,7 @@ p-calendar {
 }
 
 .button-file {
-  @include peertube-button-file(max-content);
+  @include retro3-button-file(max-content);
   @include orange-button;
 }
 

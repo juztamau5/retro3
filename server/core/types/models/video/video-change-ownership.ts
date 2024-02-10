@@ -1,5 +1,5 @@
 import { VideoChangeOwnershipModel } from '@server/models/video/video-change-ownership.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MAccountDefault, MAccountFormattable } from '../account/account.js'
 import { MVideoFormattable, MVideoWithAllFiles } from './video.js'
 

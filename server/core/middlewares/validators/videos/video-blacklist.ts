@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, query } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isBooleanValid, toBooleanOrNull, toIntOrNull } from '../../../helpers/custom-validators/misc.js'
 import { isVideoBlacklistReasonValid, isVideoBlacklistTypeValid } from '../../../helpers/custom-validators/video-blacklist.js'
 import { areValidationErrors, doesVideoBlacklistExist, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'

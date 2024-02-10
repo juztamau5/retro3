@@ -1,4 +1,4 @@
-import { omit } from '@peertube/peertube-core-utils'
+import { omit } from '@retroai/retro3-core-utils'
 import {
   VideoPrivacy,
   VideoPlaylistPrivacy,
@@ -6,14 +6,14 @@ import {
   Account,
   HTMLServerConfig,
   ServerConfig
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   createMultipleServers,
   setAccessTokensToServers,
   doubleFollow,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expect } from 'chai'
 
 export function getWatchVideoBasePaths () {
@@ -36,7 +36,7 @@ export function checkIndexTags (html: string, title: string, description: string
   const configObjectString = JSON.stringify(htmlConfig)
   const configEscapedString = JSON.stringify(configObjectString)
 
-  expect(html).to.contain(`<script type="application/javascript">window.PeerTubeServerConfig = ${configEscapedString}</script>`)
+  expect(html).to.contain(`<script type="application/javascript">window.Retro3ServerConfig = ${configEscapedString}</script>`)
 }
 
 export async function prepareClientTests () {
@@ -60,7 +60,7 @@ export async function prepareClientTests () {
   let privatePlaylistId: string
   let unlistedPlaylistId: string
 
-  const instanceDescription = 'PeerTube, an ActivityPub-federated video streaming platform using P2P directly in your web browser.'
+  const instanceDescription = 'retro3, an ActivityPub-federated video and game streaming platform using P2P directly in your web browser.'
 
   const videoName = 'my super name for server 1'
   const videoDescription = 'my<br> super __description__ for *server* 1<p></p>'

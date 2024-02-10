@@ -4,7 +4,7 @@ import {
   Account as AccountInterface,
   VideoComment as VideoCommentServerModel,
   VideoCommentAdmin as VideoCommentAdminServerModel
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export class VideoComment implements VideoCommentServerModel {
   id: number

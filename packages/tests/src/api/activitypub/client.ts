@@ -2,19 +2,19 @@
 
 import { expect } from 'chai'
 import { processViewersStats } from '@tests/shared/views.js'
-import { HttpStatusCode, VideoPlaylistPrivacy, WatchActionObject } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoPlaylistPrivacy, WatchActionObject } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeActivityPubGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test activitypub', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let video: { id: number, uuid: string, shortUUID: string }
   let playlist: { id: number, uuid: string, shortUUID: string }
 

@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { join } from 'path'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoDetails } from '@peertube/peertube-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoDetails } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith } from '../shared/checks.js'
 import { checkDirectoryIsEmpty } from '@tests/shared/directories.js'
-import { getAllFiles } from '@peertube/peertube-core-utils'
+import { getAllFiles } from '@retroai/retro3-core-utils'
 
-async function checkFiles (origin: PeerTubeServer, video: VideoDetails, objectStorage?: ObjectStorageCommand) {
+async function checkFiles (origin: Retro3Server, video: VideoDetails, objectStorage?: ObjectStorageCommand) {
   for (const file of video.files) {
     const start = objectStorage
       ? objectStorage.getMockWebVideosBaseUrl()
@@ -46,7 +46,7 @@ async function checkFiles (origin: PeerTubeServer, video: VideoDetails, objectSt
 describe('Test create move video storage job', function () {
   if (areMockObjectStorageTestsDisabled()) return
 
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   const uuids: string[] = []
   const objectStorage = new ObjectStorageCommand()
 

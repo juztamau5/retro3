@@ -8,11 +8,11 @@ function register1 ({ registerHook }: RegisterServerOptions) {
   })
 }
 
-function register2 ({ registerHook, peertubeHelpers }: RegisterClientOptions) {
+function register2 ({ registerHook, Retro3Helpers }: RegisterClientOptions) {
   registerHook({
     target: 'action:admin-plugin-settings.init',
     handler: ({ npmName }: { npmName: string }) => {
-      if ('peertube-plugin-transcription' !== npmName) {
+      if ('retro3-plugin-transcription' !== npmName) {
         return
       }
     },
@@ -21,9 +21,9 @@ function register2 ({ registerHook, peertubeHelpers }: RegisterClientOptions) {
   registerHook({
     target: 'action:video-watch.video.loaded',
     handler: ({ video }: { video: Video }) => {
-      fetch(`${peertubeHelpers.getBaseRouterRoute()}/videos/${video.uuid}/captions`, {
+      fetch(`${Retro3Helpers.getBaseRouterRoute()}/videos/${video.uuid}/captions`, {
         method: 'PUT',
-        headers: peertubeHelpers.getAuthHeader(),
+        headers: Retro3Helpers.getAuthHeader(),
       })
         .then((res) => res.json())
         .then((data) => console.log('Hi %s.', data))

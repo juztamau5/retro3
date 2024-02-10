@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Notifier } from '@app/core'
-import { Debug } from '@peertube/peertube-models'
+import { Debug } from '@retroai/retro3-models'
 import { DebugService } from './debug.service'
 
 @Component({

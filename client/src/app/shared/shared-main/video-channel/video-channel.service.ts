@@ -10,7 +10,7 @@ import {
   VideoChannelCreate,
   VideoChannelUpdate,
   VideosImportInChannelCreate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 import { Account } from '../account'
 import { AccountService } from '../account/account.service'

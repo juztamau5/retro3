@@ -1,5 +1,5 @@
-import { ClientLogCreate } from '@peertube/peertube-models'
-import { peertubeLocalStorage } from './peertube-web-storage'
+import { ClientLogCreate } from '@retroai/retro3-models'
+import { retro3LocalStorage } from './retro3-web-storage'
 import { OAuthUserTokens } from './users'
 
 export type LoggerHook = (message: LoggerMessage, meta?: LoggerMeta) => void
@@ -64,7 +64,7 @@ class Logger {
     })
 
     try {
-      const tokens = OAuthUserTokens.getUserTokens(peertubeLocalStorage)
+      const tokens = OAuthUserTokens.getUserTokens(retro3LocalStorage)
 
       if (tokens) headers.set('Authorization', `${tokens.tokenType} ${tokens.accessToken}`)
     } catch (err) {

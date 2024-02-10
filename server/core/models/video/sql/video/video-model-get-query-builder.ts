@@ -1,5 +1,5 @@
 import { Sequelize, Transaction } from 'sequelize'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import { AbstractVideoQueryBuilder } from './shared/abstract-video-query-builder.js'
 import { VideoFileQueryBuilder } from './shared/video-file-query-builder.js'
 import { VideoModelBuilder } from './shared/video-model-builder.js'

@@ -1,4 +1,4 @@
-import { omit, pick } from '@peertube/peertube-core-utils'
+import { omit, pick } from '@retroai/retro3-core-utils'
 import {
   BooleanBothQuery,
   HttpStatusCode,
@@ -14,7 +14,7 @@ import {
   VideoPlaylistReorder,
   VideoPlaylistType_Type,
   VideoPlaylistUpdate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

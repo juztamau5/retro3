@@ -8,7 +8,7 @@ import { VideoChannelModel } from '@server/models/video/video-channel.js'
 import { VideoCommentModel } from '@server/models/video/video-comment.js'
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { VideoPlaylistModel } from '@server/models/video/video-playlist.js'
-import { ActivityType, ServerStats, VideoRedundancyStrategyWithManual } from '@peertube/peertube-models'
+import { ActivityType, ServerStats, VideoRedundancyStrategyWithManual } from '@retroai/retro3-models'
 
 class StatsManager {
 

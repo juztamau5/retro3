@@ -11,7 +11,7 @@ import {
 import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { MUserId, MVideoFile, MVideoFullLight, MVideoWithFileThumbnail } from '@server/types/models/index.js'
 import { MRunnerJob } from '@server/types/models/runners/index.js'
-import { ffprobePromise, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream, isAudioFile } from '@peertube/peertube-ffmpeg'
+import { ffprobePromise, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream, isAudioFile } from '@retroai/retro3-ffmpeg'
 import { getTranscodingJobPriority } from '../../transcoding-priority.js'
 import { buildOriginalFileResolution, computeResolutionsToTranscode } from '../../transcoding-resolutions.js'
 import { AbstractJobBuilder } from './abstract-job-builder.js'

@@ -3,7 +3,7 @@ import depcheck, { PackageDependencies } from 'depcheck'
 import { readJson, remove, writeJSON } from 'fs-extra/esm'
 import { copyFile, writeFile } from 'fs/promises'
 import { join, resolve } from 'path'
-import { currentDir, root } from '@peertube/peertube-node-utils'
+import { currentDir, root } from '@retroai/retro3-node-utils'
 
 if (!process.argv[2]) {
   console.error('Need version as argument')
@@ -87,7 +87,7 @@ async function run () {
 
   const { description, licence, engines, author, repository } = mainPackageJson
   const typesPackageJson = {
-    name: '@peertube/peertube-types',
+    name: '@retroai/retro3-types',
     description,
     version,
     private: false,

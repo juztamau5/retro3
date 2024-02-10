@@ -2,8 +2,8 @@ import { join } from 'path'
 import { CONFIG } from '@server/initializers/config.js'
 import { DIRECTORIES, VIDEO_LIVE } from '@server/initializers/constants.js'
 import { isStreamingPlaylist, MStreamingPlaylistVideo, MVideo, MVideoFile, MVideoUUID } from '@server/types/models/index.js'
-import { removeFragmentedMP4Ext } from '@peertube/peertube-core-utils'
-import { buildUUID } from '@peertube/peertube-node-utils'
+import { removeFragmentedMP4Ext } from '@retroai/retro3-core-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
 import { isVideoInPrivateDirectory } from './video-privacy.js'
 
 // ################## Video file name ##################

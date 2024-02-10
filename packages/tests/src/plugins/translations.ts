@@ -4,13 +4,13 @@ import { expect } from 'chai'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test plugin translations', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let command: PluginsCommand
 
   before(async function () {
@@ -35,10 +35,10 @@ describe('Test plugin translations', function () {
     const body = await command.getTranslations({ locale: 'fr-FR' })
 
     expect(body).to.deep.equal({
-      'peertube-plugin-test': {
+      'retro3-plugin-test': {
         Hi: 'Coucou'
       },
-      'peertube-plugin-test-filter-translations': {
+      'retro3-plugin-test-filter-translations': {
         'Hello world': 'Bonjour le monde'
       }
     })
@@ -48,20 +48,20 @@ describe('Test plugin translations', function () {
     const body = await command.getTranslations({ locale: 'it-IT' })
 
     expect(body).to.deep.equal({
-      'peertube-plugin-test-filter-translations': {
+      'retro3-plugin-test-filter-translations': {
         'Hello world': 'Ciao, mondo!'
       }
     })
   })
 
   it('Should remove the plugin and remove the locales', async function () {
-    await command.uninstall({ npmName: 'peertube-plugin-test-filter-translations' })
+    await command.uninstall({ npmName: 'retro3-plugin-test-filter-translations' })
 
     {
       const body = await command.getTranslations({ locale: 'fr-FR' })
 
       expect(body).to.deep.equal({
-        'peertube-plugin-test': {
+        'retro3-plugin-test': {
           Hi: 'Coucou'
         }
       })

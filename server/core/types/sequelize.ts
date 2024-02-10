@@ -1,4 +1,4 @@
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { Model } from 'sequelize'
 
 // Thanks to sequelize-typescript: https://github.com/RobinBuschmann/sequelize-typescript

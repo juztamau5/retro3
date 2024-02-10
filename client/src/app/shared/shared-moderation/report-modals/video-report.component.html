@@ -17,7 +17,7 @@
           <ng-container formGroupName="predefinedReasons">
 
             <div class="form-group" *ngFor="let reason of predefinedReasons">
-              <my-peertube-checkbox [inputName]="reason.id" [formControlName]="reason.id" [labelText]="reason.label">
+              <my-retro3-checkbox [inputName]="reason.id" [formControlName]="reason.id" [labelText]="reason.label">
                 <ng-template *ngIf="reason.help" ptTemplate="help">
                   <div [innerHTML]="reason.help"></div>
                 </ng-template>
@@ -25,7 +25,7 @@
                 <ng-container *ngIf="reason.description" ngProjectAs="description">
                   <div [innerHTML]="reason.description"></div>
                 </ng-container>
-              </my-peertube-checkbox>
+              </my-retro3-checkbox>
             </div>
 
           </ng-container>
@@ -36,10 +36,10 @@
         <my-embed [video]="video"></my-embed>
 
         <div class="mb-1 mt-3 start-at" formGroupName="timestamp">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             formControlName="hasStart"
             i18n-labelText labelText="Start at"
-          ></my-peertube-checkbox>
+          ></my-retro3-checkbox>
 
           <my-timestamp-input
             [timestamp]="timestamp.startAt"
@@ -51,10 +51,10 @@
         </div>
 
         <div class="mb-3 stop-at"  formGroupName="timestamp" *ngIf="timestamp.hasStart">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             formControlName="hasEnd"
             i18n-labelText labelText="Stop at"
-          ></my-peertube-checkbox>
+          ></my-retro3-checkbox>
 
           <my-timestamp-input
             [timestamp]="timestamp.endAt"
@@ -83,11 +83,11 @@
 
     <div class="form-group inputs">
       <input
-        type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+        type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
         (click)="hide()" (key.enter)="hide()"
       >
 
-      <input type="submit" i18n-value value="Submit" class="peertube-button orange-button" [disabled]="!form.valid">
+      <input type="submit" i18n-value value="Submit" class="retro3-button orange-button" [disabled]="!form.valid">
     </div>
 
     </form>

@@ -4,23 +4,23 @@ import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { basename, join } from 'path'
-import { pick, uuidRegex } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, HttpStatusCodeType, VideoCaption, VideoDetails, VideoPrivacy, VideoResolution } from '@peertube/peertube-models'
+import { pick, uuidRegex } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, HttpStatusCodeType, VideoCaption, VideoDetails, VideoPrivacy, VideoResolution } from '@retroai/retro3-models'
 import {
   loadLanguages,
   VIDEO_CATEGORIES,
   VIDEO_LANGUAGES,
   VIDEO_LICENCES,
   VIDEO_PRIVACIES
-} from '@peertube/peertube-server/core/initializers/constants.js'
-import { getLowercaseExtension } from '@peertube/peertube-node-utils'
-import { makeRawRequest, PeerTubeServer, VideoEdit, waitJobs } from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server/core/initializers/constants.js'
+import { getLowercaseExtension } from '@retroai/retro3-node-utils'
+import { makeRawRequest, Retro3Server, VideoEdit, waitJobs } from '@retroai/retro3-server-commands'
 import { dateIsValid, expectStartWith, testImageGeneratedByFFmpeg } from './checks.js'
 import { checkWebTorrentWorks } from './webtorrent.js'
 
 async function completeWebVideoFilesCheck (options: {
-  server: PeerTubeServer
-  originServer: PeerTubeServer
+  server: Retro3Server
+  originServer: Retro3Server
   videoUUID: string
   fixture: string
   files: {
@@ -110,8 +110,8 @@ async function completeWebVideoFilesCheck (options: {
 }
 
 async function completeVideoCheck (options: {
-  server: PeerTubeServer
-  originServer: PeerTubeServer
+  server: Retro3Server
+  originServer: Retro3Server
   videoUUID: string
   attributes: {
     name: string
@@ -219,7 +219,7 @@ async function completeVideoCheck (options: {
 }
 
 async function checkVideoFilesWereRemoved (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   video: VideoDetails
   captions?: VideoCaption[]
   onlyVideoFiles?: boolean // default false
@@ -272,14 +272,14 @@ async function checkVideoFilesWereRemoved (options: {
   }
 }
 
-async function saveVideoInServers (servers: PeerTubeServer[], uuid: string) {
+async function saveVideoInServers (servers: Retro3Server[], uuid: string) {
   for (const server of servers) {
     server.store.videoDetails = await server.videos.get({ id: uuid })
   }
 }
 
 function checkUploadVideoParam (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   token: string
   attributes: Partial<VideoEdit>
   expectedStatus?: HttpStatusCodeType
@@ -301,7 +301,7 @@ function checkUploadVideoParam (options: {
 
 // serverNumber starts from 1
 async function uploadRandomVideoOnServers (
-  servers: PeerTubeServer[],
+  servers: Retro3Server[],
   serverNumber: number,
   additionalParams?: VideoEdit & { prefixName?: string }
 ) {

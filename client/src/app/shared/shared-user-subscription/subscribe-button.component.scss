@@ -2,7 +2,7 @@
 @use '_mixins' as *;
 
 .btn-group-subscribe {
-  @include peertube-button;
+  @include retro3-button;
 
   padding: 0;
 
@@ -100,7 +100,7 @@
   }
 
   input {
-    @include peertube-input-text(100%);
+    @include retro3-input-text(100%);
   }
 }
 

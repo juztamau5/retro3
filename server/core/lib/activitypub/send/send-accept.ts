@@ -1,4 +1,4 @@
-import { ActivityAccept, ActivityFollow } from '@peertube/peertube-models'
+import { ActivityAccept, ActivityFollow } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { MActor, MActorFollowActors } from '../../../types/models/index.js'
 import { getLocalActorFollowAcceptActivityPubUrl } from '../url.js'

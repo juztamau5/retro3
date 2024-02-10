@@ -84,7 +84,7 @@
 
       <div class="col-12 col-lg-8 col-xl-9">
         <div class="form-group">
-          <my-peertube-checkbox inputName="instanceIsNSFW" formControlName="isNSFW">
+          <my-retro3-checkbox inputName="instanceIsNSFW" formControlName="isNSFW">
             <ng-template ptTemplate="label">
               <ng-container i18n>This instance is dedicated to sensitive or NSFW content</ng-container>
             </ng-template>
@@ -95,7 +95,7 @@
                 Moreover, the NSFW checkbox on video upload will be automatically checked by default.
               </ng-container>
             </ng-template>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
 
         <div class="form-group">
@@ -109,7 +109,7 @@
             </ng-template>
           </my-help>
 
-          <div class="peertube-select-container">
+          <div class="retro3-select-container">
             <select id="instanceDefaultNSFWPolicy" formControlName="defaultNSFWPolicy" class="form-control">
               <option i18n value="undefined" disabled>Policy for sensitive videos</option>
               <option i18n value="do_not_list">Hide</option>
@@ -190,7 +190,7 @@
         </div>
 
         <div class="form-group">
-          <label i18n for="instanceBusinessModel">How will you finance the PeerTube server?</label><my-help helpType="markdownText"></my-help>
+          <label i18n for="instanceBusinessModel">How will you finance the retro3 server?</label><my-help helpType="markdownText"></my-help>
           <div i18n class="label-small-info">With your own funds? With user donations? Advertising?</div>
 
           <my-markdown-textarea

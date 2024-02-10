@@ -20,8 +20,8 @@
   "references": [
     { "path": "./server" },
     { "path": "./scripts" },
-    { "path": "./apps/peertube-runner" },
-    { "path": "./apps/peertube-cli" },
+    { "path": "./apps/retro3-runner" },
+    { "path": "./apps/retro3-cli" },
     { "path": "./packages/core-utils" },
     { "path": "./packages/ffmpeg" },
     { "path": "./packages/models" },

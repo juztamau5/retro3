@@ -6,11 +6,11 @@
 
       <div class="callout callout-orange">
         <span i18n>
-          Estimating a server's capacity to transcode and stream videos isn't easy and we can't tune PeerTube automatically.
+          Estimating a server's capacity to transcode and stream videos isn't easy and we can't tune retro3 automatically.
         </span>
 
         <span i18n>
-          However, you may want to read <a class="link-orange" target="_blank" rel="noopener noreferrer" href="https://docs.joinpeertube.org/admin/configuration#vod-transcoding">our guidelines</a> before tweaking the following values.
+          However, you may want to read <a class="link-orange" target="_blank" rel="noopener noreferrer" href="https://docs.joinretro3.org/admin/configuration#vod-transcoding">our guidelines</a> before tweaking the following values.
         </span>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <h2 i18n class="inner-form-title">TRANSCODING</h2>
       <div i18n class="inner-form-description">
         Process uploaded videos so that they are in a streamable form that any device can play. Though costly in
-        resources, this is a critical part of PeerTube, so tread carefully.
+        resources, this is a critical part of retro3, so tread carefully.
       </div>
     </div>
 
@@ -30,7 +30,7 @@
       <ng-container formGroupName="transcoding">
 
         <div class="col-12 col-xl-11">
-          <my-peertube-checkbox inputName="transcodingEnabled" formControlName="enabled" [recommended]="true">
+          <my-retro3-checkbox inputName="transcodingEnabled" formControlName="enabled" [recommended]="true">
             <ng-template ptTemplate="label">
               <ng-container i18n>Transcoding enabled</ng-container>
             </ng-template>
@@ -41,18 +41,18 @@
                 <h3 class="callout-title" i18n>Input formats</h3>
 
                 <div class="form-group" [ngClass]="getTranscodingDisabledClass()">
-                  <my-peertube-checkbox
+                  <my-retro3-checkbox
                     inputName="transcodingAllowAdditionalExtensions" formControlName="allowAdditionalExtensions"
                     i18n-labelText labelText="Allow additional extensions"
                   >
                     <ng-container ngProjectAs="description">
                       <span i18n>Allows users to upload videos with additional extensions than .mp4, .ogv and .webm (for example: .avi, .mov, .mkv etc).</span>
                     </ng-container>
-                  </my-peertube-checkbox>
+                  </my-retro3-checkbox>
                 </div>
 
                 <div class="form-group" [ngClass]="getTranscodingDisabledClass()">
-                  <my-peertube-checkbox
+                  <my-retro3-checkbox
                     inputName="transcodingAllowAudioFiles" formControlName="allowAudioFiles"
                     i18n-labelText labelText="Allow audio files upload"
                   >
@@ -60,7 +60,7 @@
                       <div i18n>Allows users to upload .mp3, .ogg, .wma, .flac, .aac, or .ac3 audio files.</div>
                       <div i18n>The file will be merged in a still image video with the preview file on upload.</div>
                     </ng-container>
-                  </my-peertube-checkbox>
+                  </my-retro3-checkbox>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@
 
                 <ng-container formGroupName="webVideos">
                   <div class="form-group" [ngClass]="getTranscodingDisabledClass()">
-                    <my-peertube-checkbox
+                    <my-retro3-checkbox
                       inputName="transcodingWebVideosEnabled" formControlName="enabled"
                       i18n-labelText labelText="Web Videos enabled"
                     >
@@ -78,13 +78,13 @@
                           <p i18n>If you also enabled HLS support, it will multiply videos storage by 2</p>
                         </ng-container>
                       </ng-template>
-                    </my-peertube-checkbox>
+                    </my-retro3-checkbox>
                   </div>
                 </ng-container>
 
                 <ng-container formGroupName="hls">
                   <div class="form-group" [ngClass]="getTranscodingDisabledClass()">
-                    <my-peertube-checkbox
+                    <my-retro3-checkbox
                       inputName="transcodingHlsEnabled" formControlName="enabled"
                       i18n-labelText labelText="HLS with P2P support enabled"
                       [recommended]="true"
@@ -103,7 +103,7 @@
                           <p>If you also enabled Web Videos support, it will multiply videos storage by 2</p>
                         </ng-container>
                       </ng-template>
-                    </my-peertube-checkbox>
+                    </my-retro3-checkbox>
                   </div>
                 </ng-container>
 
@@ -111,11 +111,11 @@
                   <div class="mb-2 fw-bold" i18n>Resolutions to generate</div>
 
                   <div class="ms-2 d-flex flex-column">
-                    <my-peertube-checkbox
+                    <my-retro3-checkbox
                       inputName="transcodingAlwaysTranscodeOriginalResolution" formControlName="alwaysTranscodeOriginalResolution"
                       i18n-labelText labelText="Always transcode original resolution"
                     >
-                    </my-peertube-checkbox>
+                    </my-retro3-checkbox>
 
                     <span class="mt-3 mb-2 small muted" i18n>
                       The original file resolution will be the default target if no option is selected.
@@ -123,14 +123,14 @@
 
                     <ng-container formGroupName="resolutions">
                       <div class="form-group" *ngFor="let resolution of resolutions">
-                        <my-peertube-checkbox
+                        <my-retro3-checkbox
                           [inputName]="getResolutionKey(resolution.id)" [formControlName]="resolution.id"
                           labelText="{{ resolution.label }}"
                         >
                           <ng-template *ngIf="resolution.description" ptTemplate="help">
                             <div [innerHTML]="resolution.description"></div>
                           </ng-template>
-                        </my-peertube-checkbox>
+                        </my-retro3-checkbox>
                       </div>
                     </ng-container>
                   </div>
@@ -138,11 +138,11 @@
               </div>
 
             </ng-container>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
 
         <div class="form-group mt-4" formGroupName="remoteRunners" [ngClass]="getTranscodingDisabledClass()">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             inputName="transcodingRemoteRunnersEnabled" formControlName="enabled"
             i18n-labelText labelText="Enable remote runners for VOD"
           >
@@ -152,7 +152,7 @@
                 Remote runners has to register on your instance first.
               </span>
             </ng-container>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
 
         <div class="form-group mt-4" [ngClass]="getLocalTranscodingDisabledClass()">
@@ -180,7 +180,7 @@
 
         <div class="form-group" [ngClass]="getLocalTranscodingDisabledClass()">
           <label i18n for="transcodingConcurrency">Transcoding jobs concurrency</label>
-          <span class="small muted ms-1" i18n>allows to transcode multiple files in parallel. ⚠️ Requires a PeerTube restart</span>
+          <span class="small muted ms-1" i18n>allows to transcode multiple files in parallel. ⚠️ Requires a retro3 restart</span>
 
           <div class="number-with-unit">
             <input type="number" name="transcodingConcurrency" formControlName="concurrency" />
@@ -192,7 +192,7 @@
 
         <div class="form-group" [ngClass]="getLocalTranscodingDisabledClass()">
           <label i18n for="transcodingProfile">Transcoding profile</label>
-          <span class="small muted ms-1" i18n>new transcoding profiles can be added by PeerTube plugins</span>
+          <span class="small muted ms-1" i18n>new transcoding profiles can be added by retro3 plugins</span>
 
           <my-select-options
             id="transcodingProfile"
@@ -221,18 +221,18 @@
 
       <ng-container formGroupName="videoStudio">
         <div class="form-group" [ngClass]="getTranscodingDisabledClass()">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             inputName="videoStudioEnabled" formControlName="enabled"
             i18n-labelText labelText="Enable video studio"
           >
             <ng-container ngProjectAs="description" *ngIf="!isTranscodingEnabled()">
               <span i18n>⚠️ You need to enable transcoding first to enable video studio</span>
             </ng-container>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
 
         <div class="form-group" formGroupName="remoteRunners" [ngClass]="getStudioDisabledClass()">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             inputName="videoStudioRemoteRunnersEnabled" formControlName="enabled"
             i18n-labelText labelText="Enable remote runners for studio"
           >
@@ -242,7 +242,7 @@
                 Remote runners has to register on your instance first.
               </span>
             </ng-container>
-          </my-peertube-checkbox>
+          </my-retro3-checkbox>
         </div>
       </ng-container>
     </div>

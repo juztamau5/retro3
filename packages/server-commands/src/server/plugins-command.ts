@@ -5,23 +5,23 @@ import { join } from 'path'
 import {
   HttpStatusCode,
   HttpStatusCodeType,
-  PeerTubePlugin,
-  PeerTubePluginIndex,
-  PeertubePluginIndexList,
+  Retro3Plugin,
+  Retro3PluginIndex,
+  Retro3PluginIndexList,
   PluginPackageJSON,
   PluginTranslation,
   PluginType_Type,
   PublicServerSetting,
   RegisteredServerSettings,
   ResultList
-} from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class PluginsCommand extends AbstractCommand {
 
   static getPluginTestPath (suffix = '') {
-    return buildAbsoluteFixturePath('peertube-plugin-test' + suffix)
+    return buildAbsoluteFixturePath('retro3-plugin-test' + suffix)
   }
 
   list (options: OverrideCommandOptions & {
@@ -34,7 +34,7 @@ export class PluginsCommand extends AbstractCommand {
     const { start, count, sort, pluginType, uninstalled } = options
     const path = '/api/v1/plugins'
 
-    return this.getRequestBody<ResultList<PeerTubePlugin>>({
+    return this.getRequestBody<ResultList<Retro3Plugin>>({
       ...options,
 
       path,
@@ -55,23 +55,23 @@ export class PluginsCommand extends AbstractCommand {
     count?: number
     sort?: string
     pluginType?: PluginType_Type
-    currentPeerTubeEngine?: string
+    currentRetro3Engine?: string
     search?: string
     expectedStatus?: HttpStatusCodeType
   }) {
-    const { start, count, sort, pluginType, search, currentPeerTubeEngine } = options
+    const { start, count, sort, pluginType, search, currentRetro3Engine } = options
     const path = '/api/v1/plugins/available'
 
-    const query: PeertubePluginIndexList = {
+    const query: Retro3PluginIndexList = {
       start,
       count,
       sort,
       pluginType,
-      currentPeerTubeEngine,
+      currentRetro3Engine,
       search
     }
 
-    return this.getRequestBody<ResultList<PeerTubePluginIndex>>({
+    return this.getRequestBody<ResultList<Retro3PluginIndex>>({
       ...options,
 
       path,
@@ -86,7 +86,7 @@ export class PluginsCommand extends AbstractCommand {
   }) {
     const path = '/api/v1/plugins/' + options.npmName
 
-    return this.getRequestBody<PeerTubePlugin>({
+    return this.getRequestBody<Retro3Plugin>({
       ...options,
 
       path,

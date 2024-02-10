@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { ServerStats } from '@peertube/peertube-models'
+import { ServerStats } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-instance-statistics',

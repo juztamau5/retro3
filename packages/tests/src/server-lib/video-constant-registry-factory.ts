@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { expect } from 'chai'
-import { VideoPlaylistPrivacyType, VideoPrivacyType } from '@peertube/peertube-models'
+import { VideoPlaylistPrivacyType, VideoPrivacyType } from '@retroai/retro3-models'
 import {
   VIDEO_CATEGORIES,
   VIDEO_LANGUAGES,
   VIDEO_LICENCES,
   VIDEO_PLAYLIST_PRIVACIES,
   VIDEO_PRIVACIES
-} from '@peertube/peertube-server/core/initializers/constants.js'
-import { VideoConstantManagerFactory } from '@peertube/peertube-server/core/lib/plugins/video-constant-manager-factory.js'
+} from '@retroai/retro3-server/core/initializers/constants.js'
+import { VideoConstantManagerFactory } from '@retroai/retro3-server/core/lib/plugins/video-constant-manager-factory.js'
 
 describe('VideoConstantManagerFactory', function () {
-  const factory = new VideoConstantManagerFactory('peertube-plugin-constants')
+  const factory = new VideoConstantManagerFactory('retro3-plugin-constants')
 
   afterEach(() => {
-    factory.resetVideoConstants('peertube-plugin-constants')
+    factory.resetVideoConstants('retro3-plugin-constants')
   })
 
   describe('VideoCategoryManager', () => {

@@ -1,4 +1,4 @@
-import { EncoderOptions } from '@peertube/peertube-models'
+import { EncoderOptions } from '@retroai/retro3-models'
 
 export type StreamType = 'audio' | 'video'
 

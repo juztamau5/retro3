@@ -2,7 +2,7 @@ import { SortMeta } from 'primeng/api'
 import { Component, OnInit, ViewChild } from '@angular/core'
 import { Notifier, RestPagination, RestTable } from '@app/core'
 import { Account, VideoOwnershipService } from '@app/shared/shared-main'
-import { VideoChangeOwnership, VideoChangeOwnershipStatus, VideoChangeOwnershipStatusType } from '@peertube/peertube-models'
+import { VideoChangeOwnership, VideoChangeOwnershipStatus, VideoChangeOwnershipStatusType } from '@retroai/retro3-models'
 import { MyAcceptOwnershipComponent } from './my-accept-ownership/my-accept-ownership.component'
 
 @Component({

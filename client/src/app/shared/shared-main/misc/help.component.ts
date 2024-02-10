@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, ContentChildren, Input, OnChanges, OnInit, QueryList, TemplateRef } from '@angular/core'
 import { GlobalIconName } from '@app/shared/shared-icons'
-import { ENHANCED_RULES, TEXT_RULES } from '@peertube/peertube-core-utils'
-import { PeerTubeTemplateDirective } from '../angular'
+import { ENHANCED_RULES, TEXT_RULES } from '@retroai/retro3-core-utils'
+import { Retro3TemplateDirective } from '../angular'
 
 @Component({
   selector: 'my-help',
@@ -16,7 +16,7 @@ export class HelpComponent implements OnInit, OnChanges, AfterContentInit {
   @Input() title = $localize`Get help`
   @Input() autoClose = 'outside'
 
-  @ContentChildren(PeerTubeTemplateDirective) templates: QueryList<PeerTubeTemplateDirective<'preHtml' | 'customHtml' | 'postHtml'>>
+  @ContentChildren(Retro3TemplateDirective) templates: QueryList<Retro3TemplateDirective<'preHtml' | 'customHtml' | 'postHtml'>>
 
   isPopoverOpened = false
   mainHtml = ''

@@ -1,7 +1,7 @@
 import { AllowNull, BelongsToMany, Column, CreatedAt, Model, Table, UpdatedAt } from 'sequelize-typescript'
 import { Transaction } from 'sequelize'
 import { MTracker } from '@server/types/models/server/tracker.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from '../video/video.js'
 import { VideoTrackerModel } from './video-tracker.js'
 

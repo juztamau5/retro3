@@ -5,8 +5,8 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { RestExtractor, RestPagination, RestService, ServerService, UserService } from '@app/core'
 import { objectToFormData } from '@app/helpers'
-import { peertubeTranslate } from '@peertube/peertube-core-utils'
-import { ResultList, VideoImport, VideoImportCreate, VideoUpdate } from '@peertube/peertube-models'
+import { retro3Translate } from '@retroai/retro3-core-utils'
+import { ResultList, VideoImport, VideoImportCreate, VideoUpdate } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 
 @Injectable()
@@ -113,7 +113,7 @@ export class VideoImportService {
                .pipe(
                  map(translations => {
                    result.data.forEach(d =>
-                     d.state.label = peertubeTranslate(d.state.label, translations)
+                     d.state.label = retro3Translate(d.state.label, translations)
                    )
 
                    return result

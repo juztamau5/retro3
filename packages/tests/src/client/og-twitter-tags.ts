@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { Account, HttpStatusCode, VideoPlaylistCreateResult } from '@peertube/peertube-models'
-import { cleanupTests, makeGetRequest, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { Account, HttpStatusCode, VideoPlaylistCreateResult } from '@retroai/retro3-models'
+import { cleanupTests, makeGetRequest, Retro3Server } from '@retroai/retro3-server-commands'
 import { getWatchPlaylistBasePaths, getWatchVideoBasePaths, prepareClientTests } from '@tests/shared/client.js'
 
 describe('Test Open Graph and Twitter cards HTML tags', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let account: Account
 
   let videoIds: (string | number)[] = []

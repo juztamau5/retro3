@@ -1,6 +1,6 @@
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { VideoStreamingPlaylistModel } from '@server/models/video/video-streaming-playlist.js'
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { VideoRedundancyModel } from '../../../models/redundancy/video-redundancy.js'
 import { MVideoUrl } from './video.js'
 import { MVideoFile, MVideoFileVideo } from './video-file.js'

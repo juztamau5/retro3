@@ -1,5 +1,5 @@
-import { pick } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, ResultList, RunnerRegistrationToken } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, ResultList, RunnerRegistrationToken } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class RunnerRegistrationTokensCommand extends AbstractCommand {

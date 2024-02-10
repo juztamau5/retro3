@@ -11,7 +11,7 @@ form {
 }
 
 textarea {
-  @include peertube-textarea(100%, 70px);
+  @include retro3-textarea(100%, 70px);
 
   margin-top: 20px;
 }

@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param, query } from 'express-validator'
-import { HttpStatusCode, VideoRateType } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoRateType } from '@retroai/retro3-models'
 import { isAccountNameValid } from '../../../helpers/custom-validators/accounts.js'
 import { isIdValid } from '../../../helpers/custom-validators/misc.js'
 import { isRatingValid } from '../../../helpers/custom-validators/video-rates.js'

@@ -6,20 +6,20 @@ input#username + .muted {
 }
 
 input[type=text] {
-  @include peertube-input-text(340px);
+  @include retro3-input-text(340px);
 
   display: block;
 }
 
 input[type=submit] {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 
   margin-top: 15px;
 }
 
 textarea {
-  @include peertube-textarea(100%, 150px);
+  @include retro3-textarea(100%, 150px);
   max-width: 100%;
 
   display: block;

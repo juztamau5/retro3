@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResultList, VideoChangeOwnership } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoChangeOwnership } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class ChangeOwnershipCommand extends AbstractCommand {

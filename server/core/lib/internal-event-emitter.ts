@@ -1,7 +1,7 @@
 import { MChannel, MVideo, MVideoImmutable } from '@server/types/models/index.js'
 import { EventEmitter } from 'events'
 
-export interface PeerTubeInternalEvents {
+export interface Retro3InternalEvents {
   'video-created': (options: { video: MVideo }) => void
   'video-updated': (options: { video: MVideo }) => void
   'video-deleted': (options: { video: MVideo }) => void
@@ -14,12 +14,12 @@ export interface PeerTubeInternalEvents {
 }
 
 declare interface InternalEventEmitter {
-  on<U extends keyof PeerTubeInternalEvents>(
-    event: U, listener: PeerTubeInternalEvents[U]
+  on<U extends keyof Retro3InternalEvents>(
+    event: U, listener: Retro3InternalEvents[U]
   ): this
 
-  emit<U extends keyof PeerTubeInternalEvents>(
-    event: U, ...args: Parameters<PeerTubeInternalEvents[U]>
+  emit<U extends keyof Retro3InternalEvents>(
+    event: U, ...args: Parameters<Retro3InternalEvents[U]>
   ): boolean
 }
 

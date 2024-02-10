@@ -2,10 +2,10 @@
 
 import { expect } from 'chai'
 import { prepareViewsServers, prepareViewsVideos, processViewersStats } from '@tests/shared/views.js'
-import { cleanupTests, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { cleanupTests, Retro3Server } from '@retroai/retro3-server-commands'
 
 describe('Test views retention stats', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   before(async function () {
     this.timeout(120000)

@@ -20,7 +20,7 @@ import {
   MVideoAbuseVideoFull,
   MVideoAccountLightBlacklistAllFiles
 } from '@server/types/models/index.js'
-import { LiveVideoCreate, VideoCommentCreate, VideoCreate, VideoImportCreate } from '@peertube/peertube-models'
+import { LiveVideoCreate, VideoCommentCreate, VideoCreate, VideoImportCreate } from '@retroai/retro3-models'
 import { UserModel } from '../models/user/user.js'
 import { VideoCommentModel } from '../models/video/video-comment.js'
 import { VideoModel } from '../models/video/video.js'

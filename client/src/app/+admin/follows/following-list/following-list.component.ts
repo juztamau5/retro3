@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core'
 import { ConfirmService, Notifier, RestPagination, RestTable } from '@app/core'
 import { AdvancedInputFilter } from '@app/shared/shared-forms'
 import { InstanceFollowService } from '@app/shared/shared-instance'
-import { ActorFollow } from '@peertube/peertube-models'
+import { ActorFollow } from '@retroai/retro3-models'
 import { FollowModalComponent } from './follow-modal.component'
 import { DropdownAction } from '@app/shared/shared-main'
 import { formatICU } from '@app/helpers'
@@ -54,7 +54,7 @@ export class FollowingListComponent extends RestTable <ActorFollow> implements O
   }
 
   isInstanceFollowing (follow: ActorFollow) {
-    return follow.following.name === 'peertube'
+    return follow.following.name === 'retro3'
   }
 
   buildFollowingName (follow: ActorFollow) {

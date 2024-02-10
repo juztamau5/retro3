@@ -1,7 +1,7 @@
 import { Mutex } from 'async-mutex'
 import { remove } from 'fs-extra/esm'
 import { extname, join } from 'path'
-import { VideoStorage } from '@peertube/peertube-models'
+import { VideoStorage } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { extractVideo } from '@server/helpers/video.js'
 import { CONFIG } from '@server/initializers/config.js'
@@ -13,7 +13,7 @@ import {
   MVideoFileStreamingPlaylistVideo,
   MVideoFileVideo
 } from '@server/types/models/index.js'
-import { buildUUID } from '@peertube/peertube-node-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
 import { makeHLSFileAvailable, makeWebVideoFileAvailable } from './object-storage/index.js'
 import { getHLSDirectory, getHLSRedundancyDirectory, getHlsResolutionPlaylistFilename } from './paths.js'
 import { isVideoInPrivateDirectory } from './video-privacy.js'

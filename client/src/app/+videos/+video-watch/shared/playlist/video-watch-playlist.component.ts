@@ -4,8 +4,8 @@ import { AuthService, ComponentPagination, HooksService, Notifier, SessionStorag
 import { isInViewport } from '@app/helpers'
 import { VideoPlaylist, VideoPlaylistElement, VideoPlaylistService } from '@app/shared/shared-video-playlist'
 import { getBoolOrDefault } from '@root-helpers/local-storage-utils'
-import { peertubeSessionStorage } from '@root-helpers/peertube-web-storage'
-import { VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { retro3SessionStorage } from '@root-helpers/retro3-web-storage'
+import { VideoPlaylistPrivacy } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-video-watch-playlist',
@@ -238,7 +238,7 @@ export class VideoWatchPlaylistComponent {
     this.loopPlaylist = !this.loopPlaylist
     this.setLoopPlaylistSwitchText()
 
-    peertubeSessionStorage.setItem(
+    retro3SessionStorage.setItem(
       VideoWatchPlaylistComponent.SESSION_STORAGE_LOOP_PLAYLIST,
       this.loopPlaylist.toString()
     )

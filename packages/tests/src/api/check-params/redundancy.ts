@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode, VideoCreateResult } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoCreateResult } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -10,13 +10,13 @@ import {
   makeGetRequest,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test server redundancy API validators', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let userAccessToken = null
   let videoIdLocal: number
   let videoRemote: VideoCreateResult
@@ -116,7 +116,7 @@ describe('Test server redundancy API validators', function () {
     })
 
     it('Should fail with an incorrect video id', async function () {
-      await makePostBodyRequest({ url, path, token, fields: { videoId: 'peertube' } })
+      await makePostBodyRequest({ url, path, token, fields: { videoId: 'retro3' } })
     })
 
     it('Should fail with a not found video id', async function () {

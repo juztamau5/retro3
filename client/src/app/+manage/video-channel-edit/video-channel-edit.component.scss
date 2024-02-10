@@ -10,7 +10,7 @@ my-actor-banner-edit {
 }
 
 input[type=text] {
-  @include peertube-input-text(340px);
+  @include retro3-input-text(340px);
 }
 
 input[type=submit] {
@@ -18,15 +18,15 @@ input[type=submit] {
 }
 
 textarea {
-  @include peertube-textarea(500px, 150px);
+  @include retro3-textarea(500px, 150px);
 }
 
 my-markdown-textarea {
   max-width: 500px;
 }
 
-.peertube-select-container {
-  @include peertube-select-container(340px);
+.retro3-select-container {
+  @include retro3-select-container(340px);
 }
 
 .breadcrumb {

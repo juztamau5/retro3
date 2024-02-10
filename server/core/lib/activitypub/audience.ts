@@ -1,4 +1,4 @@
-import { ActivityAudience } from '@peertube/peertube-models'
+import { ActivityAudience } from '@retroai/retro3-models'
 import { ACTIVITY_PUB } from '../../initializers/constants.js'
 import { MActorFollowersUrl } from '../../types/models/index.js'
 

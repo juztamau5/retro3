@@ -2,7 +2,7 @@ import { catchError, map, of, tap } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { RestExtractor } from '@app/core'
-import { VideoToken } from '@peertube/peertube-models'
+import { VideoToken } from '@retroai/retro3-models'
 import { VideoService } from './video.service'
 import { VideoPasswordService } from './video-password.service'
 

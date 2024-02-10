@@ -5,7 +5,7 @@ import { initDatabaseModels } from '@server/initializers/database.js'
 import { JobQueue } from '@server/lib/job-queue/index.js'
 import { moveToExternalStorageState, moveToFileSystemState } from '@server/lib/video-state.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { VideoState, VideoStorage } from '@peertube/peertube-models'
+import { VideoState, VideoStorage } from '@retroai/retro3-models'
 import { MStreamingPlaylist, MVideoFile, MVideoFullLight } from '@server/types/models/index.js'
 
 program

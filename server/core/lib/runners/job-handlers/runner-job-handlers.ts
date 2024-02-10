@@ -1,5 +1,5 @@
 import { MRunnerJob } from '@server/types/models/runners/index.js'
-import { RunnerJobSuccessPayload, RunnerJobType, RunnerJobUpdatePayload } from '@peertube/peertube-models'
+import { RunnerJobSuccessPayload, RunnerJobType, RunnerJobUpdatePayload } from '@retroai/retro3-models'
 import { AbstractJobHandler } from './abstract-job-handler.js'
 import { LiveRTMPHLSTranscodingJobHandler } from './live-rtmp-hls-transcoding-job-handler.js'
 import { VideoStudioTranscodingJobHandler } from './video-studio-transcoding-job-handler.js'

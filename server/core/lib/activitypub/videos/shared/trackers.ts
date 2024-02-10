@@ -4,7 +4,7 @@ import { isArray } from '@server/helpers/custom-validators/misc.js'
 import { REMOTE_SCHEME } from '@server/initializers/constants.js'
 import { TrackerModel } from '@server/models/server/tracker.js'
 import { MVideo, MVideoWithHost } from '@server/types/models/index.js'
-import { ActivityTrackerUrlObject, VideoObject } from '@peertube/peertube-models'
+import { ActivityTrackerUrlObject, VideoObject } from '@retroai/retro3-models'
 import { buildRemoteVideoBaseUrl } from '../../url.js'
 
 function getTrackerUrls (object: VideoObject, video: MVideoWithHost) {

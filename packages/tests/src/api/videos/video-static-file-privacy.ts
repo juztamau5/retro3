@@ -2,26 +2,26 @@
 
 import { expect } from 'chai'
 import { decode } from 'magnet-uri'
-import { getAllFiles, wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, HttpStatusCodeType, LiveVideo, VideoDetails, VideoPrivacy } from '@peertube/peertube-models'
+import { getAllFiles, wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, HttpStatusCodeType, LiveVideo, VideoDetails, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   findExternalSavedVideo,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith } from '@tests/shared/checks.js'
 import { checkVideoFileTokenReinjection } from '@tests/shared/streaming-playlists.js'
 import { parseTorrentVideo } from '@tests/shared/webtorrent.js'
 
 describe('Test video static file privacy', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userToken: string
 
   before(async function () {
@@ -210,7 +210,7 @@ describe('Test video static file privacy', function () {
         await makeRawRequest({ url: file.fileDownloadUrl, query: { videoFileToken }, expectedStatus })
 
         if (videoPassword) {
-          const headers = { 'x-peertube-video-password': videoPassword }
+          const headers = { 'x-retro3-video-password': videoPassword }
           await makeRawRequest({ url: file.fileUrl, headers, expectedStatus })
           await makeRawRequest({ url: file.fileDownloadUrl, headers, expectedStatus })
         }
@@ -224,7 +224,7 @@ describe('Test video static file privacy', function () {
       await makeRawRequest({ url: hls.segmentsSha256Url, query: { videoFileToken }, expectedStatus })
 
       if (videoPassword) {
-        const headers = { 'x-peertube-video-password': videoPassword }
+        const headers = { 'x-retro3-video-password': videoPassword }
         await makeRawRequest({ url: hls.playlistUrl, token: null, headers, expectedStatus })
         await makeRawRequest({ url: hls.segmentsSha256Url, token: null, headers, expectedStatus })
       }
@@ -404,10 +404,10 @@ describe('Test video static file privacy', function () {
         await makeRawRequest({ url, query: { videoFileToken: unrelatedFileToken }, expectedStatus: HttpStatusCode.FORBIDDEN_403 })
 
         if (videoPassword) {
-          await makeRawRequest({ url, headers: { 'x-peertube-video-password': videoPassword }, expectedStatus: HttpStatusCode.OK_200 })
+          await makeRawRequest({ url, headers: { 'x-retro3-video-password': videoPassword }, expectedStatus: HttpStatusCode.OK_200 })
           await makeRawRequest({
             url,
-            headers: { 'x-peertube-video-password': 'incorrectPassword' },
+            headers: { 'x-retro3-video-password': 'incorrectPassword' },
             expectedStatus: HttpStatusCode.FORBIDDEN_403
           })
         }

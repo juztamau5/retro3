@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird'
 import { URL } from 'url'
-import { ActivityPubOrderedCollection } from '@peertube/peertube-models'
+import { ActivityPubOrderedCollection } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger } from '../../helpers/logger.js'
 import { ACTIVITY_PUB, WEBSERVER } from '../../initializers/constants.js'

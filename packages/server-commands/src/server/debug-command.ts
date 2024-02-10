@@ -1,4 +1,4 @@
-import { Debug, HttpStatusCode, SendDebugCommand } from '@peertube/peertube-models'
+import { Debug, HttpStatusCode, SendDebugCommand } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class DebugCommand extends AbstractCommand {

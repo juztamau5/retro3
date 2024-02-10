@@ -2,10 +2,10 @@
 
 import { expect } from 'chai'
 import { MockInstancesIndex } from '@tests/shared/mock-servers/index.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { cleanupTests, createMultipleServers, PeerTubeServer, setAccessTokensToServers, waitJobs } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { cleanupTests, createMultipleServers, Retro3Server, setAccessTokensToServers, waitJobs } from '@retroai/retro3-server-commands'
 
-async function checkFollow (follower: PeerTubeServer, following: PeerTubeServer, exists: boolean) {
+async function checkFollow (follower: Retro3Server, following: Retro3Server, exists: boolean) {
   {
     const body = await following.follows.getFollowers({ start: 0, count: 5, sort: '-createdAt' })
     const follow = body.data.find(f => f.follower.host === follower.host && f.state === 'accepted')
@@ -23,13 +23,13 @@ async function checkFollow (follower: PeerTubeServer, following: PeerTubeServer,
   }
 }
 
-async function server1Follows2 (servers: PeerTubeServer[]) {
+async function server1Follows2 (servers: Retro3Server[]) {
   await servers[0].follows.follow({ hosts: [ servers[1].host ] })
 
   await waitJobs(servers)
 }
 
-async function resetFollows (servers: PeerTubeServer[]) {
+async function resetFollows (servers: Retro3Server[]) {
   try {
     await servers[0].follows.unfollow({ target: servers[1] })
     await servers[1].follows.unfollow({ target: servers[0] })
@@ -43,7 +43,7 @@ async function resetFollows (servers: PeerTubeServer[]) {
 }
 
 describe('Test auto follows', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   before(async function () {
     this.timeout(120000)
@@ -109,7 +109,7 @@ describe('Test auto follows', function () {
       await checkFollow(servers[0], servers[1], false)
       await checkFollow(servers[1], servers[0], false)
 
-      await servers[1].follows.acceptFollower({ follower: 'peertube@' + servers[0].host })
+      await servers[1].follows.acceptFollower({ follower: 'retro3@' + servers[0].host })
       await waitJobs(servers)
 
       await checkFollow(servers[0], servers[1], true)

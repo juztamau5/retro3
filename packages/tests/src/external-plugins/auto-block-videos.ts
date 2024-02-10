@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { Video } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { Video } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { MockBlocklist } from '../shared/mock-servers/index.js'
 
-async function check (server: PeerTubeServer, videoUUID: string, exists = true) {
+async function check (server: Retro3Server, videoUUID: string, exists = true) {
   const { data } = await server.videos.list()
 
   const video = data.find(v => v.uuid === videoUUID)
@@ -23,7 +23,7 @@ async function check (server: PeerTubeServer, videoUUID: string, exists = true) 
 }
 
 describe('Official plugin auto-block videos', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let blocklistServer: MockBlocklist
   let server1Videos: Video[] = []
   let server2Videos: Video[] = []
@@ -36,7 +36,7 @@ describe('Official plugin auto-block videos', function () {
     await setAccessTokensToServers(servers)
 
     for (const server of servers) {
-      await server.plugins.install({ npmName: 'peertube-plugin-auto-block-videos' })
+      await server.plugins.install({ npmName: 'retro3-plugin-auto-block-videos' })
     }
 
     blocklistServer = new MockBlocklist()
@@ -62,7 +62,7 @@ describe('Official plugin auto-block videos', function () {
 
   it('Should update plugin settings', async function () {
     await servers[0].plugins.updateSettings({
-      npmName: 'peertube-plugin-auto-block-videos',
+      npmName: 'retro3-plugin-auto-block-videos',
       settings: {
         'blocklist-urls': `http://127.0.0.1:${port}/blocklist`,
         'check-seconds-interval': 1

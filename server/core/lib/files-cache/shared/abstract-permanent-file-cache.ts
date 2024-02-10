@@ -5,7 +5,7 @@ import { logger } from '@server/helpers/logger.js'
 import { CachePromise } from '@server/helpers/promise-cache.js'
 import { LRU_CACHE, STATIC_MAX_AGE } from '@server/initializers/constants.js'
 import { downloadImageFromWorker } from '@server/lib/worker/parent-process.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 type ImageModel = {
   fileUrl: string

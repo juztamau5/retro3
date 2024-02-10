@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { PeerTubeServer, cleanupTests, createMultipleServers, killallServers } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { Retro3Server, cleanupTests, createMultipleServers, killallServers } from '@retroai/retro3-server-commands'
 import {
   activityPubContextify,
   buildGlobalHTTPHeaders,
   signAndContextify
-} from '@peertube/peertube-server/core/helpers/activity-pub-utils.js'
-import { buildDigest } from '@peertube/peertube-server/core/helpers/peertube-crypto.js'
-import { signJsonLDObject } from '@peertube/peertube-server/core/helpers/peertube-jsonld.js'
-import { ACTIVITY_PUB, HTTP_SIGNATURE } from '@peertube/peertube-server/core/initializers/constants.js'
+} from '@retroai/retro3-server/core/helpers/activity-pub-utils.js'
+import { buildDigest } from '@retroai/retro3-server/core/helpers/retro3-crypto.js'
+import { signJsonLDObject } from '@retroai/retro3-server/core/helpers/retro3-jsonld.js'
+import { ACTIVITY_PUB, HTTP_SIGNATURE } from '@retroai/retro3-server/core/initializers/constants.js'
 import { makePOSTAPRequest } from '@tests/shared/requests.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { expect } from 'chai'
@@ -30,7 +30,7 @@ function fakeFilter () {
 }
 
 function setKeysOfServer (onServer: SQLCommand, ofServerUrl: string, publicKey: string, privateKey: string) {
-  const url = ofServerUrl + '/accounts/peertube'
+  const url = ofServerUrl + '/accounts/retro3'
 
   return Promise.all([
     onServer.setActorField(url, 'publicKey', publicKey),
@@ -39,7 +39,7 @@ function setKeysOfServer (onServer: SQLCommand, ofServerUrl: string, publicKey: 
 }
 
 function setUpdatedAtOfServer (onServer: SQLCommand, ofServerUrl: string, updatedAt: string) {
-  const url = ofServerUrl + '/accounts/peertube'
+  const url = ofServerUrl + '/accounts/retro3'
 
   return Promise.all([
     onServer.setActorField(url, 'createdAt', updatedAt),
@@ -47,8 +47,8 @@ function setUpdatedAtOfServer (onServer: SQLCommand, ofServerUrl: string, update
   ])
 }
 
-function getAnnounceWithoutContext (server: PeerTubeServer) {
-  const json = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/announce-without-context.json'))
+function getAnnounceWithoutContext (server: Retro3Server) {
+  const json = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/announce-without-context.json'))
   const result: typeof json = {}
 
   for (const key of Object.keys(json)) {
@@ -89,17 +89,17 @@ async function makeFollowRequest (to: { url: string }, by: { url: string, privat
 }
 
 describe('Test ActivityPub security', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommands: SQLCommand[] = []
 
   let url: string
 
-  const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/keys.json'))
-  const invalidKeys = readJsonSync(buildAbsoluteFixturePath('./ap-json/peertube/invalid-keys.json'))
+  const keys = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/keys.json'))
+  const invalidKeys = readJsonSync(buildAbsoluteFixturePath('./ap-json/retro3/invalid-keys.json'))
   const baseHttpSignature = () => ({
     algorithm: HTTP_SIGNATURE.ALGORITHM,
     authorizationHeaderName: HTTP_SIGNATURE.HEADER_NAME,
-    keyId: 'acct:peertube@' + servers[1].host,
+    keyId: 'acct:retro3@' + servers[1].host,
     key: keys.privateKey,
     headers: HTTP_SIGNATURE.HEADERS_TO_SIGN_WITH_PAYLOAD
   })
@@ -118,8 +118,8 @@ describe('Test ActivityPub security', function () {
     await setKeysOfServer(sqlCommands[0], servers[1].url, keys.publicKey, null)
     await setKeysOfServer(sqlCommands[1], servers[1].url, keys.publicKey, keys.privateKey)
 
-    const to = { url: servers[0].url + '/accounts/peertube' }
-    const by = { url: servers[1].url + '/accounts/peertube', privateKey: keys.privateKey }
+    const to = { url: servers[0].url + '/accounts/retro3' }
+    const by = { url: servers[1].url + '/accounts/retro3', privateKey: keys.privateKey }
     await makeFollowRequest(to, by)
   })
 
@@ -220,7 +220,7 @@ describe('Test ActivityPub security', function () {
       await setKeysOfServer(sqlCommands[1], servers[1].url, invalidKeys.publicKey, invalidKeys.privateKey)
       await setUpdatedAtOfServer(sqlCommands[0], servers[1].url, '2015-07-17 22:00:00+00')
 
-      // Invalid peertube actor cache
+      // Invalid retro3 actor cache
       await killallServers([ servers[1] ])
       await servers[1].run()
 
@@ -243,8 +243,8 @@ describe('Test ActivityPub security', function () {
       await setKeysOfServer(sqlCommands[1], servers[1].url, keys.publicKey, keys.privateKey)
       await setKeysOfServer(sqlCommands[2], servers[2].url, keys.publicKey, keys.privateKey)
 
-      const to = { url: servers[0].url + '/accounts/peertube' }
-      const by = { url: servers[2].url + '/accounts/peertube', privateKey: keys.privateKey }
+      const to = { url: servers[0].url + '/accounts/retro3' }
+      const by = { url: servers[2].url + '/accounts/retro3', privateKey: keys.privateKey }
       await makeFollowRequest(to, by)
     })
 
@@ -253,9 +253,9 @@ describe('Test ActivityPub security', function () {
       await setKeysOfServer(sqlCommands[2], servers[2].url, invalidKeys.publicKey, invalidKeys.privateKey)
 
       const body = getAnnounceWithoutContext(servers[1])
-      body.actor = servers[2].url + '/accounts/peertube'
+      body.actor = servers[2].url + '/accounts/retro3'
 
-      const signer: any = { privateKey: invalidKeys.privateKey, url: servers[2].url + '/accounts/peertube' }
+      const signer: any = { privateKey: invalidKeys.privateKey, url: servers[2].url + '/accounts/retro3' }
       const signedBody = await signAndContextify({
         byActor: signer,
         data: body,
@@ -279,9 +279,9 @@ describe('Test ActivityPub security', function () {
       await setKeysOfServer(sqlCommands[0], servers[2].url, keys.publicKey, keys.privateKey)
 
       const body = getAnnounceWithoutContext(servers[1])
-      body.actor = servers[2].url + '/accounts/peertube'
+      body.actor = servers[2].url + '/accounts/retro3'
 
-      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/peertube' }
+      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/retro3' }
       const signedBody: any = await signAndContextify({
         byActor: signer,
         data: body,
@@ -290,7 +290,7 @@ describe('Test ActivityPub security', function () {
         signerFunction: signJsonLDObjectWithoutAssertion
       })
 
-      signedBody.actor = servers[2].url + '/account/peertube'
+      signedBody.actor = servers[2].url + '/account/retro3'
 
       const headers = buildGlobalHTTPHeaders(signedBody, buildDigest)
 
@@ -304,9 +304,9 @@ describe('Test ActivityPub security', function () {
 
     it('Should succeed with a valid signature', async function () {
       const body = getAnnounceWithoutContext(servers[1])
-      body.actor = servers[2].url + '/accounts/peertube'
+      body.actor = servers[2].url + '/accounts/retro3'
 
-      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/peertube' }
+      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/retro3' }
       const signedBody = await signAndContextify({
         byActor: signer,
         data: body,
@@ -332,9 +332,9 @@ describe('Test ActivityPub security', function () {
       await setKeysOfServer(sqlCommands[2], servers[2].url, invalidKeys.publicKey, invalidKeys.privateKey)
 
       const body = getAnnounceWithoutContext(servers[1])
-      body.actor = servers[2].url + '/accounts/peertube'
+      body.actor = servers[2].url + '/accounts/retro3'
 
-      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/peertube' }
+      const signer: any = { privateKey: keys.privateKey, url: servers[2].url + '/accounts/retro3' }
       const signedBody = await signAndContextify({
         byActor: signer,
         data: body,

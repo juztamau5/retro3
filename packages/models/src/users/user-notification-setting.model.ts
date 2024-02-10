@@ -27,7 +27,7 @@ export interface UserNotificationSetting {
   abuseStateChange: UserNotificationSettingValueType
   abuseNewMessage: UserNotificationSettingValueType
 
-  newPeerTubeVersion: UserNotificationSettingValueType
+  newRetro3Version: UserNotificationSettingValueType
   newPluginVersion: UserNotificationSettingValueType
 
   myVideoStudioEditionFinished: UserNotificationSettingValueType

@@ -6,7 +6,7 @@ import { AuthService } from '@app/core'
 import { listUserChannelsForSelect } from '@app/helpers'
 import { VideoCaptionService, VideoChapterService, VideoDetails, VideoPasswordService, VideoService } from '@app/shared/shared-main'
 import { LiveVideoService } from '@app/shared/shared-video-live'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { VideoPrivacy } from '@retroai/retro3-models'
 
 @Injectable()
 export class VideoUpdateResolver {

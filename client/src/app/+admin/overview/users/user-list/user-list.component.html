@@ -18,7 +18,7 @@
         >
         </my-action-dropdown>
 
-        <a *ngIf="!isInSelectionMode()" class="peertube-create-button" routerLink="/admin/users/create">
+        <a *ngIf="!isInSelectionMode()" class="retro3-create-button" routerLink="/admin/users/create">
           <my-global-icon iconName="user-add" aria-hidden="true"></my-global-icon>
           <ng-container i18n>Create user</ng-container>
         </a>
@@ -57,8 +57,8 @@
               </my-select-checkbox>
             </div>
             <div ngbDropdownItem class="dropdown-item">
-              <my-peertube-checkbox inputName="highlightBannedUsers" [(ngModel)]="highlightBannedUsers"
-                i18n-labelText labelText="Highlight banned users"></my-peertube-checkbox>
+              <my-retro3-checkbox inputName="highlightBannedUsers" [(ngModel)]="highlightBannedUsers"
+                i18n-labelText labelText="Highlight banned users"></my-retro3-checkbox>
             </div>
           </div>
         </div>

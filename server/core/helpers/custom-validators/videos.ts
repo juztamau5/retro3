@@ -1,7 +1,7 @@
 import { Request, Response, UploadFilesForCheck } from 'express'
 import { decode as magnetUriDecode } from 'magnet-uri'
 import validator from 'validator'
-import { HttpStatusCode, VideoIncludeType, VideoPrivacy, VideoPrivacyType, VideoRateType } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoIncludeType, VideoPrivacy, VideoPrivacyType, VideoRateType } from '@retroai/retro3-models'
 import { getVideoWithAttributes } from '@server/helpers/video.js'
 import {
   CONSTRAINTS_FIELDS,

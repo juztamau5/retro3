@@ -3,7 +3,7 @@ import * as debug from 'debug'
 import { firstValueFrom, ReplaySubject } from 'rxjs'
 import { first, shareReplay } from 'rxjs/operators'
 import { RegisterClientHelpers } from 'src/types/register-client-option.model'
-import { getExternalAuthHref, getHookType, internalRunHook } from '@peertube/peertube-core-utils'
+import { getExternalAuthHref, getHookType, internalRunHook } from '@retroai/retro3-core-utils'
 import {
   ClientHookName,
   clientHookObject,
@@ -18,7 +18,7 @@ import {
   RegisterClientSettingsScriptOptions,
   RegisterClientVideoFieldOptions,
   ServerConfigPlugin
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../environments/environment'
 import { ClientScript } from '../types'
 import { logger } from './logger'
@@ -37,7 +37,7 @@ type PluginInfo = {
   isTheme: boolean
 }
 
-type PeertubeHelpersFactory = (pluginInfo: PluginInfo) => RegisterClientHelpers
+type Retro3HelpersFactory = (pluginInfo: PluginInfo) => RegisterClientHelpers
 
 type OnFormFields = (
   pluginInfo: PluginInfo,
@@ -49,7 +49,7 @@ type OnSettingsScripts = (pluginInfo: PluginInfo, options: RegisterClientSetting
 
 type OnClientRoute = (options: RegisterClientRouteOptions) => void
 
-const debugLogger = debug('peertube:plugins')
+const debugLogger = debug('retro3:plugins')
 
 class PluginsManager {
   private hooks: Hooks = {}
@@ -73,18 +73,18 @@ class PluginsManager {
     'video-channel': new ReplaySubject<boolean>(1)
   }
 
-  private readonly peertubeHelpersFactory: PeertubeHelpersFactory
+  private readonly Retro3HelpersFactory: Retro3HelpersFactory
   private readonly onFormFields: OnFormFields
   private readonly onSettingsScripts: OnSettingsScripts
   private readonly onClientRoute: OnClientRoute
 
   constructor (options: {
-    peertubeHelpersFactory: PeertubeHelpersFactory
+    Retro3HelpersFactory: Retro3HelpersFactory
     onFormFields?: OnFormFields
     onSettingsScripts?: OnSettingsScripts
     onClientRoute?: OnClientRoute
   }) {
-    this.peertubeHelpersFactory = options.peertubeHelpersFactory
+    this.Retro3HelpersFactory = options.Retro3HelpersFactory
     this.onFormFields = options.onFormFields
     this.onSettingsScripts = options.onSettingsScripts
     this.onClientRoute = options.onClientRoute
@@ -267,7 +267,7 @@ class PluginsManager {
       return this.onClientRoute(options)
     }
 
-    const peertubeHelpers = this.peertubeHelpersFactory(pluginInfo)
+    const Retro3Helpers = this.Retro3HelpersFactory(pluginInfo)
 
     logger.info(`Loading script ${clientScript.script} of plugin ${plugin.name}`)
 
@@ -279,7 +279,7 @@ class PluginsManager {
           registerVideoField,
           registerSettingsScript,
           registerClientRoute,
-          peertubeHelpers
+          Retro3Helpers
         })
       })
       .then(() => this.sortHooksByPriority())
@@ -299,7 +299,7 @@ export {
   PluginsManager,
 
   PluginInfo,
-  PeertubeHelpersFactory,
+  Retro3HelpersFactory,
   OnFormFields,
   OnSettingsScripts
 }

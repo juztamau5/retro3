@@ -1,5 +1,5 @@
-import { ThumbnailType, type ThumbnailType_Type } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { ThumbnailType, type ThumbnailType_Type } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { afterCommitIfTransaction } from '@server/helpers/database-utils.js'
 import { MThumbnail, MThumbnailVideo, MVideo } from '@server/types/models/index.js'
 import { remove } from 'fs-extra/esm'

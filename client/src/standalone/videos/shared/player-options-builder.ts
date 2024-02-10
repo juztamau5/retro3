@@ -1,4 +1,15 @@
-import { peertubeTranslate } from '@peertube/peertube-core-utils'
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
+import { retro3Translate } from '@retroai/retro3-core-utils'
 import {
   HTMLServerConfig,
   LiveVideo,
@@ -10,19 +21,19 @@ import {
   VideoPlaylistElement,
   VideoState,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
-import { HLSOptions, PeerTubePlayerContructorOptions, PeerTubePlayerLoadOptions, PlayerMode, VideoJSCaption } from '../../../assets/player'
+} from '@retroai/retro3-models'
+import { HLSOptions, Retro3PlayerContructorOptions, Retro3PlayerLoadOptions, PlayerMode, VideoJSCaption } from '../../../assets/player'
 import {
   getBoolOrDefault,
   getParamString,
   getParamToggle,
   isP2PEnabled,
   logger,
-  peertubeLocalStorage,
+  retro3LocalStorage,
   UserLocalStorageKeys,
   videoRequiresUserAuth
 } from '../../../root-helpers'
-import { PeerTubePlugin } from './peertube-plugin'
+import { Retro3Plugin } from './retro3-plugin'
 import { PlayerHTML } from './player-html'
 import { PlaylistTracker } from './playlist-tracker'
 import { Translations } from './translations'
@@ -44,7 +55,7 @@ export class PlayerOptionsBuilder {
 
   private title: boolean
   private warningTitle: boolean
-  private peertubeLink: boolean
+  private retro3Link: boolean
   private p2pEnabled: boolean
   private bigPlayBackgroundColor: string
   private foregroundColor: string
@@ -52,12 +63,12 @@ export class PlayerOptionsBuilder {
   private waitPasswordFromEmbedAPI = false
 
   private mode: PlayerMode
-  private scope = 'peertube'
+  private scope = 'retro3'
 
   constructor (
     private readonly playerHTML: PlayerHTML,
     private readonly videoFetcher: VideoFetcher,
-    private readonly peertubePlugin: PeerTubePlugin
+    private readonly retro3Plugin: Retro3Plugin
   ) {}
 
   hasAPIEnabled () {
@@ -127,7 +138,7 @@ export class PlayerOptionsBuilder {
       this.enableApi = getParamToggle(params, 'api', this.enableApi)
       this.waitPasswordFromEmbedAPI = getParamToggle(params, 'waitPasswordFromEmbedAPI', this.waitPasswordFromEmbedAPI)
       this.warningTitle = getParamToggle(params, 'warningTitle', true)
-      this.peertubeLink = getParamToggle(params, 'peertubeLink', true)
+      this.retro3Link = getParamToggle(params, 'retro3Link', true)
 
       this.scope = getParamString(params, 'scope', this.scope)
       this.subtitle = getParamString(params, 'subtitle')
@@ -173,7 +184,7 @@ export class PlayerOptionsBuilder {
   getPlayerConstructorOptions (options: {
     serverConfig: HTMLServerConfig
     authorizationHeader: () => string
-  }): PeerTubePlayerContructorOptions {
+  }): Retro3PlayerContructorOptions {
     const { serverConfig, authorizationHeader } = options
 
     return {
@@ -194,7 +205,7 @@ export class PlayerOptionsBuilder {
       playerElement: () => this.playerHTML.getPlayerElement(),
       enableHotkeys: true,
 
-      peertubeLink: () => this.peertubeLink,
+      retro3Link: () => this.retro3Link,
       instanceName: serverConfig.instance.name,
 
       theaterButton: false,
@@ -202,7 +213,7 @@ export class PlayerOptionsBuilder {
       serverUrl: window.location.origin,
       language: navigator.language,
 
-      pluginsManager: this.peertubePlugin.getPluginsManager(),
+      pluginsManager: this.retro3Plugin.getPluginsManager(),
 
       errorNotifier: () => {
         // Empty, we don't have a notifier in the embed
@@ -236,7 +247,7 @@ export class PlayerOptionsBuilder {
       playPrevious: () => any
       onVideoUpdate: (uuid: string) => any
     }
-  }): Promise<PeerTubePlayerLoadOptions> {
+  }): Promise<Retro3PlayerLoadOptions> {
     const {
       video,
       captionsResponse,
@@ -417,7 +428,7 @@ export class PlayerOptionsBuilder {
       const { data } = await captionsResponse.json()
 
       return data.map((c: VideoCaption) => ({
-        label: peertubeTranslate(c.language.label, translations),
+        label: retro3Translate(c.language.label, translations),
         language: c.language.id,
         src: window.location.origin + c.captionPath
       }))
@@ -436,7 +447,7 @@ export class PlayerOptionsBuilder {
       : undefined
 
     const description = this.hasWarningTitle() && this.hasP2PEnabled()
-      ? '<span class="text">' + peertubeTranslate('Watching this video may reveal your IP address to others.') + '</span>'
+      ? '<span class="text">' + retro3Translate('Watching this video may reveal your IP address to others.') + '</span>'
       : undefined
 
     if (!title && !description) return
@@ -459,7 +470,7 @@ export class PlayerOptionsBuilder {
 
   private isP2PEnabled (config: HTMLServerConfig, video: Video) {
     const userP2PEnabled = getBoolOrDefault(
-      peertubeLocalStorage.getItem(UserLocalStorageKeys.P2P_ENABLED),
+      retro3LocalStorage.getItem(UserLocalStorageKeys.P2P_ENABLED),
       config.defaults.p2p.embed.enabled
     )
 

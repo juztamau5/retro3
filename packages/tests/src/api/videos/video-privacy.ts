@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video privacy', function () {
-  const servers: PeerTubeServer[] = []
+  const servers: Retro3Server[] = []
   let anotherUserToken: string
 
   let privateVideoId: number

@@ -6,8 +6,8 @@ import {
   type RunnerJobPrivatePayload,
   type RunnerJobStateType,
   type RunnerJobType
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isArray, isUUIDValid } from '@server/helpers/custom-validators/misc.js'
 import { CONSTRAINTS_FIELDS, RUNNER_JOB_STATES } from '@server/initializers/constants.js'
 import { MRunnerJob, MRunnerJobRunner, MRunnerJobRunnerParent } from '@server/types/models/runners/index.js'

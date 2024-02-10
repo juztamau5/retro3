@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, LiveVideoCreate, VideoPrivacy } from '@peertube/peertube-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, LiveVideoCreate, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -10,7 +10,7 @@ import {
   findExternalSavedVideo,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
@@ -18,13 +18,13 @@ import {
   waitUntilLivePublishedOnAllServers,
   waitUntilLiveReplacedByReplayOnAllServers,
   waitUntilLiveWaitingOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith } from '@tests/shared/checks.js'
 import { testLiveVideoResolutions } from '@tests/shared/live.js'
 import { MockObjectStorageProxy } from '@tests/shared/mock-servers/mock-object-storage.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 
-async function createLive (server: PeerTubeServer, permanent: boolean) {
+async function createLive (server: Retro3Server, permanent: boolean) {
   const attributes: LiveVideoCreate = {
     channelId: server.store.channel.id,
     privacy: VideoPrivacy.PUBLIC,
@@ -40,7 +40,7 @@ async function createLive (server: PeerTubeServer, permanent: boolean) {
 }
 
 async function checkFilesExist (options: {
-  servers: PeerTubeServer[]
+  servers: Retro3Server[]
   videoUUID: string
   numberOfFiles: number
   objectStorage: ObjectStorageCommand
@@ -65,7 +65,7 @@ async function checkFilesExist (options: {
 }
 
 async function checkFilesCleanup (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   videoUUID: string
   resolutions: number[]
   objectStorage: ObjectStorageCommand
@@ -95,7 +95,7 @@ async function checkFilesCleanup (options: {
 describe('Object storage for lives', function () {
   if (areMockObjectStorageTestsDisabled()) return
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommandServer1: SQLCommand
   const objectStorage = new ObjectStorageCommand()
 

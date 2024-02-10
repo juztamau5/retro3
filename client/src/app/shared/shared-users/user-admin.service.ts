@@ -5,8 +5,8 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { RestExtractor, RestPagination, RestService, ServerService, UserService } from '@app/core'
 import { getBytes } from '@root-helpers/bytes'
-import { arrayify, peertubeTranslate } from '@peertube/peertube-core-utils'
-import { ResultList, User as UserServerModel, UserCreate, UserUpdate } from '@peertube/peertube-models'
+import { arrayify, retro3Translate } from '@retroai/retro3-core-utils'
+import { ResultList, User as UserServerModel, UserCreate, UserUpdate } from '@retroai/retro3-models'
 
 @Injectable()
 export class UserAdminService {
@@ -128,7 +128,7 @@ export class UserAdminService {
     return Object.assign(user, {
       role: {
         id: user.role.id,
-        label: peertubeTranslate(user.role.label, translations)
+        label: retro3Translate(user.role.label, translations)
       },
       videoQuota,
       videoQuotaUsed,

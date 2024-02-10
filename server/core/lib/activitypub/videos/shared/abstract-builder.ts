@@ -5,7 +5,7 @@ import {
   VideoChaptersObject,
   VideoObject,
   VideoStreamingPlaylistType_Type
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { deleteAllModels, filterNonExistingModels, retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger, LoggerTagsFn } from '@server/helpers/logger.js'
 import { updateRemoteVideoThumbnail } from '@server/lib/thumbnail.js'

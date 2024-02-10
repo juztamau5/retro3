@@ -13,8 +13,8 @@ import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { StoryboardModel } from '@server/models/video/storyboard.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideo } from '@server/types/models/index.js'
-import { FFmpegImage, ffprobePromise, getVideoStreamDimensionsInfo, isAudioFile } from '@peertube/peertube-ffmpeg'
-import { GenerateStoryboardPayload } from '@peertube/peertube-models'
+import { FFmpegImage, ffprobePromise, getVideoStreamDimensionsInfo, isAudioFile } from '@retroai/retro3-ffmpeg'
+import { GenerateStoryboardPayload } from '@retroai/retro3-models'
 import { getImageSizeFromWorker } from '@server/lib/worker/parent-process.js'
 
 const lTagsBase = loggerTagsFactory('storyboard')

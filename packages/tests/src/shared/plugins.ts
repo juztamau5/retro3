@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { PeerTubeServer } from '@peertube/peertube-server-commands'
+import { Retro3Server } from '@retroai/retro3-server-commands'
 
-async function testHelloWorldRegisteredSettings (server: PeerTubeServer) {
-  const body = await server.plugins.getRegisteredSettings({ npmName: 'peertube-plugin-hello-world' })
+async function testHelloWorldRegisteredSettings (server: Retro3Server) {
+  const body = await server.plugins.getRegisteredSettings({ npmName: 'retro3-plugin-hello-world' })
 
   const registeredSettings = body.registeredSettings
   expect(registeredSettings).to.have.length.at.least(1)

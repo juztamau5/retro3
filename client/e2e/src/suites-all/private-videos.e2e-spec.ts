@@ -28,7 +28,7 @@ describe('Private videos all workflow', () => {
   })
 
   it('Should log in', async () => {
-    return loginPage.loginOnPeerTube2()
+    return loginPage.loginOnRetro3()
   })
 
   it('Should play an internal web video', async () => {

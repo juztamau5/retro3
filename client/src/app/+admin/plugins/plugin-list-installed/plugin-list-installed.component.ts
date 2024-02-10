@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { PluginApiService } from '@app/+admin/plugins/shared/plugin-api.service'
 import { ComponentPagination, ConfirmService, hasMoreItems, Notifier } from '@app/core'
 import { PluginService } from '@app/core/plugins/plugin.service'
-import { compareSemVer } from '@peertube/peertube-core-utils'
-import { PeerTubePlugin, PluginType, PluginType_Type } from '@peertube/peertube-models'
+import { compareSemVer } from '@retroai/retro3-core-utils'
+import { Retro3Plugin, PluginType, PluginType_Type } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-plugin-list-installed',
@@ -22,7 +22,7 @@ export class PluginListInstalledComponent implements OnInit {
   }
   sort = 'name'
 
-  plugins: PeerTubePlugin[] = []
+  plugins: Retro3Plugin[] = []
   updating: { [name: string]: boolean } = {}
   uninstalling: { [name: string]: boolean } = {}
 
@@ -91,27 +91,27 @@ export class PluginListInstalledComponent implements OnInit {
     return $localize`You don't have themes installed yet.`
   }
 
-  isUpdateAvailable (plugin: PeerTubePlugin) {
+  isUpdateAvailable (plugin: Retro3Plugin) {
     return plugin.latestVersion && compareSemVer(plugin.latestVersion, plugin.version) > 0
   }
 
-  getUpdateLabel (plugin: PeerTubePlugin) {
+  getUpdateLabel (plugin: Retro3Plugin) {
     return $localize`Update to ${plugin.latestVersion}`
   }
 
-  isUpdating (plugin: PeerTubePlugin) {
+  isUpdating (plugin: Retro3Plugin) {
     return !!this.updating[this.getPluginKey(plugin)]
   }
 
-  isUninstalling (plugin: PeerTubePlugin) {
+  isUninstalling (plugin: Retro3Plugin) {
     return !!this.uninstalling[this.getPluginKey(plugin)]
   }
 
-  isTheme (plugin: PeerTubePlugin) {
+  isTheme (plugin: Retro3Plugin) {
     return plugin.type === PluginType.THEME
   }
 
-  async uninstall (plugin: PeerTubePlugin) {
+  async uninstall (plugin: Retro3Plugin) {
     const pluginKey = this.getPluginKey(plugin)
     if (this.uninstalling[pluginKey]) return
 
@@ -141,7 +141,7 @@ export class PluginListInstalledComponent implements OnInit {
       })
   }
 
-  async update (plugin: PeerTubePlugin) {
+  async update (plugin: Retro3Plugin) {
     const pluginKey = this.getPluginKey(plugin)
     if (this.updating[pluginKey]) return
 
@@ -175,7 +175,7 @@ export class PluginListInstalledComponent implements OnInit {
         })
   }
 
-  getShowRouterLink (plugin: PeerTubePlugin) {
+  getShowRouterLink (plugin: Retro3Plugin) {
     return [ '/admin', 'plugins', 'show', this.pluginService.nameToNpmName(plugin.name, plugin.type) ]
   }
 
@@ -183,11 +183,11 @@ export class PluginListInstalledComponent implements OnInit {
     return this.pluginApiService.getPluginOrThemeHref(this.pluginType, name)
   }
 
-  private getPluginKey (plugin: PeerTubePlugin) {
+  private getPluginKey (plugin: Retro3Plugin) {
     return plugin.name + plugin.type
   }
 
-  private isMajorUpgrade (plugin: PeerTubePlugin) {
+  private isMajorUpgrade (plugin: Retro3Plugin) {
     if (!plugin.latestVersion) return false
 
     const latestMajor = plugin.latestVersion.split('.')[0]

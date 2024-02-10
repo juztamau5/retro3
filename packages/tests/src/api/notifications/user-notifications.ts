@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { UserNotification, UserNotificationType, VideoPrivacy, VideoStudioTask } from '@peertube/peertube-models'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { cleanupTests, findExternalSavedVideo, PeerTubeServer, stopFfmpeg, waitJobs } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { UserNotification, UserNotificationType, VideoPrivacy, VideoStudioTask } from '@retroai/retro3-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { cleanupTests, findExternalSavedVideo, Retro3Server, stopFfmpeg, waitJobs } from '@retroai/retro3-server-commands'
 import { MockSmtpServer } from '@tests/shared/mock-servers/mock-email.js'
 import {
   prepareNotificationsTest,
@@ -19,7 +19,7 @@ import { FIXTURE_URLS } from '@tests/shared/tests.js'
 import { uploadRandomVideoOnServers } from '@tests/shared/videos.js'
 
 describe('Test user notifications', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let userAccessToken: string
 
   let userNotifications: UserNotification[] = []
@@ -542,7 +542,7 @@ describe('Test user notifications', function () {
       await servers[1].subscriptions.remove({ uri: 'user_1_channel@' + servers[0].host })
     })
 
-    // PeerTube does not support account -> account follows
+    // retro3 does not support account -> account follows
     // it('Should notify when a local account is following one of our channel', async function () {
     //   this.timeout(50000)
     //

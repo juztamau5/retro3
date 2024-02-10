@@ -1,6 +1,6 @@
 import { literal, Op } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, DataType, ForeignKey, Model, Table } from 'sequelize-typescript'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from '../video/video.js'
 
 /**

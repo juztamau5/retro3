@@ -8,9 +8,9 @@ import {
   VideoPrivacyType,
   VideoRedundancyConfigFilter,
   VideosRedundancyStrategy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { decacheModule } from '@server/helpers/decache.js'
-import { buildPath, root } from '@peertube/peertube-node-utils'
+import { buildPath, root } from '@retroai/retro3-node-utils'
 import { parseBytes, parseDurationToMs } from '../helpers/core-utils.js'
 
 const require = createRequire(import.meta.url)
@@ -25,10 +25,10 @@ const CONFIG = {
     HOSTNAME: config.get<string>('listen.hostname')
   },
   SECRETS: {
-    PEERTUBE: config.get<string>('secrets.peertube')
+    RETRO3: config.get<string>('secrets.retro3')
   },
   DATABASE: {
-    DBNAME: config.has('database.name') ? config.get<string>('database.name') : 'peertube' + config.get<string>('database.suffix'),
+    DBNAME: config.has('database.name') ? config.get<string>('database.name') : 'retro3' + config.get<string>('database.suffix'),
     HOSTNAME: config.get<string>('database.hostname'),
     PORT: config.get<number>('database.port'),
     SSL: config.get<boolean>('database.ssl'),
@@ -317,10 +317,10 @@ const CONFIG = {
     },
     SIGN_FEDERATED_FETCHES: config.get<boolean>('federation.sign_federated_fetches')
   },
-  PEERTUBE: {
+  RETRO3: {
     CHECK_LATEST_VERSION: {
-      ENABLED: config.get<boolean>('peertube.check_latest_version.enabled'),
-      URL: config.get<string>('peertube.check_latest_version.url')
+      ENABLED: config.get<boolean>('retro3.check_latest_version.enabled'),
+      URL: config.get<string>('retro3.check_latest_version.url')
     }
   },
   WEBADMIN: {
@@ -647,7 +647,7 @@ export {
 // ---------------------------------------------------------------------------
 
 function getLocalConfigDir () {
-  if (process.env.PEERTUBE_LOCAL_CONFIG) return process.env.PEERTUBE_LOCAL_CONFIG
+  if (process.env.RETRO3_LOCAL_CONFIG) return process.env.RETRO3_LOCAL_CONFIG
 
   const configSources = config.util.getConfigSources()
   if (configSources.length === 0) throw new Error('Invalid config source.')

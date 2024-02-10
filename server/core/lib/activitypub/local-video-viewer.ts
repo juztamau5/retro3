@@ -2,7 +2,7 @@ import { Transaction } from 'sequelize'
 import { LocalVideoViewerModel } from '@server/models/view/local-video-viewer.js'
 import { LocalVideoViewerWatchSectionModel } from '@server/models/view/local-video-viewer-watch-section.js'
 import { MVideo } from '@server/types/models/index.js'
-import { WatchActionObject } from '@peertube/peertube-models'
+import { WatchActionObject } from '@retroai/retro3-models'
 import { getDurationFromActivityStream } from './activity.js'
 
 async function createOrUpdateLocalVideoViewer (watchAction: WatchActionObject, video: MVideo, t: Transaction) {

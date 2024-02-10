@@ -4,7 +4,7 @@ import {
   RunnerJobSuccessPayload,
   RunnerJobUpdatePayload,
   RunnerJobVODPrivatePayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger } from '@server/helpers/logger.js'
 import { moveToFailedTranscodingState, moveToNextState } from '@server/lib/video-state.js'

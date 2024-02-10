@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Official plugin Akismet', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID: string
 
   before(async function () {
@@ -22,13 +22,13 @@ describe('Official plugin Akismet', function () {
     await setAccessTokensToServers(servers)
 
     await servers[0].plugins.install({
-      npmName: 'peertube-plugin-akismet'
+      npmName: 'retro3-plugin-akismet'
     })
 
     if (!process.env.AKISMET_KEY) throw new Error('Missing AKISMET_KEY from env')
 
     await servers[0].plugins.updateSettings({
-      npmName: 'peertube-plugin-akismet',
+      npmName: 'retro3-plugin-akismet',
       settings: {
         'akismet-api-key': process.env.AKISMET_KEY
       }

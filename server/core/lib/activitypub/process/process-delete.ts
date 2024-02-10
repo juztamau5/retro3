@@ -1,4 +1,4 @@
-import { ActivityDelete } from '@peertube/peertube-models'
+import { ActivityDelete } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { logger } from '../../../helpers/logger.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

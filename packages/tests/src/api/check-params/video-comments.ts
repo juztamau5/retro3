@@ -2,22 +2,22 @@
 
 import { expect } from 'chai'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeDeleteRequest,
   makeGetRequest,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video comments API validator', function () {
   let pathThread: string
   let pathComment: string
 
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   let video: VideoCreateResult
 

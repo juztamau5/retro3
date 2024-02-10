@@ -5,15 +5,15 @@ import {
   cleanupTests,
   createSingleServer,
   VideoPasswordsCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar
-} from '@peertube/peertube-server-commands'
-import { VideoPrivacy } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { VideoPrivacy } from '@retroai/retro3-models'
 
 describe('Test video passwords', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let videoUUID: string
 
   let userAccessTokenServer1: string

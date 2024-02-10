@@ -1,12 +1,12 @@
 {
-  "name": "@peertube/peertube-server",
+  "name": "@retroai/retro3-server",
   "private": true,
   "version": "0.0.0",
   "files": [ "dist" ],
   "type": "module",
   "exports": {
     "./*": {
-      "peertube:tsx": "./*",
+      "retro3:tsx": "./*",
       "default": "./dist/*"
     }
   },

@@ -2,8 +2,8 @@
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, UserAdminFlag, UserRole } from '@peertube/peertube-models'
+import { omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, UserAdminFlag, UserRole } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
@@ -12,16 +12,16 @@ import {
   makeGetRequest,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test users admin API validators', function () {
   const path = '/api/v1/users/'
   let userId: number
   let rootId: number
   let moderatorId: number
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userToken = ''
   let moderatorToken = ''
   let emailPort: number
@@ -241,8 +241,8 @@ describe('Test users admin API validators', function () {
       await makePostBodyRequest({ url: server.url, path, token: server.accessToken, fields })
     })
 
-    it('Should fail with a "peertube" username', async function () {
-      const fields = { ...baseCorrectParams, username: 'peertube' }
+    it('Should fail with a "retro3" username', async function () {
+      const fields = { ...baseCorrectParams, username: 'retro3' }
 
       await makePostBodyRequest({
         url: server.url,

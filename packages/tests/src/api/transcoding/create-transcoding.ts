@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoDetails } from '@peertube/peertube-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoDetails } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
@@ -11,10 +11,10 @@ import {
   expectNoFailedTranscodingJob,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith } from '@tests/shared/checks.js'
 import { checkResolutionsInMasterPlaylist } from '@tests/shared/streaming-playlists.js'
 
@@ -40,7 +40,7 @@ async function checkFilesInObjectStorage (objectStorage: ObjectStorageCommand, v
 }
 
 function runTests (enableObjectStorage: boolean) {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let videoUUID: string
   let publishedAt: string
 

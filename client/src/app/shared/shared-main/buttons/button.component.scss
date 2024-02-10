@@ -48,12 +48,12 @@ span[class$=-button] {
 
 .orange-button,
 .grey-button {
-  @include peertube-button;
+  @include retro3-button;
 }
 
 .orange-button-link,
 .grey-button-link {
-  @include peertube-button-link;
+  @include retro3-button-link;
 }
 
 .orange-button,

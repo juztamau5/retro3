@@ -1,4 +1,4 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   RunnerJobLiveRTMPHLSTranscodingPayload,
   RunnerJobLiveRTMPHLSTranscodingPrivatePayload,
@@ -15,12 +15,12 @@ import {
   RunnerJobVODWebVideoTranscodingPayload,
   RunnerJobVODWebVideoTranscodingPrivatePayload,
   RunnerJobVideoStudioTranscodingPrivatePayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { saveInTransactionWithRetries } from '@server/helpers/database-utils.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { RUNNER_JOBS } from '@server/initializers/constants.js'
 import { sequelizeTypescript } from '@server/initializers/database.js'
-import { PeerTubeSocket } from '@server/lib/peertube-socket.js'
+import { Retro3Socket } from '@server/lib/retro3-socket.js'
 import { RunnerJobModel } from '@server/models/runner/runner-job.js'
 import { setAsUpdated } from '@server/models/shared/index.js'
 import { MRunnerJob } from '@server/types/models/runners/index.js'
@@ -89,7 +89,7 @@ export abstract class AbstractJobHandler <C, U extends RunnerJobUpdatePayload, S
     await saveInTransactionWithRetries(runnerJob)
 
     if (runnerJob.state === RunnerJobState.PENDING) {
-      PeerTubeSocket.Instance.sendAvailableJobsPingToRunners()
+      Retro3Socket.Instance.sendAvailableJobsPingToRunners()
     }
 
     return runnerJob
@@ -155,7 +155,7 @@ export abstract class AbstractJobHandler <C, U extends RunnerJobUpdatePayload, S
 
     const [ affectedCount ] = await RunnerJobModel.updateDependantJobsOf(runnerJob)
 
-    if (affectedCount !== 0) PeerTubeSocket.Instance.sendAvailableJobsPingToRunners()
+    if (affectedCount !== 0) Retro3Socket.Instance.sendAvailableJobsPingToRunners()
   }
 
   protected abstract specificComplete (options: {
@@ -212,7 +212,7 @@ export abstract class AbstractJobHandler <C, U extends RunnerJobUpdatePayload, S
 
     await saveInTransactionWithRetries(runnerJob)
 
-    PeerTubeSocket.Instance.sendAvailableJobsPingToRunners()
+    Retro3Socket.Instance.sendAvailableJobsPingToRunners()
   }
 
   protected setAbortState (runnerJob: MRunnerJob) {
@@ -260,7 +260,7 @@ export abstract class AbstractJobHandler <C, U extends RunnerJobUpdatePayload, S
         await this.error({ runnerJob: child, message: 'Parent error', fromParent: true })
       }
     } else {
-      PeerTubeSocket.Instance.sendAvailableJobsPingToRunners()
+      Retro3Socket.Instance.sendAvailableJobsPingToRunners()
     }
   }
 

@@ -5,13 +5,13 @@ import {
   cleanupTests,
   createSingleServer,
   makeHTMLRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test plugins HTML injection', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
   let command: PluginsCommand
 
   before(async function () {
@@ -38,7 +38,7 @@ describe('Test plugins HTML injection', function () {
   it('Should install a plugin and a theme', async function () {
     this.timeout(30000)
 
-    await command.install({ npmName: 'peertube-plugin-hello-world' })
+    await command.install({ npmName: 'retro3-plugin-hello-world' })
   })
 
   it('Should have the correct global css', async function () {
@@ -54,7 +54,7 @@ describe('Test plugins HTML injection', function () {
   })
 
   it('Should have an empty global css on uninstall', async function () {
-    await command.uninstall({ npmName: 'peertube-plugin-hello-world' })
+    await command.uninstall({ npmName: 'retro3-plugin-hello-world' })
 
     {
       const text = await command.getCSS()

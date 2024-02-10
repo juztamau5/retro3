@@ -1,6 +1,6 @@
 // Thanks to https://github.com/brtnshrdr/angular2-hotkeys
 
-import { arrayify } from '@peertube/peertube-core-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
 
 export class Hotkey {
   private formattedHotkey: string[]

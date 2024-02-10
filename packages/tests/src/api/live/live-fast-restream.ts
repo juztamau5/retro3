@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { LiveVideoCreate, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { LiveVideoCreate, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Fast restream in live', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   async function createLiveWrapper (options: { permanent: boolean, replay: boolean }) {
     const attributes: LiveVideoCreate = {
@@ -72,7 +72,7 @@ describe('Fast restream in live', function () {
   }
 
   async function ensureLastLiveWorks (liveId: string) {
-    // Equivalent to PEERTUBE_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY
+    // Equivalent to RETRO3_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY
     for (let i = 0; i < 100; i++) {
       const video = await server.videos.get({ id: liveId })
       expect(video.streamingPlaylists).to.have.lengthOf(1)
@@ -126,7 +126,7 @@ describe('Fast restream in live', function () {
   before(async function () {
     this.timeout(120000)
 
-    const env = { PEERTUBE_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY: '10000' }
+    const env = { RETRO3_TEST_CONSTANTS_VIDEO_LIVE_CLEANUP_DELAY: '10000' }
     server = await createSingleServer(1, {}, { env })
 
     // Get the access tokens

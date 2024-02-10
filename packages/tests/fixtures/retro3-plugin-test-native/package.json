@@ -1,0 +1,23 @@
+{
+  "name": "retro3-plugin-test-native",
+  "version": "0.0.1",
+  "description": "Plugin test-native",
+  "engine": {
+    "retro3": ">=4.3.0"
+  },
+  "keywords": [
+    "retro3",
+    "plugin"
+  ],
+  "homepage": "https://github.com/juztamau5/retro3",
+  "author": "juztamau5",
+  "bugs": "https://github.com/juztamau5/retro3/issues",
+  "library": "./main.js",
+  "staticDirs": {},
+  "css": [],
+  "clientScripts": [],
+  "translations": {},
+  "dependencies": {
+    "a-native-example": "^1.0.0"
+  }
+}

@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core'
 import { Notifier, User, UserService } from '@app/core'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { logger } from '@root-helpers/logger'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 
 @Component({
   selector: 'my-admin-welcome-modal',
@@ -24,7 +24,7 @@ export class AdminWelcomeModalComponent {
 
   shouldOpen (user: User) {
     if (user.noWelcomeModal === true) return false
-    if (peertubeLocalStorage.getItem(this.LOCAL_STORAGE_KEYS.NO_WELCOME_MODAL) === 'true') return false
+    if (retro3LocalStorage.getItem(this.LOCAL_STORAGE_KEYS.NO_WELCOME_MODAL) === 'true') return false
 
     return true
   }
@@ -39,7 +39,7 @@ export class AdminWelcomeModalComponent {
   }
 
   doNotOpenAgain () {
-    peertubeLocalStorage.setItem(this.LOCAL_STORAGE_KEYS.NO_WELCOME_MODAL, 'true')
+    retro3LocalStorage.setItem(this.LOCAL_STORAGE_KEYS.NO_WELCOME_MODAL, 'true')
 
     this.userService.updateMyProfile({ noWelcomeModal: true })
       .subscribe({

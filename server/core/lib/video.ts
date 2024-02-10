@@ -9,7 +9,7 @@ import {
   VideoPrivacy,
   VideoPrivacyType,
   VideoStateType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { MEMOIZE_LENGTH, MEMOIZE_TTL } from '@server/initializers/constants.js'
 import { TagModel } from '@server/models/video/tag.js'

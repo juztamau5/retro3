@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { UserNotification } from '@peertube/peertube-models'
-import { cleanupTests, PeerTubeServer, waitJobs } from '@peertube/peertube-server-commands'
+import { UserNotification } from '@retroai/retro3-models'
+import { cleanupTests, Retro3Server, waitJobs } from '@retroai/retro3-server-commands'
 import { MockSmtpServer } from '@tests/shared/mock-servers/mock-email.js'
 import { prepareNotificationsTest, CheckerBaseParams, checkNewCommentOnMyVideo, checkCommentMention } from '@tests/shared/notifications.js'
 
 describe('Test comments notifications', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let userToken: string
   let userNotifications: UserNotification[] = []
   let emails: object[] = []
 
-  const commentText = '**hello** <a href="https://joinpeertube.org">world</a>, <h1>what do you think about peertube?</h1>'
-  const expectedHtml = '<strong>hello</strong> <a href="https://joinpeertube.org" target="_blank" rel="noopener noreferrer">world</a>' +
-                       ', </p>what do you think about peertube?'
+  const commentText = '**hello** <a href="https://joinretro3.org">world</a>, <h1>what do you think about retro3?</h1>'
+  const expectedHtml = '<strong>hello</strong> <a href="https://joinretro3.org" target="_blank" rel="noopener noreferrer">world</a>' +
+                       ', </p>what do you think about retro3?'
 
   before(async function () {
     this.timeout(120000)

@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { VideoDetails, VideoPrivacy } from '@peertube/peertube-models'
+import { VideoDetails, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 
 describe('Test config defaults', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let channelId: number
 
   before(async function () {

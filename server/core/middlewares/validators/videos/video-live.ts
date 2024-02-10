@@ -15,7 +15,7 @@ import {
   ServerErrorCode,
   UserRight,
   VideoState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { exists, isBooleanValid, isIdValid, toBooleanOrNull, toIntOrNull } from '../../../helpers/custom-validators/misc.js'
 import { isValidPasswordProtectedPrivacy, isVideoNameValid, isVideoReplayPrivacyValid } from '../../../helpers/custom-validators/videos.js'
 import { cleanUpReqFiles } from '../../../helpers/express-utils.js'

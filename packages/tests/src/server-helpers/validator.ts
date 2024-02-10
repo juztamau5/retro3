@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import {
   isPluginStableOrUnstableVersionValid,
   isPluginStableVersionValid
-} from '@peertube/peertube-server/core/helpers/custom-validators/plugins.js'
+} from '@retroai/retro3-server/core/helpers/custom-validators/plugins.js'
 
 describe('Validators', function () {
 

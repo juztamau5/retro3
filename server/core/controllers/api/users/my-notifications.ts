@@ -1,6 +1,6 @@
 import 'multer'
 import express from 'express'
-import { HttpStatusCode, UserNotificationSetting } from '@peertube/peertube-models'
+import { HttpStatusCode, UserNotificationSetting } from '@retroai/retro3-models'
 import { getFormattedObjects } from '@server/helpers/utils.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import {
@@ -80,7 +80,7 @@ async function updateNotificationSettings (req: express.Request, res: express.Re
     autoInstanceFollowing: body.autoInstanceFollowing,
     abuseNewMessage: body.abuseNewMessage,
     abuseStateChange: body.abuseStateChange,
-    newPeerTubeVersion: body.newPeerTubeVersion,
+    newRetro3Version: body.newRetro3Version,
     newPluginVersion: body.newPluginVersion,
     myVideoStudioEditionFinished: body.myVideoStudioEditionFinished
   }

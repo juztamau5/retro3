@@ -67,12 +67,12 @@ export class LoginPage {
     return this.login({ username: 'root', password: 'test' + this.getSuffix() })
   }
 
-  loginOnPeerTube2 () {
-    if (!process.env.PEERTUBE2_E2E_PASSWORD) {
-      throw new Error('PEERTUBE2_E2E_PASSWORD env is missing for user e2e on peertube2.cpy.re')
+  loginOnRetro3 () {
+    if (!process.env.RETRO3_E2E_PASSWORD) {
+      throw new Error('RETRO3_E2E_PASSWORD env is missing for user e2e on peertube2.cpy.re')
     }
 
-    return this.login({ username: 'e2e', password: process.env.PEERTUBE2_E2E_PASSWORD, url: 'https://peertube2.cpy.re/login' })
+    return this.login({ username: 'e2e', password: process.env.RETRO3_E2E_PASSWORD, url: 'https://peertube2.cpy.re/login' })
   }
 
   async logout () {

@@ -2,13 +2,13 @@ import express from 'express'
 import { query } from 'express-validator'
 import { LRUCache } from 'lru-cache'
 import { basename, dirname } from 'path'
-import { exists, isSafePeerTubeFilenameWithoutExtension, isUUIDValid, toBooleanOrNull } from '@server/helpers/custom-validators/misc.js'
+import { exists, isSafeRetro3FilenameWithoutExtension, isUUIDValid, toBooleanOrNull } from '@server/helpers/custom-validators/misc.js'
 import { logger } from '@server/helpers/logger.js'
 import { LRU_CACHE } from '@server/initializers/constants.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { MStreamingPlaylist, MVideoFile, MVideoThumbnail } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { areValidationErrors, checkCanAccessVideoStaticFiles, isValidVideoPasswordHeader } from './shared/index.js'
 
 type LRUValue = {
@@ -73,7 +73,7 @@ const ensureCanAccessPrivateVideoHLSFiles = [
 
   query('playlistName')
     .optional()
-    .customSanitizer(isSafePeerTubeFilenameWithoutExtension),
+    .customSanitizer(isSafeRetro3FilenameWithoutExtension),
 
   isValidVideoPasswordHeader(),
 
@@ -171,7 +171,7 @@ async function isHLSAllowed (req: express.Request, res: express.Response, videoU
 }
 
 function extractTokenOrDie (req: express.Request, res: express.Response) {
-  const token = req.header('x-peertube-video-password') || req.query.videoFileToken || res.locals.oauth?.token.accessToken
+  const token = req.header('x-retro3-video-password') || req.query.videoFileToken || res.locals.oauth?.token.accessToken
 
   if (!token) {
     return res.fail({

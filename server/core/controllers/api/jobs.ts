@@ -1,6 +1,6 @@
 import { Job as BullJob } from 'bullmq'
 import express from 'express'
-import { HttpStatusCode, Job, JobState, JobType, ResultList, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, Job, JobState, JobType, ResultList, UserRight } from '@retroai/retro3-models'
 import { isArray } from '../../helpers/custom-validators/misc.js'
 import { JobQueue } from '../../lib/job-queue/index.js'
 import {

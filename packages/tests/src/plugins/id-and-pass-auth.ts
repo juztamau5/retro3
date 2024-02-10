@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, UserRole } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, UserRole } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test id and pass auth plugins', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   let crashAccessToken: string
   let crashRefreshToken: string
@@ -40,7 +40,7 @@ describe('Test id and pass auth plugins', function () {
 
     const crashAuth = auths.find(a => a.authName === 'crash-auth')
     expect(crashAuth).to.exist
-    expect(crashAuth.npmName).to.equal('peertube-plugin-test-id-pass-auth-one')
+    expect(crashAuth.npmName).to.equal('retro3-plugin-test-id-pass-auth-one')
     expect(crashAuth.weight).to.equal(50)
   })
 
@@ -192,7 +192,7 @@ describe('Test id and pass auth plugins', function () {
 
   it('Should unregister spyro-auth and do not login existing Spyro', async function () {
     await server.plugins.updateSettings({
-      npmName: 'peertube-plugin-test-id-pass-auth-one',
+      npmName: 'retro3-plugin-test-id-pass-auth-one',
       settings: { disableSpyro: true }
     })
 
@@ -212,7 +212,7 @@ describe('Test id and pass auth plugins', function () {
   })
 
   it('Should uninstall the plugin one and do not login existing Crash', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-test-id-pass-auth-one' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-test-id-pass-auth-one' })
 
     await server.login.login({
       user: { username: 'crash', password: 'crash password' },
@@ -238,8 +238,8 @@ describe('Test id and pass auth plugins', function () {
     const laguna = data.find(u => u.username === 'laguna')
 
     expect(root.pluginAuth).to.be.null
-    expect(crash.pluginAuth).to.equal('peertube-plugin-test-id-pass-auth-one')
-    expect(laguna.pluginAuth).to.equal('peertube-plugin-test-id-pass-auth-two')
+    expect(crash.pluginAuth).to.equal('retro3-plugin-test-id-pass-auth-one')
+    expect(laguna.pluginAuth).to.equal('retro3-plugin-test-id-pass-auth-two')
   })
 
   it('Should not update a user if not owned by the plugin auth', async function () {

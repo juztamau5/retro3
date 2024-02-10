@@ -5,8 +5,8 @@ import { VideoDetails } from '@app/shared/shared-main'
 import { VideoPlaylist } from '@app/shared/shared-video-playlist'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { buildVideoOrPlaylistEmbed } from '@root-helpers/video'
-import { buildPlaylistLink, buildVideoLink, decoratePlaylistLink, decorateVideoLink } from '@peertube/peertube-core-utils'
-import { VideoCaption, VideoPlaylistPrivacy, VideoPrivacy } from '@peertube/peertube-models'
+import { buildPlaylistLink, buildVideoLink, decoratePlaylistLink, decorateVideoLink } from '@retroai/retro3-core-utils'
+import { VideoCaption, VideoPlaylistPrivacy, VideoPrivacy } from '@retroai/retro3-models'
 
 type Customizations = {
   startAtCheckbox: boolean
@@ -28,7 +28,7 @@ type Customizations = {
   title: boolean
   warningTitle: boolean
   controlBar: boolean
-  peertubeLink: boolean
+  retro3Link: boolean
   responsive: boolean
 
   includeVideoInPlaylist: boolean
@@ -100,7 +100,7 @@ export class VideoShareComponent {
       title: true,
       warningTitle: true,
       controlBar: true,
-      peertubeLink: true,
+      retro3Link: true,
       responsive: false,
 
       includeVideoInPlaylist: false
@@ -262,7 +262,7 @@ export class VideoShareComponent {
         title: this.customizations.title,
         warningTitle: this.customizations.warningTitle,
         controlBar: this.customizations.controlBar,
-        peertubeLink: this.customizations.peertubeLink,
+        retro3Link: this.customizations.retro3Link,
 
         // If using default value, we don't need to specify it
         p2p: this.customizations.embedP2P === this.server.getHTMLConfig().defaults.p2p.embed.enabled

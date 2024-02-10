@@ -1,6 +1,6 @@
 import { Counter, Meter } from '@opentelemetry/api'
 import { MVideoImmutable } from '@server/types/models/index.js'
-import { PlaybackMetricCreate } from '@peertube/peertube-models'
+import { PlaybackMetricCreate } from '@retroai/retro3-models'
 
 export class PlaybackMetrics {
   private errorsCounter: Counter
@@ -21,27 +21,27 @@ export class PlaybackMetrics {
   }
 
   buildCounters () {
-    this.errorsCounter = this.meter.createCounter('peertube_playback_errors_count', {
-      description: 'Errors collected from PeerTube player.'
+    this.errorsCounter = this.meter.createCounter('retro3_playback_errors_count', {
+      description: 'Errors collected from retro3 player.'
     })
 
-    this.resolutionChangesCounter = this.meter.createCounter('peertube_playback_resolution_changes_count', {
-      description: 'Resolution changes collected from PeerTube player.'
+    this.resolutionChangesCounter = this.meter.createCounter('retro3_playback_resolution_changes_count', {
+      description: 'Resolution changes collected from retro3 player.'
     })
 
-    this.downloadedBytesHTTPCounter = this.meter.createCounter('peertube_playback_http_downloaded_bytes', {
-      description: 'Downloaded bytes with HTTP by PeerTube player.'
+    this.downloadedBytesHTTPCounter = this.meter.createCounter('retro3_playback_http_downloaded_bytes', {
+      description: 'Downloaded bytes with HTTP by retro3 player.'
     })
-    this.downloadedBytesP2PCounter = this.meter.createCounter('peertube_playback_p2p_downloaded_bytes', {
-      description: 'Downloaded bytes with P2P by PeerTube player.'
-    })
-
-    this.uploadedBytesP2PCounter = this.meter.createCounter('peertube_playback_p2p_uploaded_bytes', {
-      description: 'Uploaded bytes with P2P by PeerTube player.'
+    this.downloadedBytesP2PCounter = this.meter.createCounter('retro3_playback_p2p_downloaded_bytes', {
+      description: 'Downloaded bytes with P2P by retro3 player.'
     })
 
-    this.meter.createObservableGauge('peertube_playback_p2p_peers', {
-      description: 'Total P2P peers connected to the PeerTube player.'
+    this.uploadedBytesP2PCounter = this.meter.createCounter('retro3_playback_p2p_uploaded_bytes', {
+      description: 'Uploaded bytes with P2P by retro3 player.'
+    })
+
+    this.meter.createObservableGauge('retro3_playback_p2p_peers', {
+      description: 'Total P2P peers connected to the retro3 player.'
     }).addCallback(observableResult => {
       for (const gauge of this.peersP2PPeersGaugeBuffer) {
         observableResult.observe(gauge.value, gauge.attributes)

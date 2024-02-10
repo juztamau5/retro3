@@ -1,5 +1,5 @@
-import { ActorFollow, type FollowState } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { ActorFollow, type FollowState } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isActivityPubUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { afterCommitIfTransaction } from '@server/helpers/database-utils.js'
 import { getServerActor } from '@server/models/application/application.js'
@@ -78,7 +78,7 @@ export class ActorFollowModel extends Model<Partial<AttributesOnly<ActorFollowMo
   @Column
   score: number
 
-  // Allow null because we added this column in PeerTube v3, and don't want to generate fake URLs of remote follows
+  // Allow null because we added this column in retro3 v3, and don't want to generate fake URLs of remote follows
   @AllowNull(true)
   @Is('ActorFollowUrl', value => throwIfNotValid(value, isActivityPubUrlValid, 'url'))
   @Column(DataType.STRING(CONSTRAINTS_FIELDS.COMMONS.URL.max))

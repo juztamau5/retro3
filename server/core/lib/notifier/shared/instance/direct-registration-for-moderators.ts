@@ -3,7 +3,7 @@ import { CONFIG } from '@server/initializers/config.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MUserDefault, MUserWithNotificationSetting, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserNotificationType, UserRight } from '@peertube/peertube-models'
+import { UserNotificationType, UserRight } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export class DirectRegistrationForModerators extends AbstractNotification <MUserDefault> {

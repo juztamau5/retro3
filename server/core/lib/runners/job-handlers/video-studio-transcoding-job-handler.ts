@@ -10,8 +10,8 @@ import {
   isVideoStudioTaskIntro,
   isVideoStudioTaskOutro,
   isVideoStudioTaskWatermark
-} from '@peertube/peertube-models'
-import { buildUUID } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
 import { logger } from '@server/helpers/logger.js'
 import { onVideoStudioEnded, safeCleanupStudioTMPFiles } from '@server/lib/video-studio.js'
 import { MVideo } from '@server/types/models/index.js'

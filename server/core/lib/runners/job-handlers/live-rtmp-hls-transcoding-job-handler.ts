@@ -5,8 +5,8 @@ import {
   RunnerJobLiveRTMPHLSTranscodingPayload,
   RunnerJobLiveRTMPHLSTranscodingPrivatePayload,
   RunnerJobStateType
-} from '@peertube/peertube-models'
-import { buildUUID } from '@peertube/peertube-node-utils'
+} from '@retroai/retro3-models'
+import { buildUUID } from '@retroai/retro3-node-utils'
 import { logger } from '@server/helpers/logger.js'
 import { JOB_PRIORITY } from '@server/initializers/constants.js'
 import { LiveManager } from '@server/lib/live/index.js'

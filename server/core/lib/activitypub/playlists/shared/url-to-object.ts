@@ -1,7 +1,7 @@
 import { isPlaylistElementObjectValid, isPlaylistObjectValid } from '@server/helpers/custom-validators/activitypub/playlist.js'
 import { isArray } from '@server/helpers/custom-validators/misc.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
-import { PlaylistElementObject, PlaylistObject } from '@peertube/peertube-models'
+import { PlaylistElementObject, PlaylistObject } from '@retroai/retro3-models'
 import { fetchAP } from '../../activity.js'
 import { checkUrlsSameHost } from '../../url.js'
 

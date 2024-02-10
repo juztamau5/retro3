@@ -1,6 +1,6 @@
 import express from 'express'
 import { Transaction } from 'sequelize'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { getVideoWithAttributes } from '@server/helpers/video.js'
 import { VideoPasswordModel } from '@server/models/video/video-password.js'

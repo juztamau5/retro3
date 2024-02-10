@@ -1,7 +1,7 @@
 import { VideoAbuseModel } from '@server/models/abuse/video-abuse.js'
 import { VideoCommentAbuseModel } from '@server/models/abuse/video-comment-abuse.js'
 import { VideoCommentModel } from '@server/models/video/video-comment.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { AbuseModel } from '../../../models/abuse/abuse.js'
 import { MAccountDefault, MAccountFormattable, MAccountLight, MAccountUrl } from '../account/index.js'
 import { MComment, MCommentOwner, MCommentUrl, MCommentVideo, MVideoUrl } from '../video/index.js'

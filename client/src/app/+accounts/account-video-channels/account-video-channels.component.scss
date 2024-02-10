@@ -36,7 +36,7 @@
   }
 
   a {
-    @include peertube-word-wrap;
+    @include retro3-word-wrap;
 
     color: pvar(--mainForegroundColor);
   }
@@ -131,7 +131,7 @@ my-subscribe-button {
   }
 
   .show-channel a {
-    @include peertube-button-link;
+    @include retro3-button-link;
     @include orange-button-inverted;
   }
 

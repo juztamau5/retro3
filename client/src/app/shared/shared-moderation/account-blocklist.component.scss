@@ -2,6 +2,6 @@
 @use '_mixins' as *;
 
 .unblock-button {
-  @include peertube-button;
+  @include retro3-button;
   @include grey-button;
 }

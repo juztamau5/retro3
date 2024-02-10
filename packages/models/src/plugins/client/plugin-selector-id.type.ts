@@ -5,6 +5,6 @@ export type PluginSelectorId =
   'about-instance-statistics' |
   'about-instance-moderation' |
   'about-menu-instance' |
-  'about-menu-peertube' |
+  'about-menu-retro3' |
   'about-menu-network' |
   'about-instance-other-information'

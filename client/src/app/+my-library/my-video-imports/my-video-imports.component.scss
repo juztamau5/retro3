@@ -10,7 +10,7 @@ pre {
 }
 
 .button-link {
-  @include peertube-button-link;
+  @include retro3-button-link;
   @include grey-button;
   @include button-with-icon(18px, 3px, -1px);
 }

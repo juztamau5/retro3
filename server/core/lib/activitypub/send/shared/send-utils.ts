@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { Activity, ActivityAudience, ActivitypubHttpBroadcastPayload, ContextType } from '@peertube/peertube-models'
+import { Activity, ActivityAudience, ActivitypubHttpBroadcastPayload, ContextType } from '@retroai/retro3-models'
 import { ActorFollowHealthCache } from '@server/lib/actor-follow-health-cache.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { afterCommitIfTransaction } from '../../../../helpers/database-utils.js'

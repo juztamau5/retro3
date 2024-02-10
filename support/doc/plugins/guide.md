@@ -5,17 +5,17 @@
 ## Concepts
 
 Themes are exactly the same as plugins, except that:
- * Their name starts with `peertube-theme-` instead of `peertube-plugin-`
+ * Their name starts with `retro3-theme-` instead of `retro3-plugin-`
  * They cannot declare server code (so they cannot register server hooks or settings)
  * CSS files are loaded by client only if the theme is chosen by the administrator or the user
 
 ### Hooks
 
-A plugin registers functions in JavaScript to execute when PeerTube (server and client) fires events. There are 3 types of hooks:
+A plugin registers functions in JavaScript to execute when retro3 (server and client) fires events. There are 3 types of hooks:
  * `filter`: used to filter functions parameters or return values.
  For example to replace words in video comments, or change the videos list behaviour
  * `action`: used to do something after a certain trigger. For example to send a hook every time a video is published
- * `static`: same than `action` but PeerTube waits their execution
+ * `static`: same than `action` but retro3 waits their execution
 
 On server side, these hooks are registered by the `library` file defined in `package.json`.
 
@@ -44,7 +44,7 @@ async function register ({
   videoLicenceManager,
   videoLanguageManager,
 
-  peertubeHelpers,
+  retro3Helpers,
 
   getRouter,
 
@@ -65,7 +65,7 @@ Hooks prefixed by `action:api` also give access the original **express** [Reques
 ```js
 async function register ({
   registerHook,
-  peertubeHelpers: { logger }
+  retro3Helpers: { logger }
 }) {
   registerHook({
     target: 'action:api.video.updated',
@@ -76,7 +76,7 @@ async function register ({
 
 
 On client side, these hooks are registered by the `clientScripts` files defined in `package.json`.
-All client scripts have scopes so PeerTube client only loads scripts it needs:
+All client scripts have scopes so retro3 client only loads scripts it needs:
 
 ```json
 {
@@ -98,23 +98,23 @@ All client scripts have scopes so PeerTube client only loads scripts it needs:
 And these scripts also define a `register` function:
 
 ```js
-function register ({ registerHook, peertubeHelpers }) {
+function register ({ registerHook, retro3Helpers }) {
   registerHook({
     target: 'action:application.init',
-    handler: () => onApplicationInit(peertubeHelpers)
+    handler: () => onApplicationInit(retro3Helpers)
   })
 }
 ```
 
 ### Static files
 
-Plugins can declare static directories that PeerTube will serve (images for example)
+Plugins can declare static directories that retro3 will serve (images for example)
 from `/plugins/{plugin-name}/{plugin-version}/static/`
 or `/themes/{theme-name}/{theme-version}/static/` routes.
 
 ### CSS
 
-Plugins can declare CSS files that PeerTube will automatically inject in the client.
+Plugins can declare CSS files that retro3 will automatically inject in the client.
 If you need to override existing style, you can use the `#custom-css` selector:
 
 ```css
@@ -131,7 +131,7 @@ body#custom-css {
 
 #### Settings
 
-Plugins can register settings, that PeerTube will inject in the administration interface.
+Plugins can register settings, that retro3 will inject in the administration interface.
 The following fields will be automatically translated using the plugin translation files: `label`, `html`, `descriptionHTML`, `options.label`.
 **These fields are injected in the plugin settings page as HTML, so pay attention to your translation files.**
 
@@ -178,7 +178,7 @@ function register (...) {
 
 #### Storage
 
-Plugins can store/load JSON data, that PeerTube will store in its database (so don't put files in there).
+Plugins can store/load JSON data, that retro3 will store in its database (so don't put files in there).
 
 Example:
 
@@ -191,15 +191,15 @@ function register ({
 }
 ```
 
-You can also store files in the plugin data directory (`/{plugins-directory}/data/{npm-plugin-name}`) **in PeerTube >= 3.2**.
+You can also store files in the plugin data directory (`/{plugins-directory}/data/{npm-plugin-name}`) **in retro3 >= 3.2**.
 This directory and its content won't be deleted when your plugin is uninstalled/upgraded.
 
 ```js
 function register ({
   storageManager,
-  peertubeHelpers
+  retro3Helpers
 }) {
-  const basePath = peertubeHelpers.plugin.getDataDirectoryPath()
+  const basePath = retro3Helpers.plugin.getDataDirectoryPath()
 
   fs.writeFile(path.join(basePath, 'filename.txt'), 'content of my file', function (err) {
     ...
@@ -248,7 +248,7 @@ function register ({
 
   // Users are automatically authenticated
   router.get('/auth', async (res, res) => {
-    const user = await peertubeHelpers.user.getAuthUser(res)
+    const user = await retro3Helpers.user.getAuthUser(res)
 
     const isAdmin = user.role === 0
     const isModerator = user.role === 1
@@ -271,19 +271,19 @@ The `ping` route can be accessed using:
 
 #### Add custom WebSocket handlers
 
-**PeerTube >= 5.0**
+**retro3 >= 5.0**
 
 You can create custom WebSocket servers (like [ws](https://github.com/websockets/ws) for example) using `registerWebSocketRoute`:
 
 ```js
 function register ({
   registerWebSocketRoute,
-  peertubeHelpers
+  retro3Helpers
 }) {
   const wss = new WebSocketServer({ noServer: true })
 
   wss.on('connection', function connection(ws) {
-    peertubeHelpers.logger.info('WebSocket connected!')
+    retro3Helpers.logger.info('WebSocket connected!')
 
     setInterval(() => {
       ws.send('WebSocket message sent by server');
@@ -308,7 +308,7 @@ The `my-websocket-route` route can be accessed using:
 
 #### Add external auth methods
 
-If you want to add a classic username/email and password auth method (like [LDAP](https://framagit.org/framasoft/peertube/official-plugins/-/tree/master/peertube-plugin-auth-ldap) for example):
+If you want to add a classic username/email and password auth method (like [LDAP](https://framagit.org/framasoft/retro3/official-plugins/-/tree/master/retro3-plugin-auth-ldap) for example):
 
 ```js
 function register (...) {
@@ -316,22 +316,22 @@ function register (...) {
   registerIdAndPassAuth({
     authName: 'my-auth-method',
 
-    // PeerTube will try all id and pass plugins in the weight DESC order
+    // retro3 will try all id and pass plugins in the weight DESC order
     // Exposing this value in the plugin settings could be interesting
     getWeight: () => 60,
 
-    // Optional function called by PeerTube when the user clicked on the logout button
+    // Optional function called by retro3 when the user clicked on the logout button
     onLogout: user => {
       console.log('User %s logged out.', user.username')
     },
 
-    // Optional function called by PeerTube when the access token or refresh token are generated/refreshed
+    // Optional function called by retro3 when the access token or refresh token are generated/refreshed
     hookTokenValidity: ({ token, type }) => {
       if (type === 'access') return { valid: true }
       if (type === 'refresh') return { valid: false }
     },
 
-    // Used by PeerTube when the user tries to authenticate
+    // Used by retro3 when the user tries to authenticate
     login: ({ id, password }) => {
       if (id === 'user' && password === 'super password') {
         return {
@@ -352,7 +352,7 @@ function register (...) {
 }
 ```
 
-You can also add an external auth method (like [OpenID](https://framagit.org/framasoft/peertube/official-plugins/-/tree/master/peertube-plugin-auth-openid-connect), [SAML2](https://framagit.org/framasoft/peertube/official-plugins/-/tree/master/peertube-plugin-auth-saml2) etc):
+You can also add an external auth method (like [OpenID](https://framagit.org/framasoft/retro3/official-plugins/-/tree/master/retro3-plugin-auth-openid-connect), [SAML2](https://framagit.org/framasoft/retro3/official-plugins/-/tree/master/retro3-plugin-auth-saml2) etc):
 
 ```js
 function register (...) {
@@ -364,7 +364,7 @@ function register (...) {
     // Will be displayed in a button next to the login form
     authDisplayName: () => 'Auth method'
 
-    // If the user click on the auth button, PeerTube will forward the request in this function
+    // If the user click on the auth button, retro3 will forward the request in this function
     onAuthRequest: (req, res) => {
       res.redirect('https://external-auth.example.com/auth')
     },
@@ -377,7 +377,7 @@ function register (...) {
   })
 
   router.use('/external-auth-callback', (req, res) => {
-    // Forward the request to PeerTube
+    // Forward the request to retro3
     result.userAuthenticated({
       req,
       res,
@@ -387,18 +387,18 @@ function register (...) {
       displayName: 'User display name',
 
       // Custom admin flags (bypass video auto moderation etc.)
-      // https://github.com/Chocobozzz/PeerTube/blob/develop/packages/models/src/users/user-flag.model.ts
-      // PeerTube >= 5.1
+      // https://github.com/juztamau5/retro3/blob/main/packages/models/src/users/user-flag.model.ts
+      // retro3 >= 5.1
       adminFlags: 0,
       // Quota in bytes
-      // PeerTube >= 5.1
+      // retro3 >= 5.1
       videoQuota: 1024 * 1024 * 1024, // 1GB
-      // PeerTube >= 5.1
+      // retro3 >= 5.1
       videoQuotaDaily: -1, // Unlimited
 
       // Update the user profile if it already exists
       // Default behaviour is no update
-      // Introduced in PeerTube >= 5.1
+      // Introduced in retro3 >= 5.1
       userUpdater: ({ fieldName, currentValue, newValue }) => {
         // Always use new value except for videoQuotaDaily field
         if (fieldName === 'videoQuotaDaily') return currentValue
@@ -464,7 +464,7 @@ async function register ({
 
       const streamString = streamNum ? ':' + streamNum : ''
 
-      // Always copy stream when PeerTube use libfdk_aac or aac encoders
+      // Always copy stream when retro3 use libfdk_aac or aac encoders
       return {
         copy: true
       }
@@ -478,7 +478,7 @@ async function register ({
   }
 ```
 
-PeerTube will try different encoders depending on their priority.
+retro3 will try different encoders depending on their priority.
 If the encoder is not available in the current transcoding profile or in ffmpeg, it tries the next one.
 Plugins can change the order of these encoders and add their custom encoders:
 
@@ -516,31 +516,31 @@ Plugins are responsible for detecting such situation and applying input options 
 
 #### Server helpers
 
-PeerTube provides your plugin some helpers. For example:
+retro3 provides your plugin some helpers. For example:
 
 ```js
 async function register ({
-  peertubeHelpers
+  retro3Helpers
 }) {
   // Block a server
   {
-    const serverActor = await peertubeHelpers.server.getServerActor()
+    const serverActor = await retro3Helpers.server.getServerActor()
 
-    await peertubeHelpers.moderation.blockServer({ byAccountId: serverActor.Account.id, hostToBlock: '...' })
+    await retro3Helpers.moderation.blockServer({ byAccountId: serverActor.Account.id, hostToBlock: '...' })
   }
 
   // Load a video
   {
-    const video = await peertubeHelpers.videos.loadByUrl('...')
+    const video = await retro3Helpers.videos.loadByUrl('...')
   }
 }
 ```
 
-See the [plugin API reference](https://docs.joinpeertube.org/api/plugins) to see the complete helpers list.
+See the [plugin API reference](https://docs.joinretro3.org/api/plugins) to see the complete helpers list.
 
 #### Federation
 
-You can use some server hooks to federate plugin data to other PeerTube instances that may have installed your plugin.
+You can use some server hooks to federate plugin data to other retro3 instances that may have installed your plugin.
 
 For example to federate additional video metadata:
 
@@ -589,21 +589,21 @@ To get your plugin static route:
 
 ```js
 function register (...) {
-  const baseStaticUrl = peertubeHelpers.getBaseStaticRoute()
+  const baseStaticUrl = retro3Helpers.getBaseStaticRoute()
   const imageUrl = baseStaticUrl + '/images/chocobo.png'
 }
 ```
 
-And to get your plugin router route, use `peertubeHelpers.getBaseRouterRoute()`:
+And to get your plugin router route, use `retro3Helpers.getBaseRouterRoute()`:
 
 ```js
 function register (...) {
   registerHook({
     target: 'action:video-watch.video.loaded',
     handler: ({ video }) => {
-      fetch(peertubeHelpers.getBaseRouterRoute() + '/my/plugin/api', {
+      fetch(retro3Helpers.getBaseRouterRoute() + '/my/plugin/api', {
         method: 'GET',
-        headers: peertubeHelpers.getAuthHeader()
+        headers: retro3Helpers.getAuthHeader()
       }).then(res => res.json())
         .then(data => console.log('Hi %s.', data))
     }
@@ -614,11 +614,11 @@ function register (...) {
 
 #### Notifier
 
-To notify the user with the PeerTube ToastModule:
+To notify the user with the retro3 ToastModule:
 
 ```js
 function register (...) {
-  const { notifier } = peertubeHelpers
+  const { notifier } = retro3Helpers
   notifier.success('Success message content.')
   notifier.error('Error message content.')
 }
@@ -630,7 +630,7 @@ To render a formatted markdown text to HTML:
 
 ```js
 function register (...) {
-  const { markdownRenderer } = peertubeHelpers
+  const { markdownRenderer } = retro3Helpers
 
   await markdownRenderer.textMarkdownToHTML('**My Bold Text**')
   // return <strong>My Bold Text</strong>
@@ -642,7 +642,7 @@ function register (...) {
 
 #### Auth header
 
-**PeerTube >= 3.2**
+**retro3 >= 3.2**
 
 To make your own HTTP requests using the current authenticated user, use an helper to automatically set appropriate headers:
 
@@ -656,7 +656,7 @@ function register (...) {
       // It's just an example
       fetch('/api/v1/users/me', {
         method: 'GET',
-        headers: peertubeHelpers.getAuthHeader()
+        headers: retro3Helpers.getAuthHeader()
       }).then(res => res.json())
         .then(data => console.log('Hi %s.', data.username))
     }
@@ -670,7 +670,7 @@ To show a custom modal:
 
 ```js
 function register (...) {
-  peertubeHelpers.showModal({
+  retro3Helpers.showModal({
     title: 'My custom modal title',
     content: '<p>My custom modal content</p>',
     // Optionals parameters :
@@ -686,11 +686,11 @@ function register (...) {
 
 #### Translate
 
-You can translate some strings of your plugin (PeerTube will use your `translations` object of your `package.json` file):
+You can translate some strings of your plugin (retro3 will use your `translations` object of your `package.json` file):
 
 ```js
 function register (...) {
-  peertubeHelpers.translate('User name')
+  retro3Helpers.translate('User name')
     .then(translation => console.log('Translated User name by ' + translation))
 }
 ```
@@ -701,7 +701,7 @@ To get your public plugin settings:
 
 ```js
 function register (...) {
-  peertubeHelpers.getSettings()
+  retro3Helpers.getSettings()
     .then(s => {
       if (!s || !s['site-id'] || !s['url']) {
         console.error('Matomo settings are not set.')
@@ -717,7 +717,7 @@ function register (...) {
 
 ```js
 function register (...) {
-  peertubeHelpers.getServerConfig()
+  retro3Helpers.getServerConfig()
     .then(config => {
       console.log('Fetched server config.', config)
     })
@@ -729,8 +729,8 @@ function register (...) {
 To add custom fields in the video form (in *Plugin settings* tab):
 
 ```js
-async function register ({ registerVideoField, peertubeHelpers }) {
-  const descriptionHTML = await peertubeHelpers.translate(descriptionSource)
+async function register ({ registerVideoField, retro3Helpers }) {
+  const descriptionHTML = await retro3Helpers.translate(descriptionSource)
   const commonOptions = {
     name: 'my-field-name,
     label: 'My added field',
@@ -770,7 +770,7 @@ async function register ({ registerVideoField, peertubeHelpers }) {
 }
 ```
 
-PeerTube will send this field value in `body.pluginData['my-field-name']` and fetch it from `video.pluginData['my-field-name']`.
+retro3 will send this field value in `body.pluginData['my-field-name']` and fetch it from `video.pluginData['my-field-name']`.
 
 So for example, if you want to store an additional metadata for videos, register the following hooks in **server**:
 
@@ -829,15 +829,15 @@ async function register ({ registerSettingsScript }) {
 ```
 #### Plugin selector on HTML elements
 
-PeerTube provides some selectors (using `id` HTML attribute) on important blocks so plugins can easily change their style.
+retro3 provides some selectors (using `id` HTML attribute) on important blocks so plugins can easily change their style.
 
 For example `#plugin-selector-login-form` could be used to hide the login form.
 
-See the complete list on https://docs.joinpeertube.org/api/plugins
+See the complete list on https://docs.joinretro3.org/api/plugins
 
 #### HTML placeholder elements
 
-PeerTube provides some HTML id so plugins can easily insert their own element:
+retro3 provides some HTML id so plugins can easily insert their own element:
 
 ```js
 async function register (...) {
@@ -849,7 +849,7 @@ async function register (...) {
 }
 ```
 
-See the complete list on https://docs.joinpeertube.org/api/plugins
+See the complete list on https://docs.joinretro3.org/api/plugins
 
 #### Add/remove left menu links
 
@@ -874,37 +874,37 @@ You can then access the page on `/p/my-super/route` (please note the additional 
 
 ### Publishing
 
-PeerTube plugins and themes should be published on [NPM](https://www.npmjs.com/) so that PeerTube indexes take into account your plugin (after ~ 1 day). An official plugin index is available on [packages.joinpeertube.org](https://packages.joinpeertube.org/api/v1/plugins), with no interface to present packages.
+retro3 plugins and themes should be published on [NPM](https://www.npmjs.com/) so that retro3 indexes take into account your plugin (after ~ 1 day). An official plugin index is available on [packages.joinretro3.org](https://packages.joinretro3.org/api/v1/plugins), with no interface to present packages.
 
-> The official plugin index source code is available at https://framagit.org/framasoft/peertube/plugin-index
+> The official plugin index source code is available at https://framagit.org/framasoft/retro3/plugin-index
 
 ## Write a plugin/theme
 
 Steps:
  * Find a name for your plugin or your theme (must not have spaces, it can only contain lowercase letters and `-`)
  * Add the appropriate prefix:
-   * If you develop a plugin, add `peertube-plugin-` prefix to your plugin name (for example: `peertube-plugin-mysupername`)
-   * If you develop a theme, add `peertube-theme-` prefix to your theme name (for example: `peertube-theme-mysupertheme`)
+   * If you develop a plugin, add `retro3-plugin-` prefix to your plugin name (for example: `retro3-plugin-mysupername`)
+   * If you develop a theme, add `retro3-theme-` prefix to your theme name (for example: `retro3-theme-mysupertheme`)
  * Clone the quickstart repository
  * Configure your repository
  * Update `README.md`
  * Update `package.json`
  * Register hooks, add CSS and static files
- * Test your plugin/theme with a local PeerTube installation
+ * Test your plugin/theme with a local retro3 installation
  * Publish your plugin/theme on NPM
 
 ### Clone the quickstart repository
 
-If you develop a plugin, clone the `peertube-plugin-quickstart` repository:
+If you develop a plugin, clone the `retro3-plugin-quickstart` repository:
 
 ```sh
-git clone https://framagit.org/framasoft/peertube/peertube-plugin-quickstart.git peertube-plugin-mysupername
+git clone https://framagit.org/framasoft/retro3/retro3-plugin-quickstart.git retro3-plugin-mysupername
 ```
 
-If you develop a theme, clone the `peertube-theme-quickstart` repository:
+If you develop a theme, clone the `retro3-theme-quickstart` repository:
 
 ```sh
-git clone https://framagit.org/framasoft/peertube/peertube-theme-quickstart.git peertube-theme-mysupername
+git clone https://framagit.org/framasoft/retro3/retro3-theme-quickstart.git retro3-theme-mysupername
 ```
 
 ### Configure your repository
@@ -912,7 +912,7 @@ git clone https://framagit.org/framasoft/peertube/peertube-theme-quickstart.git 
 Set your repository URL:
 
 ```sh
-cd peertube-plugin-mysupername # or cd peertube-theme-mysupername
+cd retro3-plugin-mysupername # or cd retro3-theme-mysupername
 git remote set-url origin https://your-git-repo
 ```
 
@@ -927,14 +927,14 @@ $EDITOR README.md
 ### Update package.json
 
 Update the `package.json` fields:
-   * `name` (should start with `peertube-plugin-` or `peertube-theme-`)
+   * `name` (should start with `retro3-plugin-` or `retro3-theme-`)
    * `description`
    * `homepage`
    * `author`
    * `bugs`
-   * `engine.peertube` (the PeerTube version compatibility, must be `>=x.y.z` and nothing else)
+   * `engine.retro3` (the retro3 version compatibility, must be `>=x.y.z` and nothing else)
 
-**Caution:** Don't update or remove other keys, or PeerTube will not be able to index/install your plugin.
+**Caution:** Don't update or remove other keys, or retro3 will not be able to index/install your plugin.
 If you don't need static directories, use an empty `object`:
 
 ```json
@@ -959,7 +959,7 @@ And if you don't need CSS or client script files, use an empty `array`:
 ### Write code
 
 Now you can register hooks or settings, write CSS and add static directories to your plugin or your theme :)
-It's up to you to check the code you write will be compatible with the PeerTube NodeJS version, and will be supported by web browsers.
+It's up to you to check the code you write will be compatible with the retro3 NodeJS version, and will be supported by web browsers.
 
 **JavaScript**
 
@@ -967,18 +967,18 @@ If you want to write modern JavaScript, please use a transpiler like [Babel](htt
 
 **Typescript**
 
-The easiest way to use __Typescript__ for both front-end and backend code is to clone [peertube-plugin-quickstart-typescript](https://github.com/JohnXLivingston/peertube-plugin-quickstart-typescript/) (also available on [framagit](https://framagit.org/Livingston/peertube-plugin-quickstart-typescript/)) instead of `peertube-plugin-quickstart`.
-Please read carefully the [README file](https://github.com/JohnXLivingston/peertube-plugin-quickstart-typescript/blob/main/README.md), as there are some other differences with `peertube-plugin-quickstart` (using SCSS instead of CSS, linting rules, ...).
+The easiest way to use __Typescript__ for both front-end and backend code is to clone [retro3-plugin-quickstart-typescript](https://github.com/JohnXLivingston/retro3-plugin-quickstart-typescript/) (also available on [framagit](https://framagit.org/Livingston/retro3-plugin-quickstart-typescript/)) instead of `retro3-plugin-quickstart`.
+Please read carefully the [README file](https://github.com/JohnXLivingston/retro3-plugin-quickstart-typescript/blob/main/README.md), as there are some other differences with `retro3-plugin-quickstart` (using SCSS instead of CSS, linting rules, ...).
 
-If you don't want to use `peertube-plugin-quickstart-typescript`, you can also manually add a dev dependency to __Peertube__ types:
+If you don't want to use `retro3-plugin-quickstart-typescript`, you can also manually add a dev dependency to __retro3__ types:
 
 ```
-npm install --save-dev @peertube/peertube-types
+npm install --save-dev @retroai/retro3-types
 ```
 
 This package exposes *server* definition files by default:
 ```ts
-import { RegisterServerOptions } from '@peertube/peertube-types.js'
+import { RegisterServerOptions } from '@retroai/retro3-types.js'
 
 export async function register ({ registerHook }: RegisterServerOptions) {
   registerHook({
@@ -988,16 +988,16 @@ export async function register ({ registerHook }: RegisterServerOptions) {
 }
 ```
 
-But it also exposes client types and various models used in __PeerTube__:
+But it also exposes client types and various models used in __retro3__:
 ```ts
-import { Video } from '@peertube/peertube-types.js';
-import { RegisterClientOptions } from '@peertube/peertube-types/client.js';
+import { Video } from '@retroai/retro3-types.js';
+import { RegisterClientOptions } from '@retroai/retro3-types/client.js';
 
-function register({ registerHook, peertubeHelpers }: RegisterClientOptions) {
+function register({ registerHook, retro3Helpers }: RegisterClientOptions) {
   registerHook({
     target: 'action:admin-plugin-settings.init',
     handler: ({ npmName }: { npmName: string }) => {
-      if ('peertube-plugin-transcription' !== npmName) {
+      if ('retro3-plugin-transcription' !== npmName) {
         return;
       }
     },
@@ -1006,9 +1006,9 @@ function register({ registerHook, peertubeHelpers }: RegisterClientOptions) {
   registerHook({
     target: 'action:video-watch.video.loaded',
     handler: ({ video }: { video: Video }) => {
-      fetch(`${peertubeHelpers.getBaseRouterRoute()}/videos/${video.uuid}/captions`, {
+      fetch(`${retro3Helpers.getBaseRouterRoute()}/videos/${video.uuid}/captions`, {
         method: 'PUT',
-        headers: peertubeHelpers.getAuthHeader(),
+        headers: retro3Helpers.getAuthHeader(),
       }).then((res) => res.json())
         .then((data) => console.log('Hi %s.', data));
     },
@@ -1033,7 +1033,7 @@ If you want to translate strings of your plugin (like labels of your registered 
 }
 ```
 
-The key should be one of the locales defined in [i18n.ts](https://github.com/Chocobozzz/PeerTube/blob/develop/packages/core-utils/src/i18n/i18n.ts).
+The key should be one of the locales defined in [i18n.ts](https://github.com/juztamau5/retro3/blob/main/packages/core-utils/src/i18n/i18n.ts).
 
 Translation files are just objects, with the english sentence as the key and the translation as the value.
 `fr.json` could contain for example:
@@ -1071,27 +1071,27 @@ You built files are in the `dist/` directory. Check `package.json` to correctly 
 
 ### Test your plugin/theme
 
-You need to have a local PeerTube instance with an administrator account.
+You need to have a local retro3 instance with an administrator account.
 If you're using dev server on your local computer, test your plugin on `localhost:9000` using `npm run dev` because plugin CSS is not injected in Angular webserver (`localhost:3000`).
 
-Install PeerTube CLI (can be installed on another computer/server than the PeerTube instance):
+Install retro3 CLI (can be installed on another computer/server than the retro3 instance):
 
 ```bash
-npm install -g @peertube/peertube-cli
+npm install -g @retroai/retro3-cli
 ```
 
-Register the PeerTube instance via the CLI:
+Register the retro3 instance via the CLI:
 
 ```sh
-peertube-cli auth add -u 'https://peertube.example.com' -U 'root' --password 'test'
+retro3-cli auth add -u 'https://retro3.example.com' -U 'root' --password 'test'
 ```
 
 Then, you can install your local plugin/theme.
-The `--path` option is the local path on the PeerTube instance.
-If the PeerTube instance is running on another server/computer, you must copy your plugin directory there.
+The `--path` option is the local path on the retro3 instance.
+If the retro3 instance is running on another server/computer, you must copy your plugin directory there.
 
 ```sh
-peertube-cli plugins install --path /your/absolute/plugin-or-theme/path
+retro3-cli plugins install --path /your/absolute/plugin-or-theme/path
 ```
 
 ### Publish
@@ -1103,9 +1103,9 @@ npm publish
 ```
 
 Every time you want to publish another version of your plugin/theme, just update the `version` key from the `package.json`
-and republish it on NPM. Remember that the PeerTube index will take into account your new plugin/theme version after ~24 hours.
+and republish it on NPM. Remember that the retro3 index will take into account your new plugin/theme version after ~24 hours.
 
-> If you need to force your plugin update on a specific __PeerTube__ instance, you may update the latest available version manually:
+> If you need to force your plugin update on a specific __retro3__ instance, you may update the latest available version manually:
 > ```sql
 > UPDATE "plugin" SET "latestVersion" = 'X.X.X' WHERE "plugin"."name" = 'plugin-shortname';
 > ```
@@ -1114,22 +1114,22 @@ and republish it on NPM. Remember that the PeerTube index will take into account
 ### Unpublish
 
 If for a particular reason you don't want to maintain your plugin/theme anymore
-you can deprecate it. The plugin index will automatically remove it preventing users to find/install it from the PeerTube admin interface:
+you can deprecate it. The plugin index will automatically remove it preventing users to find/install it from the retro3 admin interface:
 
 ```bash
-npm deprecate peertube-plugin-xxx@"> 0.0.0" "explain here why you deprecate your plugin/theme"
+npm deprecate retro3-plugin-xxx@"> 0.0.0" "explain here why you deprecate your plugin/theme"
 ```
 
 ## Plugin & Theme hooks/helpers API
 
-See the dedicated documentation: https://docs.joinpeertube.org/api/plugins
+See the dedicated documentation: https://docs.joinretro3.org/api/plugins
 
 
 ## Tips
 
-### Compatibility with PeerTube
+### Compatibility with retro3
 
-Unfortunately, we don't have enough resources to provide hook compatibility between minor releases of PeerTube (for example between `1.2.x` and `1.3.x`).
+Unfortunately, we don't have enough resources to provide hook compatibility between minor releases of retro3 (for example between `1.2.x` and `1.3.x`).
 So please:
   * Don't make assumptions and check every parameter you want to use. For example:
 
@@ -1144,11 +1144,11 @@ registerHook({
   }
 })
 ```
-  * Don't try to require parent PeerTube modules, only use `peertubeHelpers`. If you need another helper or a specific hook, please [create an issue](https://github.com/Chocobozzz/PeerTube/issues/new/choose)
-  * Don't use PeerTube dependencies. Use your own :)
+  * Don't try to require parent retro3 modules, only use `retro3Helpers`. If you need another helper or a specific hook, please [create an issue](https://github.com/juztamau5/retro3/issues/new/choose)
+  * Don't use retro3 dependencies. Use your own :)
 
-If your plugin is broken with a new PeerTube release, update your code and the `peertubeEngine` field of your `package.json` field.
-This way, older PeerTube versions will still use your old plugin, and new PeerTube versions will use your updated plugin.
+If your plugin is broken with a new retro3 release, update your code and the `retro3Engine` field of your `package.json` field.
+This way, older retro3 versions will still use your old plugin, and new retro3 versions will use your updated plugin.
 
 ### Spam/moderation plugin
 
@@ -1162,4 +1162,4 @@ If you want to create an antispam/moderation plugin, you could use the following
 
 ### Other plugin examples
 
-You can take a look to "official" PeerTube plugins if you want to take inspiration from them: https://framagit.org/framasoft/peertube/official-plugins
+You can take a look to "official" retro3 plugins if you want to take inspiration from them: https://framagit.org/framasoft/retro3/official-plugins

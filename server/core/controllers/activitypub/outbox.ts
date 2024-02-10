@@ -1,5 +1,5 @@
 import express from 'express'
-import { Activity, VideoPrivacy } from '@peertube/peertube-models'
+import { Activity, VideoPrivacy } from '@retroai/retro3-models'
 import { activityPubContextify } from '@server/helpers/activity-pub-utils.js'
 import { activityPubCollectionPagination } from '@server/lib/activitypub/collection.js'
 import { getContextFilter } from '@server/lib/activitypub/context.js'
@@ -71,7 +71,7 @@ async function buildActivities (actor: MActorLight, start: number, count: number
 
       activities.push(announceActivity)
     } else {
-      // FIXME: only use the video URL to reduce load. Breaks compat with PeerTube < 6.0.0
+      // FIXME: only use the video URL to reduce load. Breaks compat with retro3 < 6.0.0
       const videoObject = await video.toActivityPubObject()
       const createActivity = buildCreateActivity(video.url, byActor, videoObject, createActivityAudience)
 

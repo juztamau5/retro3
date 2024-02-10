@@ -1,6 +1,6 @@
 import { Job } from 'bullmq'
 import { getLocalActorFollowActivityPubUrl } from '@server/lib/activitypub/url.js'
-import { ActivitypubFollowPayload } from '@peertube/peertube-models'
+import { ActivitypubFollowPayload } from '@retroai/retro3-models'
 import { sanitizeHost } from '../../../helpers/core-utils.js'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { logger } from '../../../helpers/logger.js'

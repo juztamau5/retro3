@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
-import { VideoChannelSyncState, VideoInclude, VideoPrivacy } from '@peertube/peertube-models'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
+import { VideoChannelSyncState, VideoInclude, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   getServerImportConfig,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 
@@ -23,7 +23,7 @@ describe('Test channel synchronizations', function () {
   function runSuite (mode: 'youtube-dl' | 'yt-dlp') {
 
     describe('Sync using ' + mode, function () {
-      let servers: PeerTubeServer[]
+      let servers: Retro3Server[]
       let sqlCommands: SQLCommand[] = []
 
       let startTestDate: Date
@@ -225,7 +225,7 @@ describe('Test channel synchronizations', function () {
       })
 
       // FIXME: youtube-dl/yt-dlp doesn't work when speicifying a port after the hostname
-      // it('Should import a remote PeerTube channel', async function () {
+      // it('Should import a remote retro3 channel', async function () {
       //   this.timeout(240_000)
 
       //   await servers[1].videos.quickUpload({ name: 'remote 1' })
@@ -256,7 +256,7 @@ describe('Test channel synchronizations', function () {
       //   expect(data[0].name).to.equal('remote 1')
       // })
 
-      // it('Should keep synced a remote PeerTube channel', async function () {
+      // it('Should keep synced a remote retro3 channel', async function () {
       //   this.timeout(240_000)
 
       //   await servers[1].videos.quickUpload({ name: 'remote 2' })

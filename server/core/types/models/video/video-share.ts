@@ -1,4 +1,4 @@
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { VideoShareModel } from '../../../models/video/video-share.js'
 import { MActorDefault } from '../actor/index.js'
 import { MVideo } from './video.js'

@@ -1,7 +1,7 @@
 import { readdir } from 'fs/promises'
 import { join } from 'path'
 import { QueryTypes } from 'sequelize'
-import { currentDir } from '@peertube/peertube-node-utils'
+import { currentDir } from '@retroai/retro3-node-utils'
 import { logger } from '../helpers/logger.js'
 import { LAST_MIGRATION_VERSION } from './constants.js'
 import { sequelizeTypescript } from './database.js'

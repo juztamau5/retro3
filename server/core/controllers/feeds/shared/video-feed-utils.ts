@@ -1,4 +1,4 @@
-import { VideoIncludeType } from '@peertube/peertube-models'
+import { VideoIncludeType } from '@retroai/retro3-models'
 import { mdToOneLinePlainText, toSafeHtml } from '@server/helpers/markdown.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { WEBSERVER } from '@server/initializers/constants.js'

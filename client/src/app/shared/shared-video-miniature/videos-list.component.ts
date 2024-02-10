@@ -7,7 +7,7 @@ import {
   AuthService,
   ComponentPaginationLight,
   Notifier,
-  PeerTubeRouterService,
+  Retro3RouterService,
   ScreenService,
   ServerService,
   User,
@@ -15,13 +15,13 @@ import {
 } from '@app/core'
 import { GlobalIconName } from '@app/shared/shared-icons'
 import { logger } from '@root-helpers/logger'
-import { isLastMonth, isLastWeek, isThisMonth, isToday, isYesterday } from '@peertube/peertube-core-utils'
-import { ResultList, UserRight, VideoSortField } from '@peertube/peertube-models'
+import { isLastMonth, isLastWeek, isThisMonth, isToday, isYesterday } from '@retroai/retro3-core-utils'
+import { ResultList, UserRight, VideoSortField } from '@retroai/retro3-models'
 import { Syndication, Video } from '../shared-main'
 import { VideoFilters, VideoFilterScope } from './video-filters.model'
 import { MiniatureDisplayOptions } from './video-miniature.component'
 
-const debugLogger = debug('peertube:videos:VideosListComponent')
+const debugLogger = debug('retro3:videos:VideosListComponent')
 
 export type HeaderAction = {
   iconName: GlobalIconName
@@ -121,7 +121,7 @@ export class VideosListComponent implements OnInit, OnChanges, OnDestroy {
     private userService: UserService,
     private route: ActivatedRoute,
     private screenService: ScreenService,
-    private peertubeRouter: PeerTubeRouterService,
+    private retro3Router: Retro3RouterService,
     private serverService: ServerService
   ) {
 
@@ -386,7 +386,7 @@ export class VideosListComponent implements OnInit, OnChanges, OnDestroy {
                              baseRoute.length !== 0 && pathname !== baseRoute.join('/')
 
     if (baseRouteChanged || Object.keys(baseQuery).length !== 0 || customizedByUser) {
-      this.peertubeRouter.silentNavigate(baseRoute, queryParams)
+      this.retro3Router.silentNavigate(baseRoute, queryParams)
     }
 
     this.filtersChanged.emit(this.filters)

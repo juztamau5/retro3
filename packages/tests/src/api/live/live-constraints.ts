@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { LiveVideoError, UserVideoQuota, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { LiveVideoError, UserVideoQuota, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests, createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs,
   waitUntilLiveReplacedByReplayOnAllServers,
   waitUntilLiveWaitingOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkLiveCleanup } from '../../shared/live.js'
 
 describe('Test live constraints', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let userId: number
   let userAccessToken: string
   let userChannelId: number

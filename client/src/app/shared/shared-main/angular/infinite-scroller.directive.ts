@@ -1,7 +1,7 @@
 import { fromEvent, Observable, Subscription } from 'rxjs'
 import { distinctUntilChanged, filter, map, share, startWith, throttleTime } from 'rxjs/operators'
 import { AfterViewChecked, Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core'
-import { PeerTubeRouterService, RouterSetting } from '@app/core'
+import { Retro3RouterService, RouterSetting } from '@app/core'
 
 @Directive({
   selector: '[myInfiniteScroller]'
@@ -25,7 +25,7 @@ export class InfiniteScrollerDirective implements OnInit, OnDestroy, AfterViewCh
   private checkScroll = false
 
   constructor (
-    private peertubeRouter: PeerTubeRouterService,
+    private retro3Router: Retro3RouterService,
     private el: ElementRef
   ) {
     this.decimalLimit = this.percentLimit / 100
@@ -109,6 +109,6 @@ export class InfiniteScrollerDirective implements OnInit, OnDestroy, AfterViewCh
   }
 
   private setScrollRouteParams () {
-    this.peertubeRouter.addRouteSetting(RouterSetting.REUSE_COMPONENT)
+    this.retro3Router.addRouteSetting(RouterSetting.REUSE_COMPONENT)
   }
 }

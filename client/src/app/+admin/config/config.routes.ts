@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 import { EditCustomConfigComponent } from '@app/+admin/config/edit-custom-config'
 import { UserRightGuard } from '@app/core'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 
 export const ConfigRoutes: Routes = [
   {

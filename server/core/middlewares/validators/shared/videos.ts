@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { HttpStatusCode, ServerErrorCode, UserRight, UserRightType, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, ServerErrorCode, UserRight, UserRightType, VideoPrivacy } from '@retroai/retro3-models'
 import { exists } from '@server/helpers/custom-validators/misc.js'
 import { loadVideo, VideoLoadType } from '@server/lib/model-loaders/index.js'
 import { isAbleToUploadVideo } from '@server/lib/user.js'
@@ -183,7 +183,7 @@ async function checkCanSeePasswordProtectedVideo (options: {
 
   const videoWithRights = await getVideoWithRights(video as MVideoWithRights)
 
-  const videoPassword = req.header('x-peertube-video-password')
+  const videoPassword = req.header('x-retro3-video-password')
 
   if (!exists(videoPassword)) {
     const errorMessage = 'Please provide a password to access this password protected video'
@@ -237,7 +237,7 @@ async function checkCanAccessVideoStaticFiles (options: {
 }) {
   const { video, req, res } = options
 
-  if (res.locals.oauth?.token.User || exists(req.header('x-peertube-video-password'))) {
+  if (res.locals.oauth?.token.User || exists(req.header('x-retro3-video-password'))) {
     return checkCanSeeVideo(options)
   }
 

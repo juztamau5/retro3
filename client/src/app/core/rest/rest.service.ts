@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core'
 import { ComponentPaginationLight } from './component-pagination.model'
 import { RestPagination } from './rest-pagination'
 
-const debugLogger = debug('peertube:rest')
+const debugLogger = debug('retro3:rest')
 
 type ParseQueryHandlerResult = string | number | boolean | string[] | number[] | boolean[]
 

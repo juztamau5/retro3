@@ -1,11 +1,11 @@
 import debug from 'debug'
 import videojs from 'video.js'
 import { logger } from '@root-helpers/logger'
-import { addQueryParams } from '@peertube/peertube-core-utils'
-import { VideoFile } from '@peertube/peertube-models'
-import { PeerTubeResolution, PlayerNetworkInfo, WebVideoPluginOptions } from '../../types'
+import { addQueryParams } from '@retroai/retro3-core-utils'
+import { VideoFile } from '@retroai/retro3-models'
+import { Retro3Resolution, PlayerNetworkInfo, WebVideoPluginOptions } from '../../types'
 
-const debugLogger = debug('peertube:player:web-video-plugin')
+const debugLogger = debug('retro3:player:web-video-plugin')
 
 const Plugin = videojs.getPlugin('plugin')
 
@@ -75,7 +75,7 @@ class WebVideoPlugin extends Plugin {
     const currentTime = this.player.currentTime()
 
     if (!this.onErrorHandler) {
-      this.onErrorHandler = () => this.player.peertube().displayFatalError()
+      this.onErrorHandler = () => this.player.retro3().displayFatalError()
       this.player.one('error', this.onErrorHandler)
     }
 
@@ -163,7 +163,7 @@ class WebVideoPlugin extends Plugin {
   }
 
   private buildQualities () {
-    const resolutions: PeerTubeResolution[] = this.videoFiles.map(videoFile => ({
+    const resolutions: Retro3Resolution[] = this.videoFiles.map(videoFile => ({
       id: videoFile.resolution.id,
       label: this.buildQualityLabel(videoFile),
       height: videoFile.resolution.id,
@@ -171,7 +171,7 @@ class WebVideoPlugin extends Plugin {
       selectCallback: () => this.updateVideoFile({ videoFile, isUserResolutionChange: true })
     }))
 
-    this.player.peertubeResolutions().add(resolutions)
+    this.player.retro3Resolutions().add(resolutions)
   }
 
   private buildQualityLabel (file: VideoFile) {

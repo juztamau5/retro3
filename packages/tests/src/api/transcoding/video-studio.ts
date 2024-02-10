@@ -1,23 +1,23 @@
 import { expect } from 'chai'
-import { getAllFiles } from '@peertube/peertube-core-utils'
-import { VideoStudioTask } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { getAllFiles } from '@retroai/retro3-core-utils'
+import { VideoStudioTask } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   VideoStudioCommand,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkVideoDuration, expectStartWith } from '@tests/shared/checks.js'
 import { checkPersistentTmpIsEmpty } from '@tests/shared/directories.js'
 
 describe('Test video studio', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let videoUUID: string
 
   async function renewVideo (fixture = 'video_short.webm') {

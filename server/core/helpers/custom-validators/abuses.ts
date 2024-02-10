@@ -1,6 +1,6 @@
 import validator from 'validator'
-import { abusePredefinedReasonsMap } from '@peertube/peertube-core-utils'
-import { AbuseCreate, AbuseFilter, AbusePredefinedReasonsString, AbuseVideoIs } from '@peertube/peertube-models'
+import { abusePredefinedReasonsMap } from '@retroai/retro3-core-utils'
+import { AbuseCreate, AbuseFilter, AbusePredefinedReasonsString, AbuseVideoIs } from '@retroai/retro3-models'
 import { ABUSE_STATES, CONSTRAINTS_FIELDS } from '../../initializers/constants.js'
 import { exists, isArray } from './misc.js'
 

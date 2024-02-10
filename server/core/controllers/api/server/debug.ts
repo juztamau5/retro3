@@ -1,5 +1,5 @@
 import express from 'express'
-import { Debug, HttpStatusCode, SendDebugCommand, UserRight } from '@peertube/peertube-models'
+import { Debug, HttpStatusCode, SendDebugCommand, UserRight } from '@retroai/retro3-models'
 import { InboxManager } from '@server/lib/activitypub/inbox-manager.js'
 import { RemoveDanglingResumableUploadsScheduler } from '@server/lib/schedulers/remove-dangling-resumable-uploads-scheduler.js'
 import { UpdateVideosScheduler } from '@server/lib/schedulers/update-videos-scheduler.js'

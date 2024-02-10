@@ -5,7 +5,7 @@ import {
   CacheFileObject,
   PlaylistObject,
   VideoObject
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { isRedundancyAccepted } from '@server/lib/redundancy.js'
 import { isCacheFileObjectValid } from '../../../helpers/custom-validators/activitypub/cache-file.js'
 import { sanitizeAndCheckVideoTorrentObject } from '../../../helpers/custom-validators/activitypub/videos.js'

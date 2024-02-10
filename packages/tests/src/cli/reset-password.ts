@@ -1,7 +1,7 @@
-import { cleanupTests, CLICommand, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
+import { cleanupTests, CLICommand, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
 
 describe('Test reset password scripts', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(30000)

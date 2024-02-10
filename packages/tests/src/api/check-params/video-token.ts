@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
-import { cleanupTests, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
+import { cleanupTests, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
 
 describe('Test video tokens', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let privateVideoId: string
   let passwordProtectedVideoId: string
   let userToken: string

@@ -1,5 +1,5 @@
 import express from 'express'
-import { ContactForm, HttpStatusCode } from '@peertube/peertube-models'
+import { ContactForm, HttpStatusCode } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { Emailer } from '../../../lib/emailer.js'
 import { Redis } from '../../../lib/redis.js'

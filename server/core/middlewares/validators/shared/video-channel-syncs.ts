@@ -1,6 +1,6 @@
 import express from 'express'
 import { VideoChannelSyncModel } from '@server/models/video/video-channel-sync.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 async function doesVideoChannelSyncIdExist (id: number, res: express.Response) {
   const sync = await VideoChannelSyncModel.loadWithChannel(+id)

@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, ServerErrorCode, ServerFilterHookName, VideoState, VideoStateType } from '@peertube/peertube-models'
+import { HttpStatusCode, ServerErrorCode, ServerFilterHookName, VideoState, VideoStateType } from '@retroai/retro3-models'
 import { isVideoFileMimeTypeValid, isVideoFileSizeValid } from '@server/helpers/custom-validators/videos.js'
 import { logger } from '@server/helpers/logger.js'
 import { CONSTRAINTS_FIELDS } from '@server/initializers/constants.js'

@@ -6,7 +6,7 @@ import {
   VideoChannelsSearchQuery,
   VideoPlaylistsSearchQuery,
   VideosSearchQuery
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export type AdvancedSearchResultType = 'videos' | 'playlists' | 'channels'
 

@@ -15,7 +15,7 @@ import {
   VideoStudioTaskOutro,
   VideoStudioTaskPayload,
   VideoStudioTaskWatermark
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { asyncMiddleware, authenticate, videoStudioAddEditionValidator } from '../../../middlewares/index.js'
 
 const studioRouter = express.Router()

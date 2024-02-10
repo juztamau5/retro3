@@ -2,22 +2,22 @@
 
 import { expect } from 'chai'
 import { basename } from 'path'
-import { getAllFiles, getHLS } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, LiveVideo, VideoDetails, VideoPrivacy } from '@peertube/peertube-models'
-import { areScalewayObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { getAllFiles, getHLS } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, LiveVideo, VideoDetails, VideoPrivacy } from '@retroai/retro3-models'
+import { areScalewayObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createSingleServer,
   findExternalSavedVideo,
   makeRawRequest,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectStartWith } from '@tests/shared/checks.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { checkVideoFileTokenReinjection } from '@tests/shared/streaming-playlists.js'
@@ -32,7 +32,7 @@ describe('Object storage for video static file privacy', function () {
   // We need real world object storage to check ACL
   if (areScalewayObjectStorageTestsDisabled()) return
 
-  let server: PeerTubeServer
+  let server: Retro3Server
   let sqlCommand: SQLCommand
   let userToken: string
 
@@ -114,8 +114,8 @@ describe('Object storage for video static file privacy', function () {
     let userPrivateVideoUUID: string
 
     const correctPassword = 'my super password'
-    const correctPasswordHeader = { 'x-peertube-video-password': correctPassword }
-    const incorrectPasswordHeader = { 'x-peertube-video-password': correctPassword + 'toto' }
+    const correctPasswordHeader = { 'x-retro3-video-password': correctPassword }
+    const incorrectPasswordHeader = { 'x-retro3-video-password': correctPassword + 'toto' }
 
     // ---------------------------------------------------------------------------
 
@@ -360,13 +360,13 @@ describe('Object storage for video static file privacy', function () {
         if (videoPassword) {
           await makeRawRequest({
             url,
-            headers: { 'x-peertube-video-password': videoPassword },
+            headers: { 'x-retro3-video-password': videoPassword },
             expectedStatus: HttpStatusCode.OK_200
           })
 
           await makeRawRequest({
             url,
-            headers: { 'x-peertube-video-password': 'incorrectPassword' },
+            headers: { 'x-retro3-video-password': 'incorrectPassword' },
             expectedStatus: HttpStatusCode.FORBIDDEN_403
           })
         }

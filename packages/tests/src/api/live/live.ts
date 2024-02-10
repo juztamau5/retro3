@@ -2,8 +2,8 @@
 
 import { expect } from 'chai'
 import { basename, join } from 'path'
-import { getAllFiles, wait } from '@peertube/peertube-core-utils'
-import { ffprobePromise, getVideoStream } from '@peertube/peertube-ffmpeg'
+import { getAllFiles, wait } from '@retroai/retro3-core-utils'
+import { ffprobePromise, getVideoStream } from '@retroai/retro3-ffmpeg'
 import {
   HttpStatusCode,
   LiveVideo,
@@ -13,7 +13,7 @@ import {
   VideoPrivacy,
   VideoState,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -22,7 +22,7 @@ import {
   LiveCommand,
   makeGetRequest,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
@@ -30,13 +30,13 @@ import {
   testFfmpegStreamError,
   waitJobs,
   waitUntilLivePublishedOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { testImageGeneratedByFFmpeg } from '@tests/shared/checks.js'
 import { testLiveVideoResolutions } from '@tests/shared/live.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 
 describe('Test live', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let commands: LiveCommand[]
 
   before(async function () {

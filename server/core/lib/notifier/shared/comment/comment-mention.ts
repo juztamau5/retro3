@@ -13,7 +13,7 @@ import {
   MUserWithNotificationSetting,
   UserNotificationModelForApi
 } from '@server/types/models/index.js'
-import { UserNotificationSettingValue, UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationSettingValue, UserNotificationType } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/index.js'
 
 export class CommentMention extends AbstractNotification <MCommentOwnerVideo, MUserNotifSettingAccount> {

@@ -1,10 +1,10 @@
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { CachePromiseFactory } from '@server/helpers/promise-cache.js'
-import { PeerTubeRequestError } from '@server/helpers/requests.js'
+import { Retro3RequestError } from '@server/helpers/requests.js'
 import { ActorLoadByUrlType } from '@server/lib/model-loaders/index.js'
 import { ActorModel } from '@server/models/actor/actor.js'
 import { MActorAccountChannelId, MActorFull } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { fetchRemoteActor } from './shared/index.js'
 import { APActorUpdater } from './updater.js'
 import { getUrlFromWebfinger } from './webfinger.js'
@@ -57,7 +57,7 @@ async function doRefresh <T extends MActorFull | MActorAccountChannelId> (option
 
     return { refreshed: true, actor }
   } catch (err) {
-    if ((err as PeerTubeRequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
+    if ((err as Retro3RequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
       logger.info('Deleting actor %s because there is a 404 in refresh actor.', actor.url, lTags())
 
       actor.Account

@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, VideoView } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoView } from '@retroai/retro3-models'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { VideoViewsManager } from '@server/lib/views/video-views-manager.js'
 import { MVideoId } from '@server/types/models/index.js'

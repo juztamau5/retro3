@@ -4,7 +4,7 @@ import { ensureDir, outputFile, readJSON } from 'fs-extra/esm'
 import { Server } from 'http'
 import { createRequire } from 'module'
 import { basename, join } from 'path'
-import { getCompleteLocale, getHookType, internalRunHook } from '@peertube/peertube-core-utils'
+import { getCompleteLocale, getHookType, internalRunHook } from '@retroai/retro3-core-utils'
 import {
   ClientScriptJSON,
   PluginPackageJSON,
@@ -15,7 +15,7 @@ import {
   RegisterServerHookOptions,
   ServerHook,
   ServerHookName
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { decachePlugin } from '@server/helpers/decache.js'
 import { ApplicationModel } from '@server/models/application/application.js'
 import { MOAuthTokenUser, MUser } from '@server/types/models/index.js'
@@ -41,7 +41,7 @@ export interface RegisteredPlugin {
   name: string
   version: string
   description: string
-  peertubeEngine: string
+  retro3Engine: string
 
   type: PluginType_Type
 
@@ -90,7 +90,7 @@ export class PluginManager implements ServerHook {
     this.server.on('upgrade', (request, socket, head) => {
       // Check if it's a plugin websocket connection
       // No need to destroy the stream when we abort the request
-      // Other handlers in PeerTube will catch this upgrade event too (socket.io, tracker etc)
+      // Other handlers in retro3 will catch this upgrade event too (socket.io, tracker etc)
 
       const url = request.url
 
@@ -368,7 +368,7 @@ export class PluginManager implements ServerHook {
         version: packageJSON.version,
         enabled: true,
         uninstalled: false,
-        peertubeEngine: packageJSON.engine.peertube
+        retro3Engine: packageJSON.engine.retro3
       }, { returning: true })
 
       logger.info('Successful installation of plugin %s.', toInstall)
@@ -404,7 +404,7 @@ export class PluginManager implements ServerHook {
 
     logger.info('Updating plugin %s.', npmName)
 
-    // Use the latest version from DB, to not upgrade to a version that does not support our PeerTube version
+    // Use the latest version from DB, to not upgrade to a version that does not support our retro3 version
     let version: string
     if (!fromDisk) {
       const plugin = await PluginModel.loadByNpmName(toUpdate)
@@ -486,7 +486,7 @@ export class PluginManager implements ServerHook {
       type: plugin.type,
       version: plugin.version,
       description: plugin.description,
-      peertubeEngine: plugin.peertubeEngine,
+      retro3Engine: plugin.retro3Engine,
       path: pluginPath,
       staticDirs: packageJSON.staticDirs,
       clientScripts,
@@ -514,7 +514,7 @@ export class PluginManager implements ServerHook {
 
     const { registerOptions, registerStore } = this.getRegisterHelpers(npmName, plugin)
 
-    await ensureDir(registerOptions.peertubeHelpers.plugin.getDataDirectoryPath())
+    await ensureDir(registerOptions.Retro3Helpers.plugin.getDataDirectoryPath())
 
     await library.register(registerOptions)
 

@@ -1,5 +1,5 @@
 import { FormReactive } from '@app/shared/shared-forms'
-import { VideoConstant, VideoPlaylist, VideoPlaylistPrivacyType } from '@peertube/peertube-models'
+import { VideoConstant, VideoPlaylist, VideoPlaylistPrivacyType } from '@retroai/retro3-models'
 import { SelectChannelItem } from '../../../types/select-options-item.model'
 
 export abstract class MyVideoPlaylistEdit extends FormReactive {

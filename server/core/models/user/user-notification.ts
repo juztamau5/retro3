@@ -1,7 +1,7 @@
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { UserNotification, type UserNotificationType_Type } from '@peertube/peertube-models'
-import { uuidToShort } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { UserNotification, type UserNotificationType_Type } from '@retroai/retro3-models'
+import { uuidToShort } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { getBiggestActorImage } from '@server/lib/actor-image.js'
 import { UserNotificationIncludes, UserNotificationModelForApi } from '@server/types/models/user/index.js'
 import { ModelIndexesOptions, Op, WhereOptions } from 'sequelize'
@@ -433,8 +433,8 @@ export class UserNotificationModel extends Model<Partial<AttributesOnly<UserNoti
       }
       : undefined
 
-    const peertube = this.Application
-      ? { latestVersion: this.Application.latestPeerTubeVersion }
+    const retro3 = this.Application
+      ? { latestVersion: this.Application.latestRetro3Version }
       : undefined
 
     const registration = this.UserRegistration
@@ -453,7 +453,7 @@ export class UserNotificationModel extends Model<Partial<AttributesOnly<UserNoti
       account,
       actorFollow,
       plugin,
-      peertube,
+      retro3,
       registration,
       createdAt: this.createdAt.toISOString(),
       updatedAt: this.updatedAt.toISOString()

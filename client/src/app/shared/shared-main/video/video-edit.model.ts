@@ -1,6 +1,6 @@
 import { getAbsoluteAPIUrl } from '@app/helpers'
-import { objectKeysTyped } from '@peertube/peertube-core-utils'
-import { VideoPassword, VideoPrivacy, VideoPrivacyType, VideoScheduleUpdate, VideoUpdate } from '@peertube/peertube-models'
+import { objectKeysTyped } from '@retroai/retro3-core-utils'
+import { VideoPassword, VideoPrivacy, VideoPrivacyType, VideoScheduleUpdate, VideoUpdate } from '@retroai/retro3-models'
 import { VideoDetails } from './video-details.model'
 
 export class VideoEdit implements VideoUpdate {

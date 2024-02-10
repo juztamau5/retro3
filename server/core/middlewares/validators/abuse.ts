@@ -1,7 +1,7 @@
 import express from 'express'
 import { body, param, query } from 'express-validator'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { AbuseCreate, HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { AbuseCreate, HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import {
   areAbusePredefinedReasonsValid,
   isAbuseFilterValid,

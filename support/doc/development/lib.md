@@ -1,6 +1,6 @@
 # Lib development documentation
 
-## @peertube/embed-api
+## @retroai/embed-api
 
 ### Build & Publish
 
@@ -10,7 +10,7 @@ npm run build
 npm publish --access=public
 ```
 
-## @peertube/peertube-types
+## @retroai/retro3-types
 
 Typescript definition files generation is controlled by the various `tsconfig.types.json` files.
 

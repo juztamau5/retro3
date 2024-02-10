@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { UserNotification } from '@peertube/peertube-models'
-import { cleanupTests, PeerTubeServer, waitJobs } from '@peertube/peertube-server-commands'
+import { UserNotification } from '@retroai/retro3-models'
+import { cleanupTests, Retro3Server, waitJobs } from '@retroai/retro3-server-commands'
 import { MockSmtpServer } from '@tests/shared/mock-servers/mock-email.js'
 import { CheckerBaseParams, prepareNotificationsTest, checkUserRegistered, checkRegistrationRequest } from '@tests/shared/notifications.js'
 
 describe('Test registrations notifications', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userToken1: string
 
   let userNotifications: UserNotification[] = []

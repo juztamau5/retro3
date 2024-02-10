@@ -1,5 +1,5 @@
 import { Job } from 'bullmq'
-import { ActivitypubHttpFetcherPayload, FetchType } from '@peertube/peertube-models'
+import { ActivitypubHttpFetcherPayload, FetchType } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { VideoModel } from '../../../models/video/video.js'
 import { VideoCommentModel } from '../../../models/video/video-comment.js'

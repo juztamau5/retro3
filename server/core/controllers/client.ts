@@ -2,12 +2,12 @@ import express from 'express'
 import { constants, promises as fs } from 'fs'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import { buildFileLocale, getCompleteLocale, is18nLocale, LOCALE_FILES } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { buildFileLocale, getCompleteLocale, is18nLocale, LOCALE_FILES } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
-import { currentDir, root } from '@peertube/peertube-node-utils'
+import { currentDir, root } from '@retroai/retro3-node-utils'
 import { STATIC_MAX_AGE } from '../initializers/constants.js'
 import { ClientHtml, sendHTML, serveIndexHTML } from '../lib/html/client-html.js'
 import { asyncMiddleware, buildRateLimiter, embedCSP } from '../middlewares/index.js'
@@ -85,7 +85,7 @@ clientsRouter.use('/video-playlists/test-embed', clientsRateLimiter, testEmbedCo
 clientsRouter.get('/manifest.webmanifest', clientsRateLimiter, asyncMiddleware(generateManifest))
 
 // Static client overrides
-// Must be consistent with static client overrides redirections in /support/nginx/peertube
+// Must be consistent with static client overrides redirections in /support/nginx/retro3
 const staticClientOverrides = [
   'assets/images/logo.svg',
   'assets/images/favicon.png',

@@ -1,5 +1,5 @@
 import { Column, CreatedAt, ForeignKey, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { TagModel } from './tag.js'
 import { VideoModel } from './video.js'
 

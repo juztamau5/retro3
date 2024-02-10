@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos views', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let liveVideoId: string
   let videoId: string
   let remoteVideoId: string

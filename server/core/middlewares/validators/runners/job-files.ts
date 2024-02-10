@@ -2,7 +2,7 @@ import express from 'express'
 import { param } from 'express-validator'
 import { basename } from 'path'
 import { isSafeFilename } from '@server/helpers/custom-validators/misc.js'
-import { hasVideoStudioTaskFile, HttpStatusCode, RunnerJobStudioTranscodingPayload } from '@peertube/peertube-models'
+import { hasVideoStudioTaskFile, HttpStatusCode, RunnerJobStudioTranscodingPayload } from '@retroai/retro3-models'
 import { areValidationErrors, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'
 
 const tags = [ 'runner' ]

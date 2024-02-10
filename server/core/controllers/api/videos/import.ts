@@ -13,7 +13,7 @@ import {
   VideoImportCreate,
   VideoImportPayload,
   VideoImportState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { auditLoggerFactory, getAuditIdFromRes, VideoImportAuditView } from '../../../helpers/audit-logger.js'
 import { isArray } from '../../../helpers/custom-validators/misc.js'
 import { cleanUpReqFiles, createReqFiles } from '../../../helpers/express-utils.js'

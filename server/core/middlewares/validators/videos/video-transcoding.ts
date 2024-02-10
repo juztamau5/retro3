@@ -4,7 +4,7 @@ import { isBooleanValid, toBooleanOrNull } from '@server/helpers/custom-validato
 import { isValidCreateTranscodingType } from '@server/helpers/custom-validators/video-transcoding.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { VideoJobInfoModel } from '@server/models/video/video-job-info.js'
-import { HttpStatusCode, ServerErrorCode, VideoTranscodingCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, ServerErrorCode, VideoTranscodingCreate } from '@retroai/retro3-models'
 import { areValidationErrors, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'
 
 const createTranscodingValidator = [

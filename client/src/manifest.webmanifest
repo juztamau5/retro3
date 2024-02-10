@@ -1,10 +1,10 @@
 {
-  "name": "PeerTube",
-  "short_name": "PeerTube",
+  "name": "retro3",
+  "short_name": "retro3",
   "start_url": "/",
   "background_color": "#fff",
   "theme_color": "#fff",
-  "description": "A federated video streaming platform using P2P",
+  "description": "A federated video and game streaming platform using P2P",
   "display": "standalone",
   "orientation": "any",
   "icons": [

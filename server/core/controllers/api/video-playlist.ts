@@ -1,5 +1,5 @@
 import express from 'express'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   VideoPlaylistCreate,
@@ -11,13 +11,13 @@ import {
   VideoPlaylistPrivacyType,
   VideoPlaylistReorder,
   VideoPlaylistUpdate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { scheduleRefreshIfNeeded } from '@server/lib/activitypub/playlists/index.js'
 import { VideoMiniaturePermanentFileCache } from '@server/lib/files-cache/index.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { MVideoPlaylistFull, MVideoPlaylistThumbnail, MVideoThumbnail } from '@server/types/models/index.js'
-import { uuidToShort } from '@peertube/peertube-node-utils'
+import { uuidToShort } from '@retroai/retro3-node-utils'
 import { resetSequelizeInstance } from '../../helpers/database-utils.js'
 import { createReqFiles } from '../../helpers/express-utils.js'
 import { logger } from '../../helpers/logger.js'

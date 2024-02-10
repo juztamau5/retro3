@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { ApiCache, APICacheOptions } from './shared/index.js'
 
 const defaultOptions: APICacheOptions = {

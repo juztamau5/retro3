@@ -3,7 +3,7 @@
     <h4 class="modal-title">
       <ng-container i18n>Download</ng-container>
 
-      <div class="peertube-select-container title-select" *ngIf="hasCaptions()">
+      <div class="retro3-select-container title-select" *ngIf="hasCaptions()">
         <select id="type" name="type" [(ngModel)]="type" class="form-control">
           <option value="video" i18n>Video</option>
           <option value="subtitles" i18n>Subtitles</option>
@@ -101,12 +101,12 @@
         <div *ngIf="getFileMetadata()" [ngbNavOutlet]="navMetadata"></div>
 
         <div class="download-type">
-          <div class="peertube-radio-container">
+          <div class="retro3-radio-container">
             <input type="radio" name="download" id="download-direct" [(ngModel)]="downloadType" value="direct">
             <label i18n for="download-direct">Direct download</label>
           </div>
 
-          <div class="peertube-radio-container">
+          <div class="retro3-radio-container">
             <input type="radio" name="download" id="download-torrent" [(ngModel)]="downloadType" value="torrent">
             <label i18n for="download-torrent">Torrent (.torrent file)</label>
           </div>
@@ -139,10 +139,10 @@
 
   <div class="modal-footer inputs">
     <input
-      type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+      type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
       (click)="hide()" (key.enter)="hide()"
     >
 
-    <input type="submit" i18n-value value="Download" class="peertube-button orange-button" (click)="download()" />
+    <input type="submit" i18n-value value="Download" class="retro3-button orange-button" (click)="download()" />
   </div>
 </ng-template>

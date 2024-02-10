@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { ActivityAnnounce, ActivityAudience } from '@peertube/peertube-models'
+import { ActivityAnnounce, ActivityAudience } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { MActorLight, MVideo } from '../../../types/models/index.js'
 import { MVideoShare } from '../../../types/models/video/index.js'

@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { VideoBlacklistType } from '@peertube/peertube-models'
+import { VideoBlacklistType } from '@retroai/retro3-models'
 import { CONSTRAINTS_FIELDS } from '../../initializers/constants.js'
 import { exists } from './misc.js'
 

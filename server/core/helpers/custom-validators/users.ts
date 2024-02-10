@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { UserRole } from '@peertube/peertube-models'
+import { UserRole } from '@retroai/retro3-models'
 import { isEmailEnabled } from '../../initializers/config.js'
 import { CONSTRAINTS_FIELDS, NSFW_POLICY_TYPES } from '../../initializers/constants.js'
 import { exists, isArray, isBooleanValid } from './misc.js'

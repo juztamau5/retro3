@@ -30,7 +30,7 @@ export const UserNotificationType = {
   ABUSE_NEW_MESSAGE: 16,
 
   NEW_PLUGIN_VERSION: 17,
-  NEW_PEERTUBE_VERSION: 18,
+  NEW_RETRO3_VERSION: 18,
 
   MY_VIDEO_STUDIO_EDITION_FINISHED: 19,
 
@@ -126,7 +126,7 @@ export interface UserNotification {
     latestVersion: string
   }
 
-  peertube?: {
+  retro3?: {
     latestVersion: string
   }
 

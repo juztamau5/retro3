@@ -2,8 +2,8 @@ import { Response } from 'express'
 import { AccountModel } from '@server/models/account/account.js'
 import { UserModel } from '@server/models/user/user.js'
 import { MAccountDefault } from '@server/types/models/index.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 function doesAccountIdExist (id: number | string, res: Response, sendNotFound = true) {
   const promise = AccountModel.load(forceNumber(id))

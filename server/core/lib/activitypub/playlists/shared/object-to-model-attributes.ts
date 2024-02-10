@@ -2,8 +2,8 @@ import { ACTIVITY_PUB } from '@server/initializers/constants.js'
 import { VideoPlaylistModel } from '@server/models/video/video-playlist.js'
 import { VideoPlaylistElementModel } from '@server/models/video/video-playlist-element.js'
 import { MVideoId, MVideoPlaylistId } from '@server/types/models/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
-import { PlaylistElementObject, PlaylistObject, VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
+import { PlaylistElementObject, PlaylistObject, VideoPlaylistPrivacy } from '@retroai/retro3-models'
 
 function playlistObjectToDBAttributes (playlistObject: PlaylistObject, to: string[]) {
   const privacy = to.includes(ACTIVITY_PUB.PUBLIC)

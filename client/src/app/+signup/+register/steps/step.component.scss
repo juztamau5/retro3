@@ -2,7 +2,7 @@
 @use '_mixins' as *;
 
 input:not([type=submit]) {
-  @include peertube-input-text(100%);
+  @include retro3-input-text(100%);
   display: block;
 
   &#username,
@@ -14,7 +14,7 @@ input:not([type=submit]) {
 
 input[type=submit],
 button {
-  @include peertube-button;
+  @include retro3-button;
 }
 
 label {

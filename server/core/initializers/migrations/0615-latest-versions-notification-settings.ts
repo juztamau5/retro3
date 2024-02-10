@@ -7,7 +7,7 @@ async function up (utils: {
   db: any
 }): Promise<void> {
   {
-    const notificationSettingColumns = [ 'newPeerTubeVersion', 'newPluginVersion' ]
+    const notificationSettingColumns = [ 'newRetro3Version', 'newPluginVersion' ]
 
     for (const column of notificationSettingColumns) {
       const data = {
@@ -19,7 +19,7 @@ async function up (utils: {
     }
 
     {
-      const query = 'UPDATE "userNotificationSetting" SET "newPeerTubeVersion" = 3, "newPluginVersion" = 1'
+      const query = 'UPDATE "userNotificationSetting" SET "newRetro3Version" = 3, "newPluginVersion" = 1'
       await utils.sequelize.query(query)
     }
 

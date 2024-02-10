@@ -1,6 +1,6 @@
 import WebFinger from 'webfinger.js'
-import { WebFingerData } from '@peertube/peertube-models'
-import { isProdInstance } from '@peertube/peertube-node-utils'
+import { WebFingerData } from '@retroai/retro3-models'
+import { isProdInstance } from '@retroai/retro3-node-utils'
 import { isActivityPubUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { REQUEST_TIMEOUTS, WEBSERVER } from '@server/initializers/constants.js'
 import { ActorModel } from '@server/models/actor/actor.js'

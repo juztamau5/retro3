@@ -14,7 +14,7 @@ import {
   NewWebVideoResolutionTranscodingPayload,
   OptimizeTranscodingPayload,
   VideoTranscodingPayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 import { VideoModel } from '../../../models/video/video.js'
 

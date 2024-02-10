@@ -1,6 +1,6 @@
 import express from 'express'
 import { query } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isWebfingerLocalResourceValid } from '../../helpers/custom-validators/webfinger.js'
 import { getHostWithPort } from '../../helpers/express-utils.js'
 import { ActorModel } from '../../models/actor/actor.js'

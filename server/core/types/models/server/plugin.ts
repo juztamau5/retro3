@@ -8,4 +8,4 @@ export type MPlugin = PluginModel
 
 export type MPluginFormattable =
   Pick<MPlugin, 'name' | 'type' | 'version' | 'latestVersion' | 'enabled' | 'uninstalled'
-  | 'peertubeEngine' | 'description' | 'homepage' | 'settings' | 'createdAt' | 'updatedAt'>
+  | 'retro3Engine' | 'description' | 'homepage' | 'settings' | 'createdAt' | 'updatedAt'>

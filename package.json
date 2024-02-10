@@ -1,7 +1,7 @@
 {
-  "name": "peertube",
-  "description": "PeerTube, an ActivityPub-federated video streaming platform using P2P directly in your web browser.",
-  "version": "6.0.3",
+  "name": "retro3",
+  "description": "retro3 is a multi-system emulator that targets web3.",
+  "version": "1.0.0",
   "private": true,
   "licence": "AGPL-3.0",
   "engines": {
@@ -10,13 +10,13 @@
   },
   "type": "module",
   "author": {
-    "name": "Chocobozzz",
-    "email": "chocobozzz@framasoft.org",
-    "url": "http://github.com/Chocobozzz"
+    "name": "juztamau5",
+    "email": "juztamau5@gmail.com",
+    "url": "http://github.com/juztamau5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chocobozzz/PeerTube.git"
+    "url": "git+https://github.com/juztamau5/retro3.git"
   },
   "typings": "*.d.ts",
   "workspaces": [
@@ -30,8 +30,8 @@
     "build:embed": "bash ./scripts/build/embed.sh",
     "build:server": "bash ./scripts/build/server.sh",
     "build:client": "bash ./scripts/build/client.sh",
-    "build:peertube-runner": "bash ./scripts/build/peertube-runner.sh",
-    "build:peertube-cli": "bash ./scripts/build/peertube-cli.sh",
+    "build:retro3-runner": "bash ./scripts/build/retro3-runner.sh",
+    "build:retro3-cli": "bash ./scripts/build/retro3-cli.sh",
     "build:tests": "bash ./scripts/build/tests.sh",
     "clean:client": "bash ./scripts/clean/client/index.sh",
     "clean:server:test": "bash ./scripts/clean/server/test.sh",
@@ -40,8 +40,8 @@
     "dev:server": "bash ./scripts/dev/server.sh",
     "dev:embed": "bash ./scripts/dev/embed.sh",
     "dev:client": "bash ./scripts/dev/client.sh",
-    "dev:peertube-cli": "bash ./scripts/dev/peertube-cli.sh",
-    "dev:peertube-runner": "bash ./scripts/dev/peertube-runner.sh",
+    "dev:retro3-cli": "bash ./scripts/dev/retro3-cli.sh",
+    "dev:retro3-runner": "bash ./scripts/dev/retro3-runner.sh",
     "start": "node dist/server",
     "start:server": "node dist/server --no-client",
     "plugin:install": "node ./dist/scripts/plugin/install.js",
@@ -56,12 +56,12 @@
     "prune-storage": "node ./dist/scripts/prune-storage.js",
     "test": "bash ./scripts/test.sh",
     "generate-cli-doc": "bash ./scripts/generate-cli-doc.sh",
-    "generate-types-package": "tsx --conditions=peertube:tsx ./packages/types-generator/generate-package.ts",
-    "i18n:create-custom-files": "tsx --tsconfig ./scripts/tsconfig.json --conditions=peertube:tsx ./scripts/i18n/create-custom-files.ts",
-    "benchmark-server": "tsx --conditions=peertube:tsx ./scripts/benchmark.ts",
-    "client:build-stats": "tsx --conditions=peertube:tsx ./scripts/client-build-stats.ts",
-    "generate-code-contributors": "tsx --conditions=peertube:tsx ./scripts/generate-code-contributors.ts",
-    "simulate-many-viewers": "tsx --conditions=peertube:tsx ./scripts/simulate-many-viewers.ts",
+    "generate-types-package": "tsx --conditions=retro3:tsx ./packages/types-generator/generate-package.ts",
+    "i18n:create-custom-files": "tsx --tsconfig ./scripts/tsconfig.json --conditions=retro3:tsx ./scripts/i18n/create-custom-files.ts",
+    "benchmark-server": "tsx --conditions=retro3:tsx ./scripts/benchmark.ts",
+    "client:build-stats": "tsx --conditions=retro3:tsx ./scripts/client-build-stats.ts",
+    "generate-code-contributors": "tsx --conditions=retro3:tsx ./scripts/generate-code-contributors.ts",
+    "simulate-many-viewers": "tsx --conditions=retro3:tsx ./scripts/simulate-many-viewers.ts",
     "postinstall": "test -n \"$NOCLIENT\" || (cd client && yarn install --pure-lockfile)",
     "tsc": "tsc",
     "commander": "commander",

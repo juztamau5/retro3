@@ -1,4 +1,4 @@
-import { HttpStatusCode, ResultList, VideoPassword } from '@peertube/peertube-models'
+import { HttpStatusCode, ResultList, VideoPassword } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class VideoPasswordsCommand extends AbstractCommand {

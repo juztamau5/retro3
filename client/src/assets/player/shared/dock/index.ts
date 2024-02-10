@@ -1,2 +1,2 @@
-export * from './peertube-dock-component'
-export * from './peertube-dock-plugin'
+export * from './retro3-dock-component'
+export * from './retro3-dock-plugin'

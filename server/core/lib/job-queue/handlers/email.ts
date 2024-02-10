@@ -1,5 +1,5 @@
 import { Job } from 'bullmq'
-import { EmailPayload } from '@peertube/peertube-models'
+import { EmailPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { Emailer } from '../../emailer.js'
 

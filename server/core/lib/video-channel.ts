@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize'
-import { VideoChannelCreate } from '@peertube/peertube-models'
+import { VideoChannelCreate } from '@retroai/retro3-models'
 import { VideoChannelModel } from '../models/video/video-channel.js'
 import { VideoModel } from '../models/video/video.js'
 import { MAccountId, MChannelId } from '../types/models/index.js'

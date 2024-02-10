@@ -4,9 +4,9 @@ import { expect } from 'chai'
 import { remove } from 'fs-extra/esm'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-import { buildAbsoluteFixturePath, root } from '@peertube/peertube-node-utils'
-import { execPromise } from '@peertube/peertube-server/core/helpers/core-utils.js'
-import { processImage } from '@peertube/peertube-server/core/helpers/image-utils.js'
+import { buildAbsoluteFixturePath, root } from '@retroai/retro3-node-utils'
+import { execPromise } from '@retroai/retro3-server/core/helpers/core-utils.js'
+import { processImage } from '@retroai/retro3-server/core/helpers/image-utils.js'
 
 async function checkBuffers (path1: string, path2: string, equals: boolean) {
   const [ buf1, buf2 ] = await Promise.all([

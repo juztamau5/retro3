@@ -1,5 +1,5 @@
-import { VideoBlacklist, type VideoBlacklistType_Type } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoBlacklist, type VideoBlacklistType_Type } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { MVideoBlacklist, MVideoBlacklistFormattable } from '@server/types/models/index.js'
 import { FindOptions } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, DataType, Default, ForeignKey, Is, Model, Table, UpdatedAt } from 'sequelize-typescript'

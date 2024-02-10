@@ -5,7 +5,7 @@ import { synchronizeChannel } from '@server/lib/sync-channel.js'
 import { VideoChannelModel } from '@server/models/video/video-channel.js'
 import { VideoChannelSyncModel } from '@server/models/video/video-channel-sync.js'
 import { MChannelSync } from '@server/types/models/index.js'
-import { VideoChannelImportPayload } from '@peertube/peertube-models'
+import { VideoChannelImportPayload } from '@retroai/retro3-models'
 
 export async function processVideoChannelImport (job: Job) {
   const payload = job.data as VideoChannelImportPayload

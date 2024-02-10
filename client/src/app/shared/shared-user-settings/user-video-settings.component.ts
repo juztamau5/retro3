@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators'
 import { Component, Input, OnDestroy, OnInit } from '@angular/core'
 import { AuthService, Notifier, ServerService, User, UserService } from '@app/core'
 import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
-import { NSFWPolicyType, UserUpdateMe } from '@peertube/peertube-models'
+import { NSFWPolicyType, UserUpdateMe } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-user-video-settings',

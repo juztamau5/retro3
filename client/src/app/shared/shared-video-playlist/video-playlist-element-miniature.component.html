@@ -70,10 +70,10 @@
 
         <div class="timestamp-options" *ngIf="displayTimestampOptions">
           <div>
-            <my-peertube-checkbox
+            <my-retro3-checkbox
               inputName="startAt" [(ngModel)]="timestampOptions.startTimestampEnabled"
               i18n-labelText labelText="Start at"
-            ></my-peertube-checkbox>
+            ></my-retro3-checkbox>
 
             <my-timestamp-input
               [timestamp]="timestampOptions.startTimestamp"
@@ -84,10 +84,10 @@
           </div>
 
           <div>
-            <my-peertube-checkbox
+            <my-retro3-checkbox
               inputName="stopAt" [(ngModel)]="timestampOptions.stopTimestampEnabled"
               i18n-labelText labelText="Stop at"
-            ></my-peertube-checkbox>
+            ></my-retro3-checkbox>
 
             <my-timestamp-input
               [timestamp]="timestampOptions.stopTimestamp"

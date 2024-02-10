@@ -6,12 +6,12 @@ import {
   cleanupTests,
   createSingleServer,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test tracker', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let badMagnet: string
   let goodMagnet: string
 

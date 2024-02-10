@@ -10,7 +10,7 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container" *ngFor="let sort of sorts">
+        <div class="retro3-radio-container" *ngFor="let sort of sorts">
           <input type="radio" name="sort" [id]="sort.id" [value]="sort.id" [(ngModel)]="advancedSearch.sort">
           <label [for]="sort.id" class="radio">{{ sort.label }}</label>
         </div>
@@ -24,12 +24,12 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="isLive" id="isLiveTrue" value="true" [(ngModel)]="advancedSearch.isLive">
           <label i18n for="isLiveTrue" class="radio">Live videos</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="isLive" id="isLiveFalse" value="false" [(ngModel)]="advancedSearch.isLive">
           <label i18n for="isLiveFalse" class="radio">VOD videos</label>
         </div>
@@ -43,12 +43,12 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="sensitiveContent" id="sensitiveContentYes" value="both" [(ngModel)]="advancedSearch.nsfw">
           <label i18n for="sensitiveContentYes" class="radio">Yes</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="sensitiveContent" id="sensitiveContentNo" value="false" [(ngModel)]="advancedSearch.nsfw">
           <label i18n for="sensitiveContentNo" class="radio">No</label>
         </div>
@@ -62,7 +62,7 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container" *ngFor="let date of publishedDateRanges">
+        <div class="retro3-radio-container" *ngFor="let date of publishedDateRanges">
           <input type="radio" (change)="onDurationOrPublishedUpdated()" name="publishedDateRange" [id]="date.id" [value]="date.id" [(ngModel)]="publishedDateRange">
           <label [for]="date.id" class="radio">{{ date.label }}</label>
         </div>
@@ -111,7 +111,7 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container" *ngFor="let duration of durationRanges">
+        <div class="retro3-radio-container" *ngFor="let duration of durationRanges">
           <input type="radio" (change)="onDurationOrPublishedUpdated()" name="durationRange" [id]="duration.id" [value]="duration.id" [(ngModel)]="durationRange">
           <label [for]="duration.id" class="radio">{{ duration.label }}</label>
         </div>
@@ -122,7 +122,7 @@
         <button i18n class="reset-button reset-button-small" (click)="resetField('categoryOneOf')" *ngIf="advancedSearch.categoryOneOf !== undefined">
           Reset
         </button>
-        <div class="peertube-select-container">
+        <div class="retro3-select-container">
           <select id="category" name="category" [(ngModel)]="advancedSearch.categoryOneOf" class="form-control">
             <option [value]="undefined" i18n>Display all categories</option>
             <option *ngFor="let category of videoCategories" [value]="category.id">{{ category.label }}</option>
@@ -135,7 +135,7 @@
         <button i18n class="reset-button reset-button-small" (click)="resetField('licenceOneOf')" *ngIf="advancedSearch.licenceOneOf !== undefined">
           Reset
         </button>
-        <div class="peertube-select-container">
+        <div class="retro3-select-container">
           <select id="licence" name="licence" [(ngModel)]="advancedSearch.licenceOneOf" class="form-control">
             <option [value]="undefined" i18n>Display all licenses</option>
             <option *ngFor="let licence of videoLicences" [value]="licence.id">{{ licence.label }}</option>
@@ -148,7 +148,7 @@
         <button i18n class="reset-button reset-button-small" (click)="resetField('languageOneOf')" *ngIf="advancedSearch.languageOneOf !== undefined">
           Reset
         </button>
-        <div class="peertube-select-container">
+        <div class="retro3-select-container">
           <select id="language" name="language" [(ngModel)]="advancedSearch.languageOneOf" class="form-control">
             <option [value]="undefined" i18n>Display all languages</option>
             <option *ngFor="let language of videoLanguages" [value]="language.id">{{ language.label }}</option>
@@ -175,7 +175,7 @@
       </div>
 
       <div class="form-group">
-        <label i18n for="host">PeerTube instance host</label>
+        <label i18n for="host">retro3 instance host</label>
 
         <input (change)="onDurationOrPublishedUpdated()" (keydown.enter)="$event.preventDefault()" type="text" id="host" name="host"
           placeholder="example.com" [(ngModel)]="advancedSearch.host" class="form-control"
@@ -190,17 +190,17 @@
           </button>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="resultType" id="resultTypeVideos" value="videos" [(ngModel)]="advancedSearch.resultType">
           <label i18n for="resultTypeVideos" class="radio">Videos</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="resultType" id="resultTypeChannels" value="channels" [(ngModel)]="advancedSearch.resultType">
           <label i18n for="resultTypeChannels" class="radio">Channels</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="resultType" id="resultTypePlaylists" value="playlists" [(ngModel)]="advancedSearch.resultType">
           <label i18n for="resultTypePlaylists" class="radio">Playlists</label>
         </div>
@@ -212,12 +212,12 @@
           <label for="searchTarget" i18n>Search target</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="searchTarget" id="searchTargetLocal" value="local" [(ngModel)]="advancedSearch.searchTarget">
           <label i18n for="searchTargetLocal" class="radio">Instance</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input type="radio" name="searchTarget" id="searchTargetSearchIndex" value="search-index" [(ngModel)]="advancedSearch.searchTarget">
           <label i18n for="searchTargetSearchIndex" class="radio">Vidiverse</label>
         </div>

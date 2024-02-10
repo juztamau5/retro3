@@ -1,19 +1,19 @@
 @use '_mixins' as *;
 
-.peertube-button {
-  @include peertube-button;
+.retro3-button {
+  @include retro3-button;
 }
 
-.peertube-button-big {
-  @include peertube-button-big;
+.retro3-button-big {
+  @include retro3-button-big;
 }
 
-.peertube-button-link {
-  @include peertube-button-link;
+.retro3-button-link {
+  @include retro3-button-link;
 }
 
-.peertube-button-big-link {
-  @include peertube-button-big-link;
+.retro3-button-big-link {
+  @include retro3-button-big-link;
 }
 
 .orange-button {
@@ -32,16 +32,16 @@
   @include tertiary-button;
 }
 
-.peertube-radio-container {
-  @include peertube-radio-container;
+.retro3-radio-container {
+  @include retro3-radio-container;
 }
 
-.peertube-button-icon {
+.retro3-button-icon {
   @include button-with-icon(18px, 3px, -1px);
 }
 
-.peertube-create-button {
-  @include peertube-button-link;
+.retro3-create-button {
+  @include retro3-button-link;
   @include orange-button;
   @include button-with-icon(20px, 5px, -1px);
 }

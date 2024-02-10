@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { VideoRateType } from '@peertube/peertube-models'
+import { VideoRateType } from '@retroai/retro3-models'
 import { MAccountActor, MActorUrl, MVideoAccountLight, MVideoFullLight, MVideoId } from '../../types/models/index.js'
 import { sendLike, sendUndoDislike, sendUndoLike } from './send/index.js'
 import { sendDislike } from './send/send-dislike.js'

@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import { Injectable } from '@angular/core'
 import { GlobalIconName } from '@app/shared/shared-icons'
-import { HTMLServerConfig } from '@peertube/peertube-models'
+import { HTMLServerConfig } from '@retroai/retro3-models'
 import { ScreenService } from '../wrappers'
 
 export type MenuLink = {

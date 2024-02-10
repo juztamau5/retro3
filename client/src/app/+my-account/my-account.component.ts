@@ -35,7 +35,7 @@ export class MyAccountComponent implements OnInit {
         {
           label: $localize`Muted servers`,
           routerLink: '/my-account/blocklist/servers',
-          iconName: 'peertube-x'
+          iconName: 'retro3-x'
         },
         {
           label: $localize`Abuse reports`,

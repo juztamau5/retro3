@@ -1,18 +1,18 @@
 import { expect } from 'chai'
 import { writeFile } from 'fs/promises'
 import { basename, join } from 'path'
-import { HttpStatusCode, Video } from '@peertube/peertube-models'
+import { HttpStatusCode, Video } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function testThumbnail (server: PeerTubeServer, videoId: number | string) {
+async function testThumbnail (server: Retro3Server, videoId: number | string) {
   const video = await server.videos.get({ id: videoId })
 
   const requests = [
@@ -27,7 +27,7 @@ async function testThumbnail (server: PeerTubeServer, videoId: number | string) 
 }
 
 describe('Test regenerate thumbnails script', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let video1: Video
   let video2: Video

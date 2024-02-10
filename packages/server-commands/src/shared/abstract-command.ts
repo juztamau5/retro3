@@ -1,6 +1,6 @@
 import { isAbsolute } from 'path'
-import { HttpStatusCodeType } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { HttpStatusCodeType } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   makeDeleteRequest,
   makeGetRequest,
@@ -11,7 +11,7 @@ import {
   unwrapText
 } from '../requests/requests.js'
 
-import type { PeerTubeServer } from '../server/server.js'
+import type { Retro3Server } from '../server/server.js'
 
 export interface OverrideCommandOptions {
   token?: string
@@ -51,7 +51,7 @@ interface InternalDeleteCommandOptions extends InternalCommonCommandOptions {
 abstract class AbstractCommand {
 
   constructor (
-    protected server: PeerTubeServer
+    protected server: Retro3Server
   ) {
 
   }
@@ -215,7 +215,7 @@ abstract class AbstractCommand {
 
   protected buildVideoPasswordHeader (videoPassword: string) {
     return videoPassword !== undefined && videoPassword !== null
-      ? { 'x-peertube-video-password': videoPassword }
+      ? { 'x-retro3-video-password': videoPassword }
       : undefined
   }
 }

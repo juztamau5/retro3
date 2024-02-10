@@ -1,18 +1,18 @@
 <div *ngIf="form" [formGroup]="form">
   <label *ngIf="setting.label && setting.type !== 'input-checkbox'" [attr.for]="setting.name" [innerHTML]="setting.label"></label>
 
-  <my-peertube-checkbox
+  <my-retro3-checkbox
     *ngIf="setting.type === 'input-checkbox'"
     [inputName]="setting.name"
     [formControlName]="setting.name"
     [labelInnerHTML]="setting.label"
-  ></my-peertube-checkbox>
+  ></my-retro3-checkbox>
 
   <div *ngIf="setting.descriptionHTML" class="label-small-info" [innerHTML]="setting.descriptionHTML"></div>
 
   <input *ngIf="setting.type === 'input'" type="text" [id]="setting.name" [formControlName]="setting.name" />
 
-  <div *ngIf="setting.type === 'select'" class="peertube-select-container">
+  <div *ngIf="setting.type === 'select'" class="retro3-select-container">
     <select  [id]="setting.name" [formControlName]="setting.name" class="form-control">
       <option *ngFor="let option of setting.options" [value]="option.value">{{ option.label }}</option>
     </select>

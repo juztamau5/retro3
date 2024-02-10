@@ -1,5 +1,5 @@
-import { parseChapters, sortBy } from '@peertube/peertube-core-utils'
-import { VideoChapter } from '@peertube/peertube-models'
+import { parseChapters, sortBy } from '@retroai/retro3-core-utils'
+import { VideoChapter } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { VideoChapterModel } from '@server/models/video/video-chapter.js'
 import { MVideoImmutable } from '@server/types/models/index.js'

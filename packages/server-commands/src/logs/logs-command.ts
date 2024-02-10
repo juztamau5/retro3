@@ -1,4 +1,4 @@
-import { ClientLogCreate, HttpStatusCode, ServerLogLevel } from '@peertube/peertube-models'
+import { ClientLogCreate, HttpStatusCode, ServerLogLevel } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class LogsCommand extends AbstractCommand {

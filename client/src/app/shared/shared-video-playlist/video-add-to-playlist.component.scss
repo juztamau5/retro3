@@ -52,7 +52,7 @@
   display: flex;
   width: 100%;
 
-  my-peertube-checkbox {
+  my-retro3-checkbox {
     @include margin-right(10px);
 
     align-self: center;
@@ -98,7 +98,7 @@
   column-gap: 10px;
   align-items: center;
 
-  my-peertube-checkbox {
+  my-retro3-checkbox {
     @include margin-left(auto);
   }
 
@@ -139,12 +139,12 @@
 }
 
 input[type=text] {
-  @include peertube-input-text(200px);
+  @include retro3-input-text(200px);
 
   display: block;
 }
 
 input[type=submit] {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 }

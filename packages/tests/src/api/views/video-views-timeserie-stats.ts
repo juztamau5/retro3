@@ -3,8 +3,8 @@
 import { expect } from 'chai'
 import { FfmpegCommand } from 'fluent-ffmpeg'
 import { prepareViewsServers, prepareViewsVideos, processViewersStats } from '@tests/shared/views.js'
-import { VideoStatsTimeserie, VideoStatsTimeserieMetric } from '@peertube/peertube-models'
-import { cleanupTests, PeerTubeServer, stopFfmpeg } from '@peertube/peertube-server-commands'
+import { VideoStatsTimeserie, VideoStatsTimeserieMetric } from '@retroai/retro3-models'
+import { cleanupTests, Retro3Server, stopFfmpeg } from '@retroai/retro3-server-commands'
 
 function buildOneMonthAgo () {
   const monthAgo = new Date()
@@ -18,7 +18,7 @@ function buildOneMonthAgo () {
 describe('Test views timeserie stats', function () {
   const availableMetrics: VideoStatsTimeserieMetric[] = [ 'viewers' ]
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   before(async function () {
     this.timeout(120000)

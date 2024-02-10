@@ -3,13 +3,13 @@
 import { expect } from 'chai'
 import {
   HttpStatusCode,
-  PeerTubeProblemDocument,
+  Retro3ProblemDocument,
   VideoDetails,
   VideoImportState,
   VideoPlaylist,
   VideoPlaylistPrivacy,
   VideoPrivacy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -17,16 +17,16 @@ import {
   makeActivityPubGetRequest,
   makeGetRequest,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { FIXTURE_URLS } from '../shared/tests.js'
 
 describe('Test plugin filter hooks', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID: string
   let threadId: number
   let videoPlaylistUUID: string
@@ -496,7 +496,7 @@ describe('Test plugin filter hooks', function () {
         expectedStatus: HttpStatusCode.FORBIDDEN_403
       })
 
-      expect((body as unknown as PeerTubeProblemDocument).error).to.equal('No jma 2')
+      expect((body as unknown as Retro3ProblemDocument).error).to.equal('No jma 2')
     })
   })
 

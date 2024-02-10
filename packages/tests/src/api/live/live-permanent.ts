@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { LiveVideoCreate, VideoPrivacy, VideoState, VideoStateType } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { LiveVideoCreate, VideoPrivacy, VideoState, VideoStateType } from '@retroai/retro3-models'
 import { checkLiveCleanup } from '@tests/shared/live.js'
 import {
   cleanupTests,
   ConfigCommand,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Permanent live', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let videoUUID: string
 
   async function createLiveWrapper (permanentLive: boolean) {

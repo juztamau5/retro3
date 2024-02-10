@@ -15,7 +15,7 @@ $form-base-input-width: 340px;
 }
 
 input:not([type=submit]) {
-  @include peertube-input-text($form-base-input-width);
+  @include retro3-input-text($form-base-input-width);
   display: block;
 }
 
@@ -25,8 +25,8 @@ my-input-text {
   display: block;
 }
 
-.peertube-select-container {
-  @include peertube-select-container($form-base-input-width);
+.retro3-select-container {
+  @include retro3-select-container($form-base-input-width);
 }
 
 my-select-custom-value {
@@ -37,7 +37,7 @@ my-select-custom-value {
 
 input[type=submit],
 button {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 
   margin-top: 10px;
@@ -51,7 +51,7 @@ my-user-real-quota-info {
 
 .danger-zone {
   button {
-    @include peertube-button;
+    @include retro3-button;
     @include danger-button;
     @include disable-outline;
 

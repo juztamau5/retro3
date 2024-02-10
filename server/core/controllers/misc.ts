@@ -1,10 +1,10 @@
 import cors from 'cors'
 import express from 'express'
-import { HttpNodeinfoDiasporaSoftwareNsSchema20, HttpStatusCode } from '@peertube/peertube-models'
+import { HttpNodeinfoDiasporaSoftwareNsSchema20, HttpStatusCode } from '@retroai/retro3-models'
 import { CONFIG, isEmailEnabled } from '@server/initializers/config.js'
 import { serveIndexHTML } from '@server/lib/html/client-html.js'
 import { ServerConfigManager } from '@server/lib/server-config-manager.js'
-import { CONSTRAINTS_FIELDS, DEFAULT_THEME_NAME, PEERTUBE_VERSION, ROUTE_CACHE_LIFETIME } from '../initializers/constants.js'
+import { CONSTRAINTS_FIELDS, DEFAULT_THEME_NAME, RETRO3_VERSION, ROUTE_CACHE_LIFETIME } from '../initializers/constants.js'
 import { getThemeOrDefault } from '../lib/plugins/theme-utils.js'
 import { cacheRoute } from '../middlewares/cache/cache.js'
 import { apiRateLimiter, asyncMiddleware } from '../middlewares/index.js'
@@ -70,8 +70,8 @@ async function generateNodeinfo (req: express.Request, res: express.Response) {
   const json = {
     version: '2.0',
     software: {
-      name: 'peertube',
-      version: PEERTUBE_VERSION
+      name: 'retro3',
+      version: RETRO3_VERSION
     },
     protocols: [
       'activitypub'

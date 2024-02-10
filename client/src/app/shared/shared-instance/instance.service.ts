@@ -3,8 +3,8 @@ import { catchError, map } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { MarkdownService, RestExtractor, ServerService } from '@app/core'
-import { objectKeysTyped, peertubeTranslate } from '@peertube/peertube-core-utils'
-import { About } from '@peertube/peertube-models'
+import { objectKeysTyped, retro3Translate } from '@retroai/retro3-core-utils'
+import { About } from '@retroai/retro3-models'
 import { environment } from '../../../environments/environment'
 import { logger } from '@root-helpers/logger'
 
@@ -77,7 +77,7 @@ export class InstanceService {
               return ''
             }
 
-            return peertubeTranslate(languageObj.label, translations)
+            return retro3Translate(languageObj.label, translations)
           })
       })
     )
@@ -97,7 +97,7 @@ export class InstanceService {
               return ''
             }
 
-            return peertubeTranslate(categoryObj.label, translations)
+            return retro3Translate(categoryObj.label, translations)
           })
       })
     )

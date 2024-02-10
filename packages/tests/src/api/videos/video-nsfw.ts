@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { cleanupTests, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
-import { BooleanBothQuery, CustomConfig, ResultList, Video, VideosOverview } from '@peertube/peertube-models'
+import { cleanupTests, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
+import { BooleanBothQuery, CustomConfig, ResultList, Video, VideosOverview } from '@retroai/retro3-models'
 
 function createOverviewRes (overview: VideosOverview) {
   const videos = overview.categories[0].videos
@@ -10,7 +10,7 @@ function createOverviewRes (overview: VideosOverview) {
 }
 
 describe('Test video NSFW policy', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken: string
   let customConfig: CustomConfig
 

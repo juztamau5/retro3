@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { VideoChapter, VideoCreateResult, VideoPrivacy } from '@peertube/peertube-models'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
+import { VideoChapter, VideoCreateResult, VideoPrivacy } from '@retroai/retro3-models'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
-  doubleFollow, PeerTubeServer, setAccessTokensToServers,
+  doubleFollow, Retro3Server, setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
 import { expect } from 'chai'
 
 describe('Test video chapters', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   before(async function () {
     this.timeout(120000)

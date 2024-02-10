@@ -4,7 +4,7 @@ import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { VIDEO_LIVE } from '@server/initializers/constants.js'
 import { VideoTranscodingProfilesManager } from '@server/lib/transcoding/default-transcoding-profiles.js'
-import { FFmpegLive } from '@peertube/peertube-ffmpeg'
+import { FFmpegLive } from '@retroai/retro3-ffmpeg'
 import { getLiveSegmentTime } from '../../live-utils.js'
 import { AbstractTranscodingWrapper } from './abstract-transcoding-wrapper.js'
 

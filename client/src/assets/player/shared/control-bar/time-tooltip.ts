@@ -1,4 +1,4 @@
-import { timeToInt } from '@peertube/peertube-core-utils'
+import { timeToInt } from '@retroai/retro3-core-utils'
 import videojs, { VideoJsPlayer } from 'video.js'
 
 const TimeToolTip = videojs.getComponent('TimeTooltip') as any // FIXME: typings don't have write method

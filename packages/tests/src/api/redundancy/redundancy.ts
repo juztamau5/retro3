@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import { readdir } from 'fs/promises'
 import { decode as magnetUriDecode } from 'magnet-uri'
 import { basename, join } from 'path'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   VideoDetails,
@@ -12,24 +12,24 @@ import {
   VideoPrivacy,
   VideoRedundancyStrategy,
   VideoRedundancyStrategyWithManual
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkSegmentHash } from '@tests/shared/streaming-playlists.js'
 import { checkVideoFilesWereRemoved, saveVideoInServers } from '@tests/shared/videos.js'
 
-let servers: PeerTubeServer[] = []
+let servers: Retro3Server[] = []
 let video1Server2: VideoDetails
 
-async function checkMagnetWebseeds (file: VideoFile, baseWebseeds: string[], server: PeerTubeServer) {
+async function checkMagnetWebseeds (file: VideoFile, baseWebseeds: string[], server: Retro3Server) {
   const parsed = magnetUriDecode(file.magnetUri)
 
   for (const ws of baseWebseeds) {
@@ -606,7 +606,7 @@ describe('Test videos redundancy', function () {
   describe('Test expiration', function () {
     const strategy = 'recently-added'
 
-    async function checkContains (servers: PeerTubeServer[], str: string) {
+    async function checkContains (servers: Retro3Server[], str: string) {
       for (const server of servers) {
         const video = await server.videos.get({ id: video1Server2.uuid })
 
@@ -616,7 +616,7 @@ describe('Test videos redundancy', function () {
       }
     }
 
-    async function checkNotContains (servers: PeerTubeServer[], str: string) {
+    async function checkNotContains (servers: Retro3Server[], str: string) {
       for (const server of servers) {
         const video = await server.videos.get({ id: video1Server2.uuid })
 

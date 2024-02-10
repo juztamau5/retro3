@@ -6,13 +6,13 @@ import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test ActivityPub fetcher', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommandServer1: SQLCommand
 
   // ---------------------------------------------------------------

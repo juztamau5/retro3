@@ -1,6 +1,6 @@
 import express from 'express'
 import { body } from 'express-validator'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { isHostValid, isValidContactBody } from '../../helpers/custom-validators/servers.js'
 import { isUserDisplayNameValid } from '../../helpers/custom-validators/users.js'
 import { logger } from '../../helpers/logger.js'

@@ -1,9 +1,9 @@
 import { ChildProcess, fork } from 'child_process'
 import { copy } from 'fs-extra/esm'
 import { join } from 'path'
-import { randomInt } from '@peertube/peertube-core-utils'
-import { Video, VideoChannel, VideoChannelSync, VideoCreateResult, VideoDetails } from '@peertube/peertube-models'
-import { parallelTests, root } from '@peertube/peertube-node-utils'
+import { randomInt } from '@retroai/retro3-core-utils'
+import { Video, VideoChannel, VideoChannelSync, VideoCreateResult, VideoDetails } from '@retroai/retro3-models'
+import { parallelTests, root } from '@retroai/retro3-node-utils'
 import { BulkCommand } from '../bulk/index.js'
 import { CLICommand } from '../cli/index.js'
 import { CustomPagesCommand } from '../custom-pages/index.js'
@@ -60,11 +60,11 @@ import { StatsCommand } from './stats-command.js'
 export type RunServerOptions = {
   hideLogs?: boolean
   nodeArgs?: string[]
-  peertubeArgs?: string[]
+  retro3Args?: string[]
   env?: { [ id: string ]: string }
 }
 
-export class PeerTubeServer {
+export class Retro3Server {
   app?: ChildProcess
 
   url: string
@@ -221,7 +221,7 @@ export class PeerTubeServer {
     const serverRunString = {
       'HTTP server listening': false
     }
-    const key = 'Database peertube_test' + this.internalServerNumber + ' is ready'
+    const key = 'Database retro3_test' + this.internalServerNumber + ' is ready'
     serverRunString[key] = false
 
     const regexps = {
@@ -260,15 +260,15 @@ export class PeerTubeServer {
       execArgv
     }
 
-    const peertubeArgs = options.peertubeArgs || []
+    const retro3Args = options.retro3Args || []
 
     return new Promise<void>((res, rej) => {
       const self = this
       let aggregatedLogs = ''
 
-      this.app = fork(join(root(), 'dist', 'server.js'), peertubeArgs, forkOptions)
+      this.app = fork(join(root(), 'dist', 'server.js'), retro3Args, forkOptions)
 
-      const onPeerTubeExit = () => rej(new Error('Process exited:\n' + aggregatedLogs))
+      const onRetro3Exit = () => rej(new Error('Process exited:\n' + aggregatedLogs))
       const onParentExit = () => {
         if (!this.app?.pid) return
 
@@ -277,7 +277,7 @@ export class PeerTubeServer {
         } catch { /* empty */ }
       }
 
-      this.app.on('exit', onPeerTubeExit)
+      this.app.on('exit', onRetro3Exit)
       process.on('exit', onParentExit)
 
       this.app.stdout.on('data', function onStdout (data) {
@@ -312,7 +312,7 @@ export class PeerTubeServer {
         } else {
           process.removeListener('exit', onParentExit)
           self.app.stdout.removeListener('data', onStdout)
-          self.app.removeListener('exit', onPeerTubeExit)
+          self.app.removeListener('exit', onRetro3Exit)
         }
 
         res()

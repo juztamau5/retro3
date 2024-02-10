@@ -9,7 +9,7 @@ export class ViewersObserversBuilder {
   }
 
   buildObservers () {
-    this.meter.createObservableGauge('peertube_viewers_total', {
+    this.meter.createObservableGauge('retro3_viewers_total', {
       description: 'Total viewers on the instance'
     }).addCallback(observableResult => {
       for (const viewerScope of [ 'local', 'remote' ] as ViewerScope[]) {

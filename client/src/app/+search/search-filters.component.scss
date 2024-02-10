@@ -9,25 +9,25 @@ form {
   font-weight: $font-bold;
 }
 
-.peertube-radio-container {
+.retro3-radio-container {
   @include margin-right(30px);
 
   display: inline-block;
 }
 
-.peertube-select-container {
-  @include peertube-select-container(auto);
+.retro3-select-container {
+  @include retro3-select-container(auto);
 
   margin-bottom: 1rem;
 }
 
 input[type=text] {
-  @include peertube-input-text(100%);
+  @include retro3-input-text(100%);
   display: block;
 }
 
 input[type=submit] {
-  @include peertube-button-link;
+  @include retro3-button-link;
   @include orange-button;
 }
 

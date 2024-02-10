@@ -3,8 +3,8 @@
 
 import express from 'express'
 import { OutgoingHttpHeaders } from 'http'
-import { HttpStatusCodeType } from '@peertube/peertube-models'
-import { isTestInstance } from '@peertube/peertube-node-utils'
+import { HttpStatusCodeType } from '@retroai/retro3-models'
+import { isTestInstance } from '@retroai/retro3-node-utils'
 import { parseDurationToMs } from '@server/helpers/core-utils.js'
 import { logger } from '@server/helpers/logger.js'
 import { Redis } from '@server/lib/redis.js'

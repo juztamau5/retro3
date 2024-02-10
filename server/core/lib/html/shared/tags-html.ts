@@ -1,4 +1,4 @@
-import { escapeAttribute, escapeHTML } from '@peertube/peertube-core-utils'
+import { escapeAttribute, escapeHTML } from '@retroai/retro3-core-utils'
 import { CONFIG } from '../../../initializers/config.js'
 import { CUSTOM_HTML_TAG_COMMENTS, EMBED_SIZE, WEBSERVER } from '../../../initializers/constants.js'
 import { MVideo, MVideoPlaylist } from '../../../types/models/index.js'

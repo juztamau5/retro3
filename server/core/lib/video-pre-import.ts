@@ -7,7 +7,7 @@ import {
   VideoImportState,
   VideoPrivacy,
   VideoState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { moveAndProcessCaptionFile } from '@server/helpers/captions-utils.js'
 import { isVTTFileValid } from '@server/helpers/custom-validators/video-captions.js'
 import { isVideoFileExtnameValid } from '@server/helpers/custom-validators/videos.js'

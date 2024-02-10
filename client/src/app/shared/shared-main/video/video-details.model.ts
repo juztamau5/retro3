@@ -7,7 +7,7 @@ import {
   VideoStateType,
   VideoStreamingPlaylist,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { Video } from './video.model'
 
 export class VideoDetails extends Video implements VideoDetailsServerModel {

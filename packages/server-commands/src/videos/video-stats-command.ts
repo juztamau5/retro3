@@ -1,11 +1,11 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   VideoStatsOverall,
   VideoStatsRetention,
   VideoStatsTimeserie,
   VideoStatsTimeserieMetric
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class VideoStatsCommand extends AbstractCommand {

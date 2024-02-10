@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoPrivacy } from '@peertube/peertube-models'
-import { areMockObjectStorageTestsDisabled } from '@peertube/peertube-node-utils'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoPrivacy } from '@retroai/retro3-models'
+import { areMockObjectStorageTestsDisabled } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   ObjectStorageCommand,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { completeCheckHlsPlaylist } from '@tests/shared/streaming-playlists.js'
 
 describe('Test update video privacy while transcoding', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
 
   const videoUUIDs: string[] = []
 

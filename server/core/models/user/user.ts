@@ -1,4 +1,4 @@
-import { forceNumber, hasUserRight, USER_ROLE_LABELS } from '@peertube/peertube-core-utils'
+import { forceNumber, hasUserRight, USER_ROLE_LABELS } from '@retroai/retro3-core-utils'
 import {
   AbuseState,
   MyUser,
@@ -9,8 +9,8 @@ import {
   type NSFWPolicyType,
   type UserAdminFlagType,
   type UserRoleType
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { TokensCache } from '@server/lib/auth/tokens-cache.js'
 import { LiveQuotaStore } from '@server/lib/live/index.js'
 import {
@@ -62,7 +62,7 @@ import {
   isUserVideoQuotaValid,
   isUserVideosHistoryEnabledValid
 } from '../../helpers/custom-validators/users.js'
-import { comparePassword, cryptPassword } from '../../helpers/peertube-crypto.js'
+import { comparePassword, cryptPassword } from '../../helpers/retro3-crypto.js'
 import { DEFAULT_USER_THEME_NAME, NSFW_POLICY_TYPES } from '../../initializers/constants.js'
 import { getThemeOrDefault } from '../../lib/plugins/theme-utils.js'
 import { AccountModel } from '../account/account.js'

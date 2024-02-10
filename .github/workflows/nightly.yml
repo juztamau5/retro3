@@ -16,7 +16,7 @@ jobs:
         with:
           ref: develop
 
-      - uses: './.github/actions/reusable-prepare-peertube-build'
+      - uses: './.github/actions/reusable-prepare-retro3-build'
         with:
           node-version: '18.x'
 
@@ -25,7 +25,7 @@ jobs:
 
       - uses: './.github/actions/reusable-deploy'
         with:
-          source: ./peertube-nightly-*
+          source: ./retro3-nightly-*
           destination: nightly
           knownHosts: ${{ secrets.STATS_DEPLOYEMENT_KNOWN_HOSTS }}
           deployKey: ${{ secrets.STATS_DEPLOYEMENT_KEY }}

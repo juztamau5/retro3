@@ -1,6 +1,6 @@
 import { Redis as IoRedis, RedisOptions } from 'ioredis'
 import { exists } from '@server/helpers/custom-validators/misc.js'
-import { sha256 } from '@peertube/peertube-node-utils'
+import { sha256 } from '@retroai/retro3-node-utils'
 import { logger } from '../helpers/logger.js'
 import { generateRandomString } from '../helpers/utils.js'
 import { CONFIG } from '../initializers/config.js'
@@ -58,8 +58,8 @@ class Redis {
   }
 
   static getRedisClientOptions (name?: string, options: RedisOptions = {}): RedisOptions {
-    const connectionName = [ 'PeerTube', name ].join('')
-    const connectTimeout = 20000 // Could be slow since node use sync call to compile PeerTube
+    const connectionName = [ 'retro3', name ].join('')
+    const connectTimeout = 20000 // Could be slow since node use sync call to compile retro3
 
     if (CONFIG.REDIS.SENTINEL.ENABLED) {
       return {

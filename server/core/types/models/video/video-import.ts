@@ -1,5 +1,5 @@
 import { VideoImportModel } from '@server/models/video/video-import.js'
-import { PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { MUser } from '../user/user.js'
 import { MVideo, MVideoAccountLight, MVideoFormattable, MVideoTag, MVideoThumbnail, MVideoWithFile } from './video.js'
 

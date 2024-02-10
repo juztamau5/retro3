@@ -1,6 +1,6 @@
 import { Transaction } from 'sequelize'
-import { VideoViewEvent } from '@peertube/peertube-models'
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { VideoViewEvent } from '@retroai/retro3-models'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { GeoIP } from '@server/helpers/geo-ip.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { MAX_LOCAL_VIEWER_WATCH_SECTIONS, VIEW_LIFETIME } from '@server/initializers/constants.js'

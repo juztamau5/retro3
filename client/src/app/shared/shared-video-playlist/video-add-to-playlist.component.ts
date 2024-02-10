@@ -4,7 +4,7 @@ import { debounceTime, filter } from 'rxjs/operators'
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core'
 import { AuthService, DisableForReuseHook, Notifier } from '@app/core'
 import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
-import { secondsToTime } from '@peertube/peertube-core-utils'
+import { secondsToTime } from '@retroai/retro3-core-utils'
 import {
   CachedVideoExistInPlaylist,
   Video,
@@ -12,11 +12,11 @@ import {
   VideoPlaylistElementCreate,
   VideoPlaylistElementUpdate,
   VideoPlaylistPrivacy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { VIDEO_PLAYLIST_DISPLAY_NAME_VALIDATOR } from '../form-validators/video-playlist-validators'
 import { CachedPlaylist, VideoPlaylistService } from './video-playlist.service'
 
-const debugLogger = debug('peertube:playlists:VideoAddToPlaylistComponent')
+const debugLogger = debug('retro3:playlists:VideoAddToPlaylistComponent')
 
 type PlaylistElement = {
   enabled: boolean

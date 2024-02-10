@@ -1,6 +1,6 @@
 import express from 'express'
-import { HttpStatusCode, OAuthClientLocal } from '@peertube/peertube-models'
-import { isTestOrDevInstance } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, OAuthClientLocal } from '@retroai/retro3-models'
+import { isTestOrDevInstance } from '@retroai/retro3-node-utils'
 import { OAuthClientModel } from '@server/models/oauth/oauth-client.js'
 import { logger } from '../../helpers/logger.js'
 import { CONFIG } from '../../initializers/config.js'
@@ -15,7 +15,7 @@ oauthClientsRouter.get('/local',
   asyncMiddleware(getLocalClient)
 )
 
-// Get the client credentials for the PeerTube front end
+// Get the client credentials for the retro3 front end
 async function getLocalClient (req: express.Request, res: express.Response, next: express.NextFunction) {
   const serverHostname = CONFIG.WEBSERVER.HOSTNAME
   const serverPort = CONFIG.WEBSERVER.PORT

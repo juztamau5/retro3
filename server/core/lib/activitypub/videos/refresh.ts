@@ -1,9 +1,9 @@
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
-import { PeerTubeRequestError } from '@server/helpers/requests.js'
+import { Retro3RequestError } from '@server/helpers/requests.js'
 import { VideoLoadByUrlType } from '@server/lib/model-loaders/index.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideoAccountLightBlacklistAllFiles, MVideoThumbnail } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { ActorFollowHealthCache } from '../../actor-follow-health-cache.js'
 import { fetchRemoteVideo, SyncParam, syncVideoExternalAttributes } from './shared/index.js'
 import { APVideoUpdater } from './updater.js'
@@ -43,7 +43,7 @@ async function refreshVideoIfNeeded (options: {
 
     return video
   } catch (err) {
-    if ((err as PeerTubeRequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
+    if ((err as Retro3RequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
       logger.info('Cannot refresh remote video %s: video does not exist anymore. Deleting it.', video.url, lTags())
 
       // Video does not exist anymore

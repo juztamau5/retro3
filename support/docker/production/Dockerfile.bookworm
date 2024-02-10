@@ -6,15 +6,15 @@ RUN apt update \
  && gosu nobody true \
  && rm /var/lib/apt/lists/* -fR
 
-# Add peertube user
-RUN groupadd -r peertube \
-    && useradd -r -g peertube -m peertube
+# Add retro3 user
+RUN groupadd -r retro3 \
+    && useradd -r -g retro3 -m retro3
 
-# Install PeerTube
-COPY --chown=peertube:peertube . /app
+# Install retro3
+COPY --chown=retro3:retro3 . /app
 WORKDIR /app
 
-USER peertube
+USER retro3
 
 # Install manually client dependencies to apply our network timeout option
 RUN cd client && yarn install --pure-lockfile --network-timeout 1200000 && cd ../ \
@@ -27,11 +27,11 @@ RUN cd client && yarn install --pure-lockfile --network-timeout 1200000 && cd ..
 USER root
 
 RUN mkdir /data /config
-RUN chown -R peertube:peertube /data /config
+RUN chown -R retro3:retro3 /data /config
 
 ENV NODE_ENV production
 ENV NODE_CONFIG_DIR /app/config:/app/support/docker/production/config:/config
-ENV PEERTUBE_LOCAL_CONFIG /config
+ENV RETRO3_LOCAL_CONFIG /config
 
 VOLUME /data
 VOLUME /config

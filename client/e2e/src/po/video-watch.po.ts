@@ -64,7 +64,7 @@ export class VideoWatchPage {
   }
 
   isEmbedWarningDisplayed () {
-    return $('.peertube-dock-description').isDisplayed()
+    return $('.retro3-dock-description').isDisplayed()
   }
 
   goOnP2PMediaLoaderEmbed () {

@@ -1,7 +1,7 @@
 import MarkdownItClass from 'markdown-it'
 import markdownItEmoji from 'markdown-it-emoji/light.js'
 import sanitizeHtml from 'sanitize-html'
-import { getDefaultSanitizeOptions, getTextOnlySanitizeOptions, TEXT_WITH_HTML_RULES } from '@peertube/peertube-core-utils'
+import { getDefaultSanitizeOptions, getTextOnlySanitizeOptions, TEXT_WITH_HTML_RULES } from '@retroai/retro3-core-utils'
 
 const defaultSanitizeOptions = getDefaultSanitizeOptions()
 const textOnlySanitizeOptions = getTextOnlySanitizeOptions()

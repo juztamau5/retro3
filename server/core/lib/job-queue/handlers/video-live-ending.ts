@@ -2,8 +2,8 @@ import { Job } from 'bullmq'
 import { remove } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { ThumbnailType, VideoLiveEndingPayload, VideoState } from '@peertube/peertube-models'
-import { peertubeTruncate } from '@server/helpers/core-utils.js'
+import { ThumbnailType, VideoLiveEndingPayload, VideoState } from '@retroai/retro3-models'
+import { retro3Truncate } from '@server/helpers/core-utils.js'
 import { CONSTRAINTS_FIELDS } from '@server/initializers/constants.js'
 import { getLocalVideoActivityPubUrl } from '@server/lib/activitypub/url.js'
 import { federateVideoIfNeeded } from '@server/lib/activitypub/videos/index.js'
@@ -26,7 +26,7 @@ import { VideoLiveModel } from '@server/models/video/video-live.js'
 import { VideoStreamingPlaylistModel } from '@server/models/video/video-streaming-playlist.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideo, MVideoLive, MVideoLiveSession, MVideoWithAllFiles } from '@server/types/models/index.js'
-import { ffprobePromise, getAudioStream, getVideoStreamDimensionsInfo, getVideoStreamFPS } from '@peertube/peertube-ffmpeg'
+import { ffprobePromise, getAudioStream, getVideoStreamDimensionsInfo, getVideoStreamFPS } from '@retroai/retro3-ffmpeg'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 import { JobQueue } from '../job-queue.js'
 import { isVideoInPublicDirectory } from '@server/lib/video-privacy.js'
@@ -105,7 +105,7 @@ async function saveReplayToExternalVideo (options: {
   const replaySettings = await VideoLiveReplaySettingModel.load(liveSession.replaySettingId)
 
   const videoNameSuffix = ` - ${new Date(publishedAt).toLocaleString()}`
-  const truncatedVideoName = peertubeTruncate(liveVideo.name, {
+  const truncatedVideoName = retro3Truncate(liveVideo.name, {
     length: CONSTRAINTS_FIELDS.VIDEOS.NAME.max - videoNameSuffix.length
   })
 

@@ -11,7 +11,7 @@
   </div>
   <input
     *ngIf="videoUploaded === false"
-    type="button" class="peertube-button grey-button ms-1" i18n-value="Cancel ongoing upload of a video" value="Cancel" (click)="cancel.emit()"
+    type="button" class="retro3-button grey-button ms-1" i18n-value="Cancel ongoing upload of a video" value="Cancel" (click)="cancel.emit()"
   />
 </div>
 
@@ -22,8 +22,8 @@
     </div>
   </div>
 
-  <input type="button" class="peertube-button grey-button ms-1" i18n-value="Retry failed upload of a video" value="Retry" (click)="retry.emit()" />
-  <input type="button" class="peertube-button grey-button ms-1" i18n-value="Cancel ongoing upload of a video" value="Cancel" (click)="cancel.emit()" />
+  <input type="button" class="retro3-button grey-button ms-1" i18n-value="Retry failed upload of a video" value="Retry" (click)="retry.emit()" />
+  <input type="button" class="retro3-button grey-button ms-1" i18n-value="Cancel ongoing upload of a video" value="Cancel" (click)="cancel.emit()" />
 </div>
 
 <div *ngIf="error && !enableRetryAfterError" class="alert alert-danger">

@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core'
-import { PluginSelectorId } from '@peertube/peertube-models'
+import { PluginSelectorId } from '@retroai/retro3-models'
 
 @Directive({ selector: '[myPluginSelector]' })
 export class PluginSelectorDirective implements OnInit {

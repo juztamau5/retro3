@@ -7,8 +7,8 @@ import { WEBSERVER } from '@server/initializers/constants.js'
 import { getBiggestActorImage } from '@server/lib/actor-image.js'
 import { UserModel } from '@server/models/user/user.js'
 import { MAccountDefault, MChannelBannerAccountDefault, MUser, MVideoFullLight } from '@server/types/models/index.js'
-import { pick } from '@peertube/peertube-core-utils'
-import { ActorImageType } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { ActorImageType } from '@retroai/retro3-models'
 
 export function initFeed (parameters: {
   name: string

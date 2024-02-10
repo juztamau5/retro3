@@ -13,10 +13,10 @@ import {
   LiveVideoCreate,
   LiveVideoLatencyMode,
   LiveVideoUpdate,
-  PeerTubeProblemDocument,
+  Retro3ProblemDocument,
   ServerErrorCode,
   VideoPrivacy
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { VideoSend } from './video-send'
 
 @Component({
@@ -114,7 +114,7 @@ export class VideoGoLiveComponent extends VideoSend implements OnInit, AfterView
 
           let message = err.message
 
-          const error = err.body as PeerTubeProblemDocument
+          const error = err.body as Retro3ProblemDocument
 
           if (error?.code === ServerErrorCode.MAX_INSTANCE_LIVES_LIMIT_REACHED) {
             message = $localize`Cannot create live because this instance have too many created lives`

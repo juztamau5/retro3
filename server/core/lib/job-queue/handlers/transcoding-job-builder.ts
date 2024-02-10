@@ -3,8 +3,8 @@ import { createOptimizeOrMergeAudioJobs } from '@server/lib/transcoding/create-t
 import { UserModel } from '@server/models/user/user.js'
 import { VideoJobInfoModel } from '@server/models/video/video-job-info.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { pick } from '@peertube/peertube-core-utils'
-import { TranscodingJobBuilderPayload } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { TranscodingJobBuilderPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { JobQueue } from '../job-queue.js'
 

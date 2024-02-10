@@ -28,11 +28,11 @@ import {
   HttpStatusCode,
   InstallOrUpdatePlugin,
   ManagePlugin,
-  PeertubePluginIndexList,
+  Retro3PluginIndexList,
   PublicServerSetting,
   RegisteredServerSettings,
   UserRight
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 const pluginRouter = express.Router()
 
@@ -215,7 +215,7 @@ async function updatePluginSettings (req: express.Request, res: express.Response
 }
 
 async function listAvailablePlugins (req: express.Request, res: express.Response) {
-  const query: PeertubePluginIndexList = req.query
+  const query: Retro3PluginIndexList = req.query
 
   const resultList = await listAvailablePluginsFromIndex(query)
 

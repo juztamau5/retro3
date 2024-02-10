@@ -1,5 +1,5 @@
-import { escapeHTML } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { escapeHTML } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import { toCompleteUUID } from '@server/helpers/custom-validators/misc.js'
 import express from 'express'
 import validator from 'validator'

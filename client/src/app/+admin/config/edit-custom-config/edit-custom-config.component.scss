@@ -23,7 +23,7 @@ my-markdown-textarea {
 
 input[type=text],
 input[type=number] {
-  @include peertube-input-text($form-base-input-width);
+  @include retro3-input-text($form-base-input-width);
 
   display: block;
 }
@@ -49,11 +49,11 @@ input[type=number] {
 }
 
 input[type=checkbox] {
-  @include peertube-checkbox(1px);
+  @include retro3-checkbox(1px);
 }
 
-.peertube-select-container {
-  @include peertube-select-container($form-base-input-width);
+.retro3-select-container {
+  @include retro3-select-container($form-base-input-width);
 }
 
 my-select-options,
@@ -65,7 +65,7 @@ my-select-checkbox {
 }
 
 input[type=submit] {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
   @include margin-left(auto);
 
@@ -88,7 +88,7 @@ input[type=submit] {
 }
 
 textarea {
-  @include peertube-textarea(500px, 150px);
+  @include retro3-textarea(500px, 150px);
 
   max-width: 100%;
   display: block;
@@ -139,7 +139,7 @@ ngb-tabset:not(.previews) ::ng-deep {
   justify-content: right;
 
   .callout-link {
-    @include peertube-button-link;
+    @include retro3-button-link;
 
     position: relative;
     right: 3.3em;

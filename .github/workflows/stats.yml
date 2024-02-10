@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: './.github/actions/reusable-prepare-peertube-build'
+      - uses: './.github/actions/reusable-prepare-retro3-build'
         with:
           node-version: '18.x'
 
@@ -31,19 +31,19 @@ jobs:
           branch-base: develop
           bundlewatch-github-token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
 
-      - name: PeerTube code stats
+      - name: retro3 code stats
         if: github.event_name != 'pull_request'
         run: |
           wget "https://github.com/boyter/scc/releases/download/v3.0.0/scc-3.0.0-x86_64-unknown-linux.zip"
           unzip "scc-3.0.0-x86_64-unknown-linux.zip"
           ./scc --format=json --exclude-dir .git,node_modules,client/node_modules,client/dist,dist,yarn.lock,client/yarn.lock,client/src/locale,test1,test2,test3,client/src/assets/images,config,storage,packages/tests/fixtures,support/openapi,.idea,.vscode,docker-volume,ffmpeg-3,ffmpeg-4 > ./scc.json
 
-      - name: PeerTube client stats
+      - name: retro3 client stats
         if: github.event_name != 'pull_request'
         run: |
           npm run client:build-stats > client-build-stats.json
 
-      - name: PeerTube client lighthouse report
+      - name: retro3 client lighthouse report
         if: github.event_name != 'pull_request'
         run: |
           sudo apt-get install chromium-browser
@@ -62,7 +62,7 @@ jobs:
         uses: './.github/actions/reusable-deploy'
         with:
           source: lighthouse.json client-build-stats.json scc.json
-          destination: peertube-stats
+          destination: retro3-stats
           knownHosts: ${{ secrets.STATS_DEPLOYEMENT_KNOWN_HOSTS }}
           deployKey: ${{ secrets.STATS_DEPLOYEMENT_KEY }}
           deployUser: ${{ secrets.STATS_DEPLOYEMENT_USER }}

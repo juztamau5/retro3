@@ -3,7 +3,7 @@ import { SelectOptionsItem } from 'src/types/select-options-item.model'
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import { MenuService, ThemeService } from '@app/core'
-import { HTMLServerConfig } from '@peertube/peertube-models'
+import { HTMLServerConfig } from '@retroai/retro3-models'
 import { ConfigService } from '../shared/config.service'
 
 @Component({

@@ -30,7 +30,7 @@
   margin: 30px 0 10px;
 
   .share-button {
-    @include peertube-button;
+    @include retro3-button;
     @include button-with-icon(17px, 3px, -1px);
     @include grey-button;
     @include apply-svg-color(pvar(--actionButtonColor));

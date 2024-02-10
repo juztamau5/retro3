@@ -4,14 +4,14 @@ import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { sha1 } from '@peertube/peertube-node-utils'
-import { LiveVideo, VideoStreamingPlaylistType } from '@peertube/peertube-models'
-import { ObjectStorageCommand, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { sha1 } from '@retroai/retro3-node-utils'
+import { LiveVideo, VideoStreamingPlaylistType } from '@retroai/retro3-models'
+import { ObjectStorageCommand, Retro3Server } from '@retroai/retro3-server-commands'
 import { SQLCommand } from './sql-command.js'
 import { checkLiveSegmentHash, checkResolutionsInMasterPlaylist } from './streaming-playlists.js'
 
 async function checkLiveCleanup (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   videoUUID: string
   permanent: boolean
   savedResolutions?: number[]
@@ -40,9 +40,9 @@ async function checkLiveCleanup (options: {
 
 async function testLiveVideoResolutions (options: {
   sqlCommand: SQLCommand
-  originServer: PeerTubeServer
+  originServer: Retro3Server
 
-  servers: PeerTubeServer[]
+  servers: Retro3Server[]
   liveVideoId: string
   resolutions: number[]
   transcoded: boolean
@@ -160,7 +160,7 @@ async function checkSavedLiveCleanup (hlsPath: string, savedResolutions: number[
   expect(shaFile).to.exist
 }
 
-async function checkUnsavedLiveCleanup (server: PeerTubeServer, videoUUID: string, hlsPath: string) {
+async function checkUnsavedLiveCleanup (server: Retro3Server, videoUUID: string, hlsPath: string) {
   let live: LiveVideo
 
   try {

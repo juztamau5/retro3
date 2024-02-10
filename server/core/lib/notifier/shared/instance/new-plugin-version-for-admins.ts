@@ -3,7 +3,7 @@ import { WEBSERVER } from '@server/initializers/constants.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MPlugin, MUserDefault, MUserWithNotificationSetting, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserNotificationType, UserRight } from '@peertube/peertube-models'
+import { UserNotificationType, UserRight } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export class NewPluginVersionForAdmins extends AbstractNotification <MPlugin> {
@@ -15,7 +15,7 @@ export class NewPluginVersionForAdmins extends AbstractNotification <MPlugin> {
   }
 
   log () {
-    logger.info('Notifying %s admins of new PeerTube version %s.', this.admins.length, this.payload.latestVersion)
+    logger.info('Notifying %s admins of new retro3 version %s.', this.admins.length, this.payload.latestVersion)
   }
 
   getSetting (user: MUserWithNotificationSetting) {

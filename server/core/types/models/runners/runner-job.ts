@@ -1,5 +1,5 @@
 import { RunnerJobModel } from '@server/models/runner/runner-job.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MRunner } from './runner.js'
 
 type Use<K extends keyof RunnerJobModel, M> = PickWith<RunnerJobModel, K, M>

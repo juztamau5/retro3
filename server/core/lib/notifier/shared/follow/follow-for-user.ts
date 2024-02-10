@@ -3,7 +3,7 @@ import { isBlockedByServerOrAccount } from '@server/lib/blocklist.js'
 import { UserModel } from '@server/models/user/user.js'
 import { UserNotificationModel } from '@server/models/user/user-notification.js'
 import { MActorFollowFull, MUserDefault, MUserWithNotificationSetting, UserNotificationModelForApi } from '@server/types/models/index.js'
-import { UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationType } from '@retroai/retro3-models'
 import { AbstractNotification } from '../common/abstract-notification.js'
 
 export class FollowForUser extends AbstractNotification <MActorFollowFull> {

@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { ActivityAudience, ActivityFlag } from '@peertube/peertube-models'
+import { ActivityAudience, ActivityFlag } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { MAbuseAP, MAccountLight, MActor } from '../../../types/models/index.js'
 import { audiencify, getAudience } from '../audience.js'

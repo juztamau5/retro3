@@ -1,5 +1,5 @@
 import { Account } from '@app/shared/shared-main/account/account.model'
-import { hasUserRight, objectKeysTyped } from '@peertube/peertube-core-utils'
+import { hasUserRight, objectKeysTyped } from '@retroai/retro3-core-utils'
 import {
   ActorImage,
   HTMLServerConfig,
@@ -12,7 +12,7 @@ import {
   UserRole,
   UserRoleType,
   VideoChannel
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 export class User implements UserServerModel {
   id: number

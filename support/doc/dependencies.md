@@ -2,7 +2,7 @@
 
 :warning: **Warning**: dependencies guide is maintained by the community. Some parts may be outdated! :warning:
 
-Main dependencies version supported by PeerTube:
+Main dependencies version supported by retro3:
 
  * `node` >=18.x
  * `yarn` >=1.x
@@ -74,7 +74,7 @@ g++ -v # Should be >= 5.x
 redis-server --version # Should be >= 6.x
 ```
 
-Now that dependencies are installed, before running PeerTube you should start PostgreSQL and Redis:
+Now that dependencies are installed, before running retro3 you should start PostgreSQL and Redis:
 
 ```
 sudo systemctl start redis postgresql
@@ -88,7 +88,7 @@ sudo systemctl start redis postgresql
 sudo pacman -S nodejs-lts-fermium yarn ffmpeg postgresql openssl redis git wget unzip python base-devel npm nginx
 ```
 
-Now that dependencies are installed, before running PeerTube you should start PostgreSQL and Redis:
+Now that dependencies are installed, before running retro3 you should start PostgreSQL and Redis:
 
 ```
 sudo systemctl start redis postgresql
@@ -125,7 +125,7 @@ sudo scl enable devtoolset-7 bash
 Later when you invoke any node command, please prefix them with `CC=/opt/rh/devtoolset-7/root/usr/bin/gcc CXX=/opt/rh/devtoolset-7/root/usr/bin/g++`, such as with:
 
 ```
-sudo -H -u peertube CC=/opt/rh/devtoolset-7/root/usr/bin/gcc CXX=/opt/rh/devtoolset-7/root/usr/bin/g++ yarn install --production --pure-lockfile
+sudo -H -u retro3 CC=/opt/rh/devtoolset-7/root/usr/bin/gcc CXX=/opt/rh/devtoolset-7/root/usr/bin/g++ yarn install --production --pure-lockfile
 ```
 
 6. Initialize the PostgreSQL database:
@@ -134,7 +134,7 @@ sudo -H -u peertube CC=/opt/rh/devtoolset-7/root/usr/bin/gcc CXX=/opt/rh/devtool
 sudo PGSETUP_INITDB_OPTIONS='--auth-host=md5' postgresql-setup --initdb --unit postgresql
 ```
 
-Now that dependencies are installed, before running PeerTube you should enable and start PostgreSQL and Redis:
+Now that dependencies are installed, before running retro3 you should enable and start PostgreSQL and Redis:
 
 ```
 sudo systemctl enable --now redis
@@ -179,7 +179,7 @@ sudo ln -s /usr/bin/python3 /usr/bin/python
 sudo PGSETUP_INITDB_OPTIONS='--auth-host=md5' postgresql-setup --initdb --unit postgresql
 ```
 
-Now that dependencies are installed, before running PeerTube you should enable and start PostgreSQL and Redis:
+Now that dependencies are installed, before running retro3 you should enable and start PostgreSQL and Redis:
 
 ```
 sudo systemctl enable --now redis
@@ -221,14 +221,14 @@ sudo systemctl enable --now redis
 sudo systemctl enable --now postgresql
 ```
 
-6. Configure the peertube user:
+6. Configure the retro3 user:
 ```
-sudo useradd -m -d /var/www/peertube -s /bin/bash -p peertube peertube
+sudo useradd -m -d /var/www/retro3 -s /bin/bash -p retro3 retro3
 ```
 
 7. Unknown missing steps:
 - Steps missing here... these were adapted from the CentOS 8 steps which abruptly ended.
-- /var/www/peertube does not exist yet (expected? done in future steps? documentation?).
+- /var/www/retro3 does not exist yet (expected? done in future steps? documentation?).
 - Nothing about Certbot, NGINX, Firewall settings, and etc.
 - Hopefully someone can suggest what is missing here with some hints so I can add it?
 
@@ -243,10 +243,10 @@ dnf upgrade
 2. Add a user with sudoers group access:
 
 ```
-useradd my-peertube-user
-passwd my-peertube-user
-usermod my-peertube-user -a -G wheel	# Add my-peertube-user to sudoers
-su my-peertube-user
+useradd my-retro3-user
+passwd my-retro3-user
+usermod my-retro3-user -a -G wheel	# Add my-retro3-user to sudoers
+su my-retro3-user
 ```
 
 3. (Optional) Install certbot (choose instructions for your distribution):
@@ -279,7 +279,7 @@ redis-server --version # Should be >= 6.x
 ```
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
-sudo ln -s /etc/nginx/sites-enabled/peertube /etc/nginx/conf.d/peertube.conf
+sudo ln -s /etc/nginx/sites-enabled/retro3 /etc/nginx/conf.d/retro3.conf
 ```
 
 9. Post-installation
@@ -304,7 +304,7 @@ sudo systemctl start redis.service
 
 By default, you cannot access your server via public IP. To do so, you must configure firewall:
 
--  Ports used by peertube dev setup:
+-  Ports used by retro3 dev setup:
 ```
 sudo firewall-cmd --permanent --zone=public --add-port=3000/tcp
 sudo firewall-cmd --permanent --zone=public --add-port=9000/tcp
@@ -383,7 +383,7 @@ sudo alternatives --set python3 /usr/bin/python
 sudo PGSETUP_INITDB_OPTIONS='--auth-host=md5' postgresql-setup --initdb --unit postgresql
 ```
 
-Now that dependencies are installed, before running PeerTube you should enable and start PostgreSQL and Redis:
+Now that dependencies are installed, before running retro3 you should enable and start PostgreSQL and Redis:
 
 ```
 sudo systemctl enable --now redis
@@ -397,28 +397,28 @@ If you are running the production guide, you also need to slightly pre-configure
 ```
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
-sudo ln -s /etc/nginx/sites-enabled/peertube /etc/nginx/conf.d/peertube.conf
+sudo ln -s /etc/nginx/sites-enabled/retro3 /etc/nginx/conf.d/retro3.conf
 sudo systemctl enable --now nginx
 ```
 
 9. Prepare directory
 
-To add the 'peertube' user, you first have to create the 'www' folder and once the 'peertube' user is added, you have to set the access permissions.
+To add the 'retro3' user, you first have to create the 'www' folder and once the 'retro3' user is added, you have to set the access permissions.
 
 ```
 sudo mkdir /var/www
 
-sudo useradd -m -d /var/www/peertube -s /bin/bash -p peertube peertube
-sudo passwd peertube
+sudo useradd -m -d /var/www/retro3 -s /bin/bash -p retro3 retro3
+sudo passwd retro3
 
-sudo chmod 755 /var/www/peertube/
+sudo chmod 755 /var/www/retro3/
 ```
 
 10. Firewall
 
 By default, you cannot access your server via public IP. To do so, you must configure firewall:
 
--  Ports used by peertube dev setup:
+-  Ports used by retro3 dev setup:
 ```
 sudo firewall-cmd --permanent --zone=public --add-port=3000/tcp
 sudo firewall-cmd --permanent --zone=public --add-port=9000/tcp
@@ -451,7 +451,7 @@ echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo s
 
 On a fresh install of [FreeBSD](https://www.freebsd.org), new system or new jail:
 
-1. bootstrap pkg, initialize db and install peertube's dependencies, always as root (sudo not yet installed):
+1. bootstrap pkg, initialize db and install retro3's dependencies, always as root (sudo not yet installed):
 
 ```
 pkg
@@ -518,11 +518,11 @@ brew services run redis
 ```
 
 On macOS, the `postgresql` user can be `_postgres` instead of `postgres`.
-If `sudo -u postgres createuser -P peertube` gives you an `unknown user: postgres` error, you can try `sudo -u _postgres createuser -U peertube`.
+If `sudo -u postgres createuser -P retro3` gives you an `unknown user: postgres` error, you can try `sudo -u _postgres createuser -U retro3`.
 
 ## Gentoo
 
-1. Add this to ``/etc/portage/sets/peertube``:
+1. Add this to ``/etc/portage/sets/retro3``:
 
 ```
 net-libs/nodejs
@@ -544,16 +544,16 @@ www-servers/nginx
 
 ```
 mkdir -p /etc/portage/package.keywords
-cat << EOF >> /etc/portage/package.keywords/peertube
-# required by yarn (argument) for PeerTube
+cat << EOF >> /etc/portage/package.keywords/retro3
+# required by yarn (argument) for retro3
 sys-apps/yarn ~amd64
 EOF
 ```
 
-3. Compile the peertube set:
+3. Compile the retro3 set:
 
 ```
-emerge -a @peertube
+emerge -a @retroai
 ```
 
 4. Initialize the PostgreSQL database if you just merged it:

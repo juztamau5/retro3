@@ -3,7 +3,7 @@ import { mergeMap } from 'rxjs'
 import { Component, OnInit } from '@angular/core'
 import { AuthService, Notifier, RestPagination, RestTable, ServerService } from '@app/core'
 import { DropdownAction, VideoChannelService, VideoChannelSyncService } from '@app/shared/shared-main'
-import { HTMLServerConfig, VideoChannelSync, VideoChannelSyncState, VideoChannelSyncStateType } from '@peertube/peertube-models'
+import { HTMLServerConfig, VideoChannelSync, VideoChannelSyncState, VideoChannelSyncStateType } from '@retroai/retro3-models'
 
 @Component({
   templateUrl: './my-video-channel-syncs.component.html',

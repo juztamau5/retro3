@@ -1,6 +1,6 @@
 import { Model, Sequelize, Transaction } from 'sequelize'
 import { AbstractRunQuery, ModelBuilder } from '@server/models/shared/index.js'
-import { ActorImageType, VideoPrivacy } from '@peertube/peertube-models'
+import { ActorImageType, VideoPrivacy } from '@retroai/retro3-models'
 import { createSafeIn, getSort, parseRowCountResult } from '../../../shared/index.js'
 import { VideoCommentTableAttributes } from './video-comment-table-attributes.js'
 

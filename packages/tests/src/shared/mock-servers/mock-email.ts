@@ -1,6 +1,6 @@
 import MailDev from '@peertube/maildev'
-import { randomInt } from '@peertube/peertube-core-utils'
-import { parallelTests } from '@peertube/peertube-node-utils'
+import { randomInt } from '@retroai/retro3-core-utils'
+import { parallelTests } from '@retroai/retro3-node-utils'
 
 class MockSmtpServer {
 

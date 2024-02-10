@@ -3,9 +3,9 @@ import {
   VideoStreamingPlaylistType,
   type VideoStorageType,
   type VideoStreamingPlaylistType_Type
-} from '@peertube/peertube-models'
-import { sha1 } from '@peertube/peertube-node-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { sha1 } from '@retroai/retro3-node-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { CONFIG } from '@server/initializers/config.js'
 import { getHLSPrivateFileUrl, getHLSPublicFileUrl } from '@server/lib/object-storage/index.js'
 import { generateHLSMasterPlaylistFilename, generateHlsSha256SegmentsFilename } from '@server/lib/paths.js'

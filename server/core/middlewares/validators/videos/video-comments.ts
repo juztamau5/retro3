@@ -1,7 +1,7 @@
 import express from 'express'
 import { body, param, query } from 'express-validator'
 import { MUserAccountUrl } from '@server/types/models/index.js'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import { exists, isBooleanValid, isIdValid, toBooleanOrNull } from '../../../helpers/custom-validators/misc.js'
 import { isValidVideoCommentText } from '../../../helpers/custom-validators/video-comments.js'
 import { logger } from '../../../helpers/logger.js'

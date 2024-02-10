@@ -1,4 +1,4 @@
-import { LiveVideoLatencyMode } from '@peertube/peertube-models'
+import { LiveVideoLatencyMode } from '@retroai/retro3-models'
 
 function isLiveLatencyModeValid (value: any) {
   return [ LiveVideoLatencyMode.DEFAULT, LiveVideoLatencyMode.SMALL_LATENCY, LiveVideoLatencyMode.HIGH_LATENCY ].includes(value)

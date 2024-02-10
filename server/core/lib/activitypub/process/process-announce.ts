@@ -1,4 +1,4 @@
-import { ActivityAnnounce } from '@peertube/peertube-models'
+import { ActivityAnnounce } from '@retroai/retro3-models'
 import { getAPId } from '@server/lib/activitypub/activity.js'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

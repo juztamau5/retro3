@@ -1,11 +1,11 @@
 import { QueryTypes, Sequelize } from 'sequelize'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { PeerTubeServer } from '@peertube/peertube-server-commands'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { Retro3Server } from '@retroai/retro3-server-commands'
 
 export class SQLCommand {
   private sequelize: Sequelize
 
-  constructor (private readonly server: PeerTubeServer) {
+  constructor (private readonly server: Retro3Server) {
 
   }
 
@@ -126,9 +126,9 @@ export class SQLCommand {
   private getSequelize () {
     if (this.sequelize) return this.sequelize
 
-    const dbname = 'peertube_test' + this.server.internalServerNumber
-    const username = 'peertube'
-    const password = 'peertube'
+    const dbname = 'retro3_test' + this.server.internalServerNumber
+    const username = 'retro3'
+    const password = 'retro3'
     const host = '127.0.0.1'
     const port = 5432
 

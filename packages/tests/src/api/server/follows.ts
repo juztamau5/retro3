@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { Video, VideoPrivacy } from '@peertube/peertube-models'
-import { cleanupTests, createMultipleServers, PeerTubeServer, setAccessTokensToServers, waitJobs } from '@peertube/peertube-server-commands'
+import { Video, VideoPrivacy } from '@retroai/retro3-models'
+import { cleanupTests, createMultipleServers, Retro3Server, setAccessTokensToServers, waitJobs } from '@retroai/retro3-server-commands'
 import { expectAccountFollows, expectChannelsFollows } from '@tests/shared/actors.js'
 import { testCaptionFile } from '@tests/shared/captions.js'
 import { dateIsValid } from '@tests/shared/checks.js'
@@ -11,7 +11,7 @@ import { completeVideoCheck } from '@tests/shared/videos.js'
 describe('Test follows', function () {
 
   describe('Complex follow', function () {
-    let servers: PeerTubeServer[] = []
+    let servers: Retro3Server[] = []
 
     before(async function () {
       this.timeout(120000)
@@ -71,7 +71,7 @@ describe('Test follows', function () {
         expect(server2Follow.state).to.equal('accepted')
 
         expect(server3Follow).to.not.be.undefined
-        expect(server3Follow.following.name).to.equal('peertube')
+        expect(server3Follow.following.name).to.equal('retro3')
         expect(server3Follow.state).to.equal('accepted')
       })
 
@@ -229,17 +229,17 @@ describe('Test follows', function () {
       })
 
       it('Should have the correct follows counts', async function () {
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[0].host, followers: 0, following: 2 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[0].host, followers: 0, following: 2 })
         await expectAccountFollows({ server: servers[0], handle: 'root@' + servers[1].host, followers: 1, following: 0 })
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[2].host, followers: 1, following: 0 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[2].host, followers: 1, following: 0 })
 
         // Server 2 and 3 does not know server 1 follow another server (there was not a refresh)
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
         await expectAccountFollows({ server: servers[1], handle: 'root@' + servers[1].host, followers: 1, following: 0 })
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[1].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[1].host, followers: 0, following: 0 })
 
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[2].host, followers: 1, following: 0 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[2].host, followers: 1, following: 0 })
       })
 
       it('Should unfollow server 3 on server 1', async function () {
@@ -271,16 +271,16 @@ describe('Test follows', function () {
       })
 
       it('Should have the correct follows counts after the unfollow', async function () {
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
         await expectAccountFollows({ server: servers[0], handle: 'root@' + servers[1].host, followers: 1, following: 0 })
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[2].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[2].host, followers: 0, following: 0 })
 
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
         await expectAccountFollows({ server: servers[1], handle: 'root@' + servers[1].host, followers: 1, following: 0 })
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[1].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[1].host, followers: 0, following: 0 })
 
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[0].host, followers: 0, following: 0 })
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[2].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[0].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[2].host, followers: 0, following: 0 })
       })
 
       it('Should upload a video on server 2 and 3 and propagate only the video of server 2', async function () {
@@ -425,18 +425,18 @@ describe('Test follows', function () {
       })
 
       it('Should have the correct follows counts', async function () {
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[0].host, followers: 0, following: 2 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[0].host, followers: 0, following: 2 })
         await expectAccountFollows({ server: servers[0], handle: 'root@' + servers[1].host, followers: 0, following: 0 })
         await expectChannelsFollows({ server: servers[0], handle: 'root_channel@' + servers[1].host, followers: 1, following: 0 })
-        await expectAccountFollows({ server: servers[0], handle: 'peertube@' + servers[2].host, followers: 1, following: 0 })
+        await expectAccountFollows({ server: servers[0], handle: 'retro3@' + servers[2].host, followers: 1, following: 0 })
 
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
-        await expectAccountFollows({ server: servers[1], handle: 'peertube@' + servers[1].host, followers: 0, following: 0 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[1], handle: 'retro3@' + servers[1].host, followers: 0, following: 0 })
         await expectAccountFollows({ server: servers[1], handle: 'root@' + servers[1].host, followers: 0, following: 0 })
         await expectChannelsFollows({ server: servers[1], handle: 'root_channel@' + servers[1].host, followers: 1, following: 0 })
 
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[0].host, followers: 0, following: 1 })
-        await expectAccountFollows({ server: servers[2], handle: 'peertube@' + servers[2].host, followers: 1, following: 0 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[0].host, followers: 0, following: 1 })
+        await expectAccountFollows({ server: servers[2], handle: 'retro3@' + servers[2].host, followers: 1, following: 0 })
       })
 
       it('Should have propagated videos', async function () {
@@ -597,7 +597,7 @@ describe('Test follows', function () {
   })
 
   describe('Simple data propagation propagate data on a new channel follow', function () {
-    let servers: PeerTubeServer[] = []
+    let servers: Retro3Server[] = []
 
     before(async function () {
       this.timeout(120000)

@@ -5,7 +5,7 @@ import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { AuthService, ComponentPaginationLight, ConfirmService, RestExtractor, RestService, ServerService, UserService } from '@app/core'
 import { objectToFormData } from '@app/helpers'
-import { arrayify } from '@peertube/peertube-core-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
 import {
   BooleanBothQuery,
   FeedFormat,
@@ -28,7 +28,7 @@ import {
   VideoSource,
   VideoTranscodingCreate,
   VideoUpdate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 import { Account } from '../account/account.model'
 import { AccountService } from '../account/account.service'
@@ -346,9 +346,9 @@ export class VideoService {
             .pipe(
               catchError(err => {
                 if (askForForceTranscodingIfNeeded && err.error?.code === ServerErrorCode.VIDEO_ALREADY_BEING_TRANSCODED) {
-                  const message = $localize`PeerTube considers this video is already being transcoded.` +
+                  const message = $localize`retro3 considers this video is already being transcoded.` +
                     // eslint-disable-next-line max-len
-                    $localize` If you think PeerTube is wrong (video in broken state after a crash etc.), you can force transcoding on this video.` +
+                    $localize` If you think retro3 is wrong (video in broken state after a crash etc.), you can force transcoding on this video.` +
                     ` Do you still want to run transcoding?`
 
                   return from(this.confirmService.confirm(message, $localize`Force transcoding`))

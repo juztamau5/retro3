@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, HttpStatusCodeType, UserAdminFlag, UserRole } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, HttpStatusCodeType, UserAdminFlag, UserRole } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   decodeQueryString,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 async function loginExternal (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   npmName: string
   authName: string
   username: string
@@ -44,7 +44,7 @@ async function loginExternal (options: {
 }
 
 describe('Test external auth plugins', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   let cyanAccessToken: string
   let cyanRefreshToken: string
@@ -82,7 +82,7 @@ describe('Test external auth plugins', function () {
     const auth2 = auths.find((a) => a.authName === 'external-auth-2')
     expect(auth2).to.exist
     expect(auth2.authDisplayName).to.equal('External Auth 2')
-    expect(auth2.npmName).to.equal('peertube-plugin-test-external-auth-one')
+    expect(auth2.npmName).to.equal('retro3-plugin-test-external-auth-one')
   })
 
   it('Should redirect for a Cyan login', async function () {
@@ -297,7 +297,7 @@ describe('Test external auth plugins', function () {
 
   it('Should unregister external-auth-2 and do not login existing Kefka', async function () {
     await server.plugins.updateSettings({
-      npmName: 'peertube-plugin-test-external-auth-one',
+      npmName: 'retro3-plugin-test-external-auth-one',
       settings: { disableKefka: true }
     })
 
@@ -326,7 +326,7 @@ describe('Test external auth plugins', function () {
   })
 
   it('Should uninstall the plugin one and do not login Cyan', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-test-external-auth-one' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-test-external-auth-one' })
 
     await loginExternal({
       server,

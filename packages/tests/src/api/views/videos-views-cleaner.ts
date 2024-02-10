@@ -2,19 +2,19 @@
 
 import { expect } from 'chai'
 import { SQLCommand } from '@tests/shared/sql-command.js'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video views cleaner', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let sqlCommands: SQLCommand[] = []
 
   let videoIdServer1: string

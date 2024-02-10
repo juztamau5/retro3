@@ -1,5 +1,5 @@
 import express from 'express'
-import { ScopedToken } from '@peertube/peertube-models'
+import { ScopedToken } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { OTP } from '@server/initializers/constants.js'
@@ -8,7 +8,7 @@ import { BypassLogin, revokeToken } from '@server/lib/auth/oauth-model.js'
 import { handleOAuthToken, MissingTwoFactorError } from '@server/lib/auth/oauth.js'
 import { Hooks } from '@server/lib/plugins/hooks.js'
 import { asyncMiddleware, authenticate, buildRateLimiter, openapiOperationDoc } from '@server/middlewares/index.js'
-import { buildUUID } from '@peertube/peertube-node-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
 
 const tokensRouter = express.Router()
 

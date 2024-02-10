@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, VideoChangeOwnershipStatus, VideoState } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoChangeOwnershipStatus, VideoState } from '@retroai/retro3-models'
 import { MVideoFullLight } from '@server/types/models/index.js'
 import { logger } from '../../../helpers/logger.js'
 import { getFormattedObjects } from '../../../helpers/utils.js'

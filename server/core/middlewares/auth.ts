@@ -1,6 +1,6 @@
 import express from 'express'
 import { Socket } from 'socket.io'
-import { HttpStatusCode, HttpStatusCodeType, ServerErrorCodeType } from '@peertube/peertube-models'
+import { HttpStatusCode, HttpStatusCodeType, ServerErrorCodeType } from '@retroai/retro3-models'
 import { getAccessToken } from '@server/lib/auth/oauth-model.js'
 import { RunnerModel } from '@server/models/runner/runner.js'
 import { logger } from '../helpers/logger.js'

@@ -35,7 +35,7 @@ To encourage vulnerability research and to avoid any confusion between good-fait
 
 ## Disclosure Terms
 
-The vulnerability is kept private until a majority of instances known on instances.joinpeertube.org have updated to a safe version of PeerTube or applied a hotfix. The PeerTube development team coordinates efforts to update once the patch is issued.
+The vulnerability is kept private until a majority of instances known on instances.joinretro3.org have updated to a safe version of PeerTube or applied a hotfix. The PeerTube development team coordinates efforts to update once the patch is issued.
 
 ## Official Channels
 

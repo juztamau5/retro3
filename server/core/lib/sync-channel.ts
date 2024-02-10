@@ -5,7 +5,7 @@ import { buildYoutubeDLImport } from '@server/lib/video-pre-import.js'
 import { UserModel } from '@server/models/user/user.js'
 import { VideoImportModel } from '@server/models/video/video-import.js'
 import { MChannel, MChannelAccountDefault, MChannelSync } from '@server/types/models/index.js'
-import { VideoChannelSyncState, VideoPrivacy } from '@peertube/peertube-models'
+import { VideoChannelSyncState, VideoPrivacy } from '@retroai/retro3-models'
 import { CreateJobArgument, JobQueue } from './job-queue/index.js'
 import { ServerConfigManager } from './server-config-manager.js'
 

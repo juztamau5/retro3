@@ -1,31 +1,31 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { PluginType, UserNotification, UserNotificationType } from '@peertube/peertube-models'
-import { cleanupTests, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { PluginType, UserNotification, UserNotificationType } from '@retroai/retro3-models'
+import { cleanupTests, Retro3Server } from '@retroai/retro3-server-commands'
 import { MockSmtpServer } from '@tests/shared/mock-servers/mock-email.js'
-import { MockJoinPeerTubeVersions } from '@tests/shared/mock-servers/mock-joinpeertube-versions.js'
-import { CheckerBaseParams, prepareNotificationsTest, checkNewPeerTubeVersion, checkNewPluginVersion } from '@tests/shared/notifications.js'
+import { MockJoinRetro3Versions } from '@tests/shared/mock-servers/mock-joinretro3-versions.js'
+import { CheckerBaseParams, prepareNotificationsTest, checkNewRetro3Version, checkNewPluginVersion } from '@tests/shared/notifications.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 
 describe('Test admin notifications', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let sqlCommand: SQLCommand
   let userNotifications: UserNotification[] = []
   let adminNotifications: UserNotification[] = []
   let emails: object[] = []
   let baseParams: CheckerBaseParams
-  let joinPeerTubeServer: MockJoinPeerTubeVersions
+  let joinRetro3Server: MockJoinRetro3Versions
 
   before(async function () {
     this.timeout(120000)
 
-    joinPeerTubeServer = new MockJoinPeerTubeVersions()
-    const port = await joinPeerTubeServer.initialize()
+    joinRetro3Server = new MockJoinRetro3Versions()
+    const port = await joinRetro3Server.initialize()
 
     const config = {
-      peertube: {
+      retro3: {
         check_latest_version: {
           enabled: true,
           url: `http://127.0.0.1:${port}/versions.json`
@@ -53,53 +53,53 @@ describe('Test admin notifications', function () {
       token: server.accessToken
     }
 
-    await server.plugins.install({ npmName: 'peertube-plugin-hello-world' })
-    await server.plugins.install({ npmName: 'peertube-theme-background-red' })
+    await server.plugins.install({ npmName: 'retro3-plugin-hello-world' })
+    await server.plugins.install({ npmName: 'retro3-theme-background-red' })
 
     sqlCommand = new SQLCommand(server)
   })
 
-  describe('Latest PeerTube version notification', function () {
+  describe('Latest retro3 version notification', function () {
 
     it('Should not send a notification to admins if there is no new version', async function () {
       this.timeout(30000)
 
-      joinPeerTubeServer.setLatestVersion('1.4.2')
+      joinRetro3Server.setLatestVersion('1.4.2')
 
       await wait(4500)
-      await checkNewPeerTubeVersion({ ...baseParams, latestVersion: '1.4.2', checkType: 'absence' })
+      await checkNewRetro3Version({ ...baseParams, latestVersion: '1.4.2', checkType: 'absence' })
     })
 
     it('Should send a notification to admins on new version', async function () {
       this.timeout(30000)
 
-      joinPeerTubeServer.setLatestVersion('15.4.2')
+      joinRetro3Server.setLatestVersion('15.4.2')
 
       await wait(4500)
-      await checkNewPeerTubeVersion({ ...baseParams, latestVersion: '15.4.2', checkType: 'presence' })
+      await checkNewRetro3Version({ ...baseParams, latestVersion: '15.4.2', checkType: 'presence' })
     })
 
     it('Should not send the same notification to admins', async function () {
       this.timeout(30000)
 
       await wait(4500)
-      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_PEERTUBE_VERSION)).to.have.lengthOf(1)
+      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_RETRO3_VERSION)).to.have.lengthOf(1)
     })
 
     it('Should not have sent a notification to users', async function () {
       this.timeout(30000)
 
-      expect(userNotifications.filter(n => n.type === UserNotificationType.NEW_PEERTUBE_VERSION)).to.have.lengthOf(0)
+      expect(userNotifications.filter(n => n.type === UserNotificationType.NEW_RETRO3_VERSION)).to.have.lengthOf(0)
     })
 
     it('Should send a new notification after a new release', async function () {
       this.timeout(30000)
 
-      joinPeerTubeServer.setLatestVersion('15.4.3')
+      joinRetro3Server.setLatestVersion('15.4.3')
 
       await wait(4500)
-      await checkNewPeerTubeVersion({ ...baseParams, latestVersion: '15.4.3', checkType: 'presence' })
-      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_PEERTUBE_VERSION)).to.have.lengthOf(2)
+      await checkNewRetro3Version({ ...baseParams, latestVersion: '15.4.3', checkType: 'presence' })
+      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_RETRO3_VERSION)).to.have.lengthOf(2)
     })
   })
 
@@ -141,7 +141,7 @@ describe('Test admin notifications', function () {
       await sqlCommand.setPluginLatestVersion('hello-world', '0.0.1')
       await wait(6000)
 
-      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_PEERTUBE_VERSION)).to.have.lengthOf(2)
+      expect(adminNotifications.filter(n => n.type === UserNotificationType.NEW_RETRO3_VERSION)).to.have.lengthOf(2)
     })
   })
 

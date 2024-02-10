@@ -6,10 +6,10 @@ import {
   LiveVideoLatencyMode,
   VideoObject,
   VideoState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { CONSTRAINTS_FIELDS, MIMETYPES } from '../../../initializers/constants.js'
-import { peertubeTruncate } from '../../core-utils.js'
+import { retro3Truncate } from '../../core-utils.js'
 import { isArray, isBooleanValid, isDateValid, isUUIDValid } from '../misc.js'
 import { isLiveLatencyModeValid } from '../video-lives.js'
 import {
@@ -207,7 +207,7 @@ function setValidRemoteVideoUrls (video: any) {
 
 function setRemoteVideoContent (video: any) {
   if (video.content) {
-    video.content = peertubeTruncate(video.content, { length: CONSTRAINTS_FIELDS.VIDEOS.DESCRIPTION.max })
+    video.content = retro3Truncate(video.content, { length: CONSTRAINTS_FIELDS.VIDEOS.DESCRIPTION.max })
   }
 
   return true

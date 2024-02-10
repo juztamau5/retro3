@@ -1,6 +1,6 @@
-import { doJSONRequest, PeerTubeRequestOptions } from '@server/helpers/requests.js'
+import { doJSONRequest, Retro3RequestOptions } from '@server/helpers/requests.js'
 import { CONFIG } from '@server/initializers/config.js'
-import { ActivityObject, ActivityPubActor, ActivityType, APObjectId } from '@peertube/peertube-models'
+import { ActivityObject, ActivityPubActor, ActivityType, APObjectId } from '@retroai/retro3-models'
 import { buildSignedRequestOptions } from './send/index.js'
 
 export function getAPId (object: string | { id: string }) {
@@ -39,7 +39,7 @@ export function buildAvailableActivities (): ActivityType[] {
 
 // ---------------------------------------------------------------------------
 
-export async function fetchAP <T> (url: string, moreOptions: PeerTubeRequestOptions = {}) {
+export async function fetchAP <T> (url: string, moreOptions: Retro3RequestOptions = {}) {
   const options = {
     activityPub: true,
 

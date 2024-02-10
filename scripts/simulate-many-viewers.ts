@@ -1,15 +1,15 @@
 import Bluebird from 'bluebird'
-import { wait } from '@peertube/peertube-core-utils'
+import { wait } from '@retroai/retro3-core-utils'
 import {
   createSingleServer,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-let servers: PeerTubeServer[]
+let servers: Retro3Server[]
 const viewers: { xForwardedFor: string }[] = []
 let videoId: string
 

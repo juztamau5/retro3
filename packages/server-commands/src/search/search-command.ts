@@ -7,7 +7,7 @@ import {
   VideoPlaylist,
   VideoPlaylistsSearchQuery,
   VideosSearchQuery
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class SearchCommand extends AbstractCommand {

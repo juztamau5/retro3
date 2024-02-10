@@ -3,7 +3,7 @@ import { body } from 'express-validator'
 import { isValidPlayerMode } from '@server/helpers/custom-validators/metrics.js'
 import { isIdOrUUIDValid, toCompleteUUID } from '@server/helpers/custom-validators/misc.js'
 import { CONFIG } from '@server/initializers/config.js'
-import { HttpStatusCode, PlaybackMetricCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, PlaybackMetricCreate } from '@retroai/retro3-models'
 import { areValidationErrors, doesVideoExist } from './shared/index.js'
 
 const addPlaybackMetricValidator = [

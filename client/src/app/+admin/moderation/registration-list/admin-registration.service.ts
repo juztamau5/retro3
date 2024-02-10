@@ -4,8 +4,8 @@ import { catchError, concatMap, toArray } from 'rxjs/operators'
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { RestExtractor, RestPagination, RestService } from '@app/core'
-import { arrayify } from '@peertube/peertube-core-utils'
-import { ResultList, UserRegistration, UserRegistrationUpdateState } from '@peertube/peertube-models'
+import { arrayify } from '@retroai/retro3-core-utils'
+import { ResultList, UserRegistration, UserRegistrationUpdateState } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 
 @Injectable()

@@ -12,7 +12,7 @@ async function registerOpentelemetryTracing () {
   }
 
   const { diag, DiagLogLevel, trace } = await import('@opentelemetry/api')
-  tracer = trace.getTracer('peertube')
+  tracer = trace.getTracer('retro3')
 
   const [
     { JaegerExporter },
@@ -69,7 +69,7 @@ async function registerOpentelemetryTracing () {
 
   const tracerProvider = new NodeTracerProvider.default.NodeTracerProvider({
     resource: new Resource.default.Resource({
-      [SemanticResourceAttributes.default.SemanticResourceAttributes.SERVICE_NAME]: 'peertube'
+      [SemanticResourceAttributes.default.SemanticResourceAttributes.SERVICE_NAME]: 'retro3'
     })
   })
 

@@ -72,10 +72,10 @@
         </div>
 
         <div class="form-group" *ngIf="isBulkUpdateVideosDisplayed()">
-          <my-peertube-checkbox
+          <my-retro3-checkbox
             inputName="bulkVideosSupportUpdate" formControlName="bulkVideosSupportUpdate"
             i18n-labelText labelText="Overwrite support field of all videos of this channel"
-          ></my-peertube-checkbox>
+          ></my-retro3-checkbox>
         </div>
 
       </div>
@@ -84,7 +84,7 @@
     <div class="row"> <!-- submit placement block -->
       <div class="col-md-7 col-xl-5"></div>
       <div class="col-md-5 col-xl-5 d-inline-flex">
-        <input type="submit" class="peertube-button orange-button" value="{{ getFormButtonTitle() }}" [disabled]="!form.valid">
+        <input type="submit" class="retro3-button orange-button" value="{{ getFormButtonTitle() }}" [disabled]="!form.valid">
       </div>
     </div>
   </form>

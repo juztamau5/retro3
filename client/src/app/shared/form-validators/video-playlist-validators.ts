@@ -1,6 +1,6 @@
 import { Validators, AbstractControl } from '@angular/forms'
 import { BuildFormValidator } from './form-validator.model'
-import { VideoPlaylistPrivacy, VideoPlaylistPrivacyType } from '@peertube/peertube-models'
+import { VideoPlaylistPrivacy, VideoPlaylistPrivacyType } from '@retroai/retro3-models'
 
 export const VIDEO_PLAYLIST_DISPLAY_NAME_VALIDATOR: BuildFormValidator = {
   VALIDATORS: [

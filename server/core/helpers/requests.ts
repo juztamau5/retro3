@@ -3,21 +3,21 @@ import { createWriteStream } from 'fs'
 import { remove } from 'fs-extra/esm'
 import got, { CancelableRequest, OptionsInit, OptionsOfTextResponseBody, OptionsOfUnknownResponseBody, RequestError, Response } from 'got'
 import { HttpProxyAgent, HttpsProxyAgent } from 'hpagent'
-import { ACTIVITY_PUB, BINARY_CONTENT_TYPES, PEERTUBE_VERSION, REQUEST_TIMEOUTS, WEBSERVER } from '../initializers/constants.js'
+import { ACTIVITY_PUB, BINARY_CONTENT_TYPES, RETRO3_VERSION, REQUEST_TIMEOUTS, WEBSERVER } from '../initializers/constants.js'
 import { pipelinePromise } from './core-utils.js'
 import { logger, loggerTagsFactory } from './logger.js'
 import { getProxy, isProxyEnabled } from './proxy.js'
 
 const lTags = loggerTagsFactory('request')
 
-export interface PeerTubeRequestError extends Error {
+export interface Retro3RequestError extends Error {
   statusCode?: number
   responseBody?: any
   responseHeaders?: any
   requestHeaders?: any
 }
 
-type PeerTubeRequestOptions = {
+type Retro3RequestOptions = {
   timeout?: number
   activityPub?: boolean
   bodyKBLimit?: number // 1MB
@@ -35,7 +35,7 @@ type PeerTubeRequestOptions = {
   followRedirect?: boolean
 } & Pick<OptionsInit, 'headers' | 'json' | 'method' | 'searchParams'>
 
-const peertubeGot = got.extend({
+const retro3Got = got.extend({
   ...getAgent(),
 
   headers: {
@@ -116,24 +116,24 @@ const peertubeGot = got.extend({
   }
 })
 
-function doRequest (url: string, options: PeerTubeRequestOptions = {}) {
+function doRequest (url: string, options: Retro3RequestOptions = {}) {
   const gotOptions = buildGotOptions(options) as OptionsOfTextResponseBody
 
-  return peertubeGot(url, gotOptions)
+  return retro3Got(url, gotOptions)
     .catch(err => { throw buildRequestError(err) })
 }
 
-function doJSONRequest <T> (url: string, options: PeerTubeRequestOptions = {}) {
+function doJSONRequest <T> (url: string, options: Retro3RequestOptions = {}) {
   const gotOptions = buildGotOptions(options)
 
-  return peertubeGot<T>(url, { ...gotOptions, responseType: 'json' })
+  return retro3Got<T>(url, { ...gotOptions, responseType: 'json' })
     .catch(err => { throw buildRequestError(err) })
 }
 
 async function doRequestAndSaveToFile (
   url: string,
   destPath: string,
-  options: PeerTubeRequestOptions = {}
+  options: Retro3RequestOptions = {}
 ) {
   const gotOptions = buildGotOptions({ ...options, timeout: options.timeout ?? REQUEST_TIMEOUTS.FILE })
 
@@ -141,7 +141,7 @@ async function doRequestAndSaveToFile (
 
   try {
     await pipelinePromise(
-      peertubeGot.stream(url, { ...gotOptions, isStream: true }),
+      retro3Got.stream(url, { ...gotOptions, isStream: true }),
       outFile
     )
   } catch (err) {
@@ -177,7 +177,7 @@ function getAgent () {
 }
 
 function getUserAgent () {
-  return `PeerTube/${PEERTUBE_VERSION} (+${WEBSERVER.URL})`
+  return `retro3/${RETRO3_VERSION} (+${WEBSERVER.URL})`
 }
 
 function isBinaryResponse (result: Response<any>) {
@@ -187,19 +187,19 @@ function isBinaryResponse (result: Response<any>) {
 // ---------------------------------------------------------------------------
 
 export {
-  type PeerTubeRequestOptions,
+  type Retro3RequestOptions,
 
   doRequest,
   doJSONRequest,
   doRequestAndSaveToFile,
   isBinaryResponse,
   getAgent,
-  peertubeGot
+  retro3Got
 }
 
 // ---------------------------------------------------------------------------
 
-function buildGotOptions (options: PeerTubeRequestOptions): OptionsOfUnknownResponseBody {
+function buildGotOptions (options: Retro3RequestOptions): OptionsOfUnknownResponseBody {
   const { activityPub, bodyKBLimit = 1000 } = options
 
   const context = { bodyKBLimit, httpSignature: options.httpSignature }
@@ -232,7 +232,7 @@ function buildGotOptions (options: PeerTubeRequestOptions): OptionsOfUnknownResp
 }
 
 function buildRequestError (error: RequestError) {
-  const newError: PeerTubeRequestError = new Error(error.message)
+  const newError: Retro3RequestError = new Error(error.message)
   newError.name = error.name
   newError.stack = error.stack
 

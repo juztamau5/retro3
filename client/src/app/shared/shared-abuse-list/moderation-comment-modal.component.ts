@@ -4,7 +4,7 @@ import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
 import { AbuseService } from '@app/shared/shared-moderation'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref'
-import { AdminAbuse } from '@peertube/peertube-models'
+import { AdminAbuse } from '@retroai/retro3-models'
 import { ABUSE_MODERATION_COMMENT_VALIDATOR } from '../form-validators/abuse-validators'
 
 @Component({

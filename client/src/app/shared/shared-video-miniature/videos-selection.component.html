@@ -8,7 +8,7 @@
   <div class="video" *ngFor="let video of videos; let i = index; trackBy: videoById">
 
     <div class="checkbox-container" *ngIf="enableSelection">
-      <my-peertube-checkbox [inputName]="'video-check-' + video.id" [(ngModel)]="_selection[video.id]"></my-peertube-checkbox>
+      <my-retro3-checkbox [inputName]="'video-check-' + video.id" [(ngModel)]="_selection[video.id]"></my-retro3-checkbox>
     </div>
 
     <my-video-miniature

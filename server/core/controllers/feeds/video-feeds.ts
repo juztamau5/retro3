@@ -3,7 +3,7 @@ import { extname } from 'path'
 import { Feed } from '@peertube/feed'
 import { cacheRouteFactory } from '@server/middlewares/index.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { VideoInclude, VideoResolution } from '@peertube/peertube-models'
+import { VideoInclude, VideoResolution } from '@retroai/retro3-models'
 import { buildNSFWFilter } from '../../helpers/express-utils.js'
 import { ROUTE_CACHE_LIFETIME, WEBSERVER } from '../../initializers/constants.js'
 import {

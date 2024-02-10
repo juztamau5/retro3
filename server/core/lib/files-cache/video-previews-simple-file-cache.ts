@@ -4,7 +4,7 @@ import { VideoModel } from '../../models/video/video.js'
 import { AbstractSimpleFileCache } from './shared/abstract-simple-file-cache.js'
 import { doRequestAndSaveToFile } from '@server/helpers/requests.js'
 import { ThumbnailModel } from '@server/models/video/thumbnail.js'
-import { ThumbnailType } from '@peertube/peertube-models'
+import { ThumbnailType } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 
 class VideoPreviewsSimpleFileCache extends AbstractSimpleFileCache <string> {

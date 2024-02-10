@@ -1,5 +1,5 @@
 import { join } from 'path'
-import { ThumbnailType, ThumbnailType_Type } from '@peertube/peertube-models'
+import { ThumbnailType, ThumbnailType_Type } from '@retroai/retro3-models'
 import { generateImageFilename } from '../helpers/image-utils.js'
 import { CONFIG } from '../initializers/config.js'
 import { ASSETS_PATH, PREVIEWS_SIZE, THUMBNAILS_SIZE } from '../initializers/constants.js'

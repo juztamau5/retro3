@@ -7,7 +7,7 @@ import {
   VideoComment,
   VideoDetails,
   VideoImport
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { AUDIT_LOG_FILENAME } from '@server/initializers/constants.js'
 import { diff } from 'deep-object-diff'
 import express from 'express'

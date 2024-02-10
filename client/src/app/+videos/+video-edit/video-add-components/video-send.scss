@@ -23,12 +23,12 @@ $width-size: 275px;
     margin-bottom: 25px;
   }
 
-  .peertube-select-container {
-    @include peertube-select-container($width-size);
+  .retro3-select-container {
+    @include retro3-select-container($width-size);
   }
   my-select-options ::ng-deep ng-select,
   my-select-channel ::ng-deep ng-select,
-  .peertube-radio-container,
+  .retro3-radio-container,
   .form-group-description {
     width: $width-size;
 
@@ -42,12 +42,12 @@ $width-size: 275px;
   }
 
   input[type=text] {
-    @include peertube-input-text($width-size);
+    @include retro3-input-text($width-size);
     display: block;
   }
 
   input[type=button] {
-    @include peertube-button;
+    @include retro3-button;
     @include orange-button;
 
     width: $width-size;
@@ -55,7 +55,7 @@ $width-size: 275px;
   }
 
   .button-file {
-    @include peertube-button-file(max-content);
+    @include retro3-button-file(max-content);
     @include orange-button;
   }
 }

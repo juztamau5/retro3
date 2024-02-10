@@ -1,5 +1,5 @@
-import { VideoResolution, VideoStorage, type VideoStorageType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoResolution, VideoStorage, type VideoStorageType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { logger } from '@server/helpers/logger.js'
 import { extractVideo } from '@server/helpers/video.js'
 import { CONFIG } from '@server/initializers/config.js'

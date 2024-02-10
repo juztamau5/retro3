@@ -1,4 +1,4 @@
-name: "PeerTube CodeQL config"
+name: "retro3 CodeQL config"
 
 paths-ignore:
  - packages/tests

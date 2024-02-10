@@ -9,8 +9,8 @@ import {
 } from '@server/helpers/custom-validators/runners/runners.js'
 import { RunnerModel } from '@server/models/runner/runner.js'
 import { RunnerRegistrationTokenModel } from '@server/models/runner/runner-registration-token.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, RegisterRunnerBody, ServerErrorCode } from '@peertube/peertube-models'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, RegisterRunnerBody, ServerErrorCode } from '@retroai/retro3-models'
 import { areValidationErrors } from '../shared/utils.js'
 
 const tags = [ 'runner' ]

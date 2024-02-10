@@ -3,7 +3,7 @@ import { body, param } from 'express-validator'
 import { isUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { VideoChannelSyncModel } from '@server/models/video/video-channel-sync.js'
-import { HttpStatusCode, VideoChannelSyncCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoChannelSyncCreate } from '@retroai/retro3-models'
 import { areValidationErrors, doesVideoChannelIdExist } from '../shared/index.js'
 import { doesVideoChannelSyncIdExist } from '../shared/video-channel-syncs.js'
 

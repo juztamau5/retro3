@@ -1,4 +1,4 @@
-import { HttpStatusCode, PeerTubeProblemDocument } from '@peertube/peertube-models'
+import { HttpStatusCode, Retro3ProblemDocument } from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
@@ -138,7 +138,7 @@ export class LoginCommand extends AbstractCommand {
     }
 
     const headers = otpToken
-      ? { 'x-peertube-otp': otpToken }
+      ? { 'x-retro3-otp': otpToken }
       : {}
 
     return this.postBodyRequest({
@@ -154,6 +154,6 @@ export class LoginCommand extends AbstractCommand {
   }
 
   private unwrapLoginBody (body: any) {
-    return body as { access_token: string, refresh_token: string } & PeerTubeProblemDocument
+    return body as { access_token: string, refresh_token: string } & Retro3ProblemDocument
   }
 }

@@ -1,5 +1,5 @@
 import videojs from 'video.js'
-import { VideoPlaylistElement } from '@peertube/peertube-models'
+import { VideoPlaylistElement } from '@retroai/retro3-models'
 import { PlaylistPluginOptions } from '../../types'
 import { PlaylistMenuItem } from './playlist-menu-item'
 

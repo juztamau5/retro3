@@ -1,4 +1,4 @@
-import { FunctionProperties, PickWith, PickWithOpt } from '@peertube/peertube-typescript-utils'
+import { FunctionProperties, PickWith, PickWithOpt } from '@retroai/retro3-typescript-utils'
 import { VideoChannelModel } from '../../../models/video/video-channel.js'
 import {
   MAccountActor,

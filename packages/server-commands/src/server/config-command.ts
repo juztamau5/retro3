@@ -1,6 +1,6 @@
 import merge from 'lodash-es/merge.js'
-import { About, CustomConfig, HttpStatusCode, ServerConfig } from '@peertube/peertube-models'
-import { DeepPartial } from '@peertube/peertube-typescript-utils'
+import { About, CustomConfig, HttpStatusCode, ServerConfig } from '@retroai/retro3-models'
+import { DeepPartial } from '@retroai/retro3-typescript-utils'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/abstract-command.js'
 
 export class ConfigCommand extends AbstractCommand {
@@ -277,7 +277,7 @@ export class ConfigCommand extends AbstractCommand {
       defaultExpectedStatus: HttpStatusCode.OK_200
     })
 
-    const match = text.match('<script type="application/javascript">window.PeerTubeServerConfig = (".+?")</script>')
+    const match = text.match('<script type="application/javascript">window.Retro3ServerConfig = (".+?")</script>')
 
     // We parse the string twice, first to extract the string and then to extract the JSON
     return JSON.parse(JSON.parse(match[1])) as ServerConfig
@@ -347,7 +347,7 @@ export class ConfigCommand extends AbstractCommand {
   }) {
     const newCustomConfig: CustomConfig = {
       instance: {
-        name: 'PeerTube updated',
+        name: 'retro3 updated',
         shortDescription: 'my short description',
         description: 'my super description',
         terms: 'my super terms',
@@ -545,7 +545,7 @@ export class ConfigCommand extends AbstractCommand {
             enabled: false
           },
           autoFollowIndex: {
-            indexUrl: 'https://instances.joinpeertube.org/api/v1/instances/hosts',
+            indexUrl: 'https://instances.joinretro3.org/api/v1/instances/hosts',
             enabled: false
           }
         }
@@ -563,7 +563,7 @@ export class ConfigCommand extends AbstractCommand {
         },
         searchIndex: {
           enabled: true,
-          url: 'https://search.joinpeertube.org',
+          url: 'https://search.joinretro3.org',
           disableLocalSearch: true,
           isDefaultSearch: true
         }

@@ -13,12 +13,12 @@ import {
   Table,
   UpdatedAt
 } from 'sequelize-typescript'
-import { pick } from '@peertube/peertube-core-utils'
-import { ActivityTagObject, ActivityTombstoneObject, VideoComment, VideoCommentAdmin, VideoCommentObject } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { ActivityTagObject, ActivityTombstoneObject, VideoComment, VideoCommentAdmin, VideoCommentObject } from '@retroai/retro3-models'
 import { extractMentions } from '@server/helpers/mentions.js'
 import { getServerActor } from '@server/models/application/application.js'
 import { MAccount, MAccountId, MUserAccountId } from '@server/types/models/index.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isActivityPubUrlValid } from '../../helpers/custom-validators/activitypub/misc.js'
 import { CONSTRAINTS_FIELDS } from '../../initializers/constants.js'
 import {

@@ -10,9 +10,9 @@ import { approximateIntroOutroAdditionalSize, onVideoStudioEnded, safeCleanupStu
 import { UserModel } from '@server/models/user/user.js'
 import { VideoModel } from '@server/models/video/video.js'
 import { MVideo, MVideoFullLight } from '@server/types/models/index.js'
-import { pick } from '@peertube/peertube-core-utils'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { FFmpegEdition } from '@peertube/peertube-ffmpeg'
+import { pick } from '@retroai/retro3-core-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { FFmpegEdition } from '@retroai/retro3-ffmpeg'
 import {
   VideoStudioEditionPayload,
   VideoStudioTask,
@@ -21,7 +21,7 @@ import {
   VideoStudioTaskOutroPayload,
   VideoStudioTaskPayload,
   VideoStudioTaskWatermarkPayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '../../../helpers/logger.js'
 
 const lTagsBase = loggerTagsFactory('video-studio')

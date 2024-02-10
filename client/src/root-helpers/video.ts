@@ -1,4 +1,4 @@
-import { HTMLServerConfig, Video, VideoPrivacy, VideoPrivacyType } from '@peertube/peertube-models'
+import { HTMLServerConfig, Video, VideoPrivacy, VideoPrivacyType } from '@retroai/retro3-models'
 
 function buildVideoOrPlaylistEmbed (options: {
   embedUrl: string

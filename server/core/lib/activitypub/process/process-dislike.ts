@@ -1,5 +1,5 @@
 import { VideoModel } from '@server/models/video/video.js'
-import { ActivityDislike } from '@peertube/peertube-models'
+import { ActivityDislike } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'
 import { AccountVideoRateModel } from '../../../models/account/account-video-rate.js'

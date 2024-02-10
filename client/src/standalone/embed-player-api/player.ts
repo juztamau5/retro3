@@ -1,5 +1,16 @@
+/*
+ * Copyright (C) 2024 retro.ai
+ * This file is part of retro3 - https://github.com/juztamau5/retro3
+ *
+ * This file is derived from the PeerTube project under the the AGPLv3 license.
+ * https://joinpeertube.org
+ *
+ * SPDX-License-Identifier: AGPL-3.0
+ * See the file LICENSE.txt for more information.
+ */
+
 import * as Channel from 'jschannel'
-import { EventHandler, PeerTubeResolution, PeerTubeTextTrack, PlayerEventType } from './definitions'
+import { EventHandler, Retro3Resolution, Retro3TextTrack, PlayerEventType } from './definitions'
 import { EventRegistrar } from './events'
 
 const PASSTHROUGH_EVENTS = [
@@ -12,19 +23,19 @@ const PASSTHROUGH_EVENTS = [
 ]
 
 /**
- * Allows for programmatic control of a PeerTube embed running in an <iframe>
+ * Allows for programmatic control of a retro3 embed running in an <iframe>
  * within a web page.
  */
-export class PeerTubePlayer {
+export class Retro3Player {
 
   private readonly eventRegistrar: EventRegistrar = new EventRegistrar()
   private channel: Channel.MessagingChannel
   private readyPromise: Promise<void>
 
   /**
-   * Construct a new PeerTubePlayer for the given PeerTube embed iframe.
+   * Construct a new Retro3Player for the given retro3 embed iframe.
    * Optionally provide a `scope` to ensure that messages are not crossed
-   * between multiple PeerTube embeds. The string passed here must match the
+   * between multiple retro3 embeds. The string passed here must match the
    * `scope=` query parameter on the embed URL.
    *
    * @param embedElement
@@ -118,8 +129,8 @@ export class PeerTubePlayer {
   /**
    * Get video captions
    */
-  async getCaptions (): Promise<PeerTubeTextTrack[]> {
-    return this.sendMessage<undefined, PeerTubeTextTrack[]>('getCaptions')
+  async getCaptions (): Promise<Retro3TextTrack[]> {
+    return this.sendMessage<undefined, Retro3TextTrack[]>('getCaptions')
   }
 
   /**
@@ -146,8 +157,8 @@ export class PeerTubePlayer {
    * `resolutionUpdate` event with `addEventListener` in order to be updated as the available
    * resolutions change.
    */
-  async getResolutions (): Promise<PeerTubeResolution[]> {
-    return this.sendMessage<undefined, PeerTubeResolution[]>('getResolutions')
+  async getResolutions (): Promise<Retro3Resolution[]> {
+    return this.sendMessage<undefined, Retro3Resolution[]>('getResolutions')
   }
 
   /**
@@ -208,7 +219,7 @@ export class PeerTubePlayer {
     this.channel = Channel.build({
       window: this.embedElement.contentWindow,
       origin: '*',
-      scope: this.scope || 'peertube'
+      scope: this.scope || 'retro3'
     })
     this.eventRegistrar.bindToChannel(this.channel)
   }
@@ -242,4 +253,4 @@ export class PeerTubePlayer {
 }
 
 // put it on the window as well as the export
-(window as any)['PeerTubePlayer'] = PeerTubePlayer
+(window as any)['Retro3Player'] = Retro3Player

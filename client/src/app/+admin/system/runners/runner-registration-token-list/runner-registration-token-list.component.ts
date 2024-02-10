@@ -2,7 +2,7 @@ import { SortMeta } from 'primeng/api'
 import { Component, OnInit } from '@angular/core'
 import { ConfirmService, Notifier, RestPagination, RestTable } from '@app/core'
 import { DropdownAction } from '@app/shared/shared-main'
-import { RunnerRegistrationToken } from '@peertube/peertube-models'
+import { RunnerRegistrationToken } from '@retroai/retro3-models'
 import { RunnerService } from '../runner.service'
 
 @Component({

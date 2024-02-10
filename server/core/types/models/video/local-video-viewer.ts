@@ -1,5 +1,5 @@
 import { LocalVideoViewerModel } from '@server/models/view/local-video-viewer.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MLocalVideoViewerWatchSection } from './local-video-viewer-watch-section.js'
 import { MVideo } from './video.js'
 

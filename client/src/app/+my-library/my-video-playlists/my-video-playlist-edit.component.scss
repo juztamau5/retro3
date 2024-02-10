@@ -6,13 +6,13 @@
 }
 
 input[type=text] {
-  @include peertube-input-text(340px);
+  @include retro3-input-text(340px);
 
   display: block;
 }
 
-.peertube-select-container {
-  @include peertube-select-container(340px);
+.retro3-select-container {
+  @include retro3-select-container(340px);
 }
 
 my-select-channel {
@@ -21,7 +21,7 @@ my-select-channel {
 }
 
 input[type=submit] {
-  @include peertube-button;
+  @include retro3-button;
   @include orange-button;
 }
 

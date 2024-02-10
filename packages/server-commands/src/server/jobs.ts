@@ -1,10 +1,10 @@
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { JobState, JobType, RunnerJobState } from '@peertube/peertube-models'
-import { PeerTubeServer } from './server.js'
+import { wait } from '@retroai/retro3-core-utils'
+import { JobState, JobType, RunnerJobState } from '@retroai/retro3-models'
+import { Retro3Server } from './server.js'
 
 async function waitJobs (
-  serversArg: PeerTubeServer[] | PeerTubeServer,
+  serversArg: Retro3Server[] | Retro3Server,
   options: {
     skipDelayed?: boolean // default false
     runnerJobs?: boolean // default false
@@ -16,10 +16,10 @@ async function waitJobs (
     ? parseInt(process.env.NODE_PENDING_JOB_WAIT, 10)
     : 250
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
-  if (Array.isArray(serversArg) === false) servers = [ serversArg as PeerTubeServer ]
-  else servers = serversArg as PeerTubeServer[]
+  if (Array.isArray(serversArg) === false) servers = [ serversArg as Retro3Server ]
+  else servers = serversArg as Retro3Server[]
 
   const states: JobState[] = [ 'waiting', 'active' ]
   if (!skipDelayed) states.push('delayed')
@@ -104,7 +104,7 @@ async function waitJobs (
   } while (pendingRequests)
 }
 
-async function expectNoFailedTranscodingJob (server: PeerTubeServer) {
+async function expectNoFailedTranscodingJob (server: Retro3Server) {
   const { data } = await server.jobs.listFailed({ jobType: 'video-transcoding' })
   expect(data).to.have.lengthOf(0)
 }

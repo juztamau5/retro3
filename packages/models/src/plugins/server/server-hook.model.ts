@@ -97,7 +97,7 @@ export const serverFilterHookObject = {
   'filter:api.user.signup.allowed.result': true,
 
   // Filter result used to check if a user can send a registration request on the instance
-  // PeerTube >= 5.1
+  // retro3 >= 5.1
   'filter:api.user.request-signup.allowed.result': true,
 
   // Filter result used to check if video/torrent download is allowed
@@ -108,7 +108,7 @@ export const serverFilterHookObject = {
   'filter:html.embed.video.allowed.result': true,
   'filter:html.embed.video-playlist.allowed.result': true,
 
-  // Peertube >= 5.2
+  // retro3 >= 5.2
   'filter:html.client.json-ld.result': true,
 
   'filter:job-queue.process.params': true,
@@ -126,13 +126,13 @@ export const serverFilterHookObject = {
   'filter:activity-pub.video.json-ld.build.result': true,
 
   // Filter result to allow custom XMLNS definitions in podcast RSS feeds
-  // Peertube >= 5.2
+  // retro3 >= 5.2
   'filter:feed.podcast.rss.create-custom-xmlns.result': true,
 
   // Filter result to allow custom tags in podcast RSS feeds
-  // Peertube >= 5.2
+  // retro3 >= 5.2
   'filter:feed.podcast.channel.create-custom-tags.result': true,
-  // Peertube >= 5.2
+  // retro3 >= 5.2
   'filter:feed.podcast.video.create-custom-tags.result': true
 }
 
@@ -169,7 +169,7 @@ export const serverActionHookObject = {
   // Fired when a live video is created
   'action:api.live-video.created': true,
   // Fired when a live video starts or ends
-  // Peertube >= 5.2
+  // retro3 >= 5.2
   'action:live.video.state.updated': true,
 
   // Fired when a thread is created
@@ -191,7 +191,7 @@ export const serverActionHookObject = {
   // Fired when a user registered on the instance
   'action:api.user.registered': true,
   // Fired when a user requested registration on the instance
-  // PeerTube >= 5.1
+  // retro3 >= 5.1
   'action:api.user.requested-registration': true,
   // Fired when an admin/moderator created a user
   'action:api.user.created': true,

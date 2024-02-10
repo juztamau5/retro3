@@ -13,7 +13,7 @@ import {
   VideoService
 } from '@app/shared/shared-main'
 import { AccountReportComponent, BlocklistService } from '@app/shared/shared-moderation'
-import { HttpStatusCode, User, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, User, UserRight } from '@retroai/retro3-models'
 
 @Component({
   templateUrl: './accounts.component.html',

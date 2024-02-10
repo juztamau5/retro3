@@ -1,4 +1,4 @@
-import { FunctionProperties, PickWith } from '@peertube/peertube-typescript-utils'
+import { FunctionProperties, PickWith } from '@retroai/retro3-typescript-utils'
 import { AccountModel } from '../../../models/account/account.js'
 import {
   MActor,

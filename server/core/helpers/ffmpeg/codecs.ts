@@ -1,7 +1,7 @@
 import { FfprobeData } from 'fluent-ffmpeg'
-import { getAudioStream, getVideoStream } from '@peertube/peertube-ffmpeg'
+import { getAudioStream, getVideoStream } from '@retroai/retro3-ffmpeg'
 import { logger } from '../logger.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 
 export async function getVideoStreamCodec (path: string) {
   const videoStream = await getVideoStream(path)

@@ -7,7 +7,7 @@ import { Event, GuardsCheckStart, RouteConfigLoadEnd, RouteConfigLoadStart, Rout
 import {
   AuthService,
   MarkdownService,
-  PeerTubeRouterService,
+  Retro3RouterService,
   RedirectService,
   ScreenService,
   ScrollService,
@@ -26,10 +26,10 @@ import { CustomModalComponent } from '@app/modal/custom-modal.component'
 import { InstanceConfigWarningModalComponent } from '@app/modal/instance-config-warning-modal.component'
 import { NgbConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { LoadingBarService } from '@ngx-loading-bar/core'
-import { getShortLocale } from '@peertube/peertube-core-utils'
-import { BroadcastMessageLevel, HTMLServerConfig, UserRole } from '@peertube/peertube-models'
+import { getShortLocale } from '@retroai/retro3-core-utils'
+import { BroadcastMessageLevel, HTMLServerConfig, UserRole } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 import { MenuService } from './core/menu/menu.service'
 import { POP_STATE_MODAL_DISMISS } from './helpers'
 import { GlobalIconName } from './shared/shared-icons'
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private router: Router,
     private authService: AuthService,
     private serverService: ServerService,
-    private peertubeRouter: PeerTubeRouterService,
+    private retro3Router: Retro3RouterService,
     private pluginService: PluginService,
     private instanceService: InstanceService,
     private domSanitizer: DomSanitizer,
@@ -156,7 +156,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   hideBroadcastMessage () {
-    peertubeLocalStorage.setItem(AppComponent.BROADCAST_MESSAGE_KEY, this.serverConfig.broadcastMessage.message)
+    retro3LocalStorage.setItem(AppComponent.BROADCAST_MESSAGE_KEY, this.serverConfig.broadcastMessage.message)
 
     this.broadcastMessage = null
     this.screenService.isBroadcastMessageDisplayed = false
@@ -193,7 +193,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     const eventsObs = this.router.events
 
     // Plugin hooks
-    this.peertubeRouter.getNavigationEndEvents().subscribe(e => {
+    this.retro3Router.getNavigationEndEvents().subscribe(e => {
       this.hooks.runAction('action:router.navigation-end', 'common', { path: e.url })
     })
 

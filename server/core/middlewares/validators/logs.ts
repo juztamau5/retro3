@@ -3,8 +3,8 @@ import { body, query } from 'express-validator'
 import { isUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { isStringArray } from '@server/helpers/custom-validators/search.js'
 import { CONFIG } from '@server/initializers/config.js'
-import { arrayify } from '@peertube/peertube-core-utils'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { arrayify } from '@retroai/retro3-core-utils'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   isValidClientLogLevel,
   isValidClientLogMessage,

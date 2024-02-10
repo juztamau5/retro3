@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { omit } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoChannelUpdate } from '@peertube/peertube-models'
+import { omit } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoChannelUpdate } from '@retroai/retro3-models'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   ChannelsCommand,
   cleanupTests,
@@ -13,13 +13,13 @@ import {
   makePostBodyRequest,
   makePutBodyRequest,
   makeUploadRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video channels API validator', function () {
   const videoChannelPath = '/api/v1/video-channels'
-  let server: PeerTubeServer
+  let server: Retro3Server
   const userInfo = {
     accessToken: '',
     channelName: 'fake_channel',

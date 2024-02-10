@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { PeerTubePlugin, PeerTubePluginIndex, PluginType_Type } from '@peertube/peertube-models'
+import { Retro3Plugin, Retro3PluginIndex, PluginType_Type } from '@retroai/retro3-models'
 import { PluginApiService } from './plugin-api.service'
 
 @Component({
@@ -9,7 +9,7 @@ import { PluginApiService } from './plugin-api.service'
 })
 
 export class PluginCardComponent {
-  @Input() plugin: PeerTubePluginIndex | PeerTubePlugin
+  @Input() plugin: Retro3PluginIndex | Retro3Plugin
   @Input() version: string
   @Input() pluginType: PluginType_Type
 

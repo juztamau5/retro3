@@ -10,8 +10,8 @@ import {
 import { cleanUpReqFiles } from '@server/helpers/express-utils.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { approximateIntroOutroAdditionalSize, getTaskFileFromReq } from '@server/lib/video-studio.js'
-import { isAudioFile } from '@peertube/peertube-ffmpeg'
-import { HttpStatusCode, UserRight, VideoStudioCreateEdition, VideoStudioTask } from '@peertube/peertube-models'
+import { isAudioFile } from '@retroai/retro3-ffmpeg'
+import { HttpStatusCode, UserRight, VideoStudioCreateEdition, VideoStudioTask } from '@retroai/retro3-models'
 import { areValidationErrors, checkUserCanManageVideo, checkUserQuota, doesVideoExist } from '../shared/index.js'
 import { checkVideoFileCanBeEdited } from './shared/index.js'
 

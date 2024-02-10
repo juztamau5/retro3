@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, ListRunnersQuery, RegisterRunnerBody, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, ListRunnersQuery, RegisterRunnerBody, UserRight } from '@retroai/retro3-models'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { generateRunnerToken } from '@server/helpers/token-generator.js'
 import {

@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router'
 import { HooksService, Notifier, PluginService } from '@app/core'
 import { BuildFormArgument } from '@app/shared/form-validators'
 import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
-import { PeerTubePlugin, RegisterServerSettingOptions } from '@peertube/peertube-models'
+import { Retro3Plugin, RegisterServerSettingOptions } from '@retroai/retro3-models'
 import { PluginApiService } from '../shared/plugin-api.service'
 
 @Component({
@@ -14,7 +14,7 @@ import { PluginApiService } from '../shared/plugin-api.service'
   styleUrls: [ './plugin-show-installed.component.scss' ]
 })
 export class PluginShowInstalledComponent extends FormReactive implements OnInit, OnDestroy {
-  plugin: PeerTubePlugin
+  plugin: Retro3Plugin
   registeredSettings: RegisterServerSettingOptions[] = []
   pluginTypeLabel: string
 

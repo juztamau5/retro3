@@ -1,4 +1,4 @@
-import { getCompleteLocale, getShortLocale, is18nLocale, isDefaultLocale } from '@peertube/peertube-core-utils'
+import { getCompleteLocale, getShortLocale, is18nLocale, isDefaultLocale } from '@retroai/retro3-core-utils'
 import { logger } from '@root-helpers/logger'
 
 export class TranslationsManager {

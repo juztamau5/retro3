@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 import { readdir } from 'fs/promises'
-import { PeerTubeServer } from '@peertube/peertube-server-commands'
+import { Retro3Server } from '@retroai/retro3-server-commands'
 
 async function checkPlaylistFilesWereRemoved (
   playlistUUID: string,
-  server: PeerTubeServer,
+  server: Retro3Server,
   directories = [ 'thumbnails' ]
 ) {
   for (const directory of directories) {

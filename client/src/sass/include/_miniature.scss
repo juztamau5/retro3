@@ -2,7 +2,7 @@
 @use '_mixins' as *;
 
 @mixin miniature-name {
-  @include peertube-word-wrap(false);
+  @include retro3-word-wrap(false);
 
   font-size: 1.1em;
   transition: color 0.2s;

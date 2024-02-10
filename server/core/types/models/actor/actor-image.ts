@@ -1,4 +1,4 @@
-import { FunctionProperties } from '@peertube/peertube-typescript-utils'
+import { FunctionProperties } from '@retroai/retro3-typescript-utils'
 import { ActorImageModel } from '../../../models/actor/actor-image.js'
 
 export type MActorImage = ActorImageModel

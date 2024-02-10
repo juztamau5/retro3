@@ -1,5 +1,5 @@
 import { FfmpegCommand } from 'fluent-ffmpeg'
-import { EncoderOptions } from '@peertube/peertube-models'
+import { EncoderOptions } from '@retroai/retro3-models'
 import { buildStreamSuffix } from '../ffmpeg-utils.js'
 
 export function addDefaultEncoderGlobalParams (command: FfmpegCommand) {

@@ -16,7 +16,7 @@ export type AdvancedInputFilterChild = {
   value: string
 }
 
-const debugLogger = debug('peertube:AdvancedInputFilterComponent')
+const debugLogger = debug('retro3:AdvancedInputFilterComponent')
 
 @Component({
   selector: 'my-advanced-input-filter',

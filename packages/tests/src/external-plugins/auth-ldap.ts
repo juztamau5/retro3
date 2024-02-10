@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { cleanupTests, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { cleanupTests, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 describe('Official plugin auth-ldap', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let accessToken: string
   let userId: number
 
@@ -15,7 +15,7 @@ describe('Official plugin auth-ldap', function () {
     server = await createSingleServer(1)
     await setAccessTokensToServers([ server ])
 
-    await server.plugins.install({ npmName: 'peertube-plugin-auth-ldap' })
+    await server.plugins.install({ npmName: 'retro3-plugin-auth-ldap' })
   })
 
   it('Should not login with without LDAP settings', async function () {
@@ -24,7 +24,7 @@ describe('Official plugin auth-ldap', function () {
 
   it('Should not login with bad LDAP settings', async function () {
     await server.plugins.updateSettings({
-      npmName: 'peertube-plugin-auth-ldap',
+      npmName: 'retro3-plugin-auth-ldap',
       settings: {
         'bind-credentials': 'GoodNewsEveryone',
         'bind-dn': 'cn=admin,dc=planetexpress,dc=com',
@@ -42,7 +42,7 @@ describe('Official plugin auth-ldap', function () {
 
   it('Should not login with good LDAP settings but wrong username/password', async function () {
     await server.plugins.updateSettings({
-      npmName: 'peertube-plugin-auth-ldap',
+      npmName: 'retro3-plugin-auth-ldap',
       settings: {
         'bind-credentials': 'GoodNewsEveryone',
         'bind-dn': 'cn=admin,dc=planetexpress,dc=com',
@@ -103,7 +103,7 @@ describe('Official plugin auth-ldap', function () {
   })
 
   it('Should not login if the plugin is uninstalled', async function () {
-    await server.plugins.uninstall({ npmName: 'peertube-plugin-auth-ldap' })
+    await server.plugins.uninstall({ npmName: 'retro3-plugin-auth-ldap' })
 
     await server.login.login({
       user: { username: 'fry@planetexpress.com', password: 'fry' },

@@ -1,7 +1,7 @@
 import { Transaction } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, ForeignKey, Model, Table, UpdatedAt } from 'sequelize-typescript'
-import { VideoSource } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { VideoSource } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { getSort } from '../shared/index.js'
 import { VideoModel } from './video.js'
 

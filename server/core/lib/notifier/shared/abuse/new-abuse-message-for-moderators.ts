@@ -2,7 +2,7 @@ import { logger } from '@server/helpers/logger.js'
 import { getAbuseTargetUrl } from '@server/lib/activitypub/url.js'
 import { UserModel } from '@server/models/user/user.js'
 import { MUserDefault } from '@server/types/models/index.js'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 import { AbstractNewAbuseMessage } from './abstract-new-abuse-message.js'
 
 export class NewAbuseMessageForModerators extends AbstractNewAbuseMessage {

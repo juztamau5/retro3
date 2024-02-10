@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test redundancy constraints', function () {
-  let remoteServer: PeerTubeServer
-  let localServer: PeerTubeServer
-  let servers: PeerTubeServer[]
+  let remoteServer: Retro3Server
+  let localServer: Retro3Server
+  let servers: Retro3Server[]
 
   const remoteServerConfig = {
     redundancy: {

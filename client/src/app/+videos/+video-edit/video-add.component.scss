@@ -19,7 +19,7 @@ $nav-link-height: 40px;
 
   .about-link,
   .contact-link {
-    @include peertube-button-link;
+    @include retro3-button-link;
     @include orange-button;
 
     height: fit-content;
@@ -51,7 +51,7 @@ $nav-link-height: 40px;
 }
 
 ::ng-deep .video-add-nav {
-  @include peertube-nav-tabs($border-width, $border-type, $border-color, $nav-link-height);
+  @include retro3-nav-tabs($border-width, $border-type, $border-color, $nav-link-height);
 
   a.nav-link {
     &.active {

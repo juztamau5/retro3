@@ -12,7 +12,7 @@
     <p i18n>You enabled user registration on your instance but did not configure the following fields:</p>
 
     <ul>
-      <li i18n *ngIf="about.instance.name.toLowerCase() === 'peertube'">Instance name</li>
+      <li i18n *ngIf="about.instance.name.toLowerCase() === 'retro3'">Instance name</li>
       <li i18n *ngIf="isDefaultShortDescription(about.instance.shortDescription)">Instance short description</li>
 
       <li i18n *ngIf="!about.instance.administrator">Who you are</li>
@@ -25,23 +25,23 @@
 
     <p i18n>
       Please consider configuring these fields to help people to choose <strong>the appropriate instance</strong>.
-      Without them, your instance may not be referenced on the <a target="_blank" rel="noopener noreferrer" href="https://joinpeertube.org">JoinPeerTube website</a>.
+      Without them, your instance may not be referenced on the <a target="_blank" rel="noopener noreferrer" href="https://joinretro3.org">JoinRetro3 website</a>.
     </p>
   </div>
 
   <div class="modal-footer inputs">
-    <my-peertube-checkbox
+    <my-retro3-checkbox
       inputName="stopDisplayModal" [(ngModel)]="stopDisplayModal"
       i18n-labelText labelText="Don't show me this warning anymore"
     >
-    </my-peertube-checkbox>
+    </my-retro3-checkbox>
 
     <input
-      type="button" role="button" i18n-value value="Close" class="peertube-button grey-button"
+      type="button" role="button" i18n-value value="Close" class="retro3-button grey-button"
       (click)="hide()" (key.enter)="hide()"
     >
 
-    <a i18n class="peertube-button-link orange-button" ngbAutofocus
+    <a i18n class="retro3-button-link orange-button" ngbAutofocus
        href="/admin/config/edit-custom" target="_blank" rel="noopener noreferrer">
        Configure
     </a>

@@ -11,7 +11,7 @@
 }
 
 .actor-info-display-name {
-  @include peertube-word-wrap;
+  @include retro3-word-wrap;
   @include font-size(1.25rem);
 
   font-weight: $font-bold;

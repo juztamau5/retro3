@@ -21,7 +21,7 @@
 }
 
 input {
-  @include peertube-input-text(200px);
+  @include retro3-input-text(200px);
 
   &:focus {
     box-shadow: 0 0 5px 0 #a5a5a5;

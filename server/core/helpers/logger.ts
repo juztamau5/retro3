@@ -5,7 +5,7 @@ import { createLogger, format, transports } from 'winston'
 import { FileTransportOptions } from 'winston/lib/winston/transports'
 import { context } from '@opentelemetry/api'
 import { getSpanContext } from '@opentelemetry/api/build/src/trace/context-utils.js'
-import { omit } from '@peertube/peertube-core-utils'
+import { omit } from '@retroai/retro3-core-utils'
 import { CONFIG } from '../initializers/config.js'
 import { LOG_FILENAME } from '../initializers/constants.js'
 

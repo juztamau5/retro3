@@ -6,7 +6,7 @@ import { HooksService } from '@app/core/plugins/hooks.service'
 import { VideoService } from '@app/shared/shared-main'
 import { UserSubscriptionService } from '@app/shared/shared-user-subscription'
 import { VideoFilters } from '@app/shared/shared-video-miniature'
-import { VideoSortField } from '@peertube/peertube-models'
+import { VideoSortField } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-videos-user-subscriptions',

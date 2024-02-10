@@ -13,7 +13,7 @@ import {
   VideoImportYoutubeDLPayloadType,
   VideoResolution,
   VideoState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { YoutubeDLWrapper } from '@server/helpers/youtube-dl/index.js'
 import { CONFIG } from '@server/initializers/config.js'
@@ -28,7 +28,7 @@ import { buildNextVideoState } from '@server/lib/video-state.js'
 import { buildMoveJob } from '@server/lib/video.js'
 import { MUserId, MVideoFile, MVideoFullLight } from '@server/types/models/index.js'
 import { MVideoImport, MVideoImportDefault, MVideoImportDefaultFiles, MVideoImportVideo } from '@server/types/models/video/video-import.js'
-import { getLowercaseExtension } from '@peertube/peertube-node-utils'
+import { getLowercaseExtension } from '@retroai/retro3-node-utils'
 import {
   ffprobePromise,
   getChaptersFromContainer,
@@ -36,7 +36,7 @@ import {
   getVideoStreamDuration,
   getVideoStreamFPS,
   isAudioFile
-} from '@peertube/peertube-ffmpeg'
+} from '@retroai/retro3-ffmpeg'
 import { logger } from '../../../helpers/logger.js'
 import { getSecureTorrentName } from '../../../helpers/utils.js'
 import { createTorrentAndSetInfoHash, downloadWebTorrentVideo } from '../../../helpers/webtorrent.js'

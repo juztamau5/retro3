@@ -1,4 +1,4 @@
-import { VideoStatsTimeserieMetric } from '@peertube/peertube-models'
+import { VideoStatsTimeserieMetric } from '@retroai/retro3-models'
 
 const validMetrics = new Set<VideoStatsTimeserieMetric>([
   'viewers',

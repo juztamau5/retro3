@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param, query } from 'express-validator'
-import { HttpStatusCode, VideosImportInChannelCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, VideosImportInChannelCreate } from '@retroai/retro3-models'
 import { isUrlValid } from '@server/helpers/custom-validators/activitypub/misc.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { MChannelAccountDefault } from '@server/types/models/index.js'

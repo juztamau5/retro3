@@ -2,11 +2,11 @@
 @use '_mixins' as *;
 
 .dropdown-file {
-  @include peertube-file;
+  @include retro3-file;
 }
 
 .actor-img-edit-button {
-  @include peertube-button-file(30px);
+  @include retro3-button-file(30px);
   @include button-with-icon;
   @include orange-button;
 

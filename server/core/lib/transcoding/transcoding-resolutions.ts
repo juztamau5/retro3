@@ -1,5 +1,5 @@
-import { toEven } from '@peertube/peertube-core-utils'
-import { VideoResolution, VideoResolutionType } from '@peertube/peertube-models'
+import { toEven } from '@retroai/retro3-core-utils'
+import { VideoResolution, VideoResolutionType } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 
 export function buildOriginalFileResolution (inputResolution: number) {

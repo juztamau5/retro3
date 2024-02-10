@@ -1,4 +1,4 @@
-import { abusePredefinedReasonsMap } from '@peertube/peertube-core-utils'
+import { abusePredefinedReasonsMap } from '@retroai/retro3-core-utils'
 import {
   AbuseFilter,
   AbuseObject,
@@ -11,8 +11,8 @@ import {
   UserAbuse,
   UserVideoAbuse,
   type AbuseStateType
-} from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+} from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isAbuseModerationCommentValid, isAbuseReasonValid, isAbuseStateValid } from '@server/helpers/custom-validators/abuses.js'
 import invert from 'lodash-es/invert.js'
 import { Op, QueryTypes, literal } from 'sequelize'

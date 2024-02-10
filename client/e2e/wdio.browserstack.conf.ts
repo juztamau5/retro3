@@ -9,7 +9,7 @@ if (!key) throw new Error('Miss browser stack key')
 
 function buildMainOptions (sessionName: string) {
   return {
-    projectName: 'PeerTube',
+    projectName: 'retro3',
     buildName: 'Main E2E - ' + new Date().toISOString().split('T')[0],
     sessionName,
     consoleLogs: 'info',

@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router'
 import { AuthService } from '@app/core'
 import { HooksService } from '@app/core/plugins/hooks.service'
 import { InstanceAboutAccordionComponent } from '@app/shared/shared-instance'
-import { ServerConfig, UserRegister } from '@peertube/peertube-models'
+import { ServerConfig, UserRegister } from '@retroai/retro3-models'
 import { SignupService } from '../shared/signup.service'
 
 @Component({

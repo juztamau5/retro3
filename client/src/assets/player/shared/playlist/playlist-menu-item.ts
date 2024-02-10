@@ -1,6 +1,6 @@
 import videojs from 'video.js'
-import { secondsToTime } from '@peertube/peertube-core-utils'
-import { VideoPlaylistElement } from '@peertube/peertube-models'
+import { secondsToTime } from '@retroai/retro3-core-utils'
+import { VideoPlaylistElement } from '@retroai/retro3-models'
 import { PlaylistItemOptions } from '../../types'
 
 const Component = videojs.getComponent('Component')

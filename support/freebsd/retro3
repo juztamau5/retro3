@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: retro3
+# REQUIRE: LOGIN postgresql nginx redis
+# KEYWORD: shutdown
+
+PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+
+. /etc/rc.subr
+
+desc="retro3 daemon"
+name=retro3
+rcvar=retro3_enable
+
+load_rc_config $name
+
+: ${retro3_enable:=NO}
+
+sig_stop=-KILL
+retro3_chdir="/var/www/retro3/retro3-latest"
+retro3_env="HOME=/var/www/retro3 \
+NODE_ENV=production \
+NODE_CONFIG_DIR=/var/www/retro3/config \
+USER=retro3"
+retro3_user=retro3
+
+command="/usr/local/bin/node"
+command_args="dist/server >> /var/log/retro3/${name}.log 2>&1 &"
+
+run_rc_command "$1"

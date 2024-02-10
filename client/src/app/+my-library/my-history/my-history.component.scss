@@ -18,7 +18,7 @@
     grid-column: 1;
 
     input {
-      @include peertube-input-text(250px);
+      @include retro3-input-text(250px);
     }
   }
 
@@ -38,7 +38,7 @@
   }
 
   .delete-history {
-    @include peertube-button;
+    @include retro3-button;
     @include grey-button;
     @include button-with-icon;
 

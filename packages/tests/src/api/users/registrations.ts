@@ -2,18 +2,18 @@
 
 import { expect } from 'chai'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { UserRegistrationState, UserRole } from '@peertube/peertube-models'
+import { UserRegistrationState, UserRole } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test registrations', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   const emails: object[] = []
   let emailPort: number

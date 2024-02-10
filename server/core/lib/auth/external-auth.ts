@@ -17,7 +17,7 @@ import {
   RegisterServerAuthPassOptions,
   RegisterServerExternalAuthenticatedResult
 } from '@server/types/plugins/register-server-auth.model.js'
-import { UserAdminFlag, UserRole } from '@peertube/peertube-models'
+import { UserAdminFlag, UserRole } from '@retroai/retro3-models'
 import { BypassLogin } from './oauth-model.js'
 
 export type ExternalUser =

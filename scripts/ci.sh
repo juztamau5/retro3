@@ -77,7 +77,7 @@ elif [ "$1" = "cli-plugin" ]; then
 
     npm run build:server
     npm run build:tests
-    npm run build:peertube-cli
+    npm run build:retro3-cli
 
     # html-injection test needs an HTML file
     pluginsFiles=$(findTestFiles ./packages/tests/dist/plugins html-injection.js)
@@ -133,13 +133,13 @@ elif [ "$1" = "api-5" ]; then
 elif [ "$1" = "external-plugins" ]; then
     npm run build:server
     npm run build:tests
-    npm run build:peertube-runner
+    npm run build:retro3-runner
 
     externalPluginsFiles=$(findTestFiles ./packages/tests/dist/external-plugins)
-    peertubeRunnerFiles=$(findTestFiles ./packages/tests/dist/peertube-runner)
+    retro3RunnerFiles=$(findTestFiles ./packages/tests/dist/retro3-runner)
 
     runJSTest "$1" 1 $externalPluginsFiles
-    MOCHA_PARALLEL=true runJSTest "$1" $((2*$speedFactor)) $peertubeRunnerFiles
+    MOCHA_PARALLEL=true runJSTest "$1" $((2*$speedFactor)) $retro3RunnerFiles
 elif [ "$1" = "lint" ]; then
     npm run eslint -- --ext .ts "server/**/*.ts"  "scripts/**/*.ts" "packages/**/*.ts" "apps/**/*.ts"
 

@@ -6,14 +6,14 @@ import { ConfirmService, MarkdownService, Notifier, RestPagination, RestTable } 
 import { Account, Actor, DropdownAction, Video, VideoService } from '@app/shared/shared-main'
 import { AbuseService, BlocklistService, VideoBlockService } from '@app/shared/shared-moderation'
 import { VideoCommentService } from '@app/shared/shared-video-comment'
-import { AbuseState, AbuseStateType, AdminAbuse } from '@peertube/peertube-models'
+import { AbuseState, AbuseStateType, AdminAbuse } from '@retroai/retro3-models'
 import { logger } from '@root-helpers/logger'
 import { AdvancedInputFilter } from '../shared-forms'
 import { AbuseMessageModalComponent } from './abuse-message-modal.component'
 import { ModerationCommentModalComponent } from './moderation-comment-modal.component'
 import { ProcessedAbuse } from './processed-abuse.model'
 
-const debugLogger = debug('peertube:moderation:AbuseListTableComponent')
+const debugLogger = debug('retro3:moderation:AbuseListTableComponent')
 
 @Component({
   selector: 'my-abuse-list-table',

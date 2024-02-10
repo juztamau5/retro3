@@ -3,7 +3,7 @@ import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { sequelizeTypescript } from '@server/initializers/database.js'
 import { federateVideoIfNeeded } from '@server/lib/activitypub/videos/index.js'
 import { VideoModel } from '@server/models/video/video.js'
-import { FederateVideoPayload } from '@peertube/peertube-models'
+import { FederateVideoPayload } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 
 function processFederateVideo (job: Job) {

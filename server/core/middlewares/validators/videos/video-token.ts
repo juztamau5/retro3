@@ -1,5 +1,5 @@
 import express from 'express'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import { exists } from '@server/helpers/custom-validators/misc.js'
 
 const videoFileTokenValidator = [

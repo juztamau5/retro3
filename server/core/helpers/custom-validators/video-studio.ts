@@ -1,10 +1,10 @@
 import validator from 'validator'
 import { CONSTRAINTS_FIELDS } from '@server/initializers/constants.js'
 import { buildTaskFileFieldname } from '@server/lib/video-studio.js'
-import { VideoStudioTask } from '@peertube/peertube-models'
+import { VideoStudioTask } from '@retroai/retro3-models'
 import { isArray } from './misc.js'
 import { isVideoFileMimeTypeValid, isVideoImageValid } from './videos.js'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 
 function isValidStudioTasksArray (tasks: any) {
   if (!isArray(tasks)) return false

@@ -1,6 +1,6 @@
 import express, { RequestHandler } from 'express'
 import multer, { diskStorage } from 'multer'
-import { getLowercaseExtension } from '@peertube/peertube-node-utils'
+import { getLowercaseExtension } from '@retroai/retro3-node-utils'
 import { CONFIG } from '../initializers/config.js'
 import { REMOTE_SCHEME } from '../initializers/constants.js'
 import { isArray } from './custom-validators/misc.js'

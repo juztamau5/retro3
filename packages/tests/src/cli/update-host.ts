@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { getAllFiles } from '@peertube/peertube-core-utils'
+import { getAllFiles } from '@retroai/retro3-core-utils'
 import {
   cleanupTests,
   createSingleServer,
   killallServers,
   makeActivityPubGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { parseTorrentVideo } from '@tests/shared/webtorrent.js'
-import { VideoPlaylistPrivacy } from '@peertube/peertube-models'
+import { VideoPlaylistPrivacy } from '@retroai/retro3-models'
 
 describe('Test update host scripts', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(60000)

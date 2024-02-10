@@ -1,6 +1,6 @@
 import express from 'express'
 import { body } from 'express-validator'
-import { HttpStatusCode, UserRight } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight } from '@retroai/retro3-models'
 import {
   areValidationErrors, checkUserCanManageVideo, doesVideoExist,
   isValidVideoIdParam

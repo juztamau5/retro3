@@ -2,11 +2,11 @@
 
 import { expect } from 'chai'
 import { testImageSize } from '@tests/shared/checks.js'
-import { AbuseState, HttpStatusCode, UserAdminFlag, UserRole, VideoPlaylistType } from '@peertube/peertube-models'
-import { cleanupTests, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
+import { AbuseState, HttpStatusCode, UserAdminFlag, UserRole, VideoPlaylistType } from '@retroai/retro3-models'
+import { cleanupTests, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
 
 describe('Test users', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let token: string
   let userToken: string
   let videoId: number
@@ -29,7 +29,7 @@ describe('Test users', function () {
 
     await setAccessTokensToServers([ server ])
 
-    await server.plugins.install({ npmName: 'peertube-theme-background-red' })
+    await server.plugins.install({ npmName: 'retro3-theme-background-red' })
   })
 
   describe('Creating a user', function () {

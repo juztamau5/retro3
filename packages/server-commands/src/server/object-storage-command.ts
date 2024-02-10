@@ -1,9 +1,9 @@
 import { randomInt } from 'crypto'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { makePostBodyRequest } from '../requests/index.js'
 
 export class ObjectStorageCommand {
-  static readonly DEFAULT_SCALEWAY_BUCKET = 'peertube-ci-test'
+  static readonly DEFAULT_SCALEWAY_BUCKET = 'retro3-ci-test'
 
   private readonly bucketsCreated: string[] = []
   private readonly seed: number

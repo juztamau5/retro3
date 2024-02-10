@@ -83,7 +83,7 @@ my-embed {
 }
 
 .nav-tabs {
-  @include peertube-nav-tabs($border-width: 2px);
+  @include retro3-nav-tabs($border-width: 2px);
 }
 
 .chart-container {

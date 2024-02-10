@@ -13,7 +13,7 @@ import {
 } from '@server/middlewares/index.js'
 import { VideoChannelSyncModel } from '@server/models/video/video-channel-sync.js'
 import { MChannelSyncFormattable } from '@server/types/models/index.js'
-import { HttpStatusCode, VideoChannelSyncState } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoChannelSyncState } from '@retroai/retro3-models'
 
 const videoChannelSyncRouter = express.Router()
 const auditLogger = auditLoggerFactory('channel-syncs')

@@ -1,9 +1,9 @@
 import { ensureDir } from 'fs-extra/esm'
-import { isGithubCI } from '@peertube/peertube-node-utils'
-import { PeerTubeServer, RunServerOptions } from './server.js'
+import { isGithubCI } from '@retroai/retro3-node-utils'
+import { Retro3Server, RunServerOptions } from './server.js'
 
 async function createSingleServer (serverNumber: number, configOverride?: object, options: RunServerOptions = {}) {
-  const server = new PeerTubeServer({ serverNumber })
+  const server = new Retro3Server({ serverNumber })
 
   await server.flushAndRun(configOverride, options)
 
@@ -11,7 +11,7 @@ async function createSingleServer (serverNumber: number, configOverride?: object
 }
 
 function createMultipleServers (totalServers: number, configOverride?: object, options: RunServerOptions = {}) {
-  const serverPromises: Promise<PeerTubeServer>[] = []
+  const serverPromises: Promise<Retro3Server>[] = []
 
   for (let i = 1; i <= totalServers; i++) {
     serverPromises.push(createSingleServer(i, configOverride, options))
@@ -20,11 +20,11 @@ function createMultipleServers (totalServers: number, configOverride?: object, o
   return Promise.all(serverPromises)
 }
 
-function killallServers (servers: PeerTubeServer[]) {
+function killallServers (servers: Retro3Server[]) {
   return Promise.all(servers.map(s => s.kill()))
 }
 
-async function cleanupTests (servers: PeerTubeServer[]) {
+async function cleanupTests (servers: Retro3Server[]) {
   await killallServers(servers)
 
   if (isGithubCI()) {

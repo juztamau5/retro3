@@ -1,16 +1,16 @@
 import { literal, Model, ModelStatic } from 'sequelize'
 import { Literal } from 'sequelize/types/utils'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 
-// FIXME: have to specify the result type to not break peertube typings generation
+// FIXME: have to specify the result type to not break retro3 typings generation
 function buildLocalAccountIdsIn (): Literal {
   return literal(
     '(SELECT "account"."id" FROM "account" INNER JOIN "actor" ON "actor"."id" = "account"."actorId" AND "actor"."serverId" IS NULL)'
   )
 }
 
-// FIXME: have to specify the result type to not break peertube typings generation
+// FIXME: have to specify the result type to not break retro3 typings generation
 function buildLocalActorIdsIn (): Literal {
   return literal(
     '(SELECT "actor"."id" FROM "actor" WHERE "actor"."serverId" IS NULL)'

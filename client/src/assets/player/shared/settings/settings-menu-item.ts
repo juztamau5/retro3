@@ -6,7 +6,7 @@ import { SettingsButton } from './settings-menu-button'
 import { SettingsPanel } from './settings-panel'
 import { SettingsPanelChild } from './settings-panel-child'
 
-const debugLogger = debug('peertube:player:settings')
+const debugLogger = debug('retro3:player:settings')
 
 const MenuItem = videojs.getComponent('MenuItem')
 const Component = videojs.getComponent('Component')

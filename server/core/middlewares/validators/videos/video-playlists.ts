@@ -1,6 +1,6 @@
 import express from 'express'
 import { body, param, query, ValidationChain } from 'express-validator'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   UserRight,
@@ -9,7 +9,7 @@ import {
   VideoPlaylistPrivacy,
   VideoPlaylistType,
   VideoPlaylistUpdate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { ExpressPromiseHandler } from '@server/types/express-handler.js'
 import { MUserAccountId } from '@server/types/models/index.js'
 import {

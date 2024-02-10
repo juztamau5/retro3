@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../types-generator/dist/peertube-typescript-utils",
-    "tsBuildInfoFile": "../types-generator/dist/peertube-typescript-utils/.tsbuildinfo",
+    "outDir": "../types-generator/dist/retro3-typescript-utils",
+    "tsBuildInfoFile": "../types-generator/dist/retro3-typescript-utils/.tsbuildinfo",
     "stripInternal": true,
     "removeComments": false,
     "emitDeclarationOnly": true

@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core'
 import { Notifier, ServerService, User, UserService } from '@app/core'
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap'
 import { logger } from '@root-helpers/logger'
-import { peertubeLocalStorage } from '@root-helpers/peertube-web-storage'
+import { retro3LocalStorage } from '@root-helpers/retro3-web-storage'
 
 @Component({
   selector: 'my-account-setup-warning-modal',
@@ -42,7 +42,7 @@ export class AccountSetupWarningModalComponent {
 
   shouldOpen (user: User) {
     if (user.noAccountSetupWarningModal === true) return false
-    if (peertubeLocalStorage.getItem(this.LOCAL_STORAGE_KEYS.NO_ACCOUNT_SETUP_WARNING_MODAL) === 'true') return false
+    if (retro3LocalStorage.getItem(this.LOCAL_STORAGE_KEYS.NO_ACCOUNT_SETUP_WARNING_MODAL) === 'true') return false
 
     if (this.hasAccountAvatar(user) && this.hasAccountDescription(user)) return false
     if (this.userService.hasSignupInThisSession()) return false
@@ -68,7 +68,7 @@ export class AccountSetupWarningModalComponent {
   }
 
   private doNotOpenAgain () {
-    peertubeLocalStorage.setItem(this.LOCAL_STORAGE_KEYS.NO_ACCOUNT_SETUP_WARNING_MODAL, 'true')
+    retro3LocalStorage.setItem(this.LOCAL_STORAGE_KEYS.NO_ACCOUNT_SETUP_WARNING_MODAL, 'true')
 
     this.userService.updateMyProfile({ noAccountSetupWarningModal: true })
         .subscribe({

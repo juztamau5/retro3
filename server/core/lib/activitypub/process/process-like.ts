@@ -1,4 +1,4 @@
-import { ActivityLike } from '@peertube/peertube-models'
+import { ActivityLike } from '@retroai/retro3-models'
 import { VideoModel } from '@server/models/video/video.js'
 import { retryTransactionWrapper } from '../../../helpers/database-utils.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'

@@ -4,10 +4,10 @@ import {
   RegisteredIdAndPassAuthConfig,
   ServerConfig,
   VideoResolutionType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { getServerCommit } from '@server/helpers/version.js'
 import { CONFIG, isEmailEnabled } from '@server/initializers/config.js'
-import { CONSTRAINTS_FIELDS, DEFAULT_THEME_NAME, PEERTUBE_VERSION } from '@server/initializers/constants.js'
+import { CONSTRAINTS_FIELDS, DEFAULT_THEME_NAME, RETRO3_VERSION } from '@server/initializers/constants.js'
 import { isSignupAllowed, isSignupAllowedForCurrentIP } from '@server/lib/signup.js'
 import { ActorCustomPageModel } from '@server/models/account/actor-custom-page.js'
 import { PluginModel } from '@server/models/server/plugin.js'
@@ -129,7 +129,7 @@ class ServerConfigManager {
       contactForm: {
         enabled: CONFIG.CONTACT_FORM.ENABLED
       },
-      serverVersion: PEERTUBE_VERSION,
+      serverVersion: RETRO3_VERSION,
       serverCommit: this.serverCommit,
       transcoding: {
         remoteRunners: {

@@ -50,7 +50,7 @@ import {
   VODAudioMergeTranscodingSuccess,
   VODHLSTranscodingSuccess,
   VODWebVideoTranscodingSuccess
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 const postRunnerJobSuccessVideoFiles = createReqFiles(
   [ 'payload[videoFile]', 'payload[resolutionPlaylistFile]' ],

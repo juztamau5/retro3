@@ -3,8 +3,8 @@ import { remove } from 'fs-extra/esm'
 import { readdir, stat } from 'fs/promises'
 import { basename, join } from 'path'
 import prompt from 'prompt'
-import { uniqify } from '@peertube/peertube-core-utils'
-import { ThumbnailType, ThumbnailType_Type } from '@peertube/peertube-models'
+import { uniqify } from '@retroai/retro3-core-utils'
+import { ThumbnailType, ThumbnailType_Type } from '@retroai/retro3-models'
 import { DIRECTORIES } from '@server/initializers/constants.js'
 import { VideoFileModel } from '@server/models/video/video-file.js'
 import { VideoStreamingPlaylistModel } from '@server/models/video/video-streaming-playlist.js'
@@ -170,7 +170,7 @@ async function askConfirmation () {
         confirm: {
           type: 'string',
           description: 'These following unused files can be deleted, but please check your backups first (bugs happen).' +
-            ' Notice PeerTube must have been stopped when your ran this script.' +
+            ' Notice retro3 must have been stopped when your ran this script.' +
             ' Can we delete these files?',
           default: 'n',
           required: true

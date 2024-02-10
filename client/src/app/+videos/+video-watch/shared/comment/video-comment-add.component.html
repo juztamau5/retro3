@@ -46,11 +46,11 @@
   </div>
 
   <div class="comment-buttons">
-    <button *ngIf="isAddButtonDisplayed()" class="peertube-button tertiary-button cancel-button" (click)="cancelCommentReply()" type="button" i18n>
+    <button *ngIf="isAddButtonDisplayed()" class="retro3-button tertiary-button cancel-button" (click)="cancelCommentReply()" type="button" i18n>
       Cancel
     </button>
 
-    <button *ngIf="isAddButtonDisplayed()" class="peertube-button orange-button" [ngClass]="{ disabled: !form.valid || addingComment }">
+    <button *ngIf="isAddButtonDisplayed()" class="retro3-button orange-button" [ngClass]="{ disabled: !form.valid || addingComment }">
       {{ addingCommentButtonValue }}
     </button>
   </div>
@@ -67,7 +67,7 @@
 
   <div class="modal-body">
     <span i18n>
-      You can comment using an account on any ActivityPub-compatible instance (PeerTube/Mastodon/Pleroma account for example).
+      You can comment using an account on any ActivityPub-compatible instance (retro3/Mastodon/Pleroma account for example).
     </span>
 
     <my-remote-subscribe [interact]="true" [uri]="getUri()"></my-remote-subscribe>
@@ -75,11 +75,11 @@
 
   <div class="modal-footer inputs">
     <input
-      type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+      type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
       (click)="hideModals()" (key.enter)="hideModals()"
     >
 
-    <my-login-link i18n-label label="Login to comment" className="peertube-button-link orange-button"></my-login-link>
+    <my-login-link i18n-label label="Login to comment" className="retro3-button-link orange-button"></my-login-link>
   </div>
 </ng-template>
 

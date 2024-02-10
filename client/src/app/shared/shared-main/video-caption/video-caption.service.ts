@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core'
 import { RestExtractor, ServerService } from '@app/core'
 import { objectToFormData } from '@app/helpers'
 import { VideoPasswordService, VideoService } from '@app/shared/shared-main/video'
-import { peertubeTranslate, sortBy } from '@peertube/peertube-core-utils'
-import { ResultList, VideoCaption } from '@peertube/peertube-models'
+import { retro3Translate, sortBy } from '@retroai/retro3-core-utils'
+import { ResultList, VideoCaption } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 import { VideoCaptionEdit } from './video-caption-edit.model'
 
@@ -29,7 +29,7 @@ export class VideoCaptionService {
                  }),
                  map(({ captionsResult, translations }) => {
                    for (const c of captionsResult.data) {
-                     c.language.label = peertubeTranslate(c.language.label, translations)
+                     c.language.label = retro3Translate(c.language.label, translations)
                    }
 
                    return captionsResult

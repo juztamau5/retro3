@@ -2,7 +2,7 @@ import videojs from 'video.js'
 import { StoryboardOptions } from '../../types'
 
 // Big thanks to this beautiful plugin: https://github.com/phloxic/videojs-sprite-thumbnails
-// Adapted to respect peertube player style
+// Adapted to respect retro3 player style
 
 const Plugin = videojs.getPlugin('plugin')
 

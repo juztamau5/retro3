@@ -1,5 +1,5 @@
 import { Job } from 'bullmq'
-import { ActivitypubHttpUnicastPayload } from '@peertube/peertube-models'
+import { ActivitypubHttpUnicastPayload } from '@retroai/retro3-models'
 import { buildGlobalHTTPHeaders, buildSignedRequestOptions, computeBody } from '@server/lib/activitypub/send/http.js'
 import { logger } from '../../../helpers/logger.js'
 import { ActorFollowHealthCache } from '../../actor-follow-health-cache.js'

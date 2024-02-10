@@ -8,18 +8,18 @@ import {
   VideoIncludeType,
   VideoPrivacy,
   VideoPrivacyType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video filters validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken: string
   let moderatorAccessToken: string
 

@@ -1,4 +1,4 @@
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { ActorFollowModel } from '../../../models/actor/actor-follow.js'
 import {
   MActor,

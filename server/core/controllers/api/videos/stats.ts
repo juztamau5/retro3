@@ -1,6 +1,6 @@
 import express from 'express'
 import { LocalVideoViewerModel } from '@server/models/view/local-video-viewer.js'
-import { VideoStatsOverallQuery, VideoStatsTimeserieMetric, VideoStatsTimeserieQuery } from '@peertube/peertube-models'
+import { VideoStatsOverallQuery, VideoStatsTimeserieMetric, VideoStatsTimeserieQuery } from '@retroai/retro3-models'
 import {
   asyncMiddleware,
   authenticate,

@@ -1,10 +1,10 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   VideoChannelsSearchQueryAfterSanitize,
   VideoPlaylistsSearchQueryAfterSanitize,
   VideosCommonQueryAfterSanitize,
   VideosSearchQueryAfterSanitize
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 
 function pickCommonVideoQuery (query: VideosCommonQueryAfterSanitize) {
   return pick(query, [

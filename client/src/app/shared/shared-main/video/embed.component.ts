@@ -2,8 +2,8 @@ import { environment } from 'src/environments/environment'
 import { Component, Input, OnInit } from '@angular/core'
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { buildVideoOrPlaylistEmbed } from '@root-helpers/video'
-import { buildVideoEmbedLink, decorateVideoLink } from '@peertube/peertube-core-utils'
-import { Video } from '@peertube/peertube-models'
+import { buildVideoEmbedLink, decorateVideoLink } from '@retroai/retro3-core-utils'
+import { Video } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-embed',

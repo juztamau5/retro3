@@ -5,12 +5,12 @@
 Sequelize models contain optional fields corresponding to table joins.
 For example, `VideoModel` has a `VideoChannel?: VideoChannelModel` field. It can be filled if the SQL query joined with the `videoChannel` table or empty if not.
 It can be difficult in TypeScript to understand if a function argument expects associations to be filled or not.
-To improve clarity and reduce bugs, PeerTube defines multiple versions of a database model depending on its associations in `server/core/types/models/`.
-These models start with `M` and by default do not include any association. `MVideo` for example corresponds to `VideoModel` without any association, where `VideoChannel` attribute doesn't exist. On the other hand, `MVideoWithChannel` is a `MVideo` that has a `VideoChannel` field. This way, a function that accepts `video: MVideoWithChannel` argument expects a video with channel populated. Main PeerTube code should never use `...Model` (`VideoModel`) database type, but always `M...` instead (`MVideo`, `MVideoChannel` etc).
+To improve clarity and reduce bugs, retro3 defines multiple versions of a database model depending on its associations in `server/core/types/models/`.
+These models start with `M` and by default do not include any association. `MVideo` for example corresponds to `VideoModel` without any association, where `VideoChannel` attribute doesn't exist. On the other hand, `MVideoWithChannel` is a `MVideo` that has a `VideoChannel` field. This way, a function that accepts `video: MVideoWithChannel` argument expects a video with channel populated. Main retro3 code should never use `...Model` (`VideoModel`) database type, but always `M...` instead (`MVideo`, `MVideoChannel` etc).
 
 ## Add a new feature walkthrough
 
-Here's a list of all the parts of the server to update if you want to add a new feature (new API REST endpoints for example) to the PeerTube server.
+Here's a list of all the parts of the server to update if you want to add a new feature (new API REST endpoints for example) to the retro3 server.
 Some of these may be optional (for example your new endpoint may not need to send notifications) but this guide tries to be exhaustive.
 
  * Configuration:
@@ -49,7 +49,7 @@ Some of these may be optional (for example your new endpoint may not need to sen
      + Create a new file in `server/core/types` to define multiple versions of your Sequelize model depending on database associations
      + Add this new file to `server/core/types/*/index.ts` to facilitate the imports
      + Create database migrations:
-       * Create the migration file in `server/core/initializers/migrations` using raw SQL (copy the same SQL query as at PeerTube startup)
+       * Create the migration file in `server/core/initializers/migrations` using raw SQL (copy the same SQL query as at retro3 startup)
        * Update `LAST_MIGRATION_VERSION` in `server/core/initializers/constants.ts`
    - If updating database schema (adding/removing/renaming a column):
      + Update the sequelize models in `server/core/models/`
@@ -59,7 +59,7 @@ Some of these may be optional (for example your new endpoint may not need to sen
  * Notifications:
    - Create the new notification model in `packages/models/src/users/user-notification.model.ts`
    - Create the notification logic in `server/core/lib/notifier/shared`:
-     + Email subject has a common prefix (defined by the admin in PeerTube configuration)
+     + Email subject has a common prefix (defined by the admin in retro3 configuration)
    - Add your notification to `server/core/lib/notifier/notifier.ts`
    - Create the email template in `server/core/lib/emails`:
      + A text version is automatically generated from the HTML

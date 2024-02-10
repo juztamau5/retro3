@@ -1,7 +1,7 @@
 <div class="admin-sub-header">
   <div class="select-filter-block">
     <label for="jobType" i18n>Job type</label>
-    <div class="peertube-select-container">
+    <div class="retro3-select-container">
       <select id="jobType" name="jobType" [(ngModel)]="jobType" (ngModelChange)="onJobStateOrTypeChanged()" class="form-control">
         <option *ngFor="let jobType of jobTypes" [value]="jobType">{{ jobType }}</option>
       </select>

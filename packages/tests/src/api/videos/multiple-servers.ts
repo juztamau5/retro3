@@ -2,27 +2,27 @@
 
 import { expect } from 'chai'
 import request from 'supertest'
-import { wait } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoCommentThreadTree, VideoPrivacy } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { wait } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoCommentThreadTree, VideoPrivacy } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultChannelAvatar,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { testImageGeneratedByFFmpeg, dateIsValid } from '@tests/shared/checks.js'
 import { checkTmpIsEmpty } from '@tests/shared/directories.js'
 import { completeVideoCheck, saveVideoInServers, checkVideoFilesWereRemoved } from '@tests/shared/videos.js'
 import { checkWebTorrentWorks } from '@tests/shared/webtorrent.js'
 
 describe('Test multiple servers', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   const toRemove = []
   let videoUUID = ''
   let videoChannelId: number

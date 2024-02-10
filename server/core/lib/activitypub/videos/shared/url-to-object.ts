@@ -1,6 +1,6 @@
 import { sanitizeAndCheckVideoTorrentObject } from '@server/helpers/custom-validators/activitypub/videos.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
-import { VideoObject } from '@peertube/peertube-models'
+import { VideoObject } from '@retroai/retro3-models'
 import { fetchAP } from '../../activity.js'
 import { checkUrlsSameHost } from '../../url.js'
 

@@ -1,12 +1,12 @@
 {
-  "name": "@peertube/peertube-core-utils",
+  "name": "@retroai/retro3-core-utils",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "files": [ "dist" ],
   "exports": {
     "types": "./dist/index.d.ts",
-    "peertube:tsx": "./src/index.ts",
+    "retro3:tsx": "./src/index.ts",
     "default": "./dist/index.js"
   },
   "type": "module",

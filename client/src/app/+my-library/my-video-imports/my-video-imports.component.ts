@@ -2,7 +2,7 @@ import { SortMeta } from 'primeng/api'
 import { Component, OnInit } from '@angular/core'
 import { Notifier, RestPagination, RestTable } from '@app/core'
 import { Video, VideoImportService } from '@app/shared/shared-main'
-import { VideoImport, VideoImportState, VideoImportStateType } from '@peertube/peertube-models'
+import { VideoImport, VideoImportState, VideoImportStateType } from '@retroai/retro3-models'
 
 @Component({
   templateUrl: './my-video-imports.component.html',

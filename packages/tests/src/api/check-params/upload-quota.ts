@@ -2,20 +2,20 @@
 
 import { expect } from 'chai'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { randomInt } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, VideoImportState, VideoPrivacy } from '@peertube/peertube-models'
+import { randomInt } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, VideoImportState, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   VideosCommand,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test upload quota', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let rootId: number
   let command: VideosCommand
 

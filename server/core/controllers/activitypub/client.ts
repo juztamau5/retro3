@@ -7,7 +7,7 @@ import {
   VideoPlaylistPrivacy,
   VideoPrivacy,
   VideoRateType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { activityPubCollectionPagination } from '@server/lib/activitypub/collection.js'
 import { getContextFilter } from '@server/lib/activitypub/context.js'
 import { getServerActor } from '@server/models/application/application.js'

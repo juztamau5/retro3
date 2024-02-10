@@ -1,8 +1,8 @@
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
-import { PeerTubeRequestError } from '@server/helpers/requests.js'
+import { Retro3RequestError } from '@server/helpers/requests.js'
 import { JobQueue } from '@server/lib/job-queue/index.js'
 import { MVideoPlaylist, MVideoPlaylistOwner } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { createOrUpdateVideoPlaylist } from './create-update.js'
 import { fetchRemoteVideoPlaylist } from './shared/index.js'
 
@@ -33,7 +33,7 @@ async function refreshVideoPlaylistIfNeeded (videoPlaylist: MVideoPlaylistOwner)
 
     return videoPlaylist
   } catch (err) {
-    if ((err as PeerTubeRequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
+    if ((err as Retro3RequestError).statusCode === HttpStatusCode.NOT_FOUND_404) {
       logger.info('Cannot refresh not existing playlist %s. Deleting it.', videoPlaylist.url, lTags())
 
       await videoPlaylist.destroy()

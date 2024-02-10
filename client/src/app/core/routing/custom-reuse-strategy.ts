@@ -2,7 +2,7 @@ import { ComponentRef, Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router'
 import { logger } from '@root-helpers/logger'
 import { DisableForReuseHook } from './disable-for-reuse-hook'
-import { PeerTubeRouterService, RouterSetting } from './peertube-router.service'
+import { Retro3RouterService, RouterSetting } from './retro3-router.service'
 
 @Injectable()
 export class CustomReuseStrategy implements RouteReuseStrategy {
@@ -83,8 +83,8 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
   }
 
   private isReuseEnabled (route: ActivatedRouteSnapshot) {
-    // Cannot use peertube router here because of cyclic router dependency
+    // Cannot use retro3 router here because of cyclic router dependency
     return route.data.reuse?.enabled &&
-      !!(route.queryParams[PeerTubeRouterService.ROUTE_SETTING_NAME] & RouterSetting.REUSE_COMPONENT)
+      !!(route.queryParams[Retro3RouterService.ROUTE_SETTING_NAME] & RouterSetting.REUSE_COMPONENT)
   }
 }

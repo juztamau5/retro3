@@ -2,27 +2,27 @@ import { sanitizeUrl } from '@server/helpers/core-utils.js'
 import { logger } from '@server/helpers/logger.js'
 import { doJSONRequest } from '@server/helpers/requests.js'
 import { CONFIG } from '@server/initializers/config.js'
-import { PEERTUBE_VERSION } from '@server/initializers/constants.js'
+import { RETRO3_VERSION } from '@server/initializers/constants.js'
 import { PluginModel } from '@server/models/server/plugin.js'
 import {
-  PeerTubePluginIndex,
-  PeertubePluginIndexList,
-  PeertubePluginLatestVersionRequest,
-  PeertubePluginLatestVersionResponse,
+  Retro3PluginIndex,
+  Retro3PluginIndexList,
+  Retro3PluginLatestVersionRequest,
+  Retro3PluginLatestVersionResponse,
   ResultList
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { PluginManager } from './plugin-manager.js'
 
-async function listAvailablePluginsFromIndex (options: PeertubePluginIndexList) {
+async function listAvailablePluginsFromIndex (options: Retro3PluginIndexList) {
   const { start = 0, count = 20, search, sort = 'npmName', pluginType } = options
 
-  const searchParams: PeertubePluginIndexList & Record<string, string | number> = {
+  const searchParams: Retro3PluginIndexList & Record<string, string | number> = {
     start,
     count,
     sort,
     pluginType,
     search,
-    currentPeerTubeEngine: options.currentPeerTubeEngine || PEERTUBE_VERSION
+    currentRetro3Engine: options.currentRetro3Engine || RETRO3_VERSION
   }
 
   const uri = CONFIG.PLUGINS.INDEX.URL + '/api/v1/plugins'
@@ -30,18 +30,18 @@ async function listAvailablePluginsFromIndex (options: PeertubePluginIndexList) 
   try {
     const { body } = await doJSONRequest<any>(uri, { searchParams })
 
-    logger.debug('Got result from PeerTube index.', { body })
+    logger.debug('Got result from retro3 index.', { body })
 
     addInstanceInformation(body)
 
-    return body as ResultList<PeerTubePluginIndex>
+    return body as ResultList<Retro3PluginIndex>
   } catch (err) {
     logger.error('Cannot list available plugins from index %s.', uri, { err })
     return undefined
   }
 }
 
-function addInstanceInformation (result: ResultList<PeerTubePluginIndex>) {
+function addInstanceInformation (result: ResultList<Retro3PluginIndex>) {
   for (const d of result.data) {
     d.installed = PluginManager.Instance.isRegistered(d.npmName)
     d.name = PluginModel.normalizePluginName(d.npmName)
@@ -50,10 +50,10 @@ function addInstanceInformation (result: ResultList<PeerTubePluginIndex>) {
   return result
 }
 
-async function getLatestPluginsVersion (npmNames: string[]): Promise<PeertubePluginLatestVersionResponse> {
-  const bodyRequest: PeertubePluginLatestVersionRequest = {
+async function getLatestPluginsVersion (npmNames: string[]): Promise<Retro3PluginLatestVersionResponse> {
+  const bodyRequest: Retro3PluginLatestVersionRequest = {
     npmNames,
-    currentPeerTubeEngine: PEERTUBE_VERSION
+    currentRetro3Engine: RETRO3_VERSION
   }
 
   const uri = sanitizeUrl(CONFIG.PLUGINS.INDEX.URL) + '/api/v1/plugins/latest-version'
@@ -62,7 +62,7 @@ async function getLatestPluginsVersion (npmNames: string[]): Promise<PeertubePlu
     json: bodyRequest,
     method: 'POST' as 'POST'
   }
-  const { body } = await doJSONRequest<PeertubePluginLatestVersionResponse>(uri, options)
+  const { body } = await doJSONRequest<Retro3PluginLatestVersionResponse>(uri, options)
 
   return body
 }

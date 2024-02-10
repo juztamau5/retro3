@@ -6,7 +6,7 @@ import { AccountsComponent } from './accounts.component'
 
 const accountsRoutes: Routes = [
   {
-    path: 'peertube',
+    path: 'retro3',
     redirectTo: '/videos/local'
   },
   {

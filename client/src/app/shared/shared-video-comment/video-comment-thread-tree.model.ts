@@ -1,4 +1,4 @@
-import { VideoCommentThreadTree as VideoCommentThreadTreeServerModel } from '@peertube/peertube-models'
+import { VideoCommentThreadTree as VideoCommentThreadTreeServerModel } from '@retroai/retro3-models'
 import { VideoComment } from './video-comment.model'
 
 export class VideoCommentThreadTree implements VideoCommentThreadTreeServerModel {

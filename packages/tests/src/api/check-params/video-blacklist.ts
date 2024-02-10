@@ -2,7 +2,7 @@
 
 import { expect } from 'chai'
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode, VideoBlacklistType } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoBlacklistType } from '@retroai/retro3-models'
 import {
   BlacklistCommand,
   cleanupTests,
@@ -10,13 +10,13 @@ import {
   doubleFollow,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video blacklist API validators', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let notBlacklistedVideoId: string
   let remoteVideoUUID: string
   let userAccessToken1 = ''

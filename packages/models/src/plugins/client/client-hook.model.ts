@@ -93,10 +93,10 @@ export const clientFilterHookObject = {
 
   'filter:video-watch.video-plugin-metadata.result': true,
 
-  // Filter videojs options built for PeerTube player
+  // Filter videojs options built for retro3 player
   'filter:internal.player.videojs.options.result': true,
 
-  // Filter p2p media loader options built for PeerTube player
+  // Filter p2p media loader options built for retro3 player
   'filter:internal.player.p2p-media-loader.options.result': true
 }
 
@@ -153,7 +153,7 @@ export const clientActionHookObject = {
   // Fired when the registration page is being initialized
   'action:signup.register.init': true,
 
-  // PeerTube >= 3.2
+  // retro3 >= 3.2
   // Fired when the admin plugin settings page is being initialized
   'action:admin-plugin-settings.init': true,
 
@@ -178,7 +178,7 @@ export const clientActionHookObject = {
   'action:modal.share.shown': true,
 
   // ####### Embed hooks #######
-  // /!\ In embed scope, peertube helpers are not available
+  // /!\ In embed scope, retro3 helpers are not available
   // ###########################
 
   // Fired when the embed loaded the player

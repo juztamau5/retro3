@@ -2,18 +2,18 @@
 
 import { expect } from 'chai'
 import { MockSmtpServer } from '@tests/shared/mock-servers/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import {
   cleanupTests,
   ConfigCommand,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test emails', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userId: number
   let userId2: number
   let userAccessToken: string
@@ -74,7 +74,7 @@ describe('Test emails', function () {
 
       const email = emails[0]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains('password')
@@ -131,7 +131,7 @@ describe('Test emails', function () {
 
       const email = emails[1]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('create_password@example.com')
       expect(email['subject']).contains('account')
@@ -185,7 +185,7 @@ describe('Test emails', function () {
 
       const email = emails[2]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('admin' + server.internalServerNumber + '@example.com')
       expect(email['subject']).contains('abuse')
@@ -204,7 +204,7 @@ describe('Test emails', function () {
 
       const email = emails[3]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains(' blocked')
@@ -220,7 +220,7 @@ describe('Test emails', function () {
 
       const email = emails[4]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains(' unblocked')
@@ -238,7 +238,7 @@ describe('Test emails', function () {
 
       const email = emails[5]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains(' blacklisted')
@@ -254,7 +254,7 @@ describe('Test emails', function () {
 
       const email = emails[6]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains(' unblacklisted')
@@ -277,7 +277,7 @@ describe('Test emails', function () {
 
       const email = emails[7]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('user_1@example.com')
       expect(email['subject']).contains('Verify')
@@ -330,7 +330,7 @@ describe('Test emails', function () {
 
       const email = emails[8]
 
-      expect(email['from'][0]['name']).equal('PeerTube')
+      expect(email['from'][0]['name']).equal('retro3')
       expect(email['from'][0]['address']).equal('test-admin@127.0.0.1')
       expect(email['to'][0]['address']).equal('request_1@example.com')
       expect(email['subject']).contains('Verify')

@@ -4,7 +4,7 @@ module.exports = {
   "node-option": [
     "loader=tsx",
     "no-warnings",
-    "conditions=peertube:tsx"
+    "conditions=retro3:tsx"
   ],
   "timeout": 30000
 }

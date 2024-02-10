@@ -1,4 +1,4 @@
-import { arrayify } from '@peertube/peertube-core-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
 import {
   ActivityHashTagObject,
   ActivityMagnetUrlObject,
@@ -10,7 +10,7 @@ import {
   VideoObject,
   VideoPrivacy,
   VideoStreamingPlaylistType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { isAPVideoFileUrlMetadataObject } from '@server/helpers/custom-validators/activitypub/videos.js'
 import { isArray } from '@server/helpers/custom-validators/misc.js'
 import { isVideoFileInfoHashValid } from '@server/helpers/custom-validators/videos.js'

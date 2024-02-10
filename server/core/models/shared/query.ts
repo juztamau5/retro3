@@ -1,7 +1,7 @@
 import { BindOrReplacements, Op, QueryTypes, Sequelize } from 'sequelize'
 import { Fn } from 'sequelize/types/utils'
 import validator from 'validator'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 
 function doesExist (sequelize: Sequelize, query: string, bind?: BindOrReplacements) {
   const options = {
@@ -14,7 +14,7 @@ function doesExist (sequelize: Sequelize, query: string, bind?: BindOrReplacemen
             .then(results => results.length === 1)
 }
 
-// FIXME: have to specify the result type to not break peertube typings generation
+// FIXME: have to specify the result type to not break retro3 typings generation
 function createSimilarityAttribute (col: string, value: string): Fn {
   return Sequelize.fn(
     'similarity',

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { wait } from '@peertube/peertube-core-utils'
-import { VideosOverview } from '@peertube/peertube-models'
-import { cleanupTests, createSingleServer, PeerTubeServer, setAccessTokensToServers } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideosOverview } from '@retroai/retro3-models'
+import { cleanupTests, createSingleServer, Retro3Server, setAccessTokensToServers } from '@retroai/retro3-server-commands'
 
 describe('Test a videos overview', function () {
-  let server: PeerTubeServer = null
+  let server: Retro3Server = null
 
   function testOverviewCount (overview: VideosOverview, expected: number) {
     expect(overview.tags).to.have.lengthOf(expected)

@@ -1,26 +1,26 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode, PeerTubePlugin, PluginType } from '@peertube/peertube-models'
+import { HttpStatusCode, Retro3Plugin, PluginType } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
   makePostBodyRequest,
   makePutBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test server plugins API validators', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = null
 
-  const npmPlugin = 'peertube-plugin-hello-world'
+  const npmPlugin = 'retro3-plugin-hello-world'
   const pluginName = 'hello-world'
   let npmVersion: string
 
-  const themePlugin = 'peertube-theme-background-red'
+  const themePlugin = 'retro3-theme-background-red'
   const themeName = 'background-red'
   let themeVersion: string
 
@@ -43,13 +43,13 @@ describe('Test server plugins API validators', function () {
 
     {
       const res = await server.plugins.install({ npmName: npmPlugin })
-      const plugin = res.body as PeerTubePlugin
+      const plugin = res.body as Retro3Plugin
       npmVersion = plugin.version
     }
 
     {
       const res = await server.plugins.install({ npmName: themePlugin })
-      const plugin = res.body as PeerTubePlugin
+      const plugin = res.body as Retro3Plugin
       themeVersion = plugin.version
     }
   })
@@ -157,7 +157,7 @@ describe('Test server plugins API validators', function () {
     const baseQuery = {
       search: 'super search',
       pluginType: PluginType.PLUGIN,
-      currentPeerTubeEngine: '1.2.3'
+      currentRetro3Engine: '1.2.3'
     }
 
     it('Should fail with an invalid token', async function () {
@@ -203,8 +203,8 @@ describe('Test server plugins API validators', function () {
       })
     })
 
-    it('Should fail with an invalid current peertube engine', async function () {
-      const query = { ...baseQuery, currentPeerTubeEngine: '1.0' }
+    it('Should fail with an invalid current retro3 engine', async function () {
+      const query = { ...baseQuery, currentRetro3Engine: '1.0' }
 
       await makeGetRequest({
         url: server.url,
@@ -320,7 +320,7 @@ describe('Test server plugins API validators', function () {
         })
       }
 
-      for (const suffix of [ 'peertube-plugin-TOTO', 'peertube-plugin-TOTO/registered-settings', 'peertube-plugin-TOTO/public-settings' ]) {
+      for (const suffix of [ 'retro3-plugin-TOTO', 'retro3-plugin-TOTO/registered-settings', 'retro3-plugin-TOTO/public-settings' ]) {
         await makeGetRequest({
           url: server.url,
           path: path + suffix,
@@ -331,7 +331,7 @@ describe('Test server plugins API validators', function () {
     })
 
     it('Should fail with an unknown plugin', async function () {
-      for (const suffix of [ 'peertube-plugin-toto', 'peertube-plugin-toto/registered-settings', 'peertube-plugin-toto/public-settings' ]) {
+      for (const suffix of [ 'retro3-plugin-toto', 'retro3-plugin-toto/registered-settings', 'retro3-plugin-toto/public-settings' ]) {
         await makeGetRequest({
           url: server.url,
           path: path + suffix,
@@ -388,7 +388,7 @@ describe('Test server plugins API validators', function () {
 
       await makePutBodyRequest({
         url: server.url,
-        path: path + 'peertube-plugin-TOTO/settings',
+        path: path + 'retro3-plugin-TOTO/settings',
         fields: { settings },
         token: server.accessToken,
         expectedStatus: HttpStatusCode.BAD_REQUEST_400
@@ -398,7 +398,7 @@ describe('Test server plugins API validators', function () {
     it('Should fail with an unknown plugin', async function () {
       await makePutBodyRequest({
         url: server.url,
-        path: path + 'peertube-plugin-toto/settings',
+        path: path + 'retro3-plugin-toto/settings',
         fields: { settings },
         token: server.accessToken,
         expectedStatus: HttpStatusCode.NOT_FOUND_404
@@ -458,7 +458,7 @@ describe('Test server plugins API validators', function () {
         await makePostBodyRequest({
           url: server.url,
           path: path + suffix,
-          fields: { npmName: 'peertube-plugin-TOTO' },
+          fields: { npmName: 'retro3-plugin-TOTO' },
           token: server.accessToken,
           expectedStatus: HttpStatusCode.BAD_REQUEST_400
         })

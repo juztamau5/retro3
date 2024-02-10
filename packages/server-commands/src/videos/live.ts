@@ -1,9 +1,9 @@
-import { wait } from '@peertube/peertube-core-utils'
-import { VideoDetails, VideoInclude, VideoPrivacy } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { wait } from '@retroai/retro3-core-utils'
+import { VideoDetails, VideoInclude, VideoPrivacy } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import ffmpeg, { FfmpegCommand } from 'fluent-ffmpeg'
 import truncate from 'lodash-es/truncate.js'
-import { PeerTubeServer } from '../server/server.js'
+import { Retro3Server } from '../server/server.js'
 
 function sendRTMPStream (options: {
   rtmpBaseUrl: string
@@ -82,25 +82,25 @@ async function stopFfmpeg (command: FfmpegCommand) {
   await wait(500)
 }
 
-async function waitUntilLivePublishedOnAllServers (servers: PeerTubeServer[], videoId: string) {
+async function waitUntilLivePublishedOnAllServers (servers: Retro3Server[], videoId: string) {
   for (const server of servers) {
     await server.live.waitUntilPublished({ videoId })
   }
 }
 
-async function waitUntilLiveWaitingOnAllServers (servers: PeerTubeServer[], videoId: string) {
+async function waitUntilLiveWaitingOnAllServers (servers: Retro3Server[], videoId: string) {
   for (const server of servers) {
     await server.live.waitUntilWaiting({ videoId })
   }
 }
 
-async function waitUntilLiveReplacedByReplayOnAllServers (servers: PeerTubeServer[], videoId: string) {
+async function waitUntilLiveReplacedByReplayOnAllServers (servers: Retro3Server[], videoId: string) {
   for (const server of servers) {
     await server.live.waitUntilReplacedByReplay({ videoId })
   }
 }
 
-async function findExternalSavedVideo (server: PeerTubeServer, liveDetails: VideoDetails) {
+async function findExternalSavedVideo (server: Retro3Server, liveDetails: VideoDetails) {
   const include = VideoInclude.BLACKLISTED
   const privacyOneOf = [ VideoPrivacy.INTERNAL, VideoPrivacy.PRIVATE, VideoPrivacy.PUBLIC, VideoPrivacy.UNLISTED ]
 

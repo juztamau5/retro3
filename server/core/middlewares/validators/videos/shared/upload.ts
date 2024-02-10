@@ -1,7 +1,7 @@
 import express from 'express'
 import { logger } from '@server/helpers/logger.js'
-import { getVideoStreamDuration } from '@peertube/peertube-ffmpeg'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { getVideoStreamDuration } from '@retroai/retro3-ffmpeg'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 export async function addDurationToVideoFileIfNeeded (options: {
   res: express.Response

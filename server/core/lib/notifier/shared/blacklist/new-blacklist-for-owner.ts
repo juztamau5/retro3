@@ -1,4 +1,4 @@
-import { UserNotificationType } from '@peertube/peertube-models'
+import { UserNotificationType } from '@retroai/retro3-models'
 import { logger } from '@server/helpers/logger.js'
 import { CONFIG } from '@server/initializers/config.js'
 import { WEBSERVER } from '@server/initializers/constants.js'

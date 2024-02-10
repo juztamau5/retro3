@@ -1,5 +1,5 @@
 import express from 'express'
-import { forceNumber } from '@peertube/peertube-core-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
 import { PAGINATION } from '../initializers/constants.js'
 
 function setDefaultPagination (req: express.Request, res: express.Response, next: express.NextFunction) {

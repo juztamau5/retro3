@@ -10,7 +10,7 @@
 
     <div class="modal-body">
       <label i18n for="language">Language</label>
-      <div class="peertube-ng-select-container">
+      <div class="retro3-ng-select-container">
         <ng-select
           labelForId="language" [items]="videoCaptionLanguages" formControlName="language"
           bindLabel="label" bindValue="id"
@@ -36,12 +36,12 @@
 
     <div class="modal-footer inputs">
       <input
-        type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+        type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
         (click)="hide()" (key.enter)="hide()"
       >
 
       <input
-        type="submit" i18n-value value="Add this caption" class="peertube-button orange-button"
+        type="submit" i18n-value value="Add this caption" class="retro3-button orange-button"
         [disabled]="!form.valid" (click)="addCaption()"
       >
     </div>

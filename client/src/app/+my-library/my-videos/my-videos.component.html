@@ -21,7 +21,7 @@
 <div class="videos-header d-flex justify-content-between gap-2">
   <my-advanced-input-filter [emitOnInit]="false" [filters]="inputFilters" (search)="onSearch($event)"></my-advanced-input-filter>
 
-  <div class="peertube-select-container peertube-select-button">
+  <div class="retro3-select-container retro3-select-button">
     <select [(ngModel)]="sort" (ngModelChange)="onChangeSortColumn()" class="form-control">
       <option value="undefined" disabled i18n>Sort by</option>
       <option value="-publishedAt" i18n>Last published first</option>

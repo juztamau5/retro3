@@ -26,7 +26,7 @@ fi
 
 maintainer_public_key=${MAINTAINER_GPG:-"583A612D890159BE"}
 
-peertube_directory=$(basename $(pwd))
+retro3_directory=$(basename $(pwd))
 
 branch=$(git symbolic-ref --short -q HEAD)
 if [ "$branch" != "develop" ] && [[ "$branch" != release/* ]]; then
@@ -41,9 +41,9 @@ if [[ "$version" = *"-alpha."* ]] || [[ "$version" = *"-beta."* ]] || [[ "$versi
   github_prerelease_option="--pre-release"
 fi
 
-directory_name="peertube-$version"
-zip_name="peertube-$version.zip"
-tar_name="peertube-$version.tar.xz"
+directory_name="retro3-$version"
+zip_name="retro3-$version.zip"
+tar_name="retro3-$version.tar.xz"
 
 changelog=$(awk -v version="$version" '/## v/ { printit = $2 == version }; printit;' CHANGELOG.md | grep -v "## $version" | sed '1{/^$/d}')
 
@@ -93,13 +93,13 @@ find dist/ packages/core-utils/dist/ \
 
   # temporary setup
   cd ..
-  ln -s "$peertube_directory" "$directory_name"
+  ln -s "$retro3_directory" "$directory_name"
 
   # archive creation + signing
-  zip -9 -r "$peertube_directory/$zip_name" "${directories_to_archive[@]}"
-  gpg --armor --detach-sign -u "$maintainer_public_key" "$peertube_directory/$zip_name"
-  XZ_OPT="-e9 -T0" tar cfJ "$peertube_directory/$tar_name" "${directories_to_archive[@]}"
-  gpg --armor --detach-sign -u "$maintainer_public_key" "$peertube_directory/$tar_name"
+  zip -9 -r "$retro3_directory/$zip_name" "${directories_to_archive[@]}"
+  gpg --armor --detach-sign -u "$maintainer_public_key" "$retro3_directory/$zip_name"
+  XZ_OPT="-e9 -T0" tar cfJ "$retro3_directory/$tar_name" "${directories_to_archive[@]}"
+  gpg --armor --detach-sign -u "$maintainer_public_key" "$retro3_directory/$tar_name"
 
   # temporary setup destruction
   rm "$directory_name"
@@ -110,18 +110,18 @@ find dist/ packages/core-utils/dist/ \
   git push origin --tag
 
   if [ -z "$github_prerelease_option" ]; then
-    github-release release --user chocobozzz --repo peertube --tag "$version" --name "$version" --description "$changelog"
+    github-release release --user chocobozzz --repo retro3 --tag "$version" --name "$version" --description "$changelog"
   else
-    github-release release --user chocobozzz --repo peertube --tag "$version" --name "$version" --description "$changelog" "$github_prerelease_option"
+    github-release release --user chocobozzz --repo retro3 --tag "$version" --name "$version" --description "$changelog" "$github_prerelease_option"
   fi
 
   # Wait for the release to be published, we had some issues when the files were not uploaded because of "unknown release" error
   sleep 2
 
-  github-release upload --user chocobozzz --repo peertube --tag "$version" --name "$zip_name" --file "$zip_name"
-  github-release upload --user chocobozzz --repo peertube --tag "$version" --name "$zip_name.asc" --file "$zip_name.asc"
-  github-release upload --user chocobozzz --repo peertube --tag "$version" --name "$tar_name" --file "$tar_name"
-  github-release upload --user chocobozzz --repo peertube --tag "$version" --name "$tar_name.asc" --file "$tar_name.asc"
+  github-release upload --user chocobozzz --repo retro3 --tag "$version" --name "$zip_name" --file "$zip_name"
+  github-release upload --user chocobozzz --repo retro3 --tag "$version" --name "$zip_name.asc" --file "$zip_name.asc"
+  github-release upload --user chocobozzz --repo retro3 --tag "$version" --name "$tar_name" --file "$tar_name"
+  github-release upload --user chocobozzz --repo retro3 --tag "$version" --name "$tar_name.asc" --file "$tar_name.asc"
 
   git push origin "$branch"
 

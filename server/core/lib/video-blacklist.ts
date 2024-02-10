@@ -1,5 +1,5 @@
 import { Transaction } from 'sequelize'
-import { LiveVideoError, UserAdminFlag, UserRight, VideoBlacklistCreate, VideoBlacklistType } from '@peertube/peertube-models'
+import { LiveVideoError, UserAdminFlag, UserRight, VideoBlacklistCreate, VideoBlacklistType } from '@retroai/retro3-models'
 import { afterCommitIfTransaction } from '@server/helpers/database-utils.js'
 import { sequelizeTypescript } from '@server/initializers/database.js'
 import {

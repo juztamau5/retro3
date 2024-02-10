@@ -1,5 +1,5 @@
-import { AccountVideoRate, type VideoRateType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AccountVideoRate, type VideoRateType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import {
   MAccountVideoRate,
   MAccountVideoRateAccountUrl,

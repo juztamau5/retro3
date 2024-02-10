@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize'
-import { VideoPlaylistPrivacy, VideoPlaylistType } from '@peertube/peertube-models'
+import { VideoPlaylistPrivacy, VideoPlaylistType } from '@retroai/retro3-models'
 import { VideoPlaylistModel } from '../models/video/video-playlist.js'
 import { MAccount } from '../types/models/index.js'
 import { MVideoPlaylistOwner } from '../types/models/video/video-playlist.js'

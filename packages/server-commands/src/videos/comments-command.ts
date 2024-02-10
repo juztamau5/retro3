@@ -1,5 +1,5 @@
-import { pick } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, ResultList, VideoComment, VideoCommentThreads, VideoCommentThreadTree } from '@peertube/peertube-models'
+import { pick } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, ResultList, VideoComment, VideoCommentThreads, VideoCommentThreadTree } from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

@@ -2,7 +2,7 @@ import { Subject } from 'rxjs'
 import { Component, Input, OnInit } from '@angular/core'
 import { Notifier, UserService } from '@app/core'
 import { FormReactive, FormReactiveService } from '@app/shared/shared-forms'
-import { User, UserUpdateMe } from '@peertube/peertube-models'
+import { User, UserUpdateMe } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-account-email-preferences',

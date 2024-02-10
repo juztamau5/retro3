@@ -1,7 +1,7 @@
 import express from 'express'
 import { VideoPlaylistModel } from '@server/models/video/video-playlist.js'
 import { MVideoPlaylist } from '@server/types/models/index.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 export type VideoPlaylistFetchType = 'summary' | 'all'
 async function doesVideoPlaylistExist (id: number | string, res: express.Response, fetchType: VideoPlaylistFetchType = 'summary') {

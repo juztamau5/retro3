@@ -2,7 +2,7 @@ import { SortMeta } from 'primeng/api'
 import { Component, OnInit } from '@angular/core'
 import { ComponentPagination, hasMoreItems, Notifier, RestService, ServerService } from '@app/core'
 import { InstanceFollowService } from '@app/shared/shared-instance'
-import { Actor } from '@peertube/peertube-models'
+import { Actor } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-about-follows',
@@ -132,7 +132,7 @@ export class AboutFollowsComponent implements OnInit {
   private formatFollow (actor: Actor) {
     return {
       // Instance follow, only display host
-      name: actor.name === 'peertube'
+      name: actor.name === 'retro3'
         ? actor.host
         : actor.name + '@' + actor.host,
 

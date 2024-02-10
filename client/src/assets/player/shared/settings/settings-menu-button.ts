@@ -144,7 +144,7 @@ class SettingsButton extends Button {
   }
 
   showDialog () {
-    this.player().peertube().onMenuOpened();
+    this.player().retro3().onMenuOpened();
 
     (this.menu.el() as HTMLElement).style.opacity = '1'
 
@@ -158,7 +158,7 @@ class SettingsButton extends Button {
   }
 
   hideDialog () {
-    this.player_.peertube().onMenuClosed()
+    this.player_.retro3().onMenuClosed()
 
     this.dialog.hide()
     this.el().setAttribute('aria-expanded', 'false')

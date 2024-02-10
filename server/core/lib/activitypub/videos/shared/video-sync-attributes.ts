@@ -1,4 +1,4 @@
-import { ActivityPubOrderedCollection, ActivitypubHttpFetcherPayload, VideoObject } from '@peertube/peertube-models'
+import { ActivityPubOrderedCollection, ActivitypubHttpFetcherPayload, VideoObject } from '@retroai/retro3-models'
 import { runInReadCommittedTransaction } from '@server/helpers/database-utils.js'
 import { logger, loggerTagsFactory } from '@server/helpers/logger.js'
 import { JobQueue } from '@server/lib/job-queue/index.js'

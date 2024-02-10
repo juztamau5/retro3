@@ -7,7 +7,7 @@ import {
   UserRight,
   VideoPrivacy,
   VideoState
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { exists } from '@server/helpers/custom-validators/misc.js'
 import { createReqFiles } from '@server/helpers/express-utils.js'
 import { getFormattedObjects } from '@server/helpers/utils.js'
@@ -28,7 +28,7 @@ import { VideoLiveSessionModel } from '@server/models/video/video-live-session.j
 import { VideoLiveModel } from '@server/models/video/video-live.js'
 import { VideoPasswordModel } from '@server/models/video/video-password.js'
 import { MVideoDetails, MVideoFullLight, MVideoLive } from '@server/types/models/index.js'
-import { buildUUID, uuidToShort } from '@peertube/peertube-node-utils'
+import { buildUUID, uuidToShort } from '@retroai/retro3-node-utils'
 import { logger } from '../../../helpers/logger.js'
 import { sequelizeTypescript } from '../../../initializers/database.js'
 import { updateLocalVideoMiniatureFromExisting } from '../../../lib/thumbnail.js'

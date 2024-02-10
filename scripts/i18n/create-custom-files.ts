@@ -1,7 +1,7 @@
 import { readJsonSync, writeJSON } from 'fs-extra/esm'
 import { join } from 'path'
-import { I18N_LOCALES, USER_ROLE_LABELS } from '@peertube/peertube-core-utils'
-import { root } from '@peertube/peertube-node-utils'
+import { I18N_LOCALES, USER_ROLE_LABELS } from '@retroai/retro3-core-utils'
+import { root } from '@retroai/retro3-node-utils'
 import {
   ABUSE_STATES,
   buildLanguages,
@@ -15,7 +15,7 @@ import {
   VIDEO_PLAYLIST_TYPES,
   VIDEO_PRIVACIES,
   VIDEO_STATES
-} from '@peertube/peertube-server/core/initializers/constants.js'
+} from '@retroai/retro3-server/core/initializers/constants.js'
 
 const videojs = readJsonSync(join(root(), 'client', 'src', 'locale', 'videojs.en-US.json'))
 const playerKeys = {

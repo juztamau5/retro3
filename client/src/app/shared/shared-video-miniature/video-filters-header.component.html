@@ -69,12 +69,12 @@
         <label class="with-description" for="nsfw" i18n>Sensitive content:</label>
         <ng-template *ngTemplateOutlet="updateSettings; context: { $implicit: 'video-sensitive-content-policy' }"></ng-template>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="nsfw" type="radio" name="nsfw" id="nsfwBoth" value="both" />
           <label for="nsfwBoth">{{ filters.getNSFWDisplayLabel() }}</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="nsfw" type="radio" name="nsfw" id="nsfwFalse" value="false" />
           <label for="nsfwFalse" i18n>Hide</label>
         </div>
@@ -83,12 +83,12 @@
       <div class="form-group" *ngIf="!hideScope" role="radiogroup">
         <label for="scope" i18n>Scope:</label>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="scope" type="radio" name="scope" id="scopeLocal" value="local" />
           <label for="scopeLocal" i18n>Local videos (this instance)</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="scope" type="radio" name="scope" id="scopeFederated" value="federated" />
           <label for="scopeFederated" i18n>Federated videos (this instance + followed instances)</label>
         </div>
@@ -97,17 +97,17 @@
       <div class="form-group" role="radiogroup">
         <label for="type" i18n>Type:</label>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="live" type="radio" name="live" id="liveBoth" value="both" />
           <label for="liveBoth" i18n>VOD & Live videos</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="live" type="radio" name="live" id="liveTrue" value="true" />
           <label for="liveTrue" i18n>Live videos</label>
         </div>
 
-        <div class="peertube-radio-container">
+        <div class="retro3-radio-container">
           <input formControlName="live" type="radio" name="live" id="liveFalse" value="false" />
           <label for="liveFalse" i18n>VOD videos</label>
         </div>
@@ -122,11 +122,11 @@
       <div class="form-group" *ngIf="canSeeAllVideos()">
         <label for="allVideos" i18n>Moderation:</label>
 
-        <my-peertube-checkbox
+        <my-retro3-checkbox
           formControlName="allVideos"
           inputName="allVideos"
           i18n-labelText labelText="Display all videos (private, unlisted, password protected or not yet published)"
-        ></my-peertube-checkbox>
+        ></my-retro3-checkbox>
       </div>
     </div>
   </div>

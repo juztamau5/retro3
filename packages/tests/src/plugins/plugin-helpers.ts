@@ -2,7 +2,7 @@
 
 import { expect } from 'chai'
 import { pathExists } from 'fs-extra/esm'
-import { HttpStatusCode, ThumbnailType } from '@peertube/peertube-models'
+import { HttpStatusCode, ThumbnailType } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
@@ -10,14 +10,14 @@ import {
   makeGetRequest,
   makePostBodyRequest,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { checkVideoFilesWereRemoved } from '@tests/shared/videos.js'
 
-function postCommand (server: PeerTubeServer, command: string, bodyArg?: object) {
+function postCommand (server: Retro3Server, command: string, bodyArg?: object) {
   const body = { command }
   if (bodyArg) Object.assign(body, bodyArg)
 
@@ -30,7 +30,7 @@ function postCommand (server: PeerTubeServer, command: string, bodyArg?: object)
 }
 
 describe('Test plugin helpers', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   before(async function () {
     this.timeout(60000)
@@ -46,7 +46,7 @@ describe('Test plugin helpers', function () {
   describe('Logger', function () {
 
     it('Should have logged things', async function () {
-      await servers[0].servers.waitUntilLog(servers[0].host + ' peertube-plugin-test-four', 1, false)
+      await servers[0].servers.waitUntilLog(servers[0].host + ' retro3-plugin-test-four', 1, false)
       await servers[0].servers.waitUntilLog('Hello world from plugin four', 1)
     })
   })
@@ -84,14 +84,14 @@ describe('Test plugin helpers', function () {
       })
 
       expect(res.body.serverConfig).to.exist
-      expect(res.body.serverConfig.instance.name).to.equal('PeerTube')
+      expect(res.body.serverConfig.instance.name).to.equal('retro3')
     })
   })
 
   describe('Server', function () {
 
     it('Should get the server actor', async function () {
-      await servers[0].servers.waitUntilLog('server actor name is peertube')
+      await servers[0].servers.waitUntilLog('server actor name is retro3')
     })
   })
 

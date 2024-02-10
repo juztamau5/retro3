@@ -1,4 +1,4 @@
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   ActorFollow,
   HttpStatusCode,
@@ -8,7 +8,7 @@ import {
   VideoChannelCreateResult,
   VideoChannelUpdate,
   VideosImportInChannelCreate
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { unwrapBody } from '../requests/index.js'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 

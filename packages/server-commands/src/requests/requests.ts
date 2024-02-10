@@ -3,9 +3,9 @@
 import { decode } from 'querystring'
 import request from 'supertest'
 import { URL } from 'url'
-import { pick } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, HttpStatusCodeType } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { pick } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, HttpStatusCodeType } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 
 export type CommonRequestParams = {
   url: string
@@ -224,7 +224,7 @@ function buildRequest (req: request.Test, options: CommonRequestParams) {
       const err = new Error(`Expected status ${options.expectedStatus}, got ${res.status}. ` +
         `\nThe server responded: "${res.body?.error ?? res.text}".\n` +
         'You may take a closer look at the logs. To see how to do so, check out this page: ' +
-        'https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/development/tests.md#debug-server-logs');
+        'https://github.com/juztamau5/retro3/blob/main/support/doc/development/tests.md#debug-server-logs');
 
       (err as any).res = res
 

@@ -2,9 +2,9 @@ import { Observable, Subject } from 'rxjs'
 import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList, TemplateRef } from '@angular/core'
 import { ComponentPagination, Notifier, User } from '@app/core'
 import { logger } from '@root-helpers/logger'
-import { objectKeysTyped } from '@peertube/peertube-core-utils'
-import { ResultList, VideosExistInPlaylists, VideoSortField } from '@peertube/peertube-models'
-import { PeerTubeTemplateDirective, Video } from '../shared-main'
+import { objectKeysTyped } from '@retroai/retro3-core-utils'
+import { ResultList, VideosExistInPlaylists, VideoSortField } from '@retroai/retro3-models'
+import { Retro3TemplateDirective, Video } from '../shared-main'
 import { MiniatureDisplayOptions } from './video-miniature.component'
 
 export type SelectionType = { [ id: number ]: boolean }
@@ -30,7 +30,7 @@ export class VideosSelectionComponent implements AfterContentInit {
 
   @Input() getVideosObservableFunction: (page: number, sort?: VideoSortField) => Observable<ResultList<Video>>
 
-  @ContentChildren(PeerTubeTemplateDirective) templates: QueryList<PeerTubeTemplateDirective<'rowButtons' | 'globalButtons'>>
+  @ContentChildren(Retro3TemplateDirective) templates: QueryList<Retro3TemplateDirective<'rowButtons' | 'globalButtons'>>
 
   @Output() selectionChange = new EventEmitter<SelectionType>()
   @Output() videosModelChange = new EventEmitter<Video[]>()

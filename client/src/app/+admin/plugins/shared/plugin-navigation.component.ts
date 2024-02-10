@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { PluginType_Type } from '@peertube/peertube-models'
+import { PluginType_Type } from '@retroai/retro3-models'
 
 @Component({
   selector: 'my-plugin-navigation',

@@ -1,4 +1,4 @@
-import { Account, AccountVideoRate, ActorFollow, HttpStatusCode, ResultList, VideoRateType } from '@peertube/peertube-models'
+import { Account, AccountVideoRate, ActorFollow, HttpStatusCode, ResultList, VideoRateType } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class AccountsCommand extends AbstractCommand {

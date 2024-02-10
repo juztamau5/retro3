@@ -1,5 +1,5 @@
 import express from 'express'
-import { BulkRemoveCommentsOfBody, HttpStatusCode } from '@peertube/peertube-models'
+import { BulkRemoveCommentsOfBody, HttpStatusCode } from '@retroai/retro3-models'
 import { removeComment } from '@server/lib/video-comment.js'
 import { bulkRemoveCommentsOfValidator } from '@server/middlewares/validators/bulk.js'
 import { VideoCommentModel } from '@server/models/video/video-comment.js'

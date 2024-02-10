@@ -1,4 +1,4 @@
-import { HttpStatusCode, PlaybackMetricCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, PlaybackMetricCreate } from '@retroai/retro3-models'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class MetricsCommand extends AbstractCommand {

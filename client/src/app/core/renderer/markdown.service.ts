@@ -8,7 +8,7 @@ import {
   ENHANCED_WITH_HTML_RULES,
   TEXT_RULES,
   TEXT_WITH_HTML_RULES
-} from '@peertube/peertube-core-utils'
+} from '@retroai/retro3-core-utils'
 import { HtmlRendererService } from './html-renderer.service'
 
 type MarkdownParsers = {

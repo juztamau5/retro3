@@ -3,7 +3,7 @@
 import { expect } from 'chai'
 import { readFile } from 'fs/promises'
 import { completeCheckHlsPlaylist } from '@tests/shared/streaming-playlists.js'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import {
   HttpStatusCode,
   RunnerJobSuccessPayload,
@@ -15,20 +15,20 @@ import {
   VODAudioMergeTranscodingSuccess,
   VODHLSTranscodingSuccess,
   VODWebVideoTranscodingSuccess
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
   makeRawRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function processAllJobs (server: PeerTubeServer, runnerToken: string) {
+async function processAllJobs (server: Retro3Server, runnerToken: string) {
   do {
     const { availableJobs } = await server.runnerJobs.requestVOD({ runnerToken })
     if (availableJobs.length === 0) break
@@ -46,7 +46,7 @@ async function processAllJobs (server: PeerTubeServer, runnerToken: string) {
 }
 
 describe('Test runner VOD transcoding', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let runnerToken: string
 
   before(async function () {

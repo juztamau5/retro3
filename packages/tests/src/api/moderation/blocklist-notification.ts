@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { UserNotificationType, UserNotificationType_Type } from '@peertube/peertube-models'
+import { UserNotificationType, UserNotificationType_Type } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function checkNotifications (server: PeerTubeServer, token: string, expected: UserNotificationType_Type[]) {
+async function checkNotifications (server: Retro3Server, token: string, expected: UserNotificationType_Type[]) {
   const { data } = await server.notifications.list({ token, start: 0, count: 10, unread: true })
   expect(data).to.have.lengthOf(expected.length)
 
@@ -21,7 +21,7 @@ async function checkNotifications (server: PeerTubeServer, token: string, expect
 }
 
 describe('Test blocklist notifications', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let videoUUID: string
 
   let userToken1: string

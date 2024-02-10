@@ -1,4 +1,4 @@
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import express from 'express'
 import { logger } from '../../helpers/logger.js'
 import { ACCEPT_HEADERS } from '../../initializers/constants.js'

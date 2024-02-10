@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { AuthService, ScreenService, ServerService } from '@app/core'
 import { ListOverflowItem } from '@app/shared/shared-main'
 import { TopMenuDropdownParam } from '@app/shared/shared-main/misc/top-menu-dropdown.component'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 
 @Component({
   templateUrl: './admin.component.html',
@@ -141,7 +141,7 @@ export class AdminComponent implements OnInit {
       moderationItems.children.push({
         label: $localize`Muted servers`,
         routerLink: '/admin/moderation/blocklist/servers',
-        iconName: 'peertube-x'
+        iconName: 'retro3-x'
       })
     }
 

@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { SearchTargetType } from '@peertube/peertube-models'
+import { SearchTargetType } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 import { exists, isArray } from './misc.js'
 

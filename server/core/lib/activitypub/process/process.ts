@@ -1,5 +1,5 @@
 import { StatsManager } from '@server/lib/stat-manager.js'
-import { Activity, ActivityType } from '@peertube/peertube-models'
+import { Activity, ActivityType } from '@retroai/retro3-models'
 import { logger } from '../../../helpers/logger.js'
 import { APProcessorOptions } from '../../../types/activitypub-processor.model.js'
 import { MActorDefault, MActorSignature } from '../../../types/models/index.js'

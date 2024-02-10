@@ -4,7 +4,7 @@ import { AboutInstanceComponent } from '@app/+about/about-instance/about-instanc
 import { AboutInstanceResolver } from '@app/+about/about-instance/about-instance.resolver'
 import { ContactAdminModalComponent } from '@app/+about/about-instance/contact-admin-modal.component'
 import { InstanceStatisticsComponent } from '@app/+about/about-instance/instance-statistics.component'
-import { AboutPeertubeComponent } from '@app/+about/about-peertube/about-peertube.component'
+import { AboutRetro3Component } from '@app/+about/about-retro3/about-retro3.component'
 import { SharedCustomMarkupModule } from '@app/shared/shared-custom-markup'
 import { SharedFormModule } from '@app/shared/shared-forms'
 import { SharedGlobalIconModule } from '@app/shared/shared-icons'
@@ -31,7 +31,7 @@ import { AboutComponent } from './about.component'
     ContactAdminModalComponent,
     InstanceStatisticsComponent,
 
-    AboutPeertubeComponent,
+    AboutRetro3Component,
     AboutFollowsComponent
   ],
 

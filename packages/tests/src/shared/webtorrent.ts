@@ -3,8 +3,8 @@ import { readFile } from 'fs/promises'
 import parseTorrent from 'parse-torrent'
 import { basename, join } from 'path'
 import type { Instance, Torrent } from 'webtorrent'
-import { VideoFile } from '@peertube/peertube-models'
-import { PeerTubeServer } from '@peertube/peertube-server-commands'
+import { VideoFile } from '@retroai/retro3-models'
+import { Retro3Server } from '@retroai/retro3-server-commands'
 
 let webtorrent: Instance
 
@@ -20,7 +20,7 @@ export async function checkWebTorrentWorks (magnetUri: string, pathMatch?: RegEx
   }
 }
 
-export async function parseTorrentVideo (server: PeerTubeServer, file: VideoFile) {
+export async function parseTorrentVideo (server: Retro3Server, file: VideoFile) {
   const torrentName = basename(file.torrentUrl)
   const torrentPath = server.servers.buildDirectory(join('torrents', torrentName))
 

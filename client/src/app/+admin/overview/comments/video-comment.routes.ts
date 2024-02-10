@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router'
 import { UserRightGuard } from '@app/core'
-import { UserRight } from '@peertube/peertube-models'
+import { UserRight } from '@retroai/retro3-models'
 import { VideoCommentListComponent } from './video-comment-list.component'
 
 export const commentRoutes: Routes = [

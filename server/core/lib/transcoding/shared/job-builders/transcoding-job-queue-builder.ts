@@ -8,14 +8,14 @@ import { Hooks } from '@server/lib/plugins/hooks.js'
 import { VideoPathManager } from '@server/lib/video-path-manager.js'
 import { VideoJobInfoModel } from '@server/models/video/video-job-info.js'
 import { MUserId, MVideoFile, MVideoFullLight, MVideoWithFileThumbnail } from '@server/types/models/index.js'
-import { ffprobePromise, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream, isAudioFile } from '@peertube/peertube-ffmpeg'
+import { ffprobePromise, getVideoStreamDimensionsInfo, getVideoStreamFPS, hasAudioStream, isAudioFile } from '@retroai/retro3-ffmpeg'
 import {
   HLSTranscodingPayload,
   MergeAudioTranscodingPayload,
   NewWebVideoResolutionTranscodingPayload,
   OptimizeTranscodingPayload,
   VideoTranscodingPayload
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import { getTranscodingJobPriority } from '../../transcoding-priority.js'
 import { canDoQuickTranscode } from '../../transcoding-quick-transcode.js'
 import { buildOriginalFileResolution, computeResolutionsToTranscode } from '../../transcoding-resolutions.js'

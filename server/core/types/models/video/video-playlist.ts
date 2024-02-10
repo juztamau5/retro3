@@ -1,5 +1,5 @@
 import { MVideoPlaylistElementLight } from '@server/types/models/video/video-playlist-element.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { VideoPlaylistModel } from '../../../models/video/video-playlist.js'
 import { MAccount, MAccountDefault, MAccountSummary, MAccountSummaryFormattable } from '../account/index.js'
 import { MThumbnail } from './thumbnail.js'

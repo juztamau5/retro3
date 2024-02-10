@@ -1,8 +1,8 @@
 import express from 'express'
 import { body, header, param, query, ValidationChain } from 'express-validator'
-import { arrayify } from '@peertube/peertube-core-utils'
-import { HttpStatusCode, ServerErrorCode, UserRight, VideoState } from '@peertube/peertube-models'
-import { isTestInstance } from '@peertube/peertube-node-utils'
+import { arrayify } from '@retroai/retro3-core-utils'
+import { HttpStatusCode, ServerErrorCode, UserRight, VideoState } from '@retroai/retro3-models'
+import { isTestInstance } from '@retroai/retro3-node-utils'
 import { getResumableUploadPath } from '@server/helpers/upload.js'
 import { Redis } from '@server/lib/redis.js'
 import { uploadx } from '@server/lib/uploadx.js'
@@ -519,7 +519,7 @@ const commonVideosFiltersValidator = [
     if (req.query.filter) {
       res.fail({
         status: HttpStatusCode.BAD_REQUEST_400,
-        message: '"filter" query parameter is not supported anymore by PeerTube. Please use "isLocal" and "include" instead'
+        message: '"filter" query parameter is not supported anymore by retro3. Please use "isLocal" and "include" instead'
       })
       return false
     }

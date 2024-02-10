@@ -2,7 +2,7 @@ listen:
   hostname: '0.0.0.0'
   port: 9000
 
-# Correspond to your reverse proxy server_name/listen configuration (i.e., your public PeerTube instance URL)
+# Correspond to your reverse proxy server_name/listen configuration (i.e., your public retro3 instance URL)
 webserver:
   https: true
   hostname: undefined
@@ -19,14 +19,14 @@ rates_limit:
     max: 3
 
 # Proxies to trust to get real client IP
-# If you run PeerTube just behind a local proxy (nginx), keep 'loopback'
-# If you run PeerTube behind a remote proxy, add the proxy IP address (or subnet)
+# If you run retro3 just behind a local proxy (nginx), keep 'loopback'
+# If you run retro3 behind a remote proxy, add the proxy IP address (or subnet)
 trust_proxy:
   - 'loopback'
   - 'linklocal'
   - 'uniquelocal'
 
-# Your database name will be database.name OR 'peertube'+database.suffix
+# Your database name will be database.name OR 'retro3'+database.suffix
 database:
   hostname: 'postgres'
   port: 5432
@@ -44,7 +44,7 @@ redis:
 # From the project root directory
 storage:
   tmp: '../data/tmp/' # Use to download data (imports etc), store uploaded files before and during processing...
-  tmp_persistent: '../data/tmp-persistent/' # As tmp but the directory is not cleaned up between PeerTube restarts
+  tmp_persistent: '../data/tmp-persistent/' # As tmp but the directory is not cleaned up between retro3 restarts
   bin: '../data/bin/'
   avatars: '../data/avatars/'
   web_videos: '../data/web-videos/'
@@ -67,8 +67,8 @@ storage:
   # - default-avatar-video-channel.png
   # - and icons/*.png (PWA)
   # Could contain for example assets/images/favicon.png
-  # If the file exists, peertube will serve it
-  # If not, peertube will fallback to the default fil
+  # If the file exists, retro3 will serve it
+  # If not, retro3 will fallback to the default fil
   client_overrides: '../data/client-overrides/'
 
 

@@ -1,6 +1,6 @@
 import express from 'express'
 import { VideoTokensManager } from '@server/lib/video-tokens-manager.js'
-import { VideoPrivacy, VideoToken } from '@peertube/peertube-models'
+import { VideoPrivacy, VideoToken } from '@retroai/retro3-models'
 import { asyncMiddleware, optionalAuthenticate, videoFileTokenValidator, videosCustomGetValidator } from '../../../middlewares/index.js'
 
 const tokenRouter = express.Router()

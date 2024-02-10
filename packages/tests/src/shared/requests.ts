@@ -1,4 +1,4 @@
-import { doRequest } from '@peertube/peertube-server/core/helpers/requests.js'
+import { doRequest } from '@retroai/retro3-server/core/helpers/requests.js'
 
 export function makePOSTAPRequest (url: string, body: any, httpSignature: any, headers: any) {
   const options = {

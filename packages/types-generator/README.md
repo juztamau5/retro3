@@ -1,19 +1,19 @@
-# PeerTube typings
+# retro3 typings
 
-These **Typescript** *types* are mainly used to write **PeerTube** plugins.
+These **Typescript** *types* are mainly used to write **retro3** plugins.
 
 ## Installation
 
 Npm:
 ```
-npm install --save-dev @peertube/peertube-types
+npm install --save-dev @retroai/retro3-types
 ```
 
 Yarn:
 ```
-yarn add --dev @peertube/peertube-types
+yarn add --dev @retroai/retro3-types
 ```
 
 ## Usage
 
-> See [contribute-plugins](https://docs.joinpeertube.org/contribute/plugins#typescript) **Typescript** section of the doc.
+> See [contribute-plugins](https://docs.joinretro3.org/contribute/plugins#typescript) **Typescript** section of the doc.

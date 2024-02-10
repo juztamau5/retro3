@@ -3,7 +3,7 @@ import { param, query } from 'express-validator'
 import { isDateValid } from '@server/helpers/custom-validators/misc.js'
 import { isValidStatTimeserieMetric } from '@server/helpers/custom-validators/video-stats.js'
 import { STATS_TIMESERIE } from '@server/initializers/constants.js'
-import { HttpStatusCode, UserRight, VideoStatsTimeserieQuery } from '@peertube/peertube-models'
+import { HttpStatusCode, UserRight, VideoStatsTimeserieQuery } from '@retroai/retro3-models'
 import { areValidationErrors, checkUserCanManageVideo, doesVideoExist, isValidVideoIdParam } from '../shared/index.js'
 
 const videoOverallStatsValidator = [

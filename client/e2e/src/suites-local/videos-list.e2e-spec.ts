@@ -122,7 +122,7 @@ describe('Videos list', () => {
 
   it('Should set the homepage', async () => {
     await adminConfigPage.navigateTo('instance-homepage')
-    await adminConfigPage.updateHomepage('<peertube-videos-list data-sort="-publishedAt"></peertube-videos-list>')
+    await adminConfigPage.updateHomepage('<retro3-videos-list data-sort="-publishedAt"></retro3-videos-list>')
     await adminConfigPage.save()
   })
 

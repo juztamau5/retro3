@@ -1,5 +1,5 @@
-import { buildFileLocale, getDefaultLocale, is18nLocale, POSSIBLE_LOCALES } from '@peertube/peertube-core-utils'
-import { isTestOrDevInstance, root, sha256 } from '@peertube/peertube-node-utils'
+import { buildFileLocale, getDefaultLocale, is18nLocale, POSSIBLE_LOCALES } from '@retroai/retro3-core-utils'
+import { isTestOrDevInstance, root, sha256 } from '@retroai/retro3-node-utils'
 import express from 'express'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
@@ -8,7 +8,7 @@ import { CUSTOM_HTML_TAG_COMMENTS, FILES_CONTENT_HASH, PLUGIN_GLOBAL_CSS_PATH, W
 import { ServerConfigManager } from '../../server-config-manager.js'
 import { TagsHtml } from './tags-html.js'
 import { pathExists } from 'fs-extra/esm'
-import { HTMLServerConfig } from '@peertube/peertube-models'
+import { HTMLServerConfig } from '@retroai/retro3-models'
 import { CONFIG } from '@server/initializers/config.js'
 
 export class PageHtml {
@@ -124,7 +124,7 @@ export class PageHtml {
   static addServerConfig (htmlStringPage: string, serverConfig: HTMLServerConfig) {
     // Stringify the JSON object, and then stringify the string object so we can inject it into the HTML
     const serverConfigString = JSON.stringify(JSON.stringify(serverConfig))
-    const configScriptTag = `<script type="application/javascript">window.PeerTubeServerConfig = ${serverConfigString}</script>`
+    const configScriptTag = `<script type="application/javascript">window.Retro3ServerConfig = ${serverConfigString}</script>`
 
     return htmlStringPage.replace(CUSTOM_HTML_TAG_COMMENTS.SERVER_CONFIG, configScriptTag)
   }

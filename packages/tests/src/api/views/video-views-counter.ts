@@ -3,11 +3,11 @@
 import { expect } from 'chai'
 import { FfmpegCommand } from 'fluent-ffmpeg'
 import { prepareViewsServers, prepareViewsVideos, processViewsBuffer } from '@tests/shared/views.js'
-import { wait } from '@peertube/peertube-core-utils'
-import { cleanupTests, PeerTubeServer, stopFfmpeg, waitJobs } from '@peertube/peertube-server-commands'
+import { wait } from '@retroai/retro3-core-utils'
+import { cleanupTests, Retro3Server, stopFfmpeg, waitJobs } from '@retroai/retro3-server-commands'
 
 describe('Test video views/viewers counters', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   async function checkCounter (field: 'views' | 'viewers', id: string, expected: number) {
     for (const server of servers) {

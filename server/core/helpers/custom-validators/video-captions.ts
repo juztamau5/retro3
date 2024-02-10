@@ -1,6 +1,6 @@
 import { UploadFilesForCheck } from 'express'
 import { readFile } from 'fs/promises'
-import { getFileSize } from '@peertube/peertube-node-utils'
+import { getFileSize } from '@retroai/retro3-node-utils'
 import { CONSTRAINTS_FIELDS, MIMETYPES, VIDEO_LANGUAGES } from '../../initializers/constants.js'
 import { logger } from '../logger.js'
 import { exists, isFileValid } from './misc.js'

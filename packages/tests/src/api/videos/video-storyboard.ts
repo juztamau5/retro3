@@ -4,23 +4,23 @@ import { expect } from 'chai'
 import { readdir } from 'fs/promises'
 import { basename } from 'path'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { areHttpImportTestsDisabled } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { areHttpImportTestsDisabled } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 async function checkStoryboard (options: {
-  server: PeerTubeServer
+  server: Retro3Server
   uuid: string
   spriteHeight?: number
   spriteWidth?: number
@@ -50,7 +50,7 @@ async function checkStoryboard (options: {
 }
 
 describe('Test video storyboard', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
 
   let baseUUID: string
 

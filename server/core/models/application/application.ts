@@ -1,7 +1,7 @@
 import memoizee from 'memoizee'
 import { AllowNull, Column, Default, DefaultScope, HasOne, IsInt, Model, Table } from 'sequelize-typescript'
 import { getNodeABIVersion } from '@server/helpers/version.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { AccountModel } from '../account/account.js'
 
 export const getServerActor = memoizee(async function () {
@@ -36,7 +36,7 @@ export class ApplicationModel extends Model<Partial<AttributesOnly<ApplicationMo
 
   @AllowNull(true)
   @Column
-  latestPeerTubeVersion: string
+  latestRetro3Version: string
 
   @AllowNull(false)
   @Column

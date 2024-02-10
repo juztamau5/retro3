@@ -5,17 +5,17 @@ import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
-  PeerTubeServer,
+  Retro3Server,
   RedundancyCommand,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
-import { VideoPrivacy, VideoRedundanciesTarget } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { VideoPrivacy, VideoRedundanciesTarget } from '@retroai/retro3-models'
 
 describe('Test manage videos redundancy', function () {
   const targets: VideoRedundanciesTarget[] = [ 'my-videos', 'remote-videos' ]
 
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let video1Server2UUID: string
   let video2Server2UUID: string
   let redundanciesToRemove: number[] = []

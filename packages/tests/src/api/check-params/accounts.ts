@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { checkBadCountPagination, checkBadSortPagination, checkBadStartPagination } from '@tests/shared/checks.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
-import { cleanupTests, createSingleServer, PeerTubeServer } from '@peertube/peertube-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
+import { cleanupTests, createSingleServer, Retro3Server } from '@retroai/retro3-server-commands'
 
 describe('Test accounts API validators', function () {
   const path = '/api/v1/accounts/'
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   // ---------------------------------------------------------------
 

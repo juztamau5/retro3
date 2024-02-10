@@ -11,11 +11,11 @@
 }
 
 input[type=text] {
-  @include peertube-input-text(340px);
+  @include retro3-input-text(340px);
 
   display: block;
 }
 
 textarea {
-  @include peertube-textarea(100%, 200px);
+  @include retro3-textarea(100%, 200px);
 }

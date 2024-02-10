@@ -1,7 +1,7 @@
 import { Op, QueryTypes, Transaction } from 'sequelize'
 import { AllowNull, BelongsTo, Column, CreatedAt, Default, ForeignKey, IsInt, Model, Table, Unique, UpdatedAt } from 'sequelize-typescript'
-import { forceNumber } from '@peertube/peertube-core-utils'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { forceNumber } from '@retroai/retro3-core-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { VideoModel } from './video.js'
 
 export type VideoJobInfoColumnType = 'pendingMove' | 'pendingTranscode'

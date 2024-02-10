@@ -294,8 +294,8 @@
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-main/users/user-notifications.component.html</context><context context-type="linenumber">199</context></context-group>
       </trans-unit>
       <trans-unit id="5055099158245592648" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;markAsRead(notification)&quot; [href]=&quot;notification.peertubeVersionLink&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferer&quot;>"/>A new version of PeerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> is available: <x id="INTERPOLATION" equiv-text="{{ notification.peertube.latestVersion }}"/> </source>
-        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;markAsRead(notification)&quot; [href]=&quot;notification.peertubeVersionLink&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferer&quot;>"/>Tha tionndadh ùr de PheerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ri fhaighinn: <x id="INTERPOLATION" equiv-text="{{ notification.peertube.latestVersion }}"/> </target>
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;markAsRead(notification)&quot; [href]=&quot;notification.retro3VersionLink&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferer&quot;>"/>A new version of retro3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> is available: <x id="INTERPOLATION" equiv-text="{{ notification.retro3.latestVersion }}"/> </source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;markAsRead(notification)&quot; [href]=&quot;notification.retro3VersionLink&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferer&quot;>"/>Tha tionndadh ùr de PheerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ri fhaighinn: <x id="INTERPOLATION" equiv-text="{{ notification.retro3.latestVersion }}"/> </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-main/users/user-notifications.component.html</context><context context-type="linenumber">207</context></context-group>
       </trans-unit>
       <trans-unit id="731573110355765429" datatype="html">
@@ -319,13 +319,13 @@
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-main/video/video.model.ts</context><context context-type="linenumber">292</context></context-group>
       </trans-unit>
       <trans-unit id="1747775295354213975" datatype="html">
-        <source>PeerTube considers this video is already being transcoded.</source>
-        <target state="translated">Tha PeerTube dhen bheachd gun deach a’ video seo a thar-chòdachadh mu thràth.</target>
+        <source>retro3 considers this video is already being transcoded.</source>
+        <target state="translated">Tha retro3 dhen bheachd gun deach a’ video seo a thar-chòdachadh mu thràth.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-main/video/video.service.ts</context><context context-type="linenumber">349</context></context-group>
       </trans-unit>
       <trans-unit id="5630101530611188113" datatype="html">
-        <source>If you think PeerTube is wrong (video in broken state after a crash etc.), you can force transcoding on this video.</source>
-        <target state="translated">Ma shaoileas tu gu bheil PeerTube ceàrr (video briste às dèidh tuislidh is msaa.), ’s urrainn dhut tar-chòdachadh a sparradh air a’ video seo.</target>
+        <source>If you think retro3 is wrong (video in broken state after a crash etc.), you can force transcoding on this video.</source>
+        <target state="translated">Ma shaoileas tu gu bheil retro3 ceàrr (video briste às dèidh tuislidh is msaa.), ’s urrainn dhut tar-chòdachadh a sparradh air a’ video seo.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-main/video/video.service.ts</context><context context-type="linenumber">351</context></context-group>
       </trans-unit>
       <trans-unit id="3524359509497681458" datatype="html">
@@ -718,7 +718,7 @@
       <trans-unit id="146235964740293376" datatype="html">
         <source>Recommended</source>
         <target state="translated">Molta</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-forms/peertube-checkbox.component.html</context><context context-type="linenumber">33</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-forms/retro3-checkbox.component.html</context><context context-type="linenumber">33</context></context-group>
       </trans-unit>
       <trans-unit id="1295614462098694869" datatype="html">
         <source>Preview</source>
@@ -805,18 +805,18 @@
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-user-subscription/remote-subscribe.component.html</context><context context-type="linenumber">11</context></context-group>
       </trans-unit>
       <trans-unit id="6462281745850371027" datatype="html">
-        <source>You can subscribe to the channel via any ActivityPub-capable fediverse instance (PeerTube, Mastodon or Pleroma for example).</source>
-        <target state="translated">’S urrainn dhut fo-sgrìobhadh air an t-seanail slighe ionstans co-shaoghail sam bith aig a bheil comas ActivityPub (can PeerTube, Mastodon no Pleroma).</target>
+        <source>You can subscribe to the channel via any ActivityPub-capable fediverse instance (retro3, Mastodon or Pleroma for example).</source>
+        <target state="translated">’S urrainn dhut fo-sgrìobhadh air an t-seanail slighe ionstans co-shaoghail sam bith aig a bheil comas ActivityPub (can retro3, Mastodon no Pleroma).</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-user-subscription/remote-subscribe.component.html</context><context context-type="linenumber">17</context></context-group>
       </trans-unit>
       <trans-unit id="20374890400263257" datatype="html">
-        <source>You can interact with this via any ActivityPub-capable fediverse instance (PeerTube, Mastodon or Pleroma for example).</source>
-        <target state="translated">’S urrainn dhut conaltradh leis slighe ionstans co-shaoghail sam bith aig a bheil comas ActivityPub (can PeerTube, Mastodon no Pleroma).</target>
+        <source>You can interact with this via any ActivityPub-capable fediverse instance (retro3, Mastodon or Pleroma for example).</source>
+        <target state="translated">’S urrainn dhut conaltradh leis slighe ionstans co-shaoghail sam bith aig a bheil comas ActivityPub (can retro3, Mastodon no Pleroma).</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-user-subscription/remote-subscribe.component.html</context><context context-type="linenumber">25</context></context-group>
       </trans-unit>
       <trans-unit id="6751395526297887552" datatype="html">
-        <source>PeerTube version</source>
-        <target state="translated">PeerTube tionndadh</target>
+        <source>retro3 version</source>
+        <target state="translated">retro3 tionndadh</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-instance/instance-features-table.component.html</context><context context-type="linenumber">6</context></context-group>
       </trans-unit>
       <trans-unit id="3805147953573030976" datatype="html">
@@ -1170,13 +1170,13 @@
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/+login/login.component.html</context><context context-type="linenumber">13</context></context-group></trans-unit>
       <trans-unit id="6584143415159913044" datatype="html">
-        <source>This instance allows registration. However, be careful to check the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange terms-anchor&quot; (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="START_LINK_1" equiv-text="&lt;a class=&quot;terms-link&quot; target=&quot;_blank&quot; routerLink=&quot;/about/instance&quot; fragment=&quot;terms&quot;>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> before creating an account. You may also search for another instance to match your exact needs at: <x id="START_LINK_2" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinpeertube.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
-        <target state="translated">Faodaidh tu clàradh air an ionstans seo. Gidheadh, dèan cinnteach gun leugh thu na <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange terms-anchor&quot; (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="START_LINK_1" equiv-text="&lt;a class=&quot;terms-link&quot; target=&quot;_blank&quot; routerLink=&quot;/about/instance&quot; fragment=&quot;terms&quot;>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> mus cruthaich thu cunntas. ’S urrainn dhut cuideachd ionstans eile a lorg a fhreagras ris na feumalachdan agad-sa: <x id="START_LINK_2" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinpeertube.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
+        <source>This instance allows registration. However, be careful to check the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange terms-anchor&quot; (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="START_LINK_1" equiv-text="&lt;a class=&quot;terms-link&quot; target=&quot;_blank&quot; routerLink=&quot;/about/instance&quot; fragment=&quot;terms&quot;>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> before creating an account. You may also search for another instance to match your exact needs at: <x id="START_LINK_2" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinretro3.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
+        <target state="translated">Faodaidh tu clàradh air an ionstans seo. Gidheadh, dèan cinnteach gun leugh thu na <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange terms-anchor&quot; (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="START_LINK_1" equiv-text="&lt;a class=&quot;terms-link&quot; target=&quot;_blank&quot; routerLink=&quot;/about/instance&quot; fragment=&quot;terms&quot;>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> mus cruthaich thu cunntas. ’S urrainn dhut cuideachd ionstans eile a lorg a fhreagras ris na feumalachdan agad-sa: <x id="START_LINK_2" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinretro3.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/+login/login.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit>
       <trans-unit id="1394326136451741248" datatype="html">
-        <source>Currently this instance doesn't allow for user registration, you may check the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for more details or find an instance that gives you the possibility to sign up for an account and upload your videos there. Find yours among multiple instances at: <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinpeertube.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
-        <target state="translated">Cha cheadaich an t-ionstans seo gun clàraich cleachdaichean ùra aig an àm seo, ’s urrainn dhut sùil a thoirt air na <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> airson barrachd fiosrachaidh no ionstans a lorg a bheir comas clàraidh cunntais dhut agus na videothan agad a luchdadh suas an-siud. Lorg an t-ionstans agad fhèin am measg càich: <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinpeertube.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
+        <source>Currently this instance doesn't allow for user registration, you may check the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Terms<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for more details or find an instance that gives you the possibility to sign up for an account and upload your videos there. Find yours among multiple instances at: <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinretro3.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
+        <target state="translated">Cha cheadaich an t-ionstans seo gun clàraich cleachdaichean ùra aig an àm seo, ’s urrainn dhut sùil a thoirt air na <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;onTermsClick($event, instanceInformation)&quot; href='#'>"/>Teirmichean<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> airson barrachd fiosrachaidh no ionstans a lorg a bheir comas clàraidh cunntais dhut agus na videothan agad a luchdadh suas an-siud. Lorg an t-ionstans agad fhèin am measg càich: <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://joinretro3.org/instances&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/+login/login.component.html</context><context context-type="linenumber">22</context></context-group></trans-unit>
       <trans-unit id="3183213940445113677" datatype="html">
@@ -1190,8 +1190,8 @@
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/+login/login.component.html</context><context context-type="linenumber">123</context></context-group></trans-unit>
       <trans-unit id="87327320394367488" datatype="html">
-        <source>We are sorry, you cannot recover your password because your instance administrator did not configure the PeerTube email system.</source>
-        <target state="translated">Tha sinn duilich ach chan urrainn dhut am facal-faire agad aiseag air sgàth ’s nach do rèitich rianaire an ionstans seo siostam puist-d PeerTube.</target>
+        <source>We are sorry, you cannot recover your password because your instance administrator did not configure the retro3 email system.</source>
+        <target state="translated">Tha sinn duilich ach chan urrainn dhut am facal-faire agad aiseag air sgàth ’s nach do rèitich rianaire an ionstans seo siostam puist-d retro3.</target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/+login/login.component.html</context><context context-type="linenumber">132</context></context-group></trans-unit>
       <trans-unit id="3188014010833256853" datatype="html">
@@ -1336,8 +1336,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+signup/+register/steps/register-step-about.component.html</context><context context-type="linenumber">25</context></context-group>
       </trans-unit>
       <trans-unit id="7772973173091400795" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ instanceName }}"/> has been created using <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://joinpeertube.org&quot;>"/>PeerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>, a video creation platform developed by Framasoft. <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://framasoft.org&quot;>"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> is a french non-profit organization that offers alternatives to Big Tech's digital tools </source>
-        <target state="translated">Chaidh <x id="INTERPOLATION" equiv-text="{{ instanceName }}"/> a chruthachadh le <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://joinpeertube.org&quot;>"/>PeerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>, seo ùrlar cruthachadh videothan a tha ’ga leasachadh le Framasoft. ‘S e buidheann neo-phrothaideach Frangach a th’ ann am <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://framasoft.org&quot;>"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> a bheil roghainnean eile seach na h-innealan digiteach aig Big Tech dhut </target>
+        <source><x id="INTERPOLATION" equiv-text="{{ instanceName }}"/> has been created using <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://joinretro3.org&quot;>"/>retro3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>, a video creation platform developed by Framasoft. <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://framasoft.org&quot;>"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> is a french non-profit organization that offers alternatives to Big Tech's digital tools </source>
+        <target state="translated">Chaidh <x id="INTERPOLATION" equiv-text="{{ instanceName }}"/> a chruthachadh le <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://joinretro3.org&quot;>"/>retro3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>, seo ùrlar cruthachadh videothan a tha ’ga leasachadh le Framasoft. ‘S e buidheann neo-phrothaideach Frangach a th’ ann am <x id="START_LINK_1" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://framasoft.org&quot;>"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> a bheil roghainnean eile seach na h-innealan digiteach aig Big Tech dhut </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+signup/+register/steps/register-step-about.component.html</context><context context-type="linenumber">38</context></context-group>
       </trans-unit>
       <trans-unit id="2528596078796844503" datatype="html">
@@ -1375,8 +1375,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+search/search.component.html</context><context context-type="linenumber">32</context></context-group>
       </trans-unit>
       <trans-unit id="1516969129397662377" datatype="html">
-        <source>Welcome to PeerTube, dear administrator!</source>
-        <target state="translated">Fàilte ort dha PeerTube, a rianaire chòir!</target>
+        <source>Welcome to retro3, dear administrator!</source>
+        <target state="translated">Fàilte ort dha retro3, a rianaire chòir!</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">3</context></context-group>
       </trans-unit>
       <trans-unit id="807030720531713957" datatype="html">
@@ -1415,13 +1415,13 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">41</context></context-group>
       </trans-unit>
       <trans-unit id="5170617864166788170" datatype="html">
-        <source>Official PeerTube website (news, support, contribute...): <x id="START_LINK"/>https://joinpeertube.org<x id="CLOSE_LINK"/></source>
-        <target state="translated">Làrach-lìn PeerTube oifigeil (naidheachdan, taic, cuidich leinn…): <x id="START_LINK"/>https://joinpeertube.org<x id="CLOSE_LINK"/></target>
+        <source>Official retro3 website (news, support, contribute...): <x id="START_LINK"/>https://joinretro3.org<x id="CLOSE_LINK"/></source>
+        <target state="translated">Làrach-lìn retro3 oifigeil (naidheachdan, taic, cuidich leinn…): <x id="START_LINK"/>https://joinretro3.org<x id="CLOSE_LINK"/></target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">44</context></context-group>
       </trans-unit>
       <trans-unit id="4614992717645869756" datatype="html">
-        <source>Put your instance on the public PeerTube index: <x id="START_LINK"/>https://instances.joinpeertube.org/instances<x id="CLOSE_LINK"/></source>
-        <target state="translated">Cuir an t-ionstans agad air inneacs PeerTube poblach: <x id="START_LINK"/>https://instances.joinpeertube.org/instances<x id="CLOSE_LINK"/></target>
+        <source>Put your instance on the public retro3 index: <x id="START_LINK"/>https://instances.joinretro3.org/instances<x id="CLOSE_LINK"/></source>
+        <target state="translated">Cuir an t-ionstans agad air inneacs retro3 poblach: <x id="START_LINK"/>https://instances.joinretro3.org/instances<x id="CLOSE_LINK"/></target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">47</context></context-group>
       </trans-unit>
       <trans-unit id="2081626998027585315" datatype="html">
@@ -1435,8 +1435,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">59</context></context-group>
       </trans-unit>
       <trans-unit id="5329436244765769292" datatype="html">
-        <source>If you want to open registrations, please decide what <x id="START_TAG_STRONG"/>your moderation rules<x id="CLOSE_TAG_STRONG"/> and <x id="START_TAG_STRONG"/>instance terms of service<x id="CLOSE_TAG_STRONG"/> are, as well as specify the categories and languages and your moderators speak. This way, you will help users to register on <x id="START_TAG_STRONG"/>the appropriate<x id="CLOSE_TAG_STRONG"/> PeerTube instance. </source>
-        <target state="translated">Na bu mhiann leat an clàradh fhosgladh, dèan co-dhùnadh air na <x id="START_TAG_STRONG"/>riaghailtean maorsainneachd<x id="CLOSE_TAG_STRONG"/> agus air <x id="START_TAG_STRONG"/>teirmichean an ionstans<x id="CLOSE_TAG_STRONG"/> agad agus sònraich na roinnean-seòrsa agus na cànanan a tha aig na maoir agad. Air an dòigh seo, cuidichidh tu an luchd-cleachdaidh gun clàraich iad air an ionstans PeerTube <x id="START_TAG_STRONG"/>iomchaidh<x id="CLOSE_TAG_STRONG"/>. </target>
+        <source>If you want to open registrations, please decide what <x id="START_TAG_STRONG"/>your moderation rules<x id="CLOSE_TAG_STRONG"/> and <x id="START_TAG_STRONG"/>instance terms of service<x id="CLOSE_TAG_STRONG"/> are, as well as specify the categories and languages and your moderators speak. This way, you will help users to register on <x id="START_TAG_STRONG"/>the appropriate<x id="CLOSE_TAG_STRONG"/> retro3 instance. </source>
+        <target state="translated">Na bu mhiann leat an clàradh fhosgladh, dèan co-dhùnadh air na <x id="START_TAG_STRONG"/>riaghailtean maorsainneachd<x id="CLOSE_TAG_STRONG"/> agus air <x id="START_TAG_STRONG"/>teirmichean an ionstans<x id="CLOSE_TAG_STRONG"/> agad agus sònraich na roinnean-seòrsa agus na cànanan a tha aig na maoir agad. Air an dòigh seo, cuidichidh tu an luchd-cleachdaidh gun clàraich iad air an ionstans retro3 <x id="START_TAG_STRONG"/>iomchaidh<x id="CLOSE_TAG_STRONG"/>. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/admin-welcome-modal.component.html</context><context context-type="linenumber">65</context></context-group>
       </trans-unit>
       <trans-unit id="5704345824323933019" datatype="html">
@@ -1521,8 +1521,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/quick-settings-modal.component.html</context><context context-type="linenumber">20</context></context-group>
       </trans-unit>
       <trans-unit id="5330788940795142335" datatype="html">
-        <source>Please consider configuring these fields to help people to choose <x id="START_TAG_STRONG"/>the appropriate instance<x id="CLOSE_TAG_STRONG"/>. Without them, your instance may not be referenced on the <x id="START_LINK"/>JoinPeerTube website<x id="CLOSE_LINK"/>. </source>
-        <target state="translated">Feuch an rèitich thu na raointean seo gus am bi e nas fhasa do dhaoine <x id="START_TAG_STRONG"/>an t-ionstans ceart<x id="CLOSE_TAG_STRONG"/> a thaghadh. Às an aonais, dh’fhaoidte nach nochd an t-ionstans agad air <x id="START_LINK"/>làrach-lìn JoinPeerTube<x id="CLOSE_LINK"/>. </target>
+        <source>Please consider configuring these fields to help people to choose <x id="START_TAG_STRONG"/>the appropriate instance<x id="CLOSE_TAG_STRONG"/>. Without them, your instance may not be referenced on the <x id="START_LINK"/>JoinRetro3 website<x id="CLOSE_LINK"/>. </source>
+        <target state="translated">Feuch an rèitich thu na raointean seo gus am bi e nas fhasa do dhaoine <x id="START_TAG_STRONG"/>an t-ionstans ceart<x id="CLOSE_TAG_STRONG"/> a thaghadh. Às an aonais, dh’fhaoidte nach nochd an t-ionstans agad air <x id="START_LINK"/>làrach-lìn JoinRetro3<x id="CLOSE_LINK"/>. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/modal/instance-config-warning-modal.component.html</context><context context-type="linenumber">26</context></context-group>
       </trans-unit>
       <trans-unit id="2728623642717111613" datatype="html">
@@ -1621,8 +1621,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/language-chooser.component.html</context><context context-type="linenumber">3</context></context-group>
       </trans-unit>
       <trans-unit id="2964653499524716819" datatype="html">
-        <source>Help to translate PeerTube!</source>
-        <target state="translated">Cuidich le eadar-theangachadh PeerTube!</target>
+        <source>Help to translate retro3!</source>
+        <target state="translated">Cuidich le eadar-theangachadh retro3!</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/language-chooser.component.html</context><context context-type="linenumber">10</context></context-group>
       </trans-unit>
       <trans-unit id="5464118521750361406" datatype="html">
@@ -1662,21 +1662,21 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/menu.component.html</context><context context-type="linenumber">160</context></context-group>
       </trans-unit>
       <trans-unit id="1039157642448320025" datatype="html">
-        <source>FAQ (Frequently Asked Questions) - about PeerTube</source>
-        <target state="new">FAQ (Frequently Asked Questions) - about PeerTube</target>
+        <source>FAQ (Frequently Asked Questions) - about retro3</source>
+        <target state="new">FAQ (Frequently Asked Questions) - about retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">164</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8378304669563824772" datatype="html">
-        <source>Get help using PeerTube</source>
-        <target state="translated">Faigh cobhair le cleachdadh PeerTube</target>
+        <source>Get help using retro3</source>
+        <target state="translated">Faigh cobhair le cleachdadh retro3</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/menu.component.html</context><context context-type="linenumber">160</context></context-group>
       </trans-unit>
       <trans-unit id="2497681082724639563" datatype="html">
-        <source>powered by PeerTube</source>
-        <target state="translated">le cumhachd PeerTube</target>
+        <source>powered by retro3</source>
+        <target state="translated">le cumhachd retro3</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/menu.component.html</context><context context-type="linenumber">183</context></context-group>
       </trans-unit>
       <trans-unit id="7507948636555938109" datatype="html">
@@ -1722,8 +1722,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">277</context></context-group>
       </trans-unit>
       <trans-unit id="2184839376696112704" datatype="html">
-        <source>allows to import multiple videos in parallel. ⚠️ Requires a PeerTube restart.</source>
-        <target state="translated">leigidh seo leat iomadh video ion-phortadh aig an aon àm. ⚠️ Bidh PeerTube feumach air ath-thòiseachadh.</target>
+        <source>allows to import multiple videos in parallel. ⚠️ Requires a retro3 restart.</source>
+        <target state="translated">leigidh seo leat iomadh video ion-phortadh aig an aon àm. ⚠️ Bidh retro3 feumach air ath-thòiseachadh.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">278</context></context-group>
       </trans-unit>
       <trans-unit id="780513172839038392" datatype="html">
@@ -1738,8 +1738,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">291</context></context-group>
       </trans-unit>
       <trans-unit id="2095604754338363597" datatype="html">
-        <source>⚠️ If enabled, we recommend to use <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/maintain-configuration?id=security&quot;>"/>a HTTP proxy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to prevent private URL access from your PeerTube server</source>
-        <target state="translated">⚠️ Ma tha seo an comas, mholamaid gun cleachd thu <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/maintain-configuration?id=security&quot;>"/>progsaidh HTTP<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ach nach dèid URL prìobhaideach inntrigeadh on fhrithealaiche PeerTube agad</target>
+        <source>⚠️ If enabled, we recommend to use <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/maintain-configuration?id=security&quot;>"/>a HTTP proxy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to prevent private URL access from your retro3 server</source>
+        <target state="translated">⚠️ Ma tha seo an comas, mholamaid gun cleachd thu <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/maintain-configuration?id=security&quot;>"/>progsaidh HTTP<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ach nach dèid URL prìobhaideach inntrigeadh on fhrithealaiche retro3 agad</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">294</context></context-group>
       </trans-unit>
       <trans-unit id="7627544798203088407" datatype="html">
@@ -2132,8 +2132,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+search/search-filters.component.html</context><context context-type="linenumber">170</context></context-group>
       </trans-unit>
       <trans-unit id="5143793904897598509" datatype="html">
-        <source>PeerTube instance host</source>
-        <target state="translated">Òstair ionstans PeerTube</target>
+        <source>retro3 instance host</source>
+        <target state="translated">Òstair ionstans retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+search/search-filters.component.html</context>
           <context context-type="linenumber">178</context>
@@ -2198,7 +2198,7 @@ The link will expire within 1 hour.</source>
       </trans-unit>
       <trans-unit id="4616828176080418150" datatype="html">
         <source>This will replace an existing caption!</source>
-        <target state="translated">Cuidich le eadar-theangachadh PeerTube!</target>
+        <target state="translated">Cuidich le eadar-theangachadh retro3!</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+videos/+video-edit/shared/video-caption-add-modal.component.html</context><context context-type="linenumber">32</context></context-group>
       </trans-unit>
       <trans-unit id="2752121353049766867" datatype="html">
@@ -2290,8 +2290,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-actor-image-edit/actor-banner-edit.component.ts</context><context context-type="linenumber">44</context></context-group>
       </trans-unit>
       <trans-unit id="1358902062258458923" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown#Example&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>Markdown compatible<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> that also supports <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/api-custom-client-markup&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>custom PeerTube HTML tags<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source>
-        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown#Example&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>Co-chòrdail ri Markdown<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ’s a’ cur taic ri <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/api-custom-client-markup&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>tagaichean HTML gnàthaichte PeerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> cuideachd</target>
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown#Example&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>Markdown compatible<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> that also supports <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/api-custom-client-markup&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>custom retro3 HTML tags<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown#Example&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>Co-chòrdail ri Markdown<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> ’s a’ cur taic ri <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/api-custom-client-markup&quot; target=&quot;_blank&quot; rel=&quot;noreferer noopener&quot;>"/>tagaichean HTML gnàthaichte retro3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> cuideachd</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/shared-custom-markup/custom-markup-help.component.html</context>
           <context context-type="linenumber">2</context>
@@ -2301,30 +2301,30 @@ The link will expire within 1 hour.</source>
         <source>Latest published video</source>
         <target state="translated">A’ video mu dheireadh a chaidh fhoillseachadh</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context>
+          <context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="283609029522452529" datatype="html">
         <source>Error in channel miniature component: <x id="PH" equiv-text="err.message"/></source>
         <target state="translated">Mearachd ann am meanbh-cho-phàirt na seanail: <x id="PH" equiv-text="err.message"/></target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.ts</context><context context-type="linenumber">65</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.ts</context><context context-type="linenumber">65</context></context-group>
       </trans-unit>
       <trans-unit id="3059355667050002541" datatype="html">
         <source>Error in playlist miniature component: <x id="PH" equiv-text="err.message"/></source>
         <target state="translated">Mearachd ann am meanbh-cho-phàirt na liosta-chluich: <x id="PH" equiv-text="err.message"/></target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/playlist-miniature-markup.component.ts</context><context context-type="linenumber">52</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/playlist-miniature-markup.component.ts</context><context context-type="linenumber">52</context></context-group>
       </trans-unit>
       <trans-unit id="863691161959989717" datatype="html">
         <source>Error in video miniature component: <x id="PH" equiv-text="err.message"/></source>
         <target state="translated">Mearachd ann am meanbh-cho-phàirt a’ video: <x id="PH" equiv-text="err.message"/></target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/video-miniature-markup.component.ts</context><context context-type="linenumber">66</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/video-miniature-markup.component.ts</context><context context-type="linenumber">66</context></context-group>
       </trans-unit>
       <trans-unit id="1247256698916587400" datatype="html">
         <source>Error in videos list component: <x id="PH" equiv-text="err.message"/></source>
         <target state="translated">Mearachd ann an co-phàirt liosta nam video: <x id="PH" equiv-text="err.message"/></target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/videos-list-markup.component.ts</context><context context-type="linenumber">84</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/videos-list-markup.component.ts</context><context context-type="linenumber">84</context></context-group></trans-unit>
       <trans-unit id="7596115240533332749" datatype="html">
         <source>Open quick filters</source>
         <target state="new">Open quick filters</target>
@@ -2467,8 +2467,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/menu.component.html</context><context context-type="linenumber">172</context></context-group>
       </trans-unit>
       <trans-unit id="5503656190856739184" datatype="html">
-        <source>powered by PeerTube - CopyLeft 2015-2023</source>
-        <target state="translated">le cumhachd PeerTube - Còir-lethbhreac saor 2015-2023</target>
+        <source>powered by retro3 - CopyLeft 2015-2023</source>
+        <target state="translated">le cumhachd retro3 - Còir-lethbhreac saor 2015-2023</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/menu/menu.component.html</context><context context-type="linenumber">181</context></context-group>
       </trans-unit>
       <trans-unit id="3722967224215437913" datatype="html">
@@ -3203,8 +3203,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-share-modal/video-share.component.html</context><context context-type="linenumber">273</context></context-group>
       </trans-unit>
       <trans-unit id="805456636864344681" datatype="html">
-        <source>Display PeerTube button link</source>
-        <target state="translated">Seall putan le ceangal PeerTube</target>
+        <source>Display retro3 button link</source>
+        <target state="translated">Seall putan le ceangal retro3</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-share-modal/video-share.component.html</context><context context-type="linenumber">280</context></context-group>
       </trans-unit>
       <trans-unit id="8928816882866356838" datatype="html">
@@ -3545,8 +3545,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+videos/+video-watch/shared/comment/video-comment-add.component.html</context><context context-type="linenumber">61</context></context-group>
       </trans-unit>
       <trans-unit id="7508177761852352782" datatype="html">
-        <source>You can comment using an account on any ActivityPub-compatible instance (PeerTube/Mastodon/Pleroma account for example).</source>
-        <target state="translated">’S urrainn dhut do bheachd a chur ris le cunntas o ionstans sam bith a tha co-chòrdail ri ActivityPub (can PeerTube, Mastodon no Pleroma).</target>
+        <source>You can comment using an account on any ActivityPub-compatible instance (retro3/Mastodon/Pleroma account for example).</source>
+        <target state="translated">’S urrainn dhut do bheachd a chur ris le cunntas o ionstans sam bith a tha co-chòrdail ri ActivityPub (can retro3, Mastodon no Pleroma).</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+videos/+video-watch/shared/comment/video-comment-add.component.html</context><context context-type="linenumber">69</context></context-group>
       </trans-unit>
       <trans-unit id="2958389355547305739" datatype="html">
@@ -4913,8 +4913,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-instance-information.component.html</context><context context-type="linenumber">184</context></context-group>
       </trans-unit>
       <trans-unit id="8362291348781958428" datatype="html">
-        <source>How will you finance the PeerTube server?</source>
-        <target state="translated">Ciamar a phàigheas tu airson an fhrithealaiche PeerTube?</target>
+        <source>How will you finance the retro3 server?</source>
+        <target state="translated">Ciamar a phàigheas tu airson an fhrithealaiche retro3?</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-instance-information.component.html</context><context context-type="linenumber">193</context></context-group>
       </trans-unit>
       <trans-unit id="2441006645448216398" datatype="html">
@@ -5251,8 +5251,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">426</context></context-group>
       </trans-unit>
       <trans-unit id="1886227550697837417" datatype="html">
-        <source>You should only use moderated search indexes in production, or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://framagit.org/framasoft/peertube/search-index&quot;>"/>host your own<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
-        <target state="translated">Cha bu chòir dhut ach inneacsan luirg fo mhaorsainneachd a chleachdadh gu poblach no <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://framagit.org/framasoft/peertube/search-index&quot;>"/>inneacs agad fhèin òstadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
+        <source>You should only use moderated search indexes in production, or <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://framagit.org/framasoft/retro3/search-index&quot;>"/>host your own<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source>
+        <target state="translated">Cha bu chòir dhut ach inneacsan luirg fo mhaorsainneachd a chleachdadh gu poblach no <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://framagit.org/framasoft/retro3/search-index&quot;>"/>inneacs agad fhèin òstadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">428</context></context-group>
       </trans-unit>
       <trans-unit id="2331464426553277323" datatype="html">
@@ -5328,8 +5328,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">523</context></context-group>
       </trans-unit>
       <trans-unit id="9076632742417302918" datatype="html">
-        <source>See <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/admin-following-instances?id=automatically-follow-other-instances&quot; rel=&quot;noopener noreferer&quot; target=&quot;_blank&quot;>"/>the documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> for more information about the expected URL </source>
-        <target state="translated">Faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/admin-following-instances?id=automatically-follow-other-instances&quot; rel=&quot;noopener noreferer&quot; target=&quot;_blank&quot;>"/>an docamaideadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> airson barrachd fiosrachaidh mun URL ris a tha dùil </target>
+        <source>See <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/admin-following-instances?id=automatically-follow-other-instances&quot; rel=&quot;noopener noreferer&quot; target=&quot;_blank&quot;>"/>the documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> for more information about the expected URL </source>
+        <target state="translated">Faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/admin-following-instances?id=automatically-follow-other-instances&quot; rel=&quot;noopener noreferer&quot; target=&quot;_blank&quot;>"/>an docamaideadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> airson barrachd fiosrachaidh mun URL ris a tha dùil </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context><context context-type="linenumber">528</context></context-group>
       </trans-unit>
       <trans-unit id="3946988229617310200" datatype="html">
@@ -5376,8 +5376,8 @@ The link will expire within 1 hour.</source>
         </context-group>
       </trans-unit>
       <trans-unit id="8963664899094798549" datatype="html">
-        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;mb-2&quot;>"/> If your instance is explicitly allowed by Twitter/X, a video player will be embedded in the Twitter feed on PeerTube video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br />"/> If the instance is not, we use an image link card that will redirect to your PeerTube instance. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/><x id="START_PARAGRAPH_1" equiv-text="&lt;p>"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/w/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target='_blank' rel='noopener noreferrer' href='https://cards-dev.twitter.com/validator'>"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to see if you instance is allowed. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/></source>
-        <target state="new"><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;mb-2&quot;>"/> If your instance is explicitly allowed by Twitter/X, a video player will be embedded in the Twitter feed on PeerTube video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br />"/> If the instance is not, we use an image link card that will redirect to your PeerTube instance. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/><x id="START_PARAGRAPH_1" equiv-text="&lt;p>"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/w/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target='_blank' rel='noopener noreferrer' href='https://cards-dev.twitter.com/validator'>"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to see if you instance is allowed. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/></target>
+        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;mb-2&quot;>"/> If your instance is explicitly allowed by Twitter/X, a video player will be embedded in the Twitter feed on retro3 video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br />"/> If the instance is not, we use an image link card that will redirect to your retro3 instance. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/><x id="START_PARAGRAPH_1" equiv-text="&lt;p>"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/w/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target='_blank' rel='noopener noreferrer' href='https://cards-dev.twitter.com/validator'>"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to see if you instance is allowed. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/></source>
+        <target state="new"><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;mb-2&quot;>"/> If your instance is explicitly allowed by Twitter/X, a video player will be embedded in the Twitter feed on retro3 video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br />"/> If the instance is not, we use an image link card that will redirect to your retro3 instance. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/><x id="START_PARAGRAPH_1" equiv-text="&lt;p>"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/w/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target='_blank' rel='noopener noreferrer' href='https://cards-dev.twitter.com/validator'>"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> to see if you instance is allowed. <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-basic-configuration.component.html</context>
           <context context-type="linenumber">614,623</context>
@@ -5464,8 +5464,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-live-configuration.component.html</context><context context-type="linenumber">185</context></context-group>
       </trans-unit>
       <trans-unit id="8294583621306221742" datatype="html">
-        <source>new live transcoding profiles can be added by PeerTube plugins</source>
-        <target state="translated">’S urrainn do phlugain PeerTube pròifilean ùra a chur ris airson tar-chòdachadh shruthaidhean beòtha</target>
+        <source>new live transcoding profiles can be added by retro3 plugins</source>
+        <target state="translated">’S urrainn do phlugain retro3 pròifilean ùra a chur ris airson tar-chòdachadh shruthaidhean beòtha</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-live-configuration.component.html</context><context context-type="linenumber">186</context></context-group>
       </trans-unit>
       <trans-unit id="6727057461851446921" datatype="html">
@@ -5644,8 +5644,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">182</context></context-group>
       </trans-unit>
       <trans-unit id="1969393594784140832" datatype="html">
-        <source>allows to transcode multiple files in parallel. ⚠️ Requires a PeerTube restart</source>
-        <target state="translated">leigidh seo leat iomadh faidhle a thar-chòdachadh aig an aon àm. ⚠️ Bidh PeerTube feumach air ath-thòiseachadh</target>
+        <source>allows to transcode multiple files in parallel. ⚠️ Requires a retro3 restart</source>
+        <target state="translated">leigidh seo leat iomadh faidhle a thar-chòdachadh aig an aon àm. ⚠️ Bidh retro3 feumach air ath-thòiseachadh</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">183</context></context-group>
       </trans-unit>
       <trans-unit id="2184317712452071847" datatype="html">
@@ -5654,8 +5654,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">194</context></context-group>
       </trans-unit>
       <trans-unit id="6289966287765074028" datatype="html">
-        <source>new transcoding profiles can be added by PeerTube plugins</source>
-        <target state="translated">’S urrainn do phlugain PeerTube pròifilean ùra a chur ris airson tar-chòdachadh</target>
+        <source>new transcoding profiles can be added by retro3 plugins</source>
+        <target state="translated">’S urrainn do phlugain retro3 pròifilean ùra a chur ris airson tar-chòdachadh</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">195</context></context-group>
       </trans-unit>
       <trans-unit id="5843661880070076970" datatype="html">
@@ -5768,7 +5768,7 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-advanced-configuration.component.html</context><context context-type="linenumber">77</context></context-group>
       </trans-unit>
       <trans-unit id="1714039296068260295" datatype="html">
-        <source>Slight modifications to your PeerTube instance for when creating a plugin or theme is overkill.</source>
+        <source>Slight modifications to your retro3 instance for when creating a plugin or theme is overkill.</source>
         <target state="translated">Atharraichean beaga air an ionstans agad de PheerTube nan robh cruthachadh plugain no ùrlair caran cus.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-advanced-configuration.component.html</context><context context-type="linenumber">78</context></context-group>
       </trans-unit>
@@ -6600,8 +6600,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+my-library/my-video-playlists/my-video-playlist-elements.component.html</context><context context-type="linenumber">25</context></context-group>
       </trans-unit>
       <trans-unit id="2427149618141327033" datatype="html">
-        <source>Browse videos on PeerTube to add them in your playlist.</source>
-        <target state="translated">Rùraich videothan air PeerTube is cuir ris an liosta-chluich agad iad.</target>
+        <source>Browse videos on retro3 to add them in your playlist.</source>
+        <target state="translated">Rùraich videothan air retro3 is cuir ris an liosta-chluich agad iad.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+my-library/my-video-playlists/my-video-playlist-elements.component.html</context><context context-type="linenumber">27</context></context-group>
       </trans-unit>
       <trans-unit id="8901774330683812267" datatype="html">
@@ -6839,7 +6839,7 @@ The link will expire within 1 hour.</source>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit><trans-unit id="2448802938372065840" datatype="html">
-        <source> If you need help using PeerTube, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://docs.joinpeertube.org/use/setup-account&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source><target state="new"> If you need help using PeerTube, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://docs.joinpeertube.org/use/setup-account&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
+        <source> If you need help using retro3, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://docs.joinretro3.org/use/setup-account&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </source><target state="new"> If you need help using retro3, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; href=&quot;https://docs.joinretro3.org/use/setup-account&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+signup/shared/signup-success-after-email.component.html</context>
           <context context-type="linenumber">17,19</context>
@@ -6942,12 +6942,12 @@ The link will expire within 1 hour.</source>
       <trans-unit id="403587185492002456" datatype="html">
         <source>{VAR_PLURAL, plural, =1 {1 subscriber} other {<x id="INTERPOLATION"/> subscribers}}</source>
         <target state="translated">{VAR_PLURAL, plural, =1 {1 fho-sgrìobhaiche} one {<x id="INTERPOLATION"/> fho-sgrìobhaiche} two {<x id="INTERPOLATION"/> fho-sgrìobhaiche} few {<x id="INTERPOLATION"/> fo-sgrìobhaichean} other {<x id="INTERPOLATION"/> fo-sgrìobhaiche}}</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">13</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">13</context></context-group>
       </trans-unit>
       <trans-unit id="3068011377000255023" datatype="html">
         <source>{VAR_PLURAL, plural, =1 {1 videos} other {<x id="INTERPOLATION"/> videos}}</source>
         <target>{VAR_PLURAL, plural, =0 {Chan eil video ann} =1 {1 video} one {<x id="INTERPOLATION"/> video} two {<x id="INTERPOLATION"/> video} few {<x id="INTERPOLATION"/> videothan} other {<x id="INTERPOLATION"/> video}}</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">16</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">16</context></context-group>
       </trans-unit>
       <trans-unit id="8856905278208146821" datatype="html">
         <source><x id="ICU" equiv-text="{getTotalVideosOf(videoChannel), plural, =0 {No videos} =1 {1 video} other {{{ getTotalVideosOf(videoChannel) }} videos}}" xid="1730926218636655979"/> </source>
@@ -6956,7 +6956,7 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+accounts/accounts.component.html</context><context context-type="linenumber">38</context></context-group>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+my-library/+my-video-channels/my-video-channels.component.html</context><context context-type="linenumber">42</context></context-group>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+video-channels/video-channels.component.html</context><context context-type="linenumber">77</context></context-group>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">15</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">15</context></context-group>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-video/video-views-counter.component.html</context><context context-type="linenumber">2</context></context-group>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-video/video-views-counter.component.html</context><context context-type="linenumber">6</context></context-group>
       </trans-unit>
@@ -6990,8 +6990,8 @@ The link will expire within 1 hour.</source>
         <target state="translated">Seall an seanail video seo</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+accounts/account-video-channels/account-video-channels.component.html</context><context context-type="linenumber">15</context></context-group>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+accounts/account-video-channels/account-video-channels.component.html</context><context context-type="linenumber">20</context></context-group>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">4</context></context-group>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/peertube-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">7</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">4</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-custom-markup/retro3-custom-tags/channel-miniature-markup.component.html</context><context context-type="linenumber">7</context></context-group>
       </trans-unit>
       <trans-unit id="6591746065516872491" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {No subscribers} =1 {1 subscriber} other {<x id="INTERPOLATION"/> subscribers}}</source>
@@ -7023,8 +7023,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+video-channels/video-channel-playlists/video-channel-playlists.component.html</context><context context-type="linenumber">6</context></context-group>
       </trans-unit>
       <trans-unit id="5066829276646988805" datatype="html">
-        <source>PeerTube</source>
-        <target state="translated">PeerTube</target>
+        <source>retro3</source>
+        <target state="translated">retro3</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about.component.html</context><context context-type="linenumber">5</context></context-group>
       </trans-unit>
       <trans-unit id="1415060111017347427" datatype="html">
@@ -7161,159 +7161,159 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-instance/about-instance.component.html</context><context context-type="linenumber">220</context></context-group>
       </trans-unit>
       <trans-unit id="1161141363959659794" datatype="html">
-        <source>PeerTube is a self-hosted ActivityPub-federated video streaming platform using P2P directly in your web browser.</source>
-        <target state="translated">’S e ùrlar sruthaidh video a th’ ann am PeerTube as urrainn dhut fhèin òstadh ’s a tha co-naisgte le ActivityPub ’s a chleachdas P2P sa bhrabhsair-lìn fhèin.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">9</context></context-group>
+        <source>retro3 is a self-hosted ActivityPub-federated video and game streaming platform using P2P directly in your web browser.</source>
+        <target state="translated">’S e ùrlar sruthaidh video a th’ ann am retro3 as urrainn dhut fhèin òstadh ’s a tha co-naisgte le ActivityPub ’s a chleachdas P2P sa bhrabhsair-lìn fhèin.</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">9</context></context-group>
       </trans-unit>
       <trans-unit id="135286612733607700" datatype="html">
         <source>It is free and open-source software, under <x id="START_LINK"/>AGPLv3 licence<x id="CLOSE_LINK"/>. </source>
         <target state="translated">’S e bathar-bog saor le bun-tùs fosgailte fo <x id="START_LINK"/>cheadachas AGPLv3<x id="CLOSE_LINK"/> a th’ ann. </target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">13</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">13</context></context-group>
       </trans-unit>
       <trans-unit id="7257048945916143687" datatype="html">
-        <source>For more information, please visit <x id="START_LINK"/>joinpeertube.org<x id="CLOSE_LINK"/>. </source>
-        <target state="translated">Airson barrachd fiosrachaidh, tadhail air <x id="START_LINK"/>joinpeertube.org<x id="CLOSE_LINK"/>. </target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">18</context></context-group>
+        <source>For more information, please visit <x id="START_LINK"/>joinretro3.org<x id="CLOSE_LINK"/>. </source>
+        <target state="translated">Airson barrachd fiosrachaidh, tadhail air <x id="START_LINK"/>joinretro3.org<x id="CLOSE_LINK"/>. </target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">18</context></context-group>
       </trans-unit>
       <trans-unit id="8205344394429673413" datatype="html">
-        <source>Use PeerTube documentation</source>
-        <target state="translated">Docamaideadh PeerTube dhan luchd-chleachdaich</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">28</context></context-group>
+        <source>Use retro3 documentation</source>
+        <target state="translated">Docamaideadh retro3 dhan luchd-chleachdaich</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">28</context></context-group>
       </trans-unit>
       <trans-unit id="8674693181203168033" datatype="html">
         <source>Discover how to setup your account, what is a channel, how to create a playlist and more!</source>
         <target state="translated">Faigh a-mach mar a chruthaicheas tu cunntas, dè th’ ann an sianail, mar a chruthaicheas tu liosta-chluich is mòran a bharrachd!</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">31</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">31</context></context-group>
       </trans-unit>
       <trans-unit id="5336387229608682776" datatype="html">
-        <source>PeerTube Applications</source>
-        <target state="translated">Aplacaidean PeerTube</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">40</context></context-group>
+        <source>retro3 Applications</source>
+        <target state="translated">Aplacaidean retro3</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">40</context></context-group>
       </trans-unit>
       <trans-unit id="7916664392219781729" datatype="html">
         <source>Discover unofficial Android applications or browser addons!</source>
         <target state="translated">Lorg aplacaidean Android neo-oifigeil no tuilleadain brabhsair!</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">43</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">43</context></context-group>
       </trans-unit>
       <trans-unit id="4093735071527927163" datatype="html">
-        <source>Contribute on PeerTube</source>
-        <target state="translated">Cuidich le leasachadh PeerTube</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">52</context></context-group>
+        <source>Contribute on retro3</source>
+        <target state="translated">Cuidich le leasachadh retro3</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">52</context></context-group>
       </trans-unit>
       <trans-unit id="6886584917624458638" datatype="html">
-        <source>Want to help to improve PeerTube? You can translate the web interface, give your feedback or directly contribute to the code!</source>
-        <target state="translated">A bheil thu airson cuideachadh gus piseach a thoirt air PeerTube? ’S urrainn dhut an eadar-aghaidh-lìn eadar-theangachadh, do bheachdan a chur thugainn no cuir ris a’ chòd gu dìreach!</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">55</context></context-group>
+        <source>Want to help to improve retro3? You can translate the web interface, give your feedback or directly contribute to the code!</source>
+        <target state="translated">A bheil thu airson cuideachadh gus piseach a thoirt air retro3? ’S urrainn dhut an eadar-aghaidh-lìn eadar-theangachadh, do bheachdan a chur thugainn no cuir ris a’ chòd gu dìreach!</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">55</context></context-group>
       </trans-unit>
       <trans-unit id="185970110822844952" datatype="html">
         <source>P2P &amp; Privacy</source>
         <target state="translated">P2P ⁊ prìobhaideachd</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">65</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">65</context></context-group>
       </trans-unit>
       <trans-unit id="442017645619017020" datatype="html">
-        <source>PeerTube uses the BitTorrent protocol to share bandwidth between users by default to help lower the load on the server, but ultimately leaves you the choice to switch back to regular streaming exclusively from the server of the video. What follows applies only if you want to keep using the P2P mode of PeerTube.</source>
-        <target state="translated">Cleachdaidh PeerTube pròtacal BitTorrent airson leud-banna a cho-roinneadh am measg an luchd-chleachdaidh feuch an ìslich sinn an t-eallach air an fhrithealaiche ach tha e suas riut fhèin am b’ fheàrr leat tilleadh dhan t-sruthadh àbhaisteach a thig o fhrithealaiche a’ video a-mhàin. Cha bhi na leanas an sàs ach ma tha thu airson cumail a’ dol le cleachdadh PeerTube sa mhodh P2P.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">68</context></context-group>
+        <source>retro3 uses the BitTorrent protocol to share bandwidth between users by default to help lower the load on the server, but ultimately leaves you the choice to switch back to regular streaming exclusively from the server of the video. What follows applies only if you want to keep using the P2P mode of retro3.</source>
+        <target state="translated">Cleachdaidh retro3 pròtacal BitTorrent airson leud-banna a cho-roinneadh am measg an luchd-chleachdaidh feuch an ìslich sinn an t-eallach air an fhrithealaiche ach tha e suas riut fhèin am b’ fheàrr leat tilleadh dhan t-sruthadh àbhaisteach a thig o fhrithealaiche a’ video a-mhàin. Cha bhi na leanas an sàs ach ma tha thu airson cumail a’ dol le cleachdadh retro3 sa mhodh P2P.</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">68</context></context-group>
       </trans-unit>
       <trans-unit id="6314880288843792309" datatype="html">
         <source>The main threat to your privacy induced by BitTorrent lies in your IP address being stored in the instance's BitTorrent tracker as long as you download or watch the video.</source>
         <target state="translated">’S e am prìomh-chunnart air do phrìobhaideachd a dh’adhbharaicheas BitTorrent gun dèid an seòladh IP agad a stòradh air tracair BitTorrent an ionstans fhad ’s a bhios tu a’ luchdadh a-nuas no a’ coimhead air a’ video.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">74</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">74</context></context-group>
       </trans-unit>
       <trans-unit id="6868048887248005916" datatype="html">
         <source>What are the consequences?</source>
         <target state="translated">Dè a’ bhuaidh?</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">79</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">79</context></context-group>
       </trans-unit>
       <trans-unit id="1411398404280870617" datatype="html">
         <source>In theory, someone with enough technical skills could create a script that tracks which IP is downloading which video. In practice, this is much more difficult because:</source>
         <target state="translated">A-rèir teòirige, b’ urrainn do chuideigin le deagh sgilean teicnigeach sgriobt a chruthachadh a thracaicheas dè an IP a tha a’ luchdadh a-nuas video sònraichte.Gu prataigeach, bhiodh sin glè dhoirbh air na h-adhbharan seo:</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">81</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">81</context></context-group>
       </trans-unit>
       <trans-unit id="6870500454322981404" datatype="html">
-        <source>An HTTP request has to be sent on each tracker for each video to spy. If we want to spy all PeerTube's videos, we have to send as many requests as there are videos (so potentially a lot)</source>
-        <target state="translated">Dh’fheumte iarrtas HTTP a chur gu gach tracaiche airson gach video fa leth airson sùil a thoirt air.Ma bhiodhte airson brathadh air a h-uile video PeerTube, bhiodh feum air an dearbh uiread de dh’iarrtasan ’s a tha de videothan ann (agus seo mòran diubh)</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">87</context></context-group>
+        <source>An HTTP request has to be sent on each tracker for each video to spy. If we want to spy all retro3's videos, we have to send as many requests as there are videos (so potentially a lot)</source>
+        <target state="translated">Dh’fheumte iarrtas HTTP a chur gu gach tracaiche airson gach video fa leth airson sùil a thoirt air.Ma bhiodhte airson brathadh air a h-uile video retro3, bhiodh feum air an dearbh uiread de dh’iarrtasan ’s a tha de videothan ann (agus seo mòran diubh)</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">87</context></context-group>
       </trans-unit>
       <trans-unit id="4042605201005159699" datatype="html">
         <source>For each request sent, the tracker returns random peers at a limited number. For instance, if there are 1000 peers in the swarm and the tracker sends only 20 peers for each request, there must be at least 50 requests sent to know every peer in the swarm</source>
         <target state="translated">Airson gach iarrtas a thèid a chur, tillidh an tracair uiread cuingichte de sheisean air thuaiream.Mar eisimpleir, ma tha 1000 seise san sgaoth agus an tracair a’ tilleadh fiosrachadh mu 20 seise air gach iarrtas, feumaidh an tracair 50 iarrtas a chur airson eòlas fhaighinn air gach seise san sgaoth</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">92</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">92</context></context-group>
       </trans-unit>
       <trans-unit id="8817667841110447397" datatype="html">
         <source>Those requests have to be sent regularly to know who starts/stops watching a video. It is easy to detect that kind of behaviour</source>
         <target state="translated">Feumar na h-iarrtasan seo a chur gu cunbhalach airson faighinn a-mach cò bhios a’ tòiseachadh a choimhead air video no a’ sgur dheth. Tha e furasta giùlan dhen leithid aithneachadh</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">98</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">98</context></context-group>
       </trans-unit>
       <trans-unit id="4100327951517495019" datatype="html">
         <source>If an IP address is stored in the tracker, it doesn't mean that the person behind the IP (if this person exists) has watched the video</source>
         <target state="translated">Nuair a tha seòladh IP air a stòradh san tracair, cha chiall dha sin gu bheil an neach air cùlaibh an IP (ma tha an neach sin ann) air coimhead air a’ video</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">102</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">102</context></context-group>
       </trans-unit>
       <trans-unit id="7196664247366401915" datatype="html">
         <source>The IP address is a vague information: usually, it regularly changes and can represent many persons or entities</source>
         <target state="translated">Chan eil ach fiosrachadh neo-phongail a th’ ann an seòladh IP: mar as trice, atharraichidh e gu cunbhalach agus faodaidh e iomadh neach no eintiteas a riochdachadh</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">107</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">107</context></context-group>
       </trans-unit>
       <trans-unit id="1120376809358109718" datatype="html">
         <source>Web peers are not publicly accessible: because we use the websocket transport, the protocol is different from classic BitTorrent tracker. When you are in a web browser, you send a signal containing your IP address to the tracker that will randomly choose other peers to forward the information to. See <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/yciabaud/webtorrent/blob/beps/bep_webrtc.rst&quot;>"/>this document<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> for more information </source>
         <target state="translated">Chan eil inntrigeadh poblach dha na seisean-lìn ann: air sgàth ’s gun cleachd sinn còmhdhail socaid-lìn, tha am pròtacal diofraichte o thracaiche BitTorrent clasaigeach. Nuair a bhios tu ann am brabhsair-lìn, cuiridh tu siognail leis an seòladh IP agad dhan tracair a thaghas seisean eile air thuaiream a thèid am fiosrachadh a shìneadh air adhart thuca. Faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/yciabaud/webtorrent/blob/beps/bep_webrtc.rst&quot;>"/>an sgrìobhainn seo<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a> "/> airson barrachd fiosrachaidh </target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">111</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">111</context></context-group>
       </trans-unit>
       <trans-unit id="7812408733559506009" datatype="html">
         <source>The worst-case scenario of an average person spying on their friends is quite unlikely. There are much more effective ways to get that kind of information.</source>
         <target state="translated">B’ e a’ chùis as miosa gun dèanadh neach àbhaisteach brathadh air na caraidean aca ach tha sin glà eucoltach.Tha dòighean mòran nas èifeachdaiche ann airson fiosrachadh dhen leithid fhaighinn.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">119</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">119</context></context-group>
       </trans-unit>
       <trans-unit id="8484650229450883706" datatype="html">
-        <source>How does PeerTube compare with YouTube?</source>
-        <target state="translated">Dè cho math ’s a tha PeerTube an coimeas ri YouTube?</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">124</context></context-group>
+        <source>How does retro3 compare with YouTube?</source>
+        <target state="translated">Dè cho math ’s a tha retro3 an coimeas ri YouTube?</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">124</context></context-group>
       </trans-unit>
       <trans-unit id="6213340208914097303" datatype="html">
-        <source>The threats to privacy with YouTube are different from PeerTube's. In YouTube's case, the platform gathers a huge amount of your personal information (not only your IP) to analyze them and track you. Moreover, YouTube is owned by Google/Alphabet, a company that tracks you across many websites (via AdSense or Google Analytics).</source>
+        <source>The threats to privacy with YouTube are different from retro3's. In YouTube's case, the platform gathers a huge amount of your personal information (not only your IP) to analyze them and track you. Moreover, YouTube is owned by Google/Alphabet, a company that tracks you across many websites (via AdSense or Google Analytics).</source>
         <target state="translated">Tha bagairtean air do phrìobhaideachd le YouTube diofraichte on fheadhainn a thig o PheerTube.Nuair a chleachdas tu YouTube, cruinnichidh an t-ùrlar sin uiread mòr dhen fhiosrachadh phearsanta agad (is chan ann an seòladh IP agad a-mhàin) airson a sgrùdadh agus do thracadh.A bharrachd air sin, ’s ann le Google/Alphabet a th’ ann an YouTube agus seo companaidh a nì tracadh ort thar iomadh làrach-lìn (le AdSense no Google Analytics).</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">126</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">126</context></context-group>
       </trans-unit>
       <trans-unit id="2676074687792256808" datatype="html">
         <source>What can I do to limit the exposure of my IP address?</source>
         <target state="translated">Dè as urrainn dhomh dèanamh airson nochdadh an t-seòlaidh IP agam a chuingeachadh?</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">132</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">132</context></context-group>
       </trans-unit>
       <trans-unit id="8804946818315976118" datatype="html">
-        <source>Your IP address is public so every time you consult a website, there is a number of actors (in addition to the final website) seeing your IP in their connection logs: ISP/routers/trackers/CDN and more. PeerTube is transparent about it: we warn you that if you want to keep your IP private, you must use a VPN or Tor Browser. Thinking that removing P2P from PeerTube will give you back anonymity doesn't make sense.</source>
-        <target state="translated">Tha an seòladh IP agad poblach is mar sin gach turas a chuireas tu ceist gu làrach-lìn, bidh actairean ann (a bharrachd air an làrach-lìn dheireannach) a chì an IP agad ann an logaichean nan ceanglaichean aca: ISP/rùtairean/tracairean/CDN is a bharrachd. Tha PeerTube soilleir mu dhèidhinn: bheir sinn rabhadh ort gum feum thu VPN no brabhsair Tor a chleachdadh ma tha thu airson an IP agad a chumail prìobhaideach.Chan eil e gu ciall gun saoileadh tu gum faigheadh tu do neo-ainmeachd air ais nan doireadh tu P2P air falbh o PheerTube.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">134</context></context-group>
+        <source>Your IP address is public so every time you consult a website, there is a number of actors (in addition to the final website) seeing your IP in their connection logs: ISP/routers/trackers/CDN and more. retro3 is transparent about it: we warn you that if you want to keep your IP private, you must use a VPN or Tor Browser. Thinking that removing P2P from retro3 will give you back anonymity doesn't make sense.</source>
+        <target state="translated">Tha an seòladh IP agad poblach is mar sin gach turas a chuireas tu ceist gu làrach-lìn, bidh actairean ann (a bharrachd air an làrach-lìn dheireannach) a chì an IP agad ann an logaichean nan ceanglaichean aca: ISP/rùtairean/tracairean/CDN is a bharrachd. Tha retro3 soilleir mu dhèidhinn: bheir sinn rabhadh ort gum feum thu VPN no brabhsair Tor a chleachdadh ma tha thu airson an IP agad a chumail prìobhaideach.Chan eil e gu ciall gun saoileadh tu gum faigheadh tu do neo-ainmeachd air ais nan doireadh tu P2P air falbh o PheerTube.</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">134</context></context-group>
       </trans-unit>
       <trans-unit id="401806741040118292" datatype="html">
         <source>What will be done to mitigate this problem?</source>
         <target state="translated">Dè nì sibh airson an duilgheadas a lùghdachadh?</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">141</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">141</context></context-group>
       </trans-unit>
       <trans-unit id="7404776804526394585" datatype="html">
-        <source>PeerTube wants to deliver the best countermeasures possible, to give you more choice and render attacks less likely. Here is what we put in place so far:</source>
-        <target state="translated">Tha PeerTube airson an dìon as fheàrr a lìbhrigeadh ach am bi barrachd roghainnean agad agus cunnart nas lugha a thaobh ionnsaighean ann. Seo na rinn sinn gu ruige seo:</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">143</context></context-group>
+        <source>retro3 wants to deliver the best countermeasures possible, to give you more choice and render attacks less likely. Here is what we put in place so far:</source>
+        <target state="translated">Tha retro3 airson an dìon as fheàrr a lìbhrigeadh ach am bi barrachd roghainnean agad agus cunnart nas lugha a thaobh ionnsaighean ann. Seo na rinn sinn gu ruige seo:</target>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">143</context></context-group>
       </trans-unit>
       <trans-unit id="8635362984201852982" datatype="html">
         <source>We set a limit to the number of peers sent by the tracker</source>
         <target state="translated">Chuingich sinn an t-uiread de sheisean a thèid a chur leis an tracair</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">149</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">149</context></context-group>
       </trans-unit>
       <trans-unit id="8903417899533541365" datatype="html">
         <source>We set a limit on the request frequency received by the tracker</source>
         <target state="translated">Chuingich sinn dè cho tric ’s a gheibh an tracair iarrtasan</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">150</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">150</context></context-group>
       </trans-unit>
       <trans-unit id="2470460396724373169" datatype="html">
         <source>Allow instance admins to disable P2P from the administration interface</source>
         <target state="translated">Leigidh sinn le rianairean ionstans gun cuir iad P2P à comas o eadar-aghaidh na rianachd</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">151</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">151</context></context-group>
       </trans-unit>
       <trans-unit id="5991790391344625653" datatype="html">
         <source>Ultimately, remember you can always disable P2P by toggling it in the video player, or just by disabling WebRTC in your browser.</source>
         <target state="translated">Air deireadh na sgeòil, cuimhnich gur urrainn dhut P2P a chur dheth am broinn cluicheadair nam videothan ’s gur urrainn dhut WebRTC a chur à comas sa bhrabhsair agad.</target>
-        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context><context context-type="linenumber">154</context></context-group>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context><context context-type="linenumber">154</context></context-group>
       </trans-unit>
       <trans-unit id="8438752523256358076" datatype="html">
         <source>Show full list</source>
@@ -7343,7 +7343,7 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-routing.module.ts</context><context context-type="linenumber">24</context></context-group>
       </trans-unit>
       <trans-unit id="8773846522957677259" datatype="html">
-        <source>About PeerTube</source>
+        <source>About retro3</source>
         <target state="translated">Mu PheerTube</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-routing.module.ts</context><context context-type="linenumber">49</context></context-group>
       </trans-unit>
@@ -7408,8 +7408,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+signup/+register/register.component.html</context><context context-type="linenumber">109</context></context-group>
       </trans-unit>
       <trans-unit id="220345070199640496" datatype="html">
-        <source>PeerTube is creating your account...</source>
-        <target state="translated">Tha PeerTube a’ cruthachadh a’ chunntais agad…</target>
+        <source>retro3 is creating your account...</source>
+        <target state="translated">Tha retro3 a’ cruthachadh a’ chunntais agad…</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+signup/+register/register.component.html</context><context context-type="linenumber">114</context></context-group>
       </trans-unit>
       <trans-unit id="7119544246688514254" datatype="html">
@@ -7612,10 +7612,10 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+about/about-instance/contact-admin-modal.component.ts</context><context context-type="linenumber">94</context></context-group>
       </trans-unit>
       <trans-unit id="1097932116708163073" datatype="html">
-        <source>This website is powered by PeerTube</source>
-        <target>Tha an làrach-lìn seo ’ga toirt dhut le cumhachd PeerTube</target>
+        <source>This website is powered by retro3</source>
+        <target>Tha an làrach-lìn seo ’ga toirt dhut le cumhachd retro3</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">2,4</context>
         </context-group>
       </trans-unit>
@@ -7820,20 +7820,20 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.ts</context><context context-type="linenumber">49</context></context-group>
       </trans-unit>
       <trans-unit id="1473738049081128420" datatype="html">
-        <source>Estimating a server's capacity to transcode and stream videos isn't easy and we can't tune PeerTube automatically.</source>
-        <target state="translated">Chan eil e furasta tuairmse dè an comas tar-chòdachaidh is sruthaidh a tha aig frithealaiche agus chan urrainn dhuinn PeerTube a ghleusadh gu fèin-obrachail.</target>
+        <source>Estimating a server's capacity to transcode and stream videos isn't easy and we can't tune retro3 automatically.</source>
+        <target state="translated">Chan eil e furasta tuairmse dè an comas tar-chòdachaidh is sruthaidh a tha aig frithealaiche agus chan urrainn dhuinn retro3 a ghleusadh gu fèin-obrachail.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">8</context></context-group>
       </trans-unit>
       <trans-unit id="8538708819525283296" datatype="html">
-        <source>However, you may want to read <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.joinpeertube.org/admin-configuration?id=transcoding&quot;>"/>our guidelines<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> before tweaking the following values. </source>
-        <target state="translated">Gidheadh, mholamaid gun leug thu <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.joinpeertube.org/admin-configuration?id=transcoding&quot;>"/>na comharra-treòrachaidh againn<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> mus atharraich thu na luachan seo. </target>
+        <source>However, you may want to read <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.joinretro3.org/admin-configuration?id=transcoding&quot;>"/>our guidelines<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> before tweaking the following values. </source>
+        <target state="translated">Gidheadh, mholamaid gun leug thu <x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;link-orange&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://docs.joinretro3.org/admin-configuration?id=transcoding&quot;>"/>na comharra-treòrachaidh againn<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> mus atharraich thu na luachan seo. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context>
           <context context-type="linenumber">12,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2384409178337534505" datatype="html">
-        <source>Process uploaded videos so that they are in a streamable form that any device can play. Though costly in resources, this is a critical part of PeerTube, so tread carefully.</source>
+        <source>Process uploaded videos so that they are in a streamable form that any device can play. Though costly in resources, this is a critical part of retro3, so tread carefully.</source>
         <target state="translated">Dèan pròiseasadh air videothan air an luchdadh suas ach am bi cruth orra a ghabhas sruthadh ’s a chluich air uidheam sam bith. Ged a chosgas seo cnap mhòr dhe na goireasan, seo pàirt riatanach de PheerTube, mar sin bi faiceallach.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-vod-transcoding.component.html</context><context context-type="linenumber">22</context></context-group>
       </trans-unit>
@@ -8484,8 +8484,8 @@ The link will expire within 1 hour.</source>
         </context-group>
       </trans-unit>
       <trans-unit id="7223931053738621590" datatype="html">
-        <source>PeerTube thinks your web browser public IP is <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{ debug?.ip }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>.</source>
-        <target state="translated">Tha PeerTube dhen bheachd gur e <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{ debug?.ip }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> a th’ ann an seòladh IP poblach a’ bhrabhsair agad.</target>
+        <source>retro3 thinks your web browser public IP is <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{ debug?.ip }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>.</source>
+        <target state="translated">Tha retro3 dhen bheachd gur e <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/><x id="INTERPOLATION" equiv-text="{{ debug?.ip }}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> a th’ ann an seòladh IP poblach a’ bhrabhsair agad.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/system/debug/debug.component.html</context>
           <context context-type="linenumber">4</context>
@@ -8540,8 +8540,8 @@ The link will expire within 1 hour.</source>
         </context-group>
       </trans-unit>
       <trans-unit id="7014275542536964627" datatype="html">
-        <source>If you run PeerTube using Docker, check you run the <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>reverse-proxy<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>network_mode: "host"<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> (see <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/Chocobozzz/PeerTube/issues/1643#issuecomment-464789666&quot;>"/>issue 1643<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>)</source>
-        <target state="translated">Ma tha thu a’ ruith PeerTube le Docker, dearbh gun ruith thu an <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>reverse-proxy<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> le <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>network_mode: "host"<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> (faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/Chocobozzz/PeerTube/issues/1643#issuecomment-464789666&quot;>"/>buga 1643<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>)</target>
+        <source>If you run retro3 using Docker, check you run the <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>reverse-proxy<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>network_mode: "host"<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> (see <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/Chocobozzz/retro3/issues/1643#issuecomment-464789666&quot;>"/>issue 1643<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>)</source>
+        <target state="translated">Ma tha thu a’ ruith retro3 le Docker, dearbh gun ruith thu an <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>reverse-proxy<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> le <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>network_mode: "host"<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> (faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/Chocobozzz/retro3/issues/1643#issuecomment-464789666&quot;>"/>buga 1643<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/system/debug/debug.component.html</context>
           <context context-type="linenumber">16,17</context>
@@ -8811,8 +8811,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/moderation/registration-list/process-registration-modal.component.html</context><context context-type="linenumber">26</context></context-group>
       </trans-unit>
       <trans-unit id="6252848909934071768" datatype="html">
-        <source>Emails are not enabled on this instance so PeerTube won't be able to send an email to <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> explaining its account has been created. </source>
-        <target state="translated">Chan eil puist-d an comas air an ionstans seo is mar sin dheth chan urrainn dha PeerTube post-d a chur gu <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> a mhìnicheas gun deach an cunntas aca a chruthachadh. </target>
+        <source>Emails are not enabled on this instance so retro3 won't be able to send an email to <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> explaining its account has been created. </source>
+        <target state="translated">Chan eil puist-d an comas air an ionstans seo is mar sin dheth chan urrainn dha retro3 post-d a chur gu <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> a mhìnicheas gun deach an cunntas aca a chruthachadh. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/moderation/registration-list/process-registration-modal.component.html</context><context context-type="linenumber">30</context></context-group>
       </trans-unit>
       <trans-unit id="908816482785584930" datatype="html">
@@ -8821,8 +8821,8 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/moderation/registration-list/process-registration-modal.component.html</context><context context-type="linenumber">36</context></context-group>
       </trans-unit>
       <trans-unit id="2693506849974732500" datatype="html">
-        <source>Emails are not enabled on this instance so PeerTube won't be able to send an email to <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> explaining its registration request has been rejected. </source>
-        <target state="translated">Chan eil puist-d an comas air an ionstans seo is mar sin dheth chan urrainn dha PeerTube post-d a chur gu <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> a mhìnicheas gun deach an t-iarrtas aca air clàradh a dhiùltadh. </target>
+        <source>Emails are not enabled on this instance so retro3 won't be able to send an email to <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> explaining its registration request has been rejected. </source>
+        <target state="translated">Chan eil puist-d an comas air an ionstans seo is mar sin dheth chan urrainn dha retro3 post-d a chur gu <x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em>"/><x id="INTERPOLATION" equiv-text="{{ registration.email }}"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em>"/> a mhìnicheas gun deach an t-iarrtas aca air clàradh a dhiùltadh. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+admin/moderation/registration-list/process-registration-modal.component.html</context><context context-type="linenumber">40</context></context-group>
       </trans-unit>
       <trans-unit id="8494092276635837685" datatype="html">
@@ -9278,7 +9278,7 @@ The link will expire within 1 hour.</source>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+my-account/my-account-settings/my-account-notification-preferences/my-account-notification-preferences.component.ts</context><context context-type="linenumber">46</context></context-group>
       </trans-unit>
       <trans-unit id="2764971902180889905" datatype="html">
-        <source>A new PeerTube version is available</source>
+        <source>A new retro3 version is available</source>
         <target state="translated">Tha tionndadh ùr de PheerTube ri fhaighinn</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+my-account/my-account-settings/my-account-notification-preferences/my-account-notification-preferences.component.ts</context><context context-type="linenumber">47</context></context-group>
       </trans-unit>
@@ -9934,8 +9934,8 @@ The link will expire within 1 hour.</source>
       </trans-unit>
       <trans-unit id="2013324644839511073" datatype="html">
         <source>Cannot retrieve OAuth Client credentials: <x id="PH" equiv-text="err.message"/>.
-Ensure you have correctly configured PeerTube (config/ directory), in particular the "webserver" section.</source>
-        <target state="translated">Cha b’ urrainn dhuinn an teisteas cliant OAuth fhaighinn: <x id="PH" equiv-text="error.text"/>. Dèan cinnteach gun do rèitich thu PeerTube mar bu chòir (sa phasgan config/) ’s gu sònraichte an earrann "webserver".</target>
+Ensure you have correctly configured retro3 (config/ directory), in particular the "webserver" section.</source>
+        <target state="translated">Cha b’ urrainn dhuinn an teisteas cliant OAuth fhaighinn: <x id="PH" equiv-text="error.text"/>. Dèan cinnteach gun do rèitich thu retro3 mar bu chòir (sa phasgan config/) ’s gu sònraichte an earrann "webserver".</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/core/auth/auth.service.ts</context><context context-type="linenumber">104</context></context-group>
       </trans-unit>
       <trans-unit id="375263728166936544" datatype="html">
@@ -10153,8 +10153,8 @@ Ensure you have correctly configured PeerTube (config/ directory), in particular
         <context-group purpose="location"><context context-type="sourcefile">src/app/+search/search.component.ts</context><context context-type="linenumber">257</context></context-group>
       </trans-unit>
       <trans-unit id="8491751845906232809" datatype="html">
-        <source>PeerTube instance host filter is invalid</source>
-        <target state="translated">Tha criathrag òstair ionstans PeerTube mì-dhligheach</target>
+        <source>retro3 instance host filter is invalid</source>
+        <target state="translated">Tha criathrag òstair ionstans retro3 mì-dhligheach</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/+search/search.component.ts</context><context context-type="linenumber">332</context></context-group>
       </trans-unit>
       <trans-unit id="4580988005648117665" datatype="html">
@@ -10909,8 +10909,8 @@ Ensure you have correctly configured PeerTube (config/ directory), in particular
         </context-group>
       </trans-unit>
       <trans-unit id="5637879201055173642" datatype="html">
-        <source>See <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/#/use-create-upload-video?id=publish-a-live-in-peertube-gt-v3&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>the documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>   "/> to learn how to use the PeerTube live streaming feature. </source>
-        <target state="translated">Faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinpeertube.org/#/use-create-upload-video?id=publish-a-live-in-peertube-gt-v3&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>an docamaideadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>   "/> air mar a chleachdas tu gleus nan sruthan beòtha air PeerTube. </target>
+        <source>See <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/#/use-create-upload-video?id=publish-a-live-in-retro3-gt-v3&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>the documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>   "/> to learn how to use the retro3 live streaming feature. </source>
+        <target state="translated">Faic <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.joinretro3.org/#/use-create-upload-video?id=publish-a-live-in-retro3-gt-v3&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>"/>an docamaideadh<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>   "/> air mar a chleachdas tu gleus nan sruthan beòtha air retro3. </target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-video-live/live-documentation-link.component.html</context><context context-type="linenumber">1</context></context-group>
       </trans-unit>
       <trans-unit id="4267638333776227701" datatype="html">
@@ -11125,8 +11125,8 @@ Ensure you have correctly configured PeerTube (config/ directory), in particular
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-forms/reactive-file.component.ts</context><context context-type="linenumber">70</context></context-group>
       </trans-unit>
       <trans-unit id="5604677701754367707" datatype="html">
-        <source>PeerTube cannot handle this kind of file. Accepted extensions are <x id="PH" equiv-text="this.allowedExtensionsMessage"/>.</source>
-        <target state="translated">Chan urrainn dha PeerTube faidhle dhen t-seòrsa seo a làimhseachadh. Seo na leudachain ris a bheil taic: <x id="PH" equiv-text="this.allowedExtensionsMessage"/>.</target>
+        <source>retro3 cannot handle this kind of file. Accepted extensions are <x id="PH" equiv-text="this.allowedExtensionsMessage"/>.</source>
+        <target state="translated">Chan urrainn dha retro3 faidhle dhen t-seòrsa seo a làimhseachadh. Seo na leudachain ris a bheil taic: <x id="PH" equiv-text="this.allowedExtensionsMessage"/>.</target>
         <context-group purpose="location"><context context-type="sourcefile">src/app/shared/shared-forms/reactive-file.component.ts</context><context context-type="linenumber">76</context></context-group>
       </trans-unit>
       <trans-unit id="3393133458004181121" datatype="html">

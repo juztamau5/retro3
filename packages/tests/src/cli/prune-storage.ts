@@ -4,9 +4,9 @@ import { expect } from 'chai'
 import { createFile } from 'fs-extra/esm'
 import { readdir } from 'fs/promises'
 import { join } from 'path'
-import { wait } from '@peertube/peertube-core-utils'
-import { buildUUID } from '@peertube/peertube-node-utils'
-import { HttpStatusCode, VideoPlaylistPrivacy, VideoPrivacy } from '@peertube/peertube-models'
+import { wait } from '@retroai/retro3-core-utils'
+import { buildUUID } from '@retroai/retro3-node-utils'
+import { HttpStatusCode, VideoPlaylistPrivacy, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   CLICommand,
@@ -14,13 +14,13 @@ import {
   doubleFollow,
   killallServers,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
-async function assertNotExists (server: PeerTubeServer, directory: string, substring: string) {
+async function assertNotExists (server: Retro3Server, directory: string, substring: string) {
   const files = await readdir(server.servers.buildDirectory(directory))
 
   for (const f of files) {
@@ -28,7 +28,7 @@ async function assertNotExists (server: PeerTubeServer, directory: string, subst
   }
 }
 
-async function assertCountAreOkay (servers: PeerTubeServer[]) {
+async function assertCountAreOkay (servers: Retro3Server[]) {
   for (const server of servers) {
     const videosCount = await server.servers.countFiles('web-videos')
     expect(videosCount).to.equal(9) // 2 videos with 4 resolutions + private directory
@@ -57,7 +57,7 @@ async function assertCountAreOkay (servers: PeerTubeServer[]) {
 }
 
 describe('Test prune storage scripts', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   const badNames: { [directory: string]: string[] } = {}
 
   before(async function () {

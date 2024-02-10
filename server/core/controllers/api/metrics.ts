@@ -1,7 +1,7 @@
 import express from 'express'
 import { CONFIG } from '@server/initializers/config.js'
 import { OpenTelemetryMetrics } from '@server/lib/opentelemetry/metrics.js'
-import { HttpStatusCode, PlaybackMetricCreate } from '@peertube/peertube-models'
+import { HttpStatusCode, PlaybackMetricCreate } from '@retroai/retro3-models'
 import { addPlaybackMetricValidator, apiRateLimiter, asyncMiddleware } from '../../middlewares/index.js'
 
 const metricsRouter = express.Router()

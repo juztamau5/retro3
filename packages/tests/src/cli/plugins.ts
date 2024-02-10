@@ -5,13 +5,13 @@ import {
   cleanupTests,
   createSingleServer,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   PluginsCommand,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test plugin scripts', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
 
   before(async function () {
     this.timeout(30000)
@@ -31,10 +31,10 @@ describe('Test plugin scripts', function () {
   it('Should install a theme from stateless CLI', async function () {
     this.timeout(60000)
 
-    await server.cli.execWithEnv(`npm run plugin:install -- --npm-name peertube-theme-background-red`)
+    await server.cli.execWithEnv(`npm run plugin:install -- --npm-name retro3-theme-background-red`)
   })
 
-  it('Should have the theme and the plugin registered when we restart peertube', async function () {
+  it('Should have the theme and the plugin registered when we restart retro3', async function () {
     this.timeout(30000)
 
     await killallServers([ server ])
@@ -54,10 +54,10 @@ describe('Test plugin scripts', function () {
   it('Should uninstall a plugin from stateless CLI', async function () {
     this.timeout(60000)
 
-    await server.cli.execWithEnv(`npm run plugin:uninstall -- --npm-name peertube-plugin-test`)
+    await server.cli.execWithEnv(`npm run plugin:uninstall -- --npm-name retro3-plugin-test`)
   })
 
-  it('Should have removed the plugin on another peertube restart', async function () {
+  it('Should have removed the plugin on another retro3 restart', async function () {
     this.timeout(30000)
 
     await killallServers([ server ])

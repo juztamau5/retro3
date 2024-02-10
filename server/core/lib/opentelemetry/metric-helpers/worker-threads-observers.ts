@@ -8,8 +8,8 @@ export class WorkerThreadsObserversBuilder {
   }
 
   buildObservers () {
-    this.meter.createObservableGauge('peertube_worker_thread_queue_total', {
-      description: 'Total tasks waiting for a PeerTube worker thread'
+    this.meter.createObservableGauge('retro3_worker_thread_queue_total', {
+      description: 'Total tasks waiting for a retro3 worker thread'
     }).addCallback(observableResult => {
       const stats = getWorkersStats()
 
@@ -18,8 +18,8 @@ export class WorkerThreadsObserversBuilder {
       }
     })
 
-    this.meter.createObservableGauge('peertube_worker_thread_completed_total', {
-      description: 'Total tasks completed in PeerTube worker threads'
+    this.meter.createObservableGauge('retro3_worker_thread_completed_total', {
+      description: 'Total tasks completed in retro3 worker threads'
     }).addCallback(observableResult => {
       const stats = getWorkersStats()
 

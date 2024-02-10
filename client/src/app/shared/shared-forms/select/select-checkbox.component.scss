@@ -12,7 +12,7 @@ ng-select ::ng-deep {
     align-items: center;
 
     input {
-      @include peertube-checkbox(1px);
+      @include retro3-checkbox(1px);
     }
   }
 }

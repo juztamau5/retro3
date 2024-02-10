@@ -2,9 +2,9 @@ import { SortMeta } from 'primeng/api'
 import { catchError, map, tap } from 'rxjs/operators'
 import { HttpClient, HttpContext, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { AuthService, ComponentPaginationLight, PeerTubeSocket, RestExtractor, RestService } from '@app/core'
+import { AuthService, ComponentPaginationLight, Retro3Socket, RestExtractor, RestService } from '@app/core'
 import { NGX_LOADING_BAR_IGNORED } from '@ngx-loading-bar/http-client'
-import { ResultList, UserNotification as UserNotificationServer, UserNotificationSetting } from '@peertube/peertube-models'
+import { ResultList, UserNotification as UserNotificationServer, UserNotificationSetting } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 import { UserNotification } from './user-notification.model'
 
@@ -18,7 +18,7 @@ export class UserNotificationService {
     private auth: AuthService,
     private restExtractor: RestExtractor,
     private restService: RestService,
-    private peertubeSocket: PeerTubeSocket
+    private retro3Socket: Retro3Socket
   ) {}
 
   listMyNotifications (parameters: {
@@ -58,7 +58,7 @@ export class UserNotificationService {
 
     return this.authHttp.post(url, body, { context })
                .pipe(
-                 tap(() => this.peertubeSocket.dispatchNotificationEvent('read')),
+                 tap(() => this.retro3Socket.dispatchNotificationEvent('read')),
                  catchError(res => this.restExtractor.handleError(res))
                )
   }
@@ -69,7 +69,7 @@ export class UserNotificationService {
 
     return this.authHttp.post(url, {}, { context })
                .pipe(
-                 tap(() => this.peertubeSocket.dispatchNotificationEvent('read-all')),
+                 tap(() => this.retro3Socket.dispatchNotificationEvent('read-all')),
                  catchError(res => this.restExtractor.handleError(res))
                )
   }

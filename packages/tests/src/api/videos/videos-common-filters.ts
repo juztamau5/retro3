@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { pick } from '@peertube/peertube-core-utils'
+import { pick } from '@retroai/retro3-core-utils'
 import {
   HttpStatusCode,
   HttpStatusCodeType,
@@ -12,21 +12,21 @@ import {
   VideoIncludeType,
   VideoPrivacy,
   VideoPrivacyType
-} from '@peertube/peertube-models'
+} from '@retroai/retro3-models'
 import {
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultAccountAvatar,
   setDefaultVideoChannel,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test videos filter', function () {
-  let servers: PeerTubeServer[]
+  let servers: Retro3Server[]
   let paths: string[]
   let remotePaths: string[]
 
@@ -87,7 +87,7 @@ describe('Test videos filter', function () {
   describe('Check videos filters', function () {
 
     async function listVideos (options: {
-      server: PeerTubeServer
+      server: Retro3Server
       path: string
       isLocal?: boolean
       hasWebVideoFiles?: boolean
@@ -126,7 +126,7 @@ describe('Test videos filter', function () {
 
     async function getVideosNames (
       options: {
-        server: PeerTubeServer
+        server: Retro3Server
         isLocal?: boolean
         include?: VideoIncludeType
         privacyOneOf?: VideoPrivacyType[]

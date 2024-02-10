@@ -2,26 +2,26 @@
 
 import { expect } from 'chai'
 import { FIXTURE_URLS } from '@tests/shared/tests.js'
-import { sortObjectComparator } from '@peertube/peertube-core-utils'
-import { UserAdminFlag, UserRole, VideoBlacklist, VideoBlacklistType } from '@peertube/peertube-models'
+import { sortObjectComparator } from '@retroai/retro3-core-utils'
+import { UserAdminFlag, UserRole, VideoBlacklist, VideoBlacklistType } from '@retroai/retro3-models'
 import {
   BlacklistCommand,
   cleanupTests,
   createMultipleServers,
   doubleFollow,
   killallServers,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   setDefaultChannelAvatar,
   waitJobs
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test video blacklist', function () {
-  let servers: PeerTubeServer[] = []
+  let servers: Retro3Server[] = []
   let videoId: number
   let command: BlacklistCommand
 
-  async function blacklistVideosOnServer (server: PeerTubeServer) {
+  async function blacklistVideosOnServer (server: Retro3Server) {
     const { data } = await server.videos.list()
 
     for (const video of data) {

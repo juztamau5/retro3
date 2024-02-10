@@ -13,7 +13,7 @@ import {
   VideoService
 } from '@app/shared/shared-main'
 import { LoadingBarService } from '@ngx-loading-bar/core'
-import { HTMLServerConfig, VideoConstant, VideoPrivacyType } from '@peertube/peertube-models'
+import { HTMLServerConfig, VideoConstant, VideoPrivacyType } from '@retroai/retro3-models'
 import { of } from 'rxjs'
 
 @Directive()

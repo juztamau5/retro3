@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core'
 import { RestExtractor, ServerService } from '@app/core'
 import { immutableAssign } from '@app/helpers'
 import { VideoService } from '@app/shared/shared-main'
-import { objectKeysTyped, peertubeTranslate } from '@peertube/peertube-core-utils'
-import { VideosOverview as VideosOverviewServer } from '@peertube/peertube-models'
+import { objectKeysTyped, retro3Translate } from '@retroai/retro3-core-utils'
+import { VideosOverview as VideosOverviewServer } from '@retroai/retro3-models'
 import { environment } from '../../../../environments/environment'
 import { VideosOverview } from './videos-overview.model'
 
@@ -67,7 +67,7 @@ export class OverviewService {
               .pipe(
                 tap(translations => {
                   for (const c of videosOverviewResult.categories) {
-                    c.category.label = peertubeTranslate(c.category.label, translations)
+                    c.category.label = retro3Translate(c.category.label, translations)
                   }
                 })
               )

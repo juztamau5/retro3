@@ -3,10 +3,10 @@ import { pairwise } from 'rxjs'
 import { ViewportScroller } from '@angular/common'
 import { Injectable } from '@angular/core'
 import { RouterSetting } from '../'
-import { PeerTubeRouterService } from './peertube-router.service'
+import { Retro3RouterService } from './retro3-router.service'
 import { logger } from '@root-helpers/logger'
 
-const debugLogger = debug('peertube:main:ScrollService')
+const debugLogger = debug('retro3:main:ScrollService')
 
 @Injectable()
 export class ScrollService {
@@ -15,7 +15,7 @@ export class ScrollService {
 
   constructor (
     private viewportScroller: ViewportScroller,
-    private peertubeRouter: PeerTubeRouterService
+    private retro3Router: Retro3RouterService
   ) { }
 
   enableScrollRestoration () {
@@ -28,7 +28,7 @@ export class ScrollService {
 
   private produceScroll () {
     // When we add the a-state parameter, we don't want to alter the scroll
-    this.peertubeRouter.getNavigationEndEvents().pipe(pairwise())
+    this.retro3Router.getNavigationEndEvents().pipe(pairwise())
                       .subscribe(([ e1, e2 ]) => {
                         try {
                           this.resetScroll = false
@@ -41,14 +41,14 @@ export class ScrollService {
                             return
                           }
 
-                          if (this.peertubeRouter.hasRouteSetting(RouterSetting.DISABLE_SCROLL_RESTORE)) {
+                          if (this.retro3Router.hasRouteSetting(RouterSetting.DISABLE_SCROLL_RESTORE)) {
                             this.resetScroll = false
                             return
                           }
 
                           // Remove route settings from the comparison
                           const nextSearchParams = nextUrl.searchParams
-                          nextSearchParams.delete(PeerTubeRouterService.ROUTE_SETTING_NAME)
+                          nextSearchParams.delete(Retro3RouterService.ROUTE_SETTING_NAME)
 
                           const previousSearchParams = previousUrl.searchParams
 
@@ -67,7 +67,7 @@ export class ScrollService {
 
   private consumeScroll () {
     // Handle anchors/restore position
-    this.peertubeRouter.getScrollEvents().subscribe(e => {
+    this.retro3Router.getScrollEvents().subscribe(e => {
       debugLogger('Will schedule scroll after router event %o.', { e, resetScroll: this.resetScroll })
 
       // scrollToAnchor first to preserve anchor position when using history navigation

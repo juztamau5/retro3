@@ -1,6 +1,6 @@
 import express from 'express'
 import { CONFIG } from '@server/initializers/config.js'
-import { HttpStatusCode } from '@peertube/peertube-models'
+import { HttpStatusCode } from '@retroai/retro3-models'
 
 const ensurePrivateObjectStorageProxyIsEnabled = [
   (req: express.Request, res: express.Response, next: express.NextFunction) => {

@@ -16,7 +16,7 @@
   }
 
   ::ng-deep.action-button {
-    @include peertube-button;
+    @include retro3-button;
     @include button-with-icon(21px, 0, -1px);
 
     font-size: 100%;

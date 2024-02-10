@@ -1,6 +1,6 @@
 import videojs from 'video.js'
 import { logger } from '@root-helpers/logger'
-import { secondsToTime } from '@peertube/peertube-core-utils'
+import { secondsToTime } from '@retroai/retro3-core-utils'
 import { PlayerNetworkInfo as EventPlayerNetworkInfo } from '../../types'
 import { bytes } from '../common'
 

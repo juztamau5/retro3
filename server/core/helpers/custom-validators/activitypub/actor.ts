@@ -3,7 +3,7 @@ import { CONSTRAINTS_FIELDS } from '../../../initializers/constants.js'
 import { exists, isArray, isDateValid } from '../misc.js'
 import { isActivityPubUrlValid, isBaseActivityValid, setValidAttributedTo } from './misc.js'
 import { isHostValid } from '../servers.js'
-import { peertubeTruncate } from '@server/helpers/core-utils.js'
+import { retro3Truncate } from '@server/helpers/core-utils.js'
 
 function isActorEndpointsObjectValid (endpointObject: any) {
   if (endpointObject?.sharedInbox) {
@@ -79,7 +79,7 @@ function sanitizeAndCheckActorObject (actor: any) {
     setValidAttributedTo(actor) &&
     setValidDescription(actor) &&
     // If this is a group (a channel), it should be attributed to an account
-    // In PeerTube we use this to attach a video channel to a specific account
+    // In retro3 we use this to attach a video channel to a specific account
     (actor.type !== 'Group' || actor.attributedTo.length !== 0)
 }
 
@@ -95,7 +95,7 @@ function normalizeActor (actor: any) {
   if (!isDateValid(actor.published)) actor.published = undefined
 
   if (actor.summary && typeof actor.summary === 'string') {
-    actor.summary = peertubeTruncate(actor.summary, { length: CONSTRAINTS_FIELDS.USERS.DESCRIPTION.max })
+    actor.summary = retro3Truncate(actor.summary, { length: CONSTRAINTS_FIELDS.USERS.DESCRIPTION.max })
 
     if (actor.summary.length < CONSTRAINTS_FIELDS.USERS.DESCRIPTION.min) {
       actor.summary = null

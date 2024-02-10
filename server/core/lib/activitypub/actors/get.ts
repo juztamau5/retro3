@@ -1,5 +1,5 @@
-import { arrayify } from '@peertube/peertube-core-utils'
-import { ActivityPubActor, APObjectId } from '@peertube/peertube-models'
+import { arrayify } from '@retroai/retro3-core-utils'
+import { ActivityPubActor, APObjectId } from '@retroai/retro3-models'
 import { retryTransactionWrapper } from '@server/helpers/database-utils.js'
 import { logger } from '@server/helpers/logger.js'
 import { JobQueue } from '@server/lib/job-queue/index.js'
@@ -51,7 +51,7 @@ async function getOrCreateAPActor (
     if (actorObject.id !== actorUrl) return getOrCreateAPActor(actorObject, 'all', recurseIfNeeded, updateCollections)
 
     // Create the attributed to actor
-    // In PeerTube a video channel is owned by an account
+    // In retro3 a video channel is owned by an account
     let ownerActor: MActorFullActor
     if (recurseIfNeeded === true && actorObject.type === 'Group') {
       ownerActor = await getOrCreateAPOwner(actorObject, actorUrl)

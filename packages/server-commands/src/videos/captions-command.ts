@@ -1,5 +1,5 @@
-import { HttpStatusCode, ResultList, VideoCaption } from '@peertube/peertube-models'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
+import { HttpStatusCode, ResultList, VideoCaption } from '@retroai/retro3-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
 import { AbstractCommand, OverrideCommandOptions } from '../shared/index.js'
 
 export class CaptionsCommand extends AbstractCommand {

@@ -28,7 +28,7 @@
       </div>
 
       <div class="form-group" *ngIf="hasLocal()">
-        <my-peertube-checkbox
+        <my-retro3-checkbox
           inputName="unfederate" formControlName="unfederate"
           i18n-labelText labelText="Unfederate"
         >
@@ -36,7 +36,7 @@
             <span *ngIf="isMultiple()" i18n>This will ask remote instances to delete local videos</span>
             <span *ngIf="!isMultiple()" i18n>This will ask remote instances to delete this video</span>
           </ng-container>
-        </my-peertube-checkbox>
+        </my-retro3-checkbox>
       </div>
 
       <strong class="live-info" *ngIf="hasLive()" i18n>
@@ -45,11 +45,11 @@
 
       <div class="form-group inputs">
         <input
-          type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+          type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
           (click)="hide()" (key.enter)="hide()"
         >
 
-        <input type="submit" i18n-value value="Block" class="peertube-button orange-button" [disabled]="!form.valid" />
+        <input type="submit" i18n-value value="Block" class="retro3-button orange-button" [disabled]="!form.valid" />
       </div>
     </form>
 

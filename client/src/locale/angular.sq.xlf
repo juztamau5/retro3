@@ -1058,7 +1058,7 @@
         <source>Recommended</source>
         <target>E këshilluar</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/forms/peertube-checkbox.component.html</context>
+          <context context-type="sourcefile">src/app/shared/forms/retro3-checkbox.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
@@ -1191,8 +1191,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="6751395526297887552" datatype="html">
-        <source>PeerTube version</source>
-        <target>Version PeerTube-i</target>
+        <source>retro3 version</source>
+        <target>Version retro3-i</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/instance/instance-features-table.component.html</context>
           <context context-type="linenumber">5</context>
@@ -1639,8 +1639,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5192951216991773088" datatype="html">
-        <source>peertube default</source>
-        <target>parazgjedhje peertube</target>
+        <source>retro3 default</source>
+        <target>parazgjedhje retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+my-account/my-account-settings/my-account-interface/my-account-interface-settings.component.html</context>
           <context context-type="linenumber">9</context>
@@ -1679,8 +1679,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8b339f3b4ba60cd2f880c7c19e8b375e7892f4c1" datatype="html">
-        <source>Currently this instance doesn't allow for user registration, but you can find an instance that gives you the possibility to sign up for an account and upload your videos there. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Find yours among multiple instances at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target>Aktualisht, kjo instancë, nuk lejon regjistrim përdoruesish, por mund të gjeni një instancë që ju jep mundësinë të regjistroheni për një llogari dhe të ngarkoni videot tuaja në të. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Gjeni tuajën mes shumë instancash, te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <source>Currently this instance doesn't allow for user registration, but you can find an instance that gives you the possibility to sign up for an account and upload your videos there. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Find yours among multiple instances at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target>Aktualisht, kjo instancë, nuk lejon regjistrim përdoruesish, por mund të gjeni një instancë që ju jep mundësinë të regjistroheni për një llogari dhe të ngarkoni videot tuaja në të. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Gjeni tuajën mes shumë instancash, te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">16</context>
@@ -1799,8 +1799,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="87327320394367488" datatype="html">
-        <source>We are sorry, you cannot recover your password because your instance administrator did not configure the PeerTube email system.</source>
-        <target>Na ndjeni, s’mund të rimerrni fjalëkalimin tuaj, ngaqë përgjegjësi i instancës tuaj nuk formësoi sistemin e email-eve në PeerTube.</target>
+        <source>We are sorry, you cannot recover your password because your instance administrator did not configure the retro3 email system.</source>
+        <target>Na ndjeni, s’mund të rimerrni fjalëkalimin tuaj, ngaqë përgjegjësi i instancës tuaj nuk formësoi sistemin e email-eve në retro3.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">90</context>
@@ -1947,8 +1947,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1516969129397662377" datatype="html">
-        <source>Welcome to PeerTube, dear administrator!</source>
-        <target>Mirë se vini te PeerTube, i dashur përgjegjës!</target>
+        <source>Welcome to retro3, dear administrator!</source>
+        <target>Mirë se vini te retro3, i dashur përgjegjës!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modal/welcome-modal.component.html</context>
           <context context-type="linenumber">3</context>
@@ -2011,16 +2011,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5170617864166788170" datatype="html">
-        <source>Official PeerTube website (news, support, contribute...): <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinpeertube.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
-        <target>Sajti zyrtar i PeerTube-it (lajme, asistencë, dhënie ndihmese…): <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinpeertube.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <source>Official retro3 website (news, support, contribute...): <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinretro3.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target>Sajti zyrtar i retro3-it (lajme, asistencë, dhënie ndihmese…): <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://joinretro3.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modal/welcome-modal.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4614992717645869756" datatype="html">
-        <source>Put your instance on the public PeerTube index: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://instances.joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> </source>
-        <target>Vëreni instancën tuaj në treguesin publik të PeerTube-it: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://instances.joinpeertube.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> </target>
+        <source>Put your instance on the public retro3 index: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://instances.joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> </source>
+        <target>Vëreni instancën tuaj në treguesin publik të retro3-it: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://instances.joinretro3.org/instances<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modal/welcome-modal.component.html</context>
           <context context-type="linenumber">47</context>
@@ -2043,8 +2043,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="bd6c91a86a18f512ade62e216efcfb5d2520711c" datatype="html">
-        <source>If you want to open registrations, please decide what are <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>your moderation rules<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, fill your <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>instance terms<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and specify the categories and languages you speak. This way, you will help users to register on <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>the appropriate<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> PeerTube instance. </source>
-        <target>Nëse doni të hapni regjistrime, ju lutemi, vendosni se cilat janë <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>rregullat tuaja për moderimin<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, plotësoni <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>kushtet e instancës tuaj<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> dhe të spceifikoni kategoritë dhe gjuhët që flisni. Në këtë mënyrë, do të ndihmoni përdoruesit të regjistrohen në instancën <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>e duhur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> PeerTube. </target>
+        <source>If you want to open registrations, please decide what are <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>your moderation rules<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, fill your <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>instance terms<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> and specify the categories and languages you speak. This way, you will help users to register on <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>the appropriate<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> retro3 instance. </source>
+        <target>Nëse doni të hapni regjistrime, ju lutemi, vendosni se cilat janë <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>rregullat tuaja për moderimin<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, plotësoni <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>kushtet e instancës tuaj<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> dhe të spceifikoni kategoritë dhe gjuhët që flisni. Në këtë mënyrë, do të ndihmoni përdoruesit të regjistrohen në instancën <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>e duhur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> retro3. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modal/welcome-modal.component.html</context>
           <context context-type="linenumber">67</context>
@@ -2139,8 +2139,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7e76a185dbd8842cfea86afe863ed902a4447f7c" datatype="html">
-        <source>Please consider to configure these fields to help people to choose <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>the appropriate instance<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Without them, your instance may not be referenced on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>JoinPeerTube website<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target>Ju lutemi, shihni mundësinë të formësoni këto fusha, që t’i ndihmoni të zgjedhin <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>instancën e duhur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Pa to, instanca juaj mund të mos referohet në <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>sajtin JoinPeerTube<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <source>Please consider to configure these fields to help people to choose <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>the appropriate instance<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Without them, your instance may not be referenced on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>JoinRetro3 website<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target>Ju lutemi, shihni mundësinë të formësoni këto fusha, që t’i ndihmoni të zgjedhin <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>instancën e duhur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. Pa to, instanca juaj mund të mos referohet në <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>sajtin JoinRetro3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modal/instance-config-warning-modal.component.html</context>
           <context context-type="linenumber">24</context>
@@ -2187,8 +2187,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2964653499524716819" datatype="html">
-        <source>Help to translate PeerTube!</source>
-        <target>Ndihmoni të përkthehet PeerTube-i!</target>
+        <source>Help to translate retro3!</source>
+        <target>Ndihmoni të përkthehet retro3-i!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/language-chooser.component.html</context>
           <context context-type="linenumber">8</context>
@@ -2439,8 +2439,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8378304669563824772" datatype="html">
-        <source>Get help using PeerTube</source>
-        <target>Merrni ndihmë për përdorimin e PeerTube-it</target>
+        <source>Get help using retro3</source>
+        <target>Merrni ndihmë për përdorimin e retro3-it</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">161</context>
@@ -2455,8 +2455,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3620232640697554352" datatype="html">
-        <source>Frequently asked questions about PeerTube</source>
-        <target>Pyetje të bëra shpesh mbi PeerTube-in</target>
+        <source>Frequently asked questions about retro3</source>
+        <target>Pyetje të bëra shpesh mbi retro3-in</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">162</context>
@@ -2495,32 +2495,32 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5c195f8d79bd19e8520c890a2513fe635529b7a7" datatype="html">
-        <source>powered by PeerTube</source>
-        <target>bazuar në PeerTube</target>
+        <source>powered by retro3</source>
+        <target>bazuar në retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">171</context>
         </context-group>
       </trans-unit>
       <trans-unit id="018843afca0913de849c80fdf962a6a42f5190b4" datatype="html">
-        <source>PeerTube website</source>
-        <target>Sajt PeerTube</target>
+        <source>retro3 website</source>
+        <target>Sajt retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">171</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2a851f40f4a956fc4c3e0c3ed8dd33f10a4fa161" datatype="html">
-        <source>PeerTube license</source>
-        <target>Licencë PeerTube-i</target>
+        <source>retro3 license</source>
+        <target>Licencë retro3-i</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">175</context>
         </context-group>
       </trans-unit>
       <trans-unit id="900ca8b77fca5b6232cf1d526830ccc29569a984" datatype="html">
-        <source>powered by PeerTube - CopyLeft 2015-2020</source>
-        <target>bazuar në PeerTube - CopyLeft 2015-2020</target>
+        <source>powered by retro3 - CopyLeft 2015-2020</source>
+        <target>bazuar në retro3 - CopyLeft 2015-2020</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">170</context>
@@ -5843,8 +5843,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8362291348781958428" datatype="html">
-        <source>How will you finance the PeerTube server?</source>
-        <target>Si do ta financoni shërbyesin PeerTube?</target>
+        <source>How will you finance the retro3 server?</source>
+        <target>Si do ta financoni shërbyesin retro3?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-custom-config.component.html</context>
           <context context-type="linenumber">194</context>
@@ -6203,8 +6203,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5c3526524f8f9f50390e39f56cb12e2091d883cd" datatype="html">
-        <source>If your instance is whitelisted by Twitter, a video player will be embedded in the Twitter feed on PeerTube video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> If the instance is not whitelisted, we use an image link card that will redirect on your PeerTube instance.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/videos/watch/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> to see if you instance is whitelisted. </source>
-        <target>Nëse instanca juaj është lejuar nga Twitter, te prurja Twitter në ndarje videosh në PeerTube do të trupëzohet një luajtës videosh.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Nëse instanca s’është e lejuar, do të përdorim një figurë lidhjeje që do të ridrejtojë përdoruesit te instanca juaj PeerTube.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> I vini shenjë kësaj kutize, ruajeni formësimin dhe bëni një provë me një URL videoje të instancës tuaj (https://peertube-i-juaj.com/videos/watch/blabla) te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> që të shihni nëse instanca juaj është e lejuar. </target>
+        <source>If your instance is whitelisted by Twitter, a video player will be embedded in the Twitter feed on retro3 video share.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> If the instance is not whitelisted, we use an image link card that will redirect on your retro3 instance.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Check this checkbox, save the configuration and test with a video URL of your instance (https://example.com/videos/watch/blabla) on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> to see if you instance is whitelisted. </source>
+        <target>Nëse instanca juaj është lejuar nga Twitter, te prurja Twitter në ndarje videosh në retro3 do të trupëzohet një luajtës videosh.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> Nëse instanca s’është e lejuar, do të përdorim një figurë lidhjeje që do të ridrejtojë përdoruesit te instanca juaj retro3.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> I vini shenjë kësaj kutize, ruajeni formësimin dhe bëni një provë me një URL videoje të instancës tuaj (https://retro3-i-juaj.com/videos/watch/blabla) te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>https://cards-dev.twitter.com/validator<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> që të shihni nëse instanca juaj është e lejuar. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-custom-config.component.html</context>
           <context context-type="linenumber">539</context>
@@ -6227,8 +6227,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ee4b28ab2d3293d453dec75c6654c6425705283c" datatype="html">
-        <source>Process uploaded videos so that they are in a streamable form that any device can play. Though costly in resources, this is a critical part of PeerTube, so tread carefully.</source>
-        <target>Përpunoji videot e ngarkuara, që të jenë në një formë të transmetueshme të cilën mund ta luajë çfarëdo pajisjeje. Edhe pse e kushtueshme për shërbyesin, kjo është një anë kritike e PeerTube-it, ndaj peshojeni me kujdes.</target>
+        <source>Process uploaded videos so that they are in a streamable form that any device can play. Though costly in resources, this is a critical part of retro3, so tread carefully.</source>
+        <target>Përpunoji videot e ngarkuara, që të jenë në një formë të transmetueshme të cilën mund ta luajë çfarëdo pajisjeje. Edhe pse e kushtueshme për shërbyesin, kjo është një anë kritike e retro3-it, ndaj peshojeni me kujdes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-custom-config.component.html</context>
           <context context-type="linenumber">566</context>
@@ -6283,8 +6283,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1f83d0ff227c35b5631a2b2f78067b3e915cdb59" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Experimental, we suggest you to not disable webtorrent support for now<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>If you also enabled HLS support, it will multiply videos storage by 2<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/> <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>If disabled, breaks federation with PeerTube instances &lt; 2.1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> </source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Eksperimentale, këshillojmë të mos çaktivizoni hëpërhë mbulimin për webtorrent<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Nëse aktivizuat edhe mbulim të HLS-së, do të shumëfishojë dy herë depozitën e videove<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Në u çaktivizoftë, nxjerr jashtë pune federimin me instanca PeerTube &lt; 2.1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> </target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Experimental, we suggest you to not disable webtorrent support for now<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>If you also enabled HLS support, it will multiply videos storage by 2<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/> <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>If disabled, breaks federation with retro3 instances &lt; 2.1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> </source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Eksperimentale, këshillojmë të mos çaktivizoni hëpërhë mbulimin për webtorrent<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Nëse aktivizuat edhe mbulim të HLS-së, do të shumëfishojë dy herë depozitën e videove<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Në u çaktivizoftë, nxjerr jashtë pune federimin me instanca retro3 &lt; 2.1<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-custom-config.component.html</context>
           <context context-type="linenumber">617</context>
@@ -6371,8 +6371,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7473fbca4ff699b020fc8894bad4c88611c76f5c" datatype="html">
-        <source>Slight modifications to your PeerTube instance for when creating a plugin or theme is overkill.</source>
-        <target>Ndryshime të lehta te instanca juaj PeerTube, për rastet kur krijimi i një shtojce ose teme është i tepruar.</target>
+        <source>Slight modifications to your retro3 instance for when creating a plugin or theme is overkill.</source>
+        <target>Ndryshime të lehta te instanca juaj retro3, për rastet kur krijimi i një shtojce ose teme është i tepruar.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+admin/config/edit-custom-config/edit-custom-config.component.html</context>
           <context context-type="linenumber">734</context>
@@ -6987,16 +6987,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5904811038805050477" datatype="html">
-        <source>Welcome to PeerTube!</source>
-        <target>Mirë se vini te PeerTube!</target>
+        <source>Welcome to retro3!</source>
+        <target>Mirë se vini te retro3!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+signup/shared/signup-success.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3461985498881453026" datatype="html">
-        <source>If you need help to use PeerTube, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target>Nëse ju duhet ndihmë në përdorimin e PeerTube-it, mund t’i hidhni një sy <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>dokumentimit<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <source>If you need help to use retro3, you can have a look at the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target>Nëse ju duhet ndihmë në përdorimin e retro3-it, mund t’i hidhni një sy <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>dokumentimit<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+signup/shared/signup-success.component.html</context>
           <context context-type="linenumber">13</context>
@@ -7211,8 +7211,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5066829276646988805" datatype="html">
-        <source>PeerTube</source>
-        <target>PeerTube</target>
+        <source>retro3</source>
+        <target>retro3</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+about/about.component.html</context>
           <context context-type="linenumber">7</context>
@@ -7383,18 +7383,18 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8351124097389031348" datatype="html">
-        <source>What is PeerTube?</source>
-        <target>Ç’është PeerTube?</target>
+        <source>What is retro3?</source>
+        <target>Ç’është retro3?</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b3e11d554239b002489fbfd1e7d82d12e7f64a43" datatype="html">
-        <source>PeerTube is a self hosted federated (ActivityPub) video streaming platform using P2P directly in the web browser.</source>
-        <target>PeerTube-i është një platformë transmetimi videosh, e vetëstrehuar, e federuar (ActivityPub), që përdor P2P drejt e në shfletues.</target>
+        <source>retro3 is a self hosted federated (ActivityPub) video streaming platform using P2P directly in the web browser.</source>
+        <target>retro3-i është një platformë transmetimi videosh, e vetëstrehuar, e federuar (ActivityPub), që përdor P2P drejt e në shfletues.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
@@ -7402,23 +7402,23 @@
         <source>It is a free and open-source software, under the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>AGPLv3 licence<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
         <target state="translated">Është <em>software</em> i lirë dhe me burim të hapët, nën <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>licencën AGPLv3<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7257048945916143687" datatype="html">
-        <source>For more information, please visit <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>joinpeertube.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target>Për më tepër të dhëna, ju lutemi, vizitoni <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>joinpeertube.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <source>For more information, please visit <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>joinretro3.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target>Për më tepër të dhëna, ju lutemi, vizitoni <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>joinretro3.org<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8205344394429673413" datatype="html">
-        <source>Use PeerTube documentation</source>
-        <target>Përdorni dokumentim të PeerTube-it</target>
+        <source>Use retro3 documentation</source>
+        <target>Përdorni dokumentim të retro3-it</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
@@ -7426,15 +7426,15 @@
         <source>Discover how to setup your account, what is a channel, how to create a playlist and more!</source>
         <target>Zbuloni se si të ujdisni llogarinë tuaj, ç’është një kanal, si të krijohet një luajlistë, etj!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5336387229608682776" datatype="html">
-        <source>PeerTube Applications</source>
-        <target>Aplikacione PeerTube</target>
+        <source>retro3 Applications</source>
+        <target>Aplikacione retro3</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
@@ -7442,23 +7442,23 @@
         <source>Discover unofficial Android applications or browser addons!</source>
         <target>Zbuloni aplikacione jozyrtare për Android dhe shtesa shfletuesi!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4093735071527927163" datatype="html">
-        <source>Contribute on PeerTube</source>
-        <target>Jepni ndihmesë në PeerTube</target>
+        <source>Contribute on retro3</source>
+        <target>Jepni ndihmesë në retro3</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6886584917624458638" datatype="html">
-        <source>Want to help to improve PeerTube? You can translate the web interface, give your feedback or directly contribute to the code!</source>
-        <target>Doni të ndihmoni në përmirësimin e PeerTube-it? Mund të përktheni ndërfaqen web, të jepni përshtypjet tuaja ose të kontribuoni drejtpërsëdrejti te kodi!</target>
+        <source>Want to help to improve retro3? You can translate the web interface, give your feedback or directly contribute to the code!</source>
+        <target>Doni të ndihmoni në përmirësimin e retro3-it? Mund të përktheni ndërfaqen web, të jepni përshtypjet tuaja ose të kontribuoni drejtpërsëdrejti te kodi!</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
@@ -7466,15 +7466,15 @@
         <source>P2P &amp; Privacy</source>
         <target>P2P &amp; Privatësi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="442017645619017020" datatype="html">
-        <source>PeerTube uses the BitTorrent protocol to share bandwidth between users by default to help lower the load on the server, but ultimately leaves you the choice to switch back to regular streaming exclusively from the server of the video. What follows applies only if you want to keep using the P2P mode of PeerTube.</source>
-        <target>PeerTube-i përdor si parazgjedhje protokollin BitTorrent për të ndarë ngarkesën me përdoruesve, që të ndihmojë të ulet ngarkesa te shërbyesi, por, tek e fundit, ju lë juve mundësinë të zgjidhni transmetimin e rregullt vetëm nga shërbyesi i videos. Sa vijon, ka vend vetëm nëse doni ta mbani në përdorim mënyrën P2P të PeerTube-it.</target>
+        <source>retro3 uses the BitTorrent protocol to share bandwidth between users by default to help lower the load on the server, but ultimately leaves you the choice to switch back to regular streaming exclusively from the server of the video. What follows applies only if you want to keep using the P2P mode of retro3.</source>
+        <target>retro3-i përdor si parazgjedhje protokollin BitTorrent për të ndarë ngarkesën me përdoruesve, që të ndihmojë të ulet ngarkesa te shërbyesi, por, tek e fundit, ju lë juve mundësinë të zgjidhni transmetimin e rregullt vetëm nga shërbyesi i videos. Sa vijon, ka vend vetëm nëse doni ta mbani në përdorim mënyrën P2P të retro3-it.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
@@ -7482,7 +7482,7 @@
         <source>What are the consequences?</source>
         <target>Cilat janë pasojat?</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
@@ -7490,15 +7490,15 @@
         <source>In theory, someone with enough technical skills could create a script that tracks which IP is downloading which video. In practice, this is much more difficult because:</source>
         <target>Teorikisht, dikush me aftësi të mjaftueshme teknike do të mund të krijonte një programth që ndjek se cilat IP po shkarkojnë dhe cilat video. Në praktikë, kjo është mjaft më e vështirë, ngaqë:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6870500454322981404" datatype="html">
-        <source>An HTTP request has to be sent on each tracker for each video to spy. If we want to spy all PeerTube's videos, we have to send as many requests as there are videos (so potentially a lot)</source>
-        <target>Ndaj çdo gjurmuesi duhet dërguar një kërkesë HTTP, për çdo video që duhet spiunuar. Nëse duam të spiunojmë krejt videot PeerTube, duhet të dërgojmë aq kërkesa sa ç’ka video (pra goxha)</target>
+        <source>An HTTP request has to be sent on each tracker for each video to spy. If we want to spy all retro3's videos, we have to send as many requests as there are videos (so potentially a lot)</source>
+        <target>Ndaj çdo gjurmuesi duhet dërguar një kërkesë HTTP, për çdo video që duhet spiunuar. Nëse duam të spiunojmë krejt videot retro3, duhet të dërgojmë aq kërkesa sa ç’ka video (pra goxha)</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
@@ -7506,7 +7506,7 @@
         <source>For each request sent, the tracker returns random peers at a limited number. For instance, if there are 1000 peers in the swarm and the tracker sends only 20 peers for each request, there must be at least 50 requests sent to know every peer in the swarm</source>
         <target>Për çdo kërkesë të dërguar, gjurmuesi përgjigjet me ortakë kuturu në një numër të kufizuar. Për shembull, nëse ka 1000 ortakë te grupi dhe gjurmuesi dërgon vetëm 20 ortakë për çdo kërkesë, duhet të dërgohen të paktën 50 kërkesa për të njohur çdo ortak te grupi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
@@ -7514,7 +7514,7 @@
         <source>Those requests have to be sent regularly to know who starts/stops watching a video. It is easy to detect that kind of behaviour</source>
         <target>Këto kërkesa duhen dërguar rregullisht, për të ditur se kush fillon/ndal parjen e një videoje. Është e lehtë të pikaset ky lloj sjelljeje</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
@@ -7522,7 +7522,7 @@
         <source>If an IP address is stored in the tracker, it doesn't mean that the person behind the IP (if this person exists) has watched the video</source>
         <target>Nëse një adresë IP është depozituar te gjurmuesi, s’do të thotë se personi pas IP-së (në ka një person të tillë) ka parë videon</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
@@ -7530,7 +7530,7 @@
         <source>The IP address is a vague information: usually, it regularly changes and can represent many persons or entities</source>
         <target>Adresa IP është një e dhënë e vagëlluar: zakonisht, ndryshohet rregullisht dhe mund të përfaqësojë mjaft persona ose njësi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
@@ -7538,7 +7538,7 @@
         <source>Web peers are not publicly accessible: because we use WebRTC inside the web browser (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>with the WebTorrent library<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>), the protocol is different from classic BitTorrent. When you are in a web browser, you send a signal containing your IP address to the tracker that will randomly choose other peers to forward the information to. See <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>this document<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for more information </source>
         <target>Ortakët internetorë s’janë të passhëm publikisht: nagqë ne përdorim WebRTC-në brenda shfletuesit (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>me bibliotekën WebTorrent<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>), protokolli është i ndryshëm nga BitTorrent-i klasik. Kur përdorni një shfletues, dërgoni te gjurmuesi një sinjal që përmban adresën tuaj IP, i cili do të zgjedhë kuturu ortakë të tjerë për t’u dërguar informacionin. Për më tepër hollësi, shihni <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>këtë dokument<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
@@ -7546,23 +7546,23 @@
         <source>The worst-case scenario of an average person spying on their friends is quite unlikely. There are much more effective ways to get that kind of information.</source>
         <target>Rasti më i keq, i një personi të rëndomtë që spiunon shokët e tij është shumë i zorshëm. Ka rrugë shumë të tepër të efektshme për të marrë atë lloj informacioni.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8484650229450883706" datatype="html">
-        <source>How does PeerTube compare with YouTube?</source>
-        <target>Si është PeerTube-i në krahasim me YouTube-in?</target>
+        <source>How does retro3 compare with YouTube?</source>
+        <target>Si është retro3-i në krahasim me YouTube-in?</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6213340208914097303" datatype="html">
-        <source>The threats to privacy with YouTube are different from PeerTube's. In YouTube's case, the platform gathers a huge amount of your personal information (not only your IP) to analyze them and track you. Moreover, YouTube is owned by Google/Alphabet, a company that tracks you across many websites (via AdSense or Google Analytics).</source>
-        <target>Kërcënimet nda privatësisë me YouTube-in janë të ndryshme nga ato të PeerTube-it. Në rastin e YouTube-it, platforma grumbullon një sasi të stërmadhe të dhënash tuajat personale (jo vetëm IP-në tuaj) për t’i analizuar dhe për t’ju ndjekur. Për më tepër, YouTube-i është pronë e Google/Alphabet, një shoqëri që ju ndjek nëpër shumë sajte (përmes AdSense ose Google Analytics).</target>
+        <source>The threats to privacy with YouTube are different from retro3's. In YouTube's case, the platform gathers a huge amount of your personal information (not only your IP) to analyze them and track you. Moreover, YouTube is owned by Google/Alphabet, a company that tracks you across many websites (via AdSense or Google Analytics).</source>
+        <target>Kërcënimet nda privatësisë me YouTube-in janë të ndryshme nga ato të retro3-it. Në rastin e YouTube-it, platforma grumbullon një sasi të stërmadhe të dhënash tuajat personale (jo vetëm IP-në tuaj) për t’i analizuar dhe për t’ju ndjekur. Për më tepër, YouTube-i është pronë e Google/Alphabet, një shoqëri që ju ndjek nëpër shumë sajte (përmes AdSense ose Google Analytics).</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">133</context>
         </context-group>
       </trans-unit>
@@ -7570,15 +7570,15 @@
         <source>What can I do to limit the exposure of my IP address?</source>
         <target>Ç’mund të bëj për ta kufizuar ekspozimin e adresës time IP?</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">139</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8804946818315976118" datatype="html">
-        <source>Your IP address is public so every time you consult a website, there is a number of actors (in addition to the final website) seeing your IP in their connection logs: ISP/routers/trackers/CDN and more. PeerTube is transparent about it: we warn you that if you want to keep your IP private, you must use a VPN or Tor Browser. Thinking that removing P2P from PeerTube will give you back anonymity doesn't make sense.</source>
-        <target>Adresa juaj është publike, ndaj sa herë që lidheni me një sajt, ka një numër aktorësh (si shtesë ndaj sajtit përfundimtar) që shohin IP-në tuaj në regjistrat e tyre të lidhjeve: ISP-të/rrugëzuesit/gjurmuesit/CDN-të, etj. PeerTube-i është transparent rreth kësaj: ju sinjalizojmë se nëse doni ta mbani private IP-në tuaj, duhet të përdorni një VPN ose Shfletuesin Tor. Të mendosh se heqja e P2P-së nga PeerTube-i do t’ju kthente anonimitetin, s’ka kuptim.</target>
+        <source>Your IP address is public so every time you consult a website, there is a number of actors (in addition to the final website) seeing your IP in their connection logs: ISP/routers/trackers/CDN and more. retro3 is transparent about it: we warn you that if you want to keep your IP private, you must use a VPN or Tor Browser. Thinking that removing P2P from retro3 will give you back anonymity doesn't make sense.</source>
+        <target>Adresa juaj është publike, ndaj sa herë që lidheni me një sajt, ka një numër aktorësh (si shtesë ndaj sajtit përfundimtar) që shohin IP-në tuaj në regjistrat e tyre të lidhjeve: ISP-të/rrugëzuesit/gjurmuesit/CDN-të, etj. retro3-i është transparent rreth kësaj: ju sinjalizojmë se nëse doni ta mbani private IP-në tuaj, duhet të përdorni një VPN ose Shfletuesin Tor. Të mendosh se heqja e P2P-së nga retro3-i do t’ju kthente anonimitetin, s’ka kuptim.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">141</context>
         </context-group>
       </trans-unit>
@@ -7586,15 +7586,15 @@
         <source>What will be done to mitigate this problem?</source>
         <target>Ç’do të bëhet për ta luftuar këtë problem?</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7404776804526394585" datatype="html">
-        <source>PeerTube wants to deliver the best countermeasures possible, to give you more choice and render attacks less likely. Here is what we put in place so far:</source>
-        <target>PeerTube-i dëshiron të ofrojë kundërmasat më të mira të mundshme, t’ju japë më tepër mundësi dhe t’i bëjë sulmet më pak të mundshme. Ja se ç’kemi realizuar deri sot:</target>
+        <source>retro3 wants to deliver the best countermeasures possible, to give you more choice and render attacks less likely. Here is what we put in place so far:</source>
+        <target>retro3-i dëshiron të ofrojë kundërmasat më të mira të mundshme, t’ju japë më tepër mundësi dhe t’i bëjë sulmet më pak të mundshme. Ja se ç’kemi realizuar deri sot:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">150</context>
         </context-group>
       </trans-unit>
@@ -7602,7 +7602,7 @@
         <source>We set a limit to the number of peers sent by the tracker</source>
         <target>Caktojmë një kufi për numrin e ortakëve të dërguar nga gjurmuesi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
@@ -7610,7 +7610,7 @@
         <source>We set a limit on the request frequency received by the tracker</source>
         <target>Caktojmë një kufi për shpeshtinë e kërkesa të marra nga gjurmuesi</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">157</context>
         </context-group>
       </trans-unit>
@@ -7618,7 +7618,7 @@
         <source>Allow instance admins to disable P2P from the administration interface</source>
         <target>U lejojmë përgjegjësve të instancës të çaktivizojnë P2P-në që nga ndërfaqja e administrimit</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">158</context>
         </context-group>
       </trans-unit>
@@ -7626,7 +7626,7 @@
         <source>Automatic video redundancy from some instances: one doesn't know if the IP downloaded the video on purpose or if it a server</source>
         <target>“Redundancy” të automatizuar videosh për disa instanca: vëzhguesi nuk e di nëse IP-ja e shkarkoi videon qëllimisht apo është një shërbyes</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
@@ -7634,7 +7634,7 @@
         <source>Ultimately, remember you can always disable P2P by toggling it in the video player, or just by disabling WebRTC in your browser.</source>
         <target>Tek e fundit, mos harroni se mundeni përherë ta çaktivizoni P2P-në që nga lojtësi i videove, ose thjesht duke çaktivizuar WebRTC-në në shfletuesin tuaj.</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3.component.html</context>
           <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
@@ -7674,7 +7674,7 @@
         <source>Developed with ❤ by <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
         <target>Zhvilluar me ❤ nga <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Framasoft<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/+about/about-peertube/about-peertube-contributors.component.html</context>
+          <context context-type="sourcefile">src/app/+about/about-retro3/about-retro3-contributors.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -7703,8 +7703,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="220345070199640496" datatype="html">
-        <source>PeerTube is creating your account...</source>
-        <target>PeerTube-i po krijon llogarinë tuaj…</target>
+        <source>retro3 is creating your account...</source>
+        <target>retro3-i po krijon llogarinë tuaj…</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/+signup/+register/register.component.html</context>
           <context context-type="linenumber">37</context>
@@ -9682,8 +9682,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8d9b4f4b69108c3c9aa0f3b0dbde87786ba9b319" datatype="html">
-        <source>Ensure you have correctly configured PeerTube (config/ directory), in particular the "webserver" section.</source>
-        <target>Sigurohuni se keni formësuar saktë PeerTube-in (te drejtoria config/), veçanërisht pjesën "webserver".</target>
+        <source>Ensure you have correctly configured retro3 (config/ directory), in particular the "webserver" section.</source>
+        <target>Sigurohuni se keni formësuar saktë retro3-in (te drejtoria config/), veçanërisht pjesën "webserver".</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/auth/auth.service.ts</context>
           <context context-type="linenumber">1</context>
@@ -10794,8 +10794,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2f5f2093f14679fed82ff76a0cd2a28145a83ca9" datatype="html">
-        <source>PeerTube cannot handle this kind of file. Accepted extensions are <x id="INTERPOLATION" equiv-text="{{extensions}}"/>.</source>
-        <target>PeerTube-i s’mund të trajtojë dot këtë lloj kartelash. Zgjatimet e pranuara janë <x id="INTERPOLATION" equiv-text="{{extensions}}"/>.</target>
+        <source>retro3 cannot handle this kind of file. Accepted extensions are <x id="INTERPOLATION" equiv-text="{{extensions}}"/>.</source>
+        <target>retro3-i s’mund të trajtojë dot këtë lloj kartelash. Zgjatimet e pranuara janë <x id="INTERPOLATION" equiv-text="{{extensions}}"/>.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/forms/reactive-file.component.ts</context>
           <context context-type="linenumber">1</context>

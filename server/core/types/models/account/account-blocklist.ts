@@ -1,5 +1,5 @@
 import { AccountBlocklistModel } from '../../../models/account/account-blocklist.js'
-import { PickWith } from '@peertube/peertube-typescript-utils'
+import { PickWith } from '@retroai/retro3-typescript-utils'
 import { MAccountDefault, MAccountFormattable } from './account.js'
 
 type Use<K extends keyof AccountBlocklistModel, M> = PickWith<AccountBlocklistModel, K, M>

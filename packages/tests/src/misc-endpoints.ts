@@ -3,18 +3,18 @@
 import { expect } from 'chai'
 import { writeJson } from 'fs-extra/esm'
 import { join } from 'path'
-import { HttpStatusCode, VideoPrivacy } from '@peertube/peertube-models'
+import { HttpStatusCode, VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
   makeGetRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 import { expectLogDoesNotContain } from './shared/checks.js'
 
 describe('Test misc endpoints', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let wellKnownPath: string
 
   before(async function () {
@@ -82,8 +82,8 @@ describe('Test misc endpoints', function () {
     })
 
     it('Should test webfinger', async function () {
-      const resource = 'acct:peertube@' + server.host
-      const accountUrl = server.url + '/accounts/peertube'
+      const resource = 'acct:retro3@' + server.host
+      const accountUrl = server.url + '/accounts/retro3'
 
       const res = await makeGetRequest({
         url: server.url,
@@ -156,7 +156,7 @@ describe('Test misc endpoints', function () {
         expectedStatus: HttpStatusCode.OK_200
       })
 
-      expect(res.body.software.name).to.equal('peertube')
+      expect(res.body.software.name).to.equal('retro3')
       expect(res.body.usage.users.activeMonth).to.equal(1)
       expect(res.body.usage.users.activeHalfyear).to.equal(1)
     })

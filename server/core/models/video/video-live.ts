@@ -1,5 +1,5 @@
-import { LiveVideo, VideoState, type LiveVideoLatencyModeType } from '@peertube/peertube-models'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { LiveVideo, VideoState, type LiveVideoLatencyModeType } from '@retroai/retro3-models'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { CONFIG } from '@server/initializers/config.js'
 import { WEBSERVER } from '@server/initializers/constants.js'
 import { MVideoLive, MVideoLiveVideoWithSetting } from '@server/types/models/index.js'

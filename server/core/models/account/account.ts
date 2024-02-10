@@ -16,9 +16,9 @@ import {
   Table,
   UpdatedAt
 } from 'sequelize-typescript'
-import { Account, AccountSummary } from '@peertube/peertube-models'
+import { Account, AccountSummary } from '@retroai/retro3-models'
 import { ModelCache } from '@server/models/shared/model-cache.js'
-import { AttributesOnly } from '@peertube/peertube-typescript-utils'
+import { AttributesOnly } from '@retroai/retro3-typescript-utils'
 import { isAccountDescriptionValid } from '../../helpers/custom-validators/accounts.js'
 import { CONSTRAINTS_FIELDS, SERVER_ACTOR_NAME, WEBSERVER } from '../../initializers/constants.js'
 import { sendDeleteActor } from '../../lib/activitypub/send/send-delete.js'

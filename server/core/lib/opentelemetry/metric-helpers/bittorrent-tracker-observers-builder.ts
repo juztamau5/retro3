@@ -7,14 +7,14 @@ export class BittorrentTrackerObserversBuilder {
   }
 
   buildObservers () {
-    const activeInfohashes = this.meter.createObservableGauge('peertube_bittorrent_tracker_active_infohashes_total', {
-      description: 'Total active infohashes in the PeerTube BitTorrent Tracker'
+    const activeInfohashes = this.meter.createObservableGauge('retro3_bittorrent_tracker_active_infohashes_total', {
+      description: 'Total active infohashes in the retro3 BitTorrent Tracker'
     })
-    const inactiveInfohashes = this.meter.createObservableGauge('peertube_bittorrent_tracker_inactive_infohashes_total', {
-      description: 'Total inactive infohashes in the PeerTube BitTorrent Tracker'
+    const inactiveInfohashes = this.meter.createObservableGauge('retro3_bittorrent_tracker_inactive_infohashes_total', {
+      description: 'Total inactive infohashes in the retro3 BitTorrent Tracker'
     })
-    const peers = this.meter.createObservableGauge('peertube_bittorrent_tracker_peers_total', {
-      description: 'Total peers in the PeerTube BitTorrent Tracker'
+    const peers = this.meter.createObservableGauge('retro3_bittorrent_tracker_peers_total', {
+      description: 'Total peers in the retro3 BitTorrent Tracker'
     })
 
     this.meter.addBatchObservableCallback(observableResult => {

@@ -28,7 +28,7 @@
           </p>
 
           <div *ngIf="!isEmailEnabled()" class="alert alert-warning" i18n>
-            Emails are not enabled on this instance so PeerTube won't be able to send an email to <em>{{ registration.email }}</em> explaining its account has been created.
+            Emails are not enabled on this instance so retro3 won't be able to send an email to <em>{{ registration.email }}</em> explaining its account has been created.
           </div>
         </ng-container>
 
@@ -38,7 +38,7 @@
           </p>
 
           <div *ngIf="!isEmailEnabled()" class="alert alert-warning" i18n>
-            Emails are not enabled on this instance so PeerTube won't be able to send an email to <em>{{ registration.email }}</em> explaining its registration request has been rejected.
+            Emails are not enabled on this instance so retro3 won't be able to send an email to <em>{{ registration.email }}</em> explaining its registration request has been rejected.
           </div>
         </ng-container>
       </div>
@@ -57,20 +57,20 @@
       </div>
 
       <div class="form-group">
-        <my-peertube-checkbox
+        <my-retro3-checkbox
           inputName="preventEmailDelivery" formControlName="preventEmailDelivery" [disabled]="!isEmailEnabled()"
           i18n-labelText labelText="Prevent email from being sent to the user"
-        ></my-peertube-checkbox>
+        ></my-retro3-checkbox>
       </div>
     </div>
 
     <div class="modal-footer inputs">
       <input
-        type="button" role="button" i18n-value value="Cancel" class="peertube-button grey-button"
+        type="button" role="button" i18n-value value="Cancel" class="retro3-button grey-button"
         (click)="hide()" (key.enter)="hide()"
       >
 
-      <input type="submit" [value]="getSubmitValue()" class="peertube-button orange-button" [disabled]="!form.valid">
+      <input type="submit" [value]="getSubmitValue()" class="retro3-button orange-button" [disabled]="!form.valid">
     </div>
   </form>
 </ng-template>

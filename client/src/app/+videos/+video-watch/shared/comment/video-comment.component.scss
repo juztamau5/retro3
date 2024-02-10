@@ -95,7 +95,7 @@
 }
 
 .comment-html {
-  @include peertube-word-wrap;
+  @include retro3-word-wrap;
 
   // Mentions
   ::ng-deep a {

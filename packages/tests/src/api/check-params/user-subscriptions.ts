@@ -6,16 +6,16 @@ import {
   makeDeleteRequest,
   makeGetRequest,
   makePostBodyRequest,
-  PeerTubeServer,
+  Retro3Server,
   setAccessTokensToServers,
   waitJobs
-} from '@peertube/peertube-server-commands'
-import { HttpStatusCode } from '@peertube/peertube-models'
+} from '@retroai/retro3-server-commands'
+import { HttpStatusCode } from '@retroai/retro3-models'
 import { checkBadStartPagination, checkBadCountPagination, checkBadSortPagination } from '@tests/shared/checks.js'
 
 describe('Test user subscriptions API validators', function () {
   const path = '/api/v1/users/me/subscriptions'
-  let server: PeerTubeServer
+  let server: Retro3Server
   let userAccessToken = ''
 
   // ---------------------------------------------------------------

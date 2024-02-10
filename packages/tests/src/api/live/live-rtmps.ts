@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions,@typescript-eslint/require-await */
 
 import { expect } from 'chai'
-import { buildAbsoluteFixturePath } from '@peertube/peertube-node-utils'
-import { VideoPrivacy } from '@peertube/peertube-models'
+import { buildAbsoluteFixturePath } from '@retroai/retro3-node-utils'
+import { VideoPrivacy } from '@retroai/retro3-models'
 import {
   cleanupTests,
   createSingleServer,
-  PeerTubeServer,
+  Retro3Server,
   sendRTMPStream,
   setAccessTokensToServers,
   setDefaultVideoChannel,
   stopFfmpeg,
   testFfmpegStreamError,
   waitUntilLivePublishedOnAllServers
-} from '@peertube/peertube-server-commands'
+} from '@retroai/retro3-server-commands'
 
 describe('Test live RTMPS', function () {
-  let server: PeerTubeServer
+  let server: Retro3Server
   let rtmpUrl: string
   let rtmpsUrl: string
 
