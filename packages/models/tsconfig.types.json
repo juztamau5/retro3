@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../types-generator/dist/retro3-models",
+    "tsBuildInfoFile": "../types-generator/dist/retro3-models/.tsbuildinfo",
+    "stripInternal": true,
+    "removeComments": false,
+    "emitDeclarationOnly": true
+  }
+}

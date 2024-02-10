@@ -1,0 +1,75 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "module": "es2020",
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "strictBindCallApply": true,
+    "target": "ES2022",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "ES2021.Intl",
+      "es2018",
+      "es2017",
+      "es2016",
+      "es2015",
+      "dom"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "hls.js": [
+        "node_modules/hls.js/dist/hls.light"
+      ],
+      "video.js": [
+        "node_modules/video.js/core"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@root-helpers/*": [
+        "src/root-helpers/*"
+      ],
+      "fs": [
+        "src/shims/noop.ts"
+      ],
+      "path": [
+        "src/shims/path.ts"
+      ],
+      "crypto": [
+        "src/shims/noop.ts"
+      ]
+    },
+    "useDefineForClassFields": false
+  },
+  "references": [
+    { "path": "../packages/core-utils" },
+    { "path": "../packages/models" },
+    { "path": "../packages/typescript-utils" }
+  ],
+  "files": [
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/main*.ts",
+    "src/**/*.d.ts",
+    "src/shims/*.ts"
+  ],
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
+    "enableI18nLegacyMessageIdFormat": false
+  }
+}

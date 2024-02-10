@@ -1,0 +1,384 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+
+@import './_bootstrap-variables';
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/button-group';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/accordion';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/popover';
+@import 'bootstrap/scss/spinners';
+
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';
+
+body {
+  --bs-border-color-translucent: #{pvar(--inputBorderColor)};
+
+  --bs-body-color: #{pvar(--mainForegroundColor)};
+}
+
+.accordion {
+  --bs-accordion-color: #{pvar(--mainForegroundColor)};
+  --bs-accordion-bg: #{pvar(--mainBackgroundColor)};
+
+  --bs-accordion-btn-color: var(--bs-accordion-color);
+  --bs-accordion-btn-bg: var(--bs-accordion-bg);
+}
+
+.popover {
+  --bs-popover-bg: #{pvar(--mainBackgroundColor)};
+  --bs-popover-body-color: #{pvar(--mainForegroundColor)};
+  --bs-popover-header-color: #{pvar(--mainForegroundColor)};
+
+  font-family: $main-fonts;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.c-hand {
+  cursor: pointer !important;
+}
+
+// ---------------------------------------------------------------------------
+// Dropdown
+// ---------------------------------------------------------------------------
+
+.dropdown-menu {
+  --bs-dropdown-link-hover-bg: #{pvar(--mainBackgroundHoverColor)};
+  --bs-dropdown-link-color: #{pvar(--mainForegroundColor)};
+  --bs-dropdown-border-color: #{pvar(--inputBorderColor)};
+
+  text-align: start;
+
+  .dropdown-header {
+    @include padding-left(1rem);
+  }
+
+  .dropdown-item {
+    padding: 3px 15px;
+
+    &.active {
+      color: pvar(--mainBackgroundColor) !important;
+      background-color: pvar(--mainColor);
+      font-weight: $font-semibold;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  a {
+    @include disable-default-a-behaviour;
+  }
+}
+
+.dropdown-divider {
+  margin: 0.3rem 0;
+}
+
+// ---------------------------------------------------------------------------
+// Alert
+// ---------------------------------------------------------------------------
+
+.alert {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Modal
+// ---------------------------------------------------------------------------
+
+@media screen and (min-width: #{breakpoint(md)}) {
+  .modal::before {
+    vertical-align: middle;
+    content: ' ';
+    height: 100%;
+  }
+
+  .modal-dialog {
+    text-align: start;
+
+    &:not(.modal-lg):not(.modal-xl) {
+      min-width: 500px;
+      width: 40vw;
+      max-width: 900px;
+    }
+  }
+}
+
+.modal {
+  text-align: center;
+
+  .modal-content {
+    background-color: pvar(--mainBackgroundColor);
+    word-break: break-word;
+  }
+
+  .modal-header {
+    border-bottom: 0;
+    margin-bottom: 5px;
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: $font-semibold;
+    }
+
+    my-global-icon {
+      @include icon(22px);
+
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .inputs {
+    margin-bottom: 0;
+    text-align: end;
+
+    > *:not(:first-child) {
+      @include margin-left(10px);
+    }
+  }
+}
+
+
+// On desktop browsers, make the content and header horizontally sticked to right not move when modal open and close
+.modal-open {
+  overflow-y: scroll !important; // Make sure vertical scroll bar is always visible on desktop browsers to get disabled scrollbar effect
+  width: 100vw; // Make sure the content fits all the available width
+}
+
+// On touchscreen devices, simply overflow: hidden to avoid detached overlay on scroll
+@media (hover: none) and (pointer: coarse) {
+  .modal-open,
+  .menu-open {
+    overflow: hidden !important;
+  }
+
+  // On touchscreen devices display content overlay when opened menu
+  .menu-open {
+    .main-col {
+      &::before {
+        background-color: #000;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.75;
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: z(overlay);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Nav
+// ---------------------------------------------------------------------------
+
+.nav .nav-link {
+  display: flex !important;
+  align-items: center;
+  height: 30px !important;
+}
+
+.nav.nav-pills {
+  font-size: 16px !important;
+  font-weight: $font-semibold !important;
+
+  .nav-link {
+    opacity: 0.7 !important;
+
+    &.active,
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1 !important;
+    }
+  }
+
+  a {
+    @include disable-default-a-behaviour;
+
+    color: pvar(--mainForegroundColor);
+  }
+}
+
+.nav-tabs .nav-link {
+  @include disable-default-a-behaviour;
+
+  color: pvar(--mainForegroundColor);
+  font-weight: $font-semibold;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  opacity: 0.7;
+
+  &.active {
+    color: pvar(--mainForegroundColor);
+    background-color: pvar(--mainBackgroundColor) !important;
+    border-bottom-color: pvar(--mainColor);
+  }
+
+  &.active,
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Card, collapse and accordion
+// ---------------------------------------------------------------------------
+
+.card {
+  background-color: pvar(--mainBackgroundColor);
+  border-color: #dee2e6;
+}
+
+.accordion-button {
+  font-size: 18px;
+
+  &:not(.collapsed) {
+    font-weight: $font-bold;
+
+    my-global-icon {
+      color: pvar(--mainColorLighter);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Buttons & form controls
+// ---------------------------------------------------------------------------
+
+.btn:not(.btn-sm) {
+  font-size: $button-font-size;
+  line-height: 1.2;
+}
+
+.btn-outline-secondary {
+  border-color: pvar(--inputBorderColor);
+
+  &:focus-within,
+  &:focus,
+  &:hover {
+    color: #fff;
+    background-color: #6c757d;
+  }
+}
+
+.btn-group.select-button {
+  font-weight: $font-semibold;
+
+  .active {
+    @include orange-button;
+  }
+
+  :not(.active) {
+    @include grey-button;
+  }
+
+  > * {
+    @include retro3-button-link;
+
+    box-shadow: none !important;
+
+    &:not(:first-child) {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+}
+
+.form-control {
+  color: pvar(--mainForegroundColor);
+  background-color: pvar(--inputBackgroundColor);
+  outline: none;
+}
+
+.input-group {
+  > .btn,
+  > .input-group-text {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  > .input-group-text {
+    line-height: normal;
+    opacity: 0.9;
+  }
+
+  .input-group-text > .dropdown-toggle {
+    display: flex;
+  }
+}
+
+.input-group,
+.btn-group {
+  .last-in-group {
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+  }
+}
+
+.has-clear {
+  input {
+    padding-inline-end: 30px !important;
+  }
+
+  .form-control-clear {
+    position: absolute;
+    right: .5rem;
+    top: 0;
+    bottom: 0;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+
+  input:placeholder-shown + .form-control-clear {
+    display: none;
+  }
+}
+
+.text-truncate {
+  // Prevent invalid height in parent: https://stackoverflow.com/a/22425601
+  vertical-align: top;
+}

@@ -1,0 +1,336 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "PeerTube": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "i18n": {
+        "sourceLocale": {
+          "code": "en",
+          "baseHref": "/client/en-US/"
+        },
+        "locales": {
+          "ar": {
+            "translation": "src/locale/angular.ar.xlf",
+            "baseHref": "/client/ar/"
+          },
+          "fa": {
+            "translation": "src/locale/angular.fa-IR.xlf",
+            "baseHref": "/client/fa-IR/"
+          },
+          "hu": {
+            "translation": "src/locale/angular.hu-HU.xlf",
+            "baseHref": "/client/hu-HU/"
+          },
+          "th": {
+            "translation": "src/locale/angular.th-TH.xlf",
+            "baseHref": "/client/th-TH/"
+          },
+          "fi": {
+            "translation": "src/locale/angular.fi-FI.xlf",
+            "baseHref": "/client/fi-FI/"
+          },
+          "nl": {
+            "translation": "src/locale/angular.nl-NL.xlf",
+            "baseHref": "/client/nl-NL/"
+          },
+          "gd": {
+            "translation": "src/locale/angular.gd.xlf",
+            "baseHref": "/client/gd/"
+          },
+          "el": {
+            "translation": "src/locale/angular.el-GR.xlf",
+            "baseHref": "/client/el-GR/"
+          },
+          "es": {
+            "translation": "src/locale/angular.es-ES.xlf",
+            "baseHref": "/client/es-ES/"
+          },
+          "oc": {
+            "translation": "src/locale/angular.oc.xlf",
+            "baseHref": "/client/oc/"
+          },
+          "pt": {
+            "translation": "src/locale/angular.pt-BR.xlf",
+            "baseHref": "/client/pt-BR/"
+          },
+          "pt-PT": {
+            "translation": "src/locale/angular.pt-PT.xlf",
+            "baseHref": "/client/pt-PT/"
+          },
+          "sv": {
+            "translation": "src/locale/angular.sv-SE.xlf",
+            "baseHref": "/client/sv-SE/"
+          },
+          "pl": {
+            "translation": "src/locale/angular.pl-PL.xlf",
+            "baseHref": "/client/pl-PL/"
+          },
+          "ru": {
+            "translation": "src/locale/angular.ru-RU.xlf",
+            "baseHref": "/client/ru-RU/"
+          },
+          "sq": {
+            "translation": "src/locale/angular.sq.xlf",
+            "baseHref": "/client/sq/"
+          },
+          "hr": {
+            "translation": "src/locale/angular.hr.xlf",
+            "baseHref": "/client/hr/"
+          },
+          "zh-Hans": {
+            "translation": "src/locale/angular.zh-Hans-CN.xlf",
+            "baseHref": "/client/zh-Hans-CN/"
+          },
+          "zh-Hant": {
+            "translation": "src/locale/angular.zh-Hant-TW.xlf",
+            "baseHref": "/client/zh-Hant-TW/"
+          },
+          "fr": {
+            "translation": "src/locale/angular.fr-FR.xlf",
+            "baseHref": "/client/fr-FR/"
+          },
+          "ja": {
+            "translation": "src/locale/angular.ja-JP.xlf",
+            "baseHref": "/client/ja-JP/"
+          },
+          "eu": {
+            "translation": "src/locale/angular.eu-ES.xlf",
+            "baseHref": "/client/eu-ES/"
+          },
+          "ca": {
+            "translation": "src/locale/angular.ca-ES.xlf",
+            "baseHref": "/client/ca-ES/"
+          },
+          "gl": {
+            "translation": "src/locale/angular.gl-ES.xlf",
+            "baseHref": "/client/gl-ES/"
+          },
+          "cs": {
+            "translation": "src/locale/angular.cs-CZ.xlf",
+            "baseHref": "/client/cs-CZ/"
+          },
+          "eo": {
+            "translation": "src/locale/angular.eo.xlf",
+            "baseHref": "/client/eo/"
+          },
+          "de": {
+            "translation": "src/locale/angular.de-DE.xlf",
+            "baseHref": "/client/de-DE/"
+          },
+          "it": {
+            "translation": "src/locale/angular.it-IT.xlf",
+            "baseHref": "/client/it-IT/"
+          },
+          "vi": {
+            "translation": "src/locale/angular.vi-VN.xlf",
+            "baseHref": "/client/vi-VN/"
+          },
+          "kab": {
+            "translation": "src/locale/angular.kab.xlf",
+            "baseHref": "/client/kab/"
+          },
+          "nb": {
+            "translation": "src/locale/angular.nb-NO.xlf",
+            "baseHref": "/client/nb-NO/"
+          },
+          "tok": {
+            "translation": "src/locale/angular.tok.xlf",
+            "baseHref": "/client/tok/"
+          },
+          "nn": {
+            "translation": "src/locale/angular.nn.xlf",
+            "baseHref": "/client/nn/"
+          },
+          "is": {
+            "translation": "src/locale/angular.is.xlf",
+            "baseHref": "/client/is/"
+          },
+          "uk": {
+            "translation": "src/locale/angular.uk-UA.xlf",
+            "baseHref": "/client/uk-UA/"
+          }
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "localize": true,
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "tsconfig.json",
+            "polyfills": "src/polyfills.ts",
+            "baseHref": "/",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/sass/include"
+              ]
+            },
+            "assets": [
+              "src/assets/images",
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "src/sass/application.scss"
+            ],
+            "allowedCommonJsDependencies": [
+              "qrcode",
+              "chart.js",
+              "htmlparser2",
+              "markdown-it-emoji/light",
+              "linkifyjs/lib/linkify-html",
+              "linkifyjs/lib/plugins/mention",
+              "sanitize-html",
+              "debug",
+              "@retroai/p2p-media-loader-hlsjs",
+              "video.js",
+              "sha.js",
+              "postcss",
+              "focus-visible",
+              "path-browserify",
+              "deep-merge",
+              "escape-string-regexp",
+              "is-plain-object",
+              "parse-srcset",
+              "deepmerge",
+              "core-js/features/reflect",
+              "@formatjs/intl-locale/polyfill",
+              "@formatjs/intl-locale/should-polyfill",
+              "@formatjs/intl-pluralrules/polyfill-force",
+              "@formatjs/intl-pluralrules/should-polyfill"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "100kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "ar-locale": {
+              "localize": [
+                "ar"
+              ],
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
+            },
+            "hmr": {
+              "localize": false,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "PeerTube:build",
+            "proxyConfig": "proxy.config.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "PeerTube:build:production"
+            },
+            "hmr": {
+              "browserTarget": "PeerTube:build:hmr"
+            },
+            "ar-locale": {
+              "browserTarget": "PeerTube:build:ar-locale"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "PeerTube:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "e2e/**/*.ts",
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "my",
+      "style": "scss",
+      "skipTests": true,
+      "flat": true
+    },
+    "@schematics/angular:directive": {
+      "prefix": "my"
+    },
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

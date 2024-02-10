@@ -1,0 +1,45 @@
+{
+  "/api": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/plugins": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/themes": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/static": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/lazy-static": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/socket.io": {
+    "target": "ws://127.0.0.1:9000",
+    "secure": false,
+    "ws": true
+  },
+  "/client/assets": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/client/locales": {
+    "target": "http://127.0.0.1:9000",
+    "secure": false
+  },
+  "/!(client)**": {
+    "target": "http://127.0.0.1:3000/client/index.html",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/!(client)**/**": {
+    "target": "http://127.0.0.1:3000/client/index.html",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

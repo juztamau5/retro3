@@ -1,0 +1,68 @@
+@use '_variables' as *;
+
+$modal-footer-border-width: 0;
+$modal-md: 600px;
+
+$grid-breakpoints: (
+  // CLASSIC BREAKPOINTS GROUP
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: $mobile-view,
+  // Medium screen / tablet
+  md: $small-view,
+  // Large screen / desktop
+  lg: 900px,
+  // Extra large screens / wide desktops
+  xl: 1200px,
+  xxl: 1600px,
+
+  // SCREEN GROUP
+  fhd: 1800px,
+  qhd: 2560px,
+  uhd: 3840px
+);
+
+@function breakpoint($label) {
+  @return map-get($grid-breakpoints, $label);
+}
+
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 900px,
+  xl: 1140px
+);
+
+$input-color: pvar(--inputForegroundColor);
+$input-bg: pvar(--inputBackgroundColor);
+$input-focus-color: pvar(--inputForegroundColor);
+$input-focus-bg: pvar(--inputBackgroundColor);
+$input-btn-focus-width: 0;
+$input-btn-focus-color: inherit;
+$input-focus-border-color: #ced4da;
+$input-focus-box-shadow: 0 0 0 0.25rem pvar(--mainColorLightest);
+
+$input-group-addon-color: pvar(--mainForegroundColor);
+$input-group-addon-bg: pvar(--greyBackgroundColor);
+
+$nav-pills-link-active-bg: pvar(--greySecondaryBackgroundColor);
+$nav-pills-link-active-color: pvar(--mainForegroundColor);
+$nav-link-transition: none;
+
+$dropdown-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$dropdown-border-radius: 3px;
+$dropdown-link-active-color: pvar(--mainForegroundColor);
+$dropdown-link-active-bg: pvar(--mainBackgroundHoverColor);
+$dropdown-link-hover-color: pvar(--mainForegroundColor);
+$dropdown-link-hover-bg: pvar(--mainBackgroundHoverColor);
+$dropdown-color: pvar(--mainForegroundColor);
+$dropdown-bg: pvar(--mainBackgroundColor);
+
+$accordion-button-active-bg: pvar(--mainColorVeryLight);
+$accordion-button-active-color: pvar(--mainForegroundColor);
+$accordion-button-focus-border-color: pvar(--mainColorLightest);
+$accordion-button-focus-box-shadow: 0 0 0 .15rem pvar(--mainColorLightest);
+$accordion-border-color: pvar(--inputBorderColor);
+
+$card-color: pvar(--mainForegroundColor);

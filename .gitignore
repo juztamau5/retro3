@@ -1,0 +1,62 @@
+# NPM instalation
+node_modules
+*npm-debug.log
+yarn-error.log
+.yarn
+
+# Testing
+/test1/
+/test2/
+/test3/
+/test4/
+/test5/
+/test6/
+/packages/tests/fixtures/video_high_bitrate_1080p.mp4
+/packages/tests/fixtures/video_59fps.mp4
+
+# Production
+/storage
+/config/production.yaml
+/config/local*
+/ffmpeg/
+/ffmpeg-3/
+/ffmpeg-4/
+/thumbnails/
+/torrents/
+/web-videos/
+/videos/
+/previews/
+/logs/
+
+# IDE
+/*.sublime-project
+/*.sublime-workspace
+/*.vscode
+/**/.idea
+/dist
+/retro3.iml
+*.swp
+
+# Zanata
+/.zanata-cache
+/scripts/i18n/generate-iso639-target.ts
+
+# Other
+/dump.rdb
+/.theia/
+/profiling/
+/*.zip
+/*.tar.xz
+/*.asc
+*.DS_Store
+/docker-volume/
+/init.mp4
+
+# TypeScript
+*.tsbuildinfo
+
+# EsLint
+.eslintcache
+
+# Compiled output
+dist

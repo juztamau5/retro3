@@ -1,0 +1,135 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+
+// Font sizes
+
+.fs-5-5 {
+  @include font-size(18px);
+}
+
+.fs-7 {
+  @include font-size(14px);
+}
+
+// Handle dynamically RTL layouts
+
+.text-start {
+  text-align: start !important;
+}
+
+.text-end {
+  text-align: end !important;
+}
+
+// ---
+
+
+.ms-0 {
+  @include margin-left(0 !important);
+}
+
+.ms-1 {
+  @include margin-left(0.25rem !important);
+}
+
+.ms-2 {
+  @include margin-left(0.5rem !important);
+}
+
+.ms-3 {
+  @include margin-left(1rem !important);
+}
+
+.ms-4 {
+  @include margin-left(1.5rem !important);
+}
+
+.ms-5 {
+  @include margin-left(3rem !important);
+}
+
+.ms-auto {
+  @include margin-left(auto !important);
+}
+
+// ---
+
+.me-0 {
+  @include margin-right(0 !important);
+}
+
+.me-1 {
+  @include margin-right(0.25rem !important);
+}
+
+.me-2 {
+  @include margin-right(0.5rem !important);
+}
+
+.me-3 {
+  @include margin-right(1rem !important);
+}
+
+.me-4 {
+  @include margin-right(1.5rem !important);
+}
+
+.me-5 {
+  @include margin-right(3rem !important);
+}
+
+.me-auto {
+  @include margin-right(auto !important);
+}
+
+// ---
+
+.ps-0 {
+  @include padding-left(0 !important);
+}
+
+.ps-1 {
+  @include padding-left(0.25rem !important);
+}
+
+.ps-2 {
+  @include padding-left(0.5rem !important);
+}
+
+.ps-3 {
+  @include padding-left(1rem !important);
+}
+
+.ps-4 {
+  @include padding-left(1.5rem !important);
+}
+
+.ps-5 {
+  @include padding-left(3rem !important);
+}
+
+// ---
+
+.pe-0 {
+  @include padding-right(0 !important);
+}
+
+.pe-1 {
+  @include padding-right(0.25rem !important);
+}
+
+.pe-2 {
+  @include padding-right(0.5rem !important);
+}
+
+.pe-3 {
+  @include padding-right(1rem !important);
+}
+
+.pe-4 {
+  @include padding-right(1.5rem !important);
+}
+
+.pe-5 {
+  @include padding-right(3rem !important);
+}

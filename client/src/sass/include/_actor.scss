@@ -1,0 +1,64 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+
+@mixin actor-row ($avatar-margin-right: 10px, $min-height: 130px, $separator: true) {
+  @include row-blocks($min-height: $min-height, $separator: $separator);
+
+  > my-actor-avatar {
+    @include margin-right($avatar-margin-right);
+  }
+
+  .actor-info {
+    flex-grow: 1;
+  }
+
+  .actor-names {
+    @include disable-default-a-behaviour;
+
+    width: fit-content;
+    display: flex;
+    align-items: baseline;
+    color: pvar(--mainForegroundColor);
+  }
+
+  .actor-display-name {
+    font-weight: $font-semibold;
+    font-size: 18px;
+  }
+
+  .actor-name {
+    @include margin-left(5px);
+
+    font-size: 14px;
+    color: $grey-actor-name;
+  }
+
+  .actor-owner {
+    @include disable-default-a-behaviour;
+
+    color: pvar(--mainForegroundColor);
+    display: flex;
+    align-items: center;
+
+    span:hover {
+      opacity: 0.8;
+    }
+
+    my-actor-avatar {
+      @include margin-left(5px);
+    }
+  }
+
+  @media screen and (max-width: $small-view) {
+    .actor-info {
+      padding-bottom: 10px;
+      text-align: center;
+
+      .actor-names {
+        flex-direction: column;
+        align-items: center !important;
+        margin: auto;
+      }
+    }
+  }
+}

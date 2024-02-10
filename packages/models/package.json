@@ -1,0 +1,19 @@
+{
+  "name": "@retroai/retro3-models",
+  "private": true,
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [ "dist" ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "retro3:tsx": "./src/index.ts",
+    "default": "./dist/index.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {}
+}

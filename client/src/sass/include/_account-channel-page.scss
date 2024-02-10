@@ -1,0 +1,87 @@
+@use '_variables' as *;
+@use '_mixins' as *;
+
+@mixin section-label-responsive {
+  color: pvar(--mainColor);
+  font-size: 12px;
+  margin-bottom: 15px;
+  font-weight: $font-bold;
+  letter-spacing: 2.5px;
+
+  @media screen and (max-width: $mobile-view) {
+    font-size: 10px;
+    letter-spacing: 2.1px;
+    margin-bottom: 5px;
+  }
+}
+
+@mixin show-more-description {
+  @include margin(10px, auto, 45px);
+  
+  color: pvar(--mainColor);
+  cursor: pointer;
+}
+
+@mixin avatar-row-responsive ($img-margin, $grey-font-size) {
+  @include margin-bottom(2rem);
+
+  display: flex;
+  grid-column: 1;
+
+  > div {
+    @include margin-left($img-margin);
+
+    min-width: 1px;
+  }
+
+  .actor-info {
+    display: flex;
+
+    > div:first-child {
+      flex-grow: 1;
+      min-width: 1px;
+    }
+  }
+
+  .actor-display-name {
+    @include retro3-word-wrap;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    @include font-size(2rem);
+
+    font-weight: $font-bold;
+    margin: 0;
+  }
+
+  .actor-handle {
+    @include ellipsis;
+  }
+
+  .actor-handle,
+  .actor-counters {
+    @include font-size($grey-font-size);
+
+    color: pvar(--greyForegroundColor);
+  }
+
+  .actor-counters > *:not(:last-child)::after {
+    content: '•';
+    margin: 0 10px;
+    color: pvar(--mainColor);
+  }
+
+  .main-avatar {
+    @include actor-avatar-size(120px);
+  }
+
+  @media screen and (max-width: $mobile-view) {
+
+    .main-avatar {
+      @include actor-avatar-size(80px);
+    }
+  }
+}

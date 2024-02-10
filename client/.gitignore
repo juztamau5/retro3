@@ -1,0 +1,16 @@
+/.angular/cache
+/dist/
+/node_modules
+/compiled
+/stats.json
+/dll
+/.awcache
+/src/locale/pending_target/
+/src/locale/target/iso639_*.xml
+/src/locale/target/player_*.xml
+/src/locale/target/server_*.xml
+/e2e/local.log
+/e2e/browserstack.err
+/e2e/screenshots
+/src/standalone/embed-player-api/build
+/src/standalone/embed-player-api/dist

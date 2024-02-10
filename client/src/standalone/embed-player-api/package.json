@@ -1,0 +1,28 @@
+{
+  "name": "@retroai/embed-api",
+  "private": false,
+  "version": "1.0.0",
+  "description": "API to communicate with the retro3 player embed",
+  "scripts": {
+    "build": "../../../node_modules/.bin/tsc && ../../../node_modules/.bin/webpack --mode production --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juztamau5/retro3.git"
+  },
+  "keywords": [
+    "retro3",
+    "embed"
+  ],
+  "main": "./dist/player.js",
+  "types": "./dist/player.d.ts",
+  "author": "juztamau5",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/juztamau5/retro3/issues"
+  },
+  "homepage": "https://github.com/juztamau5/retro3",
+  "dependencies": {
+    "jschannel": "^1.0.2"
+  }
+}

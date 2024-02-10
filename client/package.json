@@ -1,0 +1,68 @@
+{
+  "name": "retro3-client",
+  "version": "1.0.0",
+  "private": true,
+  "license": "AGPL-3.0",
+  "author": {
+    "name": "juztamau5",
+    "email": "juztamau5@gmail.com",
+    "url": "http://github.com/juztamau5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juztamau5/retro3.git"
+  },
+  "scripts": {
+    "lint": "npm run lint-ts && npm run lint-scss",
+    "lint-ts": "eslint --cache --ext .ts src/standalone/**/*.ts && npm run ng lint",
+    "lint-scss": "stylelint 'src/**/*.scss'",
+    "webpack": "webpack",
+    "eslint": "eslint",
+    "ng": "ng",
+    "webpack-bundle-analyzer": "webpack-bundle-analyzer",
+    "webdriver-manager": "webdriver-manager",
+    "ngx-extractor": "ngx-extractor",
+    "stylelint": "stylelint"
+  },
+  "workspaces": [
+    "../packages/*"
+  ],
+  "typings": "*.d.ts",
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@peertube/p2p-media-loader-core": "^1.0.15",
+    "@peertube/p2p-media-loader-hlsjs": "^1.0.15",
+    "@peertube/videojs-contextmenu": "^5.5.0",
+    "@types/debug": "^4.1.12",
+    "@types/jschannel": "^1.0.6",
+    "@types/node": "^20.11.17",
+    "@types/sha.js": "^2.4.4",
+    "@types/video.js": "^7.3.56",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "babel-loader": "^9.1.3",
+    "bootstrap": "^5.3.2",
+    "core-js": "^3.35.1",
+    "css-loader": "^6.10.0",
+    "hls.js": "^1.5.4",
+    "html-loader": "^5.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "jschannel": "^1.0.2",
+    "mini-css-extract-plugin": "^2.8.0",
+    "path-browserify": "^1.0.1",
+    "rxjs": "^7.8.1",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "sha.js": "^2.4.11",
+    "socket.io-client": "^4.7.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "video.js": "^7.21.5",
+    "webpack": "^5.90.1",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {}
+}
