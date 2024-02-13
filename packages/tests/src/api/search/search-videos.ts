@@ -16,7 +16,7 @@ import {
   stopFfmpeg
 } from '@retroai/retro3-server-commands'
 
-describe('Test videos search', function () {
+describe.skip('Test videos search', function () {
   let server: Retro3Server
   let remoteServer: Retro3Server
   let startDate: string

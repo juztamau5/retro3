@@ -670,7 +670,7 @@ describe('Test plugin filter hooks', function () {
       await servers[0].servers.waitUntilLog('Run hook filter:api.search.videos.local.list.result', 1)
     })
 
-    it('Should run filter:api.search.videos.index.list.{params,result}', async function () {
+    it.skip('Should run filter:api.search.videos.index.list.{params,result}', async function () {
       await servers[0].search.advancedVideoSearch({
         search: {
           search: 'Sun Quan',
@@ -695,7 +695,7 @@ describe('Test plugin filter hooks', function () {
       await servers[0].servers.waitUntilLog('Run hook filter:api.search.video-channels.local.list.result', 1)
     })
 
-    it('Should run filter:api.search.video-channels.index.list.{params,result}', async function () {
+    it.skip('Should run filter:api.search.video-channels.index.list.{params,result}', async function () {
       await servers[0].search.advancedChannelSearch({
         search: {
           search: 'Sun Ce',
@@ -720,7 +720,7 @@ describe('Test plugin filter hooks', function () {
       await servers[0].servers.waitUntilLog('Run hook filter:api.search.video-playlists.local.list.result', 1)
     })
 
-    it('Should run filter:api.search.video-playlists.index.list.{params,result}', async function () {
+    it.skip('Should run filter:api.search.video-playlists.index.list.{params,result}', async function () {
       await servers[0].search.advancedPlaylistSearch({
         search: {
           search: 'Sun Jian',

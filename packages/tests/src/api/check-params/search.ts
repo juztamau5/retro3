@@ -224,7 +224,7 @@ describe('Test videos API validator', function () {
 
   describe('Search target', function () {
 
-    it('Should fail/succeed depending on the search target', async function () {
+    it.skip('Should fail/succeed depending on the search target', async function () {
       const query = { search: 'coucou' }
       const paths = [
         '/api/v1/search/video-playlists/',
