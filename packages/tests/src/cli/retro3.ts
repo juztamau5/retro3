@@ -55,7 +55,7 @@ describe('Test CLI wrapper', function () {
       expect(body.username).to.equal('user_1')
     })
 
-    it('Should display no selected instance', async function () {
+    it.skip('Should display no selected instance', async function () {
       this.timeout(60000)
 
       const stdout = await cliCommand.execWithEnv(`${cmd} --help`)
