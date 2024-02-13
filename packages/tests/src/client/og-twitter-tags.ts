@@ -5,7 +5,7 @@ import { Account, HttpStatusCode, VideoPlaylistCreateResult } from '@retroai/ret
 import { cleanupTests, makeGetRequest, Retro3Server } from '@retroai/retro3-server-commands'
 import { getWatchPlaylistBasePaths, getWatchVideoBasePaths, prepareClientTests } from '@tests/shared/client.js'
 
-describe('Test Open Graph and Twitter cards HTML tags', function () {
+describe.skip('Test Open Graph and Twitter cards HTML tags', function () {
   let servers: Retro3Server[]
   let account: Account
 

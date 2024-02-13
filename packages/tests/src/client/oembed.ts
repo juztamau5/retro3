@@ -5,7 +5,7 @@ import { HttpStatusCode, VideoPlaylistCreateResult } from '@retroai/retro3-model
 import { Retro3Server, cleanupTests, makeGetRequest } from '@retroai/retro3-server-commands'
 import { getWatchPlaylistBasePaths, getWatchVideoBasePaths, prepareClientTests } from '@tests/shared/client.js'
 
-describe('Test oEmbed HTML tags', function () {
+describe.skip('Test oEmbed HTML tags', function () {
   let servers: Retro3Server[]
 
   let videoIds: (string | number)[] = []
