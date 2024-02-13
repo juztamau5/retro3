@@ -30,7 +30,7 @@ module.exports = {
       {
         'browserName': 'firefox',
         'moz:firefoxOptions': {
-          binary: '/usr/bin/firefox-developer-edition',
+          binary: '/usr/bin/firefox',
           args: [ '--headless', windowSizeArg ],
 
           prefs
