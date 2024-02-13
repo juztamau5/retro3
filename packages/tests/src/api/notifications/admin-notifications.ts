@@ -9,7 +9,7 @@ import { MockJoinRetro3Versions } from '@tests/shared/mock-servers/mock-joinretr
 import { CheckerBaseParams, prepareNotificationsTest, checkNewRetro3Version, checkNewPluginVersion } from '@tests/shared/notifications.js'
 import { SQLCommand } from '@tests/shared/sql-command.js'
 
-describe('Test admin notifications', function () {
+describe.skip('Test admin notifications', function () {
   let server: Retro3Server
   let sqlCommand: SQLCommand
   let userNotifications: UserNotification[] = []

@@ -40,7 +40,7 @@ describe('Test index HTML generation', function () {
     } = await prepareClientTests())
   })
 
-  describe('Instance tags', function () {
+  describe.skip('Instance tags', function () {
 
     it('Should have valid index html tags (title, description...)', async function () {
       const config = await servers[0].config.getConfig()

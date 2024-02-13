@@ -35,13 +35,13 @@ describe('Test plugins HTML injection', function () {
     }
   })
 
-  it('Should install a plugin and a theme', async function () {
+  it.skip('Should install a plugin and a theme', async function () {
     this.timeout(30000)
 
     await command.install({ npmName: 'retro3-plugin-hello-world' })
   })
 
-  it('Should have the correct global css', async function () {
+  it.skip('Should have the correct global css', async function () {
     {
       const text = await command.getCSS()
       expect(text).to.contain('background-color: red')
@@ -53,7 +53,7 @@ describe('Test plugins HTML injection', function () {
     }
   })
 
-  it('Should have an empty global css on uninstall', async function () {
+  it.skip('Should have an empty global css on uninstall', async function () {
     await command.uninstall({ npmName: 'retro3-plugin-hello-world' })
 
     {

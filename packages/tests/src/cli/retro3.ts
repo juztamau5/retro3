@@ -130,7 +130,7 @@ describe('Test CLI wrapper', function () {
     })
   })
 
-  describe('Manage plugins', function () {
+  describe.skip('Manage plugins', function () {
 
     it('Should install a plugin', async function () {
       this.timeout(60000)

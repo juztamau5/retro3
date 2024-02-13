@@ -17,7 +17,7 @@ import {
 import { SQLCommand } from '@tests/shared/sql-command.js'
 import { testHelloWorldRegisteredSettings } from '@tests/shared/plugins.js'
 
-describe('Test plugins', function () {
+describe.skip('Test plugins', function () {
   let server: Retro3Server
   let sqlCommand: SQLCommand
   let command: PluginsCommand

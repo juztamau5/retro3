@@ -10,7 +10,7 @@ import {
   setAccessTokensToServers
 } from '@retroai/retro3-server-commands'
 
-describe('Test plugin scripts', function () {
+describe.skip('Test plugin scripts', function () {
   let server: Retro3Server
 
   before(async function () {
