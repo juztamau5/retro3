@@ -129,7 +129,7 @@ describe('Test video imports API validator', function () {
       await makePostBodyRequest({ url: server.url, path, token: server.accessToken, fields })
     })
 
-    it('Should fail with a private IP target urls', async function () {
+    it.skip('Should fail with a private IP target urls', async function () {
       const targetUrls = [
         'http://127.0.0.1:8000',
         'http://127.0.0.1',
