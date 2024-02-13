@@ -109,19 +109,13 @@
             "allowTemplateLiterals": true
           }
         ],
-        "@typescript-eslint/semi": [
-          "error",
-          "never"
-        ],
+        "@typescript-eslint/semi": "off",
         "brace-style": [
           "error",
           "1tbs"
         ],
         "comma-dangle": "error",
-        "curly": [
-          "error",
-          "multi-line"
-        ],
+        "curly": "off",
         "dot-notation": "off",
         "no-useless-return": "off",
         "indent": "off",
@@ -143,7 +137,7 @@
         "no-return-await": "error",
         "no-shadow": "off",
         "no-unused-expressions": "error",
-        "semi": "error",
+        "semi": "off",
         "space-before-function-paren": [
           "error",
           "always"
