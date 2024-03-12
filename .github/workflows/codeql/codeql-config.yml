@@ -1,6 +1,0 @@
-name: "retro3 CodeQL config"
-
-paths-ignore:
- - packages/tests
- - packages/server-commands
- - packages/types-generator
